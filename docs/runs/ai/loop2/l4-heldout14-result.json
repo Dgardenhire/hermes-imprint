@@ -1,0 +1,3181 @@
+{
+  "set": "heldout14",
+  "tag": "l4-heldout14",
+  "steps": {
+    "brand": {
+      "status": "done",
+      "seconds": 0.0
+    },
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 107.3,
+      "error": null
+    }
+  },
+  "started": 1794268284.795431,
+  "sources": [
+    "notes.txt",
+    "report.md"
+  ],
+  "kit": {
+    "id": "k_6c553e71d9af",
+    "name": "Pasted colors",
+    "colors": [
+      {
+        "hex": "#d9752b",
+        "role": "accent",
+        "name": "Accent (Work Orange)"
+      }
+    ],
+    "paper": "#f2ede3",
+    "ink": "#2e4a55",
+    "kit_json": {
+      "name": "Pasted colors",
+      "origin": "import",
+      "origin_note": "Pasted color codes",
+      "org": "",
+      "subject": "",
+      "signature": "",
+      "paper": "#f2ede3",
+      "ink": "#2e4a55",
+      "colors": [
+        {
+          "hex": "#d9752b",
+          "role": "accent",
+          "name": "Accent (Work Orange)"
+        }
+      ],
+      "type": {
+        "heading": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 700
+        },
+        "body": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 400
+        },
+        "scale": 1.25
+      },
+      "layout": "banner",
+      "density": "medium",
+      "voice": {
+        "notes": "",
+        "delivery": "",
+        "never": [],
+        "pairs": [],
+        "draft": false
+      },
+      "rules": {
+        "sources": true,
+        "page_numbers": true,
+        "date": true,
+        "required": []
+      },
+      "imported_from": {
+        "kind": "paste",
+        "label": "Pasted colors",
+        "ref": "",
+        "sha256": "",
+        "license_note": "",
+        "brand_named": false,
+        "mode": "",
+        "imported_at": 1794268284.80238
+      },
+      "logo": null,
+      "logo_alt": null,
+      "fonts": [],
+      "id": "k_6c553e71d9af",
+      "version": 1,
+      "created_at": 1794268284.803763,
+      "updated_at": 1794268284.803763,
+      "starter": false
+    }
+  },
+  "guide_and_summaries_seconds": 14.0,
+  "guide": {
+    "by": "Written by your Hermes model",
+    "guide": [
+      {
+        "text": "The sources are Ridgeline Return Works' FY2026 annual report and notes from a November 5, 2026 staff and board meeting.",
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 2",
+            "source_id": "s_fe3f0b1e1bdb"
+          },
+          {
+            "ref": "P13",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Ridgeline Return Works”",
+            "source_id": "s_1fa0adae6e37"
+          }
+        ]
+      },
+      {
+        "text": "Enrollment rose from 88 to 121 and permanent job placements rose from 47 to 69 in FY2026.",
+        "chips": [
+          {
+            "ref": "P15",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“What happened this year”",
+            "source_id": "s_1fa0adae6e37"
+          }
+        ]
+      },
+      {
+        "text": "Six-month retention reached 71 percent, but only 52 of 69 placements had reached six months, and the 6 lost contacts count as not employed.",
+        "chips": [
+          {
+            "ref": "P17",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“The result we are proudest of, and its limits”",
+            "source_id": "s_1fa0adae6e37"
+          }
+        ]
+      },
+      {
+        "text": "The FY2027 plan adds a second crew and a retention coach for a new cost of $186,000.",
+        "chips": [
+          {
+            "ref": "P23",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan”",
+            "source_id": "s_1fa0adae6e37"
+          },
+          {
+            "ref": "P24",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan”",
+            "source_id": "s_1fa0adae6e37"
+          }
+        ]
+      },
+      {
+        "text": "The team will ask the Pellwood Foundation for $90,000 of that cost and raise the other $96,000 from current funders.",
+        "chips": [
+          {
+            "ref": "P6",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 6",
+            "source_id": "s_fe3f0b1e1bdb"
+          }
+        ]
+      }
+    ],
+    "asks": [
+      {
+        "id": "a1",
+        "who": "Anneke Lisle, Pellwood Foundation",
+        "what": "Short deck for Pellwood's workforce reentry round asking for $90,000",
+        "by": "Friday, December 4, 2026",
+        "kind": "deck",
+        "chips": [
+          {
+            "ref": "P6",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 6",
+            "source_id": "s_fe3f0b1e1bdb"
+          },
+          {
+            "ref": "P7",
+            "n": 2,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 7",
+            "source_id": "s_fe3f0b1e1bdb"
+          }
+        ],
+        "brief": {
+          "who": "Pellwood Foundation committee, reading on phones",
+          "goal": "Fund $90,000 toward the $186,000 FY2027 expansion",
+          "length": "Ten slides or fewer"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "text": "Retention sits at 71 percent against a 75 percent goal, and only 52 of 69 placements were measured. Can the expansion close that gap when it lifts the budget by $186,000, from $612,400 to $798,400?",
+        "chips": [
+          {
+            "ref": "P17",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“The result we are proudest of, and its limits”",
+            "source_id": "s_1fa0adae6e37"
+          },
+          {
+            "ref": "P23",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan”",
+            "source_id": "s_1fa0adae6e37"
+          },
+          {
+            "ref": "P24",
+            "n": 3,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan”",
+            "source_id": "s_1fa0adae6e37"
+          },
+          {
+            "ref": "P20",
+            "n": 4,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Where the money went”",
+            "source_id": "s_1fa0adae6e37"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "The county contract brings in $240,000, or 39 percent, just under the board's 40 percent limit, and it is renewed every year. Why should the deck avoid calling its renewal uncertain?",
+        "chips": [
+          {
+            "ref": "P21",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Where the money came from”",
+            "source_id": "s_1fa0adae6e37"
+          },
+          {
+            "ref": "P9",
+            "n": 2,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 9",
+            "source_id": "s_fe3f0b1e1bdb"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "The plan counts on current funders for $96,000 of the expansion. Can they give that much when FY2026 ended with an operating surplus of only $3,000?",
+        "chips": [
+          {
+            "ref": "P6",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 6",
+            "source_id": "s_fe3f0b1e1bdb"
+          },
+          {
+            "ref": "P21",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Where the money came from”",
+            "source_id": "s_1fa0adae6e37"
+          }
+        ],
+        "suggestion": true
+      }
+    ],
+    "source_ids": [
+      "s_fe3f0b1e1bdb",
+      "s_1fa0adae6e37"
+    ],
+    "created_at": 1794268298.6529531
+  },
+  "brief": {
+    "who": "Funders",
+    "goal": "Fund $90,000 toward the $186,000 FY2027 expansion",
+    "length": "7 to 9 slides"
+  },
+  "outline": {},
+  "deck_seconds": 107.3,
+  "output_id": "o_2c5b52183a5f",
+  "case": null,
+  "plain_draft": "Slide 1: Ridgeline Return Works\nPaid work first. Then a job that lasts.\nReentry employment in Carver Falls, Tamsen County\nA request to the Pellwood Foundation: $90,000 toward our FY2027 expansion\nWorkforce Reentry Round, December 2026\n\nSlide 2: Two Years of Growth\nPeople enrolled: 88 in FY2025, 121 in FY2026 (+38%)\nPlaced in permanent jobs: 47 in FY2025, 69 in FY2026 (+47%)\nFinished the crew phase: 61 in FY2025, 90 in FY2026\nAverage starting wage: $17.10 in FY2025, $18.25 in FY2026\nEmployers hiring our people: 15 in FY2025, 23 in FY2026\n\nSlide 3: How It Works\nPaid crew work starts within 5 business days of intake\n$16.50 an hour on landscaping, light demolition and park cleanup\nA job coach helps with ID, resume, driver's license and interviews\nGoal: a permanent job within 12 weeks\nThen 6 months of support on the job\n\nSlide 4: Six-Month Job Retention\n71% of FY2026 placements were still employed at six months (58% in FY2025)\nWhat the number covers: 52 of 69 placements have reached six months\n37 of those 52 confirmed employed\nThe 6 people we lost contact with are counted as not employed\nThe other 17, placed in spring, are not counted yet\nWe can't say how much of the gain comes from our program\nCounty unemployment also fell, from 5.1% to 4.4%, and we have no comparison group\n\nSlide 5: In His Words\n\"The crew paid me the first week. That's the part nobody else did. I didn't have to choose between rent and showing up.\"\nDarnell, finished the crew phase in October, now on the night shift at Brannock Precast\n\nSlide 6: What We Learned in FY2026\nMost job losses happen in the first 60 days: transportation, supervision appointments, a first conflict with a boss\nPeople who stayed employed were far more likely to have had 3 or more coach check-ins in those 60 days\nOur coaches were spread thin, and follow-up was what slipped\nWith one crew of 12, some people waited up to 3 weeks to start\n4 employers asked for more referrals than we could send\n\nSlide 7: The FY2027 Expansion: $186,000\nSecond crew lead and crew supervisor stipend: $72,000\nRetention coach, full-time with benefits: $64,000\nSecond crew vehicle lease and equipment: $28,000\nAdded participant supports: $22,000\nFY2027 targets: 160 enrolled, 90 placed, 75% six-month retention\nRetention measured the same way, with lost contacts counted as not employed\n\nSlide 8: A Careful Use of Money\nFY2026 expenses: $612,400\n65% went to program staff and 16% to participant supports\nCost per person enrolled: about $5,060\nCost per permanent placement: about $8,875\nCrew wages are paid through the work contracts and are not included in these costs\n\nSlide 9: Our Request\n$90,000 from the Pellwood Foundation\nThat covers about half of the $186,000 expansion\nThe other $96,000 is being raised from our current funders\nThe $612,400 base budget is covered by existing sources\nFull FY2027 budget: $798,400\nMarisol Okafor-Reyes, Executive Director, Ridgeline Return Works, Lowell Street, Carver Falls",
+  "plain_record": {
+    "flags": [],
+    "splits": [],
+    "slides": 9,
+    "spec": true
+  },
+  "spec_record": {
+    "slides": 9,
+    "problems": {
+      "1": [
+        {
+          "el": 7,
+          "kind": "overflow",
+          "detail": "element 7 (figure) does not fit its 280 x 134 box even at the smallest type size"
+        }
+      ],
+      "6": [
+        {
+          "el": 4,
+          "kind": "overflow",
+          "detail": "element 4 (figure) does not fit its 336 x 104 box even at the smallest type size"
+        },
+        {
+          "el": 5,
+          "kind": "overflow",
+          "detail": "element 5 (figure) does not fit its 336 x 104 box even at the smallest type size"
+        },
+        {
+          "el": 6,
+          "kind": "overflow",
+          "detail": "element 6 (figure) does not fit its 336 x 104 box even at the smallest type size"
+        }
+      ]
+    },
+    "fixed": [
+      {
+        "frame": 1,
+        "before": 1,
+        "after": 0
+      },
+      {
+        "frame": 6,
+        "before": 3,
+        "after": 0
+      }
+    ],
+    "left": {},
+    "dropped_numbers": []
+  },
+  "argument": null,
+  "neutral": {
+    "title": "Ridgeline Return Works",
+    "subtitle": "",
+    "slides": [
+      {
+        "type": "spec",
+        "heading": "In one year, enrollment rose 38% and permanent placements rose 47%",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 56,
+            "text": "In one year, enrollment rose 38% and permanent placements rose 47%",
+            "style": "title",
+            "align": "left",
+            "ref": "P15"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 98,
+            "w": 420,
+            "h": 24,
+            "text": "People enrolled (+38%)",
+            "style": "strong",
+            "align": "left",
+            "ref": "P15"
+          },
+          {
+            "type": "bars",
+            "x": 40,
+            "y": 126,
+            "w": 420,
+            "h": 160,
+            "orient": "vertical",
+            "items": [
+              {
+                "label": "FY2025",
+                "value": "88"
+              },
+              {
+                "label": "FY2026",
+                "value": "121",
+                "highlight": true
+              }
+            ],
+            "ref": "P15"
+          },
+          {
+            "type": "text",
+            "x": 500,
+            "y": 98,
+            "w": 420,
+            "h": 24,
+            "text": "Placed in permanent jobs (+47%)",
+            "style": "strong",
+            "align": "left",
+            "ref": "P15"
+          },
+          {
+            "type": "bars",
+            "x": 500,
+            "y": 126,
+            "w": 420,
+            "h": 160,
+            "orient": "vertical",
+            "items": [
+              {
+                "label": "FY2025",
+                "value": "47"
+              },
+              {
+                "label": "FY2026",
+                "value": "69",
+                "highlight": true
+              }
+            ],
+            "ref": "P15"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 305,
+            "w": 280,
+            "h": 175,
+            "value": "90",
+            "label": "finished the crew phase in FY2026",
+            "note": "61 in FY2025",
+            "fill": "tint",
+            "ref": "P15"
+          },
+          {
+            "type": "figure",
+            "x": 340,
+            "y": 305,
+            "w": 280,
+            "h": 175,
+            "value": "$18.25",
+            "label": "average starting wage in FY2026",
+            "note": "$17.10 in FY2025",
+            "fill": "tint",
+            "ref": "P15"
+          },
+          {
+            "type": "figure",
+            "x": 640,
+            "y": 305,
+            "w": 280,
+            "h": 175,
+            "value": "23",
+            "label": "employers hiring our people in FY2026",
+            "note": "15 in FY2025",
+            "fill": "tint",
+            "ref": "P16"
+          }
+        ],
+        "refs": [
+          "P15",
+          "P16"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Participants are paid from the first week, then supported for six months on the job",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 80,
+            "text": "Participants are paid from the first week, then supported for six months on the job",
+            "style": "title",
+            "align": "left",
+            "ref": "P14"
+          },
+          {
+            "type": "line",
+            "x": 80,
+            "y": 219,
+            "w": 784,
+            "h": 2,
+            "color": "rule"
+          },
+          {
+            "type": "dot",
+            "x": 112,
+            "y": 210,
+            "w": 20,
+            "h": 20,
+            "fill": "accent"
+          },
+          {
+            "type": "dot",
+            "x": 288,
+            "y": 210,
+            "w": 20,
+            "h": 20,
+            "fill": "primary"
+          },
+          {
+            "type": "dot",
+            "x": 464,
+            "y": 210,
+            "w": 20,
+            "h": 20,
+            "fill": "primary"
+          },
+          {
+            "type": "dot",
+            "x": 640,
+            "y": 210,
+            "w": 20,
+            "h": 20,
+            "fill": "primary"
+          },
+          {
+            "type": "dot",
+            "x": 816,
+            "y": 210,
+            "w": 20,
+            "h": 20,
+            "fill": "primary"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 150,
+            "w": 164,
+            "h": 44,
+            "text": "Within 5 business days",
+            "style": "label",
+            "color": "accent",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 216,
+            "y": 150,
+            "w": 164,
+            "h": 44,
+            "text": "$16.50 an hour",
+            "style": "label",
+            "color": "muted",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 392,
+            "y": 150,
+            "w": 164,
+            "h": 44,
+            "text": "While they work",
+            "style": "label",
+            "color": "muted",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 568,
+            "y": 150,
+            "w": 164,
+            "h": 44,
+            "text": "Within 12 weeks",
+            "style": "label",
+            "color": "muted",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 744,
+            "y": 150,
+            "w": 164,
+            "h": 44,
+            "text": "Then 6 months",
+            "style": "label",
+            "color": "muted",
+            "align": "center",
+            "ref": "P17"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 250,
+            "w": 164,
+            "h": 56,
+            "text": "Paid crew work starts",
+            "style": "strong",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 216,
+            "y": 250,
+            "w": 164,
+            "h": 56,
+            "text": "Crew work",
+            "style": "strong",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 392,
+            "y": 250,
+            "w": 164,
+            "h": 56,
+            "text": "A job coach helps",
+            "style": "strong",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 568,
+            "y": 250,
+            "w": 164,
+            "h": 56,
+            "text": "Goal: a permanent job",
+            "style": "strong",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 744,
+            "y": 250,
+            "w": 164,
+            "h": 56,
+            "text": "Support on the job",
+            "style": "strong",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 320,
+            "w": 164,
+            "h": 140,
+            "text": "Within 5 business days of intake",
+            "style": "body",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 216,
+            "y": 320,
+            "w": 164,
+            "h": 140,
+            "text": "Landscaping, light demolition and park cleanup",
+            "style": "body",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 392,
+            "y": 320,
+            "w": 164,
+            "h": 140,
+            "text": "With ID, resume, driver's license and interviews",
+            "style": "body",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 568,
+            "y": 320,
+            "w": 164,
+            "h": 140,
+            "text": "Within 12 weeks",
+            "style": "body",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 744,
+            "y": 320,
+            "w": 164,
+            "h": 140,
+            "text": "6 months of support after placement",
+            "style": "body",
+            "align": "center",
+            "ref": "P17"
+          }
+        ],
+        "refs": [
+          "P14",
+          "P17"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "71% of placements still employed at six months, counted conservatively",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 56,
+            "text": "71% of placements still employed at six months, counted conservatively",
+            "style": "title",
+            "align": "left",
+            "ref": "P17"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 104,
+            "w": 370,
+            "h": 200,
+            "value": "71%",
+            "label": "of FY2026 placements were still employed at six months",
+            "note": "58% in FY2025",
+            "fill": "tint",
+            "ref": "P17"
+          },
+          {
+            "type": "bars",
+            "x": 40,
+            "y": 324,
+            "w": 370,
+            "h": 150,
+            "orient": "horizontal",
+            "items": [
+              {
+                "label": "FY2025",
+                "value": "58%"
+              },
+              {
+                "label": "FY2026",
+                "value": "71%",
+                "highlight": true
+              }
+            ],
+            "ref": "P17"
+          },
+          {
+            "type": "callout",
+            "x": 434,
+            "y": 104,
+            "w": 486,
+            "h": 206,
+            "title": "What the number covers",
+            "items": [
+              "52 of 69 placements have reached six months",
+              "37 of those 52 confirmed employed",
+              "The 6 people we lost contact with are counted as not employed",
+              "The other 17, placed in spring, are not counted yet"
+            ],
+            "fill": "tint",
+            "ref": "P17"
+          },
+          {
+            "type": "callout",
+            "x": 434,
+            "y": 326,
+            "w": 486,
+            "h": 150,
+            "title": "What it does not show",
+            "items": [
+              "We can't say how much of the gain comes from our program",
+              "County unemployment also fell, from 5.1% to 4.4%, and we have no comparison group"
+            ],
+            "fill": "tint",
+            "ref": "P17"
+          }
+        ],
+        "refs": [
+          "P17",
+          "P15"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Pay in the first week means no choice between rent and showing up",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 56,
+            "text": "Pay in the first week means no choice between rent and showing up",
+            "style": "title",
+            "align": "left",
+            "ref": "P19"
+          },
+          {
+            "type": "rect",
+            "x": 40,
+            "y": 116,
+            "w": 880,
+            "h": 340,
+            "fill": "tint"
+          },
+          {
+            "type": "line",
+            "x": 80,
+            "y": 150,
+            "w": 4,
+            "h": 270,
+            "color": "accent"
+          },
+          {
+            "type": "quote",
+            "x": 110,
+            "y": 150,
+            "w": 770,
+            "h": 270,
+            "text": "The crew paid me the first week. That's the part nobody else did. I didn't have to choose between rent and showing up.",
+            "who": "Darnell, finished the crew phase in October, now on the night shift at Brannock Precast",
+            "ref": "P19"
+          }
+        ],
+        "refs": [
+          "P19"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Jobs are lost in the first 60 days, and one crew can't meet demand",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 56,
+            "text": "Jobs are lost in the first 60 days, and one crew can't meet demand",
+            "style": "title",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "rect",
+            "x": 40,
+            "y": 104,
+            "w": 280,
+            "h": 372,
+            "fill": "tint"
+          },
+          {
+            "type": "text",
+            "x": 56,
+            "y": 118,
+            "w": 248,
+            "h": 30,
+            "text": "The first 60 days",
+            "style": "heading",
+            "align": "left",
+            "ref": "P18"
+          },
+          {
+            "type": "list",
+            "x": 56,
+            "y": 160,
+            "w": 248,
+            "h": 304,
+            "items": [
+              "Most job losses happen in the first 60 days: transportation, supervision appointments, a first conflict with a boss",
+              "People who stayed employed were far more likely to have had 3 or more coach check-ins in those 60 days"
+            ],
+            "style": "body",
+            "ref": "P18"
+          },
+          {
+            "type": "rect",
+            "x": 340,
+            "y": 104,
+            "w": 280,
+            "h": 372,
+            "fill": "tint"
+          },
+          {
+            "type": "text",
+            "x": 356,
+            "y": 118,
+            "w": 248,
+            "h": 30,
+            "text": "Stretched capacity",
+            "style": "heading",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "list",
+            "x": 356,
+            "y": 160,
+            "w": 248,
+            "h": 304,
+            "items": [
+              "Our coaches were spread thin, and follow-up was what slipped",
+              "With one crew of 12, some people waited up to 3 weeks to start"
+            ],
+            "style": "body",
+            "ref": "P22"
+          },
+          {
+            "type": "rect",
+            "x": 640,
+            "y": 104,
+            "w": 280,
+            "h": 372,
+            "fill": "tint"
+          },
+          {
+            "type": "text",
+            "x": 656,
+            "y": 118,
+            "w": 248,
+            "h": 30,
+            "text": "Employer demand",
+            "style": "heading",
+            "align": "left"
+          },
+          {
+            "type": "figure",
+            "x": 656,
+            "y": 170,
+            "w": 248,
+            "h": 200,
+            "value": "4",
+            "label": "employers asked for more referrals than we could send",
+            "ref": "P22"
+          }
+        ],
+        "refs": [
+          "P22",
+          "P18"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "$186,000 adds a second crew and a dedicated retention coach",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 56,
+            "text": "$186,000 adds a second crew and a dedicated retention coach",
+            "style": "title",
+            "align": "left",
+            "ref": "P23"
+          },
+          {
+            "type": "table",
+            "x": 40,
+            "y": 100,
+            "w": 600,
+            "h": 196,
+            "header": [
+              "FY2027 expansion item",
+              "Cost"
+            ],
+            "rows": [
+              [
+                "Second crew lead and crew supervisor stipend",
+                "$72,000"
+              ],
+              [
+                "Retention coach, full-time with benefits",
+                "$64,000"
+              ],
+              [
+                "Second crew vehicle lease and equipment",
+                "$28,000"
+              ],
+              [
+                "Added participant supports",
+                "$22,000"
+              ]
+            ],
+            "total": [
+              "Total",
+              "$186,000"
+            ],
+            "ref": "P23"
+          },
+          {
+            "type": "text",
+            "x": 664,
+            "y": 104,
+            "w": 256,
+            "h": 80,
+            "text": "Retention measured the same way, with lost contacts counted as not employed",
+            "style": "small",
+            "color": "muted",
+            "align": "left",
+            "ref": "P23"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 312,
+            "w": 880,
+            "h": 20,
+            "text": "FY2027 targets",
+            "style": "label",
+            "color": "muted",
+            "align": "left",
+            "ref": "P23"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 338,
+            "w": 280,
+            "h": 146,
+            "value": "160",
+            "label": "enrolled",
+            "note": "121 in FY2026",
+            "fill": "tint",
+            "ref": "P23"
+          },
+          {
+            "type": "figure",
+            "x": 340,
+            "y": 338,
+            "w": 280,
+            "h": 146,
+            "value": "90",
+            "label": "placed",
+            "note": "69 in FY2026",
+            "fill": "tint",
+            "ref": "P15"
+          },
+          {
+            "type": "figure",
+            "x": 640,
+            "y": 338,
+            "w": 280,
+            "h": 146,
+            "value": "75%",
+            "label": "six-month retention",
+            "note": "71% in FY2026",
+            "fill": "tint",
+            "ref": "P23"
+          }
+        ],
+        "refs": [
+          "P23",
+          "P15",
+          "P17"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "About $8,875 per permanent placement, with most spending on program staff",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 56,
+            "text": "About $8,875 per permanent placement, with most spending on program staff",
+            "style": "title",
+            "align": "left",
+            "ref": "P20"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 104,
+            "w": 280,
+            "h": 130,
+            "value": "$612,400",
+            "label": "FY2026 expenses",
+            "fill": "tint",
+            "ref": "P20"
+          },
+          {
+            "type": "figure",
+            "x": 340,
+            "y": 104,
+            "w": 280,
+            "h": 130,
+            "value": "$5,060",
+            "label": "cost per person enrolled (about)",
+            "fill": "tint",
+            "ref": "P20"
+          },
+          {
+            "type": "figure",
+            "x": 640,
+            "y": 104,
+            "w": 280,
+            "h": 130,
+            "value": "$8,875",
+            "label": "cost per permanent placement (about)",
+            "fill": "tint",
+            "ref": "P20"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 254,
+            "w": 880,
+            "h": 26,
+            "text": "65% went to program staff and 16% to participant supports",
+            "style": "strong",
+            "align": "left",
+            "ref": "P20"
+          },
+          {
+            "type": "stack",
+            "x": 40,
+            "y": 290,
+            "w": 880,
+            "h": 120,
+            "items": [
+              {
+                "label": "Program staff",
+                "value": "65%",
+                "highlight": true
+              },
+              {
+                "label": "Participant supports",
+                "value": "16%"
+              },
+              {
+                "label": "Housing bridge",
+                "value": "9%"
+              },
+              {
+                "label": "Administration and audit",
+                "value": "7%"
+              },
+              {
+                "label": "Facilities and vehicles",
+                "value": "4%"
+              }
+            ],
+            "ref": "P20"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 428,
+            "w": 880,
+            "h": 40,
+            "text": "Crew wages are paid through the work contracts and are not included in these costs",
+            "style": "small",
+            "color": "muted",
+            "align": "left",
+            "ref": "P20"
+          }
+        ],
+        "refs": [
+          "P20"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "$90,000 from Pellwood covers about half of the expansion",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 56,
+            "text": "$90,000 from Pellwood covers about half of the expansion",
+            "style": "title",
+            "align": "left",
+            "ref": "P6"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 110,
+            "w": 380,
+            "h": 200,
+            "value": "$90,000",
+            "label": "from the Pellwood Foundation",
+            "note": "That covers about half of the $186,000 expansion",
+            "ref": "P6"
+          },
+          {
+            "type": "text",
+            "x": 460,
+            "y": 110,
+            "w": 460,
+            "h": 28,
+            "text": "The $186,000 expansion",
+            "style": "strong",
+            "align": "left",
+            "ref": "P23"
+          },
+          {
+            "type": "stack",
+            "x": 460,
+            "y": 146,
+            "w": 460,
+            "h": 110,
+            "items": [
+              {
+                "label": "Pellwood Foundation",
+                "value": "$90,000",
+                "highlight": true
+              },
+              {
+                "label": "Current funders",
+                "value": "$96,000"
+              }
+            ],
+            "ref": "P6"
+          },
+          {
+            "type": "text",
+            "x": 460,
+            "y": 270,
+            "w": 460,
+            "h": 50,
+            "text": "The other $96,000 is being raised from our current funders",
+            "style": "body",
+            "align": "left",
+            "ref": "P6"
+          },
+          {
+            "type": "line",
+            "x": 40,
+            "y": 340,
+            "w": 880,
+            "h": 2,
+            "color": "rule"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 360,
+            "w": 420,
+            "h": 50,
+            "text": "The $612,400 base budget is covered by existing sources",
+            "style": "body",
+            "align": "left",
+            "ref": "P6"
+          },
+          {
+            "type": "text",
+            "x": 460,
+            "y": 360,
+            "w": 460,
+            "h": 50,
+            "text": "Full FY2027 budget: $798,400",
+            "style": "strong",
+            "color": "accent",
+            "align": "left",
+            "ref": "P24"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 440,
+            "w": 880,
+            "h": 30,
+            "text": "Marisol Okafor-Reyes, Executive Director, Ridgeline Return Works, Lowell Street, Carver Falls",
+            "style": "small",
+            "align": "left",
+            "ref": "P25"
+          }
+        ],
+        "refs": [
+          "P6",
+          "P23",
+          "P24",
+          "P25"
+        ],
+        "ground": "primary",
+        "footer": false
+      }
+    ],
+    "plain": true,
+    "spec": true,
+    "cover": {
+      "type": "spec",
+      "heading": "Ridgeline Return Works",
+      "els": [
+        {
+          "type": "text",
+          "x": 60,
+          "y": 110,
+          "w": 680,
+          "h": 56,
+          "text": "Ridgeline Return Works",
+          "style": "title",
+          "align": "left",
+          "ref": "P14"
+        },
+        {
+          "type": "text",
+          "x": 60,
+          "y": 180,
+          "w": 680,
+          "h": 36,
+          "text": "Paid work first. Then a job that lasts.",
+          "style": "heading",
+          "align": "left",
+          "ref": "P14"
+        },
+        {
+          "type": "text",
+          "x": 60,
+          "y": 232,
+          "w": 680,
+          "h": 28,
+          "text": "Reentry employment in Carver Falls, Tamsen County",
+          "style": "body",
+          "align": "left",
+          "ref": "P14"
+        },
+        {
+          "type": "line",
+          "x": 60,
+          "y": 290,
+          "w": 120,
+          "h": 2,
+          "color": "accent"
+        },
+        {
+          "type": "text",
+          "x": 60,
+          "y": 310,
+          "w": 760,
+          "h": 60,
+          "text": "A request to the Pellwood Foundation: $90,000 toward our FY2027 expansion",
+          "style": "heading",
+          "color": "accent",
+          "align": "left",
+          "ref": "P6"
+        },
+        {
+          "type": "text",
+          "x": 60,
+          "y": 400,
+          "w": 600,
+          "h": 24,
+          "text": "Workforce Reentry Round, December 2026",
+          "style": "label",
+          "align": "left",
+          "ref": "P5"
+        }
+      ],
+      "refs": [
+        "P14",
+        "P6",
+        "P5"
+      ],
+      "ground": "primary",
+      "footer": false
+    }
+  },
+  "live": {
+    "title": "Ridgeline Return Works",
+    "subtitle": "",
+    "slides": [
+      {
+        "type": "spec",
+        "heading": "In one year, enrollment rose 38% and permanent placements rose 47%",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 56,
+            "text": "In one year, enrollment rose 38% and permanent placements rose 47%",
+            "style": "title",
+            "align": "left",
+            "ref": "P15"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 98,
+            "w": 420,
+            "h": 24,
+            "text": "People enrolled (+38%)",
+            "style": "strong",
+            "align": "left",
+            "ref": "P15"
+          },
+          {
+            "type": "bars",
+            "x": 40,
+            "y": 126,
+            "w": 420,
+            "h": 160,
+            "orient": "vertical",
+            "items": [
+              {
+                "label": "FY2025",
+                "value": "88"
+              },
+              {
+                "label": "FY2026",
+                "value": "121",
+                "highlight": true
+              }
+            ],
+            "ref": "P15"
+          },
+          {
+            "type": "text",
+            "x": 500,
+            "y": 98,
+            "w": 420,
+            "h": 24,
+            "text": "Placed in permanent jobs (+47%)",
+            "style": "strong",
+            "align": "left",
+            "ref": "P15"
+          },
+          {
+            "type": "bars",
+            "x": 500,
+            "y": 126,
+            "w": 420,
+            "h": 160,
+            "orient": "vertical",
+            "items": [
+              {
+                "label": "FY2025",
+                "value": "47"
+              },
+              {
+                "label": "FY2026",
+                "value": "69",
+                "highlight": true
+              }
+            ],
+            "ref": "P15"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 305,
+            "w": 280,
+            "h": 175,
+            "value": "90",
+            "label": "finished the crew phase in FY2026",
+            "note": "61 in FY2025",
+            "fill": "tint",
+            "ref": "P15"
+          },
+          {
+            "type": "figure",
+            "x": 340,
+            "y": 305,
+            "w": 280,
+            "h": 175,
+            "value": "$18.25",
+            "label": "average starting wage in FY2026",
+            "note": "$17.10 in FY2025",
+            "fill": "tint",
+            "ref": "P15"
+          },
+          {
+            "type": "figure",
+            "x": 640,
+            "y": 305,
+            "w": 280,
+            "h": 175,
+            "value": "23",
+            "label": "employers hiring our people in FY2026",
+            "note": "15 in FY2025",
+            "fill": "tint",
+            "ref": "P16"
+          }
+        ],
+        "refs": [
+          "P15",
+          "P16"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Participants are paid from the first week, then supported for six months on the job",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 80,
+            "text": "Participants are paid from the first week, then supported for six months on the job",
+            "style": "title",
+            "align": "left",
+            "ref": "P14"
+          },
+          {
+            "type": "line",
+            "x": 80,
+            "y": 219,
+            "w": 784,
+            "h": 2,
+            "color": "rule"
+          },
+          {
+            "type": "dot",
+            "x": 112,
+            "y": 210,
+            "w": 20,
+            "h": 20,
+            "fill": "accent"
+          },
+          {
+            "type": "dot",
+            "x": 288,
+            "y": 210,
+            "w": 20,
+            "h": 20,
+            "fill": "primary"
+          },
+          {
+            "type": "dot",
+            "x": 464,
+            "y": 210,
+            "w": 20,
+            "h": 20,
+            "fill": "primary"
+          },
+          {
+            "type": "dot",
+            "x": 640,
+            "y": 210,
+            "w": 20,
+            "h": 20,
+            "fill": "primary"
+          },
+          {
+            "type": "dot",
+            "x": 816,
+            "y": 210,
+            "w": 20,
+            "h": 20,
+            "fill": "primary"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 150,
+            "w": 164,
+            "h": 44,
+            "text": "Within 5 business days",
+            "style": "label",
+            "color": "accent",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 216,
+            "y": 150,
+            "w": 164,
+            "h": 44,
+            "text": "$16.50 an hour",
+            "style": "label",
+            "color": "muted",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 392,
+            "y": 150,
+            "w": 164,
+            "h": 44,
+            "text": "While they work",
+            "style": "label",
+            "color": "muted",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 568,
+            "y": 150,
+            "w": 164,
+            "h": 44,
+            "text": "Within 12 weeks",
+            "style": "label",
+            "color": "muted",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 744,
+            "y": 150,
+            "w": 164,
+            "h": 44,
+            "text": "Then 6 months",
+            "style": "label",
+            "color": "muted",
+            "align": "center",
+            "ref": "P17"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 250,
+            "w": 164,
+            "h": 56,
+            "text": "Paid crew work starts",
+            "style": "strong",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 216,
+            "y": 250,
+            "w": 164,
+            "h": 56,
+            "text": "Crew work",
+            "style": "strong",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 392,
+            "y": 250,
+            "w": 164,
+            "h": 56,
+            "text": "A job coach helps",
+            "style": "strong",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 568,
+            "y": 250,
+            "w": 164,
+            "h": 56,
+            "text": "Goal: a permanent job",
+            "style": "strong",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 744,
+            "y": 250,
+            "w": 164,
+            "h": 56,
+            "text": "Support on the job",
+            "style": "strong",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 320,
+            "w": 164,
+            "h": 140,
+            "text": "Within 5 business days of intake",
+            "style": "body",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 216,
+            "y": 320,
+            "w": 164,
+            "h": 140,
+            "text": "Landscaping, light demolition and park cleanup",
+            "style": "body",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 392,
+            "y": 320,
+            "w": 164,
+            "h": 140,
+            "text": "With ID, resume, driver's license and interviews",
+            "style": "body",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 568,
+            "y": 320,
+            "w": 164,
+            "h": 140,
+            "text": "Within 12 weeks",
+            "style": "body",
+            "align": "center",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 744,
+            "y": 320,
+            "w": 164,
+            "h": 140,
+            "text": "6 months of support after placement",
+            "style": "body",
+            "align": "center",
+            "ref": "P17"
+          }
+        ],
+        "refs": [
+          "P14",
+          "P17"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "71% of placements still employed at six months, counted conservatively",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 56,
+            "text": "71% of placements still employed at six months, counted conservatively",
+            "style": "title",
+            "align": "left",
+            "ref": "P17"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 104,
+            "w": 370,
+            "h": 200,
+            "value": "71%",
+            "label": "of FY2026 placements were still employed at six months",
+            "note": "58% in FY2025",
+            "fill": "tint",
+            "ref": "P17"
+          },
+          {
+            "type": "bars",
+            "x": 40,
+            "y": 324,
+            "w": 370,
+            "h": 150,
+            "orient": "horizontal",
+            "items": [
+              {
+                "label": "FY2025",
+                "value": "58%"
+              },
+              {
+                "label": "FY2026",
+                "value": "71%",
+                "highlight": true
+              }
+            ],
+            "ref": "P17"
+          },
+          {
+            "type": "callout",
+            "x": 434,
+            "y": 104,
+            "w": 486,
+            "h": 206,
+            "title": "What the number covers",
+            "items": [
+              "52 of 69 placements have reached six months",
+              "37 of those 52 confirmed employed",
+              "The 6 people we lost contact with are counted as not employed",
+              "The other 17, placed in spring, are not counted yet"
+            ],
+            "fill": "tint",
+            "ref": "P17"
+          },
+          {
+            "type": "callout",
+            "x": 434,
+            "y": 326,
+            "w": 486,
+            "h": 150,
+            "title": "What it does not show",
+            "items": [
+              "We can't say how much of the gain comes from our program",
+              "County unemployment also fell, from 5.1% to 4.4%, and we have no comparison group"
+            ],
+            "fill": "tint",
+            "ref": "P17"
+          }
+        ],
+        "refs": [
+          "P17",
+          "P15"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Pay in the first week means no choice between rent and showing up",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 56,
+            "text": "Pay in the first week means no choice between rent and showing up",
+            "style": "title",
+            "align": "left",
+            "ref": "P19"
+          },
+          {
+            "type": "rect",
+            "x": 40,
+            "y": 116,
+            "w": 880,
+            "h": 340,
+            "fill": "tint"
+          },
+          {
+            "type": "line",
+            "x": 80,
+            "y": 150,
+            "w": 4,
+            "h": 270,
+            "color": "accent"
+          },
+          {
+            "type": "quote",
+            "x": 110,
+            "y": 150,
+            "w": 770,
+            "h": 270,
+            "text": "The crew paid me the first week. That's the part nobody else did. I didn't have to choose between rent and showing up.",
+            "who": "Darnell, finished the crew phase in October, now on the night shift at Brannock Precast",
+            "ref": "P19"
+          }
+        ],
+        "refs": [
+          "P19"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Jobs are lost in the first 60 days, and one crew can't meet demand",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 56,
+            "text": "Jobs are lost in the first 60 days, and one crew can't meet demand",
+            "style": "title",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "rect",
+            "x": 40,
+            "y": 104,
+            "w": 280,
+            "h": 372,
+            "fill": "tint"
+          },
+          {
+            "type": "text",
+            "x": 56,
+            "y": 118,
+            "w": 248,
+            "h": 30,
+            "text": "The first 60 days",
+            "style": "heading",
+            "align": "left",
+            "ref": "P18"
+          },
+          {
+            "type": "list",
+            "x": 56,
+            "y": 160,
+            "w": 248,
+            "h": 304,
+            "items": [
+              "Most job losses happen in the first 60 days: transportation, supervision appointments, a first conflict with a boss",
+              "People who stayed employed were far more likely to have had 3 or more coach check-ins in those 60 days"
+            ],
+            "style": "body",
+            "ref": "P18"
+          },
+          {
+            "type": "rect",
+            "x": 340,
+            "y": 104,
+            "w": 280,
+            "h": 372,
+            "fill": "tint"
+          },
+          {
+            "type": "text",
+            "x": 356,
+            "y": 118,
+            "w": 248,
+            "h": 30,
+            "text": "Stretched capacity",
+            "style": "heading",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "list",
+            "x": 356,
+            "y": 160,
+            "w": 248,
+            "h": 304,
+            "items": [
+              "Our coaches were spread thin, and follow-up was what slipped",
+              "With one crew of 12, some people waited up to 3 weeks to start"
+            ],
+            "style": "body",
+            "ref": "P22"
+          },
+          {
+            "type": "rect",
+            "x": 640,
+            "y": 104,
+            "w": 280,
+            "h": 372,
+            "fill": "tint"
+          },
+          {
+            "type": "text",
+            "x": 656,
+            "y": 118,
+            "w": 248,
+            "h": 30,
+            "text": "Employer demand",
+            "style": "heading",
+            "align": "left"
+          },
+          {
+            "type": "figure",
+            "x": 656,
+            "y": 170,
+            "w": 248,
+            "h": 200,
+            "value": "4",
+            "label": "employers asked for more referrals than we could send",
+            "ref": "P22"
+          }
+        ],
+        "refs": [
+          "P22",
+          "P18"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "$186,000 adds a second crew and a dedicated retention coach",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 56,
+            "text": "$186,000 adds a second crew and a dedicated retention coach",
+            "style": "title",
+            "align": "left",
+            "ref": "P23"
+          },
+          {
+            "type": "table",
+            "x": 40,
+            "y": 100,
+            "w": 600,
+            "h": 196,
+            "header": [
+              "FY2027 expansion item",
+              "Cost"
+            ],
+            "rows": [
+              [
+                "Second crew lead and crew supervisor stipend",
+                "$72,000"
+              ],
+              [
+                "Retention coach, full-time with benefits",
+                "$64,000"
+              ],
+              [
+                "Second crew vehicle lease and equipment",
+                "$28,000"
+              ],
+              [
+                "Added participant supports",
+                "$22,000"
+              ]
+            ],
+            "total": [
+              "Total",
+              "$186,000"
+            ],
+            "ref": "P23"
+          },
+          {
+            "type": "text",
+            "x": 664,
+            "y": 104,
+            "w": 256,
+            "h": 80,
+            "text": "Retention measured the same way, with lost contacts counted as not employed",
+            "style": "small",
+            "color": "muted",
+            "align": "left",
+            "ref": "P23"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 312,
+            "w": 880,
+            "h": 20,
+            "text": "FY2027 targets",
+            "style": "label",
+            "color": "muted",
+            "align": "left",
+            "ref": "P23"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 338,
+            "w": 280,
+            "h": 146,
+            "value": "160",
+            "label": "enrolled",
+            "note": "121 in FY2026",
+            "fill": "tint",
+            "ref": "P15"
+          },
+          {
+            "type": "figure",
+            "x": 340,
+            "y": 338,
+            "w": 280,
+            "h": 146,
+            "value": "90",
+            "label": "placed",
+            "note": "69 in FY2026",
+            "fill": "tint",
+            "ref": "P15"
+          },
+          {
+            "type": "figure",
+            "x": 640,
+            "y": 338,
+            "w": 280,
+            "h": 146,
+            "value": "75%",
+            "label": "six-month retention",
+            "note": "71% in FY2026",
+            "fill": "tint",
+            "ref": "P17"
+          }
+        ],
+        "refs": [
+          "P23",
+          "P15",
+          "P17"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "About $8,875 per permanent placement, with most spending on program staff",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 56,
+            "text": "About $8,875 per permanent placement, with most spending on program staff",
+            "style": "title",
+            "align": "left",
+            "ref": "P20"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 104,
+            "w": 280,
+            "h": 130,
+            "value": "$612,400",
+            "label": "FY2026 expenses",
+            "fill": "tint",
+            "ref": "P20"
+          },
+          {
+            "type": "figure",
+            "x": 340,
+            "y": 104,
+            "w": 280,
+            "h": 130,
+            "value": "$5,060",
+            "label": "cost per person enrolled (about)",
+            "fill": "tint",
+            "ref": "P20"
+          },
+          {
+            "type": "figure",
+            "x": 640,
+            "y": 104,
+            "w": 280,
+            "h": 130,
+            "value": "$8,875",
+            "label": "cost per permanent placement (about)",
+            "fill": "tint",
+            "ref": "P20"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 254,
+            "w": 880,
+            "h": 26,
+            "text": "65% went to program staff and 16% to participant supports",
+            "style": "strong",
+            "align": "left",
+            "ref": "P20"
+          },
+          {
+            "type": "stack",
+            "x": 40,
+            "y": 290,
+            "w": 880,
+            "h": 120,
+            "items": [
+              {
+                "label": "Program staff",
+                "value": "65%",
+                "highlight": true
+              },
+              {
+                "label": "Participant supports",
+                "value": "16%"
+              },
+              {
+                "label": "Housing bridge",
+                "value": "9%"
+              },
+              {
+                "label": "Administration and audit",
+                "value": "7%"
+              },
+              {
+                "label": "Facilities and vehicles",
+                "value": "4%"
+              }
+            ],
+            "ref": "P20"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 428,
+            "w": 880,
+            "h": 40,
+            "text": "Crew wages are paid through the work contracts and are not included in these costs",
+            "style": "small",
+            "color": "muted",
+            "align": "left",
+            "ref": "P20"
+          }
+        ],
+        "refs": [
+          "P20"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "$90,000 from Pellwood covers about half of the expansion",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 30,
+            "w": 880,
+            "h": 56,
+            "text": "$90,000 from Pellwood covers about half of the expansion",
+            "style": "title",
+            "align": "left",
+            "ref": "P6"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 110,
+            "w": 380,
+            "h": 200,
+            "value": "$90,000",
+            "label": "from the Pellwood Foundation",
+            "note": "That covers about half of the $186,000 expansion",
+            "ref": "P6"
+          },
+          {
+            "type": "text",
+            "x": 460,
+            "y": 110,
+            "w": 460,
+            "h": 28,
+            "text": "The $186,000 expansion",
+            "style": "strong",
+            "align": "left",
+            "ref": "P23"
+          },
+          {
+            "type": "stack",
+            "x": 460,
+            "y": 146,
+            "w": 460,
+            "h": 110,
+            "items": [
+              {
+                "label": "Pellwood Foundation",
+                "value": "$90,000",
+                "highlight": true
+              },
+              {
+                "label": "Current funders",
+                "value": "$96,000"
+              }
+            ],
+            "ref": "P6"
+          },
+          {
+            "type": "text",
+            "x": 460,
+            "y": 270,
+            "w": 460,
+            "h": 50,
+            "text": "The other $96,000 is being raised from our current funders",
+            "style": "body",
+            "align": "left",
+            "ref": "P6"
+          },
+          {
+            "type": "line",
+            "x": 40,
+            "y": 340,
+            "w": 880,
+            "h": 2,
+            "color": "rule"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 360,
+            "w": 420,
+            "h": 50,
+            "text": "The $612,400 base budget is covered by existing sources",
+            "style": "body",
+            "align": "left",
+            "ref": "P6"
+          },
+          {
+            "type": "text",
+            "x": 460,
+            "y": 360,
+            "w": 460,
+            "h": 50,
+            "text": "Full FY2027 budget: $798,400",
+            "style": "strong",
+            "color": "accent",
+            "align": "left",
+            "ref": "P24"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 440,
+            "w": 880,
+            "h": 30,
+            "text": "Marisol Okafor-Reyes, Executive Director, Ridgeline Return Works, Lowell Street, Carver Falls",
+            "style": "small",
+            "align": "left",
+            "ref": "P25"
+          }
+        ],
+        "refs": [
+          "P6",
+          "P23",
+          "P24",
+          "P25"
+        ],
+        "ground": "primary",
+        "footer": false
+      }
+    ],
+    "plain": true,
+    "spec": true,
+    "cover": {
+      "type": "spec",
+      "heading": "Ridgeline Return Works",
+      "els": [
+        {
+          "type": "text",
+          "x": 60,
+          "y": 110,
+          "w": 680,
+          "h": 56,
+          "text": "Ridgeline Return Works",
+          "style": "title",
+          "align": "left",
+          "ref": "P14"
+        },
+        {
+          "type": "text",
+          "x": 60,
+          "y": 180,
+          "w": 680,
+          "h": 36,
+          "text": "Paid work first. Then a job that lasts.",
+          "style": "heading",
+          "align": "left",
+          "ref": "P14"
+        },
+        {
+          "type": "text",
+          "x": 60,
+          "y": 232,
+          "w": 680,
+          "h": 28,
+          "text": "Reentry employment in Carver Falls, Tamsen County",
+          "style": "body",
+          "align": "left",
+          "ref": "P14"
+        },
+        {
+          "type": "line",
+          "x": 60,
+          "y": 290,
+          "w": 120,
+          "h": 2,
+          "color": "accent"
+        },
+        {
+          "type": "text",
+          "x": 60,
+          "y": 310,
+          "w": 760,
+          "h": 60,
+          "text": "A request to the Pellwood Foundation: $90,000 toward our FY2027 expansion",
+          "style": "heading",
+          "color": "accent",
+          "align": "left",
+          "ref": "P6"
+        },
+        {
+          "type": "text",
+          "x": 60,
+          "y": 400,
+          "w": 600,
+          "h": 24,
+          "text": "Workforce Reentry Round, December 2026",
+          "style": "label",
+          "align": "left",
+          "ref": "P5"
+        }
+      ],
+      "refs": [
+        "P14",
+        "P6",
+        "P5"
+      ],
+      "ground": "primary",
+      "footer": false
+    }
+  },
+  "passages": {
+    "P12": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Report",
+      "source_id": "s_1fa0adae6e37"
+    },
+    "P13": {
+      "text": "## FY2026 Annual Program Report\nFiscal year July 1, 2025 to June 30, 2026\nCarver Falls",
+      "locator": "“Ridgeline Return Works”",
+      "source_title": "Report",
+      "source_id": "s_1fa0adae6e37"
+    },
+    "P14": {
+      "text": "Ridgeline Return Works helps people coming home from prison and county jail get into paid work and keep it. We run out of a converted tire shop on Lowell Street in Carver Falls, with six full-time staff, two part-time crew leads and a board of nine. Most of the people we serve were released to supervision in Tamsen County and have less than ninety days of freedom behind them when they walk through our door.\nThe model is simple and deliberately short on waiting. A participant starts on a paid transitional work crew within five business days of intake, earning $16.50 an hour on landscaping, light demolition and park cleanup contracts. While they work, a job coach helps them get identification, a resume, a driver's license where possible and interviews with local employers. The goal is a permanent job within twelve weeks, and support for the six months after that.",
+      "locator": "“Who we are”",
+      "source_title": "Report",
+      "source_id": "s_1fa0adae6e37"
+    },
+    "P15": {
+      "text": "FY2026 was the year the waiting list caught up with us. Referrals from Tamsen County Probation and two state facilities rose sharply after the county added a reentry liaison position in the fall, and we expanded the crew schedule from four days a week to five to absorb them.\n| Measure | FY2025 | FY2026 | Change |\n|---|---|---|---|\n| People enrolled | 88 | 121 | +38% |\n| Completed transitional work phase | 61 | 90 | +48% |\n| Placed in permanent jobs | 47 | 69 | +47% |\n| Average starting wage at placement | $17.10 | $18.25 | +$1.15 |\n| Paid crew hours worked by participants | 14,200 | 19,850 | +40% |\n| State IDs or licenses obtained | 52 | 83 | +60% |",
+      "locator": "“What happened this year”",
+      "source_title": "Report",
+      "source_id": "s_1fa0adae6e37"
+    },
+    "P16": {
+      "text": "Placements went to 23 employers in FY2026, up from 15 the year before. The largest were Brannock Precast, the Carver Falls Public Works Department and three regional warehouse operators. Seven of the 69 placements were in jobs with an apprenticeship track.",
+      "locator": "“What happened this year”",
+      "source_title": "Report",
+      "source_id": "s_1fa0adae6e37"
+    },
+    "P17": {
+      "text": "Of the people we placed in permanent jobs during FY2026, 71 percent were still employed six months after placement. In FY2025 the same figure was 58 percent.\nWe want to be careful with that number. Only 52 of the 69 FY2026 placements had reached the six-month mark by the time this report was written; the other 17 were placed in the spring and are not yet counted. Of the 52, we confirmed employment for 37. We lost contact with 6 people, and we count all 6 as not employed, which may understate the real rate. We also cannot say how much of the improvement comes from our work and how much comes from a tighter local labor market, since Tamsen County unemployment fell from 5.1 to 4.4 percent over the same period. We do not have a comparison group, and we are not going to pretend we do.",
+      "locator": "“The result we are proudest of, and its limits”",
+      "source_title": "Report",
+      "source_id": "s_1fa0adae6e37"
+    },
+    "P18": {
+      "text": "What we can say is that the people who stayed employed were far more likely to have had at least three check-ins with a job coach in their first sixty days on the job. That pattern drives our plan for next year.",
+      "locator": "“The result we are proudest of, and its limits”",
+      "source_title": "Report",
+      "source_id": "s_1fa0adae6e37"
+    },
+    "P19": {
+      "text": "Darnell, who finished the crew phase in October and now works the night shift at Brannock Precast, told our staff:\n\"The crew paid me the first week. That's the part nobody else did. I didn't have to choose between rent and showing up.\"",
+      "locator": "“In their words”",
+      "source_title": "Report",
+      "source_id": "s_1fa0adae6e37"
+    },
+    "P20": {
+      "text": "Total FY2026 expenses were $612,400.\n| Category | Amount | Share |\n|---|---|---|\n| Program staff (coaches, crew leads, intake) | $398,000 | 65% |\n| Participant supports (transit passes, boots and gear, ID and license fees) | $96,500 | 16% |\n| Housing bridge payments (first month or deposit, capped at $900) | $54,000 | 9% |\n| Administration and audit | $41,900 | 7% |\n| Facilities and vehicles | $22,000 | 4% |\n| **Total** | **$612,400** | |\nParticipant crew wages are paid through the work contracts themselves and are reported separately; they are not included in the figures above. The cost per person enrolled was about $5,060, and the cost per permanent placement was about $8,875.",
+      "locator": "“Where the money went”",
+      "source_title": "Report",
+      "source_id": "s_1fa0adae6e37"
+    },
+    "P21": {
+      "text": "Total FY2026 revenue was $615,400, leaving a small operating surplus of $3,000.\n| Source | Amount | Share |\n|---|---|---|\n| Tamsen County Reentry Services contract | $240,000 | 39% |\n| Halvorsen Family Foundation | $150,000 | 24% |\n| Carver Falls Community Trust | $95,000 | 15% |\n| Individual donors (312 gifts) | $78,400 | 13% |\n| Earned revenue from crew service contracts (net of wages) | $52,000 | 8% |\n| **Total** | **$615,400** | |\nThe county contract is our largest single source and it is renewed annually. The board has set a goal of keeping it below 40 percent of revenue, and we are just under that line.",
+      "locator": "“Where the money came from”",
+      "source_title": "Report",
+      "source_id": "s_1fa0adae6e37"
+    },
+    "P22": {
+      "text": "Three lessons shaped our planning.\nFirst, the job is not the finish line. The first sixty days after placement are where people lose work, usually over transportation, a scheduling conflict with supervision appointments or a first conflict with a supervisor. Our coaches were stretched across intake, the crew phase and follow-up, and follow-up was what slipped.\nSecond, a single crew limits who we can take. With one crew of twelve, people referred in busy months waited up to three weeks to start, and we know from our own intake records that people who wait longer are less likely to show up at all.\nThird, employers want to keep hiring from us. Four employers asked for more referrals than we could send this year.",
+      "locator": "“What we learned”",
+      "source_title": "Report",
+      "source_id": "s_1fa0adae6e37"
+    },
+    "P23": {
+      "text": "In FY2027 we will add a second transitional work crew and a dedicated retention coach whose only job is supporting people in their first six months of permanent work.\n| FY2027 expansion item | Cost |\n|---|---|\n| Second crew lead (full-time) and crew supervisor stipend | $72,000 |\n| Retention coach (full-time, including benefits) | $64,000 |\n| Second crew vehicle lease and equipment | $28,000 |\n| Added participant supports for the larger cohort | $22,000 |\n| **Total new cost** | **$186,000** |\nWith both pieces in place, we expect to enroll 160 people in FY2027, place 90 in permanent jobs and raise six-month retention to 75 percent, measured the same way we measured it this year, with lost contacts counted as not employed.",
+      "locator": "“FY2027 plan”",
+      "source_title": "Report",
+      "source_id": "s_1fa0adae6e37"
+    },
+    "P24": {
+      "text": "The full FY2027 budget, including the expansion, is $798,400. We have commitments or strong renewal signals for $612,400 of it from existing sources. The remaining $186,000 is the expansion itself, which we are raising from new and existing funders this winter.",
+      "locator": "“FY2027 plan”",
+      "source_title": "Report",
+      "source_id": "s_1fa0adae6e37"
+    },
+    "P25": {
+      "text": "To the employers who took a chance, the funders who trusted a small shop with real money, and the 121 people who walked in this year and went to work: thank you.\nMarisol Okafor-Reyes, Executive Director\nRidgeline Return Works, Carver Falls",
+      "locator": "“Thank you”",
+      "source_title": "Report",
+      "source_id": "s_1fa0adae6e37"
+    },
+    "P1": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Notes",
+      "source_id": "s_fe3f0b1e1bdb"
+    },
+    "P2": {
+      "text": "Ridgeline Return Works\nStaff and board development committee meeting notes\nThursday, November 5, 2026, 4:00 p.m., Lowell Street office",
+      "locator": "para. 2",
+      "source_title": "Notes",
+      "source_id": "s_fe3f0b1e1bdb"
+    },
+    "P3": {
+      "text": "Present: Marisol Okafor-Reyes (Executive Director), Glen Ashworth (Board Treasurer), Priya Venkataraman (Development Committee Chair), Tomas Beltran (Program Director)",
+      "locator": "para. 3",
+      "source_title": "Notes",
+      "source_id": "s_fe3f0b1e1bdb"
+    },
+    "P4": {
+      "text": "1. Pellwood Foundation opportunity",
+      "locator": "para. 4",
+      "source_title": "Notes",
+      "source_id": "s_fe3f0b1e1bdb"
+    },
+    "P5": {
+      "text": "Priya reported that Anneke Lisle, program officer at the Pellwood Foundation, invited us to submit a short deck for their workforce reentry round after her October site visit. Pellwood does not take full proposals at this stage; they review decks first.",
+      "locator": "para. 5",
+      "source_title": "Notes",
+      "source_id": "s_fe3f0b1e1bdb"
+    },
+    "P6": {
+      "text": "Decision: ask Pellwood for $90,000 toward the $186,000 FY2027 expansion (second crew plus retention coach). Glen confirmed the rest of the FY2027 budget, $612,400, is covered by existing sources, so the deck should present $90,000 as about half of the expansion gap, with the other $96,000 being raised from current funders.",
+      "locator": "para. 6",
+      "source_title": "Notes",
+      "source_id": "s_fe3f0b1e1bdb"
+    },
+    "P7": {
+      "text": "Deadline: the deck goes to Anneke by Friday, December 4, 2026. Marisol wants a draft for review by November 24.",
+      "locator": "para. 7",
+      "source_title": "Notes",
+      "source_id": "s_fe3f0b1e1bdb"
+    },
+    "P8": {
+      "text": "2. Instructions for the deck (agreed by all four)",
+      "locator": "para. 8",
+      "source_title": "Notes",
+      "source_id": "s_fe3f0b1e1bdb"
+    },
+    "P9": {
+      "text": "- Keep it to ten slides or fewer. Anneke said Pellwood's committee reads decks on their phones.\n- Lead with the two-year trend: 88 to 121 enrolled, 47 to 69 placed.\n- Show the 71 percent six-month retention figure only with the caveat beside it: 52 of 69 placements have reached six months, and the 6 lost contacts are counted as not employed. Tomas was firm that we must not claim the program caused the improvement.\n- Use Darnell's quote with first name only. Do not use any participant photos.\n- Do not mention the county contract renewal as uncertain; Glen says it is not.",
+      "locator": "para. 9",
+      "source_title": "Notes",
+      "source_id": "s_fe3f0b1e1bdb"
+    },
+    "P10": {
+      "text": "3. Next steps",
+      "locator": "para. 10",
+      "source_title": "Notes",
+      "source_id": "s_fe3f0b1e1bdb"
+    },
+    "P11": {
+      "text": "Tomas pulls the final FY2026 numbers. Priya drafts. Glen checks every figure against the annual report before it goes out.",
+      "locator": "para. 11",
+      "source_title": "Notes",
+      "source_id": "s_fe3f0b1e1bdb"
+    }
+  },
+  "grounding": [
+    {
+      "path": "slides.5.els.4",
+      "value": "160",
+      "shown": "160",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.6",
+      "value": "75%",
+      "shown": "75%",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "cover.els.4",
+      "value": "90000",
+      "shown": "$90,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "cover.els.5",
+      "value": "2026",
+      "shown": "2026",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.0",
+      "value": "38%",
+      "shown": "38%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.0",
+      "value": "47%",
+      "shown": "47%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.1",
+      "value": "38%",
+      "shown": "38%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.2.items.0",
+      "value": "88",
+      "shown": "88",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.2.items.1",
+      "value": "121",
+      "shown": "121",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.3",
+      "value": "47%",
+      "shown": "47%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.4.items.0",
+      "value": "47",
+      "shown": "47",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.4.items.1",
+      "value": "69",
+      "shown": "69",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.5",
+      "value": "90",
+      "shown": "90",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.5",
+      "value": "61",
+      "shown": "61",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.6",
+      "value": "18.25",
+      "shown": "$18.25",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.6",
+      "value": "17.1",
+      "shown": "$17.10",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.7",
+      "value": "23",
+      "shown": "23",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.7",
+      "value": "15",
+      "shown": "15",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.els.7",
+      "value": "5",
+      "shown": "5",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.els.8",
+      "value": "16.5",
+      "shown": "$16.50",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.els.10",
+      "value": "12",
+      "shown": "12",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.els.11",
+      "value": "6",
+      "shown": "6",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.els.17",
+      "value": "5",
+      "shown": "5",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.els.20",
+      "value": "12",
+      "shown": "12",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.els.21",
+      "value": "6",
+      "shown": "6",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.0",
+      "value": "71%",
+      "shown": "71%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.1",
+      "value": "71%",
+      "shown": "71%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.1",
+      "value": "58%",
+      "shown": "58%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.2.items.0",
+      "value": "58%",
+      "shown": "58%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.2.items.1",
+      "value": "71%",
+      "shown": "71%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.3.items.0",
+      "value": "52",
+      "shown": "52",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.3.items.0",
+      "value": "69",
+      "shown": "69",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.3.items.1",
+      "value": "37",
+      "shown": "37",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.3.items.1",
+      "value": "52",
+      "shown": "52",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.3.items.2",
+      "value": "6",
+      "shown": "6",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.3.items.3",
+      "value": "17",
+      "shown": "17",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.4.items.1",
+      "value": "5.1%",
+      "shown": "5.1%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.4.items.1",
+      "value": "4.4%",
+      "shown": "4.4%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.els.3.quote",
+      "value": "The crew paid me the first week. That's the part nobody else did. I didn't have to choose between rent and showing up.",
+      "shown": "The crew paid me the first week. That's the part nobody else did. I didn't have to choose between rent and showing up.",
+      "status": "ok",
+      "kind": "quote"
+    },
+    {
+      "path": "slides.4.els.0",
+      "value": "60",
+      "shown": "60",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.2",
+      "value": "60",
+      "shown": "60",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.3.items.0",
+      "value": "60",
+      "shown": "60",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.3.items.1",
+      "value": "3",
+      "shown": "3",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.3.items.1",
+      "value": "60",
+      "shown": "60",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.6.items.1",
+      "value": "12",
+      "shown": "12",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.6.items.1",
+      "value": "3",
+      "shown": "3",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.9",
+      "value": "4",
+      "shown": "4",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.0",
+      "value": "186000",
+      "shown": "$186,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.1.rows.0",
+      "value": "72000",
+      "shown": "$72,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.1.rows.1",
+      "value": "64000",
+      "shown": "$64,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.1.rows.2",
+      "value": "28000",
+      "shown": "$28,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.1.rows.3",
+      "value": "22000",
+      "shown": "$22,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.1.total",
+      "value": "186000",
+      "shown": "$186,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.4",
+      "value": "121",
+      "shown": "121",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.5",
+      "value": "90",
+      "shown": "90",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.5",
+      "value": "69",
+      "shown": "69",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.6",
+      "value": "71%",
+      "shown": "71%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.0",
+      "value": "8875",
+      "shown": "$8,875",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.1",
+      "value": "612400",
+      "shown": "$612,400",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.2",
+      "value": "5060",
+      "shown": "$5,060",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.3",
+      "value": "8875",
+      "shown": "$8,875",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.4",
+      "value": "65%",
+      "shown": "65%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.4",
+      "value": "16%",
+      "shown": "16%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.5.items.0",
+      "value": "65%",
+      "shown": "65%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.5.items.1",
+      "value": "16%",
+      "shown": "16%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.5.items.2",
+      "value": "9%",
+      "shown": "9%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.5.items.3",
+      "value": "7%",
+      "shown": "7%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.5.items.4",
+      "value": "4%",
+      "shown": "4%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.els.0",
+      "value": "90000",
+      "shown": "$90,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.els.1",
+      "value": "90000",
+      "shown": "$90,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.els.1",
+      "value": "186000",
+      "shown": "$186,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.els.2",
+      "value": "186000",
+      "shown": "$186,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.els.3.items.0",
+      "value": "90000",
+      "shown": "$90,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.els.3.items.1",
+      "value": "96000",
+      "shown": "$96,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.els.4",
+      "value": "96000",
+      "shown": "$96,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.els.6",
+      "value": "612400",
+      "shown": "$612,400",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.els.7",
+      "value": "798400",
+      "shown": "$798,400",
+      "status": "ok",
+      "kind": "number"
+    }
+  ],
+  "exhibits": [],
+  "check": [
+    "All 76 numbers and quotes found in your sources; 2 citations corrected"
+  ],
+  "pills": [
+    {
+      "id": "sources",
+      "tone": "good",
+      "label": "All 76 numbers and quotes found in your sources; 2 citations corrected"
+    },
+    {
+      "id": "contrast",
+      "tone": "warn",
+      "label": "Contrast passes; 1 brand color kept to rules and fills"
+    },
+    {
+      "id": "never",
+      "tone": "good",
+      "label": "No never-say words"
+    },
+    {
+      "id": "fonts",
+      "tone": "good",
+      "label": "Kit fonts used"
+    },
+    {
+      "id": "wording",
+      "tone": "warn",
+      "label": "Check the wording: “first” isn't in the source it cites"
+    },
+    {
+      "id": "money",
+      "tone": "warn",
+      "label": "The deck leaves out $1.15, $398,000, $96,500, $900 and more from Report, “What happened this year”; Report, “Where the money went”"
+    }
+  ],
+  "slide_count": 9,
+  "seconds": 121.6
+}

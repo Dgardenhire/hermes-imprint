@@ -1,0 +1,1332 @@
+{
+  "set": "heldout",
+  "tag": "r6f-heldout",
+  "steps": {
+    "brand": {
+      "status": "done",
+      "seconds": 0.0
+    },
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 101.5,
+      "error": null
+    }
+  },
+  "started": 1794216658.2506628,
+  "sources": [
+    "fy26-annual-report.md",
+    "board-notes.txt"
+  ],
+  "kit": {
+    "id": "k_0c964966876d",
+    "name": "Pasted colors",
+    "colors": [
+      {
+        "hex": "#2f5d3a",
+        "role": "head",
+        "name": "Pine Green"
+      },
+      {
+        "hex": "#c8902e",
+        "role": "accent",
+        "name": "Brass"
+      }
+    ],
+    "paper": "#faf8f3",
+    "ink": "#262624",
+    "kit_json": {
+      "name": "Pasted colors",
+      "origin": "import",
+      "origin_note": "Pasted color codes",
+      "org": "",
+      "subject": "",
+      "signature": "",
+      "paper": "#faf8f3",
+      "ink": "#262624",
+      "colors": [
+        {
+          "hex": "#2f5d3a",
+          "role": "head",
+          "name": "Pine Green"
+        },
+        {
+          "hex": "#c8902e",
+          "role": "accent",
+          "name": "Brass"
+        }
+      ],
+      "type": {
+        "heading": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 700
+        },
+        "body": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 400
+        },
+        "scale": 1.25
+      },
+      "layout": "banner",
+      "density": "medium",
+      "voice": {
+        "notes": "",
+        "delivery": "",
+        "never": [],
+        "pairs": [],
+        "draft": false
+      },
+      "rules": {
+        "sources": true,
+        "page_numbers": true,
+        "date": true,
+        "required": []
+      },
+      "imported_from": {
+        "kind": "paste",
+        "label": "Pasted colors",
+        "ref": "",
+        "sha256": "",
+        "license_note": "",
+        "brand_named": false,
+        "mode": "",
+        "imported_at": 1794216658.26791
+      },
+      "logo": null,
+      "logo_alt": null,
+      "fonts": [],
+      "id": "k_0c964966876d",
+      "version": 1,
+      "created_at": 1794216658.27229,
+      "updated_at": 1794216658.27229,
+      "starter": false
+    }
+  },
+  "guide_and_summaries_seconds": 16.8,
+  "guide": {
+    "by": "Written by your Hermes model",
+    "guide": [
+      {
+        "text": "The sources are the FY2026 annual report of Fernwood Tool Library, a sample organization, and its September 16, 2026 board notes.",
+        "chips": [
+          {
+            "ref": "P1",
+            "n": 1,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Fernwood Tool Library: FY2026 Annual Report (Sample)”",
+            "source_id": "s_a73933dad8cb"
+          },
+          {
+            "ref": "P12",
+            "n": 2,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 1",
+            "source_id": "s_783d8773c2cd"
+          }
+        ]
+      },
+      {
+        "text": "Members rose to 1,962 from 1,410, and loans rose to 9,840 from 7,215.",
+        "chips": [
+          {
+            "ref": "P3",
+            "n": 1,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“The year in numbers”",
+            "source_id": "s_a73933dad8cb"
+          }
+        ]
+      },
+      {
+        "text": "Hours are the main barrier: 47% of survey members named them, and 61% did in Millbrook.",
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“What members told us”",
+            "source_id": "s_a73933dad8cb"
+          },
+          {
+            "ref": "P6",
+            "n": 2,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Where members live”",
+            "source_id": "s_a73933dad8cb"
+          }
+        ]
+      },
+      {
+        "text": "The board made longer hours its first FY2027 priority and voted to ask the Alder Falls Community Fund for $93,000 over two years.",
+        "chips": [
+          {
+            "ref": "P16",
+            "n": 1,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 5",
+            "source_id": "s_783d8773c2cd"
+          },
+          {
+            "ref": "P17",
+            "n": 2,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 6",
+            "source_id": "s_783d8773c2cd"
+          }
+        ]
+      },
+      {
+        "text": "That money would pay a part-time coordinator and open the storefront 34 hours a week instead of 22.",
+        "chips": [
+          {
+            "ref": "P10",
+            "n": 1,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Looking ahead”",
+            "source_id": "s_a73933dad8cb"
+          },
+          {
+            "ref": "P17",
+            "n": 2,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 6",
+            "source_id": "s_783d8773c2cd"
+          }
+        ]
+      }
+    ],
+    "asks": [
+      {
+        "id": "a1",
+        "who": "The board",
+        "what": "A short deck making the case for longer hours",
+        "by": "October 30",
+        "kind": "deck",
+        "chips": [
+          {
+            "ref": "P17",
+            "n": 1,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 6",
+            "source_id": "s_783d8773c2cd"
+          }
+        ],
+        "brief": {
+          "who": "The Alder Falls Community Fund's program officer",
+          "goal": "Fund $46,500 a year for two years for longer hours",
+          "length": "A short deck"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "text": "The reserve is $31,000, about seven weeks, but the goal is three months. If costs rise $46,500 to $258,900, how far does the reserve fall behind?",
+        "chips": [
+          {
+            "ref": "P8",
+            "n": 1,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Money”",
+            "source_id": "s_a73933dad8cb"
+          },
+          {
+            "ref": "P10",
+            "n": 2,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Looking ahead”",
+            "source_id": "s_a73933dad8cb"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "The Fund grant would cover $46,500 a year for only two years. The $50,000 city grant runs one more year before reapplying. What pays for the coordinator after that?",
+        "chips": [
+          {
+            "ref": "P17",
+            "n": 1,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 6",
+            "source_id": "s_783d8773c2cd"
+          },
+          {
+            "ref": "P14",
+            "n": 2,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 3",
+            "source_id": "s_783d8773c2cd"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "Staff estimate 2,500 more loans a year, on top of 9,840 now. The board wants that shown as an estimate, so how will 344 waiting holds support it?",
+        "chips": [
+          {
+            "ref": "P10",
+            "n": 1,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Looking ahead”",
+            "source_id": "s_a73933dad8cb"
+          },
+          {
+            "ref": "P3",
+            "n": 2,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“The year in numbers”",
+            "source_id": "s_a73933dad8cb"
+          },
+          {
+            "ref": "P5",
+            "n": 3,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“The waiting list”",
+            "source_id": "s_a73933dad8cb"
+          },
+          {
+            "ref": "P17",
+            "n": 4,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 6",
+            "source_id": "s_783d8773c2cd"
+          }
+        ],
+        "suggestion": true
+      }
+    ],
+    "source_ids": [
+      "s_a73933dad8cb",
+      "s_783d8773c2cd"
+    ],
+    "created_at": 1794216674.9486551
+  },
+  "brief": {
+    "who": "Funders",
+    "goal": "Fund $46,500 a year for two years for longer hours",
+    "length": "7 to 9 slides"
+  },
+  "outline": {},
+  "deck_seconds": 101.5,
+  "output_id": "o_e48ce1292222",
+  "case": "The reader is the program officer at the Alder Falls Community Fund. They need to believe that our hours, not our tools, are what keep neighbors from borrowing, and that working people in Millbrook feel this most. The strongest evidence is what members told us: 47% named our hours, and 61% of Millbrook members did. On top of that, 344 holds were waiting on June 30 while loans grew from 7,215 to 9,840. The reader will ask what the money changes and whether we manage money well, so the deck shows the move from 22 to 34 hours a week, labels the 2,500 extra loans as a staff estimate, and lays out the balanced $212,400 budget and the $21.60 cost per loan. The ask is $46,500 a year for two years ($93,000 in all) for a part-time coordinator so we can open Tuesday and Thursday evenings and Saturdays.",
+  "neutral": {
+    "title": "Longer Hours for Fernwood Tool Library",
+    "subtitle": "For the Alder Falls Community Fund: opening evenings and Saturdays",
+    "slides": [
+      {
+        "type": "section",
+        "refs": [
+          "P4",
+          "P10"
+        ],
+        "heading": "Members say the door is the limit",
+        "subtitle": "Many work weekday afternoons and cannot reach us before we close at 6 p.m."
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P4",
+          "P6",
+          "P16"
+        ],
+        "heading": "Our hours keep members from borrowing more",
+        "figures": [
+          {
+            "value": "47%",
+            "label": "Members who named our hours",
+            "context": "Far ahead of anything else that keeps them away",
+            "ref": "P4"
+          },
+          {
+            "value": "61%",
+            "label": "Millbrook members who named our hours",
+            "context": "Most Millbrook members who answered work shifts",
+            "ref": "P6"
+          },
+          {
+            "value": "22%",
+            "label": "Share of the city's renters in Millbrook",
+            "context": "Millbrook is a large renter neighborhood",
+            "ref": "P6"
+          },
+          {
+            "value": "9%",
+            "label": "Share of our members in Millbrook",
+            "context": "Far below Millbrook's share of the city's renters",
+            "ref": "P6"
+          }
+        ]
+      },
+      {
+        "type": "quote",
+        "refs": [
+          "P4"
+        ],
+        "quote": "I've walked past at 6:15 more times than I can count. The lights are on and the door is locked.",
+        "who": ""
+      },
+      {
+        "type": "exhibit",
+        "refs": [
+          "P3",
+          "P5"
+        ],
+        "heading": "Tools sit waiting on the shelf when our door is locked",
+        "unit": "Tool loans and holds",
+        "bars": [
+          {
+            "label": "FY2025 loans",
+            "value": "7,215",
+            "ref": "P3"
+          },
+          {
+            "label": "FY2026 loans",
+            "value": "9,840",
+            "ref": "P3"
+          },
+          {
+            "label": "Holds waiting on June 30",
+            "value": "344",
+            "ref": "P5",
+            "accent": true
+          }
+        ],
+        "note": "Holds wait an average of 11 days. Members also grew to 1,962 from 1,410.",
+        "subhead": "2,625 more loans than FY2025"
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P3",
+          "P4",
+          "P9"
+        ],
+        "heading": "Members save money by borrowing",
+        "bullets": [
+          {
+            "text": "Members who would have bought the tool new without us",
+            "ref": "P4",
+            "figure": "58%"
+          },
+          {
+            "text": "Median a member saved this year, by members' own estimate",
+            "ref": "P4",
+            "figure": "$180"
+          },
+          {
+            "text": "About what each loan cost us, budget divided by loans",
+            "ref": "P9",
+            "figure": "$21.60"
+          },
+          {
+            "text": "About what a new tile saw costs; a store rental is about $65",
+            "ref": "P9",
+            "figure": "$400"
+          },
+          {
+            "text": "Items our volunteers fixed at 14 repair cafes",
+            "ref": "P3",
+            "figure": "438"
+          }
+        ]
+      },
+      {
+        "type": "comparison",
+        "refs": [
+          "P2",
+          "P3",
+          "P10",
+          "P17"
+        ],
+        "heading": "A coordinator opens the door to working members",
+        "left_label": "Today",
+        "left_items": [],
+        "right_label": "With a part-time coordinator",
+        "right_items": [],
+        "rows": [
+          {
+            "label": "Open hours",
+            "left": "22 hours a week",
+            "right": "34 hours a week",
+            "ref": "P10"
+          },
+          {
+            "label": "Days open",
+            "left": "Wed, Fri afternoons and Sunday",
+            "right": "Adds Tue, Thu evenings to 8 p.m., Saturday",
+            "ref": "P10"
+          },
+          {
+            "label": "Paid staff",
+            "left": "Director and part-time shop lead",
+            "right": "Adds a 25-hour-a-week coordinator",
+            "ref": "P10"
+          },
+          {
+            "label": "Volunteers",
+            "left": "46 volunteers gave 3,120 hours",
+            "right": "Cannot cover every new shift alone",
+            "ref": "P10"
+          },
+          {
+            "label": "Loans a year",
+            "left": "9,840 loans this year",
+            "right": "About 2,500 more, a staff estimate",
+            "ref": "P10"
+          }
+        ]
+      },
+      {
+        "type": "exhibit",
+        "refs": [
+          "P7",
+          "P8"
+        ],
+        "heading": "Members themselves pay 29% of our budget",
+        "unit": "Dollars, FY2026",
+        "bars": [
+          {
+            "label": "Two foundation grants",
+            "value": "$72,000",
+            "ref": "P7"
+          },
+          {
+            "label": "Membership fees",
+            "value": "$61,300",
+            "ref": "P7",
+            "accent": true
+          },
+          {
+            "label": "City neighborhood grant",
+            "value": "$50,000",
+            "ref": "P7"
+          },
+          {
+            "label": "Donations and tips",
+            "value": "$19,600",
+            "ref": "P7"
+          },
+          {
+            "label": "Hardware co-op sponsorship",
+            "value": "$9,500",
+            "ref": "P7"
+          }
+        ],
+        "note": "Spending: staff $128,000, rent $36,000, tools $24,600, insurance $9,800, everything else $14,000.",
+        "subhead": "A $212,400 budget, closed even with no debt"
+      },
+      {
+        "type": "closing",
+        "refs": [
+          "P10",
+          "P17"
+        ],
+        "heading": "Keep our door open after work",
+        "text": "Longer hours let working neighbors, Millbrook especially, borrow the tools they need.",
+        "cta": "Fund $46,500 a year for two years, $93,000 in all, to open evenings and Saturdays.",
+        "amount": "$46,500",
+        "amount_label": "A year for two years, for a coordinator"
+      }
+    ],
+    "max_slides": 9
+  },
+  "live": {
+    "title": "Longer Hours for Fernwood Tool Library",
+    "subtitle": "For the Alder Falls Community Fund: opening evenings and Saturdays",
+    "slides": [
+      {
+        "type": "section",
+        "refs": [
+          "P4",
+          "P10"
+        ],
+        "heading": "Members say the door is the limit",
+        "subtitle": "Many work weekday afternoons and cannot reach us before we close at 6 p.m."
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P4",
+          "P6",
+          "P16"
+        ],
+        "heading": "Our hours keep members from borrowing more",
+        "figures": [
+          {
+            "value": "47%",
+            "label": "Members who named our hours",
+            "context": "Far ahead of anything else that keeps them away",
+            "ref": "P4"
+          },
+          {
+            "value": "61%",
+            "label": "Millbrook members who named our hours",
+            "context": "Most Millbrook members who answered work shifts",
+            "ref": "P6"
+          },
+          {
+            "value": "22%",
+            "label": "Share of the city's renters in Millbrook",
+            "context": "Millbrook is a large renter neighborhood",
+            "ref": "P6"
+          },
+          {
+            "value": "9%",
+            "label": "Share of our members in Millbrook",
+            "context": "Far below Millbrook's share of the city's renters",
+            "ref": "P6"
+          }
+        ]
+      },
+      {
+        "type": "quote",
+        "refs": [
+          "P4"
+        ],
+        "quote": "I've walked past at 6:15 more times than I can count. The lights are on and the door is locked.",
+        "who": ""
+      },
+      {
+        "type": "exhibit",
+        "refs": [
+          "P3",
+          "P5"
+        ],
+        "heading": "Tools sit waiting on the shelf when our door is locked",
+        "unit": "Tool loans and holds",
+        "bars": [
+          {
+            "label": "FY2025 loans",
+            "value": "7,215",
+            "ref": "P3"
+          },
+          {
+            "label": "FY2026 loans",
+            "value": "9,840",
+            "ref": "P3"
+          },
+          {
+            "label": "Holds waiting on June 30",
+            "value": "344",
+            "ref": "P5",
+            "accent": true
+          }
+        ],
+        "note": "Holds wait an average of 11 days. Members also grew to 1,962 from 1,410.",
+        "subhead": "2,625 more loans than FY2025"
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P3",
+          "P4",
+          "P9"
+        ],
+        "heading": "Members save money by borrowing",
+        "bullets": [
+          {
+            "text": "Members who would have bought the tool new without us",
+            "ref": "P4",
+            "figure": "58%"
+          },
+          {
+            "text": "Median a member saved this year, by members' own estimate",
+            "ref": "P4",
+            "figure": "$180"
+          },
+          {
+            "text": "About what each loan cost us, budget divided by loans",
+            "ref": "P9",
+            "figure": "$21.60"
+          },
+          {
+            "text": "About what a new tile saw costs; a store rental is about $65",
+            "ref": "P9",
+            "figure": "$400"
+          },
+          {
+            "text": "Items our volunteers fixed at 14 repair cafes",
+            "ref": "P3",
+            "figure": "438"
+          }
+        ]
+      },
+      {
+        "type": "comparison",
+        "refs": [
+          "P2",
+          "P3",
+          "P10",
+          "P17"
+        ],
+        "heading": "A coordinator opens the door to working members",
+        "left_label": "Today",
+        "left_items": [],
+        "right_label": "With a part-time coordinator",
+        "right_items": [],
+        "rows": [
+          {
+            "label": "Open hours",
+            "left": "22 hours a week",
+            "right": "34 hours a week",
+            "ref": "P10"
+          },
+          {
+            "label": "Days open",
+            "left": "Wed, Fri afternoons and Sunday",
+            "right": "Adds Tue, Thu evenings to 8 p.m., Saturday",
+            "ref": "P10"
+          },
+          {
+            "label": "Paid staff",
+            "left": "Director and part-time shop lead",
+            "right": "Adds a 25-hour-a-week coordinator",
+            "ref": "P10"
+          },
+          {
+            "label": "Volunteers",
+            "left": "46 volunteers gave 3,120 hours",
+            "right": "Cannot cover every new shift alone",
+            "ref": "P3"
+          },
+          {
+            "label": "Loans a year",
+            "left": "9,840 loans this year",
+            "right": "About 2,500 more, a staff estimate",
+            "ref": "P3"
+          }
+        ]
+      },
+      {
+        "type": "exhibit",
+        "refs": [
+          "P7",
+          "P8"
+        ],
+        "heading": "Members themselves pay 29% of our budget",
+        "unit": "Dollars, FY2026",
+        "bars": [
+          {
+            "label": "Two foundation grants",
+            "value": "$72,000",
+            "ref": "P7"
+          },
+          {
+            "label": "Membership fees",
+            "value": "$61,300",
+            "ref": "P7",
+            "accent": true
+          },
+          {
+            "label": "City neighborhood grant",
+            "value": "$50,000",
+            "ref": "P7"
+          },
+          {
+            "label": "Donations and tips",
+            "value": "$19,600",
+            "ref": "P7"
+          },
+          {
+            "label": "Hardware co-op sponsorship",
+            "value": "$9,500",
+            "ref": "P7"
+          }
+        ],
+        "note": "Spending: staff $128,000, rent $36,000, tools $24,600, insurance $9,800, everything else $14,000.",
+        "subhead": "A $212,400 budget, closed even with no debt"
+      },
+      {
+        "type": "closing",
+        "refs": [
+          "P10",
+          "P17"
+        ],
+        "heading": "Keep our door open after work",
+        "text": "Longer hours let working neighbors, Millbrook especially, borrow the tools they need.",
+        "cta": "Fund $46,500 a year for two years, $93,000 in all, to open evenings and Saturdays.",
+        "amount": "$46,500",
+        "amount_label": "A year for two years, for a coordinator"
+      }
+    ],
+    "max_slides": 9
+  },
+  "passages": {
+    "P12": {
+      "text": "FERNWOOD TOOL LIBRARY (SAMPLE). BOARD MEETING NOTES, SEPTEMBER 16, 2026\nSample notes. Fictional organization and people.",
+      "locator": "para. 1",
+      "source_title": "Board notes",
+      "source_id": "s_783d8773c2cd"
+    },
+    "P13": {
+      "text": "Present: Owen Pakkala (chair), Hester Vane (treasurer), Luis Arbenz, Grace Oyelaran, Rosa Delacroix-Imari (director, staff)",
+      "locator": "para. 2",
+      "source_title": "Board notes",
+      "source_id": "s_783d8773c2cd"
+    },
+    "P14": {
+      "text": "1. Treasurer's report. Hester: FY2026 closed even at $212,400. Reserve $31,000, about seven weeks. Goal is three months.\n The city neighborhood grant ($50,000) runs one more year and then we reapply.",
+      "locator": "para. 3",
+      "source_title": "Board notes",
+      "source_id": "s_783d8773c2cd"
+    },
+    "P15": {
+      "text": "2. Lease. The Wren Street lease ends next August. Landlord has said a 6% rent increase is likely. Board to discuss in\n closed session in November. Not for outside use yet.",
+      "locator": "para. 4",
+      "source_title": "Board notes",
+      "source_id": "s_783d8773c2cd"
+    },
+    "P16": {
+      "text": "3. Hours. Rosa walked through the survey: 47% of members named our hours as what keeps them from borrowing more,\n 61% in Millbrook. 344 holds were waiting on June 30. Board agreed that longer hours is the first priority for FY2027.",
+      "locator": "para. 5",
+      "source_title": "Board notes",
+      "source_id": "s_783d8773c2cd"
+    },
+    "P17": {
+      "text": "4. The ask. Board voted to ask the Alder Falls Community Fund for $46,500 a year for two years ($93,000 in all) to pay\n a part-time coordinator and open Tuesday and Thursday evenings and Saturdays: 34 hours a week instead of 22.\n Proposal due to the Fund by October 30.\n - Rosa to make a short deck for the Fund's program officer. Keep it to the case: the demand, what the hours fix,\n the money.\n - Luis: lead with what members said, not with us. The Fund cares about who we reach, Millbrook especially.\n - Grace: be plain that the 2,500 extra loans is our estimate.",
+      "locator": "para. 6",
+      "source_title": "Board notes",
+      "source_id": "s_783d8773c2cd"
+    },
+    "P18": {
+      "text": "5. Next meeting October 21.",
+      "locator": "para. 7",
+      "source_title": "Board notes",
+      "source_id": "s_783d8773c2cd"
+    },
+    "P1": {
+      "text": "*Sample organization. Fernwood Tool Library, Alder Falls, and every person named here are fictional.*\nFiscal year July 1, 2025 to June 30, 2026. Prepared by the staff for members, partners and the board.",
+      "locator": "“Fernwood Tool Library: FY2026 Annual Report (Sample)”",
+      "source_title": "Fy26 annual report",
+      "source_id": "s_a73933dad8cb"
+    },
+    "P2": {
+      "text": "Fernwood Tool Library lends tools the way a public library lends books. Members borrow drills, ladders, tile saws,\ncarpet cleaners, pressure washers, sewing machines and garden tools for a week at a time, and bring them back for the\nnext neighbor. We opened in a rented storefront at 418 Wren Street in Alder Falls in 2019. Membership runs on a\nsliding scale from $0 to $60 a year; about one member in four pays nothing.\nWe have one full-time director, one part-time shop lead, and 46 volunteers. The storefront is open 22 hours a week:\nWednesday and Friday afternoons and Sunday.",
+      "locator": "“Who we are”",
+      "source_title": "Fy26 annual report",
+      "source_id": "s_a73933dad8cb"
+    },
+    "P3": {
+      "text": "- **Members.** 1,962 active members on June 30, 2026, up from 1,410 a year earlier.\n- **Loans.** 9,840 tool loans this year, up from 7,215 in FY2025. The average loan lasted 6 days. Four percent of loans\n came back late, and we wrote off 11 tools as lost or broken past repair.\n- **Inventory.** 2,350 tools on the shelves, 310 of them added this year. Most new tools were donated; we bought 64.\n- **Repair cafe.** 14 repair cafes, where volunteers fix what people bring in. Neighbors brought 611 items and our\n volunteers fixed 438 of them: lamps, toasters, bike brakes, zippers and one 1962 radio.\n- **Volunteers.** 46 volunteers gave 3,120 hours, about the same as a second full-time staff member.",
+      "locator": "“The year in numbers”",
+      "source_title": "Fy26 annual report",
+      "source_id": "s_a73933dad8cb"
+    },
+    "P4": {
+      "text": "In May we sent a survey to every member and 512 answered.\n- 58% said that without the library they would have bought the tool new. Another 23% said they would have hired\n someone or skipped the job.\n- Members who answered said the library saved them a median of $180 over the year. This is the members' own\n estimate, not ours.\n- **The hours are the problem.** When we asked what keeps people from borrowing more, 47% named our hours, far ahead\n of anything else. The next answers were \"the tool I wanted was out\" (19%) and parking (11%). Many wrote that they\n work weekday afternoons and cannot reach us before we close at 6 p.m.\n- One member wrote: \"I've walked past at 6:15 more times than I can count. The lights are on and the door is locked.\"",
+      "locator": "“What members told us”",
+      "source_title": "Fy26 annual report",
+      "source_id": "s_a73933dad8cb"
+    },
+    "P5": {
+      "text": "On June 30, 344 hold requests were waiting for a tool to come back. Most were for the tile saw, the carpet cleaner and\nthe pressure washer. Holds wait an average of 11 days. On the three days we are open, a returned tool often goes back\nout within the hour; on the four days we are closed, it sits on the shelf.",
+      "locator": "“The waiting list”",
+      "source_title": "Fy26 annual report",
+      "source_id": "s_a73933dad8cb"
+    },
+    "P6": {
+      "text": "Members come from every part of Alder Falls, but not evenly. The Millbrook neighborhood holds 22% of the city's\nrenters, and only 9% of our members live there. Millbrook residents who answered the survey were the most likely to\nname our hours (61%), because most of them work shifts.",
+      "locator": "“Where members live”",
+      "source_title": "Fy26 annual report",
+      "source_id": "s_a73933dad8cb"
+    },
+    "P7": {
+      "text": "The FY2026 budget was $212,400. We ended the year with expenses equal to income and no debt.\n**Where the money came from**\n| Source | Amount |\n|---|---|\n| Two foundation grants | $72,000 |\n| Membership fees | $61,300 |\n| City of Alder Falls neighborhood grant | $50,000 |\n| Donations and repair cafe tips | $19,600 |\n| Kettle Creek Hardware Co-op sponsorship | $9,500 |\n| **Total** | **$212,400** |\n**Where it went**\n| Use | Amount |\n|---|---|\n| Staff (one full-time director, one part-time shop lead) | $128,000 |\n| Rent for the Wren Street storefront | $36,000 |\n| Buying and repairing tools | $24,600 |\n| Insurance | $9,800 |\n| Everything else (software, supplies, utilities) | $14,000 |\n| **Total** | **$212,400** |",
+      "locator": "“Money”",
+      "source_title": "Fy26 annual report",
+      "source_id": "s_a73933dad8cb"
+    },
+    "P8": {
+      "text": "Membership fees covered 29% of the budget. The city grant is set for one more year and then must be applied for again.\nOur reserve is $31,000, about seven weeks of costs. The board's goal is three months.",
+      "locator": "“Money”",
+      "source_title": "Fy26 annual report",
+      "source_id": "s_a73933dad8cb"
+    },
+    "P9": {
+      "text": "Dividing the year's budget by the year's loans, each loan cost us about $21.60. A new tile saw costs a member about\n$400; a weekend rental at a store costs about $65.",
+      "locator": "“What it costs to lend a tool”",
+      "source_title": "Fy26 annual report",
+      "source_id": "s_a73933dad8cb"
+    },
+    "P10": {
+      "text": "The demand is there. Members want to borrow more, and the waiting list shows tools are not the only limit: the door is.\nIn FY2027 we want to stay open evenings and Saturdays. That takes a second paid person, because volunteers cannot\ncover every new shift and the shop must have a trained lead on hand when power tools go out.\nStaff worked out the cost of a part-time coordinator at 25 hours a week, with the longer hours for utilities and\nsupplies: $46,500 a year more than this year. With it, the storefront would be open 34 hours a week instead of 22,\nadding Tuesday and Thursday evenings until 8 p.m. and Saturday from 9 a.m. to 3 p.m. Staff estimate the longer hours\nwould bring about 2,500 more loans a year once members learn the new times. That is an estimate, and we will report\nwhat really happens.\nThe FY2027 budget the board will take up is $258,900.",
+      "locator": "“Looking ahead”",
+      "source_title": "Fy26 annual report",
+      "source_id": "s_a73933dad8cb"
+    },
+    "P11": {
+      "text": "To the 46 volunteers who fixed 438 things this year, to the members who returned their tools clean, and to the\nneighbors who donated the 246 tools we did not have to buy: thank you.\nRosa Delacroix-Imari, Director (Sample)",
+      "locator": "“Thank you”",
+      "source_title": "Fy26 annual report",
+      "source_id": "s_a73933dad8cb"
+    }
+  },
+  "grounding": [
+    {
+      "path": "slides.0.subtitle",
+      "value": "6",
+      "shown": "6",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.0",
+      "value": "47%",
+      "shown": "47%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.1",
+      "value": "61%",
+      "shown": "61%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.2",
+      "value": "22%",
+      "shown": "22%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.3",
+      "value": "9%",
+      "shown": "9%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.quote",
+      "value": "6",
+      "shown": "6",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.quote",
+      "value": "15",
+      "shown": "15",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.quote",
+      "value": "I've walked past at 6:15 more times than I can count. The lights are on and the door is locked.",
+      "shown": "I've walked past at 6:15 more times than I can count. The lights are on and the door is locked.",
+      "status": "ok",
+      "kind": "quote"
+    },
+    {
+      "path": "slides.3.subhead",
+      "value": "2625",
+      "shown": "2,625",
+      "status": "computed",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.note",
+      "value": "11",
+      "shown": "11",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.note",
+      "value": "1962",
+      "shown": "1,962",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.note",
+      "value": "1410",
+      "shown": "1,410",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bars.0",
+      "value": "7215",
+      "shown": "7,215",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bars.1",
+      "value": "9840",
+      "shown": "9,840",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bars.2",
+      "value": "30",
+      "shown": "30",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bars.2",
+      "value": "344",
+      "shown": "344",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.0.figure",
+      "value": "58%",
+      "shown": "58%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.1.figure",
+      "value": "180",
+      "shown": "$180",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.2.figure",
+      "value": "21.6",
+      "shown": "$21.60",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.3",
+      "value": "65",
+      "shown": "$65",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.3.figure",
+      "value": "400",
+      "shown": "$400",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.3.figure",
+      "value": "65",
+      "shown": "$65",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.4",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.4.figure",
+      "value": "438",
+      "shown": "438",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.4.figure",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.rows.0",
+      "value": "22",
+      "shown": "22",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.rows.0",
+      "value": "34",
+      "shown": "34",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.rows.1",
+      "value": "8",
+      "shown": "8",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.rows.2",
+      "value": "25",
+      "shown": "25",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.rows.3",
+      "value": "46",
+      "shown": "46",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.rows.3",
+      "value": "3120",
+      "shown": "3,120",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.rows.4",
+      "value": "9840",
+      "shown": "9,840",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.rows.4",
+      "value": "2500",
+      "shown": "2,500",
+      "status": "computed",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.heading",
+      "value": "29%",
+      "shown": "29%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.subhead",
+      "value": "212400",
+      "shown": "$212,400",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.note",
+      "value": "128000",
+      "shown": "$128,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.note",
+      "value": "36000",
+      "shown": "$36,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.note",
+      "value": "24600",
+      "shown": "$24,600",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.note",
+      "value": "9800",
+      "shown": "$9,800",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.note",
+      "value": "14000",
+      "shown": "$14,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.0",
+      "value": "72000",
+      "shown": "$72,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.1",
+      "value": "61300",
+      "shown": "$61,300",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.2",
+      "value": "50000",
+      "shown": "$50,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.3",
+      "value": "19600",
+      "shown": "$19,600",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.4",
+      "value": "9500",
+      "shown": "$9,500",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.cta",
+      "value": "46500",
+      "shown": "$46,500",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.cta",
+      "value": "93000",
+      "shown": "$93,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.amount",
+      "value": "46500",
+      "shown": "$46,500",
+      "status": "ok",
+      "kind": "number"
+    }
+  ],
+  "exhibits": [
+    {
+      "type": "exhibit",
+      "refs": [
+        "P3",
+        "P5"
+      ],
+      "heading": "Tools sit waiting on the shelf when our door is locked",
+      "unit": "Tool loans and holds",
+      "bars": [
+        {
+          "label": "FY2025 loans",
+          "value": "7,215",
+          "ref": "P3"
+        },
+        {
+          "label": "FY2026 loans",
+          "value": "9,840",
+          "ref": "P3"
+        },
+        {
+          "label": "Holds waiting on June 30",
+          "value": "344",
+          "ref": "P5",
+          "accent": true
+        }
+      ],
+      "note": "Holds wait an average of 11 days. Members also grew to 1,962 from 1,410.",
+      "subhead": "2,625 more loans than FY2025"
+    },
+    {
+      "type": "exhibit",
+      "refs": [
+        "P7",
+        "P8"
+      ],
+      "heading": "Members themselves pay 29% of our budget",
+      "unit": "Dollars, FY2026",
+      "bars": [
+        {
+          "label": "Two foundation grants",
+          "value": "$72,000",
+          "ref": "P7"
+        },
+        {
+          "label": "Membership fees",
+          "value": "$61,300",
+          "ref": "P7",
+          "accent": true
+        },
+        {
+          "label": "City neighborhood grant",
+          "value": "$50,000",
+          "ref": "P7"
+        },
+        {
+          "label": "Donations and tips",
+          "value": "$19,600",
+          "ref": "P7"
+        },
+        {
+          "label": "Hardware co-op sponsorship",
+          "value": "$9,500",
+          "ref": "P7"
+        }
+      ],
+      "note": "Spending: staff $128,000, rent $36,000, tools $24,600, insurance $9,800, everything else $14,000.",
+      "subhead": "A $212,400 budget, closed even with no debt"
+    }
+  ],
+  "check": [
+    "All 48 numbers and quotes found in your sources; 1 worked out from them; 3 citations corrected"
+  ],
+  "pills": [
+    {
+      "id": "sources",
+      "tone": "good",
+      "label": "All 48 numbers and quotes found in your sources; 1 worked out from them; 3 citations corrected"
+    },
+    {
+      "id": "contrast",
+      "tone": "warn",
+      "label": "Contrast passes; 1 brand color kept to rules and fills"
+    },
+    {
+      "id": "never",
+      "tone": "good",
+      "label": "No never-say words"
+    },
+    {
+      "id": "fonts",
+      "tone": "good",
+      "label": "Kit fonts used"
+    },
+    {
+      "id": "money",
+      "tone": "warn",
+      "label": "The deck leaves out $31,000, $258,900 from Board notes, para. 3; Fy26 annual report, “Looking ahead”"
+    },
+    {
+      "id": "relation",
+      "tone": "warn",
+      "label": "Check the wording against the source: “every”"
+    }
+  ],
+  "slide_count": 9,
+  "seconds": 118.8
+}

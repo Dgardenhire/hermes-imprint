@@ -1,0 +1,1610 @@
+{
+  "set": "heldout10",
+  "tag": "r16-heldout10",
+  "steps": {
+    "brand": {
+      "status": "done",
+      "seconds": 0.0
+    },
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 20.8,
+      "error": null
+    }
+  },
+  "started": 1794237684.652558,
+  "sources": [
+    "notes.txt",
+    "report.md"
+  ],
+  "kit": {
+    "id": "k_cdcd445fa93e",
+    "name": "Pasted colors",
+    "colors": [
+      {
+        "hex": "#e3a33b",
+        "role": "accent",
+        "name": "Marigold"
+      }
+    ],
+    "paper": "#f5f0e6",
+    "ink": "#2b4a3f",
+    "kit_json": {
+      "name": "Pasted colors",
+      "origin": "import",
+      "origin_note": "Pasted color codes",
+      "org": "",
+      "subject": "",
+      "signature": "",
+      "paper": "#f5f0e6",
+      "ink": "#2b4a3f",
+      "colors": [
+        {
+          "hex": "#e3a33b",
+          "role": "accent",
+          "name": "Marigold"
+        }
+      ],
+      "type": {
+        "heading": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 700
+        },
+        "body": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 400
+        },
+        "scale": 1.25
+      },
+      "layout": "banner",
+      "density": "medium",
+      "voice": {
+        "notes": "",
+        "delivery": "",
+        "never": [],
+        "pairs": [],
+        "draft": false
+      },
+      "rules": {
+        "sources": true,
+        "page_numbers": true,
+        "date": true,
+        "required": []
+      },
+      "imported_from": {
+        "kind": "paste",
+        "label": "Pasted colors",
+        "ref": "",
+        "sha256": "",
+        "license_note": "",
+        "brand_named": false,
+        "mode": "",
+        "imported_at": 1794237684.664279
+      },
+      "logo": null,
+      "logo_alt": null,
+      "fonts": [],
+      "id": "k_cdcd445fa93e",
+      "version": 1,
+      "created_at": 1794237684.666014,
+      "updated_at": 1794237684.666014,
+      "starter": false
+    }
+  },
+  "guide_and_summaries_seconds": 13.0,
+  "guide": {
+    "by": "Written by your Hermes model",
+    "guide": [
+      {
+        "text": "These are fictional board meeting notes and the FY2026 annual report from the Vessick Neighborhood Mediation Center.",
+        "chips": [
+          {
+            "ref": "P1",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 1",
+            "source_id": "s_89da70d0201a"
+          },
+          {
+            "ref": "P2",
+            "n": 2,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 2",
+            "source_id": "s_89da70d0201a"
+          },
+          {
+            "ref": "P10",
+            "n": 3,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "para. 1",
+            "source_id": "s_3e519b27bca2"
+          },
+          {
+            "ref": "P11",
+            "n": 4,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Vessick Neighborhood Mediation Center”",
+            "source_id": "s_3e519b27bca2"
+          }
+        ]
+      },
+      {
+        "text": "The Merrow Valley Community Trust invited the center to send a short slide deck for its winter housing round.",
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 4",
+            "source_id": "s_89da70d0201a"
+          }
+        ]
+      },
+      {
+        "text": "The center is asking for $60,000 toward a Tenant Early Resolution Desk that costs $96,000 for its first 12 months.",
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 5",
+            "source_id": "s_89da70d0201a"
+          },
+          {
+            "ref": "P19",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: the Tenant Early Resolution Desk”",
+            "source_id": "s_3e519b27bca2"
+          },
+          {
+            "ref": "P20",
+            "n": 3,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: the Tenant Early Resolution Desk”",
+            "source_id": "s_3e519b27bca2"
+          }
+        ]
+      },
+      {
+        "text": "The county court has already committed $36,000 to the desk.",
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 5",
+            "source_id": "s_89da70d0201a"
+          },
+          {
+            "ref": "P20",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: the Tenant Early Resolution Desk”",
+            "source_id": "s_3e519b27bca2"
+          }
+        ]
+      },
+      {
+        "text": "The 85% holding rate rests on 52 of 61 households reached, is self-reported, and has no comparison group.",
+        "chips": [
+          {
+            "ref": "P8",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 8",
+            "source_id": "s_89da70d0201a"
+          },
+          {
+            "ref": "P15",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“What changed for people”",
+            "source_id": "s_3e519b27bca2"
+          },
+          {
+            "ref": "P16",
+            "n": 3,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“What changed for people”",
+            "source_id": "s_3e519b27bca2"
+          }
+        ]
+      }
+    ],
+    "asks": [
+      {
+        "id": "a1",
+        "who": "Hollis Brandt, Merrow Valley Community Trust",
+        "what": "A short slide deck asking $60,000 for the Tenant Early Resolution Desk",
+        "by": "Friday, December 4, 2026",
+        "kind": "deck",
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 4",
+            "source_id": "s_89da70d0201a"
+          },
+          {
+            "ref": "P5",
+            "n": 2,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 5",
+            "source_id": "s_89da70d0201a"
+          },
+          {
+            "ref": "P8",
+            "n": 3,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 8",
+            "source_id": "s_89da70d0201a"
+          }
+        ],
+        "brief": {
+          "who": "Hollis Brandt, reading on her phone",
+          "goal": "Decide whether to request a budget and a January site visit",
+          "length": "No more than eight slides"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "text": "The reserve covers about seven weeks against a goal of twelve, a five-week gap. The new desk adds $96,000, and $60,000 is still unfunded. What happens if the Trust says no?",
+        "chips": [
+          {
+            "ref": "P18",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Funding”",
+            "source_id": "s_3e519b27bca2"
+          },
+          {
+            "ref": "P19",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: the Tenant Early Resolution Desk”",
+            "source_id": "s_3e519b27bca2"
+          },
+          {
+            "ref": "P20",
+            "n": 3,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: the Tenant Early Resolution Desk”",
+            "source_id": "s_3e519b27bca2"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "The report says 44 of 52 households reached, or 85%, had agreements holding. But 9 of 61 could not be reached. How can the deck use 85% without overstating it?",
+        "chips": [
+          {
+            "ref": "P8",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 8",
+            "source_id": "s_89da70d0201a"
+          },
+          {
+            "ref": "P15",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“What changed for people”",
+            "source_id": "s_3e519b27bca2"
+          },
+          {
+            "ref": "P16",
+            "n": 3,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“What changed for people”",
+            "source_id": "s_3e519b27bca2"
+          }
+        ],
+        "suggestion": true
+      }
+    ],
+    "source_ids": [
+      "s_89da70d0201a",
+      "s_3e519b27bca2"
+    ],
+    "created_at": 1794237697.5225549
+  },
+  "brief": {
+    "who": "Funders",
+    "goal": "Decide whether to request a budget and a January site visit",
+    "length": "7 to 9 slides"
+  },
+  "outline": {},
+  "deck_seconds": 20.8,
+  "output_id": "o_c625237645d3",
+  "case": null,
+  "plain_draft": "Slide 1: Tenant Early Resolution Desk: A $60,000 Request\nVessick Neighborhood Mediation Center (VNMC)\nFor the Merrow Valley Community Trust, Winter Housing Round\nWe are asking for $60,000 toward the first 12 months of a mediation desk inside the Vessick County Courthouse\nLaunch: February 2027\n\nSlide 2: The Ask in Numbers\nFirst-year cost of the desk: $96,000\nAlready committed by Vessick County District Court: $36,000\nRequested from Merrow Valley Community Trust: $60,000\nThe court's share is an amendment to our existing court contract\n\nSlide 3: The Problem: Tenants and Landlords Reach Us Too Late\nMost of our landlord-tenant cases arrive after an eviction case has been filed\nBy then, positions have hardened\nCourt costs have been added to the balance\nA tenant may have a filing on their record even if the case is later dismissed\nOur landlord-tenant cases grew from 74 to 118 in one year\n\nSlide 4: What the Desk Will Do\nTwo mornings a week, on the days the court hears eviction cases\nA trained mediator and a volunteer meet landlords and tenants in the hallway before their hearing\nThey offer a same-day mediation in a side room the court is providing\nIf a same-day session can't happen, they book one at our office within five business days\nTypical agreements: payment plans, repair schedules, agreed move-out dates\n\nSlide 5: Where the $96,000 Goes\nHousing mediator, 0.6 FTE, salary and benefits: $52,800\nSupervision and case coordination (share of existing staff time): $14,400\nInterpreter services on court days: $9,600\nVolunteer mediator stipends and training: $8,400\n90-day and 180-day follow-up calls and outcome tracking: $6,000\nPrinted materials, laptop, and case-management licenses: $4,800\nTotal: $96,000\n\nSlide 6: Landlord-Tenant Results, FY2026 (With Caveats)\n118 landlord-tenant cases opened; 87 reached mediation; 61 ended in a signed agreement\n90 days later, we called both parties. We reached 52 of the 61 households\nIn 44 of those 52, the agreement was still holding: 85%\nCaveat: these are self-reported answers to a phone call, not court records\nCaveat: we could not reach 9 households, and their agreements may have fallen apart, so the true rate could be lower\nCaveat: we have no comparison group, so we don't know how many cases would have settled without us\nWhat we can say: 44 households told us their agreement was still working three months later\n\nSlide 7: Who Funds Us: Five Sources, FY2026\nVessick County District Court, alternative dispute resolution contract: $112,000 (38%)\nHalbrook Family Foundation, general operating grant: $75,000 (26%)\nCity of Vessick, housing stability allocation: $48,000 (16%)\nIndividual donors and the October Common Table dinner: $41,250 (14%)\nFees for service (school trainings, sliding-scale mediations): $15,500 (5%)\nTotal revenue: $291,750; expenses: $286,400; surplus of $5,350 added to our reserve\nThe court contract is our largest source and runs through June 2027\nNo single funder pays more than 38% of our budget\n\nSlide 8: Our Track Record, How We'll Measure, and Who to Contact\nFY2026: 296 cases opened, 231 mediated, 168 written agreements (73% of cases mediated)\n38 active volunteer mediators gave 2,140 hours; 54 sessions held with an interpreter\nFor the desk, we'll add a 180-day follow-up call to the 90-day call\nWe have asked the court clerk for an anonymized count of desk cases that come back to court within six months\nIf the numbers don't hold up, we will report that\n\"I came in ready to fight about the deposit. I left with a payment plan and my landlord's phone number. Nobody had to lose.\" (Tenant, March 2026)\nContact: Teodor Halvik, Executive Director, VNMC, 214 Coldwater Street, Second Floor, Vessick",
+  "plain_record": {
+    "flags": [],
+    "splits": [
+      [
+        1,
+        "moved to open"
+      ],
+      [
+        2,
+        "moved to open"
+      ],
+      [
+        4,
+        "moved to open"
+      ],
+      [
+        6,
+        "moved to open"
+      ]
+    ],
+    "slides": 8
+  },
+  "argument": null,
+  "neutral": {
+    "title": "Tenant Early Resolution Desk: A $60,000 Request",
+    "subtitle": "Vessick Neighborhood Mediation Center (VNMC) For the Merrow Valley Community Trust, Winter Housing Round. We are asking for $60,000 toward the first 12 months of a mediation desk inside the Vessick County Courthouse. Launch: February 2027.",
+    "slides": [
+      {
+        "type": "content",
+        "heading": "The Ask in Numbers",
+        "bullets": [
+          {
+            "text": "First-year cost of the desk",
+            "ref": "P19",
+            "figure": "$96,000",
+            "line": "First-year cost of the desk: $96,000"
+          },
+          {
+            "text": "Already committed by Vessick County District Court",
+            "ref": "P5",
+            "figure": "$36,000",
+            "line": "Already committed by Vessick County District Court: $36,000"
+          },
+          {
+            "text": "Requested from Merrow Valley Community Trust",
+            "ref": "P20",
+            "figure": "$60,000",
+            "line": "Requested from Merrow Valley Community Trust: $60,000"
+          },
+          {
+            "text": "The court's share is an amendment to our existing court contract",
+            "ref": "P20",
+            "line": "The court's share is an amendment to our existing court contract"
+          }
+        ],
+        "refs": [
+          "P19",
+          "P5",
+          "P4",
+          "P20"
+        ],
+        "shape": "money"
+      },
+      {
+        "type": "content",
+        "heading": "The Problem: Tenants and Landlords Reach Us Too Late",
+        "bullets": [
+          {
+            "text": "Most of our landlord-tenant cases arrive after an eviction case has been filed",
+            "ref": "P19"
+          },
+          {
+            "text": "By then, positions have hardened",
+            "ref": "P19"
+          },
+          {
+            "text": "Court costs have been added to the balance",
+            "ref": "P19"
+          },
+          {
+            "text": "A tenant may have a filing on their record even if the case is later dismissed",
+            "ref": "P19"
+          },
+          {
+            "text": "Our landlord-tenant cases grew from 74 to 118 in one year",
+            "ref": "P13"
+          }
+        ],
+        "refs": [
+          "P19"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "What the Desk Will Do",
+        "bullets": [
+          {
+            "text": "Two mornings a week, on the days the court hears eviction cases",
+            "ref": "P19"
+          },
+          {
+            "text": "A trained mediator and a volunteer meet landlords and tenants in the hallway before their hearing",
+            "ref": "P19"
+          },
+          {
+            "text": "They offer a same-day mediation in a side room the court is providing",
+            "ref": "P19"
+          },
+          {
+            "text": "If a same-day session can't happen, they book one at our office within five business days",
+            "ref": "P19"
+          },
+          {
+            "text": "Typical agreements: payment plans, repair schedules, agreed move-out dates",
+            "ref": "P13"
+          }
+        ],
+        "refs": [
+          "P19",
+          "P13"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "Where the $96,000 Goes",
+        "bullets": [
+          {
+            "text": "Housing mediator, 0.6 FTE, salary and benefits",
+            "ref": "P20",
+            "figure": "$52,800",
+            "line": "Housing mediator, 0.6 FTE, salary and benefits: $52,800"
+          },
+          {
+            "text": "Supervision and case coordination (share of existing staff time)",
+            "ref": "P20",
+            "figure": "$14,400",
+            "line": "Supervision and case coordination (share of existing staff time): $14,400"
+          },
+          {
+            "text": "Interpreter services on court days",
+            "ref": "P20",
+            "figure": "$9,600",
+            "line": "Interpreter services on court days: $9,600"
+          },
+          {
+            "text": "Volunteer mediator stipends and training",
+            "ref": "P20",
+            "figure": "$8,400",
+            "line": "Volunteer mediator stipends and training: $8,400"
+          },
+          {
+            "text": "90-day and 180-day follow-up calls and outcome tracking",
+            "ref": "P20",
+            "figure": "$6,000",
+            "line": "90-day and 180-day follow-up calls and outcome tracking: $6,000"
+          },
+          {
+            "text": "Printed materials, laptop, and case-management licenses",
+            "ref": "P20",
+            "figure": "$4,800",
+            "line": "Printed materials, laptop, and case-management licenses: $4,800"
+          },
+          {
+            "text": "Total",
+            "ref": "P20",
+            "figure": "$96,000",
+            "line": "Total: $96,000"
+          }
+        ],
+        "refs": [
+          "P20"
+        ],
+        "shape": "money"
+      },
+      {
+        "type": "content",
+        "heading": "Landlord-Tenant Results, FY2026 (With Caveats)",
+        "bullets": [
+          {
+            "text": "118 landlord-tenant cases opened; 87 reached mediation; 61 ended in a signed agreement",
+            "ref": "P13"
+          },
+          {
+            "text": "90 days later, we called both parties. We reached 52 of the 61 households",
+            "ref": "P15"
+          },
+          {
+            "text": "In 44 of those 52, the agreement was still holding: 85%",
+            "ref": "P15"
+          },
+          {
+            "text": "Caveat: these are self-reported answers to a phone call, not court records",
+            "ref": "P16"
+          },
+          {
+            "text": "Caveat: we could not reach 9 households, and their agreements may have fallen apart, so the true rate could be lower",
+            "ref": "P16"
+          },
+          {
+            "text": "Caveat: we have no comparison group, so we don't know how many cases would have settled without us",
+            "ref": "P16"
+          },
+          {
+            "text": "What we can say: 44 households told us their agreement was still working three months later",
+            "ref": "P16"
+          }
+        ],
+        "refs": [
+          "P13",
+          "P15",
+          "P16"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "Who Funds Us: Five Sources, FY2026",
+        "bullets": [
+          {
+            "text": "Vessick County District Court, alternative dispute resolution contract (38%)",
+            "ref": "P18",
+            "figure": "$112,000",
+            "line": "Vessick County District Court, alternative dispute resolution contract: $112,000 (38%)"
+          },
+          {
+            "text": "Halbrook Family Foundation, general operating grant (26%)",
+            "ref": "P18",
+            "figure": "$75,000",
+            "line": "Halbrook Family Foundation, general operating grant: $75,000 (26%)"
+          },
+          {
+            "text": "City of Vessick, housing stability allocation (16%)",
+            "ref": "P18",
+            "figure": "$48,000",
+            "line": "City of Vessick, housing stability allocation: $48,000 (16%)"
+          },
+          {
+            "text": "Individual donors and the October Common Table dinner (14%)",
+            "ref": "P18",
+            "figure": "$41,250",
+            "line": "Individual donors and the October Common Table dinner: $41,250 (14%)"
+          },
+          {
+            "text": "Fees for service (school trainings, sliding-scale mediations) (5%)",
+            "ref": "P18",
+            "figure": "$15,500",
+            "line": "Fees for service (school trainings, sliding-scale mediations): $15,500 (5%)"
+          },
+          {
+            "text": "Total revenue ; expenses: $286,400; surplus of $5,350 added to our reserve",
+            "ref": "P18",
+            "figure": "$291,750",
+            "line": "Total revenue: $291,750; expenses: $286,400; surplus of $5,350 added to our reserve"
+          },
+          {
+            "text": "The court contract is our largest source and runs through June 2027",
+            "ref": "P18",
+            "line": "The court contract is our largest source and runs through June 2027"
+          },
+          {
+            "text": "No single funder pays more than 38% of our budget",
+            "ref": "P18",
+            "line": "No single funder pays more than 38% of our budget"
+          }
+        ],
+        "refs": [
+          "P18"
+        ],
+        "shape": "money"
+      },
+      {
+        "type": "content",
+        "heading": "Our Track Record, How We'll Measure, and Who to Contact",
+        "bullets": [
+          {
+            "text": "FY2026: 296 cases opened, 231 mediated, 168 written agreements (73% of cases mediated)",
+            "ref": "P12"
+          },
+          {
+            "text": "38 active volunteer mediators gave 2,140 hours; 54 sessions held with an interpreter",
+            "ref": "P12"
+          },
+          {
+            "text": "For the desk, we'll add a 180-day follow-up call to the 90-day call",
+            "ref": "P21"
+          },
+          {
+            "text": "We have asked the court clerk for an anonymized count of desk cases that come back to court within six months",
+            "ref": "P21"
+          },
+          {
+            "text": "If the numbers don't hold up, we will report that",
+            "ref": "P21"
+          },
+          {
+            "text": "\"I came in ready to fight about the deposit. I left with a payment plan and my landlord's phone number. Nobody had to lose.\" (Tenant, March 2026)",
+            "ref": "P16"
+          },
+          {
+            "text": "Contact: Teodor Halvik, Executive Director, VNMC, 214 Coldwater Street, Second Floor, Vessick",
+            "ref": "P21"
+          }
+        ],
+        "refs": [
+          "P12",
+          "P21",
+          "P16"
+        ],
+        "comp": "open"
+      }
+    ],
+    "plain": true
+  },
+  "live": {
+    "title": "Tenant Early Resolution Desk: A $60,000 Request",
+    "subtitle": "Vessick Neighborhood Mediation Center (VNMC) For the Merrow Valley Community Trust, Winter Housing Round. We are asking for $60,000 toward the first 12 months of a mediation desk inside the Vessick County Courthouse. Launch: February 2027.",
+    "slides": [
+      {
+        "type": "content",
+        "heading": "The Ask in Numbers",
+        "bullets": [
+          {
+            "text": "First-year cost of the desk",
+            "ref": "P19",
+            "figure": "$96,000",
+            "line": "First-year cost of the desk: $96,000"
+          },
+          {
+            "text": "Already committed by Vessick County District Court",
+            "ref": "P5",
+            "figure": "$36,000",
+            "line": "Already committed by Vessick County District Court: $36,000"
+          },
+          {
+            "text": "Requested from Merrow Valley Community Trust",
+            "ref": "P20",
+            "figure": "$60,000",
+            "line": "Requested from Merrow Valley Community Trust: $60,000"
+          },
+          {
+            "text": "The court's share is an amendment to our existing court contract",
+            "ref": "P20",
+            "line": "The court's share is an amendment to our existing court contract"
+          }
+        ],
+        "refs": [
+          "P19",
+          "P5",
+          "P4",
+          "P20"
+        ],
+        "shape": "money"
+      },
+      {
+        "type": "content",
+        "heading": "The Problem: Tenants and Landlords Reach Us Too Late",
+        "bullets": [
+          {
+            "text": "Most of our landlord-tenant cases arrive after an eviction case has been filed",
+            "ref": "P19"
+          },
+          {
+            "text": "By then, positions have hardened",
+            "ref": "P19"
+          },
+          {
+            "text": "Court costs have been added to the balance",
+            "ref": "P19"
+          },
+          {
+            "text": "A tenant may have a filing on their record even if the case is later dismissed",
+            "ref": "P19"
+          },
+          {
+            "text": "Our landlord-tenant cases grew from 74 to 118 in one year",
+            "ref": "P13"
+          }
+        ],
+        "refs": [
+          "P19"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "What the Desk Will Do",
+        "bullets": [
+          {
+            "text": "Two mornings a week, on the days the court hears eviction cases",
+            "ref": "P19"
+          },
+          {
+            "text": "A trained mediator and a volunteer meet landlords and tenants in the hallway before their hearing",
+            "ref": "P19"
+          },
+          {
+            "text": "They offer a same-day mediation in a side room the court is providing",
+            "ref": "P19"
+          },
+          {
+            "text": "If a same-day session can't happen, they book one at our office within five business days",
+            "ref": "P19"
+          },
+          {
+            "text": "Typical agreements: payment plans, repair schedules, agreed move-out dates",
+            "ref": "P13"
+          }
+        ],
+        "refs": [
+          "P19",
+          "P13"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "Where the $96,000 Goes",
+        "bullets": [
+          {
+            "text": "Housing mediator, 0.6 FTE, salary and benefits",
+            "ref": "P20",
+            "figure": "$52,800",
+            "line": "Housing mediator, 0.6 FTE, salary and benefits: $52,800"
+          },
+          {
+            "text": "Supervision and case coordination (share of existing staff time)",
+            "ref": "P20",
+            "figure": "$14,400",
+            "line": "Supervision and case coordination (share of existing staff time): $14,400"
+          },
+          {
+            "text": "Interpreter services on court days",
+            "ref": "P20",
+            "figure": "$9,600",
+            "line": "Interpreter services on court days: $9,600"
+          },
+          {
+            "text": "Volunteer mediator stipends and training",
+            "ref": "P20",
+            "figure": "$8,400",
+            "line": "Volunteer mediator stipends and training: $8,400"
+          },
+          {
+            "text": "90-day and 180-day follow-up calls and outcome tracking",
+            "ref": "P20",
+            "figure": "$6,000",
+            "line": "90-day and 180-day follow-up calls and outcome tracking: $6,000"
+          },
+          {
+            "text": "Printed materials, laptop, and case-management licenses",
+            "ref": "P20",
+            "figure": "$4,800",
+            "line": "Printed materials, laptop, and case-management licenses: $4,800"
+          },
+          {
+            "text": "Total",
+            "ref": "P20",
+            "figure": "$96,000",
+            "line": "Total: $96,000"
+          }
+        ],
+        "refs": [
+          "P20"
+        ],
+        "shape": "money"
+      },
+      {
+        "type": "content",
+        "heading": "Landlord-Tenant Results, FY2026 (With Caveats)",
+        "bullets": [
+          {
+            "text": "118 landlord-tenant cases opened; 87 reached mediation; 61 ended in a signed agreement",
+            "ref": "P13"
+          },
+          {
+            "text": "90 days later, we called both parties. We reached 52 of the 61 households",
+            "ref": "P15"
+          },
+          {
+            "text": "In 44 of those 52, the agreement was still holding: 85%",
+            "ref": "P15"
+          },
+          {
+            "text": "Caveat: these are self-reported answers to a phone call, not court records",
+            "ref": "P16"
+          },
+          {
+            "text": "Caveat: we could not reach 9 households, and their agreements may have fallen apart, so the true rate could be lower",
+            "ref": "P16"
+          },
+          {
+            "text": "Caveat: we have no comparison group, so we don't know how many cases would have settled without us",
+            "ref": "P16"
+          },
+          {
+            "text": "What we can say: 44 households told us their agreement was still working three months later",
+            "ref": "P16"
+          }
+        ],
+        "refs": [
+          "P13",
+          "P15",
+          "P16"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "Who Funds Us: Five Sources, FY2026",
+        "bullets": [
+          {
+            "text": "Vessick County District Court, alternative dispute resolution contract (38%)",
+            "ref": "P18",
+            "figure": "$112,000",
+            "line": "Vessick County District Court, alternative dispute resolution contract: $112,000 (38%)"
+          },
+          {
+            "text": "Halbrook Family Foundation, general operating grant (26%)",
+            "ref": "P18",
+            "figure": "$75,000",
+            "line": "Halbrook Family Foundation, general operating grant: $75,000 (26%)"
+          },
+          {
+            "text": "City of Vessick, housing stability allocation (16%)",
+            "ref": "P18",
+            "figure": "$48,000",
+            "line": "City of Vessick, housing stability allocation: $48,000 (16%)"
+          },
+          {
+            "text": "Individual donors and the October Common Table dinner (14%)",
+            "ref": "P18",
+            "figure": "$41,250",
+            "line": "Individual donors and the October Common Table dinner: $41,250 (14%)"
+          },
+          {
+            "text": "Fees for service (school trainings, sliding-scale mediations) (5%)",
+            "ref": "P18",
+            "figure": "$15,500",
+            "line": "Fees for service (school trainings, sliding-scale mediations): $15,500 (5%)"
+          },
+          {
+            "text": "Total revenue ; expenses: $286,400; surplus of $5,350 added to our reserve",
+            "ref": "P18",
+            "figure": "$291,750",
+            "line": "Total revenue: $291,750; expenses: $286,400; surplus of $5,350 added to our reserve"
+          },
+          {
+            "text": "The court contract is our largest source and runs through June 2027",
+            "ref": "P18",
+            "line": "The court contract is our largest source and runs through June 2027"
+          },
+          {
+            "text": "No single funder pays more than 38% of our budget",
+            "ref": "P18",
+            "line": "No single funder pays more than 38% of our budget"
+          }
+        ],
+        "refs": [
+          "P18"
+        ],
+        "shape": "money"
+      },
+      {
+        "type": "content",
+        "heading": "Our Track Record, How We'll Measure, and Who to Contact",
+        "bullets": [
+          {
+            "text": "FY2026: 296 cases opened, 231 mediated, 168 written agreements (73% of cases mediated)",
+            "ref": "P12"
+          },
+          {
+            "text": "38 active volunteer mediators gave 2,140 hours; 54 sessions held with an interpreter",
+            "ref": "P12"
+          },
+          {
+            "text": "For the desk, we'll add a 180-day follow-up call to the 90-day call",
+            "ref": "P21"
+          },
+          {
+            "text": "We have asked the court clerk for an anonymized count of desk cases that come back to court within six months",
+            "ref": "P21"
+          },
+          {
+            "text": "If the numbers don't hold up, we will report that",
+            "ref": "P21"
+          },
+          {
+            "text": "\"I came in ready to fight about the deposit. I left with a payment plan and my landlord's phone number. Nobody had to lose.\" (Tenant, March 2026)",
+            "ref": "P16"
+          },
+          {
+            "text": "Contact: Teodor Halvik, Executive Director, VNMC, 214 Coldwater Street, Second Floor, Vessick",
+            "ref": "P21"
+          }
+        ],
+        "refs": [
+          "P12",
+          "P21",
+          "P16"
+        ],
+        "comp": "open"
+      }
+    ],
+    "plain": true
+  },
+  "passages": {
+    "P10": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Report",
+      "source_id": "s_3e519b27bca2"
+    },
+    "P11": {
+      "text": "## FY2026 Annual Program Report\n### July 1, 2025 to June 30, 2026\nVessick Neighborhood Mediation Center (VNMC) helps people in Vessick and the surrounding river townships settle disputes before they reach a courtroom, a police call, or a moving truck. We are a small organization: two and a half paid staff, a rented office above the Coldwater Street pharmacy, two mediation rooms, and a roster of trained volunteer mediators who do most of the work. This report covers what we did in FY2026, what it cost, who paid for it, and what we plan to build next.",
+      "locator": "“Vessick Neighborhood Mediation Center”",
+      "source_title": "Report",
+      "source_id": "s_3e519b27bca2"
+    },
+    "P12": {
+      "text": "| Measure | FY2026 |\n|---|---|\n| Referrals received | 412 |\n| Cases opened | 296 |\n| Cases that reached a mediation session | 231 |\n| Written agreements signed | 168 |\n| Agreement rate (of cases mediated) | 73% |\n| Active volunteer mediators | 38 |\n| New mediators certified | 11 |\n| Volunteer hours logged | 2,140 |\n| Sessions held with an interpreter | 54 |\nReferrals came from the Vessick County District Court (41%), the city's code enforcement office and police non-emergency line (22%), schools (9%), and people who called us directly or were sent by a neighbor (28%). Not every referral becomes a case. About a quarter of the time, one side declines to take part, or the problem resolves on its own once someone neutral picks up the phone.",
+      "locator": "“The year in numbers”",
+      "source_title": "Report",
+      "source_id": "s_3e519b27bca2"
+    },
+    "P13": {
+      "text": "**Neighbor and community disputes.** Fences, noise, shared driveways, dogs, trees on the property line, a parking spot that two households both believe is theirs. These made up 121 of our 296 cases. They are rarely about the fence. A typical case takes two sessions of about 90 minutes each, and most end with a written agreement both parties sign before they leave the room.\n**Landlord-tenant early resolution.** Our fastest-growing program. In FY2026 we opened 118 landlord-tenant cases, up from 74 the year before. Most involved back rent, security deposits, repairs, or a notice to vacate. Of those 118 cases, 87 reached a mediation session and 61 ended in a signed agreement, usually a payment plan, a repair schedule, or an agreed move-out date that gave a family time to find a new place.",
+      "locator": "“Programs”",
+      "source_title": "Report",
+      "source_id": "s_3e519b27bca2"
+    },
+    "P14": {
+      "text": "**School peer mediation.** We trained 46 students at Lindell Middle School and Harrow Road Middle School to mediate conflicts between classmates. Each school now has a student mediation team that meets weekly with a faculty sponsor. Schools pay a sliding-scale fee for the training.\n**Volunteer mediator training.** Our 40-hour basic mediation course certified 11 new volunteers this year, and our active roster stands at 38. Volunteers include a retired postal carrier, two nursing students, a former city council aide, and a bilingual bookkeeper who now co-mediates most of our Spanish-language sessions. Together they gave 2,140 hours.",
+      "locator": "“Programs”",
+      "source_title": "Report",
+      "source_id": "s_3e519b27bca2"
+    },
+    "P15": {
+      "text": "The clearest result this year came from the landlord-tenant program. Ninety days after each landlord-tenant agreement was signed, our case coordinator called both parties to ask whether the agreement was still holding. We reached 52 of the 61 households. In 44 of those 52, the agreement was holding: the payment plan was current, the repair was done, or the move happened on the agreed date. That is 85%.",
+      "locator": "“What changed for people”",
+      "source_title": "Report",
+      "source_id": "s_3e519b27bca2"
+    },
+    "P16": {
+      "text": "We want to be careful with that number. It is a self-reported answer to a phone call, not a review of court records. We could not reach 9 of the 61 households, and people who are hard to reach may also be the ones whose agreements fell apart, so the true rate could be lower. We also have no comparison group: we do not know how many of these cases would have settled without us. What we can say is that 44 households told us the deal they made in our office was still working three months later.\nA tenant who came to us in March 2026 put it this way:\n> \"I came in ready to fight about the deposit. I left with a payment plan and my landlord's phone number. Nobody had to lose.\"",
+      "locator": "“What changed for people”",
+      "source_title": "Report",
+      "source_id": "s_3e519b27bca2"
+    },
+    "P17": {
+      "text": "Total FY2026 expenses were **$286,400**.\n| Category | Amount |\n|---|---|\n| Personnel (1.0 executive director, 1.0 case coordinator, 0.5 training coordinator) | $198,600 |\n| Rent and utilities (office and two mediation rooms) | $31,800 |\n| Insurance, accounting, and case-management software | $17,400 |\n| Volunteer training and certification | $14,200 |\n| Interpreter services | $12,900 |\n| School program materials and student stipends | $11,500 |\n| **Total** | **$286,400** |\nPersonnel is 69% of our budget. That is the work: someone has to answer the phone, schedule two parties who do not want to be in the same room, train the volunteers, and sit in on the hard sessions.",
+      "locator": "“Expenses”",
+      "source_title": "Report",
+      "source_id": "s_3e519b27bca2"
+    },
+    "P18": {
+      "text": "Total FY2026 revenue was **$291,750**, from five sources.\n| Source | Amount | Share |\n|---|---|---|\n| Vessick County District Court, alternative dispute resolution contract | $112,000 | 38% |\n| Halbrook Family Foundation, general operating grant | $75,000 | 26% |\n| City of Vessick, housing stability allocation | $48,000 | 16% |\n| Individual donors and the October Common Table dinner | $41,250 | 14% |\n| Fees for service (school trainings, sliding-scale private mediations) | $15,500 | 5% |\n| **Total** | **$291,750** | **100%** |\nWe ended the year with a surplus of $5,350, which went to our operating reserve. The reserve now covers about seven weeks of expenses. Our board's goal is twelve.\nThe court contract is our largest single source and renews every two years; the current term runs through June 2027. No single funder covers more than 38% of the budget, and we intend to keep it that way.",
+      "locator": "“Funding”",
+      "source_title": "Report",
+      "source_id": "s_3e519b27bca2"
+    },
+    "P19": {
+      "text": "Most of our landlord-tenant cases reach us late, often after an eviction case has already been filed. By then, positions have hardened, court costs are added to the balance, and a tenant may have a filing on their record even if the case is later dismissed.\nStarting in February 2027, we will staff a **Tenant Early Resolution Desk** inside the Vessick County Courthouse on the two mornings each week when the eviction docket is heard. A trained mediator and a volunteer will meet landlords and tenants in the hallway before their hearing, offer a same-day mediation in a side room the court has agreed to provide, and, when that is not possible, schedule a session at our office within five business days.\nThe first 12 months of the desk will cost **$96,000**:",
+      "locator": "“FY2027 plan: the Tenant Early Resolution Desk”",
+      "source_title": "Report",
+      "source_id": "s_3e519b27bca2"
+    },
+    "P20": {
+      "text": "| Item | Amount |\n|---|---|\n| Housing mediator, 0.6 FTE, salary and benefits | $52,800 |\n| Supervision and case coordination (share of existing staff time) | $14,400 |\n| Interpreter services on docket days | $9,600 |\n| Volunteer mediator stipends and training | $8,400 |\n| 90-day and 180-day follow-up calls and outcome tracking | $6,000 |\n| Printed materials, laptop, and case-management licenses | $4,800 |\n| **Total** | **$96,000** |\nThe Vessick County District Court has committed **$36,000** toward the desk as an amendment to our existing contract. We are seeking the remaining **$60,000** from one or more foundation partners.",
+      "locator": "“FY2027 plan: the Tenant Early Resolution Desk”",
+      "source_title": "Report",
+      "source_id": "s_3e519b27bca2"
+    },
+    "P21": {
+      "text": "We will measure the desk honestly. Alongside the 90-day follow-up call, we will add a 180-day call, and we have asked the court clerk for an anonymized count of how many desk cases return to the docket within six months. If the numbers do not hold up, we will say so in next year's report.\nContact: Teodor Halvik, Executive Director, Vessick Neighborhood Mediation Center, 214 Coldwater Street, Second Floor, Vessick.",
+      "locator": "“FY2027 plan: the Tenant Early Resolution Desk”",
+      "source_title": "Report",
+      "source_id": "s_3e519b27bca2"
+    },
+    "P1": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Notes",
+      "source_id": "s_89da70d0201a"
+    },
+    "P2": {
+      "text": "VESSICK NEIGHBORHOOD MEDIATION CENTER\nBoard meeting notes, Tuesday, October 20, 2026\nPresent: Ines Dalgarno (chair), Marisol Pyke (treasurer), Ruth Ambersley, Owen Carrick, Teodor Halvik (executive director, staff)",
+      "locator": "para. 2",
+      "source_title": "Notes",
+      "source_id": "s_89da70d0201a"
+    },
+    "P3": {
+      "text": "Item 3: Merrow Valley Community Trust",
+      "locator": "para. 3",
+      "source_title": "Notes",
+      "source_id": "s_89da70d0201a"
+    },
+    "P4": {
+      "text": "Teodor reported that Hollis Brandt, program officer at the Merrow Valley Community Trust, invited us to submit for the Trust's winter housing round. The Trust wants a short slide deck first, not a full proposal. If the deck lands, they will ask for a budget and a site visit in January.",
+      "locator": "para. 4",
+      "source_title": "Notes",
+      "source_id": "s_89da70d0201a"
+    },
+    "P5": {
+      "text": "Ask: $60,000 toward the Tenant Early Resolution Desk. Desk costs $96,000 for its first 12 months; the county court has already committed $36,000. Marisol confirmed the numbers match the FY2026 report.",
+      "locator": "para. 5",
+      "source_title": "Notes",
+      "source_id": "s_89da70d0201a"
+    },
+    "P6": {
+      "text": "Deadline: final deck to Hollis by Friday, December 4, 2026. Draft to the board by Friday, November 20.",
+      "locator": "para. 6",
+      "source_title": "Notes",
+      "source_id": "s_89da70d0201a"
+    },
+    "P7": {
+      "text": "Discussion and instructions for the deck:",
+      "locator": "para. 7",
+      "source_title": "Notes",
+      "source_id": "s_89da70d0201a"
+    },
+    "P8": {
+      "text": "1. Ines: no more than eight slides. Hollis reads on her phone between meetings.\n2. Teodor: put the $60,000 ask on slide one or two, not at the end.\n3. Ruth: the 85% figure only goes in with its caveat on the same slide. We reached 52 of 61 households, it is self-reported, and there is no comparison group. Do not say or imply that we prevent evictions.\n4. Marisol: show all five funding sources with amounts so the Trust sees the court contract is our largest source and that they would not be carrying us.\n5. Owen: no participant names or photos. The tenant quote stays anonymous.",
+      "locator": "para. 8",
+      "source_title": "Notes",
+      "source_id": "s_89da70d0201a"
+    },
+    "P9": {
+      "text": "Action: Teodor drafts; Ruth reviews the numbers slide before it goes to the board.",
+      "locator": "para. 9",
+      "source_title": "Notes",
+      "source_id": "s_89da70d0201a"
+    }
+  },
+  "grounding": [
+    {
+      "path": "title",
+      "value": "60000",
+      "shown": "$60,000",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "60000",
+      "shown": "$60,000",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "12",
+      "shown": "12",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "2027",
+      "shown": "2027",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.0.figure",
+      "value": "96000",
+      "shown": "$96,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.1.figure",
+      "value": "36000",
+      "shown": "$36,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.2.figure",
+      "value": "60000",
+      "shown": "$60,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.4",
+      "value": "74",
+      "shown": "74",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.4",
+      "value": "118",
+      "shown": "118",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.heading",
+      "value": "96000",
+      "shown": "$96,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.0",
+      "value": "0.6",
+      "shown": "0.6",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.0.figure",
+      "value": "52800",
+      "shown": "$52,800",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.0.figure",
+      "value": "0.6",
+      "shown": "0.6",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.1.figure",
+      "value": "14400",
+      "shown": "$14,400",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.2.figure",
+      "value": "9600",
+      "shown": "$9,600",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.3.figure",
+      "value": "8400",
+      "shown": "$8,400",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.4",
+      "value": "90",
+      "shown": "90",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.4",
+      "value": "180",
+      "shown": "180",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.4.figure",
+      "value": "6000",
+      "shown": "$6,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.4.figure",
+      "value": "90",
+      "shown": "90",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.4.figure",
+      "value": "180",
+      "shown": "180",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.5.figure",
+      "value": "4800",
+      "shown": "$4,800",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.6.figure",
+      "value": "96000",
+      "shown": "$96,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.0",
+      "value": "118",
+      "shown": "118",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.0",
+      "value": "87",
+      "shown": "87",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.0",
+      "value": "61",
+      "shown": "61",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.1",
+      "value": "90",
+      "shown": "90",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.1",
+      "value": "52",
+      "shown": "52",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.1",
+      "value": "61",
+      "shown": "61",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.2",
+      "value": "44",
+      "shown": "44",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.2",
+      "value": "52",
+      "shown": "52",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.2",
+      "value": "85%",
+      "shown": "85%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.4",
+      "value": "9",
+      "shown": "9",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.6",
+      "value": "44",
+      "shown": "44",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.heading",
+      "value": "5",
+      "shown": "Five",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.0",
+      "value": "38%",
+      "shown": "38%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.0.figure",
+      "value": "112000",
+      "shown": "$112,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.0.figure",
+      "value": "38%",
+      "shown": "38%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.1",
+      "value": "26%",
+      "shown": "26%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.1.figure",
+      "value": "75000",
+      "shown": "$75,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.1.figure",
+      "value": "26%",
+      "shown": "26%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.2",
+      "value": "16%",
+      "shown": "16%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.2.figure",
+      "value": "48000",
+      "shown": "$48,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.2.figure",
+      "value": "16%",
+      "shown": "16%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.3",
+      "value": "14%",
+      "shown": "14%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.3.figure",
+      "value": "41250",
+      "shown": "$41,250",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.3.figure",
+      "value": "14%",
+      "shown": "14%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.4",
+      "value": "5%",
+      "shown": "5%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.4.figure",
+      "value": "15500",
+      "shown": "$15,500",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.4.figure",
+      "value": "5%",
+      "shown": "5%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.5",
+      "value": "286400",
+      "shown": "$286,400",
+      "status": "computed",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.5",
+      "value": "5350",
+      "shown": "$5,350",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.5.figure",
+      "value": "291750",
+      "shown": "$291,750",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.5.figure",
+      "value": "286400",
+      "shown": "$286,400",
+      "status": "computed",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.5.figure",
+      "value": "5350",
+      "shown": "$5,350",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.6",
+      "value": "2027",
+      "shown": "2027",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.7",
+      "value": "38%",
+      "shown": "38%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.0",
+      "value": "296",
+      "shown": "296",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.0",
+      "value": "231",
+      "shown": "231",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.0",
+      "value": "168",
+      "shown": "168",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.0",
+      "value": "73%",
+      "shown": "73%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.1",
+      "value": "38",
+      "shown": "38",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.1",
+      "value": "2140",
+      "shown": "2,140",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.1",
+      "value": "54",
+      "shown": "54",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.2",
+      "value": "180",
+      "shown": "180",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.2",
+      "value": "90",
+      "shown": "90",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.5",
+      "value": "2026",
+      "shown": "2026",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.5",
+      "value": "I came in ready to fight about the deposit. I left with a payment plan and my landlord's phone number. Nobody had to lose.",
+      "shown": "I came in ready to fight about the deposit. I left with a payment plan and my landlord's phone number. Nobody had to lose.",
+      "status": "ok",
+      "kind": "quote"
+    },
+    {
+      "path": "slides.6.bullets.6",
+      "value": "214",
+      "shown": "214",
+      "status": "ok",
+      "kind": "number"
+    }
+  ],
+  "exhibits": [],
+  "check": [
+    "All 68 numbers and quotes found in your sources; 2 worked out from them; 3 citations corrected"
+  ],
+  "pills": [
+    {
+      "id": "sources",
+      "tone": "good",
+      "label": "All 68 numbers and quotes found in your sources; 2 worked out from them; 3 citations corrected"
+    },
+    {
+      "id": "contrast",
+      "tone": "warn",
+      "label": "Contrast passes; 1 brand color kept to rules and fills"
+    },
+    {
+      "id": "never",
+      "tone": "good",
+      "label": "No never-say words"
+    },
+    {
+      "id": "fonts",
+      "tone": "good",
+      "label": "Kit fonts used"
+    },
+    {
+      "id": "money",
+      "tone": "warn",
+      "label": "The deck leaves out $198,600, $31,800, $17,400, $14,200 and more from Report, “Expenses”"
+    },
+    {
+      "id": "repeats",
+      "tone": "warn",
+      "label": "Set big more than once: $96,000"
+    }
+  ],
+  "slide_count": 8,
+  "seconds": 34.0
+}

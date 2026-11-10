@@ -1,0 +1,761 @@
+{
+  "summary": {
+    "set": "salvia",
+    "steps": {
+      "notebook_guide": {
+        "status": "done",
+        "error": null
+      },
+      "outline": {
+        "status": "done",
+        "seconds": 17.6,
+        "error": null
+      },
+      "rewrite_title": {
+        "status": "done",
+        "seconds": 9.8,
+        "error": null
+      },
+      "make_deck": {
+        "status": "done",
+        "seconds": 40.7,
+        "error": null
+      },
+      "stronger_slide3": {
+        "status": "done",
+        "seconds": 13.2,
+        "error": null
+      },
+      "graphic_options": {
+        "status": "done",
+        "seconds": 20.3,
+        "error": null
+      }
+    },
+    "guide_and_summaries_seconds": 13.8,
+    "deck_check": [
+      "All 24 numbers and quotes found in your sources"
+    ],
+    "deck_missing": []
+  },
+  "results": {
+    "graphic_options": {
+      "by": "Written by your Hermes model",
+      "source_ids": [
+        "s_0c51d6b6bc47",
+        "s_0bba65a4a1ad"
+      ],
+      "options": [
+        {
+          "form": "compare",
+          "spec": {
+            "kicker": "Office lunch prices",
+            "headline": "Boxed lunches cost less per person than family-style trays",
+            "dek": "Per-person prices on Salvia Kitchen's fall office menu.",
+            "dek_refs": [
+              "P3",
+              "P4",
+              "P5"
+            ],
+            "form": "compare",
+            "unit": "Dollars per person",
+            "items": [
+              {
+                "label": "Boxed lunches",
+                "value": "$16",
+                "ref": "P4"
+              },
+              {
+                "label": "Family-style trays",
+                "value": "$24",
+                "ref": "P5"
+              }
+            ],
+            "steps": [],
+            "takeaway": "Boxes need at least 10 orders. Trays need at least 15 guests.",
+            "takeaway_refs": [
+              "P4",
+              "P5"
+            ]
+          },
+          "check": {
+            "status": "ok",
+            "label": "Every value matches your sources"
+          }
+        },
+        {
+          "form": "timeline",
+          "spec": {
+            "kicker": "How Salvia grew",
+            "headline": "Salvia Kitchen grew from neighbors' parties to hundreds of events",
+            "dek": "Key steps for Salvia Kitchen, run by Ana and her brother Tomas.",
+            "dek_refs": [
+              "P2"
+            ],
+            "form": "timeline",
+            "unit": "",
+            "items": [],
+            "steps": [
+              {
+                "when": "2019",
+                "text": "Started cooking for neighbors' parties",
+                "ref": "P2"
+              },
+              {
+                "when": "2022",
+                "text": "Opened a commercial kitchen",
+                "ref": "P2"
+              },
+              {
+                "when": "Last year",
+                "text": "Catered 214 events for about 9,600 guests",
+                "ref": "P2"
+              }
+            ],
+            "takeaway": "Most of the business now comes from office lunches and baby showers.",
+            "takeaway_refs": [
+              "P2"
+            ]
+          },
+          "check": {
+            "status": "ok",
+            "label": "Every value matches your sources"
+          }
+        },
+        {
+          "form": "figures",
+          "spec": {
+            "kicker": "Ordering basics",
+            "headline": "Plan ahead and check your distance before you order",
+            "dek": "Ordering and delivery rules on Salvia Kitchen's fall office menu.",
+            "dek_refs": [
+              "P7"
+            ],
+            "form": "figures",
+            "unit": "",
+            "items": [
+              {
+                "label": "Notice needed",
+                "value": "72 hours",
+                "ref": "P7"
+              },
+              {
+                "label": "Free delivery range",
+                "value": "10 miles",
+                "ref": "P7"
+              },
+              {
+                "label": "Delivery fee beyond",
+                "value": "$35",
+                "ref": "P7"
+              }
+            ],
+            "steps": [],
+            "takeaway": "Order early. Delivery is free within 10 miles of downtown, and any menu can be gluten-free.",
+            "takeaway_refs": [
+              "P7"
+            ]
+          },
+          "check": {
+            "status": "ok",
+            "label": "Every value matches your sources"
+          }
+        }
+      ],
+      "dropped": 0
+    },
+    "element_edit": {
+      "by": "Written by your Hermes model",
+      "output_id": "o_44d928f9cbf4",
+      "kit_id": "counsel",
+      "slide": 1,
+      "action": "stronger",
+      "status": "ok",
+      "message": null,
+      "before": {
+        "type": "stat",
+        "refs": [
+          "P2"
+        ],
+        "value": "214",
+        "label": "events catered last year",
+        "context": "We served about 9,600 guests, mostly at office lunches and baby showers."
+      },
+      "options": [
+        {
+          "slide": {
+            "type": "stat",
+            "refs": [
+              "P2"
+            ],
+            "value": "214",
+            "label": "events in one year",
+            "context": "We served about 9,600 guests, mostly at office lunches and baby showers."
+          },
+          "check": {
+            "status": "ok",
+            "label": "All 2 numbers and quotes match your sources",
+            "items": []
+          }
+        },
+        {
+          "slide": {
+            "type": "stat",
+            "refs": [
+              "P2"
+            ],
+            "value": "214",
+            "label": "events by Ana and Tomas",
+            "context": "We served about 9,600 guests, mostly at office lunches and baby showers."
+          },
+          "check": {
+            "status": "ok",
+            "label": "All 2 numbers and quotes match your sources",
+            "items": []
+          }
+        },
+        {
+          "slide": {
+            "type": "stat",
+            "refs": [
+              "P2"
+            ],
+            "value": "214",
+            "label": "events that fed our guests",
+            "context": "We served about 9,600 guests, mostly at office lunches and baby showers."
+          },
+          "check": {
+            "status": "ok",
+            "label": "All 2 numbers and quotes match your sources",
+            "items": []
+          }
+        }
+      ],
+      "insert_after": null
+    },
+    "rewrite_title": {
+      "by": "Written by your Hermes model",
+      "outline_id": "ol_e9e3411152ac",
+      "index": 2,
+      "before": "Salvia Kitchen buys produce from three farms within 40 miles",
+      "options": [
+        {
+          "title": "Three farms within 40 miles of the kitchen supply Salvia Kitchen's produce",
+          "chips": [
+            {
+              "ref": "P2",
+              "n": 1,
+              "source_n": 1,
+              "source": "About us",
+              "locator": "para. 2",
+              "source_id": "s_0c51d6b6bc47"
+            }
+          ],
+          "refs": [
+            "P2"
+          ],
+          "hint": null,
+          "words": 12
+        },
+        {
+          "title": "Ana and Tomas buy their produce from three farms within 40 miles",
+          "chips": [
+            {
+              "ref": "P2",
+              "n": 1,
+              "source_n": 1,
+              "source": "About us",
+              "locator": "para. 2",
+              "source_id": "s_0c51d6b6bc47"
+            }
+          ],
+          "refs": [
+            "P2"
+          ],
+          "hint": null,
+          "words": 12
+        },
+        {
+          "title": "Salvia Kitchen's produce comes from farms no more than 40 miles away",
+          "chips": [
+            {
+              "ref": "P2",
+              "n": 1,
+              "source_n": 1,
+              "source": "About us",
+              "locator": "para. 2",
+              "source_id": "s_0c51d6b6bc47"
+            }
+          ],
+          "refs": [
+            "P2"
+          ],
+          "hint": null,
+          "words": 12
+        }
+      ]
+    },
+    "outline": {
+      "by": "Written by your Hermes model",
+      "outline_id": "ol_e9e3411152ac",
+      "kind": "deck",
+      "brief": {
+        "who": "The people these sources are for",
+        "goal": "Decide what to do next",
+        "length": "About 8 slides"
+      },
+      "source_ids": [
+        "s_0c51d6b6bc47",
+        "s_0bba65a4a1ad"
+      ],
+      "slides": [
+        {
+          "title": "Two siblings have run Salvia Kitchen's catering since 2019",
+          "type": "section",
+          "refs": [
+            "P2"
+          ],
+          "chips": [
+            {
+              "ref": "P2",
+              "n": 1,
+              "source_n": 1,
+              "source": "About us",
+              "locator": "para. 2",
+              "source_id": "s_0c51d6b6bc47"
+            }
+          ],
+          "hint": null,
+          "words": 9,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": []
+          }
+        },
+        {
+          "title": "Salvia Kitchen catered 214 events last year",
+          "type": "stat",
+          "refs": [
+            "P2"
+          ],
+          "chips": [
+            {
+              "ref": "P2",
+              "n": 1,
+              "source_n": 1,
+              "source": "About us",
+              "locator": "para. 2",
+              "source_id": "s_0c51d6b6bc47"
+            }
+          ],
+          "hint": null,
+          "words": 7,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": [
+              {
+                "value": "214",
+                "status": "exact",
+                "ref": "P2"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Salvia Kitchen buys produce from three farms within 40 miles",
+          "type": "content",
+          "refs": [
+            "P2"
+          ],
+          "chips": [
+            {
+              "ref": "P2",
+              "n": 1,
+              "source_n": 1,
+              "source": "About us",
+              "locator": "para. 2",
+              "source_id": "s_0c51d6b6bc47"
+            }
+          ],
+          "hint": null,
+          "words": 10,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": [
+              {
+                "value": "40",
+                "status": "exact",
+                "ref": "P2"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Boxed lunches cost $8 less per person than family-style trays",
+          "type": "comparison",
+          "refs": [
+            "P4",
+            "P5"
+          ],
+          "chips": [
+            {
+              "ref": "P4",
+              "n": 1,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 2",
+              "source_id": "s_0bba65a4a1ad"
+            },
+            {
+              "ref": "P5",
+              "n": 2,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 3",
+              "source_id": "s_0bba65a4a1ad"
+            }
+          ],
+          "hint": null,
+          "words": 10,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": [
+              {
+                "value": "$8",
+                "status": "computed",
+                "ref": "P5",
+                "math": {
+                  "op": "difference",
+                  "operands": [
+                    {
+                      "value": "$24",
+                      "ref": "P5",
+                      "source": "Fall menu",
+                      "locator": "para. 3",
+                      "line": {
+                        "before": "Family-style trays, ",
+                        "match": "$24",
+                        "after": " per person, minimum 15 guests."
+                      }
+                    },
+                    {
+                      "value": "$16",
+                      "ref": "P4",
+                      "source": "Fall menu",
+                      "locator": "para. 2",
+                      "line": {
+                        "before": "Boxed lunches, ",
+                        "match": "$16",
+                        "after": " per person, minimum 10 boxes."
+                      }
+                    }
+                  ],
+                  "result": "8",
+                  "text": "24 − 16 = 8"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "title": "Each boxed lunch offers three mains, including a vegan torta",
+          "type": "content",
+          "refs": [
+            "P4"
+          ],
+          "chips": [
+            {
+              "ref": "P4",
+              "n": 1,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 2",
+              "source_id": "s_0bba65a4a1ad"
+            }
+          ],
+          "hint": null,
+          "words": 10,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": []
+          }
+        },
+        {
+          "title": "Every menu can be made gluten-free on request",
+          "type": "content",
+          "refs": [
+            "P7"
+          ],
+          "chips": [
+            {
+              "ref": "P7",
+              "n": 1,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 5",
+              "source_id": "s_0bba65a4a1ad"
+            }
+          ],
+          "hint": null,
+          "words": 8,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": []
+          }
+        },
+        {
+          "title": "Delivery is free within 10 miles of downtown",
+          "type": "content",
+          "refs": [
+            "P7"
+          ],
+          "chips": [
+            {
+              "ref": "P7",
+              "n": 1,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 5",
+              "source_id": "s_0bba65a4a1ad"
+            }
+          ],
+          "hint": null,
+          "words": 8,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": [
+              {
+                "value": "10",
+                "status": "exact",
+                "ref": "P7"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Place your order at least 72 hours before your event",
+          "type": "closing",
+          "refs": [
+            "P7"
+          ],
+          "chips": [
+            {
+              "ref": "P7",
+              "n": 1,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 5",
+              "source_id": "s_0bba65a4a1ad"
+            }
+          ],
+          "hint": null,
+          "words": 10,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": [
+              {
+                "value": "72",
+                "status": "exact",
+                "ref": "P7"
+              }
+            ]
+          }
+        }
+      ],
+      "warnings": [],
+      "created_at": 1794193469.8710558
+    },
+    "notebook_guide": {
+      "by": "Written by your Hermes model",
+      "guide": [
+        {
+          "text": "These sources are an About Us page and a fall office menu from Salvia Kitchen, a catering business run by Ana and her brother Tomas.",
+          "chips": [
+            {
+              "ref": "P1",
+              "n": 1,
+              "source_n": 1,
+              "source": "About us",
+              "locator": "para. 1",
+              "source_id": "s_0c51d6b6bc47"
+            },
+            {
+              "ref": "P2",
+              "n": 2,
+              "source_n": 1,
+              "source": "About us",
+              "locator": "para. 2",
+              "source_id": "s_0c51d6b6bc47"
+            },
+            {
+              "ref": "P3",
+              "n": 3,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 1",
+              "source_id": "s_0bba65a4a1ad"
+            }
+          ]
+        },
+        {
+          "text": "They opened a commercial kitchen in 2022 and catered 214 events for about 9,600 guests last year.",
+          "chips": [
+            {
+              "ref": "P2",
+              "n": 1,
+              "source_n": 1,
+              "source": "About us",
+              "locator": "para. 2",
+              "source_id": "s_0c51d6b6bc47"
+            }
+          ]
+        },
+        {
+          "text": "Boxed lunches cost $16 per person with a 10-box minimum, and family-style trays cost $24 per person for at least 15 guests.",
+          "chips": [
+            {
+              "ref": "P4",
+              "n": 1,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 2",
+              "source_id": "s_0bba65a4a1ad"
+            },
+            {
+              "ref": "P5",
+              "n": 2,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 3",
+              "source_id": "s_0bba65a4a1ad"
+            }
+          ]
+        },
+        {
+          "text": "Orders need 72 hours notice, and delivery is free within 10 miles of downtown but costs $35 beyond that.",
+          "chips": [
+            {
+              "ref": "P7",
+              "n": 1,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 5",
+              "source_id": "s_0bba65a4a1ad"
+            }
+          ]
+        },
+        {
+          "text": "Every menu can be made gluten-free, and all eight major allergens are labeled.",
+          "chips": [
+            {
+              "ref": "P7",
+              "n": 1,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 5",
+              "source_id": "s_0bba65a4a1ad"
+            }
+          ]
+        }
+      ],
+      "asks": [],
+      "questions": [
+        {
+          "text": "Trays come in sizes for 15, 25 or 40 guests. Last year Salvia Kitchen served about 9,600 guests at 214 events. How do they serve parties bigger than 40?",
+          "chips": [
+            {
+              "ref": "P5",
+              "n": 1,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 3",
+              "source_id": "s_0bba65a4a1ad"
+            },
+            {
+              "ref": "P2",
+              "n": 2,
+              "source_n": 1,
+              "source": "About us",
+              "locator": "para. 2",
+              "source_id": "s_0c51d6b6bc47"
+            }
+          ],
+          "suggestion": true
+        },
+        {
+          "text": "Baby showers are one of their two biggest sources of business. The fall menu is built for offices, with a 10-box or 15-guest minimum. What do they offer smaller showers?",
+          "chips": [
+            {
+              "ref": "P2",
+              "n": 1,
+              "source_n": 1,
+              "source": "About us",
+              "locator": "para. 2",
+              "source_id": "s_0c51d6b6bc47"
+            },
+            {
+              "ref": "P3",
+              "n": 2,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 1",
+              "source_id": "s_0bba65a4a1ad"
+            },
+            {
+              "ref": "P4",
+              "n": 3,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 2",
+              "source_id": "s_0bba65a4a1ad"
+            },
+            {
+              "ref": "P5",
+              "n": 4,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 3",
+              "source_id": "s_0bba65a4a1ad"
+            }
+          ],
+          "suggestion": true
+        },
+        {
+          "text": "Their farms are within 40 miles of the kitchen, but free delivery only reaches 10 miles from downtown. Do customers past 10 miles always pay the $35 fee?",
+          "chips": [
+            {
+              "ref": "P2",
+              "n": 1,
+              "source_n": 1,
+              "source": "About us",
+              "locator": "para. 2",
+              "source_id": "s_0c51d6b6bc47"
+            },
+            {
+              "ref": "P7",
+              "n": 2,
+              "source_n": 2,
+              "source": "Fall menu",
+              "locator": "para. 5",
+              "source_id": "s_0bba65a4a1ad"
+            }
+          ],
+          "suggestion": true
+        }
+      ],
+      "source_ids": [
+        "s_0c51d6b6bc47",
+        "s_0bba65a4a1ad"
+      ],
+      "created_at": 1794193452.189297
+    }
+  }
+}

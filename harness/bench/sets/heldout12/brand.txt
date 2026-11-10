@@ -1,0 +1,10 @@
+Sample (fictional)
+
+Cogline Bike Works brand
+
+Colors:
+- Chain Green: #1F3A33
+- Brake Amber: #E8A33D
+- Shop Cream: #F5F1E8
+
+Font: Barlow

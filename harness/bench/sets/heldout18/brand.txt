@@ -1,0 +1,10 @@
+Sample (fictional)
+
+Haverlin Creek Paddle Works brand
+
+Colors:
+- River Teal: #1F4E5F
+- Paddle Orange: #E08A2E
+- Sandbar: #F4EFE6
+
+Font: Libre Franklin

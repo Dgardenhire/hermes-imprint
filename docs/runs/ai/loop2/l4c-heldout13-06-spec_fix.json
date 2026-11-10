@@ -1,0 +1,145 @@
+{
+  "purpose": "imprint.spec_fix",
+  "tag": "l4c-heldout13",
+  "seconds": 12.7,
+  "model": "claude-opus-5-5",
+  "ok": true,
+  "neutral": true,
+  "request": {
+    "system": "You are a presentation designer who lays out funder decks slide by slide, the way a strong designer writing python-pptx code would: each slide's layout chosen for what it says.",
+    "instructions": "",
+    "input_chars": 4126,
+    "input_head": "This slide was measured in the brand's real fonts and has problems:\n- element 3 (figure) does not fit its 237 x 116 box even at the smallest type size\n\nEach slide is positioned elements on a 960 x 540 canvas (points, origin top left). Element types:\n- text: {\"type\":\"text\",\"x\",\"y\",\"w\",\"h\",\"text\",\"style\",\"color\",\"align\"}  style: title | heading | figure | body | strong | italic | small | label\n- list: {\"type\":\"list\",\"x\",\"y\",\"w\",\"h\",\"items\":[\"...\"],\"style\":\"body\"}  bulleted points\n- rect: {\"type\":\"rect\",\"x\",\"y\",\"w\",\"h\",\"fill\"}  a panel or band (draw it BEFORE the text that sits on it)\n- line: {\"type\":\"line\",\"x\",\"y\",\"w\",\"h\",\"color\"}  a rule (h 2 for horizontal, w 2 for vertical)\n- dot: {\"type\":\"dot\",\"x\",\"y\",\"w\",\"h\",\"fill\"}  a circle (timeline markers)\n- figure: {\"type\":\"figure\",\"x\",\"y\",\"w\",\"h\",\"value\":\"$31,900\",\"label\":\"vehicle costs in FY2026\",\"note\":\"up from $19,700\",\"fill\":\"tint\"}  a big-number tile (omit fill for no panel)\n- bars: {\"type\":\"bars\",\"x\",\"y\",\"w\",\"h\",\"orient\":\"horizontal\"|\"vertical\",\"items\":[{\"label\",\"value\",\"highlight\":true}]}  a bar or column chart; value is the number as shown (\"$85,000\", \"41%\")\n- stack: {\"type\":\"stack\",\"x\",\"y\",\"w\",\"h\",\"items\":[{\"label\",\"value\",\"highlight\"}]}  one bar split into its parts (funding sources)\n- table: {\"type\":\"table\",\"x\",\"y\",\"w\",\"h\",\"header\":[\"Line\",\"Amount\"],\"rows\":[[\"Van\",\"$74,000\"]],\"total\":[\"Total\",\"$148,000\"]}\n- quote: {\"type\":\"quote\",\"x\",\"y\",\"w\",\"h\",\"text\",\"who\"}\n- callout: {\"type\":\"callout\",\"x\",\"y\",\"w\",\"h\",\"title\",\"text\" or "
+  },
+  "response": {
+    "ground": "paper",
+    "footer": true,
+    "title": "Checkouts rose to 21,460 while we completed 96 percent of stops",
+    "els": [
+      {
+        "type": "text",
+        "x": 40,
+        "y": 30,
+        "w": 880,
+        "h": 84,
+        "text": "Checkouts rose to 21,460 while we completed 96 percent of stops",
+        "style": "title"
+      },
+      {
+        "type": "text",
+        "x": 40,
+        "y": 130,
+        "w": 320,
+        "h": 20,
+        "text": "Items checked out",
+        "style": "label",
+        "color": "muted"
+      },
+      {
+        "type": "bars",
+        "x": 40,
+        "y": 156,
+        "w": 320,
+        "h": 248,
+        "orient": "vertical",
+        "items": [
+          {
+            "label": "FY2025",
+            "value": "18,930"
+          },
+          {
+            "label": "FY2026",
+            "value": "21,460",
+            "highlight": true
+          }
+        ]
+      },
+      {
+        "type": "figure",
+        "x": 380,
+        "y": 130,
+        "w": 262,
+        "h": 134,
+        "value": "96%",
+        "label": "stops completed",
+        "note": "281 of 292",
+        "fill": "tint"
+      },
+      {
+        "type": "figure",
+        "x": 658,
+        "y": 130,
+        "w": 262,
+        "h": 134,
+        "value": "91%",
+        "label": "return rate",
+        "fill": "tint"
+      },
+      {
+        "type": "figure",
+        "x": 380,
+        "y": 274,
+        "w": 262,
+        "h": 134,
+        "value": "846",
+        "label": "new county library cards issued to students",
+        "fill": "tint"
+      },
+      {
+        "type": "figure",
+        "x": 658,
+        "y": 274,
+        "w": 262,
+        "h": 134,
+        "value": "131",
+        "label": "of 214 children enrolled in summer reading finished the eight-book goal",
+        "fill": "tint"
+      },
+      {
+        "type": "callout",
+        "x": 40,
+        "y": 418,
+        "w": 880,
+        "h": 62,
+        "title": "Classroom crate loans, new this year",
+        "text": "52 of 61 teachers took part, about 4,100 checkouts",
+        "fill": "card"
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2299,
+    "cache_read_input_tokens": 669,
+    "output_tokens": 948,
+    "output_tokens_details": {
+      "thinking_tokens": 306
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2299,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 948,
+        "cache_read_input_tokens": 669,
+        "cache_creation_input_tokens": 2299,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2299
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "error": null
+}

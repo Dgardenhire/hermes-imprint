@@ -1,0 +1,1324 @@
+{
+  "set": "harborlight",
+  "tag": "r4f-harborlight",
+  "steps": {
+    "brand": {
+      "status": "done",
+      "seconds": 0.3
+    },
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "outline": {
+      "status": "done",
+      "seconds": 16.1,
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 45.7,
+      "error": null
+    }
+  },
+  "started": 1794211987.356647,
+  "sources": [
+    "FY26-Program-Report.docx",
+    "board-retreat-notes.txt"
+  ],
+  "kit": {
+    "id": "k_45d7d05d4f25",
+    "name": "Harborlight",
+    "colors": [
+      {
+        "hex": "#0e5e6f",
+        "role": "head",
+        "name": "Harbor Teal"
+      },
+      {
+        "hex": "#f2a900",
+        "role": "accent",
+        "name": "Sunrise Gold"
+      },
+      {
+        "hex": "#c0392b",
+        "role": "accent2",
+        "name": "Lighthouse Red"
+      }
+    ],
+    "paper": "#faf7f2",
+    "ink": "#2b2b2b",
+    "kit_json": {
+      "name": "Harborlight",
+      "origin": "import",
+      "origin_note": "Read from a brand guide PDF",
+      "org": "",
+      "subject": "",
+      "signature": "",
+      "paper": "#faf7f2",
+      "ink": "#2b2b2b",
+      "colors": [
+        {
+          "hex": "#0e5e6f",
+          "role": "head",
+          "name": "Harbor Teal"
+        },
+        {
+          "hex": "#f2a900",
+          "role": "accent",
+          "name": "Sunrise Gold"
+        },
+        {
+          "hex": "#c0392b",
+          "role": "accent2",
+          "name": "Lighthouse Red"
+        }
+      ],
+      "type": {
+        "heading": {
+          "family": "Montserrat",
+          "stack": "Montserrat, Arial",
+          "weight": 700
+        },
+        "body": {
+          "family": "Lora",
+          "stack": "Lora, Georgia",
+          "weight": 400
+        },
+        "scale": 1.25
+      },
+      "layout": "banner",
+      "density": "medium",
+      "voice": {
+        "notes": "",
+        "delivery": "",
+        "never": [],
+        "pairs": [],
+        "draft": false
+      },
+      "rules": {
+        "sources": true,
+        "page_numbers": true,
+        "date": true,
+        "required": []
+      },
+      "imported_from": {
+        "kind": "pdf",
+        "label": "Harborlight-Brand-Guide-2025",
+        "ref": "Harborlight-Brand-Guide-2025",
+        "sha256": "3c40ec332826deb288338920881528222d3344c5bcf844cd264e84cbd4cf4890",
+        "license_note": "",
+        "brand_named": false,
+        "mode": "",
+        "imported_at": 1794211988.040617
+      },
+      "logo": {
+        "file": "logo.png",
+        "kind": "png"
+      },
+      "logo_alt": null,
+      "fonts": [],
+      "id": "k_45d7d05d4f25",
+      "version": 2,
+      "created_at": 1794211988.043495,
+      "updated_at": 1794211988.051334,
+      "starter": false
+    }
+  },
+  "guide_and_summaries_seconds": 13.9,
+  "guide": {
+    "by": "Written by your Hermes model",
+    "guide": [
+      {
+        "text": "The sources are Harborlight's FY26 program report and notes from a board retreat on September 13.",
+        "chips": [
+          {
+            "ref": "P1",
+            "n": 1,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Who we served”",
+            "source_id": "s_a109d8d96f57"
+          },
+          {
+            "ref": "P6",
+            "n": 2,
+            "source_n": 2,
+            "source": "Board retreat notes",
+            "locator": "para. 1",
+            "source_id": "s_809db4c91050"
+          }
+        ]
+      },
+      {
+        "text": "Harborlight enrolled 1,148 adult learners in fiscal year 2026, up from 936 the year before.",
+        "chips": [
+          {
+            "ref": "P1",
+            "n": 1,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Who we served”",
+            "source_id": "s_a109d8d96f57"
+          }
+        ]
+      },
+      {
+        "text": "Operating expenses were $1,420,000, and 287 adults were still on the waitlist at year end.",
+        "chips": [
+          {
+            "ref": "P3",
+            "n": 1,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Money”",
+            "source_id": "s_a109d8d96f57"
+          },
+          {
+            "ref": "P4",
+            "n": 2,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“The waitlist”",
+            "source_id": "s_a109d8d96f57"
+          }
+        ]
+      },
+      {
+        "text": "Staff recommend an FY2027 budget of $1,610,000 to add a sixth site at the Eastgate branch library and two site coordinators.",
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Recommendation to the board”",
+            "source_id": "s_a109d8d96f57"
+          }
+        ]
+      },
+      {
+        "text": "Reserves stand at 3.2 months of operating expenses, below the board's target of 4 months, and the board votes on October 21.",
+        "chips": [
+          {
+            "ref": "P8",
+            "n": 1,
+            "source_n": 2,
+            "source": "Board retreat notes",
+            "locator": "para. 3",
+            "source_id": "s_809db4c91050"
+          }
+        ]
+      }
+    ],
+    "asks": [
+      {
+        "id": "a1",
+        "who": "The board",
+        "what": "One-page summary of the FY2027 budget request",
+        "by": "the October 21 board meeting",
+        "kind": "onepager",
+        "chips": [
+          {
+            "ref": "P8",
+            "n": 1,
+            "source_n": 2,
+            "source": "Board retreat notes",
+            "locator": "para. 3",
+            "source_id": "s_809db4c91050"
+          }
+        ],
+        "brief": {
+          "who": "Harborlight board members",
+          "goal": "Vote on the FY2027 budget request",
+          "length": "One page"
+        }
+      },
+      {
+        "id": "a2",
+        "who": "Board members",
+        "what": "Short deck to use with funders about the sixth site",
+        "by": "",
+        "kind": "deck",
+        "chips": [
+          {
+            "ref": "P8",
+            "n": 1,
+            "source_n": 2,
+            "source": "Board retreat notes",
+            "locator": "para. 3",
+            "source_id": "s_809db4c91050"
+          }
+        ],
+        "brief": {
+          "who": "Funders",
+          "goal": "Support the sixth site at Eastgate",
+          "length": "A short deck"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "text": "Reserves are at 3.2 months against a 4-month target. Can the board approve a budget that rises $190,000, from $1,420,000 to $1,610,000?",
+        "chips": [
+          {
+            "ref": "P8",
+            "n": 1,
+            "source_n": 2,
+            "source": "Board retreat notes",
+            "locator": "para. 3",
+            "source_id": "s_809db4c91050"
+          },
+          {
+            "ref": "P3",
+            "n": 2,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Money”",
+            "source_id": "s_a109d8d96f57"
+          },
+          {
+            "ref": "P5",
+            "n": 3,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Recommendation to the board”",
+            "source_id": "s_a109d8d96f57"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "The waitlist holds 287 adults, and the sixth site would serve 180 more learners a year. Will cutting the waitlist in half be enough?",
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“The waitlist”",
+            "source_id": "s_a109d8d96f57"
+          },
+          {
+            "ref": "P5",
+            "n": 2,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Recommendation to the board”",
+            "source_id": "s_a109d8d96f57"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "Enrollment grew by 212 learners, from 936 to 1,148, yet the waitlist still reached 287. Will two new site coordinators be enough to keep up with demand?",
+        "chips": [
+          {
+            "ref": "P1",
+            "n": 1,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Who we served”",
+            "source_id": "s_a109d8d96f57"
+          },
+          {
+            "ref": "P4",
+            "n": 2,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“The waitlist”",
+            "source_id": "s_a109d8d96f57"
+          },
+          {
+            "ref": "P5",
+            "n": 3,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Recommendation to the board”",
+            "source_id": "s_a109d8d96f57"
+          }
+        ],
+        "suggestion": true
+      }
+    ],
+    "source_ids": [
+      "s_a109d8d96f57",
+      "s_809db4c91050"
+    ],
+    "created_at": 1794212001.9159439
+  },
+  "brief": {
+    "who": "Funders",
+    "goal": "Support the sixth site at Eastgate",
+    "length": "7 to 9 slides"
+  },
+  "outline": {
+    "by": "Written by your Hermes model",
+    "outline_id": "ol_59be1f3f2f22",
+    "kind": "deck",
+    "brief": {
+      "who": "Funders",
+      "goal": "Support the sixth site at Eastgate",
+      "length": "7 to 9 slides"
+    },
+    "source_ids": [
+      "s_a109d8d96f57",
+      "s_809db4c91050"
+    ],
+    "slides": [
+      {
+        "title": "Need for adult learning is outgrowing our capacity",
+        "type": "exhibit",
+        "refs": [
+          "P1",
+          "P4"
+        ],
+        "chips": [
+          {
+            "ref": "P1",
+            "n": 1,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Who we served”",
+            "source_id": "s_a109d8d96f57"
+          },
+          {
+            "ref": "P4",
+            "n": 2,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“The waitlist”",
+            "source_id": "s_a109d8d96f57"
+          }
+        ],
+        "hint": null,
+        "words": 8,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": []
+        }
+      },
+      {
+        "title": "Adults on the waitlist waited an average of nine weeks",
+        "type": "stat",
+        "refs": [
+          "P4"
+        ],
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“The waitlist”",
+            "source_id": "s_a109d8d96f57"
+          }
+        ],
+        "hint": null,
+        "words": 10,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": []
+        }
+      },
+      {
+        "title": "Most learners who stayed at least 12 weeks gained a reading level",
+        "type": "figures",
+        "refs": [
+          "P1"
+        ],
+        "chips": [
+          {
+            "ref": "P1",
+            "n": 1,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Who we served”",
+            "source_id": "s_a109d8d96f57"
+          }
+        ],
+        "hint": null,
+        "words": 12,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": [
+            {
+              "value": "12",
+              "status": "exact",
+              "ref": "P1"
+            }
+          ]
+        }
+      },
+      {
+        "title": "A Riverside learner read her granddaughter a bedtime story for the first time",
+        "type": "quote",
+        "refs": [
+          "P5"
+        ],
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Recommendation to the board”",
+            "source_id": "s_a109d8d96f57"
+          }
+        ],
+        "hint": null,
+        "words": 13,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": []
+        }
+      },
+      {
+        "title": "A corps of 214 volunteer tutors gave 9,870 tutoring hours",
+        "type": "figures",
+        "refs": [
+          "P2"
+        ],
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Volunteers and staff”",
+            "source_id": "s_a109d8d96f57"
+          }
+        ],
+        "hint": null,
+        "words": 10,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": [
+            {
+              "value": "214",
+              "status": "exact",
+              "ref": "P2"
+            },
+            {
+              "value": "9,870",
+              "status": "exact",
+              "ref": "P2"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Staff estimate a sixth site would serve 180 more learners a year",
+        "type": "content",
+        "refs": [
+          "P5",
+          "P4"
+        ],
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Recommendation to the board”",
+            "source_id": "s_a109d8d96f57"
+          },
+          {
+            "ref": "P4",
+            "n": 2,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“The waitlist”",
+            "source_id": "s_a109d8d96f57"
+          }
+        ],
+        "hint": null,
+        "words": 12,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": [
+            {
+              "value": "180",
+              "status": "exact",
+              "ref": "P5"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Harborlight served each learner for $1,237 in FY2026",
+        "type": "figures",
+        "refs": [
+          "P3"
+        ],
+        "chips": [
+          {
+            "ref": "P3",
+            "n": 1,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Money”",
+            "source_id": "s_a109d8d96f57"
+          }
+        ],
+        "hint": null,
+        "words": 8,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": [
+            {
+              "value": "$1,237",
+              "status": "exact",
+              "ref": "P3"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Help fund the sixth site at the Eastgate branch library",
+        "type": "closing",
+        "refs": [
+          "P5"
+        ],
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "FY26 Program Report",
+            "locator": "“Recommendation to the board”",
+            "source_id": "s_a109d8d96f57"
+          }
+        ],
+        "hint": null,
+        "words": 10,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": []
+        }
+      }
+    ],
+    "warnings": [],
+    "created_at": 1794212018.062568
+  },
+  "deck_seconds": 61.8,
+  "output_id": "o_93db260d66de",
+  "neutral": {
+    "title": "Harborlight Adult Learning Needs a Sixth Site",
+    "subtitle": "FY2026 results and the plan to grow at Eastgate",
+    "slides": [
+      {
+        "type": "exhibit",
+        "refs": [
+          "P1",
+          "P4"
+        ],
+        "heading": "Need for adult learning is outgrowing our capacity",
+        "unit": "Adult learners",
+        "bars": [
+          {
+            "label": "FY2025",
+            "value": "936",
+            "ref": "P1"
+          },
+          {
+            "label": "FY2026",
+            "value": "1,148",
+            "ref": "P1"
+          },
+          {
+            "label": "Waiting at year end",
+            "value": "287",
+            "ref": "P4",
+            "accent": true
+          }
+        ],
+        "note": "The first two bars are enrolled learners. The highlighted bar is adults still waiting.",
+        "subhead": "212 more learners enrolled than the year before"
+      },
+      {
+        "type": "stat",
+        "refs": [
+          "P4"
+        ],
+        "value": "9 weeks",
+        "label": "Adults on the waitlist waited an average of nine weeks",
+        "context": "Most adults on the waitlist were at the Eastgate and Riverside sites."
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P1"
+        ],
+        "heading": "Most learners who stayed at least 12 weeks gained a reading level",
+        "figures": [
+          {
+            "value": "68%",
+            "label": "Learners who stayed at least 12 weeks",
+            "context": "Gained one or more reading levels on the CASAS assessment",
+            "ref": "P1"
+          },
+          {
+            "value": "71",
+            "label": "Learners who earned a high school equivalency",
+            "context": "The most in the organization's history",
+            "ref": "P1"
+          },
+          {
+            "value": "412",
+            "label": "Learners working toward a high school equivalency",
+            "context": "Enrolled in fiscal year 2026",
+            "ref": "P1"
+          },
+          {
+            "value": "389",
+            "label": "English language learners",
+            "context": "Enrolled in fiscal year 2026",
+            "ref": "P1"
+          }
+        ]
+      },
+      {
+        "type": "quote",
+        "refs": [
+          "P5"
+        ],
+        "quote": "I read my granddaughter a bedtime story for the first time this spring,",
+        "who": "A learner at the Riverside site"
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P2"
+        ],
+        "heading": "A corps of 214 volunteer tutors gave 9,870 tutoring hours",
+        "figures": [
+          {
+            "value": "214",
+            "label": "Volunteer tutors",
+            "context": "A corps of tutors working with adult learners",
+            "ref": "P2"
+          },
+          {
+            "value": "9,870",
+            "label": "Tutoring hours volunteers gave",
+            "context": "Given in fiscal year 2026",
+            "ref": "P2"
+          },
+          {
+            "value": "14 months",
+            "label": "Average time a tutor stayed",
+            "context": "Tutors stay with the work",
+            "ref": "P2"
+          },
+          {
+            "value": "11",
+            "label": "Full-time staff",
+            "context": "Including four site coordinators",
+            "ref": "P2"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P5",
+          "P4"
+        ],
+        "heading": "Staff estimate a sixth site would serve 180 more learners a year",
+        "bullets": [
+          {
+            "text": "The new site would open at the Eastgate branch library",
+            "ref": "P5"
+          },
+          {
+            "text": "Most adults on the waitlist were at the Eastgate and Riverside sites",
+            "ref": "P4"
+          },
+          {
+            "text": "Staff estimate the new site would cut the waitlist in half",
+            "ref": "P5"
+          },
+          {
+            "text": "The plan adds two site coordinators",
+            "ref": "P5"
+          }
+        ]
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P3"
+        ],
+        "heading": "Harborlight served each learner for $1,237 in FY2026",
+        "figures": [
+          {
+            "value": "$1,237",
+            "label": "Cost per learner",
+            "context": "Operating expenses for FY2026 were $1,420,000",
+            "ref": "P3"
+          },
+          {
+            "value": "$640,000",
+            "label": "Foundation grants",
+            "context": "Program costs were 81 percent of spending",
+            "ref": "P3"
+          },
+          {
+            "value": "$388,000",
+            "label": "Gifts from individual donors",
+            "context": "Given in FY2026",
+            "ref": "P3"
+          },
+          {
+            "value": "$295,000",
+            "label": "City adult education contract",
+            "context": "Paid by the city in FY2026",
+            "ref": "P3"
+          }
+        ]
+      },
+      {
+        "type": "closing",
+        "refs": [
+          "P5"
+        ],
+        "heading": "Help fund the sixth site at the Eastgate branch library",
+        "text": "A sixth site at the Eastgate branch library would bring in more adults who are waiting to learn.",
+        "cta": "Help pay for the Eastgate site and its two new site coordinators.",
+        "amount": "$1,610,000",
+        "amount_label": "Proposed FY2027 budget, including the sixth site"
+      }
+    ],
+    "from_outline": true,
+    "max_slides": 9
+  },
+  "live": {
+    "title": "Harborlight Adult Learning Needs a Sixth Site",
+    "subtitle": "FY2026 results and our plan to grow at Eastgate",
+    "slides": [
+      {
+        "type": "exhibit",
+        "refs": [
+          "P1",
+          "P4"
+        ],
+        "heading": "Need for adult learning is outgrowing our capacity",
+        "unit": "Adult learners",
+        "bars": [
+          {
+            "label": "FY2025",
+            "value": "936",
+            "ref": "P1"
+          },
+          {
+            "label": "FY2026",
+            "value": "1,148",
+            "ref": "P1"
+          },
+          {
+            "label": "Waiting at year end",
+            "value": "287",
+            "ref": "P4",
+            "accent": true
+          }
+        ],
+        "note": "The first two bars show enrolled learners. The bright bar shows adults still waiting.",
+        "subhead": "212 more learners enrolled than the year before"
+      },
+      {
+        "type": "stat",
+        "refs": [
+          "P4"
+        ],
+        "value": "9 weeks",
+        "label": "Adults on the waitlist waited an average of nine weeks",
+        "context": "Most of the adults waiting were at the Eastgate and Riverside sites."
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P1"
+        ],
+        "heading": "Most learners who stayed at least 12 weeks gained a reading level",
+        "figures": [
+          {
+            "value": "68%",
+            "label": "Learners who stayed at least 12 weeks",
+            "context": "Gained one or more reading levels on the CASAS test",
+            "ref": "P1"
+          },
+          {
+            "value": "71",
+            "label": "Learners who earned a high school equivalency",
+            "context": "The most in our history",
+            "ref": "P1"
+          },
+          {
+            "value": "412",
+            "label": "Learners working toward a high school equivalency",
+            "context": "Enrolled in fiscal year 2026",
+            "ref": "P1"
+          },
+          {
+            "value": "389",
+            "label": "English language learners",
+            "context": "Enrolled in fiscal year 2026",
+            "ref": "P1"
+          }
+        ]
+      },
+      {
+        "type": "quote",
+        "refs": [
+          "P5"
+        ],
+        "quote": "I read my granddaughter a bedtime story for the first time this spring,",
+        "who": "A learner at the Riverside site"
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P2"
+        ],
+        "heading": "A corps of 214 volunteer tutors gave 9,870 tutoring hours",
+        "figures": [
+          {
+            "value": "214",
+            "label": "Volunteer tutors",
+            "context": "A team of tutors who work with adult learners",
+            "ref": "P2"
+          },
+          {
+            "value": "9,870",
+            "label": "Tutoring hours from volunteers",
+            "context": "Given in fiscal year 2026",
+            "ref": "P2"
+          },
+          {
+            "value": "14 months",
+            "label": "Average time a tutor stayed",
+            "context": "Tutors stick with the work",
+            "ref": "P2"
+          },
+          {
+            "value": "11",
+            "label": "Full-time staff",
+            "context": "Four of them are site coordinators",
+            "ref": "P2"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P5",
+          "P4"
+        ],
+        "heading": "Staff estimate a sixth site would serve 180 more learners a year",
+        "bullets": [
+          {
+            "text": "The new site would open at the Eastgate branch library",
+            "ref": "P5"
+          },
+          {
+            "text": "Most adults waiting were at the Eastgate and Riverside sites",
+            "ref": "P4"
+          },
+          {
+            "text": "Staff think the new site would cut the waitlist in half",
+            "ref": "P5"
+          },
+          {
+            "text": "The plan adds two site coordinators",
+            "ref": "P5"
+          }
+        ]
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P3"
+        ],
+        "heading": "Harborlight served each learner for $1,237 in FY2026",
+        "figures": [
+          {
+            "value": "$1,237",
+            "label": "Cost per learner",
+            "context": "FY2026 operating expenses were $1,420,000",
+            "ref": "P3"
+          },
+          {
+            "value": "$640,000",
+            "label": "Foundation grants",
+            "context": "Programs made up 81 percent of spending",
+            "ref": "P3"
+          },
+          {
+            "value": "$388,000",
+            "label": "Gifts from individual donors",
+            "context": "Given in FY2026",
+            "ref": "P3"
+          },
+          {
+            "value": "$295,000",
+            "label": "City adult education contract",
+            "context": "Paid by the city in FY2026",
+            "ref": "P3"
+          }
+        ]
+      },
+      {
+        "type": "closing",
+        "refs": [
+          "P5"
+        ],
+        "heading": "Help fund the sixth site at the Eastgate branch library",
+        "text": "A sixth site at the Eastgate branch library would open the door to more adults who are waiting to learn.",
+        "cta": "Help pay for the Eastgate site and its two new site coordinators.",
+        "amount": "$1,610,000",
+        "amount_label": "Proposed FY2027 budget, with the sixth site"
+      }
+    ],
+    "from_outline": true,
+    "max_slides": 9
+  },
+  "passages": {
+    "P6": {
+      "text": "Board retreat notes, September 13",
+      "locator": "para. 1",
+      "source_title": "Board retreat notes",
+      "source_id": "s_809db4c91050"
+    },
+    "P7": {
+      "text": "Present: board chair Lorraine Okafor, treasurer Dev Patel, executive director Marcus Bell, communications director Denise Alvarez, six board members.",
+      "locator": "para. 2",
+      "source_title": "Board retreat notes",
+      "source_id": "s_809db4c91050"
+    },
+    "P8": {
+      "text": "The treasurer reported that reserves stand at 3.2 months of operating expenses, below the board's target of 4 months.\nThe board asked staff to bring a one-page summary of the FY2027 budget request to the October 21 board meeting.\nBoard members asked for a short deck they can use with funders when they talk about the sixth site.\nThe board agreed to vote on the FY2027 budget on October 21.",
+      "locator": "para. 3",
+      "source_title": "Board retreat notes",
+      "source_id": "s_809db4c91050"
+    },
+    "P1": {
+      "text": "In fiscal year 2026, Harborlight enrolled 1,148 adult learners across five neighborhood sites, up from 936 the year before. Of those learners, 412 were working toward a high school equivalency credential and 389 were English language learners.\nSixty-eight percent of learners who stayed at least 12 weeks gained one or more reading levels on the CASAS assessment. Seventy-one learners earned a high school equivalency credential, the most in the organization's history.",
+      "locator": "“Who we served”",
+      "source_title": "FY26 Program Report",
+      "source_id": "s_a109d8d96f57"
+    },
+    "P2": {
+      "text": "A corps of 214 volunteer tutors gave 9,870 tutoring hours. The average tutor stayed 14 months. Harborlight employs 11 full-time staff, including four site coordinators.",
+      "locator": "“Volunteers and staff”",
+      "source_title": "FY26 Program Report",
+      "source_id": "s_a109d8d96f57"
+    },
+    "P3": {
+      "text": "Operating expenses for FY2026 were $1,420,000. Program costs were 81 percent of spending. Foundation grants provided $640,000, individual donors gave $388,000, and the city's adult education contract paid $295,000.\nThe cost per learner was $1,237.",
+      "locator": "“Money”",
+      "source_title": "FY26 Program Report",
+      "source_id": "s_a109d8d96f57"
+    },
+    "P4": {
+      "text": "At year end, 287 adults were on the waitlist, most of them at the Eastgate and Riverside sites. The average wait was nine weeks.",
+      "locator": "“The waitlist”",
+      "source_title": "FY26 Program Report",
+      "source_id": "s_a109d8d96f57"
+    },
+    "P5": {
+      "text": "Staff recommend that the board approve an FY2027 budget of $1,610,000, which adds a sixth site at the Eastgate branch library and two site coordinators. Staff estimate the sixth site would serve 180 more learners a year and cut the waitlist in half.\n“I read my granddaughter a bedtime story for the first time this spring,” said a learner at the Riverside site.",
+      "locator": "“Recommendation to the board”",
+      "source_title": "FY26 Program Report",
+      "source_id": "s_a109d8d96f57"
+    }
+  },
+  "grounding": [
+    {
+      "path": "slides.0.subhead",
+      "value": "212",
+      "shown": "212",
+      "status": "computed",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bars.0",
+      "value": "936",
+      "shown": "936",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bars.1",
+      "value": "1148",
+      "shown": "1,148",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bars.2",
+      "value": "287",
+      "shown": "287",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.value",
+      "value": "9",
+      "shown": "9",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.heading",
+      "value": "12",
+      "shown": "12",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.figures.0",
+      "value": "68%",
+      "shown": "68%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.figures.0",
+      "value": "12",
+      "shown": "12",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.figures.1",
+      "value": "71",
+      "shown": "71",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.figures.2",
+      "value": "412",
+      "shown": "412",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.figures.2",
+      "value": "2026",
+      "shown": "2026",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.figures.3",
+      "value": "389",
+      "shown": "389",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.figures.3",
+      "value": "2026",
+      "shown": "2026",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.quote",
+      "value": "I read my granddaughter a bedtime story for the first time this spring,",
+      "shown": "I read my granddaughter a bedtime story for the first time this spring,",
+      "status": "ok",
+      "kind": "quote"
+    },
+    {
+      "path": "slides.4.heading",
+      "value": "214",
+      "shown": "214",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.heading",
+      "value": "9870",
+      "shown": "9,870",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.figures.0",
+      "value": "214",
+      "shown": "214",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.figures.1",
+      "value": "9870",
+      "shown": "9,870",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.figures.1",
+      "value": "2026",
+      "shown": "2026",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.figures.2",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.figures.3",
+      "value": "11",
+      "shown": "11",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.heading",
+      "value": "180",
+      "shown": "180",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.heading",
+      "value": "1237",
+      "shown": "$1,237",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.figures.0",
+      "value": "1237",
+      "shown": "$1,237",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.figures.0",
+      "value": "1420000",
+      "shown": "$1,420,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.figures.1",
+      "value": "640000",
+      "shown": "$640,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.figures.1",
+      "value": "81%",
+      "shown": "81 percent",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.figures.2",
+      "value": "388000",
+      "shown": "$388,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.figures.3",
+      "value": "295000",
+      "shown": "$295,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.amount",
+      "value": "1610000",
+      "shown": "$1,610,000",
+      "status": "ok",
+      "kind": "number"
+    }
+  ],
+  "exhibits": [
+    {
+      "type": "exhibit",
+      "refs": [
+        "P1",
+        "P4"
+      ],
+      "heading": "Need for adult learning is outgrowing our capacity",
+      "unit": "Adult learners",
+      "bars": [
+        {
+          "label": "FY2025",
+          "value": "936",
+          "ref": "P1"
+        },
+        {
+          "label": "FY2026",
+          "value": "1,148",
+          "ref": "P1"
+        },
+        {
+          "label": "Waiting at year end",
+          "value": "287",
+          "ref": "P4",
+          "accent": true
+        }
+      ],
+      "note": "The first two bars show enrolled learners. The bright bar shows adults still waiting.",
+      "subhead": "212 more learners enrolled than the year before"
+    }
+  ],
+  "check": [
+    "All 29 numbers and quotes found in your sources; 1 worked out from them"
+  ],
+  "pills": [
+    {
+      "id": "sources",
+      "tone": "good",
+      "label": "All 29 numbers and quotes found in your sources; 1 worked out from them"
+    },
+    {
+      "id": "contrast",
+      "tone": "warn",
+      "label": "Contrast passes; 1 brand color kept to rules and fills"
+    },
+    {
+      "id": "never",
+      "tone": "good",
+      "label": "No never-say words"
+    },
+    {
+      "id": "fonts",
+      "tone": "warn",
+      "label": "Font substituted: Helvetica in place of Montserrat; Crimson Pro in place of Lora"
+    },
+    {
+      "id": "voice",
+      "tone": "warn",
+      "label": "Kept the plain wording in 1 place: the voice pass changed a fact"
+    },
+    {
+      "id": "logo",
+      "tone": "good",
+      "label": "Logo set in white on the band: its own colors were too close to it (1.03:1)"
+    }
+  ],
+  "slide_count": 9,
+  "seconds": 76.7
+}

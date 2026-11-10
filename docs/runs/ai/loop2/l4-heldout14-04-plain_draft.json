@@ -1,0 +1,52 @@
+{
+  "purpose": "imprint.plain_draft",
+  "tag": "l4-heldout14",
+  "seconds": 24.2,
+  "model": "claude-opus-5-5",
+  "ok": true,
+  "neutral": true,
+  "request": {
+    "system": "You are a helpful assistant in a desktop chat app with a Python code tool. When you write a Python script in one ```python block, the app runs it in the person's working folder (Python 3.9, python-pptx 1.0 installed, no network) and gives the person any files it saves.",
+    "instructions": "",
+    "input_chars": 8539,
+    "input_head": "Here are our documents.\n\n=== Notes ===\nSample (fictional)\n\nRidgeline Return Works\nStaff and board development committee meeting notes\nThursday, November 5, 2026, 4:00 p.m., Lowell Street office\n\nPresent: Marisol Okafor-Reyes (Executive Director), Glen Ashworth (Board Treasurer), Priya Venkataraman (Development Committee Chair), Tomas Beltran (Program Director)\n\n1. Pellwood Foundation opportunity\n\nPriya reported that Anneke Lisle, program officer at the Pellwood Foundation, invited us to submit a short deck for their workforce reentry round after her October site visit. Pellwood does not take full proposals at this stage; they review decks first.\n\nDecision: ask Pellwood for $90,000 toward the $186,000 FY2027 expansion (second crew plus retention coach). Glen confirmed the rest of the FY2027 budget, $612,400, is covered by existing sources, so the deck should present $90,000 as about half of the expansion gap, with the other $96,000 being raised from current funders.\n\nDeadline: the deck goes to Anneke by Friday, December 4, 2026. Marisol wants a draft for review by November 24.\n\n2. Instructions for the deck (agreed by all four)\n\n- Keep it to ten slides or fewer. Anneke said Pellwood's committee reads decks on their phones.\n- Lead with the two-year trend: 88 to 121 enrolled, 47 to 69 placed.\n- Show the 71 percent six-month retention figure only with the caveat beside it: 52 of 69 placements have reached six months, and the 6 lost contacts are counted as not employed. Tomas was f"
+  },
+  "response": {
+    "draft": "Slide 1: Ridgeline Return Works\nPaid work first. Then a job that lasts.\nReentry employment in Carver Falls, Tamsen County\nA request to the Pellwood Foundation: $90,000 toward our FY2027 expansion\nWorkforce Reentry Round, December 2026\n\nSlide 2: Two Years of Growth\nPeople enrolled: 88 in FY2025, 121 in FY2026 (+38%)\nPlaced in permanent jobs: 47 in FY2025, 69 in FY2026 (+47%)\nFinished the crew phase: 61 in FY2025, 90 in FY2026\nAverage starting wage: $17.10 in FY2025, $18.25 in FY2026\nEmployers hiring our people: 15 in FY2025, 23 in FY2026\n\nSlide 3: How It Works\nPaid crew work starts within 5 business days of intake\n$16.50 an hour on landscaping, light demolition and park cleanup\nA job coach helps with ID, resume, driver's license and interviews\nGoal: a permanent job within 12 weeks\nThen 6 months of support on the job\n\nSlide 4: Six-Month Job Retention\n71% of FY2026 placements were still employed at six months (58% in FY2025)\nWhat the number covers: 52 of 69 placements have reached six months\n37 of those 52 confirmed employed\nThe 6 people we lost contact with are counted as not employed\nThe other 17, placed in spring, are not counted yet\nWe can't say how much of the gain comes from our program\nCounty unemployment also fell, from 5.1% to 4.4%, and we have no comparison group\n\nSlide 5: In His Words\n\"The crew paid me the first week. That's the part nobody else did. I didn't have to choose between rent and showing up.\"\nDarnell, finished the crew phase in October, now on the night shift at Brannock Precast\n\nSlide 6: What We Learned in FY2026\nMost job losses happen in the first 60 days: transportation, supervision appointments, a first conflict with a boss\nPeople who stayed employed were far more likely to have had 3 or more coach check-ins in those 60 days\nOur coaches were spread thin, and follow-up was what slipped\nWith one crew of 12, some people waited up to 3 weeks to start\n4 employers asked for more referrals than we could send\n\nSlide 7: The FY2027 Expansion: $186,000\nSecond crew lead and crew supervisor stipend: $72,000\nRetention coach, full-time with benefits: $64,000\nSecond crew vehicle lease and equipment: $28,000\nAdded participant supports: $22,000\nFY2027 targets: 160 enrolled, 90 placed, 75% six-month retention\nRetention measured the same way, with lost contacts counted as not employed\n\nSlide 8: A Careful Use of Money\nFY2026 expenses: $612,400\n65% went to program staff and 16% to participant supports\nCost per person enrolled: about $5,060\nCost per permanent placement: about $8,875\nCrew wages are paid through the work contracts and are not included in these costs\n\nSlide 9: Our Request\n$90,000 from the Pellwood Foundation\nThat covers about half of the $186,000 expansion\nThe other $96,000 is being raised from our current funders\nThe $612,400 base budget is covered by existing sources\nFull FY2027 budget: $798,400\nMarisol Okafor-Reyes, Executive Director, Ridgeline Return Works, Lowell Street, Carver Falls"
+  },
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 341,
+    "cache_read_input_tokens": 3906,
+    "output_tokens": 2448,
+    "output_tokens_details": {
+      "thinking_tokens": 1250
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 341,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 2448,
+        "cache_read_input_tokens": 3906,
+        "cache_creation_input_tokens": 341,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 341
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "error": null
+}

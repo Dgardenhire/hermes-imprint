@@ -1,0 +1,52 @@
+{
+  "purpose": "imprint.plain_draft",
+  "tag": "r14-heldout8",
+  "seconds": 27.5,
+  "model": "claude-opus-5-5",
+  "ok": true,
+  "neutral": true,
+  "request": {
+    "system": "You are a helpful assistant in a desktop chat app with a Python code tool. When you write a Python script in one ```python block, the app runs it in the person's working folder (Python 3.9, python-pptx 1.0 installed, no network) and gives the person any files it saves.",
+    "instructions": "",
+    "input_chars": 9077,
+    "input_head": "Here are our documents.\n\n=== Notes ===\nSample (fictional)\n\nTallow Creek Respite Cooperative\nBoard meeting notes, Wednesday, November 4, 2026\nPresent: Osric Pellam (chair), Juniper Haldane (treasurer), Mirela Aske (executive director), Benedikt Orrin (program director)\n\nItem 3: Ostrander Valley Health Fund\n\nMirela reported that Teodora Vance, program officer at the Ostrander Valley Health Fund, invited us to submit a short deck for their winter caregiving round after reading our FY2026 report. Ask: $120,000 for one year toward the FY2027 overnight respite pilot and the two eastern township workers. Total expansion cost is $165,000; the county Area Agency on Aging has already committed $45,000.\n\nDeadline: deck to Teodora by Tuesday, December 1, 2026. Mirela wants a draft to the board by Friday, November 20.\n\nJuniper noted that Fenwright's $150,000 does not renew at the same level after FY2027 and asked that we not hide how much we lean on the county and Fenwright (64 percent). Osric agreed.\n\nInstructions for the deck, agreed by the board:\n1. Keep it to eight slides or fewer. Teodora said she reads them on her phone.\n2. Lead with the waitlist: 41 days down to 12. That is our strongest number and it is not in dispute.\n3. Show the strain result (27.4 to 19.8) only with the caveat in plain view: 96 of 171 families answered, no comparison group, our own staff gave the survey. Do not call the program \"evidence-based\" and do not say respite keeps people out of nursing homes.\n4. Show t"
+  },
+  "response": {
+    "draft": "Slide 1: Tallow Creek Respite Cooperative\nIn-home respite for unpaid family caregivers\nMarrow Junction and the Upper Tallow townships, since 2019\nRequest to the Ostrander Valley Health Fund, winter caregiving round\n$120,000 for one year (FY2027)\nFunds an overnight respite pilot and two respite workers in the eastern townships\n\nSlide 2: Wait for a first visit: 41 days down to 12\nAverage days from referral to first visit: 41 in FY2025, 12 in FY2026\nFamilies on the waitlist at year end: 37 down to 9\nEmergency requests filled within 48 hours: 58% (29 of 50) up to 83% (62 of 75)\nWhat changed: worker pay went from $16.50 to $19.00 an hour\nWorkers who left during the year: 11 of 23 in FY2025, 4 of 31 in FY2026\nWe also hired a second coordinator and moved scheduling off paper\n\nSlide 3: What we do\nLocal workers come into the home and stay with an adult who needs supervision\nUsually a parent or spouse living with dementia, Parkinson's disease or the after-effects of a stroke\nWhile the worker is there, the caregiver can see a doctor, sleep or rest\nFY2026: 171 families, 9,880 respite hours (FY2025: 118 families, 6,240 hours)\nSliding-scale fees from $0 to $14 an hour; 64% of families paid nothing\nAll-in cost per respite hour: $61.98, down from $68.40\n94 cents of every dollar went to delivering or coordinating respite\n\"For two years I hadn't been to my own doctor. The first Tuesday [our respite worker] came, I went, and I found out I needed the surgery I'd been putting off.\" (caregiver, Upper Tallow township)\n\nSlide 4: Caregiver strain: a promising result with limits\nMeasure: 12-item Zarit Burden Interview (scored 0 to 48; higher means more strain)\nAverage score at intake: 27.4. At six months: 19.8, a drop of 7.6 points\n61 caregivers started in the high-strain band (17 or above); 34 of them were below 17 at six months\nRead with care:\nOnly 96 of 171 families completed both surveys, and those who answered may have been doing better\nThere is no comparison group, and strain often eases for other reasons\nOur own coordinators gave the survey\nThese numbers fit our belief that respite helps, but they do not prove the program caused the drop\nFY2027: an outside evaluator will run follow-up surveys, and we will track why families leave\n\nSlide 5: Two gaps we cannot fill today\nNights: 22 families asked for overnight coverage in FY2026, and we could not offer it\nDementia often means wandering, sundowning and lost sleep, and daytime visits do not help with that\nDistance: Corliss and Harrow Flat townships made up 9% of referrals but only 4% of respite hours\nA worker's round trip to the eastern townships can run 70 miles\n\nSlide 6: FY2027 plan and how we will judge it\nPilot overnight respite for up to 40 families: two 9 p.m. to 7 a.m. shifts a month for six months\nHire two respite workers who live in Corliss and Harrow Flat\nTrain 14 current workers in dementia care (required for overnight shifts)\nBring in an outside evaluator for follow-up surveys and exit interviews\nWe will report three measures, even if the results disappoint:\nShare of pilot caregivers with at least 5 nights of unbroken sleep a month\nSix-month strain scores, collected by the outside evaluator\nWhether families keep using the service\n\nSlide 7: FY2027 expansion budget: $165,000\nTwo eastern township respite workers (2.0 FTE wages and benefits): $96,000\nOvernight pilot shift pay (up to 40 families, 6 months): $38,500\nDementia care training for 14 workers: $12,800\nAdded rural mileage: $9,200\nIndependent evaluation: $8,500\nTotal: $165,000\nAlready committed: $45,000 from the Upper Tallow County Area Agency on Aging (part of the eastern township workers)\nRemaining gap and our request: $120,000\n\nSlide 8: Our finances, including our risks\nFY2026 revenue: $618,900. Expenses: $612,400. Surplus: $6,500, added to reserve\nOperating reserve covers about seven weeks of expenses\nCounty Area Agency on Aging contract: $246,000 (40% of revenue)\nFenwright Family Foundation: $150,000 (24% of revenue)\nTogether, these two sources make up 64% of our revenue\nThe Fenwright grant ends its three-year term in FY2027 and will not renew at the same level\nOther revenue: individual donors and the Porch Supper (14%), Marrow Junction Community Health Trust (12%), family fees (10%)\nContact: Mirela Aske, Executive Director"
+  },
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 3892,
+    "cache_read_input_tokens": 650,
+    "output_tokens": 2756,
+    "output_tokens_details": {
+      "thinking_tokens": 1063
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3892,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 2756,
+        "cache_read_input_tokens": 650,
+        "cache_creation_input_tokens": 3892,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3892
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "error": null
+}

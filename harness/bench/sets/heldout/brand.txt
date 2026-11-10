@@ -1,0 +1,8 @@
+Fernwood Tool Library (Sample) brand
+
+Pine Green #2F5D3A: headings, title bars
+Brass #C8902E: highlights and the one key number
+Charcoal #262624: body text
+Paper #FAF8F3: page background
+
+Font: Work Sans (headings and body)

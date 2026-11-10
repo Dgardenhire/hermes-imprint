@@ -1,0 +1,126 @@
+[
+  {
+    "set": "harborlight",
+    "steps": {
+      "notebook_guide": {
+        "status": "done",
+        "error": null
+      },
+      "outline": {
+        "status": "done",
+        "seconds": 16.9,
+        "error": null
+      },
+      "rewrite_title": {
+        "status": "done",
+        "seconds": 16.4,
+        "error": null
+      },
+      "make_deck": {
+        "status": "done",
+        "seconds": 46.8,
+        "error": null
+      },
+      "stronger_slide3": {
+        "status": "done",
+        "seconds": 7.9,
+        "error": null
+      },
+      "fix_1200": {
+        "status": "done",
+        "seconds": 6.1,
+        "error": null
+      },
+      "graphic_options": {
+        "status": "done",
+        "seconds": 12.8,
+        "error": null
+      }
+    },
+    "guide_and_summaries_seconds": 12.5,
+    "deck_check": [
+      "1 number not found in sources"
+    ],
+    "deck_missing": [
+      "1,200"
+    ]
+  },
+  {
+    "set": "salvia",
+    "steps": {
+      "notebook_guide": {
+        "status": "done",
+        "error": null
+      },
+      "outline": {
+        "status": "done",
+        "seconds": 17.6,
+        "error": null
+      },
+      "rewrite_title": {
+        "status": "done",
+        "seconds": 9.8,
+        "error": null
+      },
+      "make_deck": {
+        "status": "done",
+        "seconds": 40.7,
+        "error": null
+      },
+      "stronger_slide3": {
+        "status": "done",
+        "seconds": 13.2,
+        "error": null
+      },
+      "graphic_options": {
+        "status": "done",
+        "seconds": 20.3,
+        "error": null
+      }
+    },
+    "guide_and_summaries_seconds": 13.8,
+    "deck_check": [
+      "All 24 numbers and quotes found in your sources"
+    ],
+    "deck_missing": []
+  },
+  {
+    "set": "warming",
+    "steps": {
+      "notebook_guide": {
+        "status": "done",
+        "error": null
+      },
+      "outline": {
+        "status": "done",
+        "seconds": 13.6,
+        "error": null
+      },
+      "rewrite_title": {
+        "status": "done",
+        "seconds": 18.0,
+        "error": null
+      },
+      "make_deck": {
+        "status": "done",
+        "seconds": 46.5,
+        "error": null
+      },
+      "stronger_slide3": {
+        "status": "done",
+        "seconds": 9.5,
+        "error": null
+      },
+      "graphic_options": {
+        "status": "done",
+        "seconds": 15.2,
+        "error": null
+      }
+    },
+    "guide_and_summaries_seconds": 23.9,
+    "deck_check": [
+      "All 39 numbers and quotes found in your sources; 4 citations corrected"
+    ],
+    "deck_missing": []
+  }
+]

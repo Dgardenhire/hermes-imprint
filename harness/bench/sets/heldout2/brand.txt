@@ -1,0 +1,8 @@
+Copperleaf Mobile Dental (Sample) brand
+
+Deep Plum #4A2545: headings, title bars
+Copper #B5663A: highlights and the one key number
+Slate #2F3640: body text
+Mist #F4F5F7: page background
+
+Font: Source Sans 3 (headings and body)

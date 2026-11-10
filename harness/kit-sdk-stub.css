@@ -1,0 +1,47 @@
+/* Harness only: approximates the look of the app's SDK components (apps/desktop/src/components/ui/*)
+   so headless screenshots show roughly what Hermes paints. The app provides the real ones. */
+.hb-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 0; border-radius: 4px; cursor: pointer; font: inherit; font-size: 12px; line-height: 16px; font-weight: 500; white-space: nowrap; padding: 5px 11px; transition: background-color .12s, filter .12s; }
+.hb-btn[data-size=sm] { padding: 3px 8px; font-size: 11.5px; }
+.hb-btn[data-variant=default] { background: var(--dt-primary, var(--ui-accent)); color: var(--dt-primary-foreground, #fff); }
+.hb-btn[data-variant=default]:hover { filter: brightness(1.08); }
+.hb-btn[data-variant=secondary] { background: var(--ui-bg-quaternary); color: var(--ui-text-primary); border: 0; }
+.hb-btn[data-variant=secondary]:hover { background: var(--chrome-action-hover, var(--ui-row-hover-background)); }
+.hb-btn[data-variant=ghost] { background: transparent; color: var(--ui-text-primary); }
+.hb-btn:disabled { cursor: default; opacity: .5; }
+.hb-btn[aria-busy] { opacity: 1; }
+.hb-btn .codicon { font-size: 13px; }
+.hb-loading { position: relative; display: inline-flex; }
+.hb-ghost { visibility: hidden; display: inline-flex; gap: 6px; align-items: center; }
+.hb-spin { display: inline-block; width: 13px; height: 13px; border-radius: 50%; border: 2px solid color-mix(in srgb, currentColor 35%, transparent); border-top-color: currentColor; animation: hb-spin .7s linear infinite; }
+.hb-loading .hb-spin { position: absolute; left: 50%; top: 50%; margin: -6.5px 0 0 -6.5px; }
+@keyframes hb-spin { to { transform: rotate(360deg); } }
+.hb-skeleton { border-radius: 4px; }
+.hb-kbd-group { display: inline-flex; gap: 2px; }
+.hb-kbd { display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; padding: 0 4px; border-radius: 3px; font: 10px/1 var(--font-sans, system-ui); color: var(--ui-text-primary);
+  border: 1px solid color-mix(in srgb, var(--ui-stroke-secondary) 75%, transparent); background: color-mix(in srgb, var(--ui-bg-elevated) 94%, var(--ui-text-primary) 6%); box-shadow: 0 1px 0 0 var(--ui-stroke-secondary); }
+.hb-caret { transition: transform .15s; }
+.hb-caret-open { transform: rotate(90deg); }
+.hb-input { box-sizing: border-box; width: 100%; font: inherit; font-size: 13px; line-height: 1.45; padding: 6px 9px; border-radius: 5px; border: 1px solid var(--ui-stroke-secondary); background: var(--ui-bg-editor, var(--ui-bg-chrome)); color: var(--ui-text-primary); }
+.hb-input:focus { outline: 2px solid color-mix(in srgb, var(--ui-accent) 60%, transparent); outline-offset: -1px; }
+.hb-input::placeholder { color: color-mix(in srgb, var(--ui-text-primary) 55%, transparent); }
+.hb-textarea { resize: vertical; min-height: 56px; }
+.hb-checkbox { width: 16px; height: 16px; flex: none; border-radius: 3px; display: inline-grid; place-items: center; padding: 0; cursor: pointer; border: 1px solid var(--ui-stroke-primary, var(--ui-stroke-secondary)); background: transparent; color: var(--dt-primary-foreground, #fff); }
+.hb-checkbox[data-state=checked] { background: var(--dt-primary, var(--ui-accent)); border-color: var(--dt-primary, var(--ui-accent)); }
+.hb-switch { width: 34px; height: 20px; border-radius: 999px; padding: 1px; border: 1px solid var(--ui-stroke-secondary); background: var(--ui-bg-quaternary); cursor: pointer; display: inline-flex; align-items: center; }
+.hb-switch-thumb { width: 16px; height: 16px; border-radius: 50%; background: var(--ui-text-primary); transition: transform .14s; }
+.hb-switch[data-state=checked] { background: var(--dt-primary, var(--ui-accent)); border-color: transparent; }
+.hb-switch[data-state=checked] .hb-switch-thumb { transform: translateX(14px); background: var(--ui-bg-elevated); }
+.hb-seg { display: inline-grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 2px; padding: 2px; border-radius: 5px; background: var(--ui-bg-tertiary, var(--ui-bg-quaternary)); width: fit-content; }
+.hb-seg-btn { border: 0; border-radius: 3px; padding: 3px 10px; font: inherit; font-size: 11.5px; font-weight: 500; color: var(--ui-text-primary); background: transparent; cursor: pointer; white-space: nowrap; }
+.hb-seg-btn[aria-pressed=true] { background: var(--ui-bg-elevated); box-shadow: 0 1px 2px rgba(0, 0, 0, .2); }
+.hb-error { display: grid; gap: 14px; justify-items: center; text-align: center; color: var(--ui-text-primary); }
+.hb-error-icon { color: var(--dt-destructive); }
+.hb-error-title { margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+.hb-error-actions { display: grid; gap: 8px; }
+.hb-muted { color: color-mix(in srgb, var(--ui-text-primary) 60%, transparent); font-size: 13px; margin: 0; }
+.hb-empty { display: grid; place-items: center; padding: 28px 16px; text-align: center; }
+.hb-empty-inner { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.hb-empty-icon { color: color-mix(in srgb, var(--ui-text-primary) 50%, transparent); }
+.hb-empty-title { margin: 0; font-size: 13px; font-weight: 500; }
+.hb-empty-desc { margin: 0; font-size: 12px; max-width: 24rem; line-height: 1.6; }
+.hb-badge { display: inline-flex; align-items: center; padding: 0 6px; border-radius: 4px; font-size: 11px; background: var(--ui-bg-quaternary); }

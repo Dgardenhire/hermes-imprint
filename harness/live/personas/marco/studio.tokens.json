@@ -1,0 +1,30 @@
+{
+  "color": {
+    "$type": "color",
+    "ink": {
+      "$value": "#1d1f24"
+    },
+    "paper": {
+      "$value": "#f7f5f0"
+    },
+    "primary": {
+      "$value": "#3b5bdb",
+      "$description": "brand primary"
+    },
+    "accent": {
+      "$value": "{color.primary}"
+    }
+  },
+  "font": {
+    "$type": "fontFamily",
+    "heading": {
+      "$value": [
+        "Space Grotesk",
+        "sans-serif"
+      ]
+    },
+    "body": {
+      "$value": "Source Serif 4"
+    }
+  }
+}

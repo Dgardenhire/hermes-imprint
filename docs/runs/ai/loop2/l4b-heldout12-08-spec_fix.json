@@ -1,0 +1,136 @@
+{
+  "purpose": "imprint.spec_fix",
+  "tag": "l4b-heldout12",
+  "seconds": 13.8,
+  "model": "claude-opus-5-5",
+  "ok": true,
+  "neutral": true,
+  "request": {
+    "system": "You are a presentation designer who lays out funder decks slide by slide, the way a strong designer writing python-pptx code would: each slide's layout chosen for what it says.",
+    "instructions": "",
+    "input_chars": 4527,
+    "input_head": "This slide was measured in the brand's real fonts and has problems:\n- element 3 (figure) does not fit its 430 x 104 box even at the smallest type size\n\nEach slide is positioned elements on a 960 x 540 canvas (points, origin top left). Element types:\n- text: {\"type\":\"text\",\"x\",\"y\",\"w\",\"h\",\"text\",\"style\",\"color\",\"align\"}  style: title | heading | figure | body | strong | italic | small | label\n- list: {\"type\":\"list\",\"x\",\"y\",\"w\",\"h\",\"items\":[\"...\"],\"style\":\"body\"}  bulleted points\n- rect: {\"type\":\"rect\",\"x\",\"y\",\"w\",\"h\",\"fill\"}  a panel or band (draw it BEFORE the text that sits on it)\n- line: {\"type\":\"line\",\"x\",\"y\",\"w\",\"h\",\"color\"}  a rule (h 2 for horizontal, w 2 for vertical)\n- dot: {\"type\":\"dot\",\"x\",\"y\",\"w\",\"h\",\"fill\"}  a circle (timeline markers)\n- figure: {\"type\":\"figure\",\"x\",\"y\",\"w\",\"h\",\"value\":\"$31,900\",\"label\":\"vehicle costs in FY2026\",\"note\":\"up from $19,700\",\"fill\":\"tint\"}  a big-number tile (omit fill for no panel)\n- bars: {\"type\":\"bars\",\"x\",\"y\",\"w\",\"h\",\"orient\":\"horizontal\"|\"vertical\",\"items\":[{\"label\",\"value\",\"highlight\":true}]}  a bar or column chart; value is the number as shown (\"$85,000\", \"41%\")\n- stack: {\"type\":\"stack\",\"x\",\"y\",\"w\",\"h\",\"items\":[{\"label\",\"value\",\"highlight\"}]}  one bar split into its parts (funding sources)\n- table: {\"type\":\"table\",\"x\",\"y\",\"w\",\"h\",\"header\":[\"Line\",\"Amount\"],\"rows\":[[\"Van\",\"$74,000\"]],\"total\":[\"Total\",\"$148,000\"]}\n- quote: {\"type\":\"quote\",\"x\",\"y\",\"w\",\"h\",\"text\",\"who\"}\n- callout: {\"type\":\"callout\",\"x\",\"y\",\"w\",\"h\",\"title\",\"text\" or "
+  },
+  "response": {
+    "ground": "paper",
+    "footer": true,
+    "title": "14 of 19 graduates (74%) were working at 90 days, from a small, partly self-reported group",
+    "els": [
+      {
+        "type": "text",
+        "x": 40,
+        "y": 36,
+        "w": 880,
+        "h": 64,
+        "text": "14 of 19 graduates (74%) were working at 90 days, from a small, partly self-reported group",
+        "style": "title",
+        "align": "left"
+      },
+      {
+        "type": "text",
+        "x": 40,
+        "y": 110,
+        "w": 430,
+        "h": 22,
+        "text": "Employment After 90 Days: where the 14 were hired",
+        "style": "label",
+        "color": "muted",
+        "align": "left"
+      },
+      {
+        "type": "bars",
+        "x": 40,
+        "y": 136,
+        "w": 430,
+        "h": 150,
+        "orient": "horizontal",
+        "items": [
+          {
+            "label": "Bike shops or bike rental and fleet operators in the county",
+            "value": "9",
+            "highlight": true
+          },
+          {
+            "label": "Related mechanical trades: small-engine, appliance repair, forklift maintenance",
+            "value": "3"
+          },
+          {
+            "label": "Cogline, as part-time shop assistants",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "type": "figure",
+        "x": 40,
+        "y": 300,
+        "w": 430,
+        "h": 180,
+        "value": "$17.25",
+        "label": "Median starting wage an hour",
+        "note": "compared with $13.10 reported at intake",
+        "fill": "tint"
+      },
+      {
+        "type": "callout",
+        "x": 500,
+        "y": 110,
+        "w": 420,
+        "h": 300,
+        "title": "Caveats on this number",
+        "items": [
+          "This is a small group. One graduate moves the rate by about five points",
+          "7 of the 14 placements were confirmed by an employer. The other 7 are self-reported by the graduate",
+          "We do not have one-year retention data for FY2026 graduates yet",
+          "FY2025 one-year check: 7 of the 8 employed at 90 days were still working. That is one cohort of 12, not a trend yet"
+        ],
+        "fill": "tint"
+      },
+      {
+        "type": "text",
+        "x": 500,
+        "y": 424,
+        "w": 420,
+        "h": 56,
+        "text": "Starting in FY2027, we will ask every graduate for employer contact consent at graduation",
+        "style": "small",
+        "align": "left"
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2401,
+    "cache_read_input_tokens": 669,
+    "output_tokens": 1394,
+    "output_tokens_details": {
+      "thinking_tokens": 350
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2401,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1394,
+        "cache_read_input_tokens": 669,
+        "cache_creation_input_tokens": 2401,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2401
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "error": null
+}

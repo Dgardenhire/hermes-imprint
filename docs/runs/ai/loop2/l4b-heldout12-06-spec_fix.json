@@ -1,0 +1,152 @@
+{
+  "purpose": "imprint.spec_fix",
+  "tag": "l4b-heldout12",
+  "seconds": 8.7,
+  "model": "claude-opus-5-5",
+  "ok": true,
+  "neutral": true,
+  "request": {
+    "system": "You are a presentation designer who lays out funder decks slide by slide, the way a strong designer writing python-pptx code would: each slide's layout chosen for what it says.",
+    "instructions": "",
+    "input_chars": 4315,
+    "input_head": "This slide was measured in the brand's real fonts and has problems:\n- element 3 (stack) does not fit its 400 x 110 box even at the smallest type size\n\nEach slide is positioned elements on a 960 x 540 canvas (points, origin top left). Element types:\n- text: {\"type\":\"text\",\"x\",\"y\",\"w\",\"h\",\"text\",\"style\",\"color\",\"align\"}  style: title | heading | figure | body | strong | italic | small | label\n- list: {\"type\":\"list\",\"x\",\"y\",\"w\",\"h\",\"items\":[\"...\"],\"style\":\"body\"}  bulleted points\n- rect: {\"type\":\"rect\",\"x\",\"y\",\"w\",\"h\",\"fill\"}  a panel or band (draw it BEFORE the text that sits on it)\n- line: {\"type\":\"line\",\"x\",\"y\",\"w\",\"h\",\"color\"}  a rule (h 2 for horizontal, w 2 for vertical)\n- dot: {\"type\":\"dot\",\"x\",\"y\",\"w\",\"h\",\"fill\"}  a circle (timeline markers)\n- figure: {\"type\":\"figure\",\"x\",\"y\",\"w\",\"h\",\"value\":\"$31,900\",\"label\":\"vehicle costs in FY2026\",\"note\":\"up from $19,700\",\"fill\":\"tint\"}  a big-number tile (omit fill for no panel)\n- bars: {\"type\":\"bars\",\"x\",\"y\",\"w\",\"h\",\"orient\":\"horizontal\"|\"vertical\",\"items\":[{\"label\",\"value\",\"highlight\":true}]}  a bar or column chart; value is the number as shown (\"$85,000\", \"41%\")\n- stack: {\"type\":\"stack\",\"x\",\"y\",\"w\",\"h\",\"items\":[{\"label\",\"value\",\"highlight\"}]}  one bar split into its parts (funding sources)\n- table: {\"type\":\"table\",\"x\",\"y\",\"w\",\"h\",\"header\":[\"Line\",\"Amount\"],\"rows\":[[\"Van\",\"$74,000\"]],\"total\":[\"Total\",\"$148,000\"]}\n- quote: {\"type\":\"quote\",\"x\",\"y\",\"w\",\"h\",\"text\",\"who\"}\n- callout: {\"type\":\"callout\",\"x\",\"y\",\"w\",\"h\",\"title\",\"text\" or \""
+  },
+  "response": {
+    "ground": "paper",
+    "footer": true,
+    "title": "With $36,000 committed, $60,000 remains to launch the $96,000 evening cohort",
+    "els": [
+      {
+        "type": "text",
+        "x": 40,
+        "y": 36,
+        "w": 880,
+        "h": 64,
+        "text": "With $36,000 committed, $60,000 remains to launch the $96,000 evening cohort",
+        "style": "title",
+        "align": "left"
+      },
+      {
+        "type": "table",
+        "x": 40,
+        "y": 106,
+        "w": 450,
+        "h": 226,
+        "header": [
+          "Evening Cohort Cost",
+          "Amount"
+        ],
+        "rows": [
+          [
+            "Second instructor (1.0 FTE, salary and benefits)",
+            "$52,000"
+          ],
+          [
+            "Stipends for 10 evening apprentices",
+            "$30,000"
+          ],
+          [
+            "Added tools, workstands, and safety gear",
+            "$8,500"
+          ],
+          [
+            "Evening utilities and building access",
+            "$5,500"
+          ]
+        ],
+        "total": [
+          "Total evening cohort cost",
+          "$96,000"
+        ]
+      },
+      {
+        "type": "callout",
+        "x": 40,
+        "y": 348,
+        "w": 450,
+        "h": 134,
+        "title": "FY2027 targets",
+        "items": [
+          "36 enrolled",
+          "At least 26 completing",
+          "At least 70% of completers employed within 90 days",
+          "At least half of placements confirmed directly with an employer"
+        ],
+        "fill": "tint"
+      },
+      {
+        "type": "stack",
+        "x": 520,
+        "y": 106,
+        "w": 400,
+        "h": 176,
+        "items": [
+          {
+            "label": "Already committed by the Tallis County Workforce Board",
+            "value": "$36,000"
+          },
+          {
+            "label": "Remaining gap",
+            "value": "$60,000",
+            "highlight": true
+          }
+        ]
+      },
+      {
+        "type": "figure",
+        "x": 520,
+        "y": 296,
+        "w": 400,
+        "h": 128,
+        "value": "$60,000",
+        "label": "Remaining gap. This is our request to the Ostrander Family Fund",
+        "fill": "tint"
+      },
+      {
+        "type": "text",
+        "x": 520,
+        "y": 434,
+        "w": 400,
+        "h": 48,
+        "text": "Full FY2027 budget, including the evening cohort: $408,400",
+        "style": "body",
+        "align": "left"
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2362,
+    "cache_read_input_tokens": 669,
+    "output_tokens": 856,
+    "output_tokens_details": {
+      "thinking_tokens": 147
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2362,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 856,
+        "cache_read_input_tokens": 669,
+        "cache_creation_input_tokens": 2362,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2362
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "error": null
+}

@@ -1,0 +1,10 @@
+Sample (fictional)
+
+Tallow Creek Recovery Commons brand
+
+Colors:
+- River Slate #2E4A62 (primary)
+- Lantern Amber #D98E3F (accent)
+- Linen #F2EDE4 (background)
+
+Font: Lora

@@ -1,0 +1,121 @@
+<!doctype html>
+<!--
+  Imprint harness: renders desktop/plugin.js in a browser with a stand-in SDK (sdk.js) and a
+  fixture backend (harness.js, fixtures.json: real answers from the plugin backend, made by make_fixtures.py), so each
+  screen can be looked at and screenshotted without Hermes. Serve the repo root:
+    /usr/bin/python3 -m http.server 8793 --directory .
+    http://localhost:8794/harness/?tab=proofs&theme=light
+  Theme values follow the Cabinet harness (default Nous skin); light mode is an approximation.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imprint harness</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vscode/codicons@0.0.45/dist/codicon.css">
+<link rel="preload" as="font" type="font/ttf" crossorigin href="https://cdn.jsdelivr.net/npm/@vscode/codicons@0.0.45/dist/codicon.ttf">
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.2.7",
+    "react/jsx-runtime": "https://esm.sh/react@19.2.7/jsx-runtime",
+    "react-dom/client": "https://esm.sh/react-dom@19.2.7/client?deps=react@19.2.7",
+    "@tanstack/react-query": "https://esm.sh/@tanstack/react-query@5.101.2?deps=react@19.2.7",
+    "nanostores": "https://esm.sh/nanostores@1.4.2",
+    "@nanostores/react": "https://esm.sh/@nanostores/react@1.1.0?deps=react@19.2.7,nanostores@1.4.2",
+    "@hermes/plugin-sdk": "./sdk.js"
+  }
+}
+</script>
+<style>
+:root[data-theme=dark] {
+  --ui-base: #e6edf3;
+  --ui-text-primary: rgba(230, 237, 243, 0.94);
+  --ui-accent: #4a84fe;
+  --ui-bg-chrome: #0d1015;
+  --ui-bg-sidebar: #010409;
+  --ui-bg-editor: #0e0f12;
+  --ui-bg-elevated: #16181d;
+  --ui-bg-quaternary: #1d2129;
+  --ui-stroke-secondary: #262b33;
+  --ui-row-hover-background: rgba(230, 237, 243, 0.05);
+  --ui-row-active-background: rgba(74, 132, 254, 0.14);
+  --ui-success: #10b7a9;
+  --ui-yellow: #c08532;
+  --dt-destructive: #f85149;
+  --dt-primary: #4a84fe;
+  --dt-primary-foreground: #161616;
+  --chrome-action-hover: rgba(230, 237, 243, 0.08);
+  color-scheme: dark;
+}
+:root[data-theme=light] {
+  --ui-base: #1f2328;
+  --ui-text-primary: rgba(31, 35, 40, 0.94);
+  --ui-accent: #2f6fe4;
+  --ui-bg-chrome: #f6f7f9;
+  --ui-bg-sidebar: #eceff3;
+  --ui-bg-editor: #ffffff;
+  --ui-bg-elevated: #ffffff;
+  --ui-bg-quaternary: #e6e9ee;
+  --ui-stroke-secondary: #d6dbe1;
+  --ui-row-hover-background: rgba(31, 35, 40, 0.04);
+  --ui-row-active-background: rgba(47, 111, 228, 0.12);
+  --ui-success: #0f8f84;
+  --ui-yellow: #c08532;
+  --dt-destructive: #cf2d56;
+  --dt-primary: #2f6fe4;
+  --dt-primary-foreground: #ffffff;
+  --chrome-action-hover: rgba(31, 35, 40, 0.07);
+  color-scheme: light;
+}
+:root {
+  --radius-scalar: 0.2; --radius-md: 2px; --radius-sm: 1.2px; /* the host's corners (apps/desktop/src/styles.css:126, 469) */
+  --font-sans: "Segoe WPC", "Segoe UI", -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  --font-mono: Menlo, Monaco, "SF Mono", monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { background: var(--ui-bg-sidebar); color: var(--ui-text-primary); font-family: var(--font-sans); font-size: 14px; -webkit-font-smoothing: antialiased; }
+#root { height: 100vh; }
+.hb-window { height: 100vh; display: grid; grid-template-rows: 34px 1fr; background: var(--ui-bg-chrome); }
+.hb-titlebar { display: flex; align-items: center; padding: 0 14px; background: var(--ui-bg-sidebar); border-bottom: 1px solid var(--ui-stroke-secondary); }
+.hb-lights { display: flex; gap: 8px; }
+.hb-lights span { width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; }
+.hb-lights span:nth-child(2) { background: #febc2e; }
+.hb-lights span:nth-child(3) { background: #28c840; }
+.hb-body { display: grid; grid-template-columns: 232px 1fr; min-height: 0; }
+.hb-sidebar { background: var(--ui-bg-sidebar); border-right: 1px solid var(--ui-stroke-secondary); padding: 10px 8px; overflow: hidden; }
+.hb-nav { display: flex; align-items: center; gap: 10px; height: 30px; padding: 0 10px; border-radius: 6px; font-size: 13px; white-space: nowrap; }
+.hb-nav .codicon { font-size: 16px; }
+.hb-nav-active { background: var(--ui-row-active-background); }
+.hb-nav-active .codicon { color: var(--ui-accent); }
+.hb-sep { height: 1px; background: var(--ui-stroke-secondary); margin: 10px 6px; }
+.hb-side-label { font-size: 13px; font-weight: 600; padding: 4px 10px 6px; }
+.hb-main { min-height: 0; min-width: 0; background: var(--ui-bg-chrome); }
+@media (max-width: 700px) { .hb-body { grid-template-columns: 1fr; } .hb-sidebar { display: none; } }
+
+/* The app's Button (components/ui/button.tsx:14-50), approximated. */
+.hb-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 0; border-radius: 2.5px; cursor: pointer; font: inherit; font-size: 12px; line-height: 16px; font-weight: 500; white-space: nowrap; padding: 6px 12px; transition: all .1s; }
+.hb-btn[data-size=sm] { padding: 4px 10px; }
+.hb-btn[data-variant=default] { background: var(--dt-primary); color: var(--dt-primary-foreground); }
+.hb-btn[data-variant=default]:hover { filter: brightness(1.1); }
+.hb-btn[data-variant=secondary] { background: var(--ui-bg-quaternary); color: var(--ui-text-primary); }
+.hb-btn[data-variant=secondary]:hover { background: var(--chrome-action-hover); }
+.hb-btn:disabled { cursor: default; opacity: .5; }
+.hb-btn[aria-busy] { opacity: 1; }
+.hb-loading { position: relative; display: inline-flex; }
+.hb-ghost { visibility: hidden; }
+.hb-spin { position: absolute; left: 50%; top: 50%; width: 13px; height: 13px; margin: -6.5px 0 0 -6.5px; border-radius: 50%; border: 2px solid color-mix(in srgb, currentColor 35%, transparent); border-top-color: currentColor; animation: hb-spin .7s linear infinite; }
+@keyframes hb-spin { to { transform: rotate(360deg); } }
+
+#hb-toasts { position: fixed; right: 16px; bottom: 16px; display: grid; gap: 8px; z-index: 5; }
+.hb-toast { max-width: 360px; padding: 10px 12px; border-radius: 8px; background: var(--ui-bg-elevated); border: 1px solid var(--ui-stroke-secondary); box-shadow: 0 8px 24px rgba(0, 0, 0, .35); font-size: 13px; }
+.hb-toast-error { border-color: var(--dt-destructive); }
+</style>
+<link rel="stylesheet" href="./kit-sdk-stub.css">
+</head>
+<body>
+<div id="root"></div>
+<script type="module">import(new URLSearchParams(location.search).has('live') ? './live/harness.js' : './harness.js')</script>
+</body>
+</html>

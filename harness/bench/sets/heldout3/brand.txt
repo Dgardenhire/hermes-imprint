@@ -1,0 +1,8 @@
+Thistledown Rides (Sample) brand
+
+Heather #5B3A6E: headings, title bars
+Marigold #D9962B: highlights and the one key number
+Charcoal #2B2B2B: body text
+Linen #FAF7F2: page background
+
+Font: Source Sans 3 (headings and body)

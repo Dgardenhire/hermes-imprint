@@ -1,0 +1,1118 @@
+{
+  "set": "salvia",
+  "tag": "p6-salvia",
+  "steps": {
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "outline": {
+      "status": "done",
+      "seconds": 12.5,
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 29.9,
+      "error": null
+    }
+  },
+  "started": 1794204156.2844422,
+  "sources": [
+    "about-us.txt",
+    "fall-menu.txt"
+  ],
+  "kit": {
+    "id": "meridian",
+    "name": "Meridian",
+    "colors": [
+      {
+        "hex": "#1f44c7",
+        "role": "band",
+        "name": "Ultramarine"
+      },
+      {
+        "hex": "#1f44c7",
+        "role": "accent",
+        "name": "Ultramarine"
+      },
+      {
+        "hex": "#111111",
+        "role": "head",
+        "name": "Poster black"
+      },
+      {
+        "hex": "#111111",
+        "role": "rule",
+        "name": "Rule black"
+      },
+      {
+        "hex": "#f1f1ef",
+        "role": "fill",
+        "name": "Stock"
+      }
+    ],
+    "paper": "#ffffff",
+    "ink": "#111111",
+    "kit_json": {
+      "name": "Meridian",
+      "origin": "starter",
+      "origin_note": "",
+      "org": "",
+      "subject": "Programs, campaigns and plans for a civic or cultural audience: a strong grid, big numbers, one color that owns the page.",
+      "signature": "A twelve-column grid you can see, numbers as structure, and whole fields of ultramarine.",
+      "paper": "#ffffff",
+      "ink": "#111111",
+      "colors": [
+        {
+          "hex": "#1f44c7",
+          "role": "band",
+          "name": "Ultramarine"
+        },
+        {
+          "hex": "#1f44c7",
+          "role": "accent",
+          "name": "Ultramarine"
+        },
+        {
+          "hex": "#111111",
+          "role": "head",
+          "name": "Poster black"
+        },
+        {
+          "hex": "#111111",
+          "role": "rule",
+          "name": "Rule black"
+        },
+        {
+          "hex": "#f1f1ef",
+          "role": "fill",
+          "name": "Stock"
+        }
+      ],
+      "type": {
+        "heading": {
+          "family": "Barlow",
+          "stack": "Barlow, Helvetica, Arial, sans-serif",
+          "weight": 600
+        },
+        "body": {
+          "family": "Barlow",
+          "stack": "Barlow, Helvetica, Arial, sans-serif",
+          "weight": 400
+        },
+        "scale": 1.5,
+        "label": {
+          "family": "Barlow Condensed",
+          "stack": "Barlow Condensed, Arial Narrow, sans-serif",
+          "weight": 700
+        }
+      },
+      "layout": "margin",
+      "deck": "grid",
+      "density": "medium",
+      "voice": {
+        "notes": "Direct and civic. Short declaratives. Name the place, the date and what people can do. Numbers stand on their own lines. Invite, never plead.",
+        "delivery": "Clear and upbeat, like a host opening a public meeting. Crisp on dates and places.",
+        "never": [
+          "exciting",
+          "world-class",
+          "vibrant",
+          "stakeholders"
+        ],
+        "pairs": [
+          {
+            "say": "neighbors",
+            "not": "stakeholders"
+          }
+        ],
+        "draft": false
+      },
+      "rules": {
+        "sources": true,
+        "page_numbers": true,
+        "date": true,
+        "required": []
+      },
+      "logo": null,
+      "logo_alt": null,
+      "fonts": [],
+      "id": "meridian",
+      "version": 1,
+      "starter": true,
+      "created_at": 0,
+      "updated_at": 0,
+      "featured": true,
+      "credit": "",
+      "studio": true,
+      "tier": "studio",
+      "method": "The modernist poster: flush-left type, rules that divide, condensed figures, one color in fields, never as a tint."
+    }
+  },
+  "guide_and_summaries_seconds": 13.9,
+  "guide": {
+    "by": "Written by your Hermes model",
+    "guide": [
+      {
+        "text": "These sources are an about-us page and a fall office catering menu for Salvia Kitchen.",
+        "chips": [
+          {
+            "ref": "P1",
+            "n": 1,
+            "source_n": 1,
+            "source": "About us",
+            "locator": "para. 1",
+            "source_id": "s_3101a8423524"
+          },
+          {
+            "ref": "P3",
+            "n": 2,
+            "source_n": 2,
+            "source": "Fall menu",
+            "locator": "para. 1",
+            "source_id": "s_6f26291c8ee3"
+          }
+        ]
+      },
+      {
+        "text": "Ana and her brother Tomas run it. They opened their commercial kitchen in 2022.",
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "About us",
+            "locator": "para. 2",
+            "source_id": "s_3101a8423524"
+          }
+        ]
+      },
+      {
+        "text": "Last year they catered 214 events and served about 9,600 guests, mostly office lunches and baby showers.",
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "About us",
+            "locator": "para. 2",
+            "source_id": "s_3101a8423524"
+          }
+        ]
+      },
+      {
+        "text": "Boxed lunches cost $16 per person with a 10-box minimum. Family-style trays cost $24 per person for at least 15 guests.",
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 2,
+            "source": "Fall menu",
+            "locator": "para. 2",
+            "source_id": "s_6f26291c8ee3"
+          },
+          {
+            "ref": "P5",
+            "n": 2,
+            "source_n": 2,
+            "source": "Fall menu",
+            "locator": "para. 3",
+            "source_id": "s_6f26291c8ee3"
+          }
+        ]
+      },
+      {
+        "text": "Orders need 72 hours notice. Delivery is free within 10 miles of downtown and costs $35 beyond that.",
+        "chips": [
+          {
+            "ref": "P7",
+            "n": 1,
+            "source_n": 2,
+            "source": "Fall menu",
+            "locator": "para. 5",
+            "source_id": "s_6f26291c8ee3"
+          }
+        ]
+      }
+    ],
+    "asks": [],
+    "questions": [
+      {
+        "text": "Trays cost $24 per person and boxed lunches cost $16, a gap of $8 per person. What does an office group of 15 get for that extra $8?",
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 2,
+            "source": "Fall menu",
+            "locator": "para. 2",
+            "source_id": "s_6f26291c8ee3"
+          },
+          {
+            "ref": "P5",
+            "n": 2,
+            "source_n": 2,
+            "source": "Fall menu",
+            "locator": "para. 3",
+            "source_id": "s_6f26291c8ee3"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "Last year brought 214 events and about 9,600 guests, but trays only come in sizes for 15, 25 or 40 guests. How are bigger events served?",
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "About us",
+            "locator": "para. 2",
+            "source_id": "s_3101a8423524"
+          },
+          {
+            "ref": "P5",
+            "n": 2,
+            "source_n": 2,
+            "source": "Fall menu",
+            "locator": "para. 3",
+            "source_id": "s_6f26291c8ee3"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "Office lunches are most of the business, but every order needs 72 hours notice. How often does that rule turn away last-minute office orders?",
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "About us",
+            "locator": "para. 2",
+            "source_id": "s_3101a8423524"
+          },
+          {
+            "ref": "P7",
+            "n": 2,
+            "source_n": 2,
+            "source": "Fall menu",
+            "locator": "para. 5",
+            "source_id": "s_6f26291c8ee3"
+          }
+        ],
+        "suggestion": true
+      }
+    ],
+    "source_ids": [
+      "s_3101a8423524",
+      "s_6f26291c8ee3"
+    ],
+    "created_at": 1794204170.075732
+  },
+  "brief": {
+    "who": "Funders",
+    "goal": "Decide to fund this work",
+    "length": "7 to 9 slides"
+  },
+  "outline": {
+    "by": "Written by your Hermes model",
+    "outline_id": "ol_724c35ff51f7",
+    "kind": "deck",
+    "brief": {
+      "who": "Funders",
+      "goal": "Decide to fund this work",
+      "length": "7 to 9 slides"
+    },
+    "source_ids": [
+      "s_3101a8423524",
+      "s_6f26291c8ee3"
+    ],
+    "slides": [
+      {
+        "title": "Salvia Kitchen grew from neighbors' parties to a commercial kitchen in three years",
+        "type": "timeline",
+        "refs": [
+          "P2"
+        ],
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "About us",
+            "locator": "para. 2",
+            "source_id": "s_3101a8423524"
+          }
+        ],
+        "hint": null,
+        "words": 13,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": []
+        }
+      },
+      {
+        "title": "Salvia Kitchen catered 214 events last year",
+        "type": "stat",
+        "refs": [
+          "P2"
+        ],
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "About us",
+            "locator": "para. 2",
+            "source_id": "s_3101a8423524"
+          }
+        ],
+        "hint": null,
+        "words": 7,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": [
+            {
+              "value": "214",
+              "status": "exact",
+              "ref": "P2"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Salvia Kitchen served about 9,600 guests last year",
+        "type": "stat",
+        "refs": [
+          "P2"
+        ],
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "About us",
+            "locator": "para. 2",
+            "source_id": "s_3101a8423524"
+          }
+        ],
+        "hint": null,
+        "words": 8,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": [
+            {
+              "value": "9,600",
+              "status": "exact",
+              "ref": "P2"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Office lunches and baby showers bring in most of the business",
+        "type": "content",
+        "refs": [
+          "P2"
+        ],
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "About us",
+            "locator": "para. 2",
+            "source_id": "s_3101a8423524"
+          }
+        ],
+        "hint": null,
+        "words": 11,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": []
+        }
+      },
+      {
+        "title": "Salvia Kitchen buys produce from three farms within 40 miles",
+        "type": "content",
+        "refs": [
+          "P2"
+        ],
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "About us",
+            "locator": "para. 2",
+            "source_id": "s_3101a8423524"
+          }
+        ],
+        "hint": null,
+        "words": 10,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": [
+            {
+              "value": "40",
+              "status": "exact",
+              "ref": "P2"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Family-style trays cost $8 more per person than boxed lunches",
+        "type": "comparison",
+        "refs": [
+          "P4",
+          "P5"
+        ],
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 2,
+            "source": "Fall menu",
+            "locator": "para. 2",
+            "source_id": "s_6f26291c8ee3"
+          },
+          {
+            "ref": "P5",
+            "n": 2,
+            "source_n": 2,
+            "source": "Fall menu",
+            "locator": "para. 3",
+            "source_id": "s_6f26291c8ee3"
+          }
+        ],
+        "hint": null,
+        "words": 10,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": [
+            {
+              "value": "$8",
+              "status": "computed",
+              "ref": "P5",
+              "math": {
+                "op": "difference",
+                "operands": [
+                  {
+                    "value": "$24",
+                    "ref": "P5",
+                    "source": "Fall menu",
+                    "locator": "para. 3",
+                    "line": {
+                      "before": "Family-style trays, ",
+                      "match": "$24",
+                      "after": " per person, minimum 15 guests."
+                    }
+                  },
+                  {
+                    "value": "$16",
+                    "ref": "P4",
+                    "source": "Fall menu",
+                    "locator": "para. 2",
+                    "line": {
+                      "before": "Boxed lunches, ",
+                      "match": "$16",
+                      "after": " per person, minimum 10 boxes."
+                    }
+                  }
+                ],
+                "result": "8",
+                "text": "24 − 16 = 8"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title": "Every menu can be made gluten-free on request",
+        "type": "content",
+        "refs": [
+          "P7"
+        ],
+        "chips": [
+          {
+            "ref": "P7",
+            "n": 1,
+            "source_n": 2,
+            "source": "Fall menu",
+            "locator": "para. 5",
+            "source_id": "s_6f26291c8ee3"
+          }
+        ],
+        "hint": null,
+        "words": 8,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": []
+        }
+      },
+      {
+        "title": "Fund Salvia Kitchen to back a kitchen that catered 214 events last year",
+        "type": "closing",
+        "refs": [
+          "P2"
+        ],
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "About us",
+            "locator": "para. 2",
+            "source_id": "s_3101a8423524"
+          }
+        ],
+        "hint": null,
+        "words": 13,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": [
+            {
+              "value": "214",
+              "status": "exact",
+              "ref": "P2"
+            }
+          ]
+        }
+      }
+    ],
+    "warnings": [],
+    "created_at": 1794204182.696841
+  },
+  "deck_seconds": 42.4,
+  "output_id": "o_d0ed278338a5",
+  "neutral": {
+    "title": "Salvia Kitchen: A Growing Local Caterer",
+    "subtitle": "For funders: a family catering kitchen and its growth",
+    "slides": [
+      {
+        "type": "timeline",
+        "refs": [
+          "P2"
+        ],
+        "heading": "Salvia Kitchen grew from neighbors' parties to a commercial kitchen in three yea",
+        "steps": [
+          {
+            "when": "2019",
+            "text": "Ana and Tomas start cooking for neighbors' parties",
+            "ref": "P2"
+          },
+          {
+            "when": "2022",
+            "text": "They open their commercial kitchen",
+            "ref": "P2"
+          },
+          {
+            "when": "Last year",
+            "text": "They cater 214 events",
+            "ref": "P2"
+          }
+        ]
+      },
+      {
+        "type": "stat",
+        "refs": [
+          "P2"
+        ],
+        "value": "214",
+        "label": "Salvia Kitchen catered 214 events last year",
+        "context": "Ana and her brother Tomas run the kitchen they opened in 2022."
+      },
+      {
+        "type": "stat",
+        "refs": [
+          "P2"
+        ],
+        "value": "9,600",
+        "label": "Salvia Kitchen served about 9,600 guests last year",
+        "context": "Those guests came to the 214 events the kitchen catered last year."
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P2"
+        ],
+        "heading": "Office lunches and baby showers bring in most of the business",
+        "bullets": [
+          {
+            "text": "Office lunches are a main source of business",
+            "ref": "P2"
+          },
+          {
+            "text": "Baby showers are the other main source",
+            "ref": "P2"
+          },
+          {
+            "text": "Together they make up most of the work",
+            "ref": "P2"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P2"
+        ],
+        "heading": "Salvia Kitchen buys produce from three farms within 40 miles",
+        "bullets": [
+          {
+            "text": "The kitchen buys its produce from three farms",
+            "ref": "P2"
+          },
+          {
+            "text": "Each farm is within 40 miles of the kitchen",
+            "ref": "P2"
+          }
+        ]
+      },
+      {
+        "type": "comparison",
+        "refs": [
+          "P4",
+          "P5"
+        ],
+        "heading": "Family-style trays cost $8 more per person than boxed lunches",
+        "left_label": "Boxed lunches",
+        "left_items": [
+          {
+            "text": "$16 per person",
+            "ref": "P4"
+          },
+          {
+            "text": "Minimum of 10 boxes",
+            "ref": "P4"
+          },
+          {
+            "text": "Each box has a seasonal side and shortbread",
+            "ref": "P4"
+          }
+        ],
+        "right_label": "Family-style trays",
+        "right_items": [
+          {
+            "text": "$24 per person",
+            "ref": "P5"
+          },
+          {
+            "text": "Minimum of 15 guests",
+            "ref": "P5"
+          },
+          {
+            "text": "Trays serve 15, 25 or 40 guests",
+            "ref": "P5"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P7"
+        ],
+        "heading": "Every menu can be made gluten-free on request",
+        "bullets": [
+          {
+            "text": "Any menu can be made gluten-free on request",
+            "ref": "P7"
+          },
+          {
+            "text": "The kitchen labels all eight major allergens",
+            "ref": "P7"
+          },
+          {
+            "text": "Orders need 72 hours notice",
+            "ref": "P7"
+          }
+        ]
+      },
+      {
+        "type": "closing",
+        "refs": [
+          "P2"
+        ],
+        "heading": "Fund Salvia Kitchen to back a kitchen that catered 214 events last year",
+        "text": "Salvia Kitchen catered 214 events and served about 9,600 guests last year.",
+        "cta": "Back Salvia Kitchen as it keeps growing"
+      }
+    ]
+  },
+  "live": {
+    "title": "Salvia Kitchen Cooks for Its Neighbors",
+    "subtitle": "For funders: a family catering kitchen and how it grew",
+    "slides": [
+      {
+        "type": "timeline",
+        "refs": [
+          "P2"
+        ],
+        "heading": "From neighbors' parties to a commercial kitchen",
+        "steps": [
+          {
+            "when": "2019",
+            "text": "Ana and Tomas cook for neighbors' parties",
+            "ref": "P2"
+          },
+          {
+            "when": "2022",
+            "text": "They open a commercial kitchen",
+            "ref": "P2"
+          },
+          {
+            "when": "Last year",
+            "text": "They cater 214 events",
+            "ref": "P2"
+          }
+        ]
+      },
+      {
+        "type": "stat",
+        "refs": [
+          "P2"
+        ],
+        "value": "214",
+        "label": "Salvia Kitchen catered 214 events last year",
+        "context": "Ana and her brother Tomas run the kitchen. They opened it in 2022."
+      },
+      {
+        "type": "stat",
+        "refs": [
+          "P2"
+        ],
+        "value": "9,600",
+        "label": "Salvia Kitchen served about 9,600 guests last year",
+        "context": "Those guests came to 214 events last year."
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P2"
+        ],
+        "heading": "Office lunches and baby showers lead",
+        "bullets": [
+          {
+            "text": "Office lunches are one main source of work",
+            "ref": "P2"
+          },
+          {
+            "text": "Baby showers are the other",
+            "ref": "P2"
+          },
+          {
+            "text": "Together they make up most of the business",
+            "ref": "P2"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P2"
+        ],
+        "heading": "Salvia Kitchen buys produce from three farms within 40 miles",
+        "bullets": [
+          {
+            "text": "The kitchen buys produce from three farms",
+            "ref": "P2"
+          },
+          {
+            "text": "Each farm sits within 40 miles",
+            "ref": "P2"
+          }
+        ]
+      },
+      {
+        "type": "comparison",
+        "refs": [
+          "P4",
+          "P5"
+        ],
+        "heading": "Family-style trays cost $8 more per person than boxed lunches",
+        "left_label": "Boxed lunches",
+        "left_items": [
+          {
+            "text": "$16 per person",
+            "ref": "P4"
+          },
+          {
+            "text": "Minimum of 10 boxes",
+            "ref": "P4"
+          },
+          {
+            "text": "Each box holds a seasonal side and shortbread",
+            "ref": "P4"
+          }
+        ],
+        "right_label": "Family-style trays",
+        "right_items": [
+          {
+            "text": "$24 per person",
+            "ref": "P5"
+          },
+          {
+            "text": "Minimum of 15 guests",
+            "ref": "P5"
+          },
+          {
+            "text": "Trays serve 15, 25 or 40 guests",
+            "ref": "P5"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P7"
+        ],
+        "heading": "Any menu can go gluten-free",
+        "bullets": [
+          {
+            "text": "Ask, and any menu can be made gluten-free",
+            "ref": "P7"
+          },
+          {
+            "text": "The kitchen labels all eight major allergens",
+            "ref": "P7"
+          },
+          {
+            "text": "Place orders 72 hours ahead",
+            "ref": "P7"
+          }
+        ]
+      },
+      {
+        "type": "closing",
+        "refs": [
+          "P2"
+        ],
+        "heading": "Fund Salvia Kitchen to back a kitchen that catered 214 events last year",
+        "text": "Last year Salvia Kitchen catered 214 events. It served about 9,600 guests.",
+        "cta": "Join us in funding Salvia Kitchen's next step"
+      }
+    ]
+  },
+  "passages": {
+    "P1": {
+      "text": "About Salvia Kitchen",
+      "locator": "para. 1",
+      "source_title": "About us",
+      "source_id": "s_3101a8423524"
+    },
+    "P2": {
+      "text": "Salvia Kitchen is Ana and her brother Tomas. We started cooking for neighbors' parties in 2019 and opened our commercial kitchen in 2022.\nLast year we catered 214 events and served about 9,600 guests.\nMost of our business comes from office lunches and baby showers.\nWe buy produce from three farms within 40 miles of the kitchen.",
+      "locator": "para. 2",
+      "source_title": "About us",
+      "source_id": "s_3101a8423524"
+    },
+    "P3": {
+      "text": "Salvia Kitchen Catering: Fall Office Menu",
+      "locator": "para. 1",
+      "source_title": "Fall menu",
+      "source_id": "s_6f26291c8ee3"
+    },
+    "P4": {
+      "text": "Boxed lunches, $16 per person, minimum 10 boxes.\n- Roasted squash and farro salad with sage brown butter, toasted pepitas\n- Chicken mole torta on a bolillo roll, with pickled red onion\n- Grilled vegetable torta with black bean spread (vegan)\nEach box comes with a seasonal side and a piece of piloncillo shortbread.",
+      "locator": "para. 2",
+      "source_title": "Fall menu",
+      "source_id": "s_6f26291c8ee3"
+    },
+    "P5": {
+      "text": "Family-style trays, $24 per person, minimum 15 guests.\n- Braised short rib with ancho and orange, cilantro rice, charro beans\n- Lemon-herb roast chicken, roasted root vegetables, green salad\nTrays serve 15, 25 or 40 guests.",
+      "locator": "para. 3",
+      "source_title": "Fall menu",
+      "source_id": "s_6f26291c8ee3"
+    },
+    "P6": {
+      "text": "Add-ons: agua fresca by the gallon, $28. Churro bites, $3 per person.",
+      "locator": "para. 4",
+      "source_title": "Fall menu",
+      "source_id": "s_6f26291c8ee3"
+    },
+    "P7": {
+      "text": "We need 72 hours notice for orders. Delivery is free within 10 miles of downtown; $35 beyond that.\nEvery menu can be made gluten-free on request. We label all eight major allergens.\nOrder by phone at 555-0142 or at salviakitchen.example.",
+      "locator": "para. 5",
+      "source_title": "Fall menu",
+      "source_id": "s_6f26291c8ee3"
+    }
+  },
+  "grounding": [
+    {
+      "path": "slides.0.steps.0",
+      "value": "2019",
+      "shown": "2019",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.steps.1",
+      "value": "2022",
+      "shown": "2022",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.steps.2",
+      "value": "214",
+      "shown": "214",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.value",
+      "value": "214",
+      "shown": "214",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.label",
+      "value": "214",
+      "shown": "214",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.context",
+      "value": "2022",
+      "shown": "2022",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.value",
+      "value": "9600",
+      "shown": "9,600",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.label",
+      "value": "9600",
+      "shown": "9,600",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.context",
+      "value": "214",
+      "shown": "214",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.heading",
+      "value": "40",
+      "shown": "40",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.1",
+      "value": "40",
+      "shown": "40",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.heading",
+      "value": "8",
+      "shown": "$8",
+      "status": "computed",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.left_items.0",
+      "value": "16",
+      "shown": "$16",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.left_items.1",
+      "value": "10",
+      "shown": "10",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.right_items.0",
+      "value": "24",
+      "shown": "$24",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.right_items.1",
+      "value": "15",
+      "shown": "15",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.right_items.2",
+      "value": "15",
+      "shown": "15",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.right_items.2",
+      "value": "25",
+      "shown": "25",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.right_items.2",
+      "value": "40",
+      "shown": "40",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.2",
+      "value": "72",
+      "shown": "72",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.heading",
+      "value": "214",
+      "shown": "214",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.text",
+      "value": "214",
+      "shown": "214",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.text",
+      "value": "9600",
+      "shown": "9,600",
+      "status": "ok",
+      "kind": "number"
+    }
+  ],
+  "exhibits": [],
+  "check": [
+    "All 23 numbers and quotes found in your sources; 1 worked out from them"
+  ],
+  "seconds": 56.5
+}

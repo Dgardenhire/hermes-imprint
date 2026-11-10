@@ -1,0 +1,52 @@
+{
+  "purpose": "imprint.plain_draft",
+  "tag": "l4b-heldout12",
+  "seconds": 22.1,
+  "model": "claude-opus-5-5",
+  "ok": true,
+  "neutral": true,
+  "request": {
+    "system": "You are a helpful assistant in a desktop chat app with a Python code tool. When you write a Python script in one ```python block, the app runs it in the person's working folder (Python 3.9, python-pptx 1.0 installed, no network) and gives the person any files it saves.",
+    "instructions": "",
+    "input_chars": 8482,
+    "input_head": "Here are our documents.\n\n=== Notes ===\nSample (fictional)\n\nCogline Bike Works - Board Development Committee\nMeeting notes, October 14, 2026, 6:00 p.m., Granger Street shop\nPresent: Renata Okafor-Bly (executive director), Hal Whitcombe (board chair), Pete Varga (treasurer), Simone Treadwell (lead instructor)\n\n1. Ostrander Family Fund\nHal reported that the Ostrander Family Fund program officer, Lise Damaro, agreed to a site visit on December 4 and invited a request for the evening cohort. Renata confirmed the cohort costs $96,000 in total. The Workforce Board has committed $36,000, so the gap is $60,000.\n\nDecision: we will ask Ostrander for $60,000 for the FY2027 evening cohort.\n\n2. The deck\nRenata asked for a short deck to leave with Lise after the visit. Pete wants the numbers to match the FY2026 annual report exactly.\n\nDeadline: final deck to Hal for review by December 1, 2026.\n\nInstructions for the deck:\n- Keep it to 8 slides or fewer.\n- Show the full $96,000 evening cohort cost and the $36,000 already committed, so Ostrander sees the $60,000 is the gap, not the whole cost.\n- State the 90-day employment result (14 of 19, 74%) with its caveat: small group, half the placements self-reported, no one-year data yet for FY2026.\n- Do not use apprentice photos. Signed releases are not on file. The only participant quote allowed is Dariel M., first name and last initial only.\n- Do not claim we end unemployment in Pellam Ridge or call the program \"life-changing.\" Simone: \"Say what we"
+  },
+  "response": {
+    "draft": "Slide 1: Cogline Bike Works: FY2027 Evening Cohort\nA request to the Ostrander Family Fund\nRequest: $60,000 toward a $96,000 evening apprenticeship cohort\nGranger Street, Pellam Ridge\nResults are from the FY2026 Annual Program Report (July 1, 2025 to June 30, 2026)\n\nSlide 2: What We Do\nNonprofit bike repair shop and apprenticeship program on Granger Street in Pellam Ridge\nAdults who are out of work or underemployed train in a paid, 16-week apprenticeship\nApprentices earn a stipend while they train\nTraining covers entry-level bike shop skills: wheel truing, brake and drivetrain service, hub overhaul, frame inspection, customer intake, basic shop math\nRebuilt bikes are sold at low prices or given free to residents who need a way to get to work or school\nStaff of three: executive director, lead instructor, half-time shop manager\n\nSlide 3: FY2026 Results\nApprentices enrolled: 26 (up from 18 in FY2025, +44%)\nCompleted all 16 weeks: 19 (up from 12, +58%)\nCompletion rate: 73% (up from 67%)\nEmployed within 90 days: 14 of 19 (up from 8 of 12)\nBikes refurbished: 482 (up from 310, +55%)\nBikes given free to residents: 205 (up from 140, +46%)\nShop earned income: $58,600 (up from $41,200, +42%)\nMost of the growth came from one change: running two overlapping cohorts, starting eight weeks apart, beginning September 2025\n\nSlide 4: Employment After 90 Days: 14 of 19 (74%)\n9 hired by bike shops or bike rental and fleet operators in the county\n3 hired in related mechanical trades: small-engine, appliance repair, forklift maintenance\n2 hired by Cogline as part-time shop assistants\nMedian starting wage $17.25 an hour, compared with $13.10 reported at intake\nCaveat: this is a small group. One graduate moves the rate by about five points\nCaveat: 7 of the 14 placements were confirmed by an employer. The other 7 are self-reported by the graduate\nCaveat: we do not have one-year retention data for FY2026 graduates yet\nFY2025 one-year check: 7 of the 8 employed at 90 days were still working. That is one cohort of 12, not a trend yet\nStarting in FY2027, we will ask every graduate for employer contact consent at graduation\n\nSlide 5: From a Graduate\nDariel M., spring cohort graduate, now works the service desk at a shop in the county seat\n\"I came in thinking I'd learn to fix flats. What I actually learned was how to look at a problem, write down what's wrong, and give somebody a straight price. That's the part they hired me for.\"\n482 bikes rebuilt in FY2026: 277 sold through the shop, mostly $60 to $180, and 205 given free\nFree bikes went to residents referred by the adult education center, two family shelters, and the county reentry office\nEvery free bike goes out with a lock, lights, and a fitted helmet\n\nSlide 6: FY2026 Finances\nOperating expenses: $312,400\nApprentice stipends $118,800 (38%) and staff salaries and benefits $121,500 (39%)\nRent and utilities $28,800 (9%); parts, tools, and safety gear $24,600 (8%); insurance, accounting, and admin $18,700 (6%)\nCost per enrolled apprentice fell from $13,900 to $12,015\nRevenue: $318,000, with a $5,600 surplus added to the operating reserve\nTallis County Workforce Board $120,000 (38%); Ferncliff Community Foundation $75,000 (24%); shop earned income $58,600 (18%); individual donors and Spring Gear-Up Ride $44,400 (14%); Northway Cycle Supply $20,000 (6%)\n\nSlide 7: The Need: An Evening Cohort\nWaitlist at the end of FY2026: 31 people\n22 of the 31 said they could only attend in the evening\nMost already have daytime jobs, often part-time or with shifting schedules, and can't leave them for a weekday program\nEvening cohort: Monday to Thursday, 5:30 to 9:00 p.m., for 20 weeks, matching the day program's hours\nPlanned start: February 2027\nTotal enrollment grows from 26 to 36 apprentices\n\nSlide 8: Evening Cohort Cost and Our Request\nSecond instructor (1.0 FTE, salary and benefits): $52,000\nStipends for 10 evening apprentices: $30,000\nAdded tools, workstands, and safety gear: $8,500\nEvening utilities and building access: $5,500\nTotal evening cohort cost: $96,000\nAlready committed by the Tallis County Workforce Board: $36,000\nRemaining gap: $60,000. This is our request to the Ostrander Family Fund\nFull FY2027 budget, including the evening cohort: $408,400\nFY2027 targets: 36 enrolled, at least 26 completing, at least 70% of completers employed within 90 days, at least half of placements confirmed directly with an employer"
+  },
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 343,
+    "cache_read_input_tokens": 4067,
+    "output_tokens": 2242,
+    "output_tokens_details": {
+      "thinking_tokens": 434
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 343,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 2242,
+        "cache_read_input_tokens": 4067,
+        "cache_creation_input_tokens": 343,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 343
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "error": null
+}

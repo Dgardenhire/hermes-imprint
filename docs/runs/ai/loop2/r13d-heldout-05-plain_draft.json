@@ -1,0 +1,52 @@
+{
+  "purpose": "imprint.plain_draft",
+  "tag": "r13d-heldout",
+  "seconds": 21.9,
+  "model": "claude-opus-5-5",
+  "ok": true,
+  "neutral": true,
+  "request": {
+    "system": "You are a helpful assistant in a desktop chat app with a Python code tool. When you write a Python script in one ```python block, the app runs it in the person's working folder (Python 3.9, python-pptx 1.0 installed, no network) and gives the person any files it saves.",
+    "instructions": "",
+    "input_chars": 6798,
+    "input_head": "Here are our documents.\n\n=== Fy26 annual report ===\n*Sample organization. Fernwood Tool Library, Alder Falls, and every person named here are fictional.*\nFiscal year July 1, 2025 to June 30, 2026. Prepared by the staff for members, partners and the board.\n\nFernwood Tool Library lends tools the way a public library lends books. Members borrow drills, ladders, tile saws,\ncarpet cleaners, pressure washers, sewing machines and garden tools for a week at a time, and bring them back for the\nnext neighbor. We opened in a rented storefront at 418 Wren Street in Alder Falls in 2019. Membership runs on a\nsliding scale from $0 to $60 a year; about one member in four pays nothing.\nWe have one full-time director, one part-time shop lead, and 46 volunteers. The storefront is open 22 hours a week:\nWednesday and Friday afternoons and Sunday.\n\n- **Members.** 1,962 active members on June 30, 2026, up from 1,410 a year earlier.\n- **Loans.** 9,840 tool loans this year, up from 7,215 in FY2025. The average loan lasted 6 days. Four percent of loans\n came back late, and we wrote off 11 tools as lost or broken past repair.\n- **Inventory.** 2,350 tools on the shelves, 310 of them added this year. Most new tools were donated; we bought 64.\n- **Repair cafe.** 14 repair cafes, where volunteers fix what people bring in. Neighbors brought 611 items and our\n volunteers fixed 438 of them: lamps, toasters, bike brakes, zippers and one 1962 radio.\n- **Volunteers.** 46 volunteers gave 3,120 hours, about the sa"
+  },
+  "response": {
+    "draft": "Slide 1: Open When Our Neighbors Can Come\nFernwood Tool Library, Alder Falls\nA proposal to the Alder Falls Community Fund\n$46,500 a year for two years ($93,000 in all) to open evenings and Saturdays\nSample organization. Fernwood Tool Library and every person named here are fictional.\n\nSlide 2: What Members Told Us\nIn May 2026, 512 members answered our survey\n47% said our hours are what keeps them from borrowing more\nThe next answers were far behind: \"the tool I wanted was out\" (19%) and parking (11%)\nMany work weekday afternoons and can't reach us before we close at 6 p.m.\n\"I've walked past at 6:15 more times than I can count. The lights are on and the door is locked.\"\n\nSlide 3: Millbrook Is Missing Out\nMillbrook has 22% of the city's renters\nOnly 9% of our members live there\n61% of Millbrook members who answered named our hours, more than any other group\nMost of them work shifts\n\nSlide 4: The Door Is the Limit\n344 hold requests were waiting on June 30, 2026\nMostly for the tile saw, the carpet cleaner and the pressure washer\nHolds wait 11 days on average\nOn the 3 days we're open, a returned tool often goes back out within the hour\nOn the 4 days we're closed, it sits on the shelf\n\nSlide 5: What We Do Now (FY2026)\n1,962 active members, up from 1,410 a year earlier\n9,840 tool loans, up from 7,215\n2,350 tools on the shelves\n14 repair cafes: 438 of 611 items fixed\n46 volunteers gave 3,120 hours\nSliding-scale membership from $0 to $60; about 1 member in 4 pays nothing\n58% would otherwise have bought the tool new\nMembers estimate they saved a median of $180 over the year\n\nSlide 6: What Longer Hours Fix\nOpen 34 hours a week instead of 22\nNew: Tuesday and Thursday evenings until 8 p.m.\nNew: Saturday, 9 a.m. to 3 p.m.\nShift workers and people with weekday jobs can finally reach us\nReturned tools go back out sooner, so holds get shorter\n\nSlide 7: Why It Takes a Paid Coordinator\nA part-time coordinator, 25 hours a week\nVolunteers can't cover every new shift\nA trained lead must be on hand whenever power tools go out\nThe $46,500 covers the coordinator plus utilities and supplies for the longer hours\n\nSlide 8: The Money\nAsk: $46,500 a year for two years, $93,000 in all\nFY2026 budget: $212,400, closed even, no debt\nFY2027 budget for the board to take up: $258,900\nMembership fees covered 29% of FY2026 costs\nEach loan cost us about $21.60\nCompare: a new tile saw costs about $400; a weekend store rental about $65\n\nSlide 9: What We Expect, and How We'll Report\nOur estimate: about 2,500 more loans a year once members learn the new times\nThat's a staff estimate, not a promise\nAt that level, each added loan would cost about $18.60\nWe will report the real results to the Fund\nContact: Rosa Delacroix-Imari, Director"
+  },
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 3809,
+    "output_tokens": 2209,
+    "output_tokens_details": {
+      "thinking_tokens": 1075
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 2209,
+        "cache_read_input_tokens": 3809,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "error": null
+}

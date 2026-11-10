@@ -1,0 +1,19 @@
+# Spikes (SPEC section 6), Nov 7, 2026
+
+Hermes source checked: `~/.hermes/hermes-agent` at `25f24b1f67` (base 0.23.0). Its diff from the docs digest's
+`52b100e8fa` touches no plugin surface (`git diff --name-only`: contributor emails, `scripts/scan_plugin_payloads.py`
+and its test). No `hermes` command was run and nothing was installed into `~/.hermes`.
+
+| | Question | Result | What Imprint does |
+|---|---|---|---|
+| S1 | Images through `complete_structured` on Damon's model | **Not testable here** (needs his signed-in model). Found in source instead: `vision_analyze` through `dispatch_tool` is the wrong door for a plugin. When the main model can see images, its handler takes the "native fast path" and returns a `_multimodal` envelope that attaches the image to the chat (`tools/vision_tools.py:1013-1020, 695-740`); it returns no text a plugin can read. Only the legacy path returns a description. | Reading a logo or brand sheet will go through `ctx.llm.complete_structured` with an image block (structured JSON back), with `vision_analyze` as a fallback only when its result carries text. Not built yet (stage 2). Test live Tuesday. |
+| S2 | `text_to_speech` from a REST handler | Read, not run (a real call would send text to Microsoft's Edge voice from a scratch home). `registry.dispatch` checks no toolset and no `check_fn` (`tools/registry.py:972-1000`); the handler takes `text, output_path, instructions, voice_id` (`tools/tts_tool.py:738-747`). The tool must already be registered in the dashboard process; if not, dispatch returns "Unknown tool". | `runtime.dispatch` uses `ctx.dispatch_tool` when `register` ran in this process, else the public registry, and turns any error into a plain "Audio needs a Hermes voice" path. Audio is stage 2. Test live Tuesday. |
+| S3 | `FontFace` from bytes in the pane | **Works** in Chrome (the harness): the proofs render in the kit's own TrueType faces, loaded from `/fonts/<key>` as base64 and added with `document.fonts.add`. The build lint allows it. | Shipped. A face that fails to load falls back to its CSS stack; the PDF still embeds the exact face. Confirm in Electron Tuesday. |
+| S4 | `revealPath` and downloads on a remote backend | Read: `captureGatewayFileDownload` (in v0.22.0) saves a backend file through Electron's authenticated save dialog; `ctx.rest` uploads are refused on OAuth remotes (`electron/main.ts:14998-15003`). | Export calls `captureGatewayFileDownload` alongside the export request, so remote backends get a save dialog. Uploads fall back to base64 JSON when multipart is refused. "Show in folder" uses `ctx.os.revealPath`. Confirm live. |
+| S5 | A 25 MB upload | **Server side passes**: real FastAPI 0.133.1 + python-multipart (uvx, same versions as Hermes's venv), a 25.0 MB file through `POST /sources/file` in 0.1 s; the read job finished in 1.7 s and kept 399,960 characters; a 26 MB file was refused with "over the 25 MB limit". The Electron side builds the multipart body in memory (`electron/main.ts:5173-5187`) with no size cap. | Cap stays 25 MB. Electron leg to confirm Tuesday. |
+| S6 | `python_dependencies` consent | Read (`website/docs/developer-guide/plugins/index.md:620, 649-658`): install asks consent; **declining leaves the plugin disabled**, so "pane runs, exports off" cannot come from a decline. A dependency can still be missing in a process booted before the install (`plugins_activation.py:96-108`). | All four libraries are imported lazily; the Sources tab lists anything missing, and each reader or export says which library it needs. |
+
+Side note for whoever runs the next spike: running `~/.hermes/hermes-agent/venv/bin/python` on a script with a
+scratch `HERMES_HOME` started Hermes's own bootstrap in that scratch folder (it wrote `SOUL.md`, `sessions/` and a
+`.hermes-update-in-progress.lock` there, and a script run lost the venv's `fastapi`). `-c` one-liners were fine.
+Use `uvx` with pinned packages for spikes instead.

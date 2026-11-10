@@ -1,0 +1,805 @@
+{
+  "summary": {
+    "set": "warming",
+    "steps": {
+      "notebook_guide": {
+        "status": "done",
+        "error": null
+      },
+      "outline": {
+        "status": "done",
+        "seconds": 13.6,
+        "error": null
+      },
+      "rewrite_title": {
+        "status": "done",
+        "seconds": 18.0,
+        "error": null
+      },
+      "make_deck": {
+        "status": "done",
+        "seconds": 46.5,
+        "error": null
+      },
+      "stronger_slide3": {
+        "status": "done",
+        "seconds": 9.5,
+        "error": null
+      },
+      "graphic_options": {
+        "status": "done",
+        "seconds": 15.2,
+        "error": null
+      }
+    },
+    "guide_and_summaries_seconds": 23.9,
+    "deck_check": [
+      "All 39 numbers and quotes found in your sources; 4 citations corrected"
+    ],
+    "deck_missing": []
+  },
+  "results": {
+    "graphic_options": {
+      "by": "Written by your Hermes model",
+      "source_ids": [
+        "s_9d5374c04141",
+        "s_ed5c8b85bd8c",
+        "s_c4637d3aa25c"
+      ],
+      "options": [
+        {
+          "form": "bars",
+          "spec": {
+            "kicker": "Who paid",
+            "headline": "The city paid most of the warming center's $318,400 season",
+            "dek": "Who paid for Cedar Hollow's winter warming center in the 2025-26 season.",
+            "dek_refs": [
+              "P4"
+            ],
+            "form": "bars",
+            "unit": "Dollars paid for the season",
+            "items": [
+              {
+                "label": "City general fund",
+                "value": "$205,000",
+                "ref": "P4"
+              },
+              {
+                "label": "County grant",
+                "value": "$80,000",
+                "ref": "P4"
+              },
+              {
+                "label": "Private donations",
+                "value": "$33,400",
+                "ref": "P4"
+              }
+            ],
+            "steps": [],
+            "takeaway": "The county grant is expected to renew at the same level, but it won't be in writing until April.",
+            "takeaway_refs": [
+              "P9"
+            ]
+          },
+          "check": {
+            "status": "ok",
+            "label": "Every value matches your sources"
+          }
+        },
+        {
+          "form": "compare",
+          "spec": {
+            "kicker": "Housing placements",
+            "headline": "Staff helped more guests find housing than the season before",
+            "dek": "Warming center guests that staff connected with permanent or transitional housing before the season ended.",
+            "dek_refs": [
+              "P3"
+            ],
+            "form": "compare",
+            "unit": "Guests connected with housing",
+            "items": [
+              {
+                "label": "Season before",
+                "value": "29",
+                "ref": "P3"
+              },
+              {
+                "label": "2025-26 season",
+                "value": "64",
+                "ref": "P3"
+              }
+            ],
+            "steps": [],
+            "takeaway": "The center did more than give people a warm night. It also moved more guests toward a home.",
+            "takeaway_refs": [
+              "P3"
+            ]
+          },
+          "check": {
+            "status": "ok",
+            "label": "Every value matches your sources"
+          }
+        },
+        {
+          "form": "timeline",
+          "spec": {
+            "kicker": "Winter season",
+            "headline": "The center ran from December to March and was busiest in January",
+            "dek": "Key dates for Cedar Hollow's warming center at the Maple Street Recreation Hall, 2025-26.",
+            "dek_refs": [
+              "P2",
+              "P10"
+            ],
+            "form": "timeline",
+            "unit": "",
+            "items": [],
+            "steps": [
+              {
+                "when": "December 1, 2025",
+                "text": "Warming center opens for the season",
+                "ref": "P2"
+              },
+              {
+                "when": "January 21, 2026",
+                "text": "Busiest night: 61 guests stay",
+                "ref": "P2"
+              },
+              {
+                "when": "March 15, 2026",
+                "text": "Center closes after 87 nights open",
+                "ref": "P2"
+              },
+              {
+                "when": "April 8",
+                "text": "Council budget session on second site, earlier opening",
+                "ref": "P10"
+              }
+            ],
+            "takeaway": "Staff want next season to start on November 15 instead of December 1.",
+            "takeaway_refs": [
+              "P6"
+            ]
+          },
+          "check": {
+            "status": "ok",
+            "label": "Every value matches your sources"
+          }
+        }
+      ],
+      "dropped": 0
+    },
+    "element_edit": {
+      "by": "Written by your Hermes model",
+      "output_id": "o_8e0726b9325a",
+      "kit_id": "counsel",
+      "slide": 1,
+      "action": "stronger",
+      "status": "ok",
+      "message": null,
+      "before": {
+        "type": "stat",
+        "refs": [
+          "P2"
+        ],
+        "value": "2,914",
+        "label": "overnight stays at the warming center",
+        "context": "412 different guests stayed, and 33 guests stayed on an average night."
+      },
+      "options": [
+        {
+          "slide": {
+            "type": "stat",
+            "refs": [
+              "P2"
+            ],
+            "value": "2,914",
+            "label": "overnight stays in one season",
+            "context": "412 different guests stayed, and 33 guests stayed on an average night."
+          },
+          "check": {
+            "status": "ok",
+            "label": "All 3 numbers and quotes match your sources",
+            "items": []
+          }
+        },
+        {
+          "slide": {
+            "type": "stat",
+            "refs": [
+              "P2"
+            ],
+            "value": "2,914",
+            "label": "nights guests spent at the center",
+            "context": "412 different guests stayed, and 33 guests stayed on an average night."
+          },
+          "check": {
+            "status": "ok",
+            "label": "All 3 numbers and quotes match your sources",
+            "items": []
+          }
+        },
+        {
+          "slide": {
+            "type": "stat",
+            "refs": [
+              "P2"
+            ],
+            "value": "2,914",
+            "label": "stays indoors on freezing nights",
+            "context": "412 different guests stayed, and 33 guests stayed on an average night."
+          },
+          "check": {
+            "status": "ok",
+            "label": "All 3 numbers and quotes match your sources",
+            "items": []
+          }
+        }
+      ],
+      "insert_after": null
+    },
+    "rewrite_title": {
+      "by": "Written by your Hermes model",
+      "outline_id": "ol_986a546ed3c4",
+      "index": 2,
+      "before": "Staff moved 64 guests into housing, up from 29 the season before",
+      "options": [
+        {
+          "title": "64 guests got connected to housing this season, up from 29 the season before",
+          "chips": [
+            {
+              "ref": "P3",
+              "n": 1,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“Who it served”",
+              "source_id": "s_9d5374c04141"
+            }
+          ],
+          "refs": [
+            "P3"
+          ],
+          "hint": null,
+          "words": 14
+        },
+        {
+          "title": "Staff connected 35 more guests with housing than they did the season before",
+          "chips": [
+            {
+              "ref": "P3",
+              "n": 1,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“Who it served”",
+              "source_id": "s_9d5374c04141"
+            }
+          ],
+          "refs": [
+            "P3"
+          ],
+          "hint": null,
+          "words": 13
+        },
+        {
+          "title": "Housing connections more than doubled, reaching 64 guests before the season ended",
+          "chips": [
+            {
+              "ref": "P3",
+              "n": 1,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“Who it served”",
+              "source_id": "s_9d5374c04141"
+            }
+          ],
+          "refs": [
+            "P3"
+          ],
+          "hint": null,
+          "words": 12
+        }
+      ]
+    },
+    "outline": {
+      "by": "Written by your Hermes model",
+      "outline_id": "ol_986a546ed3c4",
+      "kind": "deck",
+      "brief": {
+        "who": "The people these sources are for",
+        "goal": "Decide what to do next",
+        "length": "About 8 slides"
+      },
+      "source_ids": [
+        "s_9d5374c04141",
+        "s_ed5c8b85bd8c",
+        "s_c4637d3aa25c"
+      ],
+      "slides": [
+        {
+          "title": "Guests made 2,914 overnight stays at the warming center this season",
+          "type": "stat",
+          "refs": [
+            "P2"
+          ],
+          "chips": [
+            {
+              "ref": "P2",
+              "n": 1,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“What the center did”",
+              "source_id": "s_9d5374c04141"
+            }
+          ],
+          "hint": null,
+          "words": 11,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": [
+              {
+                "value": "2,914",
+                "status": "exact",
+                "ref": "P2"
+              }
+            ]
+          }
+        },
+        {
+          "title": "No one was turned away for lack of space on any of 87 nights",
+          "type": "content",
+          "refs": [
+            "P7",
+            "P2"
+          ],
+          "chips": [
+            {
+              "ref": "P7",
+              "n": 1,
+              "source_n": 2,
+              "source": "Council work session",
+              "locator": "[0:04]",
+              "source_id": "s_ed5c8b85bd8c"
+            },
+            {
+              "ref": "P2",
+              "n": 2,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“What the center did”",
+              "source_id": "s_9d5374c04141"
+            }
+          ],
+          "hint": null,
+          "words": 14,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": [
+              {
+                "value": "87",
+                "status": "exact",
+                "ref": "P7"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Staff moved 64 guests into housing, up from 29 the season before",
+          "type": "comparison",
+          "refs": [
+            "P3"
+          ],
+          "chips": [
+            {
+              "ref": "P3",
+              "n": 1,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“Who it served”",
+              "source_id": "s_9d5374c04141"
+            }
+          ],
+          "hint": null,
+          "words": 12,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": [
+              {
+                "value": "64",
+                "status": "exact",
+                "ref": "P3"
+              },
+              {
+                "value": "29",
+                "status": "exact",
+                "ref": "P3"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Overnight staff made up $171,900 of the $318,400 season cost",
+          "type": "exhibit",
+          "refs": [
+            "P4"
+          ],
+          "chips": [
+            {
+              "ref": "P4",
+              "n": 1,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“What it cost”",
+              "source_id": "s_9d5374c04141"
+            }
+          ],
+          "hint": null,
+          "words": 10,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": [
+              {
+                "value": "$171,900",
+                "status": "exact",
+                "ref": "P4"
+              },
+              {
+                "value": "$318,400",
+                "status": "exact",
+                "ref": "P4"
+              }
+            ]
+          }
+        },
+        {
+          "title": "The city general fund paid $205,000 of the season's cost",
+          "type": "exhibit",
+          "refs": [
+            "P4"
+          ],
+          "chips": [
+            {
+              "ref": "P4",
+              "n": 1,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“What it cost”",
+              "source_id": "s_9d5374c04141"
+            }
+          ],
+          "hint": null,
+          "words": 10,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": [
+              {
+                "value": "$205,000",
+                "status": "exact",
+                "ref": "P4"
+              }
+            ]
+          }
+        },
+        {
+          "title": "74 percent of guests said getting to the center was the hardest part",
+          "type": "stat",
+          "refs": [
+            "P13"
+          ],
+          "chips": [
+            {
+              "ref": "P13",
+              "n": 1,
+              "source_n": 3,
+              "source": "Guest and volunteer survey",
+              "locator": "para. 3",
+              "source_id": "s_c4637d3aa25c"
+            }
+          ],
+          "hint": null,
+          "words": 13,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": [
+              {
+                "value": "74 percent",
+                "status": "exact",
+                "ref": "P13"
+              }
+            ]
+          }
+        },
+        {
+          "title": "One guest said the center means making it through the night",
+          "type": "quote",
+          "refs": [
+            "P14"
+          ],
+          "chips": [
+            {
+              "ref": "P14",
+              "n": 1,
+              "source_n": 3,
+              "source": "Guest and volunteer survey",
+              "locator": "para. 4",
+              "source_id": "s_c4637d3aa25c"
+            }
+          ],
+          "hint": null,
+          "words": 11,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": []
+          }
+        },
+        {
+          "title": "Staff recommend three changes to reach more guests next season",
+          "type": "content",
+          "refs": [
+            "P6",
+            "P8"
+          ],
+          "chips": [
+            {
+              "ref": "P6",
+              "n": 1,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“Recommendations for next season”",
+              "source_id": "s_9d5374c04141"
+            },
+            {
+              "ref": "P8",
+              "n": 2,
+              "source_n": 2,
+              "source": "Council work session",
+              "locator": "[1:02]",
+              "source_id": "s_ed5c8b85bd8c"
+            }
+          ],
+          "hint": null,
+          "words": 10,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": []
+          }
+        },
+        {
+          "title": "A second site on the east side would add $142,000 per season",
+          "type": "stat",
+          "refs": [
+            "P6",
+            "P8"
+          ],
+          "chips": [
+            {
+              "ref": "P6",
+              "n": 1,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“Recommendations for next season”",
+              "source_id": "s_9d5374c04141"
+            },
+            {
+              "ref": "P8",
+              "n": 2,
+              "source_n": 2,
+              "source": "Council work session",
+              "locator": "[1:02]",
+              "source_id": "s_ed5c8b85bd8c"
+            }
+          ],
+          "hint": null,
+          "words": 12,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": [
+              {
+                "value": "$142,000",
+                "status": "exact",
+                "ref": "P6"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Council should decide on the second site at the April 8 budget session",
+          "type": "closing",
+          "refs": [
+            "P10",
+            "P9"
+          ],
+          "chips": [
+            {
+              "ref": "P10",
+              "n": 1,
+              "source_n": 2,
+              "source": "Council work session",
+              "locator": "[3:10]",
+              "source_id": "s_ed5c8b85bd8c"
+            },
+            {
+              "ref": "P9",
+              "n": 2,
+              "source_n": 2,
+              "source": "Council work session",
+              "locator": "[2:05]",
+              "source_id": "s_ed5c8b85bd8c"
+            }
+          ],
+          "hint": null,
+          "words": 13,
+          "check": {
+            "status": "ok",
+            "label": "Every number matches your sources",
+            "items": []
+          }
+        }
+      ],
+      "warnings": [],
+      "created_at": 1794194231.4687092
+    },
+    "notebook_guide": {
+      "by": "Written by your Hermes model",
+      "guide": [
+        {
+          "text": "These sources are a season report, a council work session transcript, and a survey about Cedar Hollow's winter warming center for 2025-26.",
+          "chips": [
+            {
+              "ref": "P1",
+              "n": 1,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“Cedar Hollow Winter Warming Center: Season Report, 2025-26”",
+              "source_id": "s_9d5374c04141"
+            },
+            {
+              "ref": "P7",
+              "n": 2,
+              "source_n": 2,
+              "source": "Council work session",
+              "locator": "[0:04]",
+              "source_id": "s_ed5c8b85bd8c"
+            },
+            {
+              "ref": "P11",
+              "n": 3,
+              "source_n": 3,
+              "source": "Guest and volunteer survey",
+              "locator": "para. 1",
+              "source_id": "s_c4637d3aa25c"
+            }
+          ]
+        },
+        {
+          "text": "The center was open 87 nights and recorded 2,914 overnight stays by 412 different guests.",
+          "chips": [
+            {
+              "ref": "P2",
+              "n": 1,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“What the center did”",
+              "source_id": "s_9d5374c04141"
+            }
+          ]
+        },
+        {
+          "text": "The season cost $318,400, or $109 per overnight stay, paid by the city, a county grant and private donations.",
+          "chips": [
+            {
+              "ref": "P4",
+              "n": 1,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“What it cost”",
+              "source_id": "s_9d5374c04141"
+            }
+          ]
+        },
+        {
+          "text": "Staff recommend opening earlier, raising the trigger to 35 degrees, and adding an east side site for about $142,000.",
+          "chips": [
+            {
+              "ref": "P6",
+              "n": 1,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“Recommendations for next season”",
+              "source_id": "s_9d5374c04141"
+            },
+            {
+              "ref": "P8",
+              "n": 2,
+              "source_n": 2,
+              "source": "Council work session",
+              "locator": "[1:02]",
+              "source_id": "s_ed5c8b85bd8c"
+            }
+          ]
+        },
+        {
+          "text": "Of the guests who answered the survey, 74 percent said getting to the center was the hardest part.",
+          "chips": [
+            {
+              "ref": "P13",
+              "n": 1,
+              "source_n": 3,
+              "source": "Guest and volunteer survey",
+              "locator": "para. 3",
+              "source_id": "s_c4637d3aa25c"
+            }
+          ]
+        }
+      ],
+      "asks": [],
+      "questions": [
+        {
+          "text": "74 percent of surveyed guests said the trip was the hardest part. Does that justify the $142,000 east side site so guests stop crossing the river at night?",
+          "chips": [
+            {
+              "ref": "P13",
+              "n": 1,
+              "source_n": 3,
+              "source": "Guest and volunteer survey",
+              "locator": "para. 3",
+              "source_id": "s_c4637d3aa25c"
+            },
+            {
+              "ref": "P6",
+              "n": 2,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“Recommendations for next season”",
+              "source_id": "s_9d5374c04141"
+            },
+            {
+              "ref": "P8",
+              "n": 3,
+              "source_n": 2,
+              "source": "Council work session",
+              "locator": "[1:02]",
+              "source_id": "s_ed5c8b85bd8c"
+            }
+          ],
+          "suggestion": true
+        },
+        {
+          "text": "On January 21, 61 guests filled a hall set up for 60. If the center opens November 15 and at 35 degrees, will it have room on more nights?",
+          "chips": [
+            {
+              "ref": "P7",
+              "n": 1,
+              "source_n": 2,
+              "source": "Council work session",
+              "locator": "[0:04]",
+              "source_id": "s_ed5c8b85bd8c"
+            },
+            {
+              "ref": "P6",
+              "n": 2,
+              "source_n": 1,
+              "source": "Warming center report",
+              "locator": "“Recommendations for next season”",
+              "source_id": "s_9d5374c04141"
+            }
+          ],
+          "suggestion": true
+        }
+      ],
+      "source_ids": [
+        "s_9d5374c04141",
+        "s_ed5c8b85bd8c",
+        "s_c4637d3aa25c"
+      ],
+      "created_at": 1794194217.8581529
+    }
+  }
+}

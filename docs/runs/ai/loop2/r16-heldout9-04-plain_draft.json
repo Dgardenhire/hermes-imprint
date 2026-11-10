@@ -1,0 +1,52 @@
+{
+  "purpose": "imprint.plain_draft",
+  "tag": "r16-heldout9",
+  "seconds": 20.7,
+  "model": "claude-opus-5-5",
+  "ok": true,
+  "neutral": true,
+  "request": {
+    "system": "You are a helpful assistant in a desktop chat app with a Python code tool. When you write a Python script in one ```python block, the app runs it in the person's working folder (Python 3.9, python-pptx 1.0 installed, no network) and gives the person any files it saves.",
+    "instructions": "",
+    "input_chars": 9032,
+    "input_head": "Here are our documents.\n\n=== Notes ===\nSample (fictional)\n\nBreckwater Valley Robotics Club - Board Meeting Notes\nTuesday, November 3, 2026, 6:30 p.m., Mill Road shop\n\nPresent: Ruth Ellingboe (Board Chair), Glenn Asheford (Treasurer), Tomas Vrba (Program Coordinator), Priya Lindqvist (Coach), Dale Kucharski (Board Member)\n\n1. Wickline Rural Futures Fund\n\nTomas reported that Hana Ostberg, program officer at the Wickline Rural Futures Fund, invited us to present on December 9. She asked for a short deck in advance. Ruth moved that we ask Wickline for $37,400 to fund the full FY2027 expansion for one year: second van ($9,800), third coach stipend ($12,000), kits for three new teams ($11,400), and added travel ($4,200). Glenn confirmed the figures match the FY2026 annual report and that the $148,600 base budget is covered by our five current sources. Motion carried 5-0.\n\nDeadline: Tomas will send the final deck to Hana by Friday, December 4, 2026. Board review copy due to Ruth by November 24.\n\n2. Instructions for the deck (agreed by the board)\n\n- Keep it to eight slides or fewer. Hana said she reads decks on her phone.\n- Lead with the 52 students who finished the season and the expansion to Ostrander, not the state championship placing.\n- State the 14-of-18 postsecondary result with its caveat in plain words: self-reported, small group, no comparison group. Dale asked that we not imply the club caused it.\n- Show the $37,400 as the four line items, and make clear Wickline money pay"
+  },
+  "response": {
+    "draft": "Slide 1: Breckwater Valley Robotics Club\nProposal to the Wickline Rural Futures Fund\nPresented December 9, 2026\nRequest: $37,400 for one year\nPurpose: add Ostrander Rural High School and grow from 9 to 12 teams\n\nSlide 2: FY2026: 52 Students Finished the Season\n64 students enrolled; 52 completed the full season (81%)\nGrades 9–12 from Breckwater, Ferris Township, and Calloway Consolidated\n23 girls enrolled (36%), up from 14 the year before\n41 of 64 qualified for free or reduced-price meals\n38 of 64 paid no fee\nNearest engineering program: 140 miles away\nNext: Ostrander Rural High School joins in FY2027\n\nSlide 3: What Happened Inside the Program\nEnd-of-season survey, answered by 49 of 52 completers:\n44 felt more confident speaking in front of adults\n40 used a club skill in a class or a job\nIn September, most students could not read a wiring diagram\nBy March, every team had 2+ students who could rebuild their drivetrain without help\n1,180 optional shop hours logged, about 23 per completer\n\"I used to think engineering was something that happened in cities. Now I fix the pivot on my uncle's sprayer and I know why it broke.\" — Mireya, junior, Calloway Consolidated\n\nSlide 4: What Our Seniors Did Next\n14 of 18 seniors (78%) enrolled in college, technical school, or an apprenticeship\n9 of the 14 chose engineering, welding, electrical, ag mechanics, or computer science\nLimits of this number:\nSelf-reported by students and parents, not checked against records\nSmall group: a few changed plans would shift the percentage a lot\nNo comparison group: students who join may already be likely to go on\nWe do not claim the club caused this result\nStarting this year, we are asking seniors for permission to verify enrollment with state records\n\nSlide 5: What FY2026 Taught Us\nThe ride is the program: one van could not cover both routes; on late-van nights, attendance from those schools dropped about a third\nMore girls joined through a small Saturday build session led by Coach Priya Lindqvist\nDemand is ahead of us: we turned away 21 students for lack of coaches and parts\n7 of the 12 students who left went to harvest or calving jobs; we now call anyone who misses two weeks in a row\n\nSlide 6: FY2027 Expansion Plan\nAdd a fourth school: Ostrander Rural High School\nGrow from 9 to 12 teams\nServe about 85 students, up from 64\nNeeded: a second van, a third coach, and parts for three more teams\n\nSlide 7: The Request: $37,400 for One Year\nSecond leased van, insurance, and fuel: $9,800\nThird coach stipend: $12,000\nKits, parts, and tools for three new teams: $11,400\nAdded competition travel and entry fees: $4,200\nTotal: $37,400\nWickline funds pay only for the expansion, not existing operations\nOur $148,600 base budget is covered by our five current funding sources\n\nSlide 8: A Stable Base and a Plan for Year Two\nFY2026 revenue: $150,400 from five sources; expenses: $148,600\nNo single funder provides more than 28% of the budget\nOperating reserve: $14,200\nAfter one year, expansion costs move into our base budget, supported by growing fee and donor revenue\nSupported by volunteer drivers, a landlord who charges half rent, and families at our spring pancake breakfast\nThank you\nContact: Tomas Vrba, Program Coordinator"
+  },
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 3757,
+    "cache_read_input_tokens": 650,
+    "output_tokens": 1971,
+    "output_tokens_details": {
+      "thinking_tokens": 723
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3757,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1971,
+        "cache_read_input_tokens": 650,
+        "cache_creation_input_tokens": 3757,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3757
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "error": null
+}

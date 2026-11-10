@@ -1,0 +1,10 @@
+Sample (fictional)
+
+Steady Roof Home Repair brand
+
+Colors:
+Pine (primary)      #2E4A3F
+Amber (accent)      #D98E3A
+Plaster (background) #F4EFE6
+
+Font: Libre Franklin

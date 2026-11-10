@@ -1,0 +1,1624 @@
+{
+  "set": "heldout6",
+  "tag": "r13-heldout6",
+  "steps": {
+    "brand": {
+      "status": "done",
+      "seconds": 0.0
+    },
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 27.1,
+      "error": null
+    }
+  },
+  "started": 1794234379.410388,
+  "sources": [
+    "notes.txt",
+    "report.md"
+  ],
+  "kit": {
+    "id": "k_a58a895bb019",
+    "name": "Pasted colors",
+    "colors": [
+      {
+        "hex": "#d98e3a",
+        "role": "accent",
+        "name": "Amber (accent)"
+      }
+    ],
+    "paper": "#f4efe6",
+    "ink": "#2e4a3f",
+    "kit_json": {
+      "name": "Pasted colors",
+      "origin": "import",
+      "origin_note": "Pasted color codes",
+      "org": "",
+      "subject": "",
+      "signature": "",
+      "paper": "#f4efe6",
+      "ink": "#2e4a3f",
+      "colors": [
+        {
+          "hex": "#d98e3a",
+          "role": "accent",
+          "name": "Amber (accent)"
+        }
+      ],
+      "type": {
+        "heading": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 700
+        },
+        "body": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 400
+        },
+        "scale": 1.25
+      },
+      "layout": "banner",
+      "density": "medium",
+      "voice": {
+        "notes": "",
+        "delivery": "",
+        "never": [],
+        "pairs": [],
+        "draft": false
+      },
+      "rules": {
+        "sources": true,
+        "page_numbers": true,
+        "date": true,
+        "required": []
+      },
+      "imported_from": {
+        "kind": "paste",
+        "label": "Pasted colors",
+        "ref": "",
+        "sha256": "",
+        "license_note": "",
+        "brand_named": false,
+        "mode": "",
+        "imported_at": 1794234379.424557
+      },
+      "logo": null,
+      "logo_alt": null,
+      "fonts": [],
+      "id": "k_a58a895bb019",
+      "version": 1,
+      "created_at": 1794234379.425733,
+      "updated_at": 1794234379.425733,
+      "starter": false
+    }
+  },
+  "guide_and_summaries_seconds": 15.3,
+  "guide": {
+    "by": "Written by your Hermes model",
+    "guide": [
+      {
+        "text": "The sources are board meeting notes from November 5, 2026 and the FY2026 annual report of Steady Roof Home Repair.",
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 2",
+            "source_id": "s_4e3893645738"
+          },
+          {
+            "ref": "P10",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Steady Roof Home Repair”",
+            "source_id": "s_4fb825caa2cc"
+          }
+        ]
+      },
+      {
+        "text": "Steady Roof served 84 homes against a goal of 80, but 57 households were still waiting an average of 5.5 months.",
+        "chips": [
+          {
+            "ref": "P12",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2026 at a glance”",
+            "source_id": "s_4fb825caa2cc"
+          },
+          {
+            "ref": "P13",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2026 at a glance”",
+            "source_id": "s_4fb825caa2cc"
+          }
+        ]
+      },
+      {
+        "text": "A second crew would cost $230,000 and aims to serve 120 homes with an average wait under three months.",
+        "chips": [
+          {
+            "ref": "P21",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: a second crew”",
+            "source_id": "s_4fb825caa2cc"
+          }
+        ]
+      },
+      {
+        "text": "The board will ask the Hartwell-Pryor Fund for $115,000, and the county and a spring donor campaign would cover the rest.",
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 5",
+            "source_id": "s_4e3893645738"
+          },
+          {
+            "ref": "P22",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: a second crew”",
+            "source_id": "s_4fb825caa2cc"
+          }
+        ]
+      },
+      {
+        "text": "Reported falls went from 19 of 52 to 7 of 52, but the result is self-reported and has no comparison group.",
+        "chips": [
+          {
+            "ref": "P16",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Results, and what they do and do not show”",
+            "source_id": "s_4fb825caa2cc"
+          },
+          {
+            "ref": "P17",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Results, and what they do and do not show”",
+            "source_id": "s_4fb825caa2cc"
+          }
+        ]
+      }
+    ],
+    "asks": [
+      {
+        "id": "a1",
+        "who": "Gwen Sato",
+        "what": "A short deck asking for a $115,000 lead gift, before her site visit",
+        "by": "Friday, December 4",
+        "kind": "deck",
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 4",
+            "source_id": "s_4e3893645738"
+          },
+          {
+            "ref": "P7",
+            "n": 2,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 7",
+            "source_id": "s_4e3893645738"
+          }
+        ],
+        "brief": {
+          "who": "Gwen Sato, Hartwell-Pryor Fund program officer",
+          "goal": "Decide whether to give a $115,000 lead gift for the second crew",
+          "length": "Ten slides or fewer"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "text": "The average wait is 5.5 months, and the goal is under three months by June 30, 2027. Can that happen if the budget grows $230,000, from $412,000 to $642,000?",
+        "chips": [
+          {
+            "ref": "P12",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2026 at a glance”",
+            "source_id": "s_4fb825caa2cc"
+          },
+          {
+            "ref": "P21",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: a second crew”",
+            "source_id": "s_4fb825caa2cc"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "The $60,000 from Ostrander County still depends on the commissioners' vote, and the reserve is only $38,000. What happens to the second crew if that vote fails?",
+        "chips": [
+          {
+            "ref": "P20",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Revenue by source”",
+            "source_id": "s_4fb825caa2cc"
+          },
+          {
+            "ref": "P22",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: a second crew”",
+            "source_id": "s_4fb825caa2cc"
+          },
+          {
+            "ref": "P5",
+            "n": 3,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 5",
+            "source_id": "s_4e3893645738"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "Reported falls dropped from 19 of 52 to 7 of 52. But 27 of 79 homeowners were never reached, so how much can the deck safely claim?",
+        "chips": [
+          {
+            "ref": "P16",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Results, and what they do and do not show”",
+            "source_id": "s_4fb825caa2cc"
+          },
+          {
+            "ref": "P17",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Results, and what they do and do not show”",
+            "source_id": "s_4fb825caa2cc"
+          },
+          {
+            "ref": "P7",
+            "n": 3,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 7",
+            "source_id": "s_4e3893645738"
+          }
+        ],
+        "suggestion": true
+      }
+    ],
+    "source_ids": [
+      "s_4e3893645738",
+      "s_4fb825caa2cc"
+    ],
+    "created_at": 1794234394.496331
+  },
+  "brief": {
+    "who": "Funders",
+    "goal": "Decide whether to give a $115,000 lead gift for the second crew",
+    "length": "7 to 9 slides"
+  },
+  "outline": {},
+  "deck_seconds": 27.1,
+  "output_id": "o_5cce8cc5e868",
+  "case": null,
+  "plain_draft": "Slide 1: 57 older homeowners are waiting for safe repairs\nSteady Roof Home Repair | Quillan Ridge, Ostrander County\n57 households on our waitlist at the end of June 2026\nAverage wait from intake to first repair: 5.5 months\nSome of them cannot safely stay at home that long\nA proposal to the Hartwell-Pryor Fund for Older Adults\n\nSlide 2: Why the wait grew\n141 new applications in FY2026, up from 96 the year before\nMost of the increase followed Area Agency on Aging referrals that began in October 2025\n14 no-heat and frozen-pipe emergencies from December to February went to the front of the line\nAverage wait rose from 3.8 months to 5.5 months\nOur one work truck, a 2011 model, was out of service for 17 working days\n\nSlide 3: Who we serve and what we fix\nHomeowners 62 and older who own and live in their homes\nIncome at or below 60% of the county median\nAverage age 74; 58% live alone\nNot remodels: the repairs that decide whether someone can stay home\nRotted steps, furnaces that won't light, missing grab bars, unlit stairs\n\nSlide 4: FY2026 results\n84 homes served, against a goal of 80\n412 repair jobs completed\n131 safety installations: grab bars, stair rails, lighting, non-slip treads\n96 heating, plumbing and electrical repairs\n88 exterior repairs, 61 weatherization jobs, 36 accessibility modifications\n$2,362 average spent per home on materials and trades\n1,930 volunteer hours\nOur 38-point safety walk-through found problems the homeowner hadn't mentioned in 61 of 84 homes\n\nSlide 5: Falls: what homeowners told us\n12-month follow-up calls for homes completed in FY2025\nWe reached 52 of 79 homeowners (66%)\nBefore repairs: 19 of 52 reported a fall in the prior year (37%)\nAfter repairs: 7 of 52 reported a fall in the following year (13%)\nCaveats:\nSelf-reported: people may forget or not mention a fall\nNo comparison group: some might have fallen less anyway\n27 people were not reached, and they may be different; 3 died, 2 moved into care, 1 moved in with family\nWhat we can say: among those we reached, far fewer reported a fall after repairs\nWhat we can't say: that our repairs prevented a specific number of falls\nNext: we will ask county EMS for de-identified fall-call data as an independent check\n\nSlide 6: Loretta, 81, homeowner since 1979\n\"I'd stopped going down to the basement at all. Now there's a rail on both sides and a light that comes on by itself. I do my own laundry again.\"\n\nSlide 7: The plan: a second crew in FY2027\nServe 120 homes, up from 84\nBring the average wait under 3 months by June 30, 2027\nSecond crew lead and one tradesperson: $118,000\nSecond work truck, trailer and tools: $27,000\nMaterials and trades for 36 more homes: $85,000\nTotal second-crew cost: $230,000\n\nSlide 8: The ask: $115,000, half of the second crew\nSecond-crew cost: $230,000\nHartwell-Pryor Fund lead gift: $115,000 (50%)\nOstrander County: $60,000 (pending the commissioners' budget vote)\nSpring donor campaign: $55,000 (individual donors gave $78,500 in FY2026)\nWithout the lead gift: we hire only the tradesperson, serve about 96 homes, and the waitlist keeps growing\n\nSlide 9: Our financial footing\nFY2026 expenses: $412,000; revenue: $418,500\n48% of spending goes to materials and subcontracted trades\n$6,500 surplus added to reserve; reserve now $38,000, about one month of expenses\nLargest funder: Ostrander County, $165,000, paid by reimbursement 45 to 60 days later\nOther support: Ferrell Family Foundation, individual donors and civic clubs, utility rebates, and Brackett Lumber and Supply\nFull FY2027 budget with second crew: $642,000\nContact: Marisol Teague, Executive Director",
+  "plain_record": {
+    "flags": [
+      {
+        "path": "slides.6.bullets.1",
+        "kind": "number",
+        "was": "50%"
+      }
+    ],
+    "splits": [
+      [
+        1,
+        "moved to open"
+      ],
+      [
+        2,
+        "moved to open"
+      ],
+      [
+        3,
+        "moved to open"
+      ],
+      [
+        6,
+        "moved to open"
+      ],
+      [
+        7,
+        "moved to open"
+      ]
+    ],
+    "slides": 9
+  },
+  "argument": null,
+  "neutral": {
+    "title": "57 older homeowners are waiting for safe repairs",
+    "subtitle": "Steady Roof Home Repair | Quillan Ridge, Ostrander County. 57 households on our waitlist at the end of June 2026. Average wait from intake to first repair: 5.5 months. Some of them cannot safely stay at home that long. A proposal to the Hartwell-Pryor Fund for Older Adults.",
+    "slides": [
+      {
+        "type": "content",
+        "heading": "Why the wait grew",
+        "bullets": [
+          {
+            "text": "141 new applications in FY2026, up from 96 the year before",
+            "ref": "P14"
+          },
+          {
+            "text": "Most of the increase followed Area Agency on Aging referrals that began in October 2025",
+            "ref": "P14"
+          },
+          {
+            "text": "14 no-heat and frozen-pipe emergencies from December to February went to the front of the line",
+            "ref": "P14"
+          },
+          {
+            "text": "Average wait rose from 3.8 months to 5.5 months",
+            "ref": "P14"
+          },
+          {
+            "text": "Our one work truck, a 2011 model, was out of service for 17 working days",
+            "ref": "P15"
+          }
+        ],
+        "refs": [
+          "P14",
+          "P15"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "Who we serve and what we fix",
+        "bullets": [
+          {
+            "text": "Homeowners 62 and older who own and live in their homes",
+            "ref": "P11"
+          },
+          {
+            "text": "Income at or below 60% of the county median",
+            "ref": "P11"
+          },
+          {
+            "text": "Average age 74; 58% live alone",
+            "ref": "P12"
+          },
+          {
+            "text": "Not remodels: the repairs that decide whether someone can stay home",
+            "ref": "P11"
+          },
+          {
+            "text": "Rotted steps, furnaces that won't light, missing grab bars, unlit stairs",
+            "ref": "P11"
+          }
+        ],
+        "refs": [
+          "P11",
+          "P12"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "FY2026 results",
+        "bullets": [
+          {
+            "text": "84 homes served, against a goal of 80",
+            "ref": "P13"
+          },
+          {
+            "text": "412 repair jobs completed",
+            "ref": "P12"
+          },
+          {
+            "text": "131 safety installations: grab bars, stair rails, lighting, non-slip treads",
+            "ref": "P12"
+          },
+          {
+            "text": "96 heating, plumbing and electrical repairs",
+            "ref": "P12"
+          },
+          {
+            "text": "88 exterior repairs, 61 weatherization jobs, 36 accessibility modifications",
+            "ref": "P12"
+          },
+          {
+            "text": "$2,362 average spent per home on materials and trades",
+            "ref": "P12"
+          },
+          {
+            "text": "1,930 volunteer hours",
+            "ref": "P12"
+          },
+          {
+            "text": "Our 38-point safety walk-through found problems the homeowner hadn't mentioned in 61 of 84 homes",
+            "ref": "P15"
+          }
+        ],
+        "refs": [
+          "P13",
+          "P12",
+          "P15"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "Falls: what homeowners told us",
+        "bullets": [
+          {
+            "text": "12-month follow-up calls for homes completed in FY2025",
+            "ref": "P16"
+          },
+          {
+            "text": "We reached 52 of 79 homeowners (66%)",
+            "ref": "P16"
+          },
+          {
+            "text": "Before repairs: 19 of 52 reported a fall in the prior year (37%)",
+            "ref": "P16"
+          },
+          {
+            "text": "After repairs: 7 of 52 reported a fall in the following year (13%)",
+            "ref": "P16"
+          },
+          {
+            "text": "Caveats:",
+            "ref": "P16"
+          },
+          {
+            "text": "Self-reported: people may forget or not mention a fall",
+            "ref": "P17"
+          },
+          {
+            "text": "No comparison group: some might have fallen less anyway",
+            "ref": "P17"
+          },
+          {
+            "text": "27 people were not reached, and they may be different; 3 died, 2 moved into care, 1 moved in with family",
+            "ref": "P17"
+          },
+          {
+            "text": "What we can say: among those we reached, far fewer reported a fall after repairs",
+            "ref": "P17"
+          },
+          {
+            "text": "What we can't say: that our repairs prevented a specific number of falls",
+            "ref": "P17"
+          },
+          {
+            "text": "Next: we will ask county EMS for de-identified fall-call data as an independent check",
+            "ref": "P17"
+          }
+        ],
+        "refs": [
+          "P16",
+          "P17"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "Loretta, 81, homeowner since 1979",
+        "bullets": [
+          {
+            "text": "\"I'd stopped going down to the basement at all. Now there's a rail on both sides and a light that comes on by itself. I do my own laundry again.\"",
+            "ref": "P18"
+          }
+        ],
+        "refs": [
+          "P18"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "The plan: a second crew in FY2027",
+        "bullets": [
+          {
+            "text": "Serve 120 homes, up from 84",
+            "ref": "P21"
+          },
+          {
+            "text": "Bring the average wait under 3 months by June 30, 2027",
+            "ref": "P21"
+          },
+          {
+            "text": "Second crew lead and one tradesperson: $118,000",
+            "ref": "P21"
+          },
+          {
+            "text": "Second work truck, trailer and tools: $27,000",
+            "ref": "P21"
+          },
+          {
+            "text": "Materials and trades for 36 more homes: $85,000",
+            "ref": "P21"
+          },
+          {
+            "text": "Total second-crew cost: $230,000",
+            "ref": "P21"
+          }
+        ],
+        "refs": [
+          "P21"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "The ask: $115,000, half of the second crew",
+        "bullets": [
+          {
+            "text": "Second-crew cost: $230,000",
+            "ref": "P5"
+          },
+          {
+            "text": "Hartwell-Pryor Fund lead gift: $115,000 ([number not in your sources])",
+            "ref": "P7"
+          },
+          {
+            "text": "Ostrander County: $60,000 (pending the commissioners' budget vote)",
+            "ref": "P5"
+          },
+          {
+            "text": "Spring donor campaign: $55,000 (individual donors gave $78,500 in FY2026)",
+            "ref": "P22"
+          },
+          {
+            "text": "Without the lead gift: we hire only the tradesperson, serve about 96 homes, and the waitlist keeps growing",
+            "ref": "P22"
+          }
+        ],
+        "refs": [
+          "P5",
+          "P7",
+          "P22"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "Our financial footing",
+        "bullets": [
+          {
+            "text": "FY2026 expenses: $412,000; revenue: $418,500",
+            "ref": "P19"
+          },
+          {
+            "text": "48% of spending goes to materials and subcontracted trades",
+            "ref": "P19"
+          },
+          {
+            "text": "$6,500 surplus added to reserve; reserve now $38,000, about one month of expenses",
+            "ref": "P20"
+          },
+          {
+            "text": "Largest funder: Ostrander County, $165,000, paid by reimbursement 45 to 60 days later",
+            "ref": "P20"
+          },
+          {
+            "text": "Other support: Ferrell Family Foundation, individual donors and civic clubs, utility rebates, and Brackett Lumber and Supply",
+            "ref": "P20"
+          },
+          {
+            "text": "Full FY2027 budget with second crew: $642,000",
+            "ref": "P21"
+          },
+          {
+            "text": "Contact: Marisol Teague, Executive Director",
+            "ref": "P2"
+          }
+        ],
+        "refs": [
+          "P20",
+          "P7",
+          "P21",
+          "P2"
+        ],
+        "comp": "open"
+      }
+    ],
+    "plain": true
+  },
+  "live": {
+    "title": "57 older homeowners are waiting for safe repairs",
+    "subtitle": "Steady Roof Home Repair | Quillan Ridge, Ostrander County. 57 households on our waitlist at the end of June 2026. Average wait from intake to first repair: 5.5 months. Some of them cannot safely stay at home that long. A proposal to the Hartwell-Pryor Fund for Older Adults.",
+    "slides": [
+      {
+        "type": "content",
+        "heading": "Why the wait grew",
+        "bullets": [
+          {
+            "text": "141 new applications in FY2026, up from 96 the year before",
+            "ref": "P14"
+          },
+          {
+            "text": "Most of the increase followed Area Agency on Aging referrals that began in October 2025",
+            "ref": "P14"
+          },
+          {
+            "text": "14 no-heat and frozen-pipe emergencies from December to February went to the front of the line",
+            "ref": "P14"
+          },
+          {
+            "text": "Average wait rose from 3.8 months to 5.5 months",
+            "ref": "P14"
+          },
+          {
+            "text": "Our one work truck, a 2011 model, was out of service for 17 working days",
+            "ref": "P15"
+          }
+        ],
+        "refs": [
+          "P14",
+          "P15"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "Who we serve and what we fix",
+        "bullets": [
+          {
+            "text": "Homeowners 62 and older who own and live in their homes",
+            "ref": "P11"
+          },
+          {
+            "text": "Income at or below 60% of the county median",
+            "ref": "P11"
+          },
+          {
+            "text": "Average age 74; 58% live alone",
+            "ref": "P12"
+          },
+          {
+            "text": "Not remodels: the repairs that decide whether someone can stay home",
+            "ref": "P11"
+          },
+          {
+            "text": "Rotted steps, furnaces that won't light, missing grab bars, unlit stairs",
+            "ref": "P11"
+          }
+        ],
+        "refs": [
+          "P11",
+          "P12"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "FY2026 results",
+        "bullets": [
+          {
+            "text": "84 homes served, against a goal of 80",
+            "ref": "P13"
+          },
+          {
+            "text": "412 repair jobs completed",
+            "ref": "P12"
+          },
+          {
+            "text": "131 safety installations: grab bars, stair rails, lighting, non-slip treads",
+            "ref": "P12"
+          },
+          {
+            "text": "96 heating, plumbing and electrical repairs",
+            "ref": "P12"
+          },
+          {
+            "text": "88 exterior repairs, 61 weatherization jobs, 36 accessibility modifications",
+            "ref": "P12"
+          },
+          {
+            "text": "$2,362 average spent per home on materials and trades",
+            "ref": "P12"
+          },
+          {
+            "text": "1,930 volunteer hours",
+            "ref": "P12"
+          },
+          {
+            "text": "Our 38-point safety walk-through found problems the homeowner hadn't mentioned in 61 of 84 homes",
+            "ref": "P15"
+          }
+        ],
+        "refs": [
+          "P13",
+          "P12",
+          "P15"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "Falls: what homeowners told us",
+        "bullets": [
+          {
+            "text": "12-month follow-up calls for homes completed in FY2025",
+            "ref": "P16"
+          },
+          {
+            "text": "We reached 52 of 79 homeowners (66%)",
+            "ref": "P16"
+          },
+          {
+            "text": "Before repairs: 19 of 52 reported a fall in the prior year (37%)",
+            "ref": "P16"
+          },
+          {
+            "text": "After repairs: 7 of 52 reported a fall in the following year (13%)",
+            "ref": "P16"
+          },
+          {
+            "text": "Caveats:",
+            "ref": "P16"
+          },
+          {
+            "text": "Self-reported: people may forget or not mention a fall",
+            "ref": "P17"
+          },
+          {
+            "text": "No comparison group: some might have fallen less anyway",
+            "ref": "P17"
+          },
+          {
+            "text": "27 people were not reached, and they may be different; 3 died, 2 moved into care, 1 moved in with family",
+            "ref": "P17"
+          },
+          {
+            "text": "What we can say: among those we reached, far fewer reported a fall after repairs",
+            "ref": "P17"
+          },
+          {
+            "text": "What we can't say: that our repairs prevented a specific number of falls",
+            "ref": "P17"
+          },
+          {
+            "text": "Next: we will ask county EMS for de-identified fall-call data as an independent check",
+            "ref": "P17"
+          }
+        ],
+        "refs": [
+          "P16",
+          "P17"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "Loretta, 81, homeowner since 1979",
+        "bullets": [
+          {
+            "text": "\"I'd stopped going down to the basement at all. Now there's a rail on both sides and a light that comes on by itself. I do my own laundry again.\"",
+            "ref": "P18"
+          }
+        ],
+        "refs": [
+          "P18"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "The plan: a second crew in FY2027",
+        "bullets": [
+          {
+            "text": "Serve 120 homes, up from 84",
+            "ref": "P21"
+          },
+          {
+            "text": "Bring the average wait under 3 months by June 30, 2027",
+            "ref": "P21"
+          },
+          {
+            "text": "Second crew lead and one tradesperson: $118,000",
+            "ref": "P21"
+          },
+          {
+            "text": "Second work truck, trailer and tools: $27,000",
+            "ref": "P21"
+          },
+          {
+            "text": "Materials and trades for 36 more homes: $85,000",
+            "ref": "P21"
+          },
+          {
+            "text": "Total second-crew cost: $230,000",
+            "ref": "P21"
+          }
+        ],
+        "refs": [
+          "P21"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "The ask: $115,000, half of the second crew",
+        "bullets": [
+          {
+            "text": "Second-crew cost: $230,000",
+            "ref": "P5"
+          },
+          {
+            "text": "Hartwell-Pryor Fund lead gift: $115,000 ([number not in your sources])",
+            "ref": "P7"
+          },
+          {
+            "text": "Ostrander County: $60,000 (pending the commissioners' budget vote)",
+            "ref": "P5"
+          },
+          {
+            "text": "Spring donor campaign: $55,000 (individual donors gave $78,500 in FY2026)",
+            "ref": "P22"
+          },
+          {
+            "text": "Without the lead gift: we hire only the tradesperson, serve about 96 homes, and the waitlist keeps growing",
+            "ref": "P22"
+          }
+        ],
+        "refs": [
+          "P5",
+          "P7",
+          "P22"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "Our financial footing",
+        "bullets": [
+          {
+            "text": "FY2026 expenses: $412,000; revenue: $418,500",
+            "ref": "P20"
+          },
+          {
+            "text": "48% of spending goes to materials and subcontracted trades",
+            "ref": "P19"
+          },
+          {
+            "text": "$6,500 surplus added to reserve; reserve now $38,000, about one month of expenses",
+            "ref": "P20"
+          },
+          {
+            "text": "Largest funder: Ostrander County, $165,000, paid by reimbursement 45 to 60 days later",
+            "ref": "P20"
+          },
+          {
+            "text": "Other support: Ferrell Family Foundation, individual donors and civic clubs, utility rebates, and Brackett Lumber and Supply",
+            "ref": "P20"
+          },
+          {
+            "text": "Full FY2027 budget with second crew: $642,000",
+            "ref": "P21"
+          },
+          {
+            "text": "Contact: Marisol Teague, Executive Director",
+            "ref": "P2"
+          }
+        ],
+        "refs": [
+          "P20",
+          "P7",
+          "P21",
+          "P2"
+        ],
+        "comp": "open"
+      }
+    ],
+    "plain": true
+  },
+  "passages": {
+    "P1": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Notes",
+      "source_id": "s_4e3893645738"
+    },
+    "P2": {
+      "text": "STEADY ROOF HOME REPAIR\nBoard meeting notes, Thursday, November 5, 2026\nPresent: Desmond Achterberg (chair), Ruth Kwan-Ellery (treasurer), Marisol Teague (executive director), Abe Lindqvist (crew lead)",
+      "locator": "para. 2",
+      "source_title": "Notes",
+      "source_id": "s_4e3893645738"
+    },
+    "P3": {
+      "text": "Item 3: Hartwell-Pryor Fund for Older Adults",
+      "locator": "para. 3",
+      "source_title": "Notes",
+      "source_id": "s_4e3893645738"
+    },
+    "P4": {
+      "text": "Marisol reported that Gwen Sato, program officer at the Hartwell-Pryor Fund, invited us to apply for a lead gift and asked for a short deck before her site visit. The deck must be in Gwen's hands by Friday, December 4. Board review by email by Tuesday, December 1.",
+      "locator": "para. 4",
+      "source_title": "Notes",
+      "source_id": "s_4e3893645738"
+    },
+    "P5": {
+      "text": "The ask is $115,000, half of the $230,000 second-crew cost in the FY2026 report. Ruth confirmed the other half: $60,000 from Ostrander County (pending the commissioners' vote) and $55,000 from the spring donor campaign.",
+      "locator": "para. 5",
+      "source_title": "Notes",
+      "source_id": "s_4e3893645738"
+    },
+    "P6": {
+      "text": "Instructions for the deck, agreed by the board:",
+      "locator": "para. 6",
+      "source_title": "Notes",
+      "source_id": "s_4e3893645738"
+    },
+    "P7": {
+      "text": "1. Ten slides or fewer. Gwen said she reads decks on her phone.\n2. Open with the waitlist, 57 households waiting an average of 5.5 months, not with our history.\n3. Desmond: the falls result (19 of 52 before, 7 of 52 after) goes on one slide with its caveats on that same slide. Do not say we \"prevent falls\" or claim a proven reduction.\n4. Abe: no homeowner photos except Loretta, the only one with a signed release. First name only. Use houses, tools and the crew otherwise.\n5. The ask slide must show $115,000 as half of $230,000 and name the other two sources, so it does not look like we need Hartwell-Pryor to carry the whole thing.",
+      "locator": "para. 7",
+      "source_title": "Notes",
+      "source_id": "s_4e3893645738"
+    },
+    "P8": {
+      "text": "Action: Marisol drafts by November 24. Ruth checks every number against the report before it goes to the board.",
+      "locator": "para. 8",
+      "source_title": "Notes",
+      "source_id": "s_4e3893645738"
+    },
+    "P9": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Report",
+      "source_id": "s_4fb825caa2cc"
+    },
+    "P10": {
+      "text": "## FY2026 Annual Program Report\n### July 1, 2025 to June 30, 2026 | Quillan Ridge, Ostrander County",
+      "locator": "“Steady Roof Home Repair”",
+      "source_title": "Report",
+      "source_id": "s_4fb825caa2cc"
+    },
+    "P11": {
+      "text": "Steady Roof Home Repair fixes the small, dangerous problems that push older homeowners out of houses they have owned for decades. We work only in Quillan Ridge and the three unincorporated townships around it. Every client is 62 or older, owns and lives in the home, and earns at or below 60 percent of the county median income. We do not do remodels. We do the repairs that decide whether someone can keep living at home: a rotted back step, a furnace that will not light, a bathroom with no grab bar, a basement stair with one loose rail and no light.\nWe run with 2.5 full-time staff: an executive director, a crew lead who is a licensed carpenter, and a half-time intake coordinator. Volunteers add labor on simpler jobs, and licensed electricians, plumbers and HVAC technicians are subcontracted.",
+      "locator": "“Who we are”",
+      "source_title": "Report",
+      "source_id": "s_4fb825caa2cc"
+    },
+    "P12": {
+      "text": "| Measure | FY2026 |\n|---|---|\n| Homes served | 84 |\n| Individual repair jobs completed | 412 |\n| Average homeowner age | 74 |\n| Homeowners living alone | 49 of 84 (58%) |\n| Average spent per home (materials and trades) | $2,362 |\n| Volunteer hours | 1,930 |\n| Households on the waitlist at year end | 57 |\n| Average wait from intake to first repair | 5.5 months |\nThe 412 jobs break down roughly as follows: 131 safety installations (grab bars, stair rails, exterior lighting, non-slip treads), 96 heating, plumbing and electrical repairs, 88 exterior repairs (steps, porches, roof patches, gutters), 61 weatherization jobs (door sweeps, window sealing, attic insulation), and 36 accessibility modifications (ramps, doorway widening, raised toilets).",
+      "locator": "“FY2026 at a glance”",
+      "source_title": "Report",
+      "source_id": "s_4fb825caa2cc"
+    },
+    "P13": {
+      "text": "We served 84 homes against a goal of 80, and ended the year with the longest waitlist in our history. The second fact drives the plan at the end of this report.",
+      "locator": "“FY2026 at a glance”",
+      "source_title": "Report",
+      "source_id": "s_4fb825caa2cc"
+    },
+    "P14": {
+      "text": "**Intake grew faster than we could build.** We took 141 new applications in FY2026, up from 96 the year before. Most of the increase followed county Area Agency on Aging referrals starting in October 2025. Of the 141, 23 did not qualify and 4 withdrew. The rest either received repairs or joined the waitlist.\n**Winter emergencies set the schedule.** Between December and February, 14 households called with no heat or a frozen pipe. Moving each of them to the front of the line was right, and it is the main reason the average wait grew from 3.8 months in FY2025 to 5.5 months this year.",
+      "locator": "“What happened this year”",
+      "source_title": "Report",
+      "source_id": "s_4fb825caa2cc"
+    },
+    "P15": {
+      "text": "**We changed how we assess a home.** Starting in September 2025, the crew lead and intake coordinator now walk every home together with a 38-point safety checklist before quoting any work. This added about 90 minutes per home and turned up problems the homeowner had not mentioned in 61 of the 84 homes, most often missing smoke detectors, loose stair rails and unlit entryways.\n**The truck nearly ended the season.** Our only work truck, a 2011 model, was out of service for 17 working days in March and April. We borrowed a volunteer's pickup to keep going, which is not a plan we can repeat.",
+      "locator": "“What happened this year”",
+      "source_title": "Report",
+      "source_id": "s_4fb825caa2cc"
+    },
+    "P16": {
+      "text": "Falls are the reason most families call us, so falls are what we try to measure. Twelve months after repairs, the intake coordinator calls each homeowner and asks the same questions we asked at intake, including whether they fell in the past year.\nFor homes completed in FY2025 whose 12-month calls came due in FY2026, we reached 52 of 79 homeowners (66 percent). Of those 52, 19 said at intake that they had fallen at least once in the year before repairs. At the 12-month call, 7 said they had fallen in the year after.\nThat is a drop from 37 percent to 13 percent among the people we reached, and we are proud of it. We also want to be plain about its limits:",
+      "locator": "“Results, and what they do and do not show”",
+      "source_title": "Report",
+      "source_id": "s_4fb825caa2cc"
+    },
+    "P17": {
+      "text": "- **It is self-reported.** People may forget a fall, or not want to admit one.\n- **There is no comparison group.** We cannot say how many of these homeowners would have fallen less anyway.\n- **The 27 people we did not reach may be different.** Of those 27, we know that 3 died, 2 moved into care facilities and 1 moved in with family. Some of the others may have been harder to reach because their health had declined.\nSo we can say that, among the homeowners we reached, far fewer reported a fall after repairs than before. We cannot say that our repairs prevented a specific number of falls. In FY2027 we plan to ask the county emergency medical service whether it can share de-identified fall-call counts by address, which would give us a check that does not depend on memory.",
+      "locator": "“Results, and what they do and do not show”",
+      "source_title": "Report",
+      "source_id": "s_4fb825caa2cc"
+    },
+    "P18": {
+      "text": "> \"I'd stopped going down to the basement at all. Now there's a rail on both sides and a light that comes on by itself. I do my own laundry again.\"\n>\n> Loretta, 81, homeowner since 1979",
+      "locator": "“In their words”",
+      "source_title": "Report",
+      "source_id": "s_4fb825caa2cc"
+    },
+    "P19": {
+      "text": "| Category | Amount | Share |\n|---|---|---|\n| Materials and subcontracted trades | $198,400 | 48% |\n| Staff (2.5 FTE, wages and benefits) | $156,200 | 38% |\n| Vehicle, tools and insurance | $31,700 | 8% |\n| Occupancy and administration | $25,700 | 6% |\n| **Total expenses** | **$412,000** | **100%** |",
+      "locator": "“Expenses”",
+      "source_title": "Report",
+      "source_id": "s_4fb825caa2cc"
+    },
+    "P20": {
+      "text": "| Source | Amount | Share |\n|---|---|---|\n| Ostrander County housing repair grant (federal block grant pass-through) | $165,000 | 39% |\n| Ferrell Family Foundation | $90,000 | 22% |\n| Individual donors and Quillan Ridge civic clubs | $78,500 | 19% |\n| Utility weatherization rebates | $43,000 | 10% |\n| Donated materials from Brackett Lumber and Supply (in-kind, valued at cost) | $42,000 | 10% |\n| **Total revenue** | **$418,500** | **100%** |\nWe closed the year with a surplus of $6,500, which went to our operating reserve. The reserve now stands at $38,000, a little more than one month of expenses.\nThe county grant is our largest source and it is reimbursement-based, which means we spend first and get paid 45 to 60 days later. Twice this year that left us with under three weeks of cash.",
+      "locator": "“Revenue by source”",
+      "source_title": "Report",
+      "source_id": "s_4fb825caa2cc"
+    },
+    "P21": {
+      "text": "The waitlist is the problem. At current capacity, a homeowner who applies today waits five and a half months, and some of them will not be able to stay in their home that long.\nWe plan to add a second crew in FY2027 so we can serve **120 homes**, up from 84, and bring the average wait down to **under three months** by June 30, 2027.\n| Second-crew cost item | Amount |\n|---|---|\n| Second crew lead and one tradesperson (wages and benefits) | $118,000 |\n| Second work truck, trailer and tools | $27,000 |\n| Materials and trades for 36 additional homes | $85,000 |\n| **Total second-crew cost** | **$230,000** |\nThat brings the full FY2027 budget to $642,000 ($412,000 for current operations plus $230,000 for the second crew).\n**How we plan to pay for the second crew:**",
+      "locator": "“FY2027 plan: a second crew”",
+      "source_title": "Report",
+      "source_id": "s_4fb825caa2cc"
+    },
+    "P22": {
+      "text": "- Ostrander County has committed an additional $60,000 for FY2027, contingent on the board of commissioners' budget vote.\n- We will raise $55,000 through a spring donor campaign, building on the $78,500 individual donors gave this year.\n- We are seeking **$115,000**, half of the second-crew cost, from a single lead funder.\nWithout the lead gift, we will hire the tradesperson only, serve about 96 homes, and the waitlist will keep growing.",
+      "locator": "“FY2027 plan: a second crew”",
+      "source_title": "Report",
+      "source_id": "s_4fb825caa2cc"
+    }
+  },
+  "grounding": [
+    {
+      "path": "title",
+      "value": "57",
+      "shown": "57",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "57",
+      "shown": "57",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "5.5",
+      "shown": "5.5",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.bullets.0",
+      "value": "412000",
+      "shown": "$412,000",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "2026",
+      "shown": "2026",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.0",
+      "value": "141",
+      "shown": "141",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.0",
+      "value": "96",
+      "shown": "96",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.1",
+      "value": "2025",
+      "shown": "2025",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.2",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.3",
+      "value": "3.8",
+      "shown": "3.8",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.3",
+      "value": "5.5",
+      "shown": "5.5",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.4",
+      "value": "2011",
+      "shown": "2011",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.4",
+      "value": "17",
+      "shown": "17",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.0",
+      "value": "62",
+      "shown": "62",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.1",
+      "value": "60%",
+      "shown": "60%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.2",
+      "value": "74",
+      "shown": "74",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.2",
+      "value": "58%",
+      "shown": "58%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.0",
+      "value": "84",
+      "shown": "84",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.0",
+      "value": "80",
+      "shown": "80",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.1",
+      "value": "412",
+      "shown": "412",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.2",
+      "value": "131",
+      "shown": "131",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.3",
+      "value": "96",
+      "shown": "96",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.4",
+      "value": "88",
+      "shown": "88",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.4",
+      "value": "61",
+      "shown": "61",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.4",
+      "value": "36",
+      "shown": "36",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.5",
+      "value": "2362",
+      "shown": "$2,362",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.6",
+      "value": "1930",
+      "shown": "1,930",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.7",
+      "value": "38",
+      "shown": "38",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.7",
+      "value": "61",
+      "shown": "61",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.7",
+      "value": "84",
+      "shown": "84",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.0",
+      "value": "12",
+      "shown": "12",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.1",
+      "value": "52",
+      "shown": "52",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.1",
+      "value": "79",
+      "shown": "79",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.1",
+      "value": "66%",
+      "shown": "66%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.2",
+      "value": "19",
+      "shown": "19",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.2",
+      "value": "52",
+      "shown": "52",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.2",
+      "value": "37%",
+      "shown": "37%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.3",
+      "value": "7",
+      "shown": "7",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.3",
+      "value": "52",
+      "shown": "52",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.3",
+      "value": "13%",
+      "shown": "13%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.7",
+      "value": "27",
+      "shown": "27",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.7",
+      "value": "3",
+      "shown": "3",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.7",
+      "value": "2",
+      "shown": "2",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.7",
+      "value": "1",
+      "shown": "1",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.heading",
+      "value": "81",
+      "shown": "81",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.heading",
+      "value": "1979",
+      "shown": "1979",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.0",
+      "value": "I'd stopped going down to the basement at all. Now there's a rail on both sides and a light that comes on by itself. I do my own laundry again.",
+      "shown": "I'd stopped going down to the basement at all. Now there's a rail on both sides and a light that comes on by itself. I do my own laundry again.",
+      "status": "ok",
+      "kind": "quote"
+    },
+    {
+      "path": "slides.5.bullets.0",
+      "value": "120",
+      "shown": "120",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.0",
+      "value": "84",
+      "shown": "84",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.1",
+      "value": "3",
+      "shown": "3",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.1",
+      "value": "30",
+      "shown": "30",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.1",
+      "value": "2027",
+      "shown": "2027",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.2",
+      "value": "118000",
+      "shown": "$118,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.3",
+      "value": "27000",
+      "shown": "$27,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.4",
+      "value": "36",
+      "shown": "36",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.4",
+      "value": "85000",
+      "shown": "$85,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.5",
+      "value": "230000",
+      "shown": "$230,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.heading",
+      "value": "115000",
+      "shown": "$115,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.heading",
+      "value": "1/2",
+      "shown": "half",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.0",
+      "value": "230000",
+      "shown": "$230,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.1",
+      "value": "115000",
+      "shown": "$115,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.2",
+      "value": "60000",
+      "shown": "$60,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.3",
+      "value": "55000",
+      "shown": "$55,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.3",
+      "value": "78500",
+      "shown": "$78,500",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.4",
+      "value": "96",
+      "shown": "96",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.bullets.0",
+      "value": "418500",
+      "shown": "$418,500",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.bullets.1",
+      "value": "48%",
+      "shown": "48%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.bullets.2",
+      "value": "6500",
+      "shown": "$6,500",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.bullets.2",
+      "value": "38000",
+      "shown": "$38,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.bullets.3",
+      "value": "165000",
+      "shown": "$165,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.bullets.3",
+      "value": "45",
+      "shown": "45",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.bullets.3",
+      "value": "60",
+      "shown": "60",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.bullets.5",
+      "value": "642000",
+      "shown": "$642,000",
+      "status": "ok",
+      "kind": "number"
+    }
+  ],
+  "exhibits": [],
+  "check": [
+    "All 72 numbers and quotes found in your sources; 4 citations corrected"
+  ],
+  "pills": [
+    {
+      "id": "sources",
+      "tone": "good",
+      "label": "All 72 numbers and quotes found in your sources; 4 citations corrected"
+    },
+    {
+      "id": "contrast",
+      "tone": "warn",
+      "label": "Contrast passes; 1 brand color kept to rules and fills"
+    },
+    {
+      "id": "never",
+      "tone": "good",
+      "label": "No never-say words"
+    },
+    {
+      "id": "fonts",
+      "tone": "good",
+      "label": "Kit fonts used"
+    },
+    {
+      "id": "money",
+      "tone": "warn",
+      "label": "The deck leaves out $198,400, $156,200, $31,700, $25,700 and more from Report, “Expenses”; Report, “Revenue by source”"
+    },
+    {
+      "id": "relation",
+      "tone": "warn",
+      "label": "Check the wording against the source: “about”"
+    }
+  ],
+  "slide_count": 9,
+  "seconds": 42.9
+}

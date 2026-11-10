@@ -1,0 +1,163 @@
+{
+  "purpose": "imprint.spec_fix",
+  "tag": "l4c-heldout14",
+  "seconds": 20.6,
+  "model": "claude-opus-5-5",
+  "ok": true,
+  "neutral": true,
+  "request": {
+    "system": "You are a presentation designer who lays out funder decks slide by slide, the way a strong designer writing python-pptx code would: each slide's layout chosen for what it says.",
+    "instructions": "",
+    "input_chars": 4360,
+    "input_head": "This slide was measured in the brand's real fonts and has problems:\n- element 7 (stack) does not fit its 880 x 72 box even at the smallest type size\n\nEach slide is positioned elements on a 960 x 540 canvas (points, origin top left). Element types:\n- text: {\"type\":\"text\",\"x\",\"y\",\"w\",\"h\",\"text\",\"style\",\"color\",\"align\"}  style: title | heading | figure | body | strong | italic | small | label\n- list: {\"type\":\"list\",\"x\",\"y\",\"w\",\"h\",\"items\":[\"...\"],\"style\":\"body\"}  bulleted points\n- rect: {\"type\":\"rect\",\"x\",\"y\",\"w\",\"h\",\"fill\"}  a panel or band (draw it BEFORE the text that sits on it)\n- line: {\"type\":\"line\",\"x\",\"y\",\"w\",\"h\",\"color\"}  a rule (h 2 for horizontal, w 2 for vertical)\n- dot: {\"type\":\"dot\",\"x\",\"y\",\"w\",\"h\",\"fill\"}  a circle (timeline markers)\n- figure: {\"type\":\"figure\",\"x\",\"y\",\"w\",\"h\",\"value\":\"$31,900\",\"label\":\"vehicle costs in FY2026\",\"note\":\"up from $19,700\",\"fill\":\"tint\"}  a big-number tile (omit fill for no panel)\n- bars: {\"type\":\"bars\",\"x\",\"y\",\"w\",\"h\",\"orient\":\"horizontal\"|\"vertical\",\"items\":[{\"label\",\"value\",\"highlight\":true}]}  a bar or column chart; value is the number as shown (\"$85,000\", \"41%\")\n- stack: {\"type\":\"stack\",\"x\",\"y\",\"w\",\"h\",\"items\":[{\"label\",\"value\",\"highlight\"}]}  one bar split into its parts (funding sources)\n- table: {\"type\":\"table\",\"x\",\"y\",\"w\",\"h\",\"header\":[\"Line\",\"Amount\"],\"rows\":[[\"Van\",\"$74,000\"]],\"total\":[\"Total\",\"$148,000\"]}\n- quote: {\"type\":\"quote\",\"x\",\"y\",\"w\",\"h\",\"text\",\"who\"}\n- callout: {\"type\":\"callout\",\"x\",\"y\",\"w\",\"h\",\"title\",\"text\" or \"i"
+  },
+  "response": {
+    "ground": "paper",
+    "footer": true,
+    "title": "FY2026 ended with a $3,000 surplus at about $8,875 per placement",
+    "els": [
+      {
+        "type": "text",
+        "x": 40,
+        "y": 36,
+        "w": 880,
+        "h": 56,
+        "text": "FY2026 ended with a $3,000 surplus at about $8,875 per placement",
+        "style": "title"
+      },
+      {
+        "type": "figure",
+        "x": 40,
+        "y": 104,
+        "w": 280,
+        "h": 86,
+        "value": "$612,400",
+        "label": "FY2026 expenses",
+        "fill": "tint"
+      },
+      {
+        "type": "figure",
+        "x": 340,
+        "y": 104,
+        "w": 280,
+        "h": 86,
+        "value": "$615,400",
+        "label": "FY2026 revenue",
+        "fill": "tint"
+      },
+      {
+        "type": "figure",
+        "x": 640,
+        "y": 104,
+        "w": 280,
+        "h": 86,
+        "value": "$3,000",
+        "label": "surplus",
+        "fill": "tint"
+      },
+      {
+        "type": "figure",
+        "x": 40,
+        "y": 202,
+        "w": 430,
+        "h": 80,
+        "value": "about $8,875",
+        "label": "cost per permanent placement",
+        "fill": "card"
+      },
+      {
+        "type": "figure",
+        "x": 490,
+        "y": 202,
+        "w": 430,
+        "h": 80,
+        "value": "about $5,060",
+        "label": "cost per person enrolled",
+        "fill": "card"
+      },
+      {
+        "type": "text",
+        "x": 40,
+        "y": 294,
+        "w": 880,
+        "h": 20,
+        "text": "Funded by county, two foundations, crew contracts and 312 individual gifts",
+        "style": "label",
+        "color": "muted"
+      },
+      {
+        "type": "stack",
+        "x": 40,
+        "y": 318,
+        "w": 880,
+        "h": 130,
+        "items": [
+          {
+            "label": "Tamsen County contract",
+            "value": "$240,000"
+          },
+          {
+            "label": "Halvorsen Family Foundation",
+            "value": "$150,000"
+          },
+          {
+            "label": "Carver Falls Community Trust",
+            "value": "$95,000"
+          },
+          {
+            "label": "312 individual gifts",
+            "value": "$78,400"
+          },
+          {
+            "label": "Crew contracts",
+            "value": "$52,000"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "x": 40,
+        "y": 456,
+        "w": 880,
+        "h": 26,
+        "text": "Contact: Marisol Okafor-Reyes, Executive Director",
+        "style": "strong"
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2431,
+    "cache_read_input_tokens": 669,
+    "output_tokens": 1627,
+    "output_tokens_details": {
+      "thinking_tokens": 456
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2431,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1627,
+        "cache_read_input_tokens": 669,
+        "cache_creation_input_tokens": 2431,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2431
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "error": null
+}

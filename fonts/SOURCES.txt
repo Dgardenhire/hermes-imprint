@@ -1,0 +1,76 @@
+Where the bundled font files came from, and their Montserrat and Lora (added 2026-11-09, for the Harborlight sample brand, whose guide names them) come from the
+Google Fonts repository (github.com/google/fonts, ofl/montserrat and ofl/lora), downloaded on Damon's approval and
+handed to this build as local files with each family's OFL.txt (kept as OFL-montserrat.txt and OFL-lora.txt).
+Lora carries the Reserved Font Name "Lora", so its variable files are shipped unmodified (renamed only); the PDF
+embedder and Pillow use their default instance, weight 400. Montserrat has no Reserved Font Name; its variable file
+(default weight 100) was cut to static instances with fontTools 4.60.2 (varLib.instancer, wght 400, 600, 700, 800).
+
+    montserrat-400.ttf ... montserrat-800.ttf   Montserrat[wght].ttf, static instances
+    lora-400.ttf                                 Lora[wght].ttf, unmodified
+    lora-400-italic.ttf                          Lora-Italic[wght].ttf, unmodified
+
+SHA-256
+
+Every file here is checked against this list by tests/test_fonts_offline.py. A file that is
+added, removed or changed without updating this list fails the tests.
+
+Merriweather and Public Sans (added 2026-11-08) were downloaded unmodified from the Google
+Fonts repository, pinned to the last commit that still carried static Regular, Bold and Italic
+files. (The current files there are variable fonts; the PDF embedder sets only their default
+weight, and Merriweather's Reserved Font Name rules out cutting a static weight from them.)
+Each file's git blob hash matched the repository's listing at that commit.
+
+    merriweather-400.ttf        Merriweather-Regular.ttf, v2.002
+    merriweather-700.ttf        Merriweather-Bold.ttf, v2.002
+        https://github.com/google/fonts/tree/6392e4f212bab750be373234f29966cb268e1cfd/ofl/merriweather
+    public-sans-400.ttf         static/PublicSans-Regular.ttf, v1.007
+    public-sans-700.ttf         static/PublicSans-Bold.ttf, v1.007
+    public-sans-400-italic.ttf  static/PublicSans-Italic.ttf, v1.007
+        https://github.com/google/fonts/tree/58c0c30973dcfbb4d6a8a80ad5b3c32704dd5f1f/ofl/publicsans
+
+Source Serif 4, Source Sans 3 and DM Serif Display (added 2026-11-08, for the studio kits) were copied
+unmodified from copies already on this computer, in LINCHPIN's own projects, and were not downloaded:
+Source Serif 4 and Source Sans 3 from product-lab-stage/assets/fonts/ (shipped there with Adobe's OFL text),
+DM Serif Display from studio-gptmerge/public/fonts/. Each is a static TrueType file with fsType 0 (installable
+embedding). Versions are from each file's own name table. Not yet checked against the upstream release files:
+the hashes below are the files as copied.
+
+    source-serif-4-400.ttf      SourceSerif4-Regular.ttf, Version 4.005 (adobe-fonts/source-serif)
+    source-serif-4-600.ttf      SourceSerif4-Semibold.ttf, Version 4.005
+    source-sans-3-400.ttf       SourceSans3-Regular.ttf, Version 3.052 (adobe-fonts/source-sans)
+    source-sans-3-600.ttf       SourceSans3-Semibold.ttf, Version 3.052
+    dm-serif-display-400.ttf    DMSerifDisplay-Regular.ttf, Version 5.200 (googlefonts/dm-fonts)
+
+The other thirteen files were bundled before this list existed; their upstream projects are
+named in OFL.txt, and their hashes below were recorded from the files as shipped.
+
+SHA-256
+a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab  anton-400.ttf
+95aa02c7c43096e0dd44d787ba6216864a67157e402adab59b35572e0c1577ea  barlow-400.ttf
+86577cb32f8abe3673db53ca0f4221e6856751a4f6730c867e00f720f8bb1fc5  barlow-600.ttf
+e476562ec9c1e16cf16475895b511f08c804f438cc9a9f80a44ea50a0eeb5b65  barlow-condensed-700.ttf
+e74b750df582c608f35db467b711b2b60d2217618e85e60b72b42dfd00446cab  barlow-condensed-900.ttf
+7a602069c80a7a4d15f374f5aa939e9920b270b1e972a55729c50178e6087c46  courier-prime-400.ttf
+da07b2a56a70fe84583e506f71c99075c9e660e71ac542c93aac467c246e87b4  courier-prime-700.ttf
+14698df35104a00509120bacfe9770cced31ec8d9e4676dee42f304eb7345c11  crimson-pro-400-italic.ttf
+6338b830dfc0c66fe3fc994b6bf85b8511bdce30f9fe45fa2bea6e8d53d1024f  crimson-pro-400.ttf
+08939b8bdf534afec24ae0ef5e03f948940cd9a8fe08e7fecbad040e62327385  instrument-serif-400-italic.ttf
+d8683ad704caf75457062713153ace3a868135126e94b6a87e6a5534b2f0d895  inter-400.ttf
+1988073a2d4f5c2c886b970603e57399dd3ff0c9fc6e01cf999f96cb63170a9f  inter-700.ttf
+2340c497181e9446fcbb235e1c3780558dc62879ffe0ef47906d3f7f35cf5f35  libre-caslon-display-400.ttf
+bc38fe756b3e259248183fc0b75ad81b02774f3ca68e5e544e925827b0186d40  merriweather-400.ttf
+55139769a87085bff777f68e3ecf92450c21a04c5ddd1e9e9528960ba4088c9f  merriweather-700.ttf
+91182f9b4abbaadb6f0922e00aa6a1e40b3bf564b2f78565297d974e1a71663b  public-sans-400-italic.ttf
+e0db81f6991839cfc785f330dafc2c48d23eada62aa46c34996c0d0c5f9a69f6  public-sans-400.ttf
+bd930c82e2b9f6cf92d71a460e560dc6886718d57ade5aa386e0c0d84835c504  public-sans-700.ttf
+e5a4ee6a3d87bb9024796be390c6771e2a0eb1883dae25effaf57ca01668e24b  source-serif-4-400.ttf
+36db62940cb5728b12b1802476dc7fcf4c6c519a7bdd476ba23a4e555fc4655f  source-serif-4-600.ttf
+4644c81b86ec9caaa76b634889968ed3c4f4f52f054855933acc7c2b21e53b0f  source-sans-3-400.ttf
+a3f4f8dcf343a8f24dc61951de93f3ba1558b15cd250ba24af8a40e957081b7d  source-sans-3-600.ttf
+6e323a8731b68da2715b3610f7595cdb1a44101b40b46316741ffe15d9782e38  dm-serif-display-400.ttf
+5af73fdd8e013f0588062c53995289578bf9ce7a947f2530e9c1c1d065a3a14d  montserrat-400.ttf
+8aeb207ba3f7a83c7eeb0ce6bfb95d617cdf39b70f41ffbc563363b91a99daa9  montserrat-600.ttf
+f559b296e94151a8606c8d52ca6cb2aab19d256fcf4a1210b04f28660339aa3c  montserrat-700.ttf
+e889827f8a78e2b22d0894c942b8cebe78f880889af7110d0f7e24dc38ce9abc  montserrat-800.ttf
+822a6621ccbe8d97d20ac88c1c41f5615c9c2c202eaa75f272cd452aac6475a7  lora-400.ttf
+22d8d8854b53807aa664ca34f2031a9ed57a1d0dea296b8b96cdd3aad937a2b3  lora-400-italic.ttf

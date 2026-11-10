@@ -1,0 +1,32 @@
+# DRAFT, not submitted. Re-pin sha and every image URL to the pushed commit before opening the PR.
+name: imprint
+title: Imprint
+repo: https://github.com/Dgardenhire/hermes-imprint
+sha: c32258b73d1fc67437e214edd8d0dd6cf0a34100
+description: "Turn your sources into a one-page brief, a slide deck or a spoken audio brief that looks and sounds like your organization. Imprint keeps each brand as a kit you can hold (colors with roles checked for contrast, fonts, logo, voice rules, a page layout and rules for every page), writes the content once from your PDFs, Word files, web pages, transcripts and notes, sets it in two kits side by side as press proofs, and checks every number and quote against a source passage before export. Fourteen starter kits (nine original, four adapted from Open Design packages under neutral names, and the public-domain US Web Design System) and unlimited kits of your own; Help me build a kit proposes three kits that differ and remembers recent looks; kits import from pasted colors, CSS, design tokens, Open Design packages, a Claude Design zip or folder, PowerPoint and Canva files, a website, or a logo read by your own model. Exports: PDF, proof PDF and HTML one-pagers; PowerPoint with the kit on the slide master plus a PDF; audio through your own Hermes voice plus the script. Imprint is an independent community plugin, not made or endorsed by Nous Research. Disclosure — source text (redacted by Hermes) goes to the user's own Hermes model under the auxiliary task 'Imprint writing'; audio scripts and the kit's delivery notes go to the user's own Hermes text-to-speech provider (the default, Edge, is Microsoft's online voice service); a logo or brand sheet goes to the user's model as an image only when the user asks; its own network calls are only to web addresses the user enters (page sources, a site to build a kit from, reference sites), through Hermes's SSRF-safe client, public addresses only, every redirect checked, 20 seconds to answer and 60 in all, streamed and capped (gzip or deflate only, unpacked within the cap), the page plus up to 10 same-site stylesheets; reads only files the user picks and, in a folder import, only the named token, font and logo files, releasing the folder after; writes only to $HERMES_HOME/plugin-data/imprint/ and to paths the user picks in the save dialog; slow work runs on background threads inside Hermes; no shell commands, child processes, stored credentials, self-updates or telemetry; registers no tools, hooks or middleware, only an auxiliary model task, a Desktop page and a dashboard API; bundles OFL font files; uses tools.url_safety (public API) for web reads."
+maintainer: Dgardenhire
+tier: community
+category: desktop
+requires_hermes: ">=0.22.0"
+docs_url: https://github.com/Dgardenhire/hermes-imprint/blob/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/MANUAL.md
+version: "0.1.0"
+image: "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/catalog/card.png"
+screenshots:
+  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/shots/proofs-light.png"
+  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/shots/proofs-flagged-light.png"
+  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/shots/deck-dark.png"
+  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/shots/audio-light.png"
+  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/shots/kits-light.png"
+  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/shots/kits-draft-light.png"
+readme: true
+platforms: []
+known_issues:
+  - "Visual and Report outputs are not built yet; One-pager, Deck and Audio brief are."
+  - "Audio needs text to speech turned on in Hermes; without it the script is made and can be exported."
+  - "Reading a logo or brand sheet needs a model that can see images."
+  - "The source check proves a number or quote is in your sources, not that the source is right."
+capabilities:
+  provides_tools: []
+  provides_hooks: []
+  provides_middleware: []
+  requires_env: []

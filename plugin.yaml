@@ -1,0 +1,19 @@
+# Imprint for Hermes. name is the registry key; label is the display name.
+manifest_version: 2
+name: imprint
+label: Imprint
+version: 0.1.0
+description: A notebook for your sources that makes branded work from them. Add files, links and notes; ask questions and get answers that cite the exact passage; then make a slide deck, a graphic, an audio brief or a one-pager, set in one of five studio kits or your own brand (imported from a guide, a Canva file or design tokens). Every number and quote is checked against the sources before you export. Runs on your own Hermes model.
+author: Damon Gardenhire
+license: MIT
+kind: standalone
+requires_hermes: ">=0.22.0"
+tags: [documents, brand, design, desktop]
+provides_tools: []
+provides_hooks: []
+python_dependencies:
+  - "pypdf>=6.21.4,<7"
+  - "python-docx>=1.1,<2"
+  - "python-pptx>=1.0,<2"
+  - "reportlab>=4.0,<6"
+  - "Pillow>=10,<13"

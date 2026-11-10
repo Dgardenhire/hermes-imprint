@@ -1,0 +1,1395 @@
+{
+  "set": "heldout5",
+  "tag": "r13-heldout5",
+  "steps": {
+    "brand": {
+      "status": "done",
+      "seconds": 0.0
+    },
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 29.3,
+      "error": null
+    }
+  },
+  "started": 1794234379.410353,
+  "sources": [
+    "notes.txt",
+    "report.md"
+  ],
+  "kit": {
+    "id": "k_2fe6614ea514",
+    "name": "Pasted colors",
+    "colors": [
+      {
+        "hex": "#d9703a",
+        "role": "head",
+        "name": "Lantern orange"
+      },
+      {
+        "hex": "#f3ecdf",
+        "role": "band",
+        "name": "Playbill paper"
+      }
+    ],
+    "paper": "#23344f",
+    "ink": "#f4f4f4",
+    "kit_json": {
+      "name": "Pasted colors",
+      "origin": "import",
+      "origin_note": "Pasted color codes",
+      "org": "",
+      "subject": "",
+      "signature": "",
+      "paper": "#23344f",
+      "ink": "#f4f4f4",
+      "colors": [
+        {
+          "hex": "#d9703a",
+          "role": "head",
+          "name": "Lantern orange"
+        },
+        {
+          "hex": "#f3ecdf",
+          "role": "band",
+          "name": "Playbill paper"
+        }
+      ],
+      "type": {
+        "heading": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 700
+        },
+        "body": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 400
+        },
+        "scale": 1.25
+      },
+      "layout": "banner",
+      "density": "medium",
+      "voice": {
+        "notes": "",
+        "delivery": "",
+        "never": [],
+        "pairs": [],
+        "draft": false
+      },
+      "rules": {
+        "sources": true,
+        "page_numbers": true,
+        "date": true,
+        "required": []
+      },
+      "imported_from": {
+        "kind": "paste",
+        "label": "Pasted colors",
+        "ref": "",
+        "sha256": "",
+        "license_note": "",
+        "brand_named": false,
+        "mode": "",
+        "imported_at": 1794234379.424513
+      },
+      "logo": null,
+      "logo_alt": null,
+      "fonts": [],
+      "id": "k_2fe6614ea514",
+      "version": 1,
+      "created_at": 1794234379.425715,
+      "updated_at": 1794234379.425715,
+      "starter": false
+    }
+  },
+  "guide_and_summaries_seconds": 17.4,
+  "guide": {
+    "by": "Written by your Hermes model",
+    "guide": [
+      {
+        "text": "The sources are October 21, 2026 board notes from Kettle Lane Youth Theatre and its FY2026 annual program report.",
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 2",
+            "source_id": "s_b5691fbf59c8"
+          },
+          {
+            "ref": "P12",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Kettle Lane Youth Theatre”",
+            "source_id": "s_9cbd2a0e20d9"
+          }
+        ]
+      },
+      {
+        "text": "In FY2026 the theatre enrolled 142 after-school students and reached 6,820 students with 31 touring shows in 14 schools.",
+        "chips": [
+          {
+            "ref": "P13",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“The year in numbers”",
+            "source_id": "s_9cbd2a0e20d9"
+          }
+        ]
+      },
+      {
+        "text": "It turned down 11 requests from eastern county schools, where four of five schools have no arts teacher beyond music.",
+        "chips": [
+          {
+            "ref": "P16",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Touring: *The Weathervane*”",
+            "source_id": "s_9cbd2a0e20d9"
+          }
+        ]
+      },
+      {
+        "text": "A new Eastern County touring company costs $68,500, with $23,500 in hand and a $45,000 gap remaining.",
+        "chips": [
+          {
+            "ref": "P23",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: an Eastern County touring company”",
+            "source_id": "s_9cbd2a0e20d9"
+          },
+          {
+            "ref": "P24",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: an Eastern County touring company”",
+            "source_id": "s_9cbd2a0e20d9"
+          }
+        ]
+      },
+      {
+        "text": "The board wants a deck asking the Tamsin Reade Fund for that $45,000, with the survey caveat kept in.",
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 4",
+            "source_id": "s_b5691fbf59c8"
+          },
+          {
+            "ref": "P5",
+            "n": 2,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 5",
+            "source_id": "s_b5691fbf59c8"
+          },
+          {
+            "ref": "P8",
+            "n": 3,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 8",
+            "source_id": "s_b5691fbf59c8"
+          }
+        ]
+      }
+    ],
+    "asks": [
+      {
+        "id": "a1",
+        "who": "Owen Calloway (chair)",
+        "what": "A deck asking the Reade Fund for $45,000 for eastern touring",
+        "by": "November 20, 2026",
+        "kind": "deck",
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 5",
+            "source_id": "s_b5691fbf59c8"
+          },
+          {
+            "ref": "P8",
+            "n": 2,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 8",
+            "source_id": "s_b5691fbf59c8"
+          }
+        ],
+        "brief": {
+          "who": "Ruth Ellingsen and the Reade Fund committee",
+          "goal": "Fund the $45,000 gap for the Eastern County touring company",
+          "length": "Eight slides or fewer"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "text": "The plan counts on $12,000 in fees at $600 per visit on average. Can eastern schools, where four of five have no arts teacher beyond music, pay that?",
+        "chips": [
+          {
+            "ref": "P23",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: an Eastern County touring company”",
+            "source_id": "s_9cbd2a0e20d9"
+          },
+          {
+            "ref": "P16",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Touring: *The Weathervane*”",
+            "source_id": "s_9cbd2a0e20d9"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "Confidence rose from 41 to 74 percent, but only 97 of 142 students took both surveys. Will the $6,000 evaluator show whether the theatre caused the change?",
+        "chips": [
+          {
+            "ref": "P18",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“What we learned”",
+            "source_id": "s_9cbd2a0e20d9"
+          },
+          {
+            "ref": "P23",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: an Eastern County touring company”",
+            "source_id": "s_9cbd2a0e20d9"
+          },
+          {
+            "ref": "P8",
+            "n": 3,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 8",
+            "source_id": "s_b5691fbf59c8"
+          }
+        ],
+        "suggestion": true
+      }
+    ],
+    "source_ids": [
+      "s_b5691fbf59c8",
+      "s_9cbd2a0e20d9"
+    ],
+    "created_at": 1794234396.738123
+  },
+  "brief": {
+    "who": "Funders",
+    "goal": "Fund the $45,000 gap for the Eastern County touring company",
+    "length": "7 to 9 slides"
+  },
+  "outline": {},
+  "deck_seconds": 29.3,
+  "output_id": "o_719bda5e65aa",
+  "case": null,
+  "plain_draft": "Slide 1: Closing the Eastern County Touring Gap\nKettle Lane Youth Theatre | Ambry Falls\nA proposal to the Tamsin Reade Fund for Rural Arts\nRequest: $45,000 to launch a second touring company in eastern Ambry County\nCompany start: January 2027\n\nSlide 2: Eastern County Schools Are Asking. We Have Had to Say No.\nIn FY2026 we turned down 11 performance requests from eastern county schools\nFour of the five eastern county schools we visit have no arts teacher on staff beyond music (Ambry County 2025 survey)\nThe drive runs up to 70 minutes each way\nThe reason we said no: one van and one touring cast\n\nSlide 3: What Schools Already Get from Us\nThe Weathervane: a 40-minute, three-actor show about a girl who stops speaking after her family moves\nEach show is followed by a 20-minute workshop led by the actors\nFY2026: 31 performances in 14 schools\n6,820 students reached in grades 3 through 8\nFive of those 14 schools are in the eastern half of the county\n\nSlide 4: The Plan: A Second Touring Company for the East\nA touring company just for eastern county schools, starting with the spring 2027 semester\n20 additional school visits in eastern Ambry County\nAn estimated 3,400 more students reached (estimate)\nA follow-up workshop at every school\nA new companion show for grades 6 through 8, alongside The Weathervane\nAn outside evaluation partner built into the budget\n\nSlide 5: What Our FY2026 Results Show, and What They Don't\nAfter-school student survey: \"I feel confident speaking in front of my class at school\"\nSeptember: 41 percent agreed. May: 74 percent agreed.\nLimits: the answers are self-reported and there is no comparison group\nWe cannot say how much of the change came from us and how much from a year of growing up\nOnly 97 of 142 students completed both surveys; students who left may differ from those who stayed\nA firmer measure: 83 percent of eligible students re-enrolled (98 of 118)\nWaitlist for the 13-to-17 ensemble: 19 names in August\n\nSlide 6: In a Student's Words\n\"I used to eat lunch in the library so nobody would talk to me. Now I'm the one who shows the new kids where the stage door is.\"\nWren, age 13, at the end-of-year circle, May 2026\n\nSlide 7: The Ask: $45,000\nEastern County touring company budget: $68,500\nTwo touring teaching artists (school year): $44,000\nSecond van lease and fuel: $9,600\nProduction for the new companion show: $8,900\nOutside evaluation partner: $6,000\nAlready in hand: $23,500\nProjected touring fees from new schools (sliding scale, about $600 per visit): $12,000\nAmbry County Arts Council rural access fund (approved September 2026): $11,500\nRemaining gap: $45,000\nWe are asking the Tamsin Reade Fund to close that gap so the company can start in January 2027\n\nSlide 8: A Well-Run Organization Ready to Grow\nFY2026 expenses: $412,600. Revenue: $416,200. Operating surplus: $3,600 added to our cash reserve\nAbout 81 percent of spending went to programs\n61 percent of after-school students (87 of 142) received full or partial tuition aid; no student was turned away for cost\nSupport from 312 individual donors, the Halvorsen Family Foundation, and the Ambry County Arts Council\nFY2027 evaluation: an outside evaluator, teacher ratings at two partner schools, and tracking of students who do not finish the year\nKettle Lane Youth Theatre | The Granary, 2nd Floor | Ambry Falls",
+  "plain_record": {
+    "flags": [],
+    "splits": [
+      [
+        1,
+        "moved to open"
+      ],
+      [
+        2,
+        "moved to open"
+      ],
+      [
+        3,
+        "moved to open"
+      ],
+      [
+        6,
+        "moved to open"
+      ]
+    ],
+    "slides": 8
+  },
+  "argument": null,
+  "neutral": {
+    "title": "Closing the Eastern County Touring Gap",
+    "subtitle": "Kettle Lane Youth Theatre | Ambry Falls. A proposal to the Tamsin Reade Fund for Rural Arts. Request: $45,000 to launch a second touring company in eastern Ambry County. Company start: January 2027.",
+    "slides": [
+      {
+        "type": "content",
+        "heading": "Eastern County Schools Are Asking. We Have Had to Say No.",
+        "bullets": [
+          {
+            "text": "In FY2026 we turned down 11 performance requests from eastern county schools",
+            "ref": "P16"
+          },
+          {
+            "text": "Four of the five eastern county schools we visit have no arts teacher on staff beyond music (Ambry County 2025 survey)",
+            "ref": "P16"
+          },
+          {
+            "text": "The drive runs up to 70 minutes each way",
+            "ref": "P16"
+          },
+          {
+            "text": "The reason we said no: one van and one touring cast",
+            "ref": "P16"
+          }
+        ],
+        "refs": [
+          "P16"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "What Schools Already Get from Us",
+        "bullets": [
+          {
+            "text": "The Weathervane: a 40-minute, three-actor show about a girl who stops speaking after her family moves",
+            "ref": "P16"
+          },
+          {
+            "text": "Each show is followed by a 20-minute workshop led by the actors",
+            "ref": "P16"
+          },
+          {
+            "text": "FY2026: 31 performances in 14 schools",
+            "ref": "P13"
+          },
+          {
+            "text": "6,820 students reached in grades 3 through 8",
+            "ref": "P13"
+          },
+          {
+            "text": "Five of those 14 schools are in the eastern half of the county",
+            "ref": "P16"
+          }
+        ],
+        "refs": [
+          "P16",
+          "P13"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "The Plan: A Second Touring Company for the East",
+        "bullets": [
+          {
+            "text": "A touring company just for eastern county schools, starting with the spring 2027 semester",
+            "ref": "P23"
+          },
+          {
+            "text": "20 additional school visits in eastern Ambry County",
+            "ref": "P23"
+          },
+          {
+            "text": "An estimated 3,400 more students reached (estimate)",
+            "ref": "P23"
+          },
+          {
+            "text": "A follow-up workshop at every school",
+            "ref": "P23"
+          },
+          {
+            "text": "A new companion show for grades 6 through 8, alongside The Weathervane",
+            "ref": "P23"
+          },
+          {
+            "text": "An outside evaluation partner built into the budget",
+            "ref": "P23"
+          }
+        ],
+        "refs": [
+          "P23"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "What Our FY2026 Results Show, and What They Don't",
+        "bullets": [
+          {
+            "text": "After-school student survey: \"I feel confident speaking in front of my class at school\"",
+            "ref": "P18"
+          },
+          {
+            "text": "September: 41 percent agreed. May: 74 percent agreed.",
+            "ref": "P18"
+          },
+          {
+            "text": "Limits: the answers are self-reported and there is no comparison group",
+            "ref": "P18"
+          },
+          {
+            "text": "We cannot say how much of the change came from us and how much from a year of growing up",
+            "ref": "P18"
+          },
+          {
+            "text": "Only 97 of 142 students completed both surveys; students who left may differ from those who stayed",
+            "ref": "P18"
+          },
+          {
+            "text": "A firmer measure: 83 percent of eligible students re-enrolled (98 of 118)",
+            "ref": "P13"
+          },
+          {
+            "text": "Waitlist for the 13-to-17 ensemble: 19 names in August",
+            "ref": "P19"
+          }
+        ],
+        "refs": [
+          "P18",
+          "P13",
+          "P19"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "In a Student's Words",
+        "bullets": [
+          {
+            "text": "\"I used to eat lunch in the library so nobody would talk to me. Now I'm the one who shows the new kids where the stage door is.\"",
+            "ref": "P19"
+          },
+          {
+            "text": "Wren, age 13, at the end-of-year circle, May 2026",
+            "ref": "P19"
+          }
+        ],
+        "refs": [
+          "P19"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "The Ask: $45,000",
+        "bullets": [
+          {
+            "text": "Eastern County touring company budget: $68,500",
+            "ref": "P5"
+          },
+          {
+            "text": "Two touring teaching artists (school year): $44,000",
+            "ref": "P23"
+          },
+          {
+            "text": "Second van lease and fuel: $9,600",
+            "ref": "P23"
+          },
+          {
+            "text": "Production for the new companion show: $8,900",
+            "ref": "P23"
+          },
+          {
+            "text": "Outside evaluation partner: $6,000",
+            "ref": "P23"
+          },
+          {
+            "text": "Already in hand: $23,500",
+            "ref": "P5"
+          },
+          {
+            "text": "Projected touring fees from new schools (sliding scale, about $600 per visit): $12,000",
+            "ref": "P23"
+          },
+          {
+            "text": "Ambry County Arts Council rural access fund (approved September 2026): $11,500",
+            "ref": "P23"
+          },
+          {
+            "text": "Remaining gap: $45,000",
+            "ref": "P24"
+          },
+          {
+            "text": "We are asking the Tamsin Reade Fund to close that gap so the company can start in January 2027",
+            "ref": "P24"
+          }
+        ],
+        "refs": [
+          "P5",
+          "P23",
+          "P24"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "A Well-Run Organization Ready to Grow",
+        "bullets": [
+          {
+            "text": "FY2026 expenses: $412,600. Revenue: $416,200. Operating surplus: $3,600 added to our cash reserve",
+            "ref": "P20"
+          },
+          {
+            "text": "About 81 percent of spending went to programs",
+            "ref": "P21"
+          },
+          {
+            "text": "61 percent of after-school students (87 of 142) received full or partial tuition aid; no student was turned away for cost",
+            "ref": "P13"
+          },
+          {
+            "text": "Support from 312 individual donors, the Halvorsen Family Foundation, and the Ambry County Arts Council",
+            "ref": "P22"
+          },
+          {
+            "text": "FY2027 evaluation: an outside evaluator, teacher ratings at two partner schools, and tracking of students who do not finish the year",
+            "ref": "P18"
+          },
+          {
+            "text": "Kettle Lane Youth Theatre | The Granary, 2nd Floor | Ambry Falls",
+            "ref": "P12"
+          }
+        ],
+        "refs": [
+          "P20",
+          "P21",
+          "P13",
+          "P22",
+          "P18",
+          "P12"
+        ],
+        "comp": "open"
+      }
+    ],
+    "plain": true
+  },
+  "live": {
+    "title": "Closing the Eastern County Touring Gap",
+    "subtitle": "Kettle Lane Youth Theatre | Ambry Falls. A proposal to the Tamsin Reade Fund for Rural Arts. Request: $45,000 to launch a second touring company in eastern Ambry County. Company start: January 2027.",
+    "slides": [
+      {
+        "type": "content",
+        "heading": "Eastern County Schools Are Asking. We Have Had to Say No.",
+        "bullets": [
+          {
+            "text": "In FY2026 we turned down 11 performance requests from eastern county schools",
+            "ref": "P16"
+          },
+          {
+            "text": "Four of the five eastern county schools we visit have no arts teacher on staff beyond music (Ambry County 2025 survey)",
+            "ref": "P16"
+          },
+          {
+            "text": "The drive runs up to 70 minutes each way",
+            "ref": "P16"
+          },
+          {
+            "text": "The reason we said no: one van and one touring cast",
+            "ref": "P16"
+          }
+        ],
+        "refs": [
+          "P16"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "What Schools Already Get from Us",
+        "bullets": [
+          {
+            "text": "The Weathervane: a 40-minute, three-actor show about a girl who stops speaking after her family moves",
+            "ref": "P16"
+          },
+          {
+            "text": "Each show is followed by a 20-minute workshop led by the actors",
+            "ref": "P16"
+          },
+          {
+            "text": "FY2026: 31 performances in 14 schools",
+            "ref": "P13"
+          },
+          {
+            "text": "6,820 students reached in grades 3 through 8",
+            "ref": "P13"
+          },
+          {
+            "text": "Five of those 14 schools are in the eastern half of the county",
+            "ref": "P16"
+          }
+        ],
+        "refs": [
+          "P16",
+          "P13"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "The Plan: A Second Touring Company for the East",
+        "bullets": [
+          {
+            "text": "A touring company just for eastern county schools, starting with the spring 2027 semester",
+            "ref": "P23"
+          },
+          {
+            "text": "20 additional school visits in eastern Ambry County",
+            "ref": "P23"
+          },
+          {
+            "text": "An estimated 3,400 more students reached (estimate)",
+            "ref": "P23"
+          },
+          {
+            "text": "A follow-up workshop at every school",
+            "ref": "P23"
+          },
+          {
+            "text": "A new companion show for grades 6 through 8, alongside The Weathervane",
+            "ref": "P23"
+          },
+          {
+            "text": "An outside evaluation partner built into the budget",
+            "ref": "P23"
+          }
+        ],
+        "refs": [
+          "P23"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "What Our FY2026 Results Show, and What They Don't",
+        "bullets": [
+          {
+            "text": "After-school student survey: \"I feel confident speaking in front of my class at school\"",
+            "ref": "P18"
+          },
+          {
+            "text": "September: 41 percent agreed. May: 74 percent agreed.",
+            "ref": "P18"
+          },
+          {
+            "text": "Limits: the answers are self-reported and there is no comparison group",
+            "ref": "P18"
+          },
+          {
+            "text": "We cannot say how much of the change came from us and how much from a year of growing up",
+            "ref": "P18"
+          },
+          {
+            "text": "Only 97 of 142 students completed both surveys; students who left may differ from those who stayed",
+            "ref": "P18"
+          },
+          {
+            "text": "A firmer measure: 83 percent of eligible students re-enrolled (98 of 118)",
+            "ref": "P13"
+          },
+          {
+            "text": "Waitlist for the 13-to-17 ensemble: 19 names in August",
+            "ref": "P19"
+          }
+        ],
+        "refs": [
+          "P18",
+          "P13",
+          "P19"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "In a Student's Words",
+        "bullets": [
+          {
+            "text": "\"I used to eat lunch in the library so nobody would talk to me. Now I'm the one who shows the new kids where the stage door is.\"",
+            "ref": "P19"
+          },
+          {
+            "text": "Wren, age 13, at the end-of-year circle, May 2026",
+            "ref": "P19"
+          }
+        ],
+        "refs": [
+          "P19"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "The Ask: $45,000",
+        "bullets": [
+          {
+            "text": "Eastern County touring company budget: $68,500",
+            "ref": "P5"
+          },
+          {
+            "text": "Two touring teaching artists (school year): $44,000",
+            "ref": "P23"
+          },
+          {
+            "text": "Second van lease and fuel: $9,600",
+            "ref": "P23"
+          },
+          {
+            "text": "Production for the new companion show: $8,900",
+            "ref": "P23"
+          },
+          {
+            "text": "Outside evaluation partner: $6,000",
+            "ref": "P23"
+          },
+          {
+            "text": "Already in hand: $23,500",
+            "ref": "P5"
+          },
+          {
+            "text": "Projected touring fees from new schools (sliding scale, about $600 per visit): $12,000",
+            "ref": "P23"
+          },
+          {
+            "text": "Ambry County Arts Council rural access fund (approved September 2026): $11,500",
+            "ref": "P23"
+          },
+          {
+            "text": "Remaining gap: $45,000",
+            "ref": "P24"
+          },
+          {
+            "text": "We are asking the Tamsin Reade Fund to close that gap so the company can start in January 2027",
+            "ref": "P24"
+          }
+        ],
+        "refs": [
+          "P5",
+          "P23",
+          "P24"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "A Well-Run Organization Ready to Grow",
+        "bullets": [
+          {
+            "text": "FY2026 expenses: $412,600. Revenue: $416,200. Operating surplus: $3,600 added to our cash reserve",
+            "ref": "P20"
+          },
+          {
+            "text": "About 81 percent of spending went to programs",
+            "ref": "P21"
+          },
+          {
+            "text": "61 percent of after-school students (87 of 142) received full or partial tuition aid; no student was turned away for cost",
+            "ref": "P13"
+          },
+          {
+            "text": "Support from 312 individual donors, the Halvorsen Family Foundation, and the Ambry County Arts Council",
+            "ref": "P22"
+          },
+          {
+            "text": "FY2027 evaluation: an outside evaluator, teacher ratings at two partner schools, and tracking of students who do not finish the year",
+            "ref": "P18"
+          },
+          {
+            "text": "Kettle Lane Youth Theatre | The Granary, 2nd Floor | Ambry Falls",
+            "ref": "P12"
+          }
+        ],
+        "refs": [
+          "P20",
+          "P21",
+          "P13",
+          "P22",
+          "P18",
+          "P12"
+        ],
+        "comp": "open"
+      }
+    ],
+    "plain": true
+  },
+  "passages": {
+    "P11": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Report",
+      "source_id": "s_9cbd2a0e20d9"
+    },
+    "P12": {
+      "text": "## FY2026 Annual Program Report\n### July 1, 2025 to June 30, 2026 | Ambry Falls\nKettle Lane Youth Theatre teaches young people ages 9 to 17 to make plays: acting, writing, building sets, running lights, and standing in front of a room without apologizing for being there. We work out of the second floor of the old Granary building on Kettle Lane, plus two school partner sites, and we take a small touring show into classrooms across Ambry County.\nThis report covers our fiscal year 2026. It is written for our board, our families, and the funders who carried us through it.",
+      "locator": "“Kettle Lane Youth Theatre”",
+      "source_title": "Report",
+      "source_id": "s_9cbd2a0e20d9"
+    },
+    "P13": {
+      "text": "- **142 students** enrolled in the after-school company across three sites: the Granary (78), Brindle Elementary (36), and Ashgrove Middle School (28).\n- **61 percent** of after-school students (87 of 142) received full or partial tuition aid. No student was turned away for cost.\n- **48 students** attended the four-week summer intensive, up from 39 in FY2025.\n- **3 mainstage productions** with **11 public performances** and **2,410 tickets** sold or given away.\n- **31 touring performances** of our school-day show, *The Weathervane*, in **14 schools**, reaching **6,820 students** in grades 3 through 8.\n- **83 percent** of eligible students returned from FY2025 (98 of 118 who had not aged out).\n- **5 staff** (3 full-time, 2 part-time) and **14 teaching artists** on contract.",
+      "locator": "“The year in numbers”",
+      "source_title": "Report",
+      "source_id": "s_9cbd2a0e20d9"
+    },
+    "P14": {
+      "text": "The core of the work. Students meet twice a week for 30 weeks, in mixed-age ensembles of 12 to 16. Each ensemble builds one short original piece in the fall and joins a mainstage production in the spring. Older students rotate through crew roles, and every student spends at least one production backstage. We believe a kid who has run a light board understands a play differently from one who has only stood in it.\nThis year the Brindle Elementary site moved from one day a week to two, at the school's request. Ashgrove Middle School was new in FY2026 and filled its 28 seats by the second week of October.",
+      "locator": "“After-school company”",
+      "source_title": "Report",
+      "source_id": "s_9cbd2a0e20d9"
+    },
+    "P15": {
+      "text": "- *The Lighthouse Keeper's Daughter* (November): an adaptation written with our 13-to-17 ensemble. 4 performances, 862 tickets.\n- *Twelfth Night, Shortened* (March): 70 minutes, cast of 22. 4 performances, 931 tickets.\n- *Small Town, Big Weather* (May): devised by students from interviews with Ambry Falls residents about the 1998 flood. 3 performances, 617 tickets.\nAbout one ticket in five was given free to families through the Ambry Falls Public Library pass program.",
+      "locator": "“Mainstage productions”",
+      "source_title": "Report",
+      "source_id": "s_9cbd2a0e20d9"
+    },
+    "P16": {
+      "text": "A 40-minute, three-actor show about a girl who stops speaking after her family moves, followed by a 20-minute workshop led by the actors. We performed it 31 times this year in 14 schools. Nine of those schools are in Ambry Falls proper. Five are in the eastern half of the county, where the drive runs up to 70 minutes each way and where, according to the county's own 2025 survey, four of the five schools have no arts teacher on staff beyond music.\nDemand outran us. We turned down 11 performance requests from eastern county schools because we had one van and one touring cast.",
+      "locator": "“Touring: *The Weathervane*”",
+      "source_title": "Report",
+      "source_id": "s_9cbd2a0e20d9"
+    },
+    "P17": {
+      "text": "Four weeks, five days a week, 48 students, ending in a showcase of scenes and original monologues. Tuition was $640, with aid available on the same scale as the after-school program.",
+      "locator": "“Summer intensive”",
+      "source_title": "Report",
+      "source_id": "s_9cbd2a0e20d9"
+    },
+    "P18": {
+      "text": "We asked after-school students to answer the same short survey in September and again in May. One question asked whether they agreed with the statement \"I feel confident speaking in front of my class at school.\"\n**In September, 41 percent agreed. In May, 74 percent agreed.**\nWe are proud of that number, and we want to be plain about its limits. It is self-reported. We have no comparison group, so we cannot say how much of the change came from us and how much came from a year of growing up. And only 97 of 142 students completed both surveys; the students who left mid-year or missed survey days may not look like the ones who stayed. In FY2027 we plan to work with an outside evaluator, add a short teacher rating at two partner schools, and track students who do not finish the year.",
+      "locator": "“What we learned”",
+      "source_title": "Report",
+      "source_id": "s_9cbd2a0e20d9"
+    },
+    "P19": {
+      "text": "What we can say with more confidence is that students keep coming back. 83 percent of eligible students re-enrolled, and the waitlist for the 13-to-17 ensemble reached 19 names in August.\nOne of those students, Wren, age 13, said this at the end-of-year circle in May:\n> \"I used to eat lunch in the library so nobody would talk to me. Now I'm the one who shows the new kids where the stage door is.\"",
+      "locator": "“What we learned”",
+      "source_title": "Report",
+      "source_id": "s_9cbd2a0e20d9"
+    },
+    "P20": {
+      "text": "Total FY2026 expenses were **$412,600**. Total revenue was **$416,200**, leaving a small operating surplus of **$3,600**, which goes to our cash reserve (now equal to about seven weeks of operating costs).",
+      "locator": "“Finances”",
+      "source_title": "Report",
+      "source_id": "s_9cbd2a0e20d9"
+    },
+    "P21": {
+      "text": "| Category | Amount |\n|---|---|\n| Program staff and teaching artists | $221,400 |\n| Production (sets, costumes, scripts and rights) | $58,300 |\n| Facility rent, Granary building | $46,800 |\n| Administration | $38,700 |\n| Touring (van lease, fuel, substitute coverage) | $24,900 |\n| Fundraising | $22,500 |\n| **Total** | **$412,600** |\nProgram costs (staff, production, touring, and the share of rent used for classes) came to about 81 percent of spending.",
+      "locator": "“Expenses”",
+      "source_title": "Report",
+      "source_id": "s_9cbd2a0e20d9"
+    },
+    "P22": {
+      "text": "| Source | Amount | Share |\n|---|---|---|\n| Tuition and ticket sales | $131,200 | 32% |\n| Individual donors and spring benefit (312 donors) | $118,400 | 28% |\n| Halvorsen Family Foundation, general operating | $80,000 | 19% |\n| Ambry County Arts Council, operating grant | $45,000 | 11% |\n| School touring fees (14 schools) | $41,600 | 10% |\n| **Total** | **$416,200** | **100%** |\nTuition covers less than a third of what we spend, by design. Our aid policy means families pay what they can, and the gap is closed by donors and grants. The Halvorsen grant is in year two of a three-year commitment.",
+      "locator": "“Funding mix”",
+      "source_title": "Report",
+      "source_id": "s_9cbd2a0e20d9"
+    },
+    "P23": {
+      "text": "Our biggest unmet need is the eastern half of the county. In FY2027 we will add a second touring company dedicated to those schools, so that *The Weathervane* and a new companion show for grades 6 through 8 can reach schools we currently turn away.\n**Goal:** 20 additional school visits in eastern Ambry County, reaching an estimated 3,400 more students, with a follow-up workshop at each school.\n**Cost: $68,500**\n| Item | Amount |\n|---|---|\n| Two touring teaching artists (school year) | $44,000 |\n| Second van lease and fuel | $9,600 |\n| Production for the new companion show | $8,900 |\n| Outside evaluation partner | $6,000 |\n| **Total** | **$68,500** |\n**Committed or projected so far: $23,500.** That is $12,000 in touring fees from the new schools (charged on a sliding scale, $600 per visit on average) and $11,500 from the Ambry County Arts Council's rural access fund, approved in September.",
+      "locator": "“FY2027 plan: an Eastern County touring company”",
+      "source_title": "Report",
+      "source_id": "s_9cbd2a0e20d9"
+    },
+    "P24": {
+      "text": "**Remaining gap: $45,000.** We are seeking that amount from a single funder so the company can start in January 2027, at the beginning of the spring semester.",
+      "locator": "“FY2027 plan: an Eastern County touring company”",
+      "source_title": "Report",
+      "source_id": "s_9cbd2a0e20d9"
+    },
+    "P25": {
+      "text": "To our families, our 312 donors, the Halvorsen Family Foundation, the Ambry County Arts Council, and the principals and teachers at 14 schools who cleared their gyms and cafeterias for us: this year happened because you made room.\nKettle Lane Youth Theatre | The Granary, 2nd Floor | Ambry Falls",
+      "locator": "“Thank you”",
+      "source_title": "Report",
+      "source_id": "s_9cbd2a0e20d9"
+    },
+    "P1": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Notes",
+      "source_id": "s_b5691fbf59c8"
+    },
+    "P2": {
+      "text": "KETTLE LANE YOUTH THEATRE\nBoard meeting notes, October 21, 2026\nPresent: Owen Calloway (chair), Dela Marchetti (executive director), Priya Haldane (treasurer), Teo Brask (development), Hannah Voss (board)",
+      "locator": "para. 2",
+      "source_title": "Notes",
+      "source_id": "s_b5691fbf59c8"
+    },
+    "P3": {
+      "text": "Item 3: Reade Fund pitch",
+      "locator": "para. 3",
+      "source_title": "Notes",
+      "source_id": "s_b5691fbf59c8"
+    },
+    "P4": {
+      "text": "Teo reported that Ruth Ellingsen, program officer at the Tamsin Reade Fund for Rural Arts, invited us to send a short deck before their December committee meeting. She asked specifically about the eastern county touring gap.",
+      "locator": "para. 4",
+      "source_title": "Notes",
+      "source_id": "s_b5691fbf59c8"
+    },
+    "P5": {
+      "text": "Owen asked for a deck that requests $45,000 from the Reade Fund to close the gap on the $68,500 Eastern County touring company. Priya confirmed the $23,500 already in hand: $12,000 projected touring fees and $11,500 from the County Arts Council rural access fund.",
+      "locator": "para. 5",
+      "source_title": "Notes",
+      "source_id": "s_b5691fbf59c8"
+    },
+    "P6": {
+      "text": "Deadline: draft to Owen and Dela by November 13. Final goes to Ruth Ellingsen by November 20, 2026.",
+      "locator": "para. 6",
+      "source_title": "Notes",
+      "source_id": "s_b5691fbf59c8"
+    },
+    "P7": {
+      "text": "Instructions agreed for the deck:",
+      "locator": "para. 7",
+      "source_title": "Notes",
+      "source_id": "s_b5691fbf59c8"
+    },
+    "P8": {
+      "text": "1. Lead with the eastern county schools, not with our history. The 11 requests we turned down and the four of five schools with no arts teacher beyond music should be up front.\n2. Use only FY2026 results from the annual report. The 3,400 additional students is an estimate and must be labeled as one.\n3. Keep the caveat on the confidence survey (41 to 74 percent). Hannah: \"If we drop the caveat, Ruth will find it in the report and we lose her trust.\" Do not present it as proof we caused the change.\n4. No student photos and no last names. Wren's quote may be used with first name and age only; consent is on file.\n5. Eight slides or fewer. The ask gets its own slide with the full $68,500 budget and the $45,000 gap stated plainly.",
+      "locator": "para. 8",
+      "source_title": "Notes",
+      "source_id": "s_b5691fbf59c8"
+    },
+    "P9": {
+      "text": "Dela will send Teo the report file and brand sheet this week.",
+      "locator": "para. 9",
+      "source_title": "Notes",
+      "source_id": "s_b5691fbf59c8"
+    },
+    "P10": {
+      "text": "Action: Teo owns the draft.",
+      "locator": "para. 10",
+      "source_title": "Notes",
+      "source_id": "s_b5691fbf59c8"
+    }
+  },
+  "grounding": [
+    {
+      "path": "subtitle",
+      "value": "45000",
+      "shown": "$45,000",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "2027",
+      "shown": "2027",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.0",
+      "value": "11",
+      "shown": "11",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.1",
+      "value": "2025",
+      "shown": "2025",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.2",
+      "value": "70",
+      "shown": "70",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.0",
+      "value": "40",
+      "shown": "40",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.1",
+      "value": "20",
+      "shown": "20",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.2",
+      "value": "31",
+      "shown": "31",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.2",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.3",
+      "value": "6820",
+      "shown": "6,820",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.3",
+      "value": "3",
+      "shown": "3",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.3",
+      "value": "8",
+      "shown": "8",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.4",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.0",
+      "value": "2027",
+      "shown": "2027",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.1",
+      "value": "20",
+      "shown": "20",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.2",
+      "value": "3400",
+      "shown": "3,400",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.4",
+      "value": "6",
+      "shown": "6",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.4",
+      "value": "8",
+      "shown": "8",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.0",
+      "value": "I feel confident speaking in front of my class at school",
+      "shown": "I feel confident speaking in front of my class at school",
+      "status": "ok",
+      "kind": "quote"
+    },
+    {
+      "path": "slides.3.bullets.1",
+      "value": "41%",
+      "shown": "41 percent",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.1",
+      "value": "74%",
+      "shown": "74 percent",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.4",
+      "value": "97",
+      "shown": "97",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.4",
+      "value": "142",
+      "shown": "142",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.5",
+      "value": "83%",
+      "shown": "83 percent",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.5",
+      "value": "98",
+      "shown": "98",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.5",
+      "value": "118",
+      "shown": "118",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.6",
+      "value": "13",
+      "shown": "13",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.6",
+      "value": "17",
+      "shown": "17",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.6",
+      "value": "19",
+      "shown": "19",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.0",
+      "value": "I used to eat lunch in the library so nobody would talk to me. Now I'm the one who shows the new kids where the stage door is.",
+      "shown": "I used to eat lunch in the library so nobody would talk to me. Now I'm the one who shows the new kids where the stage door is.",
+      "status": "ok",
+      "kind": "quote"
+    },
+    {
+      "path": "slides.4.bullets.1",
+      "value": "13",
+      "shown": "13",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.1",
+      "value": "2026",
+      "shown": "2026",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.heading",
+      "value": "45000",
+      "shown": "$45,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.0",
+      "value": "68500",
+      "shown": "$68,500",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.1",
+      "value": "44000",
+      "shown": "$44,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.2",
+      "value": "9600",
+      "shown": "$9,600",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.3",
+      "value": "8900",
+      "shown": "$8,900",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.4",
+      "value": "6000",
+      "shown": "$6,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.5",
+      "value": "23500",
+      "shown": "$23,500",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.6",
+      "value": "600",
+      "shown": "$600",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.6",
+      "value": "12000",
+      "shown": "$12,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.7",
+      "value": "2026",
+      "shown": "2026",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.7",
+      "value": "11500",
+      "shown": "$11,500",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.8",
+      "value": "45000",
+      "shown": "$45,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.9",
+      "value": "2027",
+      "shown": "2027",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.0",
+      "value": "412600",
+      "shown": "$412,600",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.0",
+      "value": "416200",
+      "shown": "$416,200",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.0",
+      "value": "3600",
+      "shown": "$3,600",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.1",
+      "value": "81%",
+      "shown": "81 percent",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.2",
+      "value": "61%",
+      "shown": "61 percent",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.2",
+      "value": "87",
+      "shown": "87",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.2",
+      "value": "142",
+      "shown": "142",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.3",
+      "value": "312",
+      "shown": "312",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.5",
+      "value": "2",
+      "shown": "2",
+      "status": "ok",
+      "kind": "number"
+    }
+  ],
+  "exhibits": [],
+  "check": [
+    "All 50 numbers and quotes found in your sources; 1 citation corrected"
+  ],
+  "pills": [
+    {
+      "id": "sources",
+      "tone": "good",
+      "label": "All 50 numbers and quotes found in your sources; 1 citation corrected"
+    },
+    {
+      "id": "contrast",
+      "tone": "good",
+      "label": "Contrast passes, lowest 3.8:1"
+    },
+    {
+      "id": "never",
+      "tone": "good",
+      "label": "No never-say words"
+    },
+    {
+      "id": "fonts",
+      "tone": "good",
+      "label": "Kit fonts used"
+    },
+    {
+      "id": "money",
+      "tone": "warn",
+      "label": "The deck leaves out $221,400, $58,300, $46,800, $38,700 and more from Report, “Expenses”; Report, “Funding mix”"
+    },
+    {
+      "id": "relation",
+      "tone": "warn",
+      "label": "Check the wording against the source: “every”"
+    }
+  ],
+  "slide_count": 8,
+  "seconds": 47.1
+}

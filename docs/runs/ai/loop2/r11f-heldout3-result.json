@@ -1,0 +1,1453 @@
+{
+  "set": "heldout3",
+  "tag": "r11f-heldout3",
+  "steps": {
+    "brand": {
+      "status": "done",
+      "seconds": 0.0
+    },
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 109.7,
+      "error": null
+    }
+  },
+  "started": 1794230223.011261,
+  "sources": [
+    "annual-report.md",
+    "board-notes.txt"
+  ],
+  "kit": {
+    "id": "k_d1819250d514",
+    "name": "Pasted colors",
+    "colors": [
+      {
+        "hex": "#5b3a6e",
+        "role": "head",
+        "name": "Heather"
+      },
+      {
+        "hex": "#d9962b",
+        "role": "accent",
+        "name": "Marigold"
+      }
+    ],
+    "paper": "#faf7f2",
+    "ink": "#2b2b2b",
+    "kit_json": {
+      "name": "Pasted colors",
+      "origin": "import",
+      "origin_note": "Pasted color codes",
+      "org": "",
+      "subject": "",
+      "signature": "",
+      "paper": "#faf7f2",
+      "ink": "#2b2b2b",
+      "colors": [
+        {
+          "hex": "#5b3a6e",
+          "role": "head",
+          "name": "Heather"
+        },
+        {
+          "hex": "#d9962b",
+          "role": "accent",
+          "name": "Marigold"
+        }
+      ],
+      "type": {
+        "heading": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 700
+        },
+        "body": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 400
+        },
+        "scale": 1.25
+      },
+      "layout": "banner",
+      "density": "medium",
+      "voice": {
+        "notes": "",
+        "delivery": "",
+        "never": [],
+        "pairs": [],
+        "draft": false
+      },
+      "rules": {
+        "sources": true,
+        "page_numbers": true,
+        "date": true,
+        "required": []
+      },
+      "imported_from": {
+        "kind": "paste",
+        "label": "Pasted colors",
+        "ref": "",
+        "sha256": "",
+        "license_note": "",
+        "brand_named": false,
+        "mode": "",
+        "imported_at": 1794230223.018131
+      },
+      "logo": null,
+      "logo_alt": null,
+      "fonts": [],
+      "id": "k_d1819250d514",
+      "version": 1,
+      "created_at": 1794230223.019687,
+      "updated_at": 1794230223.019687,
+      "starter": false
+    }
+  },
+  "guide_and_summaries_seconds": 13.3,
+  "guide": {
+    "by": "Written by your Hermes model",
+    "guide": [
+      {
+        "text": "These sources are the FY2026 annual report and September 17, 2026 board notes for Thistledown Rides, a sample nonprofit.",
+        "chips": [
+          {
+            "ref": "P1",
+            "n": 1,
+            "source_n": 1,
+            "source": "Annual report",
+            "locator": "“Thistledown Rides: FY2026 Annual Report (Sample)”",
+            "source_id": "s_fbb163df48b2"
+          },
+          {
+            "ref": "P9",
+            "n": 2,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 1",
+            "source_id": "s_da2df763d83f"
+          }
+        ]
+      },
+      {
+        "text": "Volunteer drivers give older adults in Marrow County free rides to medical visits, and they gave 4,312 one-way rides this year.",
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "Annual report",
+            "locator": "“Who we are”",
+            "source_id": "s_fbb163df48b2"
+          },
+          {
+            "ref": "P3",
+            "n": 2,
+            "source_n": 1,
+            "source": "Annual report",
+            "locator": "“The year in numbers”",
+            "source_id": "s_fbb163df48b2"
+          }
+        ]
+      },
+      {
+        "text": "The group could not fill 538 ride requests, about one in nine, and dialysis rides are the hardest to cover.",
+        "chips": [
+          {
+            "ref": "P3",
+            "n": 1,
+            "source_n": 1,
+            "source": "Annual report",
+            "locator": "“The year in numbers”",
+            "source_id": "s_fbb163df48b2"
+          },
+          {
+            "ref": "P5",
+            "n": 2,
+            "source_n": 1,
+            "source": "Annual report",
+            "locator": "“Dialysis riders”",
+            "source_id": "s_fbb163df48b2"
+          }
+        ]
+      },
+      {
+        "text": "Spending was $164,800 and income was $171,200, and each one-way ride cost about $38.",
+        "chips": [
+          {
+            "ref": "P7",
+            "n": 1,
+            "source_n": 1,
+            "source": "Annual report",
+            "locator": "“Money”",
+            "source_id": "s_fbb163df48b2"
+          }
+        ]
+      },
+      {
+        "text": "The board will ask the Fallow Creek Foundation for $62,000 a year for two years to pay for a full-time ride coordinator.",
+        "chips": [
+          {
+            "ref": "P13",
+            "n": 1,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 5",
+            "source_id": "s_da2df763d83f"
+          }
+        ]
+      }
+    ],
+    "asks": [
+      {
+        "id": "a1",
+        "who": "Odalys",
+        "what": "A short deck for the Fallow Creek Foundation's site visit",
+        "by": "",
+        "kind": "deck",
+        "chips": [
+          {
+            "ref": "P13",
+            "n": 1,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 5",
+            "source_id": "s_da2df763d83f"
+          }
+        ],
+        "brief": {
+          "who": "Fallow Creek Foundation site visit staff",
+          "goal": "Fund $62,000 a year for two years for a ride coordinator",
+          "length": "No more than eight slides"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "text": "A coordinator would fill about 300 of the 538 turned-down requests, so 238 stay unfilled. With only a $6,400 surplus, how will the January rise on the $18,900 insurance bill get covered?",
+        "chips": [
+          {
+            "ref": "P3",
+            "n": 1,
+            "source_n": 1,
+            "source": "Annual report",
+            "locator": "“The year in numbers”",
+            "source_id": "s_fbb163df48b2"
+          },
+          {
+            "ref": "P8",
+            "n": 2,
+            "source_n": 1,
+            "source": "Annual report",
+            "locator": "“Looking ahead”",
+            "source_id": "s_fbb163df48b2"
+          },
+          {
+            "ref": "P7",
+            "n": 3,
+            "source_n": 1,
+            "source": "Annual report",
+            "locator": "“Money”",
+            "source_id": "s_fbb163df48b2"
+          },
+          {
+            "ref": "P11",
+            "n": 4,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 3",
+            "source_id": "s_da2df763d83f"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "Two of the 31 dialysis riders were hospitalized after missed treatments, but nobody knows if a ride was the cause. Should the deck use that fact at all?",
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "Annual report",
+            "locator": "“Dialysis riders”",
+            "source_id": "s_fbb163df48b2"
+          },
+          {
+            "ref": "P13",
+            "n": 2,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 5",
+            "source_id": "s_da2df763d83f"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "Each ride costs about $38, and the county grant already gives $72,000. How will the deck show that the $62,000 yearly ask is not the whole budget?",
+        "chips": [
+          {
+            "ref": "P7",
+            "n": 1,
+            "source_n": 1,
+            "source": "Annual report",
+            "locator": "“Money”",
+            "source_id": "s_fbb163df48b2"
+          },
+          {
+            "ref": "P13",
+            "n": 2,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 5",
+            "source_id": "s_da2df763d83f"
+          }
+        ],
+        "suggestion": true
+      }
+    ],
+    "source_ids": [
+      "s_fbb163df48b2",
+      "s_da2df763d83f"
+    ],
+    "created_at": 1794230236.306901
+  },
+  "brief": {
+    "who": "Funders",
+    "goal": "Fund $62,000 a year for two years for a ride coordinator",
+    "length": "7 to 9 slides"
+  },
+  "outline": {},
+  "deck_seconds": 109.7,
+  "output_id": "o_973228c1897d",
+  "case": "We turned away 538 ride requests in FY2026, about one in nine, and older adults in Marrow County miss medical care without a ride. We ask the Fallow Creek Foundation for $62,000 a year for two years to fund a full-time ride coordinator. Staff estimate the coordinator could fill about 300 more requests a year.",
+  "argument": {
+    "reader": "Fallow Creek Foundation staff at the site visit, who decide whether to fund a full-time ride coordinator at $62,000 a year for two years.",
+    "instructions": [
+      {
+        "said": "No more than eight slides.",
+        "refs": [
+          "P13"
+        ],
+        "met_by": "lead"
+      },
+      {
+        "said": "lead with the riders we turn away, not with how many rides we give.",
+        "refs": [
+          "P13"
+        ],
+        "met_by": "lead"
+      },
+      {
+        "said": "be careful with the two hospitalizations. Say we don't know a missed ride was the cause, or leave them out.",
+        "refs": [
+          "P13"
+        ],
+        "met_by": "point 2"
+      },
+      {
+        "said": "the 300 more rides is a staff estimate. Say so.",
+        "refs": [
+          "P13"
+        ],
+        "met_by": "point 4"
+      },
+      {
+        "said": "show what one ride costs and what the county grant already covers, so they see this is not our whole budget.",
+        "refs": [
+          "P13"
+        ],
+        "met_by": "counter"
+      },
+      {
+        "said": "Not for outside use.",
+        "refs": [
+          "P11"
+        ],
+        "met_by": "left out"
+      }
+    ],
+    "lead": {
+      "heading": "We turned away 538 ride requests last year, about one in nine",
+      "type": "exhibit",
+      "evidence": [
+        {
+          "text": "We could not fill 538 ride requests in FY2026, about one in nine.",
+          "refs": [
+            "P3"
+          ]
+        },
+        {
+          "text": "We gave 4,312 one-way rides in FY2026, up from 3,240 the year before.",
+          "refs": [
+            "P3"
+          ]
+        },
+        {
+          "text": "Most unfilled requests came less than two days ahead or were for early-morning dialysis.",
+          "refs": [
+            "P3"
+          ]
+        }
+      ]
+    },
+    "points": [
+      {
+        "heading": "Without a ride, older adults in Marrow County miss medical care",
+        "type": "figures",
+        "evidence": [
+          {
+            "text": "84 percent of 212 surveyed riders said they would have missed at least one appointment without Thistledown.",
+            "refs": [
+              "P4"
+            ]
+          },
+          {
+            "text": "39 percent said they had put off care because they could not get a ride.",
+            "refs": [
+              "P4"
+            ]
+          },
+          {
+            "text": "The county has no bus outside Kestrel, and a taxi from the hill towns costs about $90 each way.",
+            "refs": [
+              "P2"
+            ]
+          },
+          {
+            "text": "A Pell Hollow rider wrote: \"Before you, I rescheduled my eye surgery twice.\"",
+            "refs": [
+              "P4"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Dialysis riders need three early rides a week, and some go unfilled",
+        "type": "content",
+        "evidence": [
+          {
+            "text": "A dialysis patient needs three rides a week, every week, usually starting before 7 a.m.",
+            "refs": [
+              "P5"
+            ]
+          },
+          {
+            "text": "We drove 31 dialysis riders this year, and 19 of the 538 unfilled rides were dialysis rides.",
+            "refs": [
+              "P5"
+            ]
+          },
+          {
+            "text": "When a dialysis ride falls through, the patient pays for a taxi or misses a treatment.",
+            "refs": [
+              "P5"
+            ]
+          },
+          {
+            "text": "The kidney unit said two of our riders were hospitalized after missed treatments. We do not know whether a ride was the cause.",
+            "refs": [
+              "P5"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "A four-hour ride line and a part-time scheduler cannot keep up",
+        "type": "content",
+        "evidence": [
+          {
+            "text": "The ride line is open only four hours a day, weekdays 9 a.m. to 1 p.m.",
+            "refs": [
+              "P2",
+              "P8"
+            ]
+          },
+          {
+            "text": "One part-time scheduler answers the line and also matches drivers to rides.",
+            "refs": [
+              "P2",
+              "P8"
+            ]
+          },
+          {
+            "text": "23 of our 71 drivers are over 75, and 14 drivers stopped this year.",
+            "refs": [
+              "P6"
+            ]
+          },
+          {
+            "text": "We trained 22 new drivers this year to keep up.",
+            "refs": [
+              "P6"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "A full-time coordinator could fill about 300 more requests a year",
+        "type": "comparison",
+        "evidence": [
+          {
+            "text": "Today the scheduler job is half-time; the plan makes it a full-time ride coordinator.",
+            "refs": [
+              "P13"
+            ]
+          },
+          {
+            "text": "Today the line is open 9 to 1; the plan keeps it open 9 to 5.",
+            "refs": [
+              "P2",
+              "P13"
+            ]
+          },
+          {
+            "text": "The coordinator would recruit and schedule a standing team of dialysis drivers.",
+            "refs": [
+              "P8"
+            ]
+          },
+          {
+            "text": "Staff estimate the coordinator could fill about 300 more requests a year. This is a staff estimate.",
+            "refs": [
+              "P8",
+              "P13"
+            ]
+          }
+        ]
+      }
+    ],
+    "counter": {
+      "objection": "Are we being asked to pay for your whole program?",
+      "heading": "Others already fund most rides; this grant pays for one role",
+      "type": "figures",
+      "evidence": [
+        {
+          "text": "Each one-way ride cost us about $38.",
+          "refs": [
+            "P7"
+          ]
+        },
+        {
+          "text": "The county's Area Agency on Aging grant already gives $72,000 of our $164,800 spending.",
+          "refs": [
+            "P7"
+          ]
+        },
+        {
+          "text": "Two foundation grants gave $48,000, church and individual gifts $38,700, and United Way $12,500.",
+          "refs": [
+            "P7"
+          ]
+        },
+        {
+          "text": "Income was $171,200 against spending of $164,800 in FY2026.",
+          "refs": [
+            "P7"
+          ]
+        }
+      ]
+    },
+    "ask": {
+      "heading": "Fund a full-time ride coordinator at $62,000 a year for two years",
+      "amount": "$62,000 a year for two years",
+      "buys": [
+        "A full-time ride coordinator, turning the half-time scheduler job into a full-time one",
+        "A ride line open 9 to 5 on weekdays",
+        "A standing team of dialysis drivers, recruited and scheduled by the coordinator"
+      ],
+      "by_when": "Two years; application due December 1",
+      "rest": "The county Area Agency on Aging grant ($72,000), two foundation grants ($48,000), church and individual gifts ($38,700) and United Way ($12,500) fund the rest of the work. The sources do not say what happens after the grant.",
+      "report": "",
+      "refs": [
+        "P7",
+        "P8",
+        "P13"
+      ],
+      "none_in_sources": false
+    },
+    "faults": []
+  },
+  "neutral": {
+    "title": "A Full-Time Coordinator to Fill Missed Rides",
+    "subtitle": "For the Fallow Creek Foundation: rides for older adults in Marrow County",
+    "slides": [
+      {
+        "type": "exhibit",
+        "refs": [
+          "P3"
+        ],
+        "heading": "We turned away 538 ride requests last year, about one in nine",
+        "unit": "One-way rides given",
+        "bars": [
+          {
+            "label": "FY2025",
+            "value": "3,240",
+            "ref": "P3"
+          },
+          {
+            "label": "FY2026",
+            "value": "4,312",
+            "ref": "P3",
+            "accent": true
+          }
+        ],
+        "note": "Most requests we could not fill came less than two days ahead or were for early-morning dialysis.",
+        "subhead": "We gave 1,072 more rides than in FY2025, and still could not keep up"
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P2",
+          "P4"
+        ],
+        "heading": "Without a ride, older adults in Marrow County miss medical care",
+        "figures": [
+          {
+            "value": "84 percent",
+            "label": "Riders who would have missed an appointment",
+            "context": "At least one in the past year, of 212 surveyed",
+            "ref": "P4"
+          },
+          {
+            "value": "39 percent",
+            "label": "Riders who had put off care",
+            "context": "Because they could not get a ride before us",
+            "ref": "P4"
+          },
+          {
+            "value": "$90",
+            "label": "About what a taxi costs each way",
+            "context": "From the hill towns; no bus runs outside Kestrel",
+            "ref": "P2"
+          }
+        ]
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P5"
+        ],
+        "heading": "Dialysis riders need three early rides a week, and some go unfilled",
+        "figures": [
+          {
+            "value": "3",
+            "label": "Rides a dialysis patient needs each week",
+            "context": "Every week, usually starting before 7 a.m.",
+            "ref": "P5"
+          },
+          {
+            "value": "31",
+            "label": "Dialysis riders we drove this year",
+            "context": "Dialysis is the hardest need for us to meet",
+            "ref": "P5"
+          },
+          {
+            "value": "19",
+            "label": "Unfilled requests that were dialysis rides",
+            "context": "The patient then pays for a taxi or misses treatment",
+            "ref": "P5"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P2",
+          "P6",
+          "P8"
+        ],
+        "heading": "A four-hour ride line and a part-time scheduler cannot keep up",
+        "bullets": [
+          {
+            "text": "How long the ride line is open, weekdays 9 a.m. to 1 p.m.",
+            "ref": "P2",
+            "figure": "4 hours"
+          },
+          {
+            "text": "Part-time scheduler who answers the line and also matches drivers",
+            "ref": "P8",
+            "figure": "1"
+          },
+          {
+            "text": "Of our 71 drivers who are over 75 themselves",
+            "ref": "P6",
+            "figure": "23"
+          },
+          {
+            "text": "Drivers who stopped this year, most for their own health",
+            "ref": "P6",
+            "figure": "14"
+          },
+          {
+            "text": "New drivers we trained this year to keep up",
+            "ref": "P6",
+            "figure": "22"
+          }
+        ]
+      },
+      {
+        "type": "comparison",
+        "refs": [
+          "P2",
+          "P3",
+          "P8",
+          "P13"
+        ],
+        "heading": "A full-time coordinator could fill about 300 more requests a year",
+        "left_label": "Today",
+        "left_items": [],
+        "right_label": "With a full-time coordinator",
+        "right_items": [],
+        "rows": [
+          {
+            "label": "Staff role",
+            "left": "Half-time scheduler",
+            "right": "Full-time ride coordinator",
+            "ref": "P13"
+          },
+          {
+            "label": "Ride line hours",
+            "left": "9 a.m. to 1 p.m.",
+            "right": "9 a.m. to 5 p.m.",
+            "ref": "P13"
+          },
+          {
+            "label": "Dialysis drivers",
+            "left": "Matched ride by ride",
+            "right": "Standing team, recruited and scheduled",
+            "ref": "P8"
+          },
+          {
+            "label": "Requests filled",
+            "left": "About one in nine go unfilled",
+            "right": "About 300 more a year (staff estimate)",
+            "ref": "P8"
+          }
+        ]
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P7"
+        ],
+        "heading": "Others already fund most rides; this grant pays for one role",
+        "figures": [
+          {
+            "value": "$38",
+            "label": "About what each one-way ride cost us",
+            "context": "Riders pay nothing for their rides",
+            "ref": "P7"
+          },
+          {
+            "value": "$72,000",
+            "label": "County Area Agency on Aging grant",
+            "context": "Covers part of our $164,800 FY2026 spending",
+            "ref": "P7"
+          },
+          {
+            "value": "$38,700",
+            "label": "Church and individual gifts",
+            "context": "Two foundation grants gave another $48,000",
+            "ref": "P7"
+          },
+          {
+            "value": "$12,500",
+            "label": "United Way grant",
+            "context": "Part of $171,200 in FY2026 income",
+            "ref": "P7"
+          }
+        ]
+      },
+      {
+        "type": "closing",
+        "refs": [
+          "P7",
+          "P8",
+          "P13"
+        ],
+        "heading": "Fund a full-time ride coordinator at $62,000 a year for two years",
+        "text": "One full-time coordinator lets us answer more of the older adults we now turn away.",
+        "cta": "Join us for two years; our application is due December 1.",
+        "amount": "$62,000",
+        "amount_label": "A year for two years for a ride coordinator"
+      }
+    ],
+    "from_outline": true,
+    "max_slides": 9
+  },
+  "live": {
+    "title": "A Full-Time Coordinator to Fill Missed Rides",
+    "subtitle": "For the Fallow Creek Foundation: rides for older adults in Marrow County",
+    "slides": [
+      {
+        "type": "exhibit",
+        "refs": [
+          "P3"
+        ],
+        "heading": "We turned away 538 ride requests last year, about one in nine",
+        "unit": "One-way rides given",
+        "bars": [
+          {
+            "label": "FY2025",
+            "value": "3,240",
+            "ref": "P3"
+          },
+          {
+            "label": "FY2026",
+            "value": "4,312",
+            "ref": "P3",
+            "accent": true
+          }
+        ],
+        "note": "Most requests we could not fill came less than two days ahead or were for early-morning dialysis.",
+        "subhead": "We gave 1,072 more rides than in FY2025, and still could not keep up"
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P2",
+          "P4"
+        ],
+        "heading": "Without a ride, older adults in Marrow County miss medical care",
+        "figures": [
+          {
+            "value": "84 percent",
+            "label": "Riders who would have missed an appointment",
+            "context": "At least one in the past year, of 212 surveyed",
+            "ref": "P4"
+          },
+          {
+            "value": "39 percent",
+            "label": "Riders who had put off care",
+            "context": "Because they could not get a ride before us",
+            "ref": "P4"
+          },
+          {
+            "value": "$90",
+            "label": "About what a taxi costs each way",
+            "context": "From the hill towns; no bus runs outside Kestrel",
+            "ref": "P2"
+          }
+        ]
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P5"
+        ],
+        "heading": "Dialysis riders need three early rides a week, and some go unfilled",
+        "figures": [
+          {
+            "value": "3",
+            "label": "Rides a dialysis patient needs each week",
+            "context": "Every week, usually starting before 7 a.m.",
+            "ref": "P5"
+          },
+          {
+            "value": "31",
+            "label": "Dialysis riders we drove this year",
+            "context": "Dialysis is the hardest need for us to meet",
+            "ref": "P5"
+          },
+          {
+            "value": "19",
+            "label": "Unfilled requests that were dialysis rides",
+            "context": "The patient then pays for a taxi or misses treatment",
+            "ref": "P5"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P2",
+          "P6",
+          "P8"
+        ],
+        "heading": "A four-hour ride line and a part-time scheduler cannot keep up",
+        "bullets": [
+          {
+            "text": "How long the ride line is open, weekdays 9 a.m. to 1 p.m.",
+            "ref": "P10",
+            "figure": "4 hours"
+          },
+          {
+            "text": "Part-time scheduler who answers the line and also matches drivers",
+            "ref": "P11",
+            "figure": "1"
+          },
+          {
+            "text": "Of our 71 drivers who are over 75 themselves",
+            "ref": "P6",
+            "figure": "23"
+          },
+          {
+            "text": "Drivers who stopped this year, most for their own health",
+            "ref": "P6",
+            "figure": "14"
+          },
+          {
+            "text": "New drivers we trained this year to keep up",
+            "ref": "P6",
+            "figure": "22"
+          }
+        ]
+      },
+      {
+        "type": "comparison",
+        "refs": [
+          "P2",
+          "P3",
+          "P8",
+          "P13"
+        ],
+        "heading": "A full-time coordinator could fill about 300 more requests a year",
+        "left_label": "Today",
+        "left_items": [],
+        "right_label": "With a full-time coordinator",
+        "right_items": [],
+        "rows": [
+          {
+            "label": "Staff role",
+            "left": "Half-time scheduler",
+            "right": "Full-time ride coordinator",
+            "ref": "P13"
+          },
+          {
+            "label": "Ride line hours",
+            "left": "9 a.m. to 1 p.m.",
+            "right": "9 a.m. to 5 p.m.",
+            "ref": "P13"
+          },
+          {
+            "label": "Dialysis drivers",
+            "left": "Matched ride by ride",
+            "right": "Standing team, recruited and scheduled",
+            "ref": "P8"
+          },
+          {
+            "label": "Requests filled",
+            "left": "About one in nine go unfilled",
+            "right": "About 300 more a year (staff estimate)",
+            "ref": "P8"
+          }
+        ]
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P7"
+        ],
+        "heading": "Others already fund most rides; this grant pays for one role",
+        "figures": [
+          {
+            "value": "$38",
+            "label": "About what each one-way ride cost us",
+            "context": "Riders pay nothing for their rides",
+            "ref": "P7"
+          },
+          {
+            "value": "$72,000",
+            "label": "County Area Agency on Aging grant",
+            "context": "Covers part of our $164,800 FY2026 spending",
+            "ref": "P7"
+          },
+          {
+            "value": "$38,700",
+            "label": "Church and individual gifts",
+            "context": "Two foundation grants gave another $48,000",
+            "ref": "P7"
+          },
+          {
+            "value": "$12,500",
+            "label": "United Way grant",
+            "context": "Part of $171,200 in FY2026 income",
+            "ref": "P7"
+          }
+        ]
+      },
+      {
+        "type": "closing",
+        "refs": [
+          "P7",
+          "P8",
+          "P13"
+        ],
+        "heading": "Fund a full-time ride coordinator at $62,000 a year for two years",
+        "text": "One full-time coordinator lets us answer more of the older adults we now turn away.",
+        "cta": "Join us for two years; our application is due December 1.",
+        "amount": "$62,000",
+        "amount_label": "A year for two years for a ride coordinator"
+      }
+    ],
+    "from_outline": true,
+    "max_slides": 9
+  },
+  "passages": {
+    "P9": {
+      "text": "THISTLEDOWN RIDES (SAMPLE). BOARD MEETING NOTES, SEPTEMBER 17, 2026\nSample notes. Fictional organization and people.",
+      "locator": "para. 1",
+      "source_title": "Board notes",
+      "source_id": "s_da2df763d83f"
+    },
+    "P10": {
+      "text": "Present: Rev. Augustin Malloy-Fenn (chair), Teodora Quist (treasurer), Odalys Venn-Carraway (director), Hollis\nAberkrombie (scheduler), four board members.",
+      "locator": "para. 2",
+      "source_title": "Board notes",
+      "source_id": "s_da2df763d83f"
+    },
+    "P11": {
+      "text": "1. Treasurer. Year closed with a small surplus. Reserve is about two months of spending. Teodora: the insurance\n carrier has told us our premium will go up in January. We don't have the number yet. Not for outside use.",
+      "locator": "para. 3",
+      "source_title": "Board notes",
+      "source_id": "s_da2df763d83f"
+    },
+    "P12": {
+      "text": "2. Driver recognition dinner set for November 8.",
+      "locator": "para. 4",
+      "source_title": "Board notes",
+      "source_id": "s_da2df763d83f"
+    },
+    "P13": {
+      "text": "3. The ask. The board agreed to ask the Fallow Creek Foundation for $62,000 a year for two years for a full-time\n ride coordinator, which turns Hollis's half-time job into a full-time one and keeps the ride line open 9 to 5.\n Application due December 1.\n - Odalys to make a short deck for the foundation's site visit. No more than eight slides.\n - Augustin: lead with the riders we turn away, not with how many rides we give.\n - Teodora: show what one ride costs and what the county grant already covers, so they see this is not our whole\n budget.\n - Hollis: be careful with the two hospitalizations. Say we don't know a missed ride was the cause, or leave them out.\n - Augustin: the 300 more rides is a staff estimate. Say so.",
+      "locator": "para. 5",
+      "source_title": "Board notes",
+      "source_id": "s_da2df763d83f"
+    },
+    "P14": {
+      "text": "4. Next meeting October 15.",
+      "locator": "para. 6",
+      "source_title": "Board notes",
+      "source_id": "s_da2df763d83f"
+    },
+    "P1": {
+      "text": "*Sample organization. Thistledown Rides, Marrow County, and every person named here are fictional.*\nFiscal year July 2025 to June 2026. Prepared by staff for members, riders, drivers and the board.",
+      "locator": "“Thistledown Rides: FY2026 Annual Report (Sample)”",
+      "source_title": "Annual report",
+      "source_id": "s_fbb163df48b2"
+    },
+    "P2": {
+      "text": "Thistledown Rides gives older adults in Marrow County free rides to medical appointments. A rider calls our office at\nleast two days ahead, a trained volunteer driver picks them up at home in their own car, waits during the visit, and\nbrings them home. Riders must be 65 or older or have a disability that keeps them from driving. Most of our riders\nlive alone. The county has no bus service outside the town of Kestrel, and a taxi from the hill towns to the regional\nhospital in Kestrel costs about $90 each way.\nWe began in 2017 with eight drivers from two churches. Today our staff is a director, Odalys Venn-Carraway, and a\npart-time scheduler, Hollis Aberkrombie, who answers the ride line on weekdays from 9 a.m. to 1 p.m.",
+      "locator": "“Who we are”",
+      "source_title": "Annual report",
+      "source_id": "s_fbb163df48b2"
+    },
+    "P3": {
+      "text": "- **Rides.** We gave 4,312 one-way rides, up from 3,240 the year before.\n- **Riders.** 486 different riders used the service, up from 401.\n- **Drivers.** 71 active volunteer drivers gave 9,640 hours and drove about 118,000 miles.\n- **Appointments.** 61 percent of rides were to primary care or specialist visits, 22 percent to dialysis or cancer\n treatment, and the rest to physical therapy, eye care and the pharmacy.\n- **Turned down.** We could not fill 538 ride requests, about one in nine. Most were requests made less than two days\n ahead, or for early-morning dialysis, when few drivers are free.",
+      "locator": "“The year in numbers”",
+      "source_title": "Annual report",
+      "source_id": "s_fbb163df48b2"
+    },
+    "P4": {
+      "text": "In our April 2026 rider survey (212 riders answered), 84 percent said they would have missed at least one appointment\nin the past year without Thistledown. 39 percent said they had put off care because they could not get a ride before\nthey found us. One rider from Pell Hollow wrote: \"My daughter lives four hours away. Before you, I rescheduled my eye\nsurgery twice.\"",
+      "locator": "“What riders told us”",
+      "source_title": "Annual report",
+      "source_id": "s_fbb163df48b2"
+    },
+    "P5": {
+      "text": "Dialysis is the hardest need to meet. A dialysis patient needs three rides a week, every week, usually starting before\n7 a.m. We drove 31 dialysis riders this year, and 19 of the 538 rides we could not fill were dialysis rides. When a\ndialysis ride falls through, the patient either pays for a taxi or misses a treatment. The regional hospital's kidney\nunit told us that two of our riders were hospitalized after missed treatments this year. We do not know whether a ride\nwas the cause.",
+      "locator": "“Dialysis riders”",
+      "source_title": "Annual report",
+      "source_id": "s_fbb163df48b2"
+    },
+    "P6": {
+      "text": "Our drivers are mostly retired, and 23 of the 71 are over 75 themselves. Fourteen drivers stopped this year, most\nfor their own health. We trained 22 new drivers. Every driver passes a background check and a driving-record check\nand takes a two-hour safety course. Drivers are paid back 45 cents a mile for gas if they ask; about half do.",
+      "locator": "“Drivers”",
+      "source_title": "Annual report",
+      "source_id": "s_fbb163df48b2"
+    },
+    "P7": {
+      "text": "FY2026 spending was $164,800: staff $98,500, mileage paid back to drivers $26,600, insurance $18,900, background checks\nand training $7,200, phone and scheduling software $6,400, and office costs $7,200.\nIncome was $171,200: the county's Area Agency on Aging grant $72,000, two foundation grants $48,000, church and\nindividual gifts $38,700, and a United Way grant of $12,500. Riders pay nothing. Each one-way ride cost us about\n$38.",
+      "locator": "“Money”",
+      "source_title": "Annual report",
+      "source_id": "s_fbb163df48b2"
+    },
+    "P8": {
+      "text": "The ride line is open only four hours a day, and Hollis is also the person who matches drivers to rides. Staff\nestimate that a full-time ride coordinator could fill about 300 more requests a year, mostly by recruiting and\nscheduling a standing team of dialysis drivers and by keeping the line open until 5 p.m. The board has asked staff\nto find the funding before the county's grant cycle in spring.",
+      "locator": "“Looking ahead”",
+      "source_title": "Annual report",
+      "source_id": "s_fbb163df48b2"
+    }
+  },
+  "grounding": [
+    {
+      "path": "slides.3.bullets.0",
+      "value": "9",
+      "shown": "9",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.0",
+      "value": "1",
+      "shown": "1",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.0.figure",
+      "value": "9",
+      "shown": "9",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.0.figure",
+      "value": "1",
+      "shown": "1",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.heading",
+      "value": "538",
+      "shown": "538",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.heading",
+      "value": "9",
+      "shown": "nine",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.subhead",
+      "value": "1072",
+      "shown": "1,072",
+      "status": "computed",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bars.0",
+      "value": "3240",
+      "shown": "3,240",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bars.1",
+      "value": "4312",
+      "shown": "4,312",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.0",
+      "value": "84%",
+      "shown": "84 percent",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.0",
+      "value": "212",
+      "shown": "212",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.1",
+      "value": "39%",
+      "shown": "39 percent",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.2",
+      "value": "90",
+      "shown": "$90",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.heading",
+      "value": "3",
+      "shown": "three",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.figures.0",
+      "value": "3",
+      "shown": "3",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.figures.0",
+      "value": "7",
+      "shown": "7",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.figures.1",
+      "value": "31",
+      "shown": "31",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.figures.2",
+      "value": "19",
+      "shown": "19",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.heading",
+      "value": "4",
+      "shown": "four",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.0.figure",
+      "value": "4",
+      "shown": "4",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.1.figure",
+      "value": "1",
+      "shown": "1",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.2",
+      "value": "71",
+      "shown": "71",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.2",
+      "value": "75",
+      "shown": "75",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.2.figure",
+      "value": "23",
+      "shown": "23",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.2.figure",
+      "value": "71",
+      "shown": "71",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.2.figure",
+      "value": "75",
+      "shown": "75",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.3.figure",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.4.figure",
+      "value": "22",
+      "shown": "22",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.heading",
+      "value": "300",
+      "shown": "300",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.rows.1",
+      "value": "9",
+      "shown": "9",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.rows.1",
+      "value": "1",
+      "shown": "1",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.rows.1",
+      "value": "5",
+      "shown": "5",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.rows.3",
+      "value": "300",
+      "shown": "300",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.figures.0",
+      "value": "38",
+      "shown": "$38",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.figures.1",
+      "value": "72000",
+      "shown": "$72,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.figures.1",
+      "value": "164800",
+      "shown": "$164,800",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.figures.2",
+      "value": "38700",
+      "shown": "$38,700",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.figures.2",
+      "value": "48000",
+      "shown": "$48,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.figures.3",
+      "value": "12500",
+      "shown": "$12,500",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.figures.3",
+      "value": "171200",
+      "shown": "$171,200",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.heading",
+      "value": "62000",
+      "shown": "$62,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.heading",
+      "value": "2",
+      "shown": "two",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.cta",
+      "value": "1",
+      "shown": "1",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.amount",
+      "value": "62000",
+      "shown": "$62,000",
+      "status": "ok",
+      "kind": "number"
+    }
+  ],
+  "exhibits": [
+    {
+      "type": "exhibit",
+      "refs": [
+        "P3"
+      ],
+      "heading": "We turned away 538 ride requests last year, about one in nine",
+      "unit": "One-way rides given",
+      "bars": [
+        {
+          "label": "FY2025",
+          "value": "3,240",
+          "ref": "P3"
+        },
+        {
+          "label": "FY2026",
+          "value": "4,312",
+          "ref": "P3",
+          "accent": true
+        }
+      ],
+      "note": "Most requests we could not fill came less than two days ahead or were for early-morning dialysis.",
+      "subhead": "We gave 1,072 more rides than in FY2025, and still could not keep up"
+    }
+  ],
+  "check": [
+    "All 44 numbers and quotes found in your sources; 1 worked out from them; 2 citations corrected"
+  ],
+  "pills": [
+    {
+      "id": "sources",
+      "tone": "good",
+      "label": "All 44 numbers and quotes found in your sources; 1 worked out from them; 2 citations corrected"
+    },
+    {
+      "id": "contrast",
+      "tone": "warn",
+      "label": "Contrast passes; 1 brand color kept to rules and fills"
+    },
+    {
+      "id": "never",
+      "tone": "good",
+      "label": "No never-say words"
+    },
+    {
+      "id": "fonts",
+      "tone": "good",
+      "label": "Kit fonts used"
+    },
+    {
+      "id": "money",
+      "tone": "warn",
+      "label": "The deck leaves out $98,500, $26,600, $18,900, $7,200 and more from Annual report, “Money”"
+    },
+    {
+      "id": "relation",
+      "tone": "warn",
+      "label": "Check the wording against the source: “estimate”"
+    },
+    {
+      "id": "fit",
+      "tone": "warn",
+      "label": "Slide 5 runs long; shorten the wording"
+    }
+  ],
+  "slide_count": 8,
+  "seconds": 124.2
+}

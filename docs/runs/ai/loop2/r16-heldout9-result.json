@@ -1,0 +1,1554 @@
+{
+  "set": "heldout9",
+  "tag": "r16-heldout9",
+  "steps": {
+    "brand": {
+      "status": "done",
+      "seconds": 0.0
+    },
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 21.0,
+      "error": null
+    }
+  },
+  "started": 1794237684.6525261,
+  "sources": [
+    "notes.txt",
+    "report.md"
+  ],
+  "kit": {
+    "id": "k_d7801fdaf25e",
+    "name": "Pasted colors",
+    "colors": [
+      {
+        "hex": "#1f4e5f",
+        "role": "head",
+        "name": "Deep Teal"
+      },
+      {
+        "hex": "#e8a33d",
+        "role": "rule",
+        "name": "Harvest Amber"
+      }
+    ],
+    "paper": "#f4efe6",
+    "ink": "#1b1b1b",
+    "kit_json": {
+      "name": "Pasted colors",
+      "origin": "import",
+      "origin_note": "Pasted color codes",
+      "org": "",
+      "subject": "",
+      "signature": "",
+      "paper": "#f4efe6",
+      "ink": "#1b1b1b",
+      "colors": [
+        {
+          "hex": "#1f4e5f",
+          "role": "head",
+          "name": "Deep Teal"
+        },
+        {
+          "hex": "#e8a33d",
+          "role": "rule",
+          "name": "Harvest Amber"
+        }
+      ],
+      "type": {
+        "heading": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 700
+        },
+        "body": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 400
+        },
+        "scale": 1.25
+      },
+      "layout": "banner",
+      "density": "medium",
+      "voice": {
+        "notes": "",
+        "delivery": "",
+        "never": [],
+        "pairs": [],
+        "draft": false
+      },
+      "rules": {
+        "sources": true,
+        "page_numbers": true,
+        "date": true,
+        "required": []
+      },
+      "imported_from": {
+        "kind": "paste",
+        "label": "Pasted colors",
+        "ref": "",
+        "sha256": "",
+        "license_note": "",
+        "brand_named": false,
+        "mode": "",
+        "imported_at": 1794237684.6643012
+      },
+      "logo": null,
+      "logo_alt": null,
+      "fonts": [],
+      "id": "k_d7801fdaf25e",
+      "version": 1,
+      "created_at": 1794237684.666401,
+      "updated_at": 1794237684.666401,
+      "starter": false
+    }
+  },
+  "guide_and_summaries_seconds": 14.8,
+  "guide": {
+    "by": "Written by your Hermes model",
+    "guide": [
+      {
+        "text": "These sources are fictional board notes and the FY2026 annual report from Breckwater Valley Robotics Club, a rural teen robotics program.",
+        "chips": [
+          {
+            "ref": "P1",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 1",
+            "source_id": "s_6bf79d31932f"
+          },
+          {
+            "ref": "P2",
+            "n": 2,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 2",
+            "source_id": "s_6bf79d31932f"
+          },
+          {
+            "ref": "P11",
+            "n": 3,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "para. 1",
+            "source_id": "s_9922c6fcb95b"
+          },
+          {
+            "ref": "P12",
+            "n": 4,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Breckwater Valley Robotics Club”",
+            "source_id": "s_9922c6fcb95b"
+          },
+          {
+            "ref": "P13",
+            "n": 5,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Who we are”",
+            "source_id": "s_9922c6fcb95b"
+          }
+        ]
+      },
+      {
+        "text": "In FY2026, 64 students enrolled and 52 finished the season, a completion rate of 81 percent.",
+        "chips": [
+          {
+            "ref": "P14",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2026 by the numbers”",
+            "source_id": "s_9922c6fcb95b"
+          }
+        ]
+      },
+      {
+        "text": "The board voted 5-0 to ask the Wickline Rural Futures Fund for $37,400 to pay for one year of expansion.",
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 5",
+            "source_id": "s_6bf79d31932f"
+          }
+        ]
+      },
+      {
+        "text": "The expansion adds Ostrander Rural High School and grows the club from 9 to 12 teams, raising the budget to $186,000.",
+        "chips": [
+          {
+            "ref": "P23",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan and cost”",
+            "source_id": "s_9922c6fcb95b"
+          }
+        ]
+      },
+      {
+        "text": "Of 18 seniors, 14 enrolled in further schooling, but the number is self-reported and the club does not claim it caused the result.",
+        "chips": [
+          {
+            "ref": "P18",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Results, and what we can and cannot claim”",
+            "source_id": "s_9922c6fcb95b"
+          },
+          {
+            "ref": "P19",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Results, and what we can and cannot claim”",
+            "source_id": "s_9922c6fcb95b"
+          }
+        ]
+      }
+    ],
+    "asks": [
+      {
+        "id": "a1",
+        "who": "Hana Ostberg",
+        "what": "A short deck sent ahead of the December 9 presentation",
+        "by": "Friday, December 4, 2026",
+        "kind": "deck",
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 5",
+            "source_id": "s_6bf79d31932f"
+          },
+          {
+            "ref": "P6",
+            "n": 2,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 6",
+            "source_id": "s_6bf79d31932f"
+          },
+          {
+            "ref": "P8",
+            "n": 3,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 8",
+            "source_id": "s_6bf79d31932f"
+          }
+        ],
+        "brief": {
+          "who": "Wickline program officer, reading on phone",
+          "goal": "Decide whether to fund the $37,400 one-year expansion",
+          "length": "Eight slides or fewer"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "text": "The budget rises from $148,600 to $186,000, a $37,400 jump, but the reserve holds only $14,200. If Wickline says no, how does the club cover the $23,200 gap?",
+        "chips": [
+          {
+            "ref": "P16",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“What the money paid for”",
+            "source_id": "s_9922c6fcb95b"
+          },
+          {
+            "ref": "P23",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan and cost”",
+            "source_id": "s_9922c6fcb95b"
+          },
+          {
+            "ref": "P17",
+            "n": 3,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Where the money came from”",
+            "source_id": "s_9922c6fcb95b"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "After one year, the club plans to fold the $37,400 into its base budget by growing fees and donors. Fees brought in $11,800 and donors $31,600. How will those grow that fast?",
+        "chips": [
+          {
+            "ref": "P23",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan and cost”",
+            "source_id": "s_9922c6fcb95b"
+          },
+          {
+            "ref": "P17",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Where the money came from”",
+            "source_id": "s_9922c6fcb95b"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "The 14 of 18 seniors (78 percent) can look better than the county's 51 percent. But that figure is self-reported, from 2023, and has no comparison group. How should the deck present it?",
+        "chips": [
+          {
+            "ref": "P18",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Results, and what we can and cannot claim”",
+            "source_id": "s_9922c6fcb95b"
+          },
+          {
+            "ref": "P19",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Results, and what we can and cannot claim”",
+            "source_id": "s_9922c6fcb95b"
+          },
+          {
+            "ref": "P8",
+            "n": 3,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 8",
+            "source_id": "s_6bf79d31932f"
+          }
+        ],
+        "suggestion": true
+      }
+    ],
+    "source_ids": [
+      "s_6bf79d31932f",
+      "s_9922c6fcb95b"
+    ],
+    "created_at": 1794237699.219079
+  },
+  "brief": {
+    "who": "Funders",
+    "goal": "Decide whether to fund the $37,400 one-year expansion",
+    "length": "7 to 9 slides"
+  },
+  "outline": {},
+  "deck_seconds": 21.0,
+  "output_id": "o_4dea4b916b15",
+  "case": null,
+  "plain_draft": "Slide 1: Breckwater Valley Robotics Club\nProposal to the Wickline Rural Futures Fund\nPresented December 9, 2026\nRequest: $37,400 for one year\nPurpose: add Ostrander Rural High School and grow from 9 to 12 teams\n\nSlide 2: FY2026: 52 Students Finished the Season\n64 students enrolled; 52 completed the full season (81%)\nGrades 9–12 from Breckwater, Ferris Township, and Calloway Consolidated\n23 girls enrolled (36%), up from 14 the year before\n41 of 64 qualified for free or reduced-price meals\n38 of 64 paid no fee\nNearest engineering program: 140 miles away\nNext: Ostrander Rural High School joins in FY2027\n\nSlide 3: What Happened Inside the Program\nEnd-of-season survey, answered by 49 of 52 completers:\n44 felt more confident speaking in front of adults\n40 used a club skill in a class or a job\nIn September, most students could not read a wiring diagram\nBy March, every team had 2+ students who could rebuild their drivetrain without help\n1,180 optional shop hours logged, about 23 per completer\n\"I used to think engineering was something that happened in cities. Now I fix the pivot on my uncle's sprayer and I know why it broke.\" — Mireya, junior, Calloway Consolidated\n\nSlide 4: What Our Seniors Did Next\n14 of 18 seniors (78%) enrolled in college, technical school, or an apprenticeship\n9 of the 14 chose engineering, welding, electrical, ag mechanics, or computer science\nLimits of this number:\nSelf-reported by students and parents, not checked against records\nSmall group: a few changed plans would shift the percentage a lot\nNo comparison group: students who join may already be likely to go on\nWe do not claim the club caused this result\nStarting this year, we are asking seniors for permission to verify enrollment with state records\n\nSlide 5: What FY2026 Taught Us\nThe ride is the program: one van could not cover both routes; on late-van nights, attendance from those schools dropped about a third\nMore girls joined through a small Saturday build session led by Coach Priya Lindqvist\nDemand is ahead of us: we turned away 21 students for lack of coaches and parts\n7 of the 12 students who left went to harvest or calving jobs; we now call anyone who misses two weeks in a row\n\nSlide 6: FY2027 Expansion Plan\nAdd a fourth school: Ostrander Rural High School\nGrow from 9 to 12 teams\nServe about 85 students, up from 64\nNeeded: a second van, a third coach, and parts for three more teams\n\nSlide 7: The Request: $37,400 for One Year\nSecond leased van, insurance, and fuel: $9,800\nThird coach stipend: $12,000\nKits, parts, and tools for three new teams: $11,400\nAdded competition travel and entry fees: $4,200\nTotal: $37,400\nWickline funds pay only for the expansion, not existing operations\nOur $148,600 base budget is covered by our five current funding sources\n\nSlide 8: A Stable Base and a Plan for Year Two\nFY2026 revenue: $150,400 from five sources; expenses: $148,600\nNo single funder provides more than 28% of the budget\nOperating reserve: $14,200\nAfter one year, expansion costs move into our base budget, supported by growing fee and donor revenue\nSupported by volunteer drivers, a landlord who charges half rent, and families at our spring pancake breakfast\nThank you\nContact: Tomas Vrba, Program Coordinator",
+  "plain_record": {
+    "flags": [],
+    "splits": [
+      [
+        2,
+        "moved to open"
+      ],
+      [
+        3,
+        "moved to open"
+      ],
+      [
+        6,
+        "moved to open"
+      ]
+    ],
+    "slides": 8
+  },
+  "argument": null,
+  "neutral": {
+    "title": "Breckwater Valley Robotics Club",
+    "subtitle": "Proposal to the Wickline Rural Futures Fund. Presented December 9, 2026. Request: $37,400 for one year. Purpose: add Ostrander Rural High School and grow from 9 to 12 teams.",
+    "slides": [
+      {
+        "type": "content",
+        "heading": "FY2026: 52 Students Finished the Season",
+        "bullets": [
+          {
+            "text": "students enrolled; 52 completed the full season (81%)",
+            "ref": "P14",
+            "figure": "64",
+            "line": "64 students enrolled; 52 completed the full season (81%)"
+          },
+          {
+            "text": "Grades 9–12 from Breckwater, Ferris Township, and Calloway Consolidated",
+            "ref": "P13"
+          },
+          {
+            "text": "girls enrolled (36%), up from 14 the year before",
+            "ref": "P14",
+            "figure": "23",
+            "line": "23 girls enrolled (36%), up from 14 the year before"
+          },
+          {
+            "text": "of 64 qualified for free or reduced-price meals",
+            "ref": "P14",
+            "figure": "41",
+            "line": "41 of 64 qualified for free or reduced-price meals"
+          },
+          {
+            "text": "of 64 paid no fee",
+            "ref": "P14",
+            "figure": "38",
+            "line": "38 of 64 paid no fee"
+          },
+          {
+            "text": "Nearest engineering program: 140 miles away",
+            "ref": "P13"
+          },
+          {
+            "text": "Next: Ostrander Rural High School joins in FY2027",
+            "ref": "P23"
+          }
+        ],
+        "refs": [
+          "P14",
+          "P13",
+          "P23"
+        ],
+        "shape": "table"
+      },
+      {
+        "type": "content",
+        "heading": "What Happened Inside the Program",
+        "bullets": [
+          {
+            "text": "End-of-season survey, answered by 49 of 52 completers:",
+            "ref": "P20"
+          },
+          {
+            "text": "felt more confident speaking in front of adults",
+            "ref": "P20",
+            "figure": "44",
+            "line": "44 felt more confident speaking in front of adults"
+          },
+          {
+            "text": "used a club skill in a class or a job",
+            "ref": "P20",
+            "figure": "40",
+            "line": "40 used a club skill in a class or a job"
+          },
+          {
+            "text": "In September, most students could not read a wiring diagram",
+            "ref": "P20"
+          },
+          {
+            "text": "By March, every team had 2+ students who could rebuild their drivetrain without help",
+            "ref": "P20"
+          },
+          {
+            "text": "optional shop hours logged, about 23 per completer",
+            "ref": "P14",
+            "figure": "1,180",
+            "line": "1,180 optional shop hours logged, about 23 per completer"
+          },
+          {
+            "text": "\"I used to think engineering was something that happened in cities. Now I fix the pivot on my uncle's sprayer and I know why it broke.\" — Mireya, junior, Calloway Consolidated",
+            "ref": "P21"
+          }
+        ],
+        "refs": [
+          "P20",
+          "P14",
+          "P21"
+        ],
+        "shape": "table"
+      },
+      {
+        "type": "content",
+        "heading": "What Our Seniors Did Next",
+        "bullets": [
+          {
+            "text": "14 of 18 seniors (78%) enrolled in college, technical school, or an apprenticeship",
+            "ref": "P18"
+          },
+          {
+            "text": "9 of the 14 chose engineering, welding, electrical, ag mechanics, or computer science",
+            "ref": "P18"
+          },
+          {
+            "text": "Limits of this number:",
+            "ref": "P19"
+          },
+          {
+            "text": "Self-reported by students and parents, not checked against records",
+            "ref": "P19"
+          },
+          {
+            "text": "Small group: a few changed plans would shift the percentage a lot",
+            "ref": "P19"
+          },
+          {
+            "text": "No comparison group: students who join may already be likely to go on",
+            "ref": "P19"
+          },
+          {
+            "text": "We do not claim the club caused this result",
+            "ref": "P19"
+          },
+          {
+            "text": "Starting this year, we are asking seniors for permission to verify enrollment with state records",
+            "ref": "P19"
+          }
+        ],
+        "refs": [
+          "P18",
+          "P19"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "What FY2026 Taught Us",
+        "bullets": [
+          {
+            "text": "The ride is the program: one van could not cover both routes; on late-van nights, attendance from those schools dropped about a third",
+            "ref": "P22"
+          },
+          {
+            "text": "More girls joined through a small Saturday build session led by Coach Priya Lindqvist",
+            "ref": "P22"
+          },
+          {
+            "text": "Demand is ahead of us: we turned away 21 students for lack of coaches and parts",
+            "ref": "P22"
+          },
+          {
+            "text": "7 of the 12 students who left went to harvest or calving jobs; we now call anyone who misses two weeks in a row",
+            "ref": "P15"
+          }
+        ],
+        "refs": [
+          "P22",
+          "P15"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "figures",
+        "heading": "FY2027 Expansion Plan",
+        "refs": [
+          "P23"
+        ],
+        "lines": [
+          "Add a fourth school: Ostrander Rural High School",
+          "Grow from 9 to 12 teams",
+          "Serve about 85 students, up from 64",
+          "Needed: a second van, a third coach, and parts for three more teams"
+        ],
+        "plain": true,
+        "figures": [
+          {
+            "value": "9",
+            "label": "Grow from 9 to 12 teams",
+            "context": "",
+            "ref": "P23"
+          },
+          {
+            "value": "85",
+            "label": "Serve about 85 students, up from 64",
+            "context": "",
+            "ref": "P14"
+          }
+        ],
+        "note": "Add a fourth school: Ostrander Rural High School. Needed: a second van, a third coach, and parts for three more teams."
+      },
+      {
+        "type": "content",
+        "heading": "The Request: $37,400 for One Year",
+        "bullets": [
+          {
+            "text": "Second leased van, insurance, and fuel",
+            "ref": "P23",
+            "figure": "$9,800",
+            "line": "Second leased van, insurance, and fuel: $9,800"
+          },
+          {
+            "text": "Third coach stipend",
+            "ref": "P5",
+            "figure": "$12,000",
+            "line": "Third coach stipend: $12,000"
+          },
+          {
+            "text": "Kits, parts, and tools for three new teams",
+            "ref": "P23",
+            "figure": "$11,400",
+            "line": "Kits, parts, and tools for three new teams: $11,400"
+          },
+          {
+            "text": "Added competition travel and entry fees",
+            "ref": "P23",
+            "figure": "$4,200",
+            "line": "Added competition travel and entry fees: $4,200"
+          },
+          {
+            "text": "Total",
+            "ref": "P23",
+            "figure": "$37,400",
+            "line": "Total: $37,400"
+          },
+          {
+            "text": "Wickline funds pay only for the expansion, not existing operations",
+            "ref": "P8",
+            "line": "Wickline funds pay only for the expansion, not existing operations"
+          },
+          {
+            "text": "Our $148,600 base budget is covered by our five current funding sources",
+            "ref": "P5",
+            "line": "Our $148,600 base budget is covered by our five current funding sources"
+          }
+        ],
+        "refs": [
+          "P23",
+          "P5",
+          "P8"
+        ],
+        "shape": "money"
+      },
+      {
+        "type": "content",
+        "heading": "A Stable Base and a Plan for Year Two",
+        "bullets": [
+          {
+            "text": "FY2026 revenue: $150,400 from five sources; expenses: $148,600",
+            "ref": "P5"
+          },
+          {
+            "text": "No single funder provides more than 28% of the budget",
+            "ref": "P17"
+          },
+          {
+            "text": "Operating reserve: $14,200",
+            "ref": "P17"
+          },
+          {
+            "text": "After one year, expansion costs move into our base budget, supported by growing fee and donor revenue",
+            "ref": "P23"
+          },
+          {
+            "text": "Supported by volunteer drivers, a landlord who charges half rent, and families at our spring pancake breakfast",
+            "ref": "P24"
+          },
+          {
+            "text": "Thank you",
+            "ref": "P5"
+          },
+          {
+            "text": "Contact: Tomas Vrba, Program Coordinator",
+            "ref": "P5"
+          }
+        ],
+        "refs": [
+          "P17",
+          "P23",
+          "P24",
+          "P5",
+          "P7"
+        ],
+        "comp": "open"
+      }
+    ],
+    "plain": true
+  },
+  "live": {
+    "title": "Breckwater Valley Robotics Club",
+    "subtitle": "Proposal to the Wickline Rural Futures Fund. Presented December 9, 2026. Request: $37,400 for one year. Purpose: add Ostrander Rural High School and grow from 9 to 12 teams.",
+    "slides": [
+      {
+        "type": "content",
+        "heading": "FY2026: 52 Students Finished the Season",
+        "bullets": [
+          {
+            "text": "students enrolled; 52 completed the full season (81%)",
+            "ref": "P14",
+            "figure": "64",
+            "line": "64 students enrolled; 52 completed the full season (81%)"
+          },
+          {
+            "text": "Grades 9–12 from Breckwater, Ferris Township, and Calloway Consolidated",
+            "ref": "P13"
+          },
+          {
+            "text": "girls enrolled (36%), up from 14 the year before",
+            "ref": "P14",
+            "figure": "23",
+            "line": "23 girls enrolled (36%), up from 14 the year before"
+          },
+          {
+            "text": "of 64 qualified for free or reduced-price meals",
+            "ref": "P14",
+            "figure": "41",
+            "line": "41 of 64 qualified for free or reduced-price meals"
+          },
+          {
+            "text": "of 64 paid no fee",
+            "ref": "P14",
+            "figure": "38",
+            "line": "38 of 64 paid no fee"
+          },
+          {
+            "text": "Nearest engineering program: 140 miles away",
+            "ref": "P13"
+          },
+          {
+            "text": "Next: Ostrander Rural High School joins in FY2027",
+            "ref": "P23"
+          }
+        ],
+        "refs": [
+          "P14",
+          "P13",
+          "P23"
+        ],
+        "shape": "table"
+      },
+      {
+        "type": "content",
+        "heading": "What Happened Inside the Program",
+        "bullets": [
+          {
+            "text": "End-of-season survey, answered by 49 of 52 completers:",
+            "ref": "P20"
+          },
+          {
+            "text": "felt more confident speaking in front of adults",
+            "ref": "P20",
+            "figure": "44",
+            "line": "44 felt more confident speaking in front of adults"
+          },
+          {
+            "text": "used a club skill in a class or a job",
+            "ref": "P20",
+            "figure": "40",
+            "line": "40 used a club skill in a class or a job"
+          },
+          {
+            "text": "In September, most students could not read a wiring diagram",
+            "ref": "P20"
+          },
+          {
+            "text": "By March, every team had 2+ students who could rebuild their drivetrain without help",
+            "ref": "P20"
+          },
+          {
+            "text": "optional shop hours logged, about 23 per completer",
+            "ref": "P14",
+            "figure": "1,180",
+            "line": "1,180 optional shop hours logged, about 23 per completer"
+          },
+          {
+            "text": "\"I used to think engineering was something that happened in cities. Now I fix the pivot on my uncle's sprayer and I know why it broke.\" — Mireya, junior, Calloway Consolidated",
+            "ref": "P21"
+          }
+        ],
+        "refs": [
+          "P20",
+          "P14",
+          "P21"
+        ],
+        "shape": "table"
+      },
+      {
+        "type": "content",
+        "heading": "What Our Seniors Did Next",
+        "bullets": [
+          {
+            "text": "14 of 18 seniors (78%) enrolled in college, technical school, or an apprenticeship",
+            "ref": "P18"
+          },
+          {
+            "text": "9 of the 14 chose engineering, welding, electrical, ag mechanics, or computer science",
+            "ref": "P18"
+          },
+          {
+            "text": "Limits of this number:",
+            "ref": "P19"
+          },
+          {
+            "text": "Self-reported by students and parents, not checked against records",
+            "ref": "P19"
+          },
+          {
+            "text": "Small group: a few changed plans would shift the percentage a lot",
+            "ref": "P19"
+          },
+          {
+            "text": "No comparison group: students who join may already be likely to go on",
+            "ref": "P19"
+          },
+          {
+            "text": "We do not claim the club caused this result",
+            "ref": "P19"
+          },
+          {
+            "text": "Starting this year, we are asking seniors for permission to verify enrollment with state records",
+            "ref": "P19"
+          }
+        ],
+        "refs": [
+          "P18",
+          "P19"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "What FY2026 Taught Us",
+        "bullets": [
+          {
+            "text": "The ride is the program: one van could not cover both routes; on late-van nights, attendance from those schools dropped about a third",
+            "ref": "P22"
+          },
+          {
+            "text": "More girls joined through a small Saturday build session led by Coach Priya Lindqvist",
+            "ref": "P22"
+          },
+          {
+            "text": "Demand is ahead of us: we turned away 21 students for lack of coaches and parts",
+            "ref": "P22"
+          },
+          {
+            "text": "7 of the 12 students who left went to harvest or calving jobs; we now call anyone who misses two weeks in a row",
+            "ref": "P15"
+          }
+        ],
+        "refs": [
+          "P22",
+          "P15"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "figures",
+        "heading": "FY2027 Expansion Plan",
+        "refs": [
+          "P23"
+        ],
+        "lines": [
+          "Add a fourth school: Ostrander Rural High School",
+          "Grow from 9 to 12 teams",
+          "Serve about 85 students, up from 64",
+          "Needed: a second van, a third coach, and parts for three more teams"
+        ],
+        "plain": true,
+        "figures": [
+          {
+            "value": "9",
+            "label": "Grow from 9 to 12 teams",
+            "context": "",
+            "ref": "P23"
+          },
+          {
+            "value": "85",
+            "label": "Serve about 85 students, up from 64",
+            "context": "",
+            "ref": "P23"
+          }
+        ],
+        "note": "Add a fourth school: Ostrander Rural High School. Needed: a second van, a third coach, and parts for three more teams."
+      },
+      {
+        "type": "content",
+        "heading": "The Request: $37,400 for One Year",
+        "bullets": [
+          {
+            "text": "Second leased van, insurance, and fuel",
+            "ref": "P23",
+            "figure": "$9,800",
+            "line": "Second leased van, insurance, and fuel: $9,800"
+          },
+          {
+            "text": "Third coach stipend",
+            "ref": "P5",
+            "figure": "$12,000",
+            "line": "Third coach stipend: $12,000"
+          },
+          {
+            "text": "Kits, parts, and tools for three new teams",
+            "ref": "P23",
+            "figure": "$11,400",
+            "line": "Kits, parts, and tools for three new teams: $11,400"
+          },
+          {
+            "text": "Added competition travel and entry fees",
+            "ref": "P23",
+            "figure": "$4,200",
+            "line": "Added competition travel and entry fees: $4,200"
+          },
+          {
+            "text": "Total",
+            "ref": "P23",
+            "figure": "$37,400",
+            "line": "Total: $37,400"
+          },
+          {
+            "text": "Wickline funds pay only for the expansion, not existing operations",
+            "ref": "P8",
+            "line": "Wickline funds pay only for the expansion, not existing operations"
+          },
+          {
+            "text": "Our $148,600 base budget is covered by our five current funding sources",
+            "ref": "P5",
+            "line": "Our $148,600 base budget is covered by our five current funding sources"
+          }
+        ],
+        "refs": [
+          "P23",
+          "P5",
+          "P8"
+        ],
+        "shape": "money"
+      },
+      {
+        "type": "content",
+        "heading": "A Stable Base and a Plan for Year Two",
+        "bullets": [
+          {
+            "text": "FY2026 revenue: $150,400 from five sources; expenses: $148,600",
+            "ref": "P17"
+          },
+          {
+            "text": "No single funder provides more than 28% of the budget",
+            "ref": "P17"
+          },
+          {
+            "text": "Operating reserve: $14,200",
+            "ref": "P17"
+          },
+          {
+            "text": "After one year, expansion costs move into our base budget, supported by growing fee and donor revenue",
+            "ref": "P23"
+          },
+          {
+            "text": "Supported by volunteer drivers, a landlord who charges half rent, and families at our spring pancake breakfast",
+            "ref": "P24"
+          },
+          {
+            "text": "Thank you",
+            "ref": "P5"
+          },
+          {
+            "text": "Contact: Tomas Vrba, Program Coordinator",
+            "ref": "P5"
+          }
+        ],
+        "refs": [
+          "P17",
+          "P23",
+          "P24",
+          "P5",
+          "P7"
+        ],
+        "comp": "open"
+      }
+    ],
+    "plain": true
+  },
+  "passages": {
+    "P1": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Notes",
+      "source_id": "s_6bf79d31932f"
+    },
+    "P2": {
+      "text": "Breckwater Valley Robotics Club - Board Meeting Notes\nTuesday, November 3, 2026, 6:30 p.m., Mill Road shop",
+      "locator": "para. 2",
+      "source_title": "Notes",
+      "source_id": "s_6bf79d31932f"
+    },
+    "P3": {
+      "text": "Present: Ruth Ellingboe (Board Chair), Glenn Asheford (Treasurer), Tomas Vrba (Program Coordinator), Priya Lindqvist (Coach), Dale Kucharski (Board Member)",
+      "locator": "para. 3",
+      "source_title": "Notes",
+      "source_id": "s_6bf79d31932f"
+    },
+    "P4": {
+      "text": "1. Wickline Rural Futures Fund",
+      "locator": "para. 4",
+      "source_title": "Notes",
+      "source_id": "s_6bf79d31932f"
+    },
+    "P5": {
+      "text": "Tomas reported that Hana Ostberg, program officer at the Wickline Rural Futures Fund, invited us to present on December 9. She asked for a short deck in advance. Ruth moved that we ask Wickline for $37,400 to fund the full FY2027 expansion for one year: second van ($9,800), third coach stipend ($12,000), kits for three new teams ($11,400), and added travel ($4,200). Glenn confirmed the figures match the FY2026 annual report and that the $148,600 base budget is covered by our five current sources. Motion carried 5-0.",
+      "locator": "para. 5",
+      "source_title": "Notes",
+      "source_id": "s_6bf79d31932f"
+    },
+    "P6": {
+      "text": "Deadline: Tomas will send the final deck to Hana by Friday, December 4, 2026. Board review copy due to Ruth by November 24.",
+      "locator": "para. 6",
+      "source_title": "Notes",
+      "source_id": "s_6bf79d31932f"
+    },
+    "P7": {
+      "text": "2. Instructions for the deck (agreed by the board)",
+      "locator": "para. 7",
+      "source_title": "Notes",
+      "source_id": "s_6bf79d31932f"
+    },
+    "P8": {
+      "text": "- Keep it to eight slides or fewer. Hana said she reads decks on her phone.\n- Lead with the 52 students who finished the season and the expansion to Ostrander, not the state championship placing.\n- State the 14-of-18 postsecondary result with its caveat in plain words: self-reported, small group, no comparison group. Dale asked that we not imply the club caused it.\n- Show the $37,400 as the four line items, and make clear Wickline money pays only for the expansion, not existing operations.\n- No student photos without a signed release on file, and no student last names. Priya will check releases.",
+      "locator": "para. 8",
+      "source_title": "Notes",
+      "source_id": "s_6bf79d31932f"
+    },
+    "P9": {
+      "text": "3. Other business",
+      "locator": "para. 9",
+      "source_title": "Notes",
+      "source_id": "s_6bf79d31932f"
+    },
+    "P10": {
+      "text": "Glenn reported the reserve at $14,200. Meeting adjourned 7:52 p.m.",
+      "locator": "para. 10",
+      "source_title": "Notes",
+      "source_id": "s_6bf79d31932f"
+    },
+    "P11": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Report",
+      "source_id": "s_9922c6fcb95b"
+    },
+    "P12": {
+      "text": "## FY2026 Annual Program Report (July 1, 2025 to June 30, 2026)\nPrepared for the Board of Directors by Tomas Vrba, Program Coordinator, with financials reviewed by Glenn Asheford, Treasurer.",
+      "locator": "“Breckwater Valley Robotics Club”",
+      "source_title": "Report",
+      "source_id": "s_9922c6fcb95b"
+    },
+    "P13": {
+      "text": "Breckwater Valley Robotics Club is an after-school and weekend robotics program for teenagers in grades 9 through 12 who live in and around Breckwater, a farm town of about 2,400 people. We work out of a rented bay in the old Halvorsen implement dealership on Mill Road, which we have turned into a shop with four build tables, a parts wall, and a practice field marked out in floor tape. We serve students from three schools: Breckwater High School, Ferris Township School, and Calloway Consolidated. The nearest engineering program of any kind is 140 miles away. For most of our students, the club is the first time they have used a CAD program, written code that moves something, or been asked to present their own work to a panel of strangers.\nThe club has run since 2021. FY2026 was our fifth season and our largest.",
+      "locator": "“Who we are”",
+      "source_title": "Report",
+      "source_id": "s_9922c6fcb95b"
+    },
+    "P14": {
+      "text": "- 64 students enrolled at the start of the season in September 2025.\n- 52 students completed the full season, a completion rate of 81 percent.\n- 23 of the 64 enrolled students were girls (36 percent), up from 14 the year before.\n- 41 of the 64 qualified for free or reduced-price school meals.\n- 9 competition teams built and ran robots across 6 regional events.\n- 2 teams qualified for the state championship in April 2026; one finished 11th of 48.\n- 1,180 optional shop hours were logged by completers across 38 weeks, about 23 hours per completer beyond required meetings.\n- 17 adult volunteers gave an estimated 1,450 hours, mostly as drivers, judges at our home scrimmage, and mentors on Saturday build days.",
+      "locator": "“FY2026 by the numbers”",
+      "source_title": "Report",
+      "source_id": "s_9922c6fcb95b"
+    },
+    "P15": {
+      "text": "Of the 12 students who did not finish, 7 left for jobs during harvest or calving season, 3 moved out of the area, and 2 left for reasons we did not learn. We now call every student who misses two weeks in a row, and we want to understand the work conflicts better before next fall.",
+      "locator": "“FY2026 by the numbers”",
+      "source_title": "Report",
+      "source_id": "s_9922c6fcb95b"
+    },
+    "P16": {
+      "text": "Total FY2026 expenses were $148,600.\n| Category | Amount |\n|---|---|\n| Staff: part-time coordinator and two coach stipends | $71,500 |\n| Robot parts, kits, and tools | $28,400 |\n| Competition travel: van rental, fuel, lodging, entry fees | $21,300 |\n| Shop space and utilities | $12,000 |\n| Insurance, accounting, and administration | $9,600 |\n| Student meals and travel stipends | $5,800 |\n| **Total** | **$148,600** |\nTravel remains our hardest line to control. Every regional event is at least a two-hour drive, and state was a two-night trip. Because many of our families cannot cover a hotel room, the club pays for all lodging and meals on the road.",
+      "locator": "“What the money paid for”",
+      "source_title": "Report",
+      "source_id": "s_9922c6fcb95b"
+    },
+    "P17": {
+      "text": "Total FY2026 revenue was $150,400, from five sources.\n| Source | Amount | Share |\n|---|---|---|\n| Prairie Lantern Fund (second year of a three-year grant) | $42,000 | 28% |\n| Harrow County Community Foundation | $35,000 | 23% |\n| Individual donors and the spring pancake breakfast | $31,600 | 21% |\n| Dunmore Grain Cooperative | $30,000 | 20% |\n| Participant fees (sliding scale, $0 to $250) | $11,800 | 8% |\n| **Total** | **$150,400** | **100%** |\nWe ended the year with a surplus of $1,800, which went to our operating reserve. The reserve now holds $14,200, a little over one month of expenses. Thirty-eight of our 64 students paid no fee at all.\nNo single funder provides more than 28 percent of our budget, and the board intends to keep it that way.",
+      "locator": "“Where the money came from”",
+      "source_title": "Report",
+      "source_id": "s_9922c6fcb95b"
+    },
+    "P18": {
+      "text": "Our clearest result is about what our graduating seniors did next. Eighteen seniors completed the FY2026 season. As of September 2026, 14 of them (78 percent) have enrolled in a two-year or four-year college, a technical school, or a registered apprenticeship. Nine of those 14 chose engineering, welding and fabrication, electrical, agricultural mechanics, or computer science.",
+      "locator": "“Results, and what we can and cannot claim”",
+      "source_title": "Report",
+      "source_id": "s_9922c6fcb95b"
+    },
+    "P19": {
+      "text": "We are proud of that number. We also want to be honest about its limits. It comes from what students and parents told us in a follow-up call, not from enrollment records. Eighteen students is a small group, and a few changed plans would move the percentage a long way. We have no comparison group: students who join a robotics club may already be the ones most likely to go on to school. The county figure we sometimes cite for context, that about 51 percent of local graduates enroll in postsecondary education, is from the 2023 graduating class and comes from a different source. We do not claim the club caused the difference. Starting this year, we are asking graduating seniors for permission to check their enrollment through the state's student records office so that next year's number is verified.",
+      "locator": "“Results, and what we can and cannot claim”",
+      "source_title": "Report",
+      "source_id": "s_9922c6fcb95b"
+    },
+    "P20": {
+      "text": "What we can say with more confidence is what happened inside the program. On our end-of-season survey, completed by 49 of the 52 completers, 44 said they felt more confident speaking in front of adults, and 40 said they had used a skill from the club in a class or a job. Our coaches saw it too. In September most students could not read a wiring diagram. By March, every team had at least two students who could rebuild their robot's drivetrain without help.",
+      "locator": "“Results, and what we can and cannot claim”",
+      "source_title": "Report",
+      "source_id": "s_9922c6fcb95b"
+    },
+    "P21": {
+      "text": "Mireya, a junior at Calloway Consolidated, said this at our end-of-season dinner:\n> \"I used to think engineering was something that happened in cities. Now I fix the pivot on my uncle's sprayer and I know why it broke.\"",
+      "locator": "“In their words”",
+      "source_title": "Report",
+      "source_id": "s_9922c6fcb95b"
+    },
+    "P22": {
+      "text": "Three lessons from this year shaped next year's plan.\nFirst, the ride is the program. Students at Ferris Township and Calloway live 25 to 40 minutes from the shop, and our single leased van could not cover both routes on build nights. On nights the van ran late, attendance from those schools dropped by about a third.\nSecond, more girls joined when we ran a Saturday build session led by our coach Priya Lindqvist. Several girls told us they came because a friend did and because they knew the session would be small.\nThird, demand is ahead of us. We turned away 21 students in September 2025 because we did not have coaches or parts for more than nine teams.",
+      "locator": "“What we learned”",
+      "source_title": "Report",
+      "source_id": "s_9922c6fcb95b"
+    },
+    "P23": {
+      "text": "In FY2027 we will add a fourth school, Ostrander Rural High School, grow from 9 to 12 teams, and serve about 85 students. To do that we need a second van, a third coach, and parts for three more teams.\nOur FY2027 budget is $186,000. That is our current $148,600 operating cost plus $37,400 in new expansion costs:\n| Expansion item | Amount |\n|---|---|\n| Second leased van, insurance, and fuel | $9,800 |\n| Third coach stipend | $12,000 |\n| Kits, parts, and tools for three new teams | $11,400 |\n| Added competition travel and entry fees | $4,200 |\n| **Expansion total** | **$37,400** |\nWe expect our five current funding sources to hold steady and cover the $148,600 base budget. We are seeking a new partner to fund the full $37,400 expansion for one year, after which we will fold the costs into our base budget and grow our fee and donor revenue to carry them.",
+      "locator": "“FY2027 plan and cost”",
+      "source_title": "Report",
+      "source_id": "s_9922c6fcb95b"
+    },
+    "P24": {
+      "text": "This season ran on volunteer drivers, a landlord who charges us half rent, and families who show up at a pancake breakfast every spring. Thank you to every one of them.",
+      "locator": "“Thank you”",
+      "source_title": "Report",
+      "source_id": "s_9922c6fcb95b"
+    }
+  },
+  "grounding": [
+    {
+      "path": "subtitle",
+      "value": "37400",
+      "shown": "$37,400",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "12",
+      "shown": "12",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.figures.1",
+      "value": "64",
+      "shown": "64",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.0",
+      "value": "148600",
+      "shown": "$148,600",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "9",
+      "shown": "9",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "2026",
+      "shown": "2026",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.heading",
+      "value": "52",
+      "shown": "52",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.0",
+      "value": "52",
+      "shown": "52",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.0",
+      "value": "81%",
+      "shown": "81%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.0.figure",
+      "value": "64",
+      "shown": "64",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.0.figure",
+      "value": "52",
+      "shown": "52",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.0.figure",
+      "value": "81%",
+      "shown": "81%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.1",
+      "value": "9",
+      "shown": "9",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.1",
+      "value": "12",
+      "shown": "12",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.2",
+      "value": "36%",
+      "shown": "36%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.2",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.2.figure",
+      "value": "23",
+      "shown": "23",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.2.figure",
+      "value": "36%",
+      "shown": "36%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.2.figure",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.3",
+      "value": "64",
+      "shown": "64",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.3.figure",
+      "value": "41",
+      "shown": "41",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.3.figure",
+      "value": "64",
+      "shown": "64",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.4",
+      "value": "64",
+      "shown": "64",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.4.figure",
+      "value": "38",
+      "shown": "38",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.4.figure",
+      "value": "64",
+      "shown": "64",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.5",
+      "value": "140",
+      "shown": "140",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.0",
+      "value": "49",
+      "shown": "49",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.0",
+      "value": "52",
+      "shown": "52",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.1.figure",
+      "value": "44",
+      "shown": "44",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.2.figure",
+      "value": "40",
+      "shown": "40",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.4",
+      "value": "2",
+      "shown": "2",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.5",
+      "value": "23",
+      "shown": "23",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.5.figure",
+      "value": "1180",
+      "shown": "1,180",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.5.figure",
+      "value": "23",
+      "shown": "23",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.6",
+      "value": "I used to think engineering was something that happened in cities. Now I fix the pivot on my uncle's sprayer and I know why it broke.",
+      "shown": "I used to think engineering was something that happened in cities. Now I fix the pivot on my uncle's sprayer and I know why it broke.",
+      "status": "ok",
+      "kind": "quote"
+    },
+    {
+      "path": "slides.2.bullets.0",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.0",
+      "value": "18",
+      "shown": "18",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.0",
+      "value": "78%",
+      "shown": "78%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.1",
+      "value": "9",
+      "shown": "9",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.1",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.2",
+      "value": "21",
+      "shown": "21",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.3",
+      "value": "7",
+      "shown": "7",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.3",
+      "value": "12",
+      "shown": "12",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.figures.0",
+      "value": "9",
+      "shown": "9",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.figures.0",
+      "value": "12",
+      "shown": "12",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.figures.1",
+      "value": "85",
+      "shown": "85",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.heading",
+      "value": "37400",
+      "shown": "$37,400",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.0.figure",
+      "value": "9800",
+      "shown": "$9,800",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.1.figure",
+      "value": "12000",
+      "shown": "$12,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.2.figure",
+      "value": "11400",
+      "shown": "$11,400",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.2.figure",
+      "value": "3",
+      "shown": "three",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.3.figure",
+      "value": "4200",
+      "shown": "$4,200",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.4.figure",
+      "value": "37400",
+      "shown": "$37,400",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bullets.6",
+      "value": "148600",
+      "shown": "$148,600",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.heading",
+      "value": "2",
+      "shown": "Two",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.0",
+      "value": "150400",
+      "shown": "$150,400",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.1",
+      "value": "28%",
+      "shown": "28%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bullets.2",
+      "value": "14200",
+      "shown": "$14,200",
+      "status": "ok",
+      "kind": "number"
+    }
+  ],
+  "exhibits": [],
+  "check": [
+    "All 56 numbers and quotes found in your sources; 4 citations corrected"
+  ],
+  "pills": [
+    {
+      "id": "sources",
+      "tone": "good",
+      "label": "All 56 numbers and quotes found in your sources; 4 citations corrected"
+    },
+    {
+      "id": "contrast",
+      "tone": "good",
+      "label": "Contrast passes, lowest 7.9:1"
+    },
+    {
+      "id": "never",
+      "tone": "good",
+      "label": "No never-say words"
+    },
+    {
+      "id": "fonts",
+      "tone": "good",
+      "label": "Kit fonts used"
+    },
+    {
+      "id": "money",
+      "tone": "warn",
+      "label": "The deck leaves out $71,500, $28,400, $21,300, $9,600 and more from Report, “What the money paid for”; Report, “Where the money came from”"
+    }
+  ],
+  "slide_count": 8,
+  "seconds": 35.9
+}

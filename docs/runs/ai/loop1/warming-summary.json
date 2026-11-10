@@ -1,0 +1,39 @@
+{
+  "set": "warming",
+  "steps": {
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "outline": {
+      "status": "done",
+      "seconds": 13.6,
+      "error": null
+    },
+    "rewrite_title": {
+      "status": "done",
+      "seconds": 18.0,
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 46.5,
+      "error": null
+    },
+    "stronger_slide3": {
+      "status": "done",
+      "seconds": 9.5,
+      "error": null
+    },
+    "graphic_options": {
+      "status": "done",
+      "seconds": 15.2,
+      "error": null
+    }
+  },
+  "guide_and_summaries_seconds": 23.9,
+  "deck_check": [
+    "All 39 numbers and quotes found in your sources; 4 citations corrected"
+  ],
+  "deck_missing": []
+}

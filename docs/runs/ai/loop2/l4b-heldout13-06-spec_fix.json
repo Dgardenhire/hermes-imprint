@@ -1,0 +1,193 @@
+{
+  "purpose": "imprint.spec_fix",
+  "tag": "l4b-heldout13",
+  "seconds": 15.0,
+  "model": "claude-opus-5-5",
+  "ok": true,
+  "neutral": true,
+  "request": {
+    "system": "You are a presentation designer who lays out funder decks slide by slide, the way a strong designer writing python-pptx code would: each slide's layout chosen for what it says.",
+    "instructions": "",
+    "input_chars": 4794,
+    "input_head": "This slide was measured in the brand's real fonts and has problems:\n- element 12 (figure) does not fit its 268 x 148 box even at the smallest type size\n\nEach slide is positioned elements on a 960 x 540 canvas (points, origin top left). Element types:\n- text: {\"type\":\"text\",\"x\",\"y\",\"w\",\"h\",\"text\",\"style\",\"color\",\"align\"}  style: title | heading | figure | body | strong | italic | small | label\n- list: {\"type\":\"list\",\"x\",\"y\",\"w\",\"h\",\"items\":[\"...\"],\"style\":\"body\"}  bulleted points\n- rect: {\"type\":\"rect\",\"x\",\"y\",\"w\",\"h\",\"fill\"}  a panel or band (draw it BEFORE the text that sits on it)\n- line: {\"type\":\"line\",\"x\",\"y\",\"w\",\"h\",\"color\"}  a rule (h 2 for horizontal, w 2 for vertical)\n- dot: {\"type\":\"dot\",\"x\",\"y\",\"w\",\"h\",\"fill\"}  a circle (timeline markers)\n- figure: {\"type\":\"figure\",\"x\",\"y\",\"w\",\"h\",\"value\":\"$31,900\",\"label\":\"vehicle costs in FY2026\",\"note\":\"up from $19,700\",\"fill\":\"tint\"}  a big-number tile (omit fill for no panel)\n- bars: {\"type\":\"bars\",\"x\",\"y\",\"w\",\"h\",\"orient\":\"horizontal\"|\"vertical\",\"items\":[{\"label\",\"value\",\"highlight\":true}]}  a bar or column chart; value is the number as shown (\"$85,000\", \"41%\")\n- stack: {\"type\":\"stack\",\"x\",\"y\",\"w\",\"h\",\"items\":[{\"label\",\"value\",\"highlight\"}]}  one bar split into its parts (funding sources)\n- table: {\"type\":\"table\",\"x\",\"y\",\"w\",\"h\",\"header\":[\"Line\",\"Amount\"],\"rows\":[[\"Van\",\"$74,000\"]],\"total\":[\"Total\",\"$148,000\"]}\n- quote: {\"type\":\"quote\",\"x\",\"y\",\"w\",\"h\",\"text\",\"who\"}\n- callout: {\"type\":\"callout\",\"x\",\"y\",\"w\",\"h\",\"title\",\"text\" or"
+  },
+  "response": {
+    "ground": "primary",
+    "footer": true,
+    "title": "Our request: $85,000 puts the north-route van on the road by June 2027",
+    "els": [
+      {
+        "type": "text",
+        "x": 40,
+        "y": 30,
+        "w": 880,
+        "h": 84,
+        "text": "Our request: $85,000 puts the north-route van on the road by June 2027",
+        "style": "title",
+        "align": "left"
+      },
+      {
+        "type": "line",
+        "x": 48,
+        "y": 151,
+        "w": 628,
+        "h": 2,
+        "color": "accent"
+      },
+      {
+        "type": "dot",
+        "x": 40,
+        "y": 144,
+        "w": 16,
+        "h": 16,
+        "fill": "accent"
+      },
+      {
+        "type": "dot",
+        "x": 350,
+        "y": 144,
+        "w": 16,
+        "h": 16,
+        "fill": "accent"
+      },
+      {
+        "type": "dot",
+        "x": 660,
+        "y": 144,
+        "w": 16,
+        "h": 16,
+        "fill": "accent"
+      },
+      {
+        "type": "text",
+        "x": 40,
+        "y": 174,
+        "w": 270,
+        "h": 20,
+        "text": "Spring 2027",
+        "style": "label",
+        "align": "left"
+      },
+      {
+        "type": "text",
+        "x": 40,
+        "y": 200,
+        "w": 270,
+        "h": 76,
+        "text": "If fully funded by March 2027: buy and refit the van in spring 2027",
+        "style": "body",
+        "align": "left"
+      },
+      {
+        "type": "text",
+        "x": 350,
+        "y": 174,
+        "w": 270,
+        "h": 20,
+        "text": "June 2027",
+        "style": "label",
+        "align": "left"
+      },
+      {
+        "type": "text",
+        "x": 350,
+        "y": 200,
+        "w": 270,
+        "h": 76,
+        "text": "Summer stops begin on the north route",
+        "style": "body",
+        "align": "left"
+      },
+      {
+        "type": "text",
+        "x": 660,
+        "y": 174,
+        "w": 260,
+        "h": 20,
+        "text": "August 2027",
+        "style": "label",
+        "align": "left"
+      },
+      {
+        "type": "text",
+        "x": 660,
+        "y": 200,
+        "w": 260,
+        "h": 76,
+        "text": "Full school service begins at 18 schools",
+        "style": "body",
+        "align": "left"
+      },
+      {
+        "type": "callout",
+        "x": 40,
+        "y": 292,
+        "w": 448,
+        "h": 156,
+        "title": "FY2027 goals",
+        "items": [
+          "Miss no more than three stops",
+          "Get benchmark data from all 14 current schools",
+          "Have the north-county van running summer stops by June 2027"
+        ],
+        "fill": "tint"
+      },
+      {
+        "type": "figure",
+        "x": 512,
+        "y": 292,
+        "w": 408,
+        "h": 156,
+        "value": "$85,000",
+        "label": "from the Beaumont-Tully Rural Literacy Fund",
+        "note": "toward the $148,000 total",
+        "fill": "tint"
+      },
+      {
+        "type": "text",
+        "x": 40,
+        "y": 458,
+        "w": 880,
+        "h": 24,
+        "text": "Marisol Quennell, Executive Director, Quillmere Rolling Library, Vashti Bend",
+        "style": "small",
+        "align": "left"
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2615,
+    "cache_read_input_tokens": 669,
+    "output_tokens": 1340,
+    "output_tokens_details": {
+      "thinking_tokens": 317
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2615,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1340,
+        "cache_read_input_tokens": 669,
+        "cache_creation_input_tokens": 2615,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2615
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "error": null
+}

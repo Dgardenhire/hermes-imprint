@@ -1,0 +1,1379 @@
+{
+  "set": "heldout2",
+  "tag": "r11h-heldout2",
+  "steps": {
+    "brand": {
+      "status": "done",
+      "seconds": 0.2
+    },
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 105.4,
+      "error": null
+    }
+  },
+  "started": 1794231012.169743,
+  "sources": [
+    "school-year-report.md",
+    "staff-meeting-notes.txt"
+  ],
+  "kit": {
+    "id": "k_8f0f88e9b3ff",
+    "name": "Pasted colors",
+    "colors": [
+      {
+        "hex": "#4a2545",
+        "role": "head",
+        "name": "Deep Plum"
+      },
+      {
+        "hex": "#b5663a",
+        "role": "accent",
+        "name": "Copper"
+      }
+    ],
+    "paper": "#f4f5f7",
+    "ink": "#2f3640",
+    "kit_json": {
+      "name": "Pasted colors",
+      "origin": "import",
+      "origin_note": "Pasted color codes",
+      "org": "",
+      "subject": "",
+      "signature": "",
+      "paper": "#f4f5f7",
+      "ink": "#2f3640",
+      "colors": [
+        {
+          "hex": "#4a2545",
+          "role": "head",
+          "name": "Deep Plum"
+        },
+        {
+          "hex": "#b5663a",
+          "role": "accent",
+          "name": "Copper"
+        }
+      ],
+      "type": {
+        "heading": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 700
+        },
+        "body": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 400
+        },
+        "scale": 1.25
+      },
+      "layout": "banner",
+      "density": "medium",
+      "voice": {
+        "notes": "",
+        "delivery": "",
+        "never": [],
+        "pairs": [],
+        "draft": false
+      },
+      "rules": {
+        "sources": true,
+        "page_numbers": true,
+        "date": true,
+        "required": []
+      },
+      "imported_from": {
+        "kind": "paste",
+        "label": "Pasted colors",
+        "ref": "",
+        "sha256": "",
+        "license_note": "",
+        "brand_named": false,
+        "mode": "",
+        "imported_at": 1794231012.3968809
+      },
+      "logo": null,
+      "logo_alt": null,
+      "fonts": [],
+      "id": "k_8f0f88e9b3ff",
+      "version": 1,
+      "created_at": 1794231012.426496,
+      "updated_at": 1794231012.426496,
+      "starter": false
+    }
+  },
+  "guide_and_summaries_seconds": 20.1,
+  "guide": {
+    "by": "Written by your Hermes model",
+    "guide": [
+      {
+        "text": "The sources are a sample 2025-26 report from Copperleaf Mobile Dental, a dental clinic in a van, and notes from an October 2026 staff meeting.",
+        "chips": [
+          {
+            "ref": "P1",
+            "n": 1,
+            "source_n": 1,
+            "source": "School year report",
+            "locator": "“Copperleaf Mobile Dental: 2025-26 School Year Report (Sample)”",
+            "source_id": "s_94c3599f0894"
+          },
+          {
+            "ref": "P2",
+            "n": 2,
+            "source_n": 1,
+            "source": "School year report",
+            "locator": "“Who we are”",
+            "source_id": "s_94c3599f0894"
+          },
+          {
+            "ref": "P13",
+            "n": 3,
+            "source_n": 2,
+            "source": "Staff meeting notes",
+            "locator": "para. 1",
+            "source_id": "s_75c1bbd047d0"
+          }
+        ]
+      },
+      {
+        "text": "The van saw 2,684 children at 31 schools, up from 2,210 children at 27 schools the year before.",
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 1,
+            "source": "School year report",
+            "locator": "“The year in numbers”",
+            "source_id": "s_94c3599f0894"
+          }
+        ]
+      },
+      {
+        "text": "At twelve rescreened schools, untreated cavities fell from 34% to 21%, but two of those schools also started toothbrushing.",
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "School year report",
+            "locator": "“Is it working”",
+            "source_id": "s_94c3599f0894"
+          }
+        ]
+      },
+      {
+        "text": "Nine more schools with about 1,150 children are waiting, and one van cannot reach them.",
+        "chips": [
+          {
+            "ref": "P7",
+            "n": 1,
+            "source_n": 1,
+            "source": "School year report",
+            "locator": "“The waiting schools”",
+            "source_id": "s_94c3599f0894"
+          }
+        ]
+      },
+      {
+        "text": "The officers will ask the Harrow Pines Health Trust for $360,000 to buy a second van and pay half of a second team's first year.",
+        "chips": [
+          {
+            "ref": "P17",
+            "n": 1,
+            "source_n": 2,
+            "source": "Staff meeting notes",
+            "locator": "para. 5",
+            "source_id": "s_75c1bbd047d0"
+          }
+        ]
+      }
+    ],
+    "asks": [
+      {
+        "id": "a1",
+        "who": "Tobiah",
+        "what": "Short deck for the Trust's grants committee on the $360,000 ask",
+        "by": "November 14",
+        "kind": "deck",
+        "chips": [
+          {
+            "ref": "P17",
+            "n": 1,
+            "source_n": 2,
+            "source": "Staff meeting notes",
+            "locator": "para. 5",
+            "source_id": "s_75c1bbd047d0"
+          }
+        ],
+        "brief": {
+          "who": "Harrow Pines Health Trust grants committee",
+          "goal": "Fund a second van and half the new team's first year",
+          "length": "Seven or eight slides at most"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "text": "Van repairs rose $18,500, from $12,900 to $31,400, and the year ended with only a $6,000 surplus. How will Copperleaf cover its $74,000 half of the new team's first year?",
+        "chips": [
+          {
+            "ref": "P8",
+            "n": 1,
+            "source_n": 1,
+            "source": "School year report",
+            "locator": "“The van”",
+            "source_id": "s_94c3599f0894"
+          },
+          {
+            "ref": "P9",
+            "n": 2,
+            "source_n": 1,
+            "source": "School year report",
+            "locator": "“Money”",
+            "source_id": "s_94c3599f0894"
+          },
+          {
+            "ref": "P17",
+            "n": 3,
+            "source_n": 2,
+            "source": "Staff meeting notes",
+            "locator": "para. 5",
+            "source_id": "s_75c1bbd047d0"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "Teachers most often asked the van to \"come more often\" (49%). But the van lost 19 school days, at about 18 visits each. Can one van keep its two visits a year on time?",
+        "chips": [
+          {
+            "ref": "P6",
+            "n": 1,
+            "source_n": 1,
+            "source": "School year report",
+            "locator": "“What teachers and nurses told us”",
+            "source_id": "s_94c3599f0894"
+          },
+          {
+            "ref": "P4",
+            "n": 2,
+            "source_n": 1,
+            "source": "School year report",
+            "locator": "“The year in numbers”",
+            "source_id": "s_94c3599f0894"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "Untreated cavities fell from 34% to 21% at twelve schools. Two of those schools also began toothbrushing, so how much of the drop can the van claim?",
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "School year report",
+            "locator": "“Is it working”",
+            "source_id": "s_94c3599f0894"
+          },
+          {
+            "ref": "P17",
+            "n": 2,
+            "source_n": 2,
+            "source": "Staff meeting notes",
+            "locator": "para. 5",
+            "source_id": "s_75c1bbd047d0"
+          }
+        ],
+        "suggestion": true
+      }
+    ],
+    "source_ids": [
+      "s_94c3599f0894",
+      "s_75c1bbd047d0"
+    ],
+    "created_at": 1794231032.5745852
+  },
+  "brief": {
+    "who": "Funders",
+    "goal": "Fund a second van and half the new team's first year",
+    "length": "7 to 9 slides"
+  },
+  "outline": {},
+  "deck_seconds": 105.4,
+  "output_id": "o_0061387e04bd",
+  "case": "Nine south-end schools with about 1,150 children, a count from the two districts, are waiting for a van that is already full, so Copperleaf asks the Harrow Pines Health Trust for $360,000 to fund a second van and half of the new team's first year.",
+  "argument": {
+    "reader": "The Harrow Pines Health Trust grants committee, which funds access to care in rural places, decides whether to grant $360,000 for a second van and half of a second team's first year.",
+    "instructions": [
+      {
+        "said": "Seven or eight slides at most.",
+        "refs": [
+          "P17"
+        ],
+        "met_by": "ask"
+      },
+      {
+        "said": "start with the children who are waiting, the nine schools at the south end, not with the van's history.",
+        "refs": [
+          "P17"
+        ],
+        "met_by": "lead"
+      },
+      {
+        "said": "put the two-year screening result in, but say plainly that two schools also started toothbrushing. Do not claim all of the drop.",
+        "refs": [
+          "P17"
+        ],
+        "met_by": "point 2"
+      },
+      {
+        "said": "the 1,150 is the districts' count.",
+        "refs": [
+          "P17"
+        ],
+        "met_by": "lead"
+      },
+      {
+        "said": "the Medicaid share for the new team is our estimate. Say so.",
+        "refs": [
+          "P17"
+        ],
+        "met_by": "ask"
+      },
+      {
+        "said": "show what a breakdown day costs children.",
+        "refs": [
+          "P17"
+        ],
+        "met_by": "point 3"
+      },
+      {
+        "said": "Do not make it sound like the van is falling apart; the mechanic says it has five good years.",
+        "refs": [
+          "P17"
+        ],
+        "met_by": "counter"
+      },
+      {
+        "said": "Board to take it up in closed session. Not for outside use.",
+        "refs": [
+          "P16"
+        ],
+        "met_by": "left out"
+      }
+    ],
+    "lead": {
+      "heading": "Nine south-end schools with about 1,150 children are waiting for a van",
+      "type": "exhibit",
+      "evidence": [
+        {
+          "text": "We saw 2,684 children at 31 schools in 2025-26, up from 2,210 children at 27 schools the year before.",
+          "refs": [
+            "P4"
+          ]
+        },
+        {
+          "text": "Nine more schools have asked to join. They enroll about 1,150 children, a count from the two school districts.",
+          "refs": [
+            "P7"
+          ]
+        },
+        {
+          "text": "Most of the nine schools are at the county's south end, where families drive farthest for care.",
+          "refs": [
+            "P7"
+          ]
+        },
+        {
+          "text": "The nearest dentist who takes Medicaid for children is a 70-minute drive each way, with about a four-month wait.",
+          "refs": [
+            "P2"
+          ]
+        }
+      ]
+    },
+    "points": [
+      {
+        "heading": "Tooth pain keeps children from learning in our schools",
+        "type": "figures",
+        "evidence": [
+          {
+            "text": "412 children were in pain or had an infection when we first saw them. We treated 338 on the van.",
+            "refs": [
+              "P4"
+            ]
+          },
+          {
+            "text": "81% of 214 teachers said a child in their class missed school or could not focus because of tooth pain.",
+            "refs": [
+              "P6"
+            ]
+          },
+          {
+            "text": "64% of teachers said they had sent a child to the office for tooth pain at least once.",
+            "refs": [
+              "P6"
+            ]
+          },
+          {
+            "text": "A Pell Ridge Elementary nurse wrote: \"Now I hand out the van's sign-up form, and the same child comes back to class that afternoon.\"",
+            "refs": [
+              "P6"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Untreated cavities fell from 34% to 21% at schools we screen again",
+        "type": "comparison",
+        "evidence": [
+          {
+            "text": "At the same twelve schools, children with an untreated cavity fell from 34% in fall 2023 to 21% in fall 2025.",
+            "refs": [
+              "P5"
+            ]
+          },
+          {
+            "text": "Children with at least one sealant rose from 29% to 58% at those schools over the same two years.",
+            "refs": [
+              "P5"
+            ]
+          },
+          {
+            "text": "Two of the twelve schools also began a toothbrushing program in 2024, so not all of the drop came from the van.",
+            "refs": [
+              "P5"
+            ]
+          },
+          {
+            "text": "The schools where we have worked longest show the largest drops.",
+            "refs": [
+              "P5"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "One van is full, and each breakdown day cancels about 18 visits",
+        "type": "figures",
+        "evidence": [
+          {
+            "text": "Our 31 schools already fill every day the van can run, with two visits a year each.",
+            "refs": [
+              "P7"
+            ]
+          },
+          {
+            "text": "The van was out of service for 19 school days last year. Each lost day cancels about 18 visits.",
+            "refs": [
+              "P4"
+            ]
+          },
+          {
+            "text": "On September 24 the generator failed at Wickham Elementary, and 17 visits moved to November.",
+            "refs": [
+              "P15"
+            ]
+          },
+          {
+            "text": "When the van is out, a school's visit is pushed, and some children wait a full extra season.",
+            "refs": [
+              "P7"
+            ]
+          },
+          {
+            "text": "Teachers' most common request was \"come more often\" (49%), ahead of \"see more children each visit\" (22%).",
+            "refs": [
+              "P6"
+            ]
+          }
+        ]
+      }
+    ],
+    "counter": {
+      "objection": "Is this money really going to replace an old van that is falling apart?",
+      "heading": "The first van has five good years; the second adds schools",
+      "type": "content",
+      "evidence": [
+        {
+          "text": "Our mechanic says the 2014 van's engine and frame are sound for about five more years with care.",
+          "refs": [
+            "P8"
+          ]
+        },
+        {
+          "text": "A new generator, quoted at $9,800, was approved from the existing repair line.",
+          "refs": [
+            "P15"
+          ]
+        },
+        {
+          "text": "The second van is a smaller 24-foot van with one chair, built to reach the nine south-end schools.",
+          "refs": [
+            "P11"
+          ]
+        },
+        {
+          "text": "It can cover the south end without the long drive from our base in Copper Falls.",
+          "refs": [
+            "P11"
+          ]
+        },
+        {
+          "text": "It would also keep fall and spring visits on time when the first van is in the shop.",
+          "refs": [
+            "P11"
+          ]
+        }
+      ]
+    },
+    "ask": {
+      "heading": "Fund a second van and half the new team's first year for $360,000",
+      "amount": "$360,000",
+      "buys": [
+        "$286,000 for the second van, fitted with a chair, X-ray and generator (lower of two bids, one-time cost)",
+        "$74,000, half of the second team's first year (the team costs $148,000 a year, one hygienist, one assistant who drives, and added dentist days)"
+      ],
+      "by_when": "",
+      "rest": "Copperleaf would cover the other half of year one from Medicaid billing and the county contract. After that, Medicaid and the state plan should pay about half of the new team's cost each year, a staff estimate from the districts' numbers.",
+      "report": "Copperleaf will report what Medicaid billing really shows for the new team.",
+      "refs": [
+        "P11",
+        "P17"
+      ],
+      "none_in_sources": false
+    },
+    "faults": [],
+    "slides_max": 8
+  },
+  "neutral": {
+    "title": "A Second Van for Nine Waiting Schools",
+    "subtitle": "Copperleaf Mobile Dental, for the Harrow Pines Health Trust grants committee",
+    "slides": [
+      {
+        "type": "exhibit",
+        "refs": [
+          "P4",
+          "P7",
+          "P2"
+        ],
+        "heading": "Nine south-end schools with about 1,150 children are waiting for a van",
+        "unit": "Children",
+        "bars": [
+          {
+            "label": "2024-25",
+            "value": "2,210",
+            "ref": "P4"
+          },
+          {
+            "label": "2025-26",
+            "value": "2,684",
+            "ref": "P4",
+            "accent": true
+          }
+        ],
+        "note": "Bars show children seen each year. The waiting count comes from the two districts. Most waiting schools are at the south end, a 70-minute drive from the",
+        "subhead": "474 more children seen than the year before, at 31 schools instead of 27"
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P4",
+          "P6"
+        ],
+        "heading": "Tooth pain keeps children from learning in our schools",
+        "figures": [
+          {
+            "value": "412",
+            "label": "Children in pain or with infection",
+            "context": "Counted when we first saw them this year",
+            "ref": "P4"
+          },
+          {
+            "value": "338",
+            "label": "Of those children treated on the van",
+            "context": "Most others went with a parent to Bellhaven",
+            "ref": "P4"
+          },
+          {
+            "value": "81%",
+            "label": "Teachers who saw tooth pain cost class time",
+            "context": "A child missed school or could not focus; 214 answered",
+            "ref": "P6"
+          },
+          {
+            "value": "64%",
+            "label": "Teachers who sent a child to the office",
+            "context": "For tooth pain, at least once",
+            "ref": "P6"
+          }
+        ]
+      },
+      {
+        "type": "comparison",
+        "refs": [
+          "P5"
+        ],
+        "heading": "Untreated cavities fell from 34% to 21% at schools we screen again",
+        "left_label": "Fall 2023",
+        "left_items": [],
+        "right_label": "Fall 2025",
+        "right_items": [],
+        "rows": [
+          {
+            "label": "Untreated cavity",
+            "left": "34% of children screened",
+            "right": "21% of children screened",
+            "ref": "P5"
+          },
+          {
+            "label": "At least one sealant",
+            "left": "29% of children",
+            "right": "58% of children",
+            "ref": "P5"
+          },
+          {
+            "label": "Schools screened",
+            "left": "The same twelve schools",
+            "right": "The same twelve schools",
+            "ref": "P5"
+          },
+          {
+            "label": "Toothbrushing program",
+            "left": "Not yet started",
+            "right": "Two of twelve schools, since 2024",
+            "ref": "P5"
+          }
+        ]
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P4",
+          "P7",
+          "P15",
+          "P6"
+        ],
+        "heading": "One van is full, and each breakdown day cancels about 18 visits",
+        "figures": [
+          {
+            "value": "18",
+            "label": "About how many visits a lost day cancels",
+            "context": "Some children then wait a full extra season",
+            "ref": "P4"
+          },
+          {
+            "value": "19",
+            "label": "School days the van was out",
+            "context": "Mostly the generator and the air conditioning",
+            "ref": "P4"
+          },
+          {
+            "value": "49%",
+            "label": "Teachers who asked us to come more often",
+            "context": "Their most common answer to what would help most",
+            "ref": "P6"
+          },
+          {
+            "value": "22%",
+            "label": "Teachers who asked us to see more children each visit",
+            "context": "Well behind coming more often",
+            "ref": "P6"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P8",
+          "P15",
+          "P11"
+        ],
+        "heading": "The first van has five good years; the second adds schools",
+        "bullets": [
+          {
+            "text": "Our mechanic says the engine and frame are sound for about five more years with care",
+            "ref": "P8"
+          },
+          {
+            "text": "$9,800 a new generator was approved from our existing repair line",
+            "ref": "P15"
+          },
+          {
+            "text": "The second van is a smaller 24-foot van with one chair",
+            "ref": "P11"
+          },
+          {
+            "text": "$148,000 yearly cost of the second team, with added dentist days",
+            "ref": "P11"
+          },
+          {
+            "text": "It keeps fall and spring visits on time when the first van is in the shop",
+            "ref": "P11"
+          }
+        ]
+      },
+      {
+        "type": "closing",
+        "refs": [
+          "P11",
+          "P17"
+        ],
+        "heading": "Fund a second van and half the new team's first year for $360,000",
+        "text": "$286,000 buys the second van. $74,000 pays half the team's first year; Medicaid billing and county contract pay the rest. Our estimate: Medicaid and the state plan pay about half each year.",
+        "cta": "Approve the grant so a second van can reach the nine waiting schools",
+        "amount": "$360,000",
+        "amount_label": "Second van and half the new team's first year"
+      }
+    ],
+    "from_outline": true,
+    "max_slides": 8
+  },
+  "live": {
+    "title": "A Second Van for Nine Waiting Schools",
+    "subtitle": "Copperleaf Mobile Dental, for the Harrow Pines Health Trust grants committee",
+    "slides": [
+      {
+        "type": "exhibit",
+        "refs": [
+          "P4",
+          "P7",
+          "P2"
+        ],
+        "heading": "Nine south-end schools with about 1,150 children are waiting for a van",
+        "unit": "Children",
+        "bars": [
+          {
+            "label": "2024-25",
+            "value": "2,210",
+            "ref": "P4"
+          },
+          {
+            "label": "2025-26",
+            "value": "2,684",
+            "ref": "P4",
+            "accent": true
+          }
+        ],
+        "note": "Bars show children seen each year. The waiting count comes from the two districts. Most waiting schools are at the south end, a 70-minute drive from the",
+        "subhead": "474 more children seen than the year before, at 31 schools instead of 27"
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P4",
+          "P6"
+        ],
+        "heading": "Tooth pain keeps children from learning in our schools",
+        "figures": [
+          {
+            "value": "412",
+            "label": "Children in pain or with infection",
+            "context": "Counted when we first saw them this year",
+            "ref": "P4"
+          },
+          {
+            "value": "338",
+            "label": "Of those children treated on the van",
+            "context": "Most others went with a parent to Bellhaven",
+            "ref": "P4"
+          },
+          {
+            "value": "81%",
+            "label": "Teachers who saw tooth pain cost class time",
+            "context": "A child missed school or could not focus; 214 answered",
+            "ref": "P6"
+          },
+          {
+            "value": "64%",
+            "label": "Teachers who sent a child to the office",
+            "context": "For tooth pain, at least once",
+            "ref": "P6"
+          }
+        ]
+      },
+      {
+        "type": "comparison",
+        "refs": [
+          "P5"
+        ],
+        "heading": "Untreated cavities fell from 34% to 21% at schools we screen again",
+        "left_label": "Fall 2023",
+        "left_items": [],
+        "right_label": "Fall 2025",
+        "right_items": [],
+        "rows": [
+          {
+            "label": "Untreated cavity",
+            "left": "34% of children screened",
+            "right": "21% of children screened",
+            "ref": "P5"
+          },
+          {
+            "label": "At least one sealant",
+            "left": "29% of children",
+            "right": "58% of children",
+            "ref": "P5"
+          },
+          {
+            "label": "Schools screened",
+            "left": "The same twelve schools",
+            "right": "The same twelve schools",
+            "ref": "P5"
+          },
+          {
+            "label": "Toothbrushing program",
+            "left": "Not yet started",
+            "right": "Two of twelve schools, since 2024",
+            "ref": "P5"
+          }
+        ]
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P4",
+          "P7",
+          "P15",
+          "P6"
+        ],
+        "heading": "One van is full, and each breakdown day cancels about 18 visits",
+        "figures": [
+          {
+            "value": "18",
+            "label": "About how many visits a lost day cancels",
+            "context": "Some children then wait a full extra season",
+            "ref": "P4"
+          },
+          {
+            "value": "19",
+            "label": "School days the van was out",
+            "context": "Mostly the generator and the air conditioning",
+            "ref": "P4"
+          },
+          {
+            "value": "49%",
+            "label": "Teachers who asked us to come more often",
+            "context": "Their most common answer to what would help most",
+            "ref": "P6"
+          },
+          {
+            "value": "22%",
+            "label": "Teachers who asked us to see more children each visit",
+            "context": "Well behind coming more often",
+            "ref": "P6"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P8",
+          "P15",
+          "P11"
+        ],
+        "heading": "The first van has five good years; the second adds schools",
+        "bullets": [
+          {
+            "text": "Our mechanic says the engine and frame are sound for about five more years with care",
+            "ref": "P8"
+          },
+          {
+            "text": "$9,800 a new generator was approved from our existing repair line",
+            "ref": "P15"
+          },
+          {
+            "text": "The second van is a smaller 24-foot van with one chair",
+            "ref": "P11"
+          },
+          {
+            "text": "$148,000 yearly cost of the second team, with added dentist days",
+            "ref": "P11"
+          },
+          {
+            "text": "It keeps fall and spring visits on time when the first van is in the shop",
+            "ref": "P11"
+          }
+        ]
+      },
+      {
+        "type": "closing",
+        "refs": [
+          "P11",
+          "P17"
+        ],
+        "heading": "Fund a second van and half the new team's first year for $360,000",
+        "text": "$286,000 buys the second van. $74,000 pays half the team's first year; Medicaid billing and county contract pay the rest. Our estimate: Medicaid and the state plan pay about half each year.",
+        "cta": "Approve the grant so a second van can reach the nine waiting schools",
+        "amount": "$360,000",
+        "amount_label": "Second van and half the new team's first year"
+      }
+    ],
+    "from_outline": true,
+    "max_slides": 8
+  },
+  "passages": {
+    "P13": {
+      "text": "COPPERLEAF MOBILE DENTAL (SAMPLE). STAFF AND BOARD OFFICERS MEETING, OCTOBER 2, 2026\nSample notes. Fictional organization and people.",
+      "locator": "para. 1",
+      "source_title": "Staff meeting notes",
+      "source_id": "s_75c1bbd047d0"
+    },
+    "P14": {
+      "text": "Present: Marguerite Osei-Lindqvist (board chair), Calvin Thorne (board treasurer), Dr. Ines Marlow-Achebe (dental\ndirector), Tobiah Renn (program manager), Priya Halvorsen (hygienist)",
+      "locator": "para. 2",
+      "source_title": "Staff meeting notes",
+      "source_id": "s_75c1bbd047d0"
+    },
+    "P15": {
+      "text": "1. Van. Tobiah: the generator failed again on September 24 at Wickham Elementary; 17 visits moved to November.\n Mechanic quote for a new generator is $9,800. Calvin approved it from the repair line.",
+      "locator": "para. 3",
+      "source_title": "Staff meeting notes",
+      "source_id": "s_75c1bbd047d0"
+    },
+    "P16": {
+      "text": "2. Dentist contract. Dr. Marlow-Achebe's contract is up in March. Board to take it up in closed session. Not for\n outside use.",
+      "locator": "para. 4",
+      "source_title": "Staff meeting notes",
+      "source_id": "s_75c1bbd047d0"
+    },
+    "P17": {
+      "text": "3. The ask. The officers agreed to ask the Harrow Pines Health Trust for $360,000: $286,000 for the second van and\n $74,000, half of the second team's first year. We would cover the other half of year one from Medicaid billing\n and the county contract. Proposal due to the Trust by November 14.\n - Tobiah to make a short deck for the Trust's grants committee. Seven or eight slides at most.\n - Marguerite: start with the children who are waiting, the nine schools at the south end, not with the van's\n history. The Trust's committee funds access to care in rural places.\n - Ines: put the two-year screening result in, but say plainly that two schools also started toothbrushing. Do not\n claim all of the drop.\n - Calvin: the 1,150 is the districts' count. And the Medicaid share for the new team is our estimate. Say so.\n - Priya: show what a breakdown day costs children. Do not make it sound like the van is falling apart; the\n mechanic says it has five good years.",
+      "locator": "para. 5",
+      "source_title": "Staff meeting notes",
+      "source_id": "s_75c1bbd047d0"
+    },
+    "P18": {
+      "text": "4. Next meeting November 6.",
+      "locator": "para. 6",
+      "source_title": "Staff meeting notes",
+      "source_id": "s_75c1bbd047d0"
+    },
+    "P1": {
+      "text": "*Sample organization. Copperleaf Mobile Dental, Calder County, and every person named here are fictional.*\nSchool year August 2025 to June 2026. Prepared by the program staff for schools, partners and the board.",
+      "locator": "“Copperleaf Mobile Dental: 2025-26 School Year Report (Sample)”",
+      "source_title": "School year report",
+      "source_id": "s_94c3599f0894"
+    },
+    "P2": {
+      "text": "Copperleaf Mobile Dental is a dental clinic on wheels. A 38-foot van with two dental chairs, an X-ray unit and its own\ngenerator parks outside a school, and children walk out of class to see us with a signed form from home. We clean\nteeth, place sealants, paint on fluoride varnish, fill cavities and treat infections. Nothing we do costs a family\nmoney: we bill Medicaid or the state children's health plan when a child is covered, and grants cover the rest.\nWe started in 2014 with one van and six schools. Calder County is mostly rural. The nearest dentist who takes Medicaid\nfor children is in Bellhaven, a 70-minute drive each way from the county's south end, and the wait for a first visit\nthere is about four months.",
+      "locator": "“Who we are”",
+      "source_title": "School year report",
+      "source_id": "s_94c3599f0894"
+    },
+    "P3": {
+      "text": "Our staff is one dentist three days a week, two dental hygienists, one dental assistant who also drives the van, and a\nprogram manager. Twenty-two volunteers from the county's two high-school health classes help with sign-in and forms.",
+      "locator": "“Who we are”",
+      "source_title": "School year report",
+      "source_id": "s_94c3599f0894"
+    },
+    "P4": {
+      "text": "- **Children seen.** 2,684 children at 31 elementary schools, up from 2,210 children at 27 schools the year before.\n- **Sealants.** 7,915 sealants placed on the back teeth of 1,903 children. A sealant costs us about $14 to place and\n prevents most cavities on that tooth for years.\n- **Fluoride varnish.** 2,540 children.\n- **Urgent care.** 412 children were in pain or had an infection when we first saw them. We treated 338 of them on the\n van. The other 74 needed care we cannot give on the van, such as a root canal or oral surgery, and we drove 51 of them\n with a parent to a clinic in Bellhaven. The remaining 23 families chose their own dentist or did not follow up.\n- **Days on the road.** The van saw children on 148 school days. It was out of service for 19 school days, mostly for\n the generator and the air conditioning. Each lost day cancels about 18 visits.",
+      "locator": "“The year in numbers”",
+      "source_title": "School year report",
+      "source_id": "s_94c3599f0894"
+    },
+    "P5": {
+      "text": "Every two years we screen the same twelve schools again before treating anyone, using the state's screening form. In\nthe fall of 2023, 34% of the children screened at those schools had a cavity that had never been treated. In the\nfall of 2025 it was 21%. Over the same two years, the share of children at those schools with at least one sealant\nrose from 29% to 58%.\nWe cannot say all of that change came from the van. Two of the twelve schools also began a toothbrushing program in\n2024. But the schools where we have worked longest show the largest drops.",
+      "locator": "“Is it working”",
+      "source_title": "School year report",
+      "source_id": "s_94c3599f0894"
+    },
+    "P6": {
+      "text": "In April we asked every teacher at our 31 schools three questions, and 214 answered.\n- 81% said at least one child in their class missed school or could not focus because of tooth pain this year.\n- 64% said they had sent a child to the office for tooth pain at least once.\n- Asked what would help most, the most common answer was \"come more often\" (49%), well ahead of \"see more children\n each visit\" (22%).\nA school nurse at Pell Ridge Elementary wrote: \"Before the van, I handed out ice and called home. Now I hand out the\nvan's sign-up form, and the same child comes back to class that afternoon.\"",
+      "locator": "“What teachers and nurses told us”",
+      "source_title": "School year report",
+      "source_id": "s_94c3599f0894"
+    },
+    "P7": {
+      "text": "Nine more elementary schools in Calder County have asked to join. Together they enroll about 1,150 children; that count\ncomes from the two school districts, not from us. Most of the nine are at the county's south end, near the Bellhaven\nroad, where families drive farthest for care.\nWe cannot add them with one van. Our 31 schools already fill every day the van can run, and each school gets two visits\na year, one in the fall and one in the spring. When the van is out of service, a school's visit is pushed, and some\nchildren wait a full extra season.",
+      "locator": "“The waiting schools”",
+      "source_title": "School year report",
+      "source_id": "s_94c3599f0894"
+    },
+    "P8": {
+      "text": "The van was built in 2014 and has 214,000 miles on it. Our mechanic says the engine and frame are sound for about five\nmore years with care, but the generator and air conditioning are near the end of their lives. Repairs cost us $31,400\nthis year, up from $12,900 the year before.",
+      "locator": "“The van”",
+      "source_title": "School year report",
+      "source_id": "s_94c3599f0894"
+    },
+    "P9": {
+      "text": "Income in 2025-26 was $968,000 and costs were $962,000, a small surplus of $6,000.\n**Where the money came from**\n| Source | Amount |\n|---|---|\n| Medicaid and the state children's health plan | $512,000 |\n| Foundation grants | $196,000 |\n| Calder County Health Department contract | $180,000 |\n| Donations and the spring fun run | $80,000 |\n| **Total** | **$968,000** |\n**Where it went**\n| Use | Amount |\n|---|---|\n| Staff (dentist, two hygienists, assistant, program manager) | $682,000 |\n| Dental supplies and lab work | $121,000 |\n| Van fuel, insurance and repairs | $88,000 |\n| Billing, software and office | $49,000 |\n| Driving children to Bellhaven | $22,000 |\n| **Total** | **$962,000** |\nMedicaid and the state plan paid for a little more than half of the year. The county contract is renewed every two\nyears and runs through June 2027.",
+      "locator": "“Money”",
+      "source_title": "School year report",
+      "source_id": "s_94c3599f0894"
+    },
+    "P10": {
+      "text": "Dividing the year's costs by the children we saw, each child cost us about $358 for the year, usually two visits.",
+      "locator": "“What a visit costs”",
+      "source_title": "School year report",
+      "source_id": "s_94c3599f0894"
+    },
+    "P11": {
+      "text": "To reach the nine waiting schools, we need a second, smaller van and a second team to run it. A 24-foot van with one\nchair can park at a small school and cover the south end without the long drive from our base in Copper Falls.\nStaff priced it with two vendors. The lower bid for the van, fitted out with a chair, X-ray and generator, is $286,000,\na one-time cost. The second team, one hygienist and one assistant who drives, would cost $148,000 a year, with the\ndentist's added days included.\nOnce the second van is running, Medicaid and the state plan should pay for about half of the new team's cost each year,\nbased on the share of children covered at the nine schools. That is our estimate from the districts' numbers, and we\nwill report what the billing really shows. The second van would also let us keep the fall and spring visits on time\nwhen the first van is in the shop.",
+      "locator": "“Looking ahead”",
+      "source_title": "School year report",
+      "source_id": "s_94c3599f0894"
+    },
+    "P12": {
+      "text": "To the 31 principals who give us a parking spot and a power outlet, to the 22 student volunteers, and to the families\nwho sign the form: thank you.\nDr. Ines Marlow-Achebe, Dental Director, and Tobiah Renn, Program Manager (Sample)",
+      "locator": "“Thank you”",
+      "source_title": "School year report",
+      "source_id": "s_94c3599f0894"
+    }
+  },
+  "grounding": [
+    {
+      "path": "title",
+      "value": "9",
+      "shown": "Nine",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.heading",
+      "value": "9",
+      "shown": "Nine",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.heading",
+      "value": "1150",
+      "shown": "1,150",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.subhead",
+      "value": "474",
+      "shown": "474",
+      "status": "computed",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.subhead",
+      "value": "31",
+      "shown": "31",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.subhead",
+      "value": "27",
+      "shown": "27",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.note",
+      "value": "70",
+      "shown": "70",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bars.0",
+      "value": "2024",
+      "shown": "2024",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bars.0",
+      "value": "25",
+      "shown": "25",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bars.0",
+      "value": "2210",
+      "shown": "2,210",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bars.1",
+      "value": "2025",
+      "shown": "2025",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bars.1",
+      "value": "26",
+      "shown": "26",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bars.1",
+      "value": "2684",
+      "shown": "2,684",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.0",
+      "value": "412",
+      "shown": "412",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.1",
+      "value": "338",
+      "shown": "338",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.2",
+      "value": "81%",
+      "shown": "81%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.2",
+      "value": "214",
+      "shown": "214",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.3",
+      "value": "64%",
+      "shown": "64%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.heading",
+      "value": "34%",
+      "shown": "34%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.heading",
+      "value": "21%",
+      "shown": "21%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.left_label",
+      "value": "2023",
+      "shown": "2023",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.right_label",
+      "value": "2025",
+      "shown": "2025",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.rows.0",
+      "value": "34%",
+      "shown": "34%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.rows.0",
+      "value": "21%",
+      "shown": "21%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.rows.1",
+      "value": "29%",
+      "shown": "29%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.rows.1",
+      "value": "58%",
+      "shown": "58%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.rows.3",
+      "value": "2024",
+      "shown": "2024",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.heading",
+      "value": "18",
+      "shown": "18",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.figures.0",
+      "value": "18",
+      "shown": "18",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.figures.1",
+      "value": "19",
+      "shown": "19",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.figures.2",
+      "value": "49%",
+      "shown": "49%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.figures.3",
+      "value": "22%",
+      "shown": "22%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.heading",
+      "value": "5",
+      "shown": "five",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.1",
+      "value": "9800",
+      "shown": "$9,800",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.2",
+      "value": "24",
+      "shown": "24",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.3",
+      "value": "148000",
+      "shown": "$148,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.heading",
+      "value": "1/2",
+      "shown": "half",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.heading",
+      "value": "360000",
+      "shown": "$360,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.text",
+      "value": "286000",
+      "shown": "$286,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.text",
+      "value": "74000",
+      "shown": "$74,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.amount",
+      "value": "360000",
+      "shown": "$360,000",
+      "status": "ok",
+      "kind": "number"
+    }
+  ],
+  "exhibits": [
+    {
+      "type": "exhibit",
+      "refs": [
+        "P4",
+        "P7",
+        "P2"
+      ],
+      "heading": "Nine south-end schools with about 1,150 children are waiting for a van",
+      "unit": "Children",
+      "bars": [
+        {
+          "label": "2024-25",
+          "value": "2,210",
+          "ref": "P4"
+        },
+        {
+          "label": "2025-26",
+          "value": "2,684",
+          "ref": "P4",
+          "accent": true
+        }
+      ],
+      "note": "Bars show children seen each year. The waiting count comes from the two districts. Most waiting schools are at the south end, a 70-minute drive from the",
+      "subhead": "474 more children seen than the year before, at 31 schools instead of 27"
+    }
+  ],
+  "check": [
+    "All 35 numbers and quotes found in your sources; 1 worked out from them; 1 citation corrected"
+  ],
+  "pills": [
+    {
+      "id": "sources",
+      "tone": "good",
+      "label": "All 35 numbers and quotes found in your sources; 1 worked out from them; 1 citation corrected"
+    },
+    {
+      "id": "contrast",
+      "tone": "good",
+      "label": "Contrast passes, lowest 11.2:1"
+    },
+    {
+      "id": "never",
+      "tone": "good",
+      "label": "No never-say words"
+    },
+    {
+      "id": "fonts",
+      "tone": "good",
+      "label": "Kit fonts used"
+    },
+    {
+      "id": "money",
+      "tone": "warn",
+      "label": "The deck leaves out $31,400, $12,900, $968,000, $962,000 and more from School year report, “The van”; School year report, “Money”"
+    }
+  ],
+  "slide_count": 7,
+  "seconds": 126.2
+}

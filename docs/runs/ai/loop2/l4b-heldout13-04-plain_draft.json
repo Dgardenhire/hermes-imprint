@@ -1,0 +1,52 @@
+{
+  "purpose": "imprint.plain_draft",
+  "tag": "l4b-heldout13",
+  "seconds": 19.2,
+  "model": "claude-opus-5-5",
+  "ok": true,
+  "neutral": true,
+  "request": {
+    "system": "You are a helpful assistant in a desktop chat app with a Python code tool. When you write a Python script in one ```python block, the app runs it in the person's working folder (Python 3.9, python-pptx 1.0 installed, no network) and gives the person any files it saves.",
+    "instructions": "",
+    "input_chars": 8181,
+    "input_head": "Here are our documents.\n\n=== Notes ===\nSample (fictional)\n\nQuillmere Rolling Library\nBoard meeting notes, October 21, 2026, Vashti Bend Community Room\n\nPresent: June Okafor-Reyes (board chair), Abner Whitlock (treasurer), Marisol Quennell (executive director), Pete Danforth (driver-librarian), Lila Ferrand (board member)\n\nItem 3: Beaumont-Tully Rural Literacy Fund\n\nMarisol reported that program officer Celeste Harrow at the Beaumont-Tully Rural Literacy Fund invited us to present Route Eighteen at their December 4 review. We will ask for $85,000 toward the $148,000 total. The county capital award of $40,000 is committed, and the spring donor campaign covers the last $23,000.\n\nJune asked for a short slide deck to go with the presentation. Marisol will own it. Draft to the board by November 20, 2026, final to Celeste by November 27.\n\nInstructions the board agreed on for the deck:\n\n1. Keep it to eight slides or fewer. Ms. Harrow said reviewers get ten minutes per applicant.\n2. Open with the problem: 11 missed stops last year, all from the 2009 vehicle, and four north-county schools with 310 students waiting to join.\n3. Show the full $148,000 budget line by line and all three funding sources, so the Fund sees that $85,000 is not the whole cost.\n4. Abner insisted: the third-grade reading result (41 to 49 percent at six schools) goes in only with its caveat. Say plainly that the state tutors were in four of those schools and that we do not claim the gain. Do not round it into \"rais"
+  },
+  "response": {
+    "draft": "Slide 1: Route Eighteen: One Aging Bookmobile Can't Reach Every School\nLast year we missed 11 stops, and our 2009 bookmobile caused all 11\nThe vehicle passed 214,000 miles this spring\nTransmission line failure in October, failed brake inspection in February, overheated twice in June\nEach missed stop means a class waits four weeks between visits instead of two\nFour north-county schools with 310 students are waiting to join: Dunmore, Pike Hollow, Sayer Flat, East Kettle\nNone of them has a school librarian\n\nSlide 2: Quillmere Rolling Library in FY2026\nA two-person bookmobile nonprofit based in Vashti Bend, now in its sixth year\nServes 14 rural Corrow County elementary schools, 1,180 K-6 students\nOur schools have no school librarian and are more than 25 miles from a public library branch\n281 of 292 scheduled stops completed (96 percent)\n21,460 items checked out, up from 18,930 in FY2025\n91 percent return rate\n846 new county library cards issued to students\n52 of 61 teachers used our new classroom crate loans\n\nSlide 3: What a Missed Stop Means\n\"Bookmobile Tuesday is the only day the whole class runs to the window. When you missed in February, three kids asked me if you were coming back.\"\nDorrie Akin, third-grade teacher, Fallow Creek Elementary\nVehicle costs rose from $19,700 in FY2025 to $31,900 in FY2026, almost all of it repairs\nThe current vehicle is near the end of its working life\n\nSlide 4: The Plan: Route Eighteen\nAdd a second, smaller vehicle: a used high-roof cargo van with shelving and a wheelchair lift\nThe new van runs a north route that adds the four waiting schools\nThe 2009 bookmobile stays on the shorter southern route through FY2028 while we save to replace it\nWith two vehicles, a breakdown on one route no longer cancels every stop\nAt full service: 18 schools, about 1,490 students, 324 school stops a year\n\nSlide 5: Route Eighteen Budget: $148,000\nUsed high-roof cargo van: $74,000\nRefit (shelving, wheelchair lift, inverter, mobile hotspot): $18,500\nOpening collection for four new schools (2,400 books): $21,600\nAdded driver-librarian hours, 0.5 FTE, year one: $26,400\nDriver training, vehicle signage, launch visits: $3,500\nContingency: $4,000\nTotal: $148,000 (one-time costs plus first-year added operating cost)\n\nSlide 6: Three Sources Fund Route Eighteen\nCorrow County Library District one-time capital award: $40,000 (committed)\nBeaumont-Tully Rural Literacy Fund: $85,000 (our request)\nSpring 2027 donor campaign: $23,000 (planned)\nTotal: $148,000\nOur ongoing operations are stable: the county contract and Voss Family Foundation grant are renewed for FY2027, and the state grant runs through June 2027\nFY2026 ended with a $4,850 surplus, which went to our operating reserve\n\nSlide 7: Third-Grade Reading: What We Can and Cannot Say\nSix of our 14 schools shared spring third-grade reading benchmarks (188 students)\nAt those six schools, third graders at or above grade level went from 41 percent (spring 2025) to 49 percent (spring 2026)\nThat same year, state-funded reading tutors worked in four of those six schools\nWe cannot separate our effect from the tutors' effect, and we do not claim this gain\nOther limits: only 6 of 14 schools reported, and we have no comparison group\nWhat we can say: the schools where children read the most books from our shelves were also the schools where scores went up\nNext year: we will ask all 14 schools for data and track checkouts per student\n\nSlide 8: Timeline, Goals, and Our Request\nIf fully funded by March 2027: buy and refit the van in spring 2027\nJune 2027: summer stops begin on the north route\nAugust 2027: full school service begins at 18 schools\nFY2027 goals: miss no more than three stops, get benchmark data from all 14 current schools, and have the north-county van running summer stops by June 2027\nOur request: $85,000 from the Beaumont-Tully Rural Literacy Fund toward the $148,000 total\nMarisol Quennell, Executive Director, Quillmere Rolling Library, Vashti Bend"
+  },
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 343,
+    "cache_read_input_tokens": 3872,
+    "output_tokens": 2056,
+    "output_tokens_details": {
+      "thinking_tokens": 507
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 343,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 2056,
+        "cache_read_input_tokens": 3872,
+        "cache_creation_input_tokens": 343,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 343
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "error": null
+}

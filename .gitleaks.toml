@@ -1,0 +1,9 @@
+# Imprint's font face ids ("key": "b-inter-700-normal") look like api keys to the generic rule.
+# They name a bundled or uploaded font face: family, weight, style. Nothing else is allowed.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Font face ids, not secrets"
+regexTarget = "secret"
+regexes = ['''^[ub]-[a-z0-9-]+-\d{3}-(?:normal|italic)$''']

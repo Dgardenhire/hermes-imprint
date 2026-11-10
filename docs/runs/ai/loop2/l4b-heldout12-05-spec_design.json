@@ -1,0 +1,787 @@
+{
+  "purpose": "imprint.spec_design",
+  "tag": "l4b-heldout12",
+  "seconds": 62.4,
+  "model": "claude-opus-5-5",
+  "ok": true,
+  "neutral": true,
+  "request": {
+    "system": "You are a presentation designer who lays out funder decks slide by slide, the way a strong designer writing python-pptx code would: each slide's layout chosen for what it says.",
+    "instructions": "",
+    "input_chars": 16405,
+    "input_head": "Here are our documents.\n\n=== Notes ===\nSample (fictional)\n\nCogline Bike Works - Board Development Committee\nMeeting notes, October 14, 2026, 6:00 p.m., Granger Street shop\nPresent: Renata Okafor-Bly (executive director), Hal Whitcombe (board chair), Pete Varga (treasurer), Simone Treadwell (lead instructor)\n\n1. Ostrander Family Fund\nHal reported that the Ostrander Family Fund program officer, Lise Damaro, agreed to a site visit on December 4 and invited a request for the evening cohort. Renata confirmed the cohort costs $96,000 in total. The Workforce Board has committed $36,000, so the gap is $60,000.\n\nDecision: we will ask Ostrander for $60,000 for the FY2027 evening cohort.\n\n2. The deck\nRenata asked for a short deck to leave with Lise after the visit. Pete wants the numbers to match the FY2026 annual report exactly.\n\nDeadline: final deck to Hal for review by December 1, 2026.\n\nInstructions for the deck:\n- Keep it to 8 slides or fewer.\n- Show the full $96,000 evening cohort cost and the $36,000 already committed, so Ostrander sees the $60,000 is the gap, not the whole cost.\n- State the 90-day employment result (14 of 19, 74%) with its caveat: small group, half the placements self-reported, no one-year data yet for FY2026.\n- Do not use apprentice photos. Signed releases are not on file. The only participant quote allowed is Dariel M., first name and last initial only.\n- Do not claim we end unemployment in Pellam Ridge or call the program \"life-changing.\" Simone: \"Say what we"
+  },
+  "response": {
+    "slides": [
+      {
+        "ground": "primary",
+        "footer": false,
+        "title": "Cogline Bike Works: FY2027 Evening Cohort",
+        "els": [
+          {
+            "type": "text",
+            "x": 60,
+            "y": 120,
+            "w": 700,
+            "h": 100,
+            "text": "Cogline Bike Works: FY2027 Evening Cohort",
+            "style": "title",
+            "align": "left"
+          },
+          {
+            "type": "text",
+            "x": 60,
+            "y": 228,
+            "w": 700,
+            "h": 32,
+            "text": "A request to the Ostrander Family Fund",
+            "style": "heading",
+            "align": "left"
+          },
+          {
+            "type": "line",
+            "x": 60,
+            "y": 280,
+            "w": 120,
+            "h": 2,
+            "color": "accent"
+          },
+          {
+            "type": "text",
+            "x": 60,
+            "y": 300,
+            "w": 760,
+            "h": 60,
+            "text": "Request: $60,000 toward a $96,000 evening apprenticeship cohort",
+            "style": "strong",
+            "color": "accent",
+            "align": "left"
+          },
+          {
+            "type": "text",
+            "x": 60,
+            "y": 376,
+            "w": 600,
+            "h": 26,
+            "text": "Granger Street, Pellam Ridge",
+            "style": "body",
+            "align": "left"
+          },
+          {
+            "type": "text",
+            "x": 60,
+            "y": 440,
+            "w": 800,
+            "h": 40,
+            "text": "Results are from the FY2026 Annual Program Report (July 1, 2025 to June 30, 2026)",
+            "style": "small",
+            "align": "left"
+          }
+        ]
+      },
+      {
+        "ground": "paper",
+        "footer": true,
+        "title": "Adults train in a paid, 16-week apprenticeship rebuilding bikes for neighbors",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 36,
+            "w": 880,
+            "h": 64,
+            "text": "Adults train in a paid, 16-week apprenticeship rebuilding bikes for neighbors",
+            "style": "title",
+            "align": "left"
+          },
+          {
+            "type": "list",
+            "x": 40,
+            "y": 120,
+            "w": 520,
+            "h": 300,
+            "items": [
+              "Nonprofit bike repair shop and apprenticeship program on Granger Street in Pellam Ridge",
+              "Adults who are out of work or underemployed train in a paid, 16-week apprenticeship",
+              "Apprentices earn a stipend while they train",
+              "Rebuilt bikes are sold at low prices or given free to residents who need a way to get to work or school"
+            ],
+            "style": "body"
+          },
+          {
+            "type": "callout",
+            "x": 600,
+            "y": 112,
+            "w": 320,
+            "h": 250,
+            "title": "Training covers entry-level bike shop skills",
+            "items": [
+              "Wheel truing",
+              "Brake and drivetrain service",
+              "Hub overhaul",
+              "Frame inspection",
+              "Customer intake",
+              "Basic shop math"
+            ],
+            "fill": "tint"
+          },
+          {
+            "type": "rect",
+            "x": 600,
+            "y": 378,
+            "w": 320,
+            "h": 96,
+            "fill": "card"
+          },
+          {
+            "type": "text",
+            "x": 616,
+            "y": 390,
+            "w": 288,
+            "h": 72,
+            "text": "Staff of three: executive director, lead instructor, half-time shop manager",
+            "style": "body",
+            "align": "left"
+          }
+        ]
+      },
+      {
+        "ground": "paper",
+        "footer": true,
+        "title": "Enrollment grew 44% and completions 58% after we began overlapping cohorts",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 36,
+            "w": 880,
+            "h": 64,
+            "text": "Enrollment grew 44% and completions 58% after we began overlapping cohorts",
+            "style": "title",
+            "align": "left"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 116,
+            "w": 205,
+            "h": 128,
+            "value": "26",
+            "label": "Apprentices enrolled",
+            "note": "up from 18 in FY2025, +44%",
+            "fill": "tint"
+          },
+          {
+            "type": "figure",
+            "x": 265,
+            "y": 116,
+            "w": 205,
+            "h": 128,
+            "value": "19",
+            "label": "Completed all 16 weeks",
+            "note": "up from 12, +58%",
+            "fill": "tint"
+          },
+          {
+            "type": "figure",
+            "x": 490,
+            "y": 116,
+            "w": 205,
+            "h": 128,
+            "value": "73%",
+            "label": "Completion rate",
+            "note": "up from 67%",
+            "fill": "tint"
+          },
+          {
+            "type": "figure",
+            "x": 715,
+            "y": 116,
+            "w": 205,
+            "h": 128,
+            "value": "14 of 19",
+            "label": "Employed within 90 days",
+            "note": "up from 8 of 12",
+            "fill": "tint"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 262,
+            "w": 280,
+            "h": 128,
+            "value": "482",
+            "label": "Bikes refurbished",
+            "note": "up from 310, +55%",
+            "fill": "card"
+          },
+          {
+            "type": "figure",
+            "x": 340,
+            "y": 262,
+            "w": 280,
+            "h": 128,
+            "value": "205",
+            "label": "Bikes given free to residents",
+            "note": "up from 140, +46%",
+            "fill": "card"
+          },
+          {
+            "type": "figure",
+            "x": 640,
+            "y": 262,
+            "w": 280,
+            "h": 128,
+            "value": "$58,600",
+            "label": "Shop earned income",
+            "note": "up from $41,200, +42%",
+            "fill": "card"
+          },
+          {
+            "type": "line",
+            "x": 40,
+            "y": 410,
+            "w": 6,
+            "h": 64,
+            "color": "accent"
+          },
+          {
+            "type": "text",
+            "x": 60,
+            "y": 410,
+            "w": 860,
+            "h": 64,
+            "text": "Most of the growth came from one change: running two overlapping cohorts, starting eight weeks apart, beginning September 2025",
+            "style": "strong",
+            "align": "left"
+          }
+        ]
+      },
+      {
+        "ground": "paper",
+        "footer": true,
+        "title": "14 of 19 graduates (74%) were working at 90 days, from a small, partly self-reported group",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 36,
+            "w": 880,
+            "h": 64,
+            "text": "14 of 19 graduates (74%) were working at 90 days, from a small, partly self-reported group",
+            "style": "title",
+            "align": "left"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 110,
+            "w": 430,
+            "h": 22,
+            "text": "Employment After 90 Days: where the 14 were hired",
+            "style": "label",
+            "color": "muted",
+            "align": "left"
+          },
+          {
+            "type": "bars",
+            "x": 40,
+            "y": 136,
+            "w": 430,
+            "h": 150,
+            "orient": "horizontal",
+            "items": [
+              {
+                "label": "Bike shops or bike rental and fleet operators in the county",
+                "value": "9",
+                "highlight": true
+              },
+              {
+                "label": "Related mechanical trades: small-engine, appliance repair, forklift maintenance",
+                "value": "3"
+              },
+              {
+                "label": "Cogline, as part-time shop assistants",
+                "value": "2"
+              }
+            ]
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 302,
+            "w": 430,
+            "h": 104,
+            "value": "$17.25",
+            "label": "Median starting wage an hour",
+            "note": "compared with $13.10 reported at intake",
+            "fill": "tint"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 422,
+            "w": 430,
+            "h": 56,
+            "text": "Starting in FY2027, we will ask every graduate for employer contact consent at graduation",
+            "style": "small",
+            "align": "left"
+          },
+          {
+            "type": "callout",
+            "x": 500,
+            "y": 110,
+            "w": 420,
+            "h": 372,
+            "title": "Caveats on this number",
+            "items": [
+              "This is a small group. One graduate moves the rate by about five points",
+              "7 of the 14 placements were confirmed by an employer. The other 7 are self-reported by the graduate",
+              "We do not have one-year retention data for FY2026 graduates yet",
+              "FY2025 one-year check: 7 of the 8 employed at 90 days were still working. That is one cohort of 12, not a trend yet"
+            ],
+            "fill": "tint"
+          }
+        ]
+      },
+      {
+        "ground": "paper",
+        "footer": true,
+        "title": "A graduate's view: he was hired for diagnosing a problem and pricing it straight",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 36,
+            "w": 880,
+            "h": 64,
+            "text": "A graduate's view: he was hired for diagnosing a problem and pricing it straight",
+            "style": "title",
+            "align": "left"
+          },
+          {
+            "type": "quote",
+            "x": 40,
+            "y": 120,
+            "w": 500,
+            "h": 300,
+            "text": "I came in thinking I'd learn to fix flats. What I actually learned was how to look at a problem, write down what's wrong, and give somebody a straight price. That's the part they hired me for.",
+            "who": "Dariel M., spring cohort graduate, now works the service desk at a shop in the county seat"
+          },
+          {
+            "type": "figure",
+            "x": 580,
+            "y": 112,
+            "w": 340,
+            "h": 100,
+            "value": "482",
+            "label": "bikes rebuilt in FY2026",
+            "fill": "tint"
+          },
+          {
+            "type": "bars",
+            "x": 580,
+            "y": 226,
+            "w": 340,
+            "h": 96,
+            "orient": "horizontal",
+            "items": [
+              {
+                "label": "Sold through the shop, mostly $60 to $180",
+                "value": "277"
+              },
+              {
+                "label": "Given free",
+                "value": "205",
+                "highlight": true
+              }
+            ]
+          },
+          {
+            "type": "list",
+            "x": 580,
+            "y": 336,
+            "w": 340,
+            "h": 144,
+            "items": [
+              "Free bikes went to residents referred by the adult education center, two family shelters, and the county reentry office",
+              "Every free bike goes out with a lock, lights, and a fitted helmet"
+            ],
+            "style": "small"
+          }
+        ]
+      },
+      {
+        "ground": "paper",
+        "footer": true,
+        "title": "FY2026 revenue of $318,000 covered $312,400 in expenses, leaving a $5,600 surplus",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 36,
+            "w": 880,
+            "h": 64,
+            "text": "FY2026 revenue of $318,000 covered $312,400 in expenses, leaving a $5,600 surplus",
+            "style": "title",
+            "align": "left"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 108,
+            "w": 880,
+            "h": 26,
+            "text": "Operating expenses: $312,400",
+            "style": "strong",
+            "align": "left"
+          },
+          {
+            "type": "stack",
+            "x": 40,
+            "y": 140,
+            "w": 880,
+            "h": 84,
+            "items": [
+              {
+                "label": "Apprentice stipends $118,800",
+                "value": "38%",
+                "highlight": true
+              },
+              {
+                "label": "Staff salaries and benefits $121,500",
+                "value": "39%",
+                "highlight": true
+              },
+              {
+                "label": "Rent and utilities $28,800",
+                "value": "9%"
+              },
+              {
+                "label": "Parts, tools, and safety gear $24,600",
+                "value": "8%"
+              },
+              {
+                "label": "Insurance, accounting, and admin $18,700",
+                "value": "6%"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 236,
+            "w": 880,
+            "h": 24,
+            "text": "Cost per enrolled apprentice fell from $13,900 to $12,015",
+            "style": "body",
+            "color": "accent",
+            "align": "left"
+          },
+          {
+            "type": "line",
+            "x": 40,
+            "y": 276,
+            "w": 880,
+            "h": 2,
+            "color": "rule"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 292,
+            "w": 880,
+            "h": 26,
+            "text": "Revenue: $318,000, with a $5,600 surplus added to the operating reserve",
+            "style": "strong",
+            "align": "left"
+          },
+          {
+            "type": "stack",
+            "x": 40,
+            "y": 324,
+            "w": 880,
+            "h": 84,
+            "items": [
+              {
+                "label": "Tallis County Workforce Board $120,000",
+                "value": "38%",
+                "highlight": true
+              },
+              {
+                "label": "Ferncliff Community Foundation $75,000",
+                "value": "24%"
+              },
+              {
+                "label": "Shop earned income $58,600",
+                "value": "18%"
+              },
+              {
+                "label": "Individual donors and Spring Gear-Up Ride $44,400",
+                "value": "14%"
+              },
+              {
+                "label": "Northway Cycle Supply $20,000",
+                "value": "6%"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ground": "paper",
+        "footer": true,
+        "title": "22 of the 31 people on our waitlist can only attend in the evening",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 36,
+            "w": 880,
+            "h": 64,
+            "text": "22 of the 31 people on our waitlist can only attend in the evening",
+            "style": "title",
+            "align": "left"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 116,
+            "w": 276,
+            "h": 130,
+            "value": "31",
+            "label": "Waitlist at the end of FY2026",
+            "fill": "tint"
+          },
+          {
+            "type": "figure",
+            "x": 342,
+            "y": 116,
+            "w": 276,
+            "h": 130,
+            "value": "22",
+            "label": "said they could only attend in the evening",
+            "fill": "tint"
+          },
+          {
+            "type": "figure",
+            "x": 644,
+            "y": 116,
+            "w": 276,
+            "h": 130,
+            "value": "26 → 36",
+            "label": "Total enrollment, apprentices",
+            "fill": "tint"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 264,
+            "w": 880,
+            "h": 50,
+            "text": "Most already have daytime jobs, often part-time or with shifting schedules, and can't leave them for a weekday program",
+            "style": "body",
+            "align": "left"
+          },
+          {
+            "type": "rect",
+            "x": 40,
+            "y": 332,
+            "w": 880,
+            "h": 148,
+            "fill": "card"
+          },
+          {
+            "type": "text",
+            "x": 60,
+            "y": 344,
+            "w": 400,
+            "h": 22,
+            "text": "The Need: An Evening Cohort",
+            "style": "label",
+            "color": "muted",
+            "align": "left"
+          },
+          {
+            "type": "text",
+            "x": 60,
+            "y": 372,
+            "w": 520,
+            "h": 96,
+            "text": "Evening cohort: Monday to Thursday, 5:30 to 9:00 p.m., for 20 weeks, matching the day program's hours",
+            "style": "body",
+            "align": "left"
+          },
+          {
+            "type": "line",
+            "x": 610,
+            "y": 348,
+            "w": 2,
+            "h": 116,
+            "color": "rule"
+          },
+          {
+            "type": "text",
+            "x": 636,
+            "y": 344,
+            "w": 264,
+            "h": 22,
+            "text": "Planned start",
+            "style": "label",
+            "color": "muted",
+            "align": "left"
+          },
+          {
+            "type": "text",
+            "x": 636,
+            "y": 374,
+            "w": 264,
+            "h": 60,
+            "text": "February 2027",
+            "style": "heading",
+            "color": "accent",
+            "align": "left"
+          }
+        ]
+      },
+      {
+        "ground": "paper",
+        "footer": true,
+        "title": "With $36,000 committed, $60,000 remains to launch the $96,000 evening cohort",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 36,
+            "w": 880,
+            "h": 64,
+            "text": "With $36,000 committed, $60,000 remains to launch the $96,000 evening cohort",
+            "style": "title",
+            "align": "left"
+          },
+          {
+            "type": "table",
+            "x": 40,
+            "y": 106,
+            "w": 450,
+            "h": 226,
+            "header": [
+              "Evening Cohort Cost",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "Second instructor (1.0 FTE, salary and benefits)",
+                "$52,000"
+              ],
+              [
+                "Stipends for 10 evening apprentices",
+                "$30,000"
+              ],
+              [
+                "Added tools, workstands, and safety gear",
+                "$8,500"
+              ],
+              [
+                "Evening utilities and building access",
+                "$5,500"
+              ]
+            ],
+            "total": [
+              "Total evening cohort cost",
+              "$96,000"
+            ]
+          },
+          {
+            "type": "callout",
+            "x": 40,
+            "y": 348,
+            "w": 450,
+            "h": 134,
+            "title": "FY2027 targets",
+            "items": [
+              "36 enrolled",
+              "At least 26 completing",
+              "At least 70% of completers employed within 90 days",
+              "At least half of placements confirmed directly with an employer"
+            ],
+            "fill": "tint"
+          },
+          {
+            "type": "stack",
+            "x": 520,
+            "y": 106,
+            "w": 400,
+            "h": 110,
+            "items": [
+              {
+                "label": "Already committed by the Tallis County Workforce Board",
+                "value": "$36,000"
+              },
+              {
+                "label": "Remaining gap",
+                "value": "$60,000",
+                "highlight": true
+              }
+            ]
+          },
+          {
+            "type": "figure",
+            "x": 520,
+            "y": 234,
+            "w": 400,
+            "h": 132,
+            "value": "$60,000",
+            "label": "Remaining gap. This is our request to the Ostrander Family Fund",
+            "fill": "tint"
+          },
+          {
+            "type": "text",
+            "x": 520,
+            "y": 384,
+            "w": 400,
+            "h": 50,
+            "text": "Full FY2027 budget, including the evening cohort: $408,400",
+            "style": "body",
+            "align": "left"
+          }
+        ]
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 6843,
+    "cache_read_input_tokens": 709,
+    "output_tokens": 7021,
+    "output_tokens_details": {
+      "thinking_tokens": 2191
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6843,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 7021,
+        "cache_read_input_tokens": 709,
+        "cache_creation_input_tokens": 6843,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 6843
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "error": null
+}

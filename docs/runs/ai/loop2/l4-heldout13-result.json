@@ -1,0 +1,2967 @@
+{
+  "set": "heldout13",
+  "tag": "l4-heldout13",
+  "steps": {
+    "brand": {
+      "status": "done",
+      "seconds": 0.0
+    },
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 112.7,
+      "error": null
+    }
+  },
+  "started": 1794268284.795586,
+  "sources": [
+    "notes.txt",
+    "report.md"
+  ],
+  "kit": {
+    "id": "k_8e3a9e2e970c",
+    "name": "Pasted colors",
+    "colors": [
+      {
+        "hex": "#1f4e5f",
+        "role": "head",
+        "name": "Deep teal"
+      },
+      {
+        "hex": "#e8a33d",
+        "role": "rule",
+        "name": "Marigold"
+      }
+    ],
+    "paper": "#f5efe3",
+    "ink": "#1b1b1b",
+    "kit_json": {
+      "name": "Pasted colors",
+      "origin": "import",
+      "origin_note": "Pasted color codes",
+      "org": "",
+      "subject": "",
+      "signature": "",
+      "paper": "#f5efe3",
+      "ink": "#1b1b1b",
+      "colors": [
+        {
+          "hex": "#1f4e5f",
+          "role": "head",
+          "name": "Deep teal"
+        },
+        {
+          "hex": "#e8a33d",
+          "role": "rule",
+          "name": "Marigold"
+        }
+      ],
+      "type": {
+        "heading": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 700
+        },
+        "body": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 400
+        },
+        "scale": 1.25
+      },
+      "layout": "banner",
+      "density": "medium",
+      "voice": {
+        "notes": "",
+        "delivery": "",
+        "never": [],
+        "pairs": [],
+        "draft": false
+      },
+      "rules": {
+        "sources": true,
+        "page_numbers": true,
+        "date": true,
+        "required": []
+      },
+      "imported_from": {
+        "kind": "paste",
+        "label": "Pasted colors",
+        "ref": "",
+        "sha256": "",
+        "license_note": "",
+        "brand_named": false,
+        "mode": "",
+        "imported_at": 1794268284.802728
+      },
+      "logo": null,
+      "logo_alt": null,
+      "fonts": [],
+      "id": "k_8e3a9e2e970c",
+      "version": 1,
+      "created_at": 1794268284.804136,
+      "updated_at": 1794268284.804136,
+      "starter": false
+    }
+  },
+  "guide_and_summaries_seconds": 13.8,
+  "guide": {
+    "by": "Written by your Hermes model",
+    "guide": [
+      {
+        "text": "The sources are October 21, 2026 board notes and the FY2026 annual report of Quillmere Rolling Library, a fictional bookmobile nonprofit.",
+        "chips": [
+          {
+            "ref": "P1",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 1",
+            "source_id": "s_a66510427f7d"
+          },
+          {
+            "ref": "P2",
+            "n": 2,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 2",
+            "source_id": "s_a66510427f7d"
+          },
+          {
+            "ref": "P11",
+            "n": 3,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "para. 1",
+            "source_id": "s_a71aef14db52"
+          },
+          {
+            "ref": "P12",
+            "n": 4,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Quillmere Rolling Library”",
+            "source_id": "s_a71aef14db52"
+          }
+        ]
+      },
+      {
+        "text": "In FY2026 it made 281 of 292 stops, and its 2009 bookmobile caused all 11 missed stops.",
+        "chips": [
+          {
+            "ref": "P13",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“What we did”",
+            "source_id": "s_a71aef14db52"
+          },
+          {
+            "ref": "P14",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“What we did”",
+            "source_id": "s_a71aef14db52"
+          }
+        ]
+      },
+      {
+        "text": "Its Route Eighteen plan costs $148,000 and adds a second van to serve four north-county schools with 310 students.",
+        "chips": [
+          {
+            "ref": "P20",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: Route Eighteen”",
+            "source_id": "s_a71aef14db52"
+          },
+          {
+            "ref": "P21",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: Route Eighteen”",
+            "source_id": "s_a71aef14db52"
+          }
+        ]
+      },
+      {
+        "text": "The plan asks the Beaumont-Tully Rural Literacy Fund for $85,000, with $40,000 committed by the county and $23,000 planned from donors.",
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 5",
+            "source_id": "s_a66510427f7d"
+          },
+          {
+            "ref": "P21",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: Route Eighteen”",
+            "source_id": "s_a71aef14db52"
+          }
+        ]
+      },
+      {
+        "text": "Third-grade reading rose from 41 percent to 49 percent at six schools, but state tutors were in four of them.",
+        "chips": [
+          {
+            "ref": "P15",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“One result, and what it does and does not show”",
+            "source_id": "s_a71aef14db52"
+          },
+          {
+            "ref": "P16",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“One result, and what it does and does not show”",
+            "source_id": "s_a71aef14db52"
+          }
+        ]
+      }
+    ],
+    "asks": [
+      {
+        "id": "a1",
+        "who": "June Okafor-Reyes (board chair)",
+        "what": "Short slide deck to go with the Route Eighteen presentation",
+        "by": "Draft to the board by November 20, 2026,",
+        "kind": "deck",
+        "chips": [
+          {
+            "ref": "P6",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 6",
+            "source_id": "s_a66510427f7d"
+          }
+        ],
+        "brief": {
+          "who": "Beaumont-Tully Rural Literacy Fund reviewers",
+          "goal": "Decide whether to grant $85,000 toward Route Eighteen",
+          "length": "Eight slides or fewer"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "text": "The old bookmobile missed 11 stops, and the goal is no more than three. Its costs rose $12,200, from $19,700 to $31,900. It stays in service through FY2028, so how will the goal be met?",
+        "chips": [
+          {
+            "ref": "P13",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“What we did”",
+            "source_id": "s_a71aef14db52"
+          },
+          {
+            "ref": "P23",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Looking ahead”",
+            "source_id": "s_a71aef14db52"
+          },
+          {
+            "ref": "P18",
+            "n": 3,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Expenses”",
+            "source_id": "s_a71aef14db52"
+          },
+          {
+            "ref": "P20",
+            "n": 4,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: Route Eighteen”",
+            "source_id": "s_a71aef14db52"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "The van plan needs full funding by March 2027. The $85,000 request is pending and the $23,000 donor campaign is only planned. What happens to June 2027 summer stops if either falls short?",
+        "chips": [
+          {
+            "ref": "P22",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: Route Eighteen”",
+            "source_id": "s_a71aef14db52"
+          },
+          {
+            "ref": "P21",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: Route Eighteen”",
+            "source_id": "s_a71aef14db52"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "Reading rose from 41 percent to 49 percent at six schools, but tutors were in four of them. How strong can the deck's case be without claiming that gain?",
+        "chips": [
+          {
+            "ref": "P15",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“One result, and what it does and does not show”",
+            "source_id": "s_a71aef14db52"
+          },
+          {
+            "ref": "P16",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“One result, and what it does and does not show”",
+            "source_id": "s_a71aef14db52"
+          },
+          {
+            "ref": "P8",
+            "n": 3,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 8",
+            "source_id": "s_a66510427f7d"
+          }
+        ],
+        "suggestion": true
+      }
+    ],
+    "source_ids": [
+      "s_a66510427f7d",
+      "s_a71aef14db52"
+    ],
+    "created_at": 1794268298.552598
+  },
+  "brief": {
+    "who": "Funders",
+    "goal": "Decide whether to grant $85,000 toward Route Eighteen",
+    "length": "7 to 9 slides"
+  },
+  "outline": {},
+  "deck_seconds": 112.7,
+  "output_id": "o_280369205720",
+  "case": null,
+  "plain_draft": "Slide 1: Route Eighteen: 11 Missed Stops, 310 Students Waiting\nQuillmere Rolling Library, presented to the Beaumont-Tully Rural Literacy Fund, December 4, 2026\nLast year we missed 11 of 292 scheduled stops, and our 2009 bookmobile caused every one\nThe bookmobile passed 214,000 miles this spring\nFour north-county schools have asked to join: Dunmore, Pike Hollow, Sayer Flat and East Kettle\nTogether they enroll 310 K-6 students, and none of them has a school librarian\nWith one aging vehicle we cannot add them\n\nSlide 2: What We Do Today (FY2026)\nWe serve 14 rural elementary schools with no school librarian, each more than 25 miles from a public library\nWe reach 1,180 K-6 students, with a visit every other week for 36 weeks plus 40 summer stops\nWe made 281 of 292 stops (96 percent)\nStudents checked out 21,460 items, up from 18,930 in FY2025, with a 91 percent return rate\nWe issued 846 new county library cards to students\n52 of 61 teachers used our new classroom crate loans, which account for about 4,100 checkouts\nOur finances are stable: $191,250 in revenue against $186,400 in expenses, and the county contract and Voss Foundation grant are renewed for FY2027\n\nSlide 3: One Vehicle Near the End of Its Life\nOctober: a transmission line failed\nFebruary: the bookmobile failed its brake inspection\nJune: it overheated twice\nVehicle costs rose from $19,700 to $31,900 in one year, almost all of it repairs\nEach missed stop means a class waits four weeks between visits, not two\n\"Bookmobile Tuesday is the only day the whole class runs to the window. When you missed in February, three kids asked me if you were coming back.\" – Dorrie Akin, third-grade teacher, Fallow Creek Elementary\n\nSlide 4: The Plan: Route Eighteen\nWe will buy a used high-roof cargo van, refitted with shelving and a wheelchair lift\nThe van will run a new north route to the four waiting schools\nThe 2009 bookmobile will stay on the shorter southern route through FY2028 while we save for its replacement\nWith two vehicles, a breakdown on one route no longer cancels every stop\nAt full service: 18 schools, about 1,490 students, 324 school stops a year\n\nSlide 5: Route Eighteen Budget: $148,000\nUsed high-roof cargo van: $74,000\nRefit (shelving, wheelchair lift, inverter, mobile hotspot): $18,500\nOpening collection for four new schools (2,400 books): $21,600\nAdded driver-librarian hours, 0.5 FTE, year one: $26,400\nDriver training, vehicle signage, launch visits: $3,500\nContingency: $4,000\nTotal: $148,000 (one-time costs plus first-year added operating cost)\n\nSlide 6: How We Will Pay for It\nCorrow County Library District one-time capital award: $40,000 (committed)\nBeaumont-Tully Rural Literacy Fund: $85,000 (this request)\nSpring 2027 donor campaign: $23,000 (planned)\nTotal: $148,000\nYour $85,000 covers part of the project, not all of it\n\nSlide 7: Reading Results, With Their Limits\nAt the 6 schools that shared data (188 students), the share of third graders reading at or above grade level went from 41 percent in spring 2025 to 49 percent in spring 2026\nSix schools is not all 14, and the schools that agreed to share may be the most engaged ones\nWe had no comparison group\nState-funded reading tutors worked in four of those six schools in the same year\nWe cannot separate our effect from the tutors' effect, and we do not claim this gain as ours\nWhat we can say: the schools that borrowed the most books from us were also the schools where scores went up\nNext year: we will collect benchmark data from all 14 schools and track checkouts per student\n\nSlide 8: Timeline, Goals and Our Request\nMarch 2027: Route Eighteen fully funded\nSpring 2027: buy and refit the van\nJune 2027: summer stops begin on the north route\nAugust 2027: full school service begins at 18 schools\nFY2027 goals: miss no more than 3 stops, collect benchmark data from all 14 current schools, have the van running north-county summer stops by June 2027\nOur request: $85,000 from the Beaumont-Tully Rural Literacy Fund\nMarisol Quennell, Executive Director, Quillmere Rolling Library, Vashti Bend",
+  "plain_record": {
+    "flags": [],
+    "splits": [],
+    "slides": 8,
+    "spec": true
+  },
+  "spec_record": {
+    "slides": 8,
+    "problems": {
+      "1": [
+        {
+          "el": 3,
+          "kind": "overflow",
+          "detail": "element 3 (figure) does not fit its 208 x 118 box even at the smallest type size"
+        }
+      ]
+    },
+    "fixed": [],
+    "left": {
+      "1": [
+        {
+          "el": 3,
+          "kind": "overflow",
+          "detail": "element 3 (figure) does not fit its 208 x 118 box even at the smallest type size"
+        }
+      ]
+    },
+    "dropped_numbers": []
+  },
+  "argument": null,
+  "neutral": {
+    "title": "Route Eighteen: 11 Missed Stops, 310 Students Waiting",
+    "subtitle": "",
+    "slides": [
+      {
+        "type": "spec",
+        "heading": "Today 14 schools and 1,180 students count on our one bookmobile",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 32,
+            "w": 880,
+            "h": 84,
+            "text": "Today 14 schools and 1,180 students count on our one bookmobile",
+            "style": "title",
+            "align": "left",
+            "ref": "P13"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 134,
+            "w": 208,
+            "h": 118,
+            "value": "14",
+            "label": "rural elementary schools served",
+            "fill": "tint",
+            "ref": "P13"
+          },
+          {
+            "type": "figure",
+            "x": 264,
+            "y": 134,
+            "w": 208,
+            "h": 118,
+            "value": "1,180",
+            "label": "K-6 students reached",
+            "fill": "tint",
+            "ref": "P13"
+          },
+          {
+            "type": "figure",
+            "x": 488,
+            "y": 134,
+            "w": 208,
+            "h": 118,
+            "value": "96%",
+            "label": "of stops made",
+            "note": "281 of 292",
+            "fill": "tint",
+            "ref": "P13"
+          },
+          {
+            "type": "figure",
+            "x": 712,
+            "y": 134,
+            "w": 208,
+            "h": 118,
+            "value": "846",
+            "label": "new county library cards issued to students",
+            "fill": "tint",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 270,
+            "w": 320,
+            "h": 20,
+            "text": "Items checked out, 91 percent return rate",
+            "style": "label",
+            "align": "left",
+            "ref": "P14"
+          },
+          {
+            "type": "bars",
+            "x": 40,
+            "y": 296,
+            "w": 320,
+            "h": 186,
+            "orient": "vertical",
+            "items": [
+              {
+                "label": "FY2025",
+                "value": "18,930"
+              },
+              {
+                "label": "FY2026",
+                "value": "21,460",
+                "highlight": true
+              }
+            ],
+            "ref": "P14"
+          },
+          {
+            "type": "list",
+            "x": 388,
+            "y": 270,
+            "w": 532,
+            "h": 212,
+            "items": [
+              "Schools with no school librarian, each more than 25 miles from a public library",
+              "A visit every other week for 36 weeks, plus 40 summer stops",
+              "52 of 61 teachers used our new classroom crate loans, which account for about 4,100 checkouts",
+              "Our finances are stable: $191,250 in revenue against $186,400 in expenses; the county contract and Voss Foundation grant are renewed for FY2027"
+            ],
+            "style": "body",
+            "ref": "P18"
+          }
+        ],
+        "refs": [
+          "P13",
+          "P14"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Repair costs jumped to $31,900 as our one vehicle nears the end of its life",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 32,
+            "w": 880,
+            "h": 84,
+            "text": "Repair costs jumped to $31,900 as our one vehicle nears the end of its life",
+            "style": "title",
+            "align": "left",
+            "ref": "P18"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 136,
+            "w": 270,
+            "h": 180,
+            "value": "$31,900",
+            "label": "vehicle costs, almost all of it repairs",
+            "note": "up from $19,700 in one year",
+            "fill": "tint",
+            "ref": "P18"
+          },
+          {
+            "type": "text",
+            "x": 340,
+            "y": 140,
+            "w": 110,
+            "h": 24,
+            "text": "October",
+            "style": "label",
+            "color": "accent",
+            "align": "left",
+            "ref": "P2"
+          },
+          {
+            "type": "text",
+            "x": 460,
+            "y": 136,
+            "w": 460,
+            "h": 28,
+            "text": "A transmission line failed",
+            "style": "body",
+            "align": "left",
+            "ref": "P13"
+          },
+          {
+            "type": "line",
+            "x": 340,
+            "y": 176,
+            "w": 580,
+            "h": 2,
+            "color": "rule"
+          },
+          {
+            "type": "text",
+            "x": 340,
+            "y": 192,
+            "w": 110,
+            "h": 24,
+            "text": "February",
+            "style": "label",
+            "color": "accent",
+            "align": "left",
+            "ref": "P13"
+          },
+          {
+            "type": "text",
+            "x": 460,
+            "y": 188,
+            "w": 460,
+            "h": 28,
+            "text": "The bookmobile failed its brake inspection",
+            "style": "body",
+            "align": "left",
+            "ref": "P13"
+          },
+          {
+            "type": "line",
+            "x": 340,
+            "y": 228,
+            "w": 580,
+            "h": 2,
+            "color": "rule"
+          },
+          {
+            "type": "text",
+            "x": 340,
+            "y": 244,
+            "w": 110,
+            "h": 24,
+            "text": "June",
+            "style": "label",
+            "color": "accent",
+            "align": "left",
+            "ref": "P3"
+          },
+          {
+            "type": "text",
+            "x": 460,
+            "y": 240,
+            "w": 460,
+            "h": 28,
+            "text": "It overheated twice",
+            "style": "body",
+            "align": "left",
+            "ref": "P13"
+          },
+          {
+            "type": "text",
+            "x": 340,
+            "y": 282,
+            "w": 580,
+            "h": 50,
+            "text": "Each missed stop means a class waits four weeks between visits, not two",
+            "style": "strong",
+            "color": "primary",
+            "align": "left",
+            "ref": "P13"
+          },
+          {
+            "type": "quote",
+            "x": 40,
+            "y": 348,
+            "w": 880,
+            "h": 132,
+            "text": "Bookmobile Tuesday is the only day the whole class runs to the window. When you missed in February, three kids asked me if you were coming back.",
+            "who": "Dorrie Akin, third-grade teacher, Fallow Creek Elementary",
+            "ref": "P17"
+          }
+        ],
+        "refs": [
+          "P18",
+          "P2",
+          "P13",
+          "P3",
+          "P17"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "A second vehicle lets us reach 18 schools and about 1,490 students",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 32,
+            "w": 880,
+            "h": 84,
+            "text": "A second vehicle lets us reach 18 schools and about 1,490 students",
+            "style": "title",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "list",
+            "x": 40,
+            "y": 140,
+            "w": 520,
+            "h": 330,
+            "items": [
+              "We will buy a used high-roof cargo van, refitted with shelving and a wheelchair lift",
+              "The van will run a new north route to the four waiting schools",
+              "The 2009 bookmobile will stay on the shorter southern route through FY2028 while we save for its replacement",
+              "With two vehicles, a breakdown on one route no longer cancels every stop"
+            ],
+            "style": "body",
+            "ref": "P20"
+          },
+          {
+            "type": "text",
+            "x": 600,
+            "y": 134,
+            "w": 320,
+            "h": 18,
+            "text": "At full service",
+            "style": "label",
+            "color": "accent",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "figure",
+            "x": 600,
+            "y": 158,
+            "w": 320,
+            "h": 96,
+            "value": "18",
+            "label": "schools",
+            "fill": "tint",
+            "ref": "P22"
+          },
+          {
+            "type": "figure",
+            "x": 600,
+            "y": 270,
+            "w": 320,
+            "h": 96,
+            "value": "1,490",
+            "label": "students (about)",
+            "fill": "tint",
+            "ref": "P22"
+          },
+          {
+            "type": "figure",
+            "x": 600,
+            "y": 382,
+            "w": 320,
+            "h": 96,
+            "value": "324",
+            "label": "school stops a year",
+            "fill": "tint",
+            "ref": "P22"
+          }
+        ],
+        "refs": [
+          "P22",
+          "P20"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Route Eighteen costs $148,000, and the van is half of it",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 32,
+            "w": 880,
+            "h": 84,
+            "text": "Route Eighteen costs $148,000, and the van is half of it",
+            "style": "title",
+            "align": "left",
+            "ref": "P5"
+          },
+          {
+            "type": "table",
+            "x": 40,
+            "y": 134,
+            "w": 580,
+            "h": 340,
+            "header": [
+              "Line",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "Used high-roof cargo van",
+                "$74,000"
+              ],
+              [
+                "Refit (shelving, wheelchair lift, inverter, mobile hotspot)",
+                "$18,500"
+              ],
+              [
+                "Opening collection for four new schools (2,400 books)",
+                "$21,600"
+              ],
+              [
+                "Added driver-librarian hours, 0.5 FTE, year one",
+                "$26,400"
+              ],
+              [
+                "Driver training, vehicle signage, launch visits",
+                "$3,500"
+              ],
+              [
+                "Contingency",
+                "$4,000"
+              ]
+            ],
+            "total": [
+              "Total",
+              "$148,000"
+            ],
+            "ref": "P21"
+          },
+          {
+            "type": "callout",
+            "x": 652,
+            "y": 134,
+            "w": 268,
+            "h": 160,
+            "title": "What the $148,000 covers",
+            "text": "One-time costs plus first-year added operating cost",
+            "fill": "tint",
+            "ref": "P5"
+          }
+        ],
+        "refs": [
+          "P20",
+          "P21"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Your $85,000 covers part of the project, not all of it",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 32,
+            "w": 880,
+            "h": 84,
+            "text": "Your $85,000 covers part of the project, not all of it",
+            "style": "title",
+            "align": "left",
+            "ref": "P8"
+          },
+          {
+            "type": "stack",
+            "x": 40,
+            "y": 140,
+            "w": 880,
+            "h": 100,
+            "items": [
+              {
+                "label": "Corrow County capital award",
+                "value": "$40,000"
+              },
+              {
+                "label": "Beaumont-Tully Rural Literacy Fund",
+                "value": "$85,000",
+                "highlight": true
+              },
+              {
+                "label": "Spring 2027 donor campaign",
+                "value": "$23,000"
+              }
+            ],
+            "ref": "P21"
+          },
+          {
+            "type": "table",
+            "x": 40,
+            "y": 266,
+            "w": 880,
+            "h": 210,
+            "header": [
+              "Source",
+              "Amount",
+              "Status"
+            ],
+            "rows": [
+              [
+                "Corrow County Library District one-time capital award",
+                "$40,000",
+                "Committed"
+              ],
+              [
+                "Beaumont-Tully Rural Literacy Fund",
+                "$85,000",
+                "This request"
+              ],
+              [
+                "Spring 2027 donor campaign",
+                "$23,000",
+                "Planned"
+              ]
+            ],
+            "total": [
+              "Total",
+              "$148,000",
+              ""
+            ],
+            "ref": "P21"
+          }
+        ],
+        "refs": [
+          "P8",
+          "P21"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Third-grade reading rose from 41 to 49 percent, a gain we do not claim as ours",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 32,
+            "w": 880,
+            "h": 84,
+            "text": "Third-grade reading rose from 41 to 49 percent, a gain we do not claim as ours",
+            "style": "title",
+            "align": "left",
+            "ref": "P8"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 134,
+            "w": 340,
+            "h": 38,
+            "text": "Third graders at or above grade level, at the 6 schools that shared data (188 students)",
+            "style": "small",
+            "align": "left",
+            "ref": "P15"
+          },
+          {
+            "type": "bars",
+            "x": 40,
+            "y": 182,
+            "w": 340,
+            "h": 200,
+            "orient": "vertical",
+            "items": [
+              {
+                "label": "Spring 2025",
+                "value": "41%"
+              },
+              {
+                "label": "Spring 2026",
+                "value": "49%",
+                "highlight": true
+              }
+            ],
+            "ref": "P15"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 400,
+            "w": 340,
+            "h": 76,
+            "text": "Next year: we will collect benchmark data from all 14 schools and track checkouts per student",
+            "style": "body",
+            "align": "left",
+            "ref": "P16"
+          },
+          {
+            "type": "callout",
+            "x": 410,
+            "y": 134,
+            "w": 510,
+            "h": 252,
+            "title": "What this does not show",
+            "items": [
+              "Six schools is not all 14, and the schools that agreed to share may be the most engaged ones",
+              "We had no comparison group",
+              "State-funded reading tutors worked in four of those six schools in the same year",
+              "We cannot separate our effect from the tutors' effect, and we do not claim this gain as ours"
+            ],
+            "fill": "tint",
+            "ref": "P16"
+          },
+          {
+            "type": "text",
+            "x": 410,
+            "y": 402,
+            "w": 510,
+            "h": 74,
+            "text": "What we can say: the schools that borrowed the most books from us were also the schools where scores went up",
+            "style": "italic",
+            "align": "left",
+            "ref": "P16"
+          }
+        ],
+        "refs": [
+          "P8",
+          "P15",
+          "P16"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Our request: $85,000 to put Route Eighteen on the road in 2027",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 72,
+            "w": 720,
+            "h": 88,
+            "text": "Our request: $85,000 to put Route Eighteen on the road in 2027",
+            "style": "title",
+            "align": "left",
+            "ref": "P5"
+          },
+          {
+            "type": "line",
+            "x": 48,
+            "y": 199,
+            "w": 690,
+            "h": 2,
+            "color": "accent"
+          },
+          {
+            "type": "dot",
+            "x": 40,
+            "y": 192,
+            "w": 16,
+            "h": 16,
+            "fill": "accent"
+          },
+          {
+            "type": "dot",
+            "x": 265,
+            "y": 192,
+            "w": 16,
+            "h": 16,
+            "fill": "accent"
+          },
+          {
+            "type": "dot",
+            "x": 490,
+            "y": 192,
+            "w": 16,
+            "h": 16,
+            "fill": "accent"
+          },
+          {
+            "type": "dot",
+            "x": 715,
+            "y": 192,
+            "w": 16,
+            "h": 16,
+            "fill": "accent"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 222,
+            "w": 205,
+            "h": 20,
+            "text": "March 2027",
+            "style": "label",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 246,
+            "w": 205,
+            "h": 56,
+            "text": "Route Eighteen fully funded",
+            "style": "body",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "text",
+            "x": 265,
+            "y": 222,
+            "w": 205,
+            "h": 20,
+            "text": "Spring 2027",
+            "style": "label",
+            "align": "left",
+            "ref": "P21"
+          },
+          {
+            "type": "text",
+            "x": 265,
+            "y": 246,
+            "w": 205,
+            "h": 56,
+            "text": "Buy and refit the van",
+            "style": "body",
+            "align": "left",
+            "ref": "P20"
+          },
+          {
+            "type": "text",
+            "x": 490,
+            "y": 222,
+            "w": 205,
+            "h": 20,
+            "text": "June 2027",
+            "style": "label",
+            "align": "left",
+            "ref": "P19"
+          },
+          {
+            "type": "text",
+            "x": 490,
+            "y": 246,
+            "w": 205,
+            "h": 56,
+            "text": "Summer stops begin on the north route",
+            "style": "body",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "text",
+            "x": 715,
+            "y": 222,
+            "w": 205,
+            "h": 20,
+            "text": "August 2027",
+            "style": "label",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "text",
+            "x": 715,
+            "y": 246,
+            "w": 205,
+            "h": 56,
+            "text": "Full school service begins at 18 schools",
+            "style": "body",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 326,
+            "w": 540,
+            "h": 20,
+            "text": "FY2027 goals",
+            "style": "label",
+            "align": "left",
+            "ref": "P23"
+          },
+          {
+            "type": "list",
+            "x": 40,
+            "y": 350,
+            "w": 540,
+            "h": 104,
+            "items": [
+              "Miss no more than 3 stops",
+              "Collect benchmark data from all 14 current schools",
+              "Have the van running north-county summer stops by June 2027"
+            ],
+            "style": "body",
+            "ref": "P23"
+          },
+          {
+            "type": "figure",
+            "x": 620,
+            "y": 326,
+            "w": 300,
+            "h": 128,
+            "value": "$85,000",
+            "label": "our request from the Beaumont-Tully Rural Literacy Fund",
+            "ref": "P5"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 468,
+            "w": 880,
+            "h": 22,
+            "text": "Marisol Quennell, Executive Director, Quillmere Rolling Library, Vashti Bend",
+            "style": "small",
+            "align": "left",
+            "ref": "P23"
+          }
+        ],
+        "refs": [
+          "P20",
+          "P22",
+          "P21",
+          "P19",
+          "P23",
+          "P5"
+        ],
+        "ground": "primary",
+        "footer": false
+      }
+    ],
+    "plain": true,
+    "spec": true,
+    "cover": {
+      "type": "spec",
+      "heading": "Route Eighteen: 11 Missed Stops, 310 Students Waiting",
+      "els": [
+        {
+          "type": "text",
+          "x": 40,
+          "y": 76,
+          "w": 720,
+          "h": 92,
+          "text": "Route Eighteen: 11 Missed Stops, 310 Students Waiting",
+          "style": "title",
+          "align": "left",
+          "ref": "P8"
+        },
+        {
+          "type": "text",
+          "x": 40,
+          "y": 182,
+          "w": 720,
+          "h": 28,
+          "text": "Quillmere Rolling Library, presented to the Beaumont-Tully Rural Literacy Fund, December 4, 2026",
+          "style": "body",
+          "align": "left",
+          "ref": "P5"
+        },
+        {
+          "type": "line",
+          "x": 40,
+          "y": 222,
+          "w": 880,
+          "h": 2,
+          "color": "accent"
+        },
+        {
+          "type": "figure",
+          "x": 40,
+          "y": 240,
+          "w": 280,
+          "h": 136,
+          "value": "11 of 292",
+          "label": "scheduled stops missed last year",
+          "note": "our 2009 bookmobile caused every one",
+          "ref": "P13"
+        },
+        {
+          "type": "figure",
+          "x": 340,
+          "y": 240,
+          "w": 280,
+          "h": 136,
+          "value": "214,000",
+          "label": "miles on the bookmobile",
+          "note": "passed this spring",
+          "ref": "P13"
+        },
+        {
+          "type": "figure",
+          "x": 640,
+          "y": 240,
+          "w": 280,
+          "h": 136,
+          "value": "310",
+          "label": "K-6 students waiting to join",
+          "note": "at four north-county schools",
+          "ref": "P8"
+        },
+        {
+          "type": "text",
+          "x": 40,
+          "y": 394,
+          "w": 880,
+          "h": 28,
+          "text": "Four north-county schools have asked to join: Dunmore, Pike Hollow, Sayer Flat and East Kettle",
+          "style": "body",
+          "align": "left",
+          "ref": "P20"
+        },
+        {
+          "type": "text",
+          "x": 40,
+          "y": 432,
+          "w": 880,
+          "h": 28,
+          "text": "None of them has a school librarian. With one aging vehicle we cannot add them.",
+          "style": "strong",
+          "align": "left",
+          "ref": "P20"
+        }
+      ],
+      "refs": [
+        "P8",
+        "P5",
+        "P13",
+        "P20"
+      ],
+      "ground": "primary",
+      "footer": false
+    }
+  },
+  "live": {
+    "title": "Route Eighteen: 11 Missed Stops, 310 Students Waiting",
+    "subtitle": "",
+    "slides": [
+      {
+        "type": "spec",
+        "heading": "Today 14 schools and 1,180 students count on our one bookmobile",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 32,
+            "w": 880,
+            "h": 84,
+            "text": "Today 14 schools and 1,180 students count on our one bookmobile",
+            "style": "title",
+            "align": "left",
+            "ref": "P13"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 134,
+            "w": 208,
+            "h": 118,
+            "value": "14",
+            "label": "rural elementary schools served",
+            "fill": "tint",
+            "ref": "P13"
+          },
+          {
+            "type": "figure",
+            "x": 264,
+            "y": 134,
+            "w": 208,
+            "h": 118,
+            "value": "1,180",
+            "label": "K-6 students reached",
+            "fill": "tint",
+            "ref": "P13"
+          },
+          {
+            "type": "figure",
+            "x": 488,
+            "y": 134,
+            "w": 208,
+            "h": 118,
+            "value": "96%",
+            "label": "of stops made",
+            "note": "281 of 292",
+            "fill": "tint",
+            "ref": "P13"
+          },
+          {
+            "type": "figure",
+            "x": 712,
+            "y": 134,
+            "w": 208,
+            "h": 118,
+            "value": "846",
+            "label": "new county library cards issued to students",
+            "fill": "tint",
+            "ref": "P14"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 270,
+            "w": 320,
+            "h": 20,
+            "text": "Items checked out, 91 percent return rate",
+            "style": "label",
+            "align": "left",
+            "ref": "P14"
+          },
+          {
+            "type": "bars",
+            "x": 40,
+            "y": 296,
+            "w": 320,
+            "h": 186,
+            "orient": "vertical",
+            "items": [
+              {
+                "label": "FY2025",
+                "value": "18,930"
+              },
+              {
+                "label": "FY2026",
+                "value": "21,460",
+                "highlight": true
+              }
+            ],
+            "ref": "P14"
+          },
+          {
+            "type": "list",
+            "x": 388,
+            "y": 270,
+            "w": 532,
+            "h": 212,
+            "items": [
+              "Schools with no school librarian, each more than 25 miles from a public library",
+              "A visit every other week for 36 weeks, plus 40 summer stops",
+              "52 of 61 teachers used our new classroom crate loans, which account for about 4,100 checkouts",
+              "Our finances are stable: $191,250 in revenue against $186,400 in expenses; the county contract and Voss Foundation grant are renewed for FY2027"
+            ],
+            "style": "body",
+            "ref": "P19"
+          }
+        ],
+        "refs": [
+          "P13",
+          "P14"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Repair costs jumped to $31,900 as our one vehicle nears the end of its life",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 32,
+            "w": 880,
+            "h": 84,
+            "text": "Repair costs jumped to $31,900 as our one vehicle nears the end of its life",
+            "style": "title",
+            "align": "left",
+            "ref": "P18"
+          },
+          {
+            "type": "figure",
+            "x": 40,
+            "y": 136,
+            "w": 270,
+            "h": 180,
+            "value": "$31,900",
+            "label": "vehicle costs, almost all of it repairs",
+            "note": "up from $19,700 in one year",
+            "fill": "tint",
+            "ref": "P18"
+          },
+          {
+            "type": "text",
+            "x": 340,
+            "y": 140,
+            "w": 110,
+            "h": 24,
+            "text": "October",
+            "style": "label",
+            "color": "accent",
+            "align": "left",
+            "ref": "P2"
+          },
+          {
+            "type": "text",
+            "x": 460,
+            "y": 136,
+            "w": 460,
+            "h": 28,
+            "text": "A transmission line failed",
+            "style": "body",
+            "align": "left",
+            "ref": "P13"
+          },
+          {
+            "type": "line",
+            "x": 340,
+            "y": 176,
+            "w": 580,
+            "h": 2,
+            "color": "rule"
+          },
+          {
+            "type": "text",
+            "x": 340,
+            "y": 192,
+            "w": 110,
+            "h": 24,
+            "text": "February",
+            "style": "label",
+            "color": "accent",
+            "align": "left",
+            "ref": "P13"
+          },
+          {
+            "type": "text",
+            "x": 460,
+            "y": 188,
+            "w": 460,
+            "h": 28,
+            "text": "The bookmobile failed its brake inspection",
+            "style": "body",
+            "align": "left",
+            "ref": "P13"
+          },
+          {
+            "type": "line",
+            "x": 340,
+            "y": 228,
+            "w": 580,
+            "h": 2,
+            "color": "rule"
+          },
+          {
+            "type": "text",
+            "x": 340,
+            "y": 244,
+            "w": 110,
+            "h": 24,
+            "text": "June",
+            "style": "label",
+            "color": "accent",
+            "align": "left",
+            "ref": "P3"
+          },
+          {
+            "type": "text",
+            "x": 460,
+            "y": 240,
+            "w": 460,
+            "h": 28,
+            "text": "It overheated twice",
+            "style": "body",
+            "align": "left",
+            "ref": "P13"
+          },
+          {
+            "type": "text",
+            "x": 340,
+            "y": 282,
+            "w": 580,
+            "h": 50,
+            "text": "Each missed stop means a class waits four weeks between visits, not two",
+            "style": "strong",
+            "color": "primary",
+            "align": "left",
+            "ref": "P13"
+          },
+          {
+            "type": "quote",
+            "x": 40,
+            "y": 348,
+            "w": 880,
+            "h": 132,
+            "text": "Bookmobile Tuesday is the only day the whole class runs to the window. When you missed in February, three kids asked me if you were coming back.",
+            "who": "Dorrie Akin, third-grade teacher, Fallow Creek Elementary",
+            "ref": "P17"
+          }
+        ],
+        "refs": [
+          "P18",
+          "P2",
+          "P13",
+          "P3",
+          "P17"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "A second vehicle lets us reach 18 schools and about 1,490 students",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 32,
+            "w": 880,
+            "h": 84,
+            "text": "A second vehicle lets us reach 18 schools and about 1,490 students",
+            "style": "title",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "list",
+            "x": 40,
+            "y": 140,
+            "w": 520,
+            "h": 330,
+            "items": [
+              "We will buy a used high-roof cargo van, refitted with shelving and a wheelchair lift",
+              "The van will run a new north route to the four waiting schools",
+              "The 2009 bookmobile will stay on the shorter southern route through FY2028 while we save for its replacement",
+              "With two vehicles, a breakdown on one route no longer cancels every stop"
+            ],
+            "style": "body",
+            "ref": "P20"
+          },
+          {
+            "type": "text",
+            "x": 600,
+            "y": 134,
+            "w": 320,
+            "h": 18,
+            "text": "At full service",
+            "style": "label",
+            "color": "accent",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "figure",
+            "x": 600,
+            "y": 158,
+            "w": 320,
+            "h": 96,
+            "value": "18",
+            "label": "schools",
+            "fill": "tint",
+            "ref": "P22"
+          },
+          {
+            "type": "figure",
+            "x": 600,
+            "y": 270,
+            "w": 320,
+            "h": 96,
+            "value": "1,490",
+            "label": "students (about)",
+            "fill": "tint",
+            "ref": "P22"
+          },
+          {
+            "type": "figure",
+            "x": 600,
+            "y": 382,
+            "w": 320,
+            "h": 96,
+            "value": "324",
+            "label": "school stops a year",
+            "fill": "tint",
+            "ref": "P22"
+          }
+        ],
+        "refs": [
+          "P22",
+          "P20"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Route Eighteen costs $148,000, and the van is half of it",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 32,
+            "w": 880,
+            "h": 84,
+            "text": "Route Eighteen costs $148,000, and the van is half of it",
+            "style": "title",
+            "align": "left",
+            "ref": "P5"
+          },
+          {
+            "type": "table",
+            "x": 40,
+            "y": 134,
+            "w": 580,
+            "h": 340,
+            "header": [
+              "Line",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "Used high-roof cargo van",
+                "$74,000"
+              ],
+              [
+                "Refit (shelving, wheelchair lift, inverter, mobile hotspot)",
+                "$18,500"
+              ],
+              [
+                "Opening collection for four new schools (2,400 books)",
+                "$21,600"
+              ],
+              [
+                "Added driver-librarian hours, 0.5 FTE, year one",
+                "$26,400"
+              ],
+              [
+                "Driver training, vehicle signage, launch visits",
+                "$3,500"
+              ],
+              [
+                "Contingency",
+                "$4,000"
+              ]
+            ],
+            "total": [
+              "Total",
+              "$148,000"
+            ],
+            "ref": "P21"
+          },
+          {
+            "type": "callout",
+            "x": 652,
+            "y": 134,
+            "w": 268,
+            "h": 160,
+            "title": "What the $148,000 covers",
+            "text": "One-time costs plus first-year added operating cost",
+            "fill": "tint",
+            "ref": "P5"
+          }
+        ],
+        "refs": [
+          "P20",
+          "P21"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Your $85,000 covers part of the project, not all of it",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 32,
+            "w": 880,
+            "h": 84,
+            "text": "Your $85,000 covers part of the project, not all of it",
+            "style": "title",
+            "align": "left",
+            "ref": "P8"
+          },
+          {
+            "type": "stack",
+            "x": 40,
+            "y": 140,
+            "w": 880,
+            "h": 100,
+            "items": [
+              {
+                "label": "Corrow County capital award",
+                "value": "$40,000"
+              },
+              {
+                "label": "Beaumont-Tully Rural Literacy Fund",
+                "value": "$85,000",
+                "highlight": true
+              },
+              {
+                "label": "Spring 2027 donor campaign",
+                "value": "$23,000"
+              }
+            ],
+            "ref": "P21"
+          },
+          {
+            "type": "table",
+            "x": 40,
+            "y": 266,
+            "w": 880,
+            "h": 210,
+            "header": [
+              "Source",
+              "Amount",
+              "Status"
+            ],
+            "rows": [
+              [
+                "Corrow County Library District one-time capital award",
+                "$40,000",
+                "Committed"
+              ],
+              [
+                "Beaumont-Tully Rural Literacy Fund",
+                "$85,000",
+                "This request"
+              ],
+              [
+                "Spring 2027 donor campaign",
+                "$23,000",
+                "Planned"
+              ]
+            ],
+            "total": [
+              "Total",
+              "$148,000",
+              ""
+            ],
+            "ref": "P21"
+          }
+        ],
+        "refs": [
+          "P8",
+          "P21"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Third-grade reading rose from 41 to 49 percent, a gain we do not claim as ours",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 32,
+            "w": 880,
+            "h": 84,
+            "text": "Third-grade reading rose from 41 to 49 percent, a gain we do not claim as ours",
+            "style": "title",
+            "align": "left",
+            "ref": "P8"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 134,
+            "w": 340,
+            "h": 38,
+            "text": "Third graders at or above grade level, at the 6 schools that shared data (188 students)",
+            "style": "small",
+            "align": "left",
+            "ref": "P15"
+          },
+          {
+            "type": "bars",
+            "x": 40,
+            "y": 182,
+            "w": 340,
+            "h": 200,
+            "orient": "vertical",
+            "items": [
+              {
+                "label": "Spring 2025",
+                "value": "41%"
+              },
+              {
+                "label": "Spring 2026",
+                "value": "49%",
+                "highlight": true
+              }
+            ],
+            "ref": "P15"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 400,
+            "w": 340,
+            "h": 76,
+            "text": "Next year: we will collect benchmark data from all 14 schools and track checkouts per student",
+            "style": "body",
+            "align": "left",
+            "ref": "P16"
+          },
+          {
+            "type": "callout",
+            "x": 410,
+            "y": 134,
+            "w": 510,
+            "h": 252,
+            "title": "What this does not show",
+            "items": [
+              "Six schools is not all 14, and the schools that agreed to share may be the most engaged ones",
+              "We had no comparison group",
+              "State-funded reading tutors worked in four of those six schools in the same year",
+              "We cannot separate our effect from the tutors' effect, and we do not claim this gain as ours"
+            ],
+            "fill": "tint",
+            "ref": "P16"
+          },
+          {
+            "type": "text",
+            "x": 410,
+            "y": 402,
+            "w": 510,
+            "h": 74,
+            "text": "What we can say: the schools that borrowed the most books from us were also the schools where scores went up",
+            "style": "italic",
+            "align": "left",
+            "ref": "P16"
+          }
+        ],
+        "refs": [
+          "P8",
+          "P15",
+          "P16"
+        ],
+        "ground": "paper",
+        "footer": true
+      },
+      {
+        "type": "spec",
+        "heading": "Our request: $85,000 to put Route Eighteen on the road in 2027",
+        "els": [
+          {
+            "type": "text",
+            "x": 40,
+            "y": 72,
+            "w": 720,
+            "h": 88,
+            "text": "Our request: $85,000 to put Route Eighteen on the road in 2027",
+            "style": "title",
+            "align": "left",
+            "ref": "P5"
+          },
+          {
+            "type": "line",
+            "x": 48,
+            "y": 199,
+            "w": 690,
+            "h": 2,
+            "color": "accent"
+          },
+          {
+            "type": "dot",
+            "x": 40,
+            "y": 192,
+            "w": 16,
+            "h": 16,
+            "fill": "accent"
+          },
+          {
+            "type": "dot",
+            "x": 265,
+            "y": 192,
+            "w": 16,
+            "h": 16,
+            "fill": "accent"
+          },
+          {
+            "type": "dot",
+            "x": 490,
+            "y": 192,
+            "w": 16,
+            "h": 16,
+            "fill": "accent"
+          },
+          {
+            "type": "dot",
+            "x": 715,
+            "y": 192,
+            "w": 16,
+            "h": 16,
+            "fill": "accent"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 222,
+            "w": 205,
+            "h": 20,
+            "text": "March 2027",
+            "style": "label",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 246,
+            "w": 205,
+            "h": 56,
+            "text": "Route Eighteen fully funded",
+            "style": "body",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "text",
+            "x": 265,
+            "y": 222,
+            "w": 205,
+            "h": 20,
+            "text": "Spring 2027",
+            "style": "label",
+            "align": "left",
+            "ref": "P21"
+          },
+          {
+            "type": "text",
+            "x": 265,
+            "y": 246,
+            "w": 205,
+            "h": 56,
+            "text": "Buy and refit the van",
+            "style": "body",
+            "align": "left",
+            "ref": "P20"
+          },
+          {
+            "type": "text",
+            "x": 490,
+            "y": 222,
+            "w": 205,
+            "h": 20,
+            "text": "June 2027",
+            "style": "label",
+            "align": "left",
+            "ref": "P19"
+          },
+          {
+            "type": "text",
+            "x": 490,
+            "y": 246,
+            "w": 205,
+            "h": 56,
+            "text": "Summer stops begin on the north route",
+            "style": "body",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "text",
+            "x": 715,
+            "y": 222,
+            "w": 205,
+            "h": 20,
+            "text": "August 2027",
+            "style": "label",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "text",
+            "x": 715,
+            "y": 246,
+            "w": 205,
+            "h": 56,
+            "text": "Full school service begins at 18 schools",
+            "style": "body",
+            "align": "left",
+            "ref": "P22"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 326,
+            "w": 540,
+            "h": 20,
+            "text": "FY2027 goals",
+            "style": "label",
+            "align": "left",
+            "ref": "P23"
+          },
+          {
+            "type": "list",
+            "x": 40,
+            "y": 350,
+            "w": 540,
+            "h": 104,
+            "items": [
+              "Miss no more than 3 stops",
+              "Collect benchmark data from all 14 current schools",
+              "Have the van running north-county summer stops by June 2027"
+            ],
+            "style": "body",
+            "ref": "P23"
+          },
+          {
+            "type": "figure",
+            "x": 620,
+            "y": 326,
+            "w": 300,
+            "h": 128,
+            "value": "$85,000",
+            "label": "our request from the Beaumont-Tully Rural Literacy Fund",
+            "ref": "P5"
+          },
+          {
+            "type": "text",
+            "x": 40,
+            "y": 468,
+            "w": 880,
+            "h": 22,
+            "text": "Marisol Quennell, Executive Director, Quillmere Rolling Library, Vashti Bend",
+            "style": "small",
+            "align": "left",
+            "ref": "P23"
+          }
+        ],
+        "refs": [
+          "P20",
+          "P22",
+          "P21",
+          "P19",
+          "P23",
+          "P5"
+        ],
+        "ground": "primary",
+        "footer": false
+      }
+    ],
+    "plain": true,
+    "spec": true,
+    "cover": {
+      "type": "spec",
+      "heading": "Route Eighteen: 11 Missed Stops, 310 Students Waiting",
+      "els": [
+        {
+          "type": "text",
+          "x": 40,
+          "y": 76,
+          "w": 720,
+          "h": 92,
+          "text": "Route Eighteen: 11 Missed Stops, 310 Students Waiting",
+          "style": "title",
+          "align": "left",
+          "ref": "P8"
+        },
+        {
+          "type": "text",
+          "x": 40,
+          "y": 182,
+          "w": 720,
+          "h": 28,
+          "text": "Quillmere Rolling Library, presented to the Beaumont-Tully Rural Literacy Fund, December 4, 2026",
+          "style": "body",
+          "align": "left",
+          "ref": "P5"
+        },
+        {
+          "type": "line",
+          "x": 40,
+          "y": 222,
+          "w": 880,
+          "h": 2,
+          "color": "accent"
+        },
+        {
+          "type": "figure",
+          "x": 40,
+          "y": 240,
+          "w": 280,
+          "h": 136,
+          "value": "11 of 292",
+          "label": "scheduled stops missed last year",
+          "note": "our 2009 bookmobile caused every one",
+          "ref": "P13"
+        },
+        {
+          "type": "figure",
+          "x": 340,
+          "y": 240,
+          "w": 280,
+          "h": 136,
+          "value": "214,000",
+          "label": "miles on the bookmobile",
+          "note": "passed this spring",
+          "ref": "P13"
+        },
+        {
+          "type": "figure",
+          "x": 640,
+          "y": 240,
+          "w": 280,
+          "h": 136,
+          "value": "310",
+          "label": "K-6 students waiting to join",
+          "note": "at four north-county schools",
+          "ref": "P8"
+        },
+        {
+          "type": "text",
+          "x": 40,
+          "y": 394,
+          "w": 880,
+          "h": 28,
+          "text": "Four north-county schools have asked to join: Dunmore, Pike Hollow, Sayer Flat and East Kettle",
+          "style": "body",
+          "align": "left",
+          "ref": "P20"
+        },
+        {
+          "type": "text",
+          "x": 40,
+          "y": 432,
+          "w": 880,
+          "h": 28,
+          "text": "None of them has a school librarian. With one aging vehicle we cannot add them.",
+          "style": "strong",
+          "align": "left",
+          "ref": "P20"
+        }
+      ],
+      "refs": [
+        "P8",
+        "P5",
+        "P13",
+        "P20"
+      ],
+      "ground": "primary",
+      "footer": false
+    }
+  },
+  "passages": {
+    "P1": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Notes",
+      "source_id": "s_a66510427f7d"
+    },
+    "P2": {
+      "text": "Quillmere Rolling Library\nBoard meeting notes, October 21, 2026, Vashti Bend Community Room",
+      "locator": "para. 2",
+      "source_title": "Notes",
+      "source_id": "s_a66510427f7d"
+    },
+    "P3": {
+      "text": "Present: June Okafor-Reyes (board chair), Abner Whitlock (treasurer), Marisol Quennell (executive director), Pete Danforth (driver-librarian), Lila Ferrand (board member)",
+      "locator": "para. 3",
+      "source_title": "Notes",
+      "source_id": "s_a66510427f7d"
+    },
+    "P4": {
+      "text": "Item 3: Beaumont-Tully Rural Literacy Fund",
+      "locator": "para. 4",
+      "source_title": "Notes",
+      "source_id": "s_a66510427f7d"
+    },
+    "P5": {
+      "text": "Marisol reported that program officer Celeste Harrow at the Beaumont-Tully Rural Literacy Fund invited us to present Route Eighteen at their December 4 review. We will ask for $85,000 toward the $148,000 total. The county capital award of $40,000 is committed, and the spring donor campaign covers the last $23,000.",
+      "locator": "para. 5",
+      "source_title": "Notes",
+      "source_id": "s_a66510427f7d"
+    },
+    "P6": {
+      "text": "June asked for a short slide deck to go with the presentation. Marisol will own it. Draft to the board by November 20, 2026, final to Celeste by November 27.",
+      "locator": "para. 6",
+      "source_title": "Notes",
+      "source_id": "s_a66510427f7d"
+    },
+    "P7": {
+      "text": "Instructions the board agreed on for the deck:",
+      "locator": "para. 7",
+      "source_title": "Notes",
+      "source_id": "s_a66510427f7d"
+    },
+    "P8": {
+      "text": "1. Keep it to eight slides or fewer. Ms. Harrow said reviewers get ten minutes per applicant.\n2. Open with the problem: 11 missed stops last year, all from the 2009 vehicle, and four north-county schools with 310 students waiting to join.\n3. Show the full $148,000 budget line by line and all three funding sources, so the Fund sees that $85,000 is not the whole cost.\n4. Abner insisted: the third-grade reading result (41 to 49 percent at six schools) goes in only with its caveat. Say plainly that the state tutors were in four of those schools and that we do not claim the gain. Do not round it into \"raised reading scores.\"\n5. Lila: no photos of children's faces and no student names. Ms. Akin's quote is fine because she gave permission.",
+      "locator": "para. 8",
+      "source_title": "Notes",
+      "source_id": "s_a66510427f7d"
+    },
+    "P9": {
+      "text": "Pete will send updated stop counts if anything changes before November 20.",
+      "locator": "para. 9",
+      "source_title": "Notes",
+      "source_id": "s_a66510427f7d"
+    },
+    "P10": {
+      "text": "Next meeting: November 18, 2026.",
+      "locator": "para. 10",
+      "source_title": "Notes",
+      "source_id": "s_a66510427f7d"
+    },
+    "P11": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Report",
+      "source_id": "s_a71aef14db52"
+    },
+    "P12": {
+      "text": "## FY2026 Annual Program Report (July 1, 2025 to June 30, 2026)\nQuillmere Rolling Library is a two-person bookmobile nonprofit based in Vashti Bend. We carry a lending collection to rural elementary schools in Corrow County that have no school librarian and sit more than 25 miles from the nearest public library branch. This report covers our sixth fiscal year.",
+      "locator": "“Quillmere Rolling Library”",
+      "source_title": "Report",
+      "source_id": "s_a71aef14db52"
+    },
+    "P13": {
+      "text": "During the 2025-26 school year we served 14 elementary schools with a combined K-6 enrollment of 1,180 students. Each school got a visit every other week for 36 weeks, which put 252 school stops on the calendar. We also ran 40 summer stops at churches, a feed store parking lot, and the Corrow County fairgrounds, for a planned total of 292 stops.\nWe made 281 of those 292 stops. The 11 we missed were all caused by our vehicle, a 2009 bookmobile that crossed 214,000 miles this spring. It lost a transmission line in October, failed its brake inspection in February, and overheated twice in June. Each missed school stop means a class goes four weeks between visits, not two, and the teachers notice.\nKey numbers for FY2026:",
+      "locator": "“What we did”",
+      "source_title": "Report",
+      "source_id": "s_a71aef14db52"
+    },
+    "P14": {
+      "text": "- Stops completed: 281 of 292 scheduled (96 percent)\n- Items checked out: 21,460, up from 18,930 in FY2025\n- Return rate: 91 percent\n- New county library cards issued to students: 846\n- Collection size at year end: 6,820 items\n- Summer reading enrollment: 214 children; 131 finished the eight-book goal\n- Teachers using our classroom crate loans: 52 of 61\nThe crate loans were new this year. A teacher picks a theme, such as weather or county history or chapter books for a reluctant fourth grade, and we leave a crate of 30 books in the classroom between visits. Fifty-two teachers used at least one crate. That accounts for about 4,100 of the year's checkouts, so a good share of our growth comes from this one change and not from more students walking up the steps.",
+      "locator": "“What we did”",
+      "source_title": "Report",
+      "source_id": "s_a71aef14db52"
+    },
+    "P15": {
+      "text": "Six of our 14 schools agreed to share their spring reading benchmark results for third grade. At those six schools, the share of third graders reading at or above grade level rose from 41 percent in spring 2025 to 49 percent in spring 2026. That covers 188 students.",
+      "locator": "“One result, and what it does and does not show”",
+      "source_title": "Report",
+      "source_id": "s_a71aef14db52"
+    },
+    "P16": {
+      "text": "We want to be plain about the limits. Six schools is not all 14, and the six that said yes may be the schools with the most engaged principals. We have no comparison group. And in the same year, the state funded a reading tutoring program that placed part-time tutors in four of those six schools. We cannot separate our effect from the tutors' effect, and we will not claim the eight-point gain as ours. What we can say is that the schools where children read the most books from our shelves were also the schools where reading scores went up. Next year we will ask all 14 schools for data and track checkouts per student so we can look at this more carefully.",
+      "locator": "“One result, and what it does and does not show”",
+      "source_title": "Report",
+      "source_id": "s_a71aef14db52"
+    },
+    "P17": {
+      "text": "Dorrie Akin teaches third grade at Fallow Creek Elementary, one of our longest-serving stops. In May she wrote to us: \"Bookmobile Tuesday is the only day the whole class runs to the window. When you missed in February, three kids asked me if you were coming back.\"",
+      "locator": "“What a teacher told us”",
+      "source_title": "Report",
+      "source_id": "s_a71aef14db52"
+    },
+    "P18": {
+      "text": "Total FY2026 expenses were $186,400.\n| Line | Amount |\n|---|---|\n| Staff (1.5 FTE driver-librarians, 0.5 FTE coordinator) | $104,200 |\n| Vehicle fuel, insurance, repairs and maintenance | $31,900 |\n| Collection purchases and processing | $28,600 |\n| Summer reading program | $6,300 |\n| Administration, audit, software | $15,400 |\n| Total | $186,400 |\nVehicle costs rose from $19,700 in FY2025 to $31,900 this year, almost all of it repairs. That jump is the clearest sign that the current vehicle is near the end of its working life.",
+      "locator": "“Expenses”",
+      "source_title": "Report",
+      "source_id": "s_a71aef14db52"
+    },
+    "P19": {
+      "text": "Total FY2026 revenue was $191,250, leaving a small surplus of $4,850 that went to our operating reserve.\n| Source | Amount |\n|---|---|\n| Corrow County Library District service contract | $78,000 |\n| Harlan and Edie Voss Family Foundation (operating grant) | $45,000 |\n| State Library rural services grant | $36,000 |\n| Individual donors and the Friends of Quillmere | $22,750 |\n| School participation fees | $9,500 |\n| Total | $191,250 |\nThe county contract and the Voss grant are both renewed for FY2027 at the same amounts. The state grant is a two-year award that runs through June 2027.",
+      "locator": "“Funding”",
+      "source_title": "Report",
+      "source_id": "s_a71aef14db52"
+    },
+    "P20": {
+      "text": "Four more schools in the north end of the county, Dunmore, Pike Hollow, Sayer Flat and East Kettle, have asked to join. Together they enroll 310 K-6 students. None has a school librarian. We cannot add them with one aging vehicle that already misses stops.\nOur plan for FY2027 is called Route Eighteen. We will buy a smaller second vehicle, a used high-roof cargo van refitted with shelving and a wheelchair lift, to run the north route. The 2009 bookmobile will stay in service on the shorter southern route through the end of FY2028 while we save for its replacement. Two vehicles also mean that a breakdown on one route no longer cancels every stop.\nRoute Eighteen budget (one-time costs plus first-year added operating cost):",
+      "locator": "“FY2027 plan: Route Eighteen”",
+      "source_title": "Report",
+      "source_id": "s_a71aef14db52"
+    },
+    "P21": {
+      "text": "| Line | Amount |\n|---|---|\n| Used high-roof cargo van | $74,000 |\n| Refit: shelving, wheelchair lift, inverter, mobile hotspot | $18,500 |\n| Opening collection for four new schools (2,400 books) | $21,600 |\n| Added driver-librarian hours, 0.5 FTE, year one | $26,400 |\n| Driver training, vehicle signage, launch visits | $3,500 |\n| Contingency | $4,000 |\n| Total | $148,000 |\nHow we will pay for it:\n| Source | Amount | Status |\n|---|---|---|\n| Corrow County Library District one-time capital award | $40,000 | Committed |\n| Beaumont-Tully Rural Literacy Fund | $85,000 | Request pending |\n| Spring 2027 donor campaign | $23,000 | Planned |\n| Total | $148,000 | |",
+      "locator": "“FY2027 plan: Route Eighteen”",
+      "source_title": "Report",
+      "source_id": "s_a71aef14db52"
+    },
+    "P22": {
+      "text": "If Route Eighteen is fully funded by March 2027, the van will be bought and refitted in spring, run summer stops on the north route in June 2027, and start full school service in August 2027. At that point we expect to serve 18 schools and about 1,490 students with 324 school stops a year.",
+      "locator": "“FY2027 plan: Route Eighteen”",
+      "source_title": "Report",
+      "source_id": "s_a71aef14db52"
+    },
+    "P23": {
+      "text": "Our goals for FY2027 are simple: miss no more than three stops, get benchmark data from all 14 current schools, and have the Route Eighteen van running north-county summer stops by June 2027.\nMarisol Quennell, Executive Director\nQuillmere Rolling Library, Vashti Bend",
+      "locator": "“Looking ahead”",
+      "source_title": "Report",
+      "source_id": "s_a71aef14db52"
+    }
+  },
+  "grounding": [
+    {
+      "path": "slides.0.els.7.items.0",
+      "value": "25",
+      "shown": "25",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.7.items.1",
+      "value": "36",
+      "shown": "36",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.7.items.1",
+      "value": "40",
+      "shown": "40",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.7.items.2",
+      "value": "52",
+      "shown": "52",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.7.items.2",
+      "value": "61",
+      "shown": "61",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.7.items.2",
+      "value": "4100",
+      "shown": "4,100",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "cover.els.0",
+      "value": "11",
+      "shown": "11",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "cover.els.0",
+      "value": "310",
+      "shown": "310",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "cover.els.1",
+      "value": "4",
+      "shown": "4",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "cover.els.1",
+      "value": "2026",
+      "shown": "2026",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "cover.els.3",
+      "value": "11",
+      "shown": "11",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "cover.els.3",
+      "value": "292",
+      "shown": "292",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "cover.els.3",
+      "value": "2009",
+      "shown": "2009",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "cover.els.4",
+      "value": "214000",
+      "shown": "214,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "cover.els.5",
+      "value": "310",
+      "shown": "310",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "cover.els.5",
+      "value": "6",
+      "shown": "6",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.0",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.0",
+      "value": "1180",
+      "shown": "1,180",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.1",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.2",
+      "value": "1180",
+      "shown": "1,180",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.2",
+      "value": "6",
+      "shown": "6",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.3",
+      "value": "96%",
+      "shown": "96%",
+      "status": "computed",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.3",
+      "value": "281",
+      "shown": "281",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.3",
+      "value": "292",
+      "shown": "292",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.4",
+      "value": "846",
+      "shown": "846",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.5",
+      "value": "91%",
+      "shown": "91 percent",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.6.items.0",
+      "value": "18930",
+      "shown": "18,930",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.6.items.1",
+      "value": "21460",
+      "shown": "21,460",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.7.items.3",
+      "value": "191250",
+      "shown": "$191,250",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.els.7.items.3",
+      "value": "186400",
+      "shown": "$186,400",
+      "status": "computed",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.els.0",
+      "value": "31900",
+      "shown": "$31,900",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.els.1",
+      "value": "31900",
+      "shown": "$31,900",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.els.1",
+      "value": "19700",
+      "shown": "$19,700",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.els.11.quote",
+      "value": "Bookmobile Tuesday is the only day the whole class runs to the window. When you missed in February, three kids asked me if you were coming back.",
+      "shown": "Bookmobile Tuesday is the only day the whole class runs to the window. When you missed in February, three kids asked me if you were coming back.",
+      "status": "ok",
+      "kind": "quote"
+    },
+    {
+      "path": "slides.2.els.0",
+      "value": "18",
+      "shown": "18",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.0",
+      "value": "1490",
+      "shown": "1,490",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.1.items.2",
+      "value": "2009",
+      "shown": "2009",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.3",
+      "value": "18",
+      "shown": "18",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.4",
+      "value": "1490",
+      "shown": "1,490",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.els.5",
+      "value": "324",
+      "shown": "324",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.els.0",
+      "value": "148000",
+      "shown": "$148,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.els.1.rows.0",
+      "value": "74000",
+      "shown": "$74,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.els.1.rows.1",
+      "value": "18500",
+      "shown": "$18,500",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.els.1.rows.2",
+      "value": "2400",
+      "shown": "2,400",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.els.1.rows.2",
+      "value": "21600",
+      "shown": "$21,600",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.els.1.rows.3",
+      "value": "0.5",
+      "shown": "0.5",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.els.1.rows.3",
+      "value": "26400",
+      "shown": "$26,400",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.els.1.rows.4",
+      "value": "3500",
+      "shown": "$3,500",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.els.1.rows.5",
+      "value": "4000",
+      "shown": "$4,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.els.1.total",
+      "value": "148000",
+      "shown": "$148,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.els.2.title",
+      "value": "148000",
+      "shown": "$148,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.0",
+      "value": "85000",
+      "shown": "$85,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.1.items.0",
+      "value": "40000",
+      "shown": "$40,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.1.items.1",
+      "value": "85000",
+      "shown": "$85,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.1.items.2",
+      "value": "2027",
+      "shown": "2027",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.1.items.2",
+      "value": "23000",
+      "shown": "$23,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.2.rows.0",
+      "value": "40000",
+      "shown": "$40,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.2.rows.1",
+      "value": "85000",
+      "shown": "$85,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.2.rows.2",
+      "value": "2027",
+      "shown": "2027",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.2.rows.2",
+      "value": "23000",
+      "shown": "$23,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.els.2.total",
+      "value": "148000",
+      "shown": "$148,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.0",
+      "value": "41",
+      "shown": "41",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.0",
+      "value": "49%",
+      "shown": "49 percent",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.1",
+      "value": "6",
+      "shown": "6",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.1",
+      "value": "188",
+      "shown": "188",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.2.items.0",
+      "value": "2025",
+      "shown": "2025",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.2.items.0",
+      "value": "41%",
+      "shown": "41%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.2.items.1",
+      "value": "2026",
+      "shown": "2026",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.2.items.1",
+      "value": "49%",
+      "shown": "49%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.3",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.els.4.items.0",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.0",
+      "value": "85000",
+      "shown": "$85,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.0",
+      "value": "2027",
+      "shown": "2027",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.6",
+      "value": "2027",
+      "shown": "2027",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.8",
+      "value": "2027",
+      "shown": "2027",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.10",
+      "value": "2027",
+      "shown": "2027",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.12",
+      "value": "2027",
+      "shown": "2027",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.13",
+      "value": "18",
+      "shown": "18",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.15.items.0",
+      "value": "3",
+      "shown": "3",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.15.items.1",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.15.items.2",
+      "value": "2027",
+      "shown": "2027",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.els.16",
+      "value": "85000",
+      "shown": "$85,000",
+      "status": "ok",
+      "kind": "number"
+    }
+  ],
+  "exhibits": [],
+  "check": [
+    "All 80 numbers and quotes found in your sources; 1 worked out from them; 7 citations corrected"
+  ],
+  "pills": [
+    {
+      "id": "sources",
+      "tone": "good",
+      "label": "All 80 numbers and quotes found in your sources; 1 worked out from them; 7 citations corrected"
+    },
+    {
+      "id": "contrast",
+      "tone": "good",
+      "label": "Contrast passes, lowest 7.9:1"
+    },
+    {
+      "id": "never",
+      "tone": "good",
+      "label": "No never-say words"
+    },
+    {
+      "id": "fonts",
+      "tone": "good",
+      "label": "Kit fonts used"
+    },
+    {
+      "id": "wording",
+      "tone": "warn",
+      "label": "Check the wording: “first” isn't in the source it cites"
+    },
+    {
+      "id": "money",
+      "tone": "warn",
+      "label": "The deck leaves out $104,200, $28,600, $6,300, $15,400 and more from Report, “Expenses”; Report, “Funding”"
+    },
+    {
+      "id": "repeats",
+      "tone": "warn",
+      "label": "Set big more than once: 85000"
+    },
+    {
+      "id": "relation",
+      "tone": "warn",
+      "label": "Check the wording against the source: “about”, “all of”, “every”"
+    },
+    {
+      "id": "fit",
+      "tone": "warn",
+      "label": "Slide 2 runs long; shorten the wording"
+    }
+  ],
+  "slide_count": 8,
+  "seconds": 126.9
+}

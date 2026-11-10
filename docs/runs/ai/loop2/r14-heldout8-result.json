@@ -1,0 +1,1849 @@
+{
+  "set": "heldout8",
+  "tag": "r14-heldout8",
+  "steps": {
+    "brand": {
+      "status": "done",
+      "seconds": 0.0
+    },
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 28.0,
+      "error": null
+    }
+  },
+  "started": 1794235776.805388,
+  "sources": [
+    "notes.txt",
+    "report.md"
+  ],
+  "kit": {
+    "id": "k_498f40a55ea5",
+    "name": "Pasted colors",
+    "colors": [
+      {
+        "hex": "#2e4a62",
+        "role": "head",
+        "name": "Primary, slate blue"
+      },
+      {
+        "hex": "#d98e4a",
+        "role": "accent",
+        "name": "Accent, lamplight amber"
+      }
+    ],
+    "paper": "#f5efe6",
+    "ink": "#1b1b1b",
+    "kit_json": {
+      "name": "Pasted colors",
+      "origin": "import",
+      "origin_note": "Pasted color codes",
+      "org": "",
+      "subject": "",
+      "signature": "",
+      "paper": "#f5efe6",
+      "ink": "#1b1b1b",
+      "colors": [
+        {
+          "hex": "#2e4a62",
+          "role": "head",
+          "name": "Primary, slate blue"
+        },
+        {
+          "hex": "#d98e4a",
+          "role": "accent",
+          "name": "Accent, lamplight amber"
+        }
+      ],
+      "type": {
+        "heading": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 700
+        },
+        "body": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 400
+        },
+        "scale": 1.25
+      },
+      "layout": "banner",
+      "density": "medium",
+      "voice": {
+        "notes": "",
+        "delivery": "",
+        "never": [],
+        "pairs": [],
+        "draft": false
+      },
+      "rules": {
+        "sources": true,
+        "page_numbers": true,
+        "date": true,
+        "required": []
+      },
+      "imported_from": {
+        "kind": "paste",
+        "label": "Pasted colors",
+        "ref": "",
+        "sha256": "",
+        "license_note": "",
+        "brand_named": false,
+        "mode": "",
+        "imported_at": 1794235776.832031
+      },
+      "logo": null,
+      "logo_alt": null,
+      "fonts": [],
+      "id": "k_498f40a55ea5",
+      "version": 1,
+      "created_at": 1794235776.836712,
+      "updated_at": 1794235776.836712,
+      "starter": false
+    }
+  },
+  "guide_and_summaries_seconds": 15.9,
+  "guide": {
+    "by": "Written by your Hermes model",
+    "guide": [
+      {
+        "text": "The sources are November 4, 2026 board notes and the FY2026 annual report of Tallow Creek Respite Cooperative, a fictional sample.",
+        "chips": [
+          {
+            "ref": "P1",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 1",
+            "source_id": "s_0fa23237e4b8"
+          },
+          {
+            "ref": "P2",
+            "n": 2,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 2",
+            "source_id": "s_0fa23237e4b8"
+          },
+          {
+            "ref": "P9",
+            "n": 3,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "para. 1",
+            "source_id": "s_e18cb8abe76c"
+          },
+          {
+            "ref": "P10",
+            "n": 4,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Tallow Creek Respite Cooperative”",
+            "source_id": "s_e18cb8abe76c"
+          }
+        ]
+      },
+      {
+        "text": "The average wait from referral to first visit fell from 41 days to 12, and the year-end waitlist fell from 37 families to 9.",
+        "chips": [
+          {
+            "ref": "P12",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“What changed this year”",
+            "source_id": "s_e18cb8abe76c"
+          }
+        ]
+      },
+      {
+        "text": "Caregiver strain scores fell from 27.4 to 19.8, but only 96 of 171 families answered, with no comparison group.",
+        "chips": [
+          {
+            "ref": "P14",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Caregiver strain: what we found and what we cannot claim”",
+            "source_id": "s_e18cb8abe76c"
+          },
+          {
+            "ref": "P15",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Caregiver strain: what we found and what we cannot claim”",
+            "source_id": "s_e18cb8abe76c"
+          }
+        ]
+      },
+      {
+        "text": "The FY2027 expansion costs $165,000; the county committed $45,000, so the Cooperative seeks $120,000 from philanthropic partners.",
+        "chips": [
+          {
+            "ref": "P21",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: overnight respite and the two eastern townships”",
+            "source_id": "s_e18cb8abe76c"
+          },
+          {
+            "ref": "P22",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: overnight respite and the two eastern townships”",
+            "source_id": "s_e18cb8abe76c"
+          }
+        ]
+      },
+      {
+        "text": "The county and Fenwright make up 64 percent of revenue, and Fenwright's $150,000 will not renew at the same level after FY2027.",
+        "chips": [
+          {
+            "ref": "P6",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 6",
+            "source_id": "s_0fa23237e4b8"
+          },
+          {
+            "ref": "P19",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Revenue”",
+            "source_id": "s_e18cb8abe76c"
+          }
+        ]
+      }
+    ],
+    "asks": [
+      {
+        "id": "a1",
+        "who": "Teodora Vance, Ostrander Valley Health Fund",
+        "what": "Short deck for the winter caregiving round, asking $120,000",
+        "by": "Tuesday, December 1, 2026",
+        "kind": "deck",
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 4",
+            "source_id": "s_0fa23237e4b8"
+          },
+          {
+            "ref": "P5",
+            "n": 2,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 5",
+            "source_id": "s_0fa23237e4b8"
+          },
+          {
+            "ref": "P7",
+            "n": 3,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 7",
+            "source_id": "s_0fa23237e4b8"
+          }
+        ],
+        "brief": {
+          "who": "Teodora Vance, program officer, on her phone",
+          "goal": "Decide whether to fund the $120,000 expansion gap for one year",
+          "length": "Eight slides or fewer"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "text": "The $120,000 ask covers only one year of a $165,000 expansion, and Fenwright's $150,000 shrinks after FY2027. With just a $6,500 surplus, who pays for the $96,000 eastern workers later?",
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 4",
+            "source_id": "s_0fa23237e4b8"
+          },
+          {
+            "ref": "P19",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Revenue”",
+            "source_id": "s_e18cb8abe76c"
+          },
+          {
+            "ref": "P21",
+            "n": 3,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: overnight respite and the two eastern townships”",
+            "source_id": "s_e18cb8abe76c"
+          },
+          {
+            "ref": "P22",
+            "n": 4,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: overnight respite and the two eastern townships”",
+            "source_id": "s_e18cb8abe76c"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "Strain fell from 27.4 to 19.8, but only 96 of 171 families answered and staff gave the survey. Will the $8,500 outside evaluation be enough to show the drop is real?",
+        "chips": [
+          {
+            "ref": "P14",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Caregiver strain: what we found and what we cannot claim”",
+            "source_id": "s_e18cb8abe76c"
+          },
+          {
+            "ref": "P15",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Caregiver strain: what we found and what we cannot claim”",
+            "source_id": "s_e18cb8abe76c"
+          },
+          {
+            "ref": "P21",
+            "n": 3,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: overnight respite and the two eastern townships”",
+            "source_id": "s_e18cb8abe76c"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "Only 22 families asked for overnight care in FY2026, yet the $38,500 pilot plans for up to 40 families. Will enough families use it to justify that cost?",
+        "chips": [
+          {
+            "ref": "P20",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: overnight respite and the two eastern townships”",
+            "source_id": "s_e18cb8abe76c"
+          },
+          {
+            "ref": "P21",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: overnight respite and the two eastern townships”",
+            "source_id": "s_e18cb8abe76c"
+          }
+        ],
+        "suggestion": true
+      }
+    ],
+    "source_ids": [
+      "s_0fa23237e4b8",
+      "s_e18cb8abe76c"
+    ],
+    "created_at": 1794235792.592421
+  },
+  "brief": {
+    "who": "Funders",
+    "goal": "Decide whether to fund the $120,000 expansion gap for one year",
+    "length": "7 to 9 slides"
+  },
+  "outline": {},
+  "deck_seconds": 28.0,
+  "output_id": "o_c0a8b95fef88",
+  "case": null,
+  "plain_draft": "Slide 1: Tallow Creek Respite Cooperative\nIn-home respite for unpaid family caregivers\nMarrow Junction and the Upper Tallow townships, since 2019\nRequest to the Ostrander Valley Health Fund, winter caregiving round\n$120,000 for one year (FY2027)\nFunds an overnight respite pilot and two respite workers in the eastern townships\n\nSlide 2: Wait for a first visit: 41 days down to 12\nAverage days from referral to first visit: 41 in FY2025, 12 in FY2026\nFamilies on the waitlist at year end: 37 down to 9\nEmergency requests filled within 48 hours: 58% (29 of 50) up to 83% (62 of 75)\nWhat changed: worker pay went from $16.50 to $19.00 an hour\nWorkers who left during the year: 11 of 23 in FY2025, 4 of 31 in FY2026\nWe also hired a second coordinator and moved scheduling off paper\n\nSlide 3: What we do\nLocal workers come into the home and stay with an adult who needs supervision\nUsually a parent or spouse living with dementia, Parkinson's disease or the after-effects of a stroke\nWhile the worker is there, the caregiver can see a doctor, sleep or rest\nFY2026: 171 families, 9,880 respite hours (FY2025: 118 families, 6,240 hours)\nSliding-scale fees from $0 to $14 an hour; 64% of families paid nothing\nAll-in cost per respite hour: $61.98, down from $68.40\n94 cents of every dollar went to delivering or coordinating respite\n\"For two years I hadn't been to my own doctor. The first Tuesday [our respite worker] came, I went, and I found out I needed the surgery I'd been putting off.\" (caregiver, Upper Tallow township)\n\nSlide 4: Caregiver strain: a promising result with limits\nMeasure: 12-item Zarit Burden Interview (scored 0 to 48; higher means more strain)\nAverage score at intake: 27.4. At six months: 19.8, a drop of 7.6 points\n61 caregivers started in the high-strain band (17 or above); 34 of them were below 17 at six months\nRead with care:\nOnly 96 of 171 families completed both surveys, and those who answered may have been doing better\nThere is no comparison group, and strain often eases for other reasons\nOur own coordinators gave the survey\nThese numbers fit our belief that respite helps, but they do not prove the program caused the drop\nFY2027: an outside evaluator will run follow-up surveys, and we will track why families leave\n\nSlide 5: Two gaps we cannot fill today\nNights: 22 families asked for overnight coverage in FY2026, and we could not offer it\nDementia often means wandering, sundowning and lost sleep, and daytime visits do not help with that\nDistance: Corliss and Harrow Flat townships made up 9% of referrals but only 4% of respite hours\nA worker's round trip to the eastern townships can run 70 miles\n\nSlide 6: FY2027 plan and how we will judge it\nPilot overnight respite for up to 40 families: two 9 p.m. to 7 a.m. shifts a month for six months\nHire two respite workers who live in Corliss and Harrow Flat\nTrain 14 current workers in dementia care (required for overnight shifts)\nBring in an outside evaluator for follow-up surveys and exit interviews\nWe will report three measures, even if the results disappoint:\nShare of pilot caregivers with at least 5 nights of unbroken sleep a month\nSix-month strain scores, collected by the outside evaluator\nWhether families keep using the service\n\nSlide 7: FY2027 expansion budget: $165,000\nTwo eastern township respite workers (2.0 FTE wages and benefits): $96,000\nOvernight pilot shift pay (up to 40 families, 6 months): $38,500\nDementia care training for 14 workers: $12,800\nAdded rural mileage: $9,200\nIndependent evaluation: $8,500\nTotal: $165,000\nAlready committed: $45,000 from the Upper Tallow County Area Agency on Aging (part of the eastern township workers)\nRemaining gap and our request: $120,000\n\nSlide 8: Our finances, including our risks\nFY2026 revenue: $618,900. Expenses: $612,400. Surplus: $6,500, added to reserve\nOperating reserve covers about seven weeks of expenses\nCounty Area Agency on Aging contract: $246,000 (40% of revenue)\nFenwright Family Foundation: $150,000 (24% of revenue)\nTogether, these two sources make up 64% of our revenue\nThe Fenwright grant ends its three-year term in FY2027 and will not renew at the same level\nOther revenue: individual donors and the Porch Supper (14%), Marrow Junction Community Health Trust (12%), family fees (10%)\nContact: Mirela Aske, Executive Director",
+  "plain_record": {
+    "flags": [
+      {
+        "path": "slides.1.bullets.7",
+        "kind": "quote",
+        "was": "For two years I hadn't been to my own doctor. The first Tuesday [our respite worker] came, I went, and I found out I needed the surgery I'd been putting off."
+      }
+    ],
+    "splits": [
+      [
+        1,
+        "moved to open"
+      ],
+      [
+        2,
+        "moved to open"
+      ]
+    ],
+    "slides": 8
+  },
+  "argument": null,
+  "neutral": {
+    "title": "Tallow Creek Respite Cooperative",
+    "subtitle": "In-home respite for unpaid family caregivers. Marrow Junction and the Upper Tallow townships, since 2019. Request to the Ostrander Valley Health Fund, winter caregiving round. $120,000 for one year (FY2027) Funds an overnight respite pilot and two respite workers in the eastern townships.",
+    "slides": [
+      {
+        "type": "content",
+        "heading": "Wait for a first visit: 41 days down to 12",
+        "bullets": [
+          {
+            "text": "Average days from referral to first visit: 41 in FY2025, 12 in FY2026",
+            "ref": "P12"
+          },
+          {
+            "text": "Families on the waitlist at year end: 37 down to 9",
+            "ref": "P12"
+          },
+          {
+            "text": "Emergency requests filled within 48 hours: 58% (29 of 50) up to 83% (62 of 75)",
+            "ref": "P12"
+          },
+          {
+            "text": "What changed: worker pay went from $16.50 to $19.00 an hour",
+            "ref": "P12"
+          },
+          {
+            "text": "Workers who left during the year: 11 of 23 in FY2025, 4 of 31 in FY2026",
+            "ref": "P12"
+          },
+          {
+            "text": "We also hired a second coordinator and moved scheduling off paper",
+            "ref": "P12"
+          }
+        ],
+        "refs": [
+          "P12"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "What we do",
+        "bullets": [
+          {
+            "text": "Local workers come into the home and stay with an adult who needs supervision",
+            "ref": "P11"
+          },
+          {
+            "text": "Usually a parent or spouse living with dementia, Parkinson's disease or the after-effects of a stroke",
+            "ref": "P11"
+          },
+          {
+            "text": "While the worker is there, the caregiver can see a doctor, sleep or rest",
+            "ref": "P11"
+          },
+          {
+            "text": "FY2026: 171 families, 9,880 respite hours (FY2025: 118 families, 6,240 hours)",
+            "ref": "P12"
+          },
+          {
+            "text": "Sliding-scale fees from $0 to $14 an hour; 64% of families paid nothing",
+            "ref": "P11"
+          },
+          {
+            "text": "All-in cost per respite hour: $61.98, down from $68.40",
+            "ref": "P18"
+          },
+          {
+            "text": "94 cents of every dollar went to delivering or coordinating respite",
+            "ref": "P18"
+          },
+          {
+            "text": "\"[quote not in your sources]\" (caregiver, Upper Tallow township)",
+            "ref": "P17"
+          }
+        ],
+        "refs": [
+          "P11",
+          "P12",
+          "P18",
+          "P17"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "Caregiver strain: a promising result with limits",
+        "bullets": [
+          {
+            "text": "Measure: 12-item Zarit Burden Interview (scored 0 to 48; higher means more strain)",
+            "ref": "P14"
+          },
+          {
+            "text": "Average score at intake: 27.4. At six months: 19.8, a drop of 7.6 points",
+            "ref": "P14"
+          },
+          {
+            "text": "61 caregivers started in the high-strain band (17 or above); 34 of them were below 17 at six months",
+            "ref": "P14"
+          },
+          {
+            "text": "Read with care:",
+            "ref": "P7"
+          },
+          {
+            "text": "Only 96 of 171 families completed both surveys, and those who answered may have been doing better",
+            "ref": "P15"
+          },
+          {
+            "text": "There is no comparison group, and strain often eases for other reasons",
+            "ref": "P15"
+          },
+          {
+            "text": "Our own coordinators gave the survey",
+            "ref": "P7"
+          },
+          {
+            "text": "These numbers fit our belief that respite helps, but they do not prove the program caused the drop",
+            "ref": "P15"
+          },
+          {
+            "text": "FY2027: an outside evaluator will run follow-up surveys, and we will track why families leave",
+            "ref": "P16"
+          }
+        ],
+        "refs": [
+          "P14",
+          "P7",
+          "P15",
+          "P16"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "Two gaps we cannot fill today",
+        "bullets": [
+          {
+            "text": "Nights: 22 families asked for overnight coverage in FY2026, and we could not offer it",
+            "ref": "P20"
+          },
+          {
+            "text": "Dementia often means wandering, sundowning and lost sleep, and daytime visits do not help with that",
+            "ref": "P20"
+          },
+          {
+            "text": "Distance: Corliss and Harrow Flat townships made up 9% of referrals but only 4% of respite hours",
+            "ref": "P20"
+          },
+          {
+            "text": "A worker's round trip to the eastern townships can run 70 miles",
+            "ref": "P20"
+          }
+        ],
+        "refs": [
+          "P20"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "FY2027 plan and how we will judge it",
+        "bullets": [
+          {
+            "text": "Pilot overnight respite for up to 40 families: two 9 p.m. to 7 a.m. shifts a month for six months",
+            "ref": "P21"
+          },
+          {
+            "text": "Hire two respite workers who live in Corliss and Harrow Flat",
+            "ref": "P21"
+          },
+          {
+            "text": "Train 14 current workers in dementia care (required for overnight shifts)",
+            "ref": "P21"
+          },
+          {
+            "text": "Bring in an outside evaluator for follow-up surveys and exit interviews",
+            "ref": "P21"
+          },
+          {
+            "text": "We will report three measures, even if the results disappoint:",
+            "ref": "P22"
+          },
+          {
+            "text": "Share of pilot caregivers with at least 5 nights of unbroken sleep a month",
+            "ref": "P22"
+          },
+          {
+            "text": "Six-month strain scores, collected by the outside evaluator",
+            "ref": "P22"
+          },
+          {
+            "text": "Whether families keep using the service",
+            "ref": "P22"
+          }
+        ],
+        "refs": [
+          "P21",
+          "P22"
+        ]
+      },
+      {
+        "type": "exhibit",
+        "heading": "FY2027 expansion budget: $165,000",
+        "unit": "",
+        "refs": [
+          "P21",
+          "P4",
+          "P22"
+        ],
+        "lines": [
+          "Two eastern township respite workers (2.0 FTE wages and benefits): $96,000",
+          "Overnight pilot shift pay (up to 40 families, 6 months): $38,500",
+          "Dementia care training for 14 workers: $12,800",
+          "Added rural mileage: $9,200",
+          "Independent evaluation: $8,500",
+          "Total: $165,000",
+          "Already committed: $45,000 from the Upper Tallow County Area Agency on Aging (part of the eastern township workers)",
+          "Remaining gap and our request: $120,000"
+        ],
+        "bars": [
+          {
+            "label": "Two eastern township respite workers (2.0 FTE wages and benefits)",
+            "value": "$96,000",
+            "ref": "P21"
+          },
+          {
+            "label": "Overnight pilot shift pay (up to 40 families, 6 months)",
+            "value": "$38,500",
+            "ref": "P21"
+          },
+          {
+            "label": "Dementia care training for 14 workers",
+            "value": "$12,800",
+            "ref": "P21"
+          },
+          {
+            "label": "Added rural mileage",
+            "value": "$9,200",
+            "ref": "P21"
+          },
+          {
+            "label": "Independent evaluation",
+            "value": "$8,500",
+            "ref": "P21"
+          },
+          {
+            "label": "Already committed from the Upper Tallow County Area Agency on Aging (part of the eastern township workers)",
+            "value": "$45,000",
+            "ref": "P22"
+          },
+          {
+            "label": "Remaining gap and our request",
+            "value": "$120,000",
+            "ref": "P4"
+          }
+        ],
+        "subhead": "Total: $165,000"
+      },
+      {
+        "type": "exhibit",
+        "heading": "Our finances, including our risks",
+        "unit": "",
+        "refs": [
+          "P19",
+          "P2"
+        ],
+        "lines": [
+          "FY2026 revenue: $618,900. Expenses: $612,400. Surplus: $6,500, added to reserve",
+          "County Area Agency on Aging contract: $246,000 (40% of revenue)",
+          "Fenwright Family Foundation: $150,000 (24% of revenue)",
+          "Operating reserve covers about seven weeks of expenses"
+        ],
+        "bars": [
+          {
+            "label": "FY2026 revenue . Expenses: $612,400. Surplus: $6,500, added to reserve",
+            "value": "$618,900",
+            "ref": "P19"
+          },
+          {
+            "label": "County Area Agency on Aging contract (40% of revenue)",
+            "value": "$246,000",
+            "ref": "P19"
+          },
+          {
+            "label": "Fenwright Family Foundation (24% of revenue)",
+            "value": "$150,000",
+            "ref": "P19"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "Our finances, including our risks (continued)",
+        "bullets": [
+          {
+            "text": "Operating reserve covers about seven weeks of expenses",
+            "ref": "P19"
+          },
+          {
+            "text": "Together, these two sources make up 64% of our revenue",
+            "ref": "P19"
+          },
+          {
+            "text": "The Fenwright grant ends its three-year term in FY2027 and will not renew at the same level",
+            "ref": "P19"
+          },
+          {
+            "text": "Other revenue: individual donors and the Porch Supper (14%), Marrow Junction Community Health Trust (12%), family fees (10%)",
+            "ref": "P19"
+          },
+          {
+            "text": "Contact: Mirela Aske, Executive Director",
+            "ref": "P2"
+          }
+        ],
+        "refs": [
+          "P19",
+          "P2"
+        ]
+      }
+    ],
+    "plain": true
+  },
+  "live": {
+    "title": "Tallow Creek Respite Cooperative",
+    "subtitle": "In-home respite for unpaid family caregivers. Marrow Junction and the Upper Tallow townships, since 2019. Request to the Ostrander Valley Health Fund, winter caregiving round. $120,000 for one year (FY2027) Funds an overnight respite pilot and two respite workers in the eastern townships.",
+    "slides": [
+      {
+        "type": "content",
+        "heading": "Wait for a first visit: 41 days down to 12",
+        "bullets": [
+          {
+            "text": "Average days from referral to first visit: 41 in FY2025, 12 in FY2026",
+            "ref": "P12"
+          },
+          {
+            "text": "Families on the waitlist at year end: 37 down to 9",
+            "ref": "P12"
+          },
+          {
+            "text": "Emergency requests filled within 48 hours: 58% (29 of 50) up to 83% (62 of 75)",
+            "ref": "P12"
+          },
+          {
+            "text": "What changed: worker pay went from $16.50 to $19.00 an hour",
+            "ref": "P12"
+          },
+          {
+            "text": "Workers who left during the year: 11 of 23 in FY2025, 4 of 31 in FY2026",
+            "ref": "P12"
+          },
+          {
+            "text": "We also hired a second coordinator and moved scheduling off paper",
+            "ref": "P12"
+          }
+        ],
+        "refs": [
+          "P12"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "What we do",
+        "bullets": [
+          {
+            "text": "Local workers come into the home and stay with an adult who needs supervision",
+            "ref": "P11"
+          },
+          {
+            "text": "Usually a parent or spouse living with dementia, Parkinson's disease or the after-effects of a stroke",
+            "ref": "P11"
+          },
+          {
+            "text": "While the worker is there, the caregiver can see a doctor, sleep or rest",
+            "ref": "P11"
+          },
+          {
+            "text": "FY2026: 171 families, 9,880 respite hours (FY2025: 118 families, 6,240 hours)",
+            "ref": "P12"
+          },
+          {
+            "text": "Sliding-scale fees from $0 to $14 an hour; 64% of families paid nothing",
+            "ref": "P11"
+          },
+          {
+            "text": "All-in cost per respite hour: $61.98, down from $68.40",
+            "ref": "P18"
+          },
+          {
+            "text": "94 cents of every dollar went to delivering or coordinating respite",
+            "ref": "P18"
+          },
+          {
+            "text": "\"[quote not in your sources]\" (caregiver, Upper Tallow township)",
+            "ref": "P17"
+          }
+        ],
+        "refs": [
+          "P11",
+          "P12",
+          "P18",
+          "P17"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "Caregiver strain: a promising result with limits",
+        "bullets": [
+          {
+            "text": "Measure: 12-item Zarit Burden Interview (scored 0 to 48; higher means more strain)",
+            "ref": "P14"
+          },
+          {
+            "text": "Average score at intake: 27.4. At six months: 19.8, a drop of 7.6 points",
+            "ref": "P14"
+          },
+          {
+            "text": "61 caregivers started in the high-strain band (17 or above); 34 of them were below 17 at six months",
+            "ref": "P14"
+          },
+          {
+            "text": "Read with care:",
+            "ref": "P7"
+          },
+          {
+            "text": "Only 96 of 171 families completed both surveys, and those who answered may have been doing better",
+            "ref": "P15"
+          },
+          {
+            "text": "There is no comparison group, and strain often eases for other reasons",
+            "ref": "P15"
+          },
+          {
+            "text": "Our own coordinators gave the survey",
+            "ref": "P7"
+          },
+          {
+            "text": "These numbers fit our belief that respite helps, but they do not prove the program caused the drop",
+            "ref": "P15"
+          },
+          {
+            "text": "FY2027: an outside evaluator will run follow-up surveys, and we will track why families leave",
+            "ref": "P16"
+          }
+        ],
+        "refs": [
+          "P14",
+          "P7",
+          "P15",
+          "P16"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "Two gaps we cannot fill today",
+        "bullets": [
+          {
+            "text": "Nights: 22 families asked for overnight coverage in FY2026, and we could not offer it",
+            "ref": "P20"
+          },
+          {
+            "text": "Dementia often means wandering, sundowning and lost sleep, and daytime visits do not help with that",
+            "ref": "P20"
+          },
+          {
+            "text": "Distance: Corliss and Harrow Flat townships made up 9% of referrals but only 4% of respite hours",
+            "ref": "P20"
+          },
+          {
+            "text": "A worker's round trip to the eastern townships can run 70 miles",
+            "ref": "P20"
+          }
+        ],
+        "refs": [
+          "P20"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "FY2027 plan and how we will judge it",
+        "bullets": [
+          {
+            "text": "Pilot overnight respite for up to 40 families: two 9 p.m. to 7 a.m. shifts a month for six months",
+            "ref": "P21"
+          },
+          {
+            "text": "Hire two respite workers who live in Corliss and Harrow Flat",
+            "ref": "P21"
+          },
+          {
+            "text": "Train 14 current workers in dementia care (required for overnight shifts)",
+            "ref": "P21"
+          },
+          {
+            "text": "Bring in an outside evaluator for follow-up surveys and exit interviews",
+            "ref": "P21"
+          },
+          {
+            "text": "We will report three measures, even if the results disappoint:",
+            "ref": "P22"
+          },
+          {
+            "text": "Share of pilot caregivers with at least 5 nights of unbroken sleep a month",
+            "ref": "P22"
+          },
+          {
+            "text": "Six-month strain scores, collected by the outside evaluator",
+            "ref": "P22"
+          },
+          {
+            "text": "Whether families keep using the service",
+            "ref": "P22"
+          }
+        ],
+        "refs": [
+          "P21",
+          "P22"
+        ]
+      },
+      {
+        "type": "exhibit",
+        "heading": "FY2027 expansion budget: $165,000",
+        "unit": "",
+        "refs": [
+          "P21",
+          "P4",
+          "P22"
+        ],
+        "lines": [
+          "Two eastern township respite workers (2.0 FTE wages and benefits): $96,000",
+          "Overnight pilot shift pay (up to 40 families, 6 months): $38,500",
+          "Dementia care training for 14 workers: $12,800",
+          "Added rural mileage: $9,200",
+          "Independent evaluation: $8,500",
+          "Total: $165,000",
+          "Already committed: $45,000 from the Upper Tallow County Area Agency on Aging (part of the eastern township workers)",
+          "Remaining gap and our request: $120,000"
+        ],
+        "bars": [
+          {
+            "label": "Two eastern township respite workers (2.0 FTE wages and benefits)",
+            "value": "$96,000",
+            "ref": "P21"
+          },
+          {
+            "label": "Overnight pilot shift pay (up to 40 families, 6 months)",
+            "value": "$38,500",
+            "ref": "P21"
+          },
+          {
+            "label": "Dementia care training for 14 workers",
+            "value": "$12,800",
+            "ref": "P21"
+          },
+          {
+            "label": "Added rural mileage",
+            "value": "$9,200",
+            "ref": "P21"
+          },
+          {
+            "label": "Independent evaluation",
+            "value": "$8,500",
+            "ref": "P21"
+          },
+          {
+            "label": "Already committed from the Upper Tallow County Area Agency on Aging (part of the eastern township workers)",
+            "value": "$45,000",
+            "ref": "P22"
+          },
+          {
+            "label": "Remaining gap and our request",
+            "value": "$120,000",
+            "ref": "P4"
+          }
+        ],
+        "subhead": "Total: $165,000"
+      },
+      {
+        "type": "exhibit",
+        "heading": "Our finances, including our risks",
+        "unit": "",
+        "refs": [
+          "P19",
+          "P2"
+        ],
+        "lines": [
+          "FY2026 revenue: $618,900. Expenses: $612,400. Surplus: $6,500, added to reserve",
+          "County Area Agency on Aging contract: $246,000 (40% of revenue)",
+          "Fenwright Family Foundation: $150,000 (24% of revenue)",
+          "Operating reserve covers about seven weeks of expenses"
+        ],
+        "bars": [
+          {
+            "label": "FY2026 revenue . Expenses: $612,400. Surplus: $6,500, added to reserve",
+            "value": "$618,900",
+            "ref": "P19"
+          },
+          {
+            "label": "County Area Agency on Aging contract (40% of revenue)",
+            "value": "$246,000",
+            "ref": "P19"
+          },
+          {
+            "label": "Fenwright Family Foundation (24% of revenue)",
+            "value": "$150,000",
+            "ref": "P19"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "Our finances, including our risks (continued)",
+        "bullets": [
+          {
+            "text": "Operating reserve covers about seven weeks of expenses",
+            "ref": "P19"
+          },
+          {
+            "text": "Together, these two sources make up 64% of our revenue",
+            "ref": "P19"
+          },
+          {
+            "text": "The Fenwright grant ends its three-year term in FY2027 and will not renew at the same level",
+            "ref": "P19"
+          },
+          {
+            "text": "Other revenue: individual donors and the Porch Supper (14%), Marrow Junction Community Health Trust (12%), family fees (10%)",
+            "ref": "P19"
+          },
+          {
+            "text": "Contact: Mirela Aske, Executive Director",
+            "ref": "P2"
+          }
+        ],
+        "refs": [
+          "P19",
+          "P2"
+        ]
+      }
+    ],
+    "plain": true
+  },
+  "passages": {
+    "P1": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Notes",
+      "source_id": "s_0fa23237e4b8"
+    },
+    "P2": {
+      "text": "Tallow Creek Respite Cooperative\nBoard meeting notes, Wednesday, November 4, 2026\nPresent: Osric Pellam (chair), Juniper Haldane (treasurer), Mirela Aske (executive director), Benedikt Orrin (program director)",
+      "locator": "para. 2",
+      "source_title": "Notes",
+      "source_id": "s_0fa23237e4b8"
+    },
+    "P3": {
+      "text": "Item 3: Ostrander Valley Health Fund",
+      "locator": "para. 3",
+      "source_title": "Notes",
+      "source_id": "s_0fa23237e4b8"
+    },
+    "P4": {
+      "text": "Mirela reported that Teodora Vance, program officer at the Ostrander Valley Health Fund, invited us to submit a short deck for their winter caregiving round after reading our FY2026 report. Ask: $120,000 for one year toward the FY2027 overnight respite pilot and the two eastern township workers. Total expansion cost is $165,000; the county Area Agency on Aging has already committed $45,000.",
+      "locator": "para. 4",
+      "source_title": "Notes",
+      "source_id": "s_0fa23237e4b8"
+    },
+    "P5": {
+      "text": "Deadline: deck to Teodora by Tuesday, December 1, 2026. Mirela wants a draft to the board by Friday, November 20.",
+      "locator": "para. 5",
+      "source_title": "Notes",
+      "source_id": "s_0fa23237e4b8"
+    },
+    "P6": {
+      "text": "Juniper noted that Fenwright's $150,000 does not renew at the same level after FY2027 and asked that we not hide how much we lean on the county and Fenwright (64 percent). Osric agreed.",
+      "locator": "para. 6",
+      "source_title": "Notes",
+      "source_id": "s_0fa23237e4b8"
+    },
+    "P7": {
+      "text": "Instructions for the deck, agreed by the board:\n1. Keep it to eight slides or fewer. Teodora said she reads them on her phone.\n2. Lead with the waitlist: 41 days down to 12. That is our strongest number and it is not in dispute.\n3. Show the strain result (27.4 to 19.8) only with the caveat in plain view: 96 of 171 families answered, no comparison group, our own staff gave the survey. Do not call the program \"evidence-based\" and do not say respite keeps people out of nursing homes.\n4. Show the full $165,000 by line, with the county's $45,000 visible, so the $120,000 ask is clearly the gap.\n5. No photos of caregivers or the people they care for, and no names. The quote can run without attribution beyond \"caregiver, Upper Tallow township.\"",
+      "locator": "para. 7",
+      "source_title": "Notes",
+      "source_id": "s_0fa23237e4b8"
+    },
+    "P8": {
+      "text": "Benedikt will pull the numbers. Mirela owns the draft.",
+      "locator": "para. 8",
+      "source_title": "Notes",
+      "source_id": "s_0fa23237e4b8"
+    },
+    "P9": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Report",
+      "source_id": "s_e18cb8abe76c"
+    },
+    "P10": {
+      "text": "## FY2026 Annual Program Report\n### July 1, 2025 to June 30, 2026 | Marrow Junction and the Upper Tallow townships",
+      "locator": "“Tallow Creek Respite Cooperative”",
+      "source_title": "Report",
+      "source_id": "s_e18cb8abe76c"
+    },
+    "P11": {
+      "text": "Tallow Creek Respite Cooperative gives unpaid family caregivers a few hours of their lives back. We train and employ local respite workers who go into the home and stay with an adult who needs supervision, most often a parent or spouse living with dementia, Parkinson's disease, or the after-effects of a stroke. While the worker is there, the caregiver sees a doctor, sleeps, or sits in a parked car and does nothing at all. We have done this since 2019 with a staff of two coordinators and a pool of part-time workers who live in the communities they serve.\nFamilies pay on a sliding scale from zero to $14 an hour. In FY2026, 64 percent of families paid nothing.",
+      "locator": "“Who we are”",
+      "source_title": "Report",
+      "source_id": "s_e18cb8abe76c"
+    },
+    "P12": {
+      "text": "FY2026 was the first full year after we moved scheduling off paper and onto a shared calendar, hired a second coordinator, and raised respite worker pay from $16.50 to $19.00 an hour. The pay raise mattered most. In FY2025 we lost 11 of 23 workers during the year, and every departure put families back on the waitlist. In FY2026 we lost 4 of 31.\n| Measure | FY2025 | FY2026 |\n|---|---|---|\n| Caregiver families served | 118 | 171 |\n| Respite hours delivered | 6,240 | 9,880 |\n| Average hours per family per month | 4.4 | 4.8 |\n| Active respite workers (year end) | 23 | 31 |\n| Workers who left during the year | 11 | 4 |\n| Average days from referral to first visit | 41 | 12 |\n| Emergency requests filled within 48 hours | 58% (29 of 50) | 83% (62 of 75) |\n| Families on waitlist at year end | 37 | 9 |",
+      "locator": "“What changed this year”",
+      "source_title": "Report",
+      "source_id": "s_e18cb8abe76c"
+    },
+    "P13": {
+      "text": "The waitlist number is the one we watch. A caregiver who calls us is usually calling late, after a fall, a hospital stay, or a night without sleep. Forty-one days was too long. Twelve days is still not where we want it, but it is a different service.\nEmergency requests, usually a caregiver's own surgery or hospital stay, grew from 50 to 75, and we filled a far larger share.",
+      "locator": "“What changed this year”",
+      "source_title": "Report",
+      "source_id": "s_e18cb8abe76c"
+    },
+    "P14": {
+      "text": "At intake and again at six months, we ask caregivers to complete the 12-item short form of the Zarit Burden Interview, a widely used questionnaire that scores caregiver strain from 0 to 48. Higher scores mean more strain.\nAmong the 96 caregivers who completed both an intake and a six-month survey in FY2026, the average score fell from 27.4 to 19.8, a drop of 7.6 points. Sixty-one of the 96 were in the high-strain band (17 or above) at intake; 34 of those 61 were below 17 at six months.",
+      "locator": "“Caregiver strain: what we found and what we cannot claim”",
+      "source_title": "Report",
+      "source_id": "s_e18cb8abe76c"
+    },
+    "P15": {
+      "text": "We want funders to read this result carefully. First, only 96 of our 171 families completed the six-month survey. Some families left the program because the person they cared for moved into a nursing home or died; others simply did not return the form. Caregivers who stayed and answered may have been the ones doing better, so the average likely overstates the change. Second, we have no comparison group. Strain often eases for reasons that have nothing to do with us: a diagnosis settles, a sibling steps in, a medication starts working. Third, our coordinators administer the survey, and caregivers may want to give a good answer to the person who sends them help. We believe respite reduces strain, and the direction of these numbers fits that belief, but this is not proof that our program caused the drop.",
+      "locator": "“Caregiver strain: what we found and what we cannot claim”",
+      "source_title": "Report",
+      "source_id": "s_e18cb8abe76c"
+    },
+    "P16": {
+      "text": "In FY2027 we will contract with an outside evaluator to run follow-up calls so that the survey is not given by the people who schedule the care, and we will track why families leave.",
+      "locator": "“Caregiver strain: what we found and what we cannot claim”",
+      "source_title": "Report",
+      "source_id": "s_e18cb8abe76c"
+    },
+    "P17": {
+      "text": "\"For two years I hadn't been to my own doctor. The first Tuesday Ana came, I went, and I found out I needed the surgery I'd been putting off.\" (Caregiver for her husband, Upper Tallow township)",
+      "locator": "“In their words”",
+      "source_title": "Report",
+      "source_id": "s_e18cb8abe76c"
+    },
+    "P18": {
+      "text": "| Line | Amount |\n|---|---|\n| Respite worker wages and benefits | $398,100 |\n| Worker training and certification | $34,600 |\n| Program coordination (2.0 FTE) | $112,300 |\n| Mileage and worker transportation | $29,800 |\n| Administration, insurance, and audit | $37,600 |\n| **Total expenses** | **$612,400** |\nNinety-four cents of each dollar went to delivering or coordinating respite. Our cost per respite hour, all in, was $61.98, down from $68.40 in FY2025, mostly because coordinator time is now spread over more hours of care.",
+      "locator": "“Expenses”",
+      "source_title": "Report",
+      "source_id": "s_e18cb8abe76c"
+    },
+    "P19": {
+      "text": "| Source | Amount | Share |\n|---|---|---|\n| Upper Tallow County Area Agency on Aging (service contract) | $246,000 | 40% |\n| Fenwright Family Foundation (general operating) | $150,000 | 24% |\n| Individual donors and the October Porch Supper | $89,000 | 14% |\n| Marrow Junction Community Health Trust (worker training) | $75,000 | 12% |\n| Sliding-scale family fees | $58,900 | 10% |\n| **Total revenue** | **$618,900** | **100%** |\nWe ended the year with a surplus of $6,500, which went to our operating reserve. The reserve now covers about seven weeks of expenses.\nOne concern for the board: the county contract and the Fenwright grant together make up 64 percent of our revenue. The Fenwright grant is in its final year of a three-year commitment and will not renew at the same level after FY2027.",
+      "locator": "“Revenue”",
+      "source_title": "Report",
+      "source_id": "s_e18cb8abe76c"
+    },
+    "P20": {
+      "text": "Two gaps showed up again and again in our intake calls this year.\nThe first is nights. Caregivers of people with dementia often lose sleep to wandering and sundowning, and four-hour daytime visits do not touch that. Twenty-two families asked for overnight coverage in FY2026, and we could not offer it.\nThe second is geography. Families in Corliss and Harrow Flat townships, the far eastern end of the county, made up 9 percent of our referrals but only 4 percent of our respite hours, because a worker's round trip there can run 70 miles.\nIn FY2027 we will:",
+      "locator": "“FY2027 plan: overnight respite and the two eastern townships”",
+      "source_title": "Report",
+      "source_id": "s_e18cb8abe76c"
+    },
+    "P21": {
+      "text": "1. Pilot overnight respite for up to 40 families, offering two overnight shifts (9 p.m. to 7 a.m.) per family per month for six months.\n2. Hire two respite workers who live in Corliss and Harrow Flat.\n3. Train 14 current workers in dementia-specific care, required for overnight shifts.\n4. Bring in an outside evaluator to run follow-up surveys and exit interviews.\n| FY2027 expansion line | Cost |\n|---|---|\n| Two additional respite workers, eastern townships (2.0 FTE wages and benefits) | $96,000 |\n| Overnight pilot shift pay (up to 40 families, 6 months) | $38,500 |\n| Dementia care training for 14 workers | $12,800 |\n| Added rural mileage | $9,200 |\n| Independent evaluation | $8,500 |\n| **Total expansion cost** | **$165,000** |",
+      "locator": "“FY2027 plan: overnight respite and the two eastern townships”",
+      "source_title": "Report",
+      "source_id": "s_e18cb8abe76c"
+    },
+    "P22": {
+      "text": "The Upper Tallow County Area Agency on Aging has committed $45,000 toward this expansion through an amendment to our service contract, to cover part of the eastern township workers. We are seeking the remaining $120,000 from philanthropic partners.\nIf the overnight pilot works, we will know it by three things: the share of pilot caregivers who report at least five nights of unbroken sleep a month, their six-month strain scores gathered by the outside evaluator, and whether the families keep using the service. We will report all three, including if they disappoint.",
+      "locator": "“FY2027 plan: overnight respite and the two eastern townships”",
+      "source_title": "Report",
+      "source_id": "s_e18cb8abe76c"
+    },
+    "P23": {
+      "text": "Board Chair: Osric Pellam. Treasurer: Juniper Haldane. Executive Director: Mirela Aske. Program Director: Benedikt Orrin.",
+      "locator": "“Board and staff”",
+      "source_title": "Report",
+      "source_id": "s_e18cb8abe76c"
+    }
+  },
+  "grounding": [
+    {
+      "path": "slides.1.bullets.7",
+      "value": "[quote not in your sources]",
+      "shown": "[quote not in your sources]",
+      "status": "missing",
+      "kind": "quote"
+    },
+    {
+      "path": "subtitle",
+      "value": "120000",
+      "shown": "$120,000",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "2019",
+      "shown": "2019",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.heading",
+      "value": "41",
+      "shown": "41",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.heading",
+      "value": "12",
+      "shown": "12",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.0",
+      "value": "41",
+      "shown": "41",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.0",
+      "value": "12",
+      "shown": "12",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.1",
+      "value": "37",
+      "shown": "37",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.1",
+      "value": "9",
+      "shown": "9",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.2",
+      "value": "48",
+      "shown": "48",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.2",
+      "value": "58%",
+      "shown": "58%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.2",
+      "value": "29",
+      "shown": "29",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.2",
+      "value": "50",
+      "shown": "50",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.2",
+      "value": "83%",
+      "shown": "83%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.2",
+      "value": "62",
+      "shown": "62",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.2",
+      "value": "75",
+      "shown": "75",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.3",
+      "value": "16.5",
+      "shown": "$16.50",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.3",
+      "value": "19",
+      "shown": "$19.00",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.4",
+      "value": "11",
+      "shown": "11",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.4",
+      "value": "23",
+      "shown": "23",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.4",
+      "value": "4",
+      "shown": "4",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.4",
+      "value": "31",
+      "shown": "31",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.3",
+      "value": "171",
+      "shown": "171",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.3",
+      "value": "9880",
+      "shown": "9,880",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.3",
+      "value": "118",
+      "shown": "118",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.3",
+      "value": "6240",
+      "shown": "6,240",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.4",
+      "value": "0",
+      "shown": "$0",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.4",
+      "value": "14",
+      "shown": "$14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.4",
+      "value": "64%",
+      "shown": "64%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.5",
+      "value": "61.98",
+      "shown": "$61.98",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.5",
+      "value": "68.4",
+      "shown": "$68.40",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bullets.6",
+      "value": "94",
+      "shown": "94",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.0",
+      "value": "12",
+      "shown": "12",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.0",
+      "value": "0",
+      "shown": "0",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.0",
+      "value": "48",
+      "shown": "48",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.1",
+      "value": "27.4",
+      "shown": "27.4",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.1",
+      "value": "19.8",
+      "shown": "19.8",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.1",
+      "value": "7.6",
+      "shown": "7.6",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.2",
+      "value": "61",
+      "shown": "61",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.2",
+      "value": "17",
+      "shown": "17",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.2",
+      "value": "34",
+      "shown": "34",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.4",
+      "value": "96",
+      "shown": "96",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.4",
+      "value": "171",
+      "shown": "171",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.heading",
+      "value": "2",
+      "shown": "Two",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.0",
+      "value": "22",
+      "shown": "22",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.2",
+      "value": "9%",
+      "shown": "9%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.2",
+      "value": "4%",
+      "shown": "4%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.3",
+      "value": "70",
+      "shown": "70",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.0",
+      "value": "40",
+      "shown": "40",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.0",
+      "value": "9",
+      "shown": "9",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.0",
+      "value": "7",
+      "shown": "7",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.2",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.5",
+      "value": "5",
+      "shown": "5",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.heading",
+      "value": "165000",
+      "shown": "$165,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.subhead",
+      "value": "165000",
+      "shown": "$165,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.0",
+      "value": "2",
+      "shown": "2.0",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.0",
+      "value": "96000",
+      "shown": "$96,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.1",
+      "value": "40",
+      "shown": "40",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.1",
+      "value": "6",
+      "shown": "6",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.1",
+      "value": "38500",
+      "shown": "$38,500",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.2",
+      "value": "14",
+      "shown": "14",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.2",
+      "value": "12800",
+      "shown": "$12,800",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.3",
+      "value": "9200",
+      "shown": "$9,200",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.4",
+      "value": "8500",
+      "shown": "$8,500",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.5",
+      "value": "45000",
+      "shown": "$45,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.6",
+      "value": "120000",
+      "shown": "$120,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.0",
+      "value": "612400",
+      "shown": "$612,400",
+      "status": "computed",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.0",
+      "value": "6500",
+      "shown": "$6,500",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.0",
+      "value": "618900",
+      "shown": "$618,900",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.1",
+      "value": "40%",
+      "shown": "40%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.1",
+      "value": "246000",
+      "shown": "$246,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.2",
+      "value": "24%",
+      "shown": "24%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.2",
+      "value": "150000",
+      "shown": "$150,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.bullets.1",
+      "value": "64%",
+      "shown": "64%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.bullets.3",
+      "value": "14%",
+      "shown": "14%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.bullets.3",
+      "value": "12%",
+      "shown": "12%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.bullets.3",
+      "value": "10%",
+      "shown": "10%",
+      "status": "ok",
+      "kind": "number"
+    }
+  ],
+  "exhibits": [
+    {
+      "type": "exhibit",
+      "heading": "FY2027 expansion budget: $165,000",
+      "unit": "",
+      "refs": [
+        "P21",
+        "P4",
+        "P22"
+      ],
+      "lines": [
+        "Two eastern township respite workers (2.0 FTE wages and benefits): $96,000",
+        "Overnight pilot shift pay (up to 40 families, 6 months): $38,500",
+        "Dementia care training for 14 workers: $12,800",
+        "Added rural mileage: $9,200",
+        "Independent evaluation: $8,500",
+        "Total: $165,000",
+        "Already committed: $45,000 from the Upper Tallow County Area Agency on Aging (part of the eastern township workers)",
+        "Remaining gap and our request: $120,000"
+      ],
+      "bars": [
+        {
+          "label": "Two eastern township respite workers (2.0 FTE wages and benefits)",
+          "value": "$96,000",
+          "ref": "P21"
+        },
+        {
+          "label": "Overnight pilot shift pay (up to 40 families, 6 months)",
+          "value": "$38,500",
+          "ref": "P21"
+        },
+        {
+          "label": "Dementia care training for 14 workers",
+          "value": "$12,800",
+          "ref": "P21"
+        },
+        {
+          "label": "Added rural mileage",
+          "value": "$9,200",
+          "ref": "P21"
+        },
+        {
+          "label": "Independent evaluation",
+          "value": "$8,500",
+          "ref": "P21"
+        },
+        {
+          "label": "Already committed from the Upper Tallow County Area Agency on Aging (part of the eastern township workers)",
+          "value": "$45,000",
+          "ref": "P22"
+        },
+        {
+          "label": "Remaining gap and our request",
+          "value": "$120,000",
+          "ref": "P4"
+        }
+      ],
+      "subhead": "Total: $165,000"
+    },
+    {
+      "type": "exhibit",
+      "heading": "Our finances, including our risks",
+      "unit": "",
+      "refs": [
+        "P19",
+        "P2"
+      ],
+      "lines": [
+        "FY2026 revenue: $618,900. Expenses: $612,400. Surplus: $6,500, added to reserve",
+        "County Area Agency on Aging contract: $246,000 (40% of revenue)",
+        "Fenwright Family Foundation: $150,000 (24% of revenue)",
+        "Operating reserve covers about seven weeks of expenses"
+      ],
+      "bars": [
+        {
+          "label": "FY2026 revenue . Expenses: $612,400. Surplus: $6,500, added to reserve",
+          "value": "$618,900",
+          "ref": "P19"
+        },
+        {
+          "label": "County Area Agency on Aging contract (40% of revenue)",
+          "value": "$246,000",
+          "ref": "P19"
+        },
+        {
+          "label": "Fenwright Family Foundation (24% of revenue)",
+          "value": "$150,000",
+          "ref": "P19"
+        }
+      ]
+    }
+  ],
+  "check": [
+    "1 quote not found in sources"
+  ],
+  "pills": [
+    {
+      "id": "sources",
+      "tone": "bad",
+      "label": "1 quote not found in sources"
+    },
+    {
+      "id": "contrast",
+      "tone": "warn",
+      "label": "Contrast passes; 1 brand color kept to rules and fills"
+    },
+    {
+      "id": "never",
+      "tone": "good",
+      "label": "No never-say words"
+    },
+    {
+      "id": "fonts",
+      "tone": "good",
+      "label": "Kit fonts used"
+    },
+    {
+      "id": "money",
+      "tone": "warn",
+      "label": "The deck leaves out $398,100, $34,600, $112,300, $29,800 and more from Report, “Expenses”; Report, “Revenue”"
+    },
+    {
+      "id": "relation",
+      "tone": "warn",
+      "label": "Check the wording against the source: “every”"
+    }
+  ],
+  "slide_count": 9,
+  "seconds": 44.2
+}

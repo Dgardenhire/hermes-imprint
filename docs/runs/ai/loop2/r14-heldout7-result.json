@@ -1,0 +1,1489 @@
+{
+  "set": "heldout7",
+  "tag": "r14-heldout7",
+  "steps": {
+    "brand": {
+      "status": "done",
+      "seconds": 0.0
+    },
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 26.1,
+      "error": null
+    }
+  },
+  "started": 1794235776.8048902,
+  "sources": [
+    "notes.txt",
+    "report.md"
+  ],
+  "kit": {
+    "id": "k_00c889dd4fe3",
+    "name": "Pasted colors",
+    "colors": [
+      {
+        "hex": "#c98b2e",
+        "role": "accent",
+        "name": "Ochre"
+      }
+    ],
+    "paper": "#f4efe4",
+    "ink": "#2e4a3b",
+    "kit_json": {
+      "name": "Pasted colors",
+      "origin": "import",
+      "origin_note": "Pasted color codes",
+      "org": "",
+      "subject": "",
+      "signature": "",
+      "paper": "#f4efe4",
+      "ink": "#2e4a3b",
+      "colors": [
+        {
+          "hex": "#c98b2e",
+          "role": "accent",
+          "name": "Ochre"
+        }
+      ],
+      "type": {
+        "heading": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 700
+        },
+        "body": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 400
+        },
+        "scale": 1.25
+      },
+      "layout": "banner",
+      "density": "medium",
+      "voice": {
+        "notes": "",
+        "delivery": "",
+        "never": [],
+        "pairs": [],
+        "draft": false
+      },
+      "rules": {
+        "sources": true,
+        "page_numbers": true,
+        "date": true,
+        "required": []
+      },
+      "imported_from": {
+        "kind": "paste",
+        "label": "Pasted colors",
+        "ref": "",
+        "sha256": "",
+        "license_note": "",
+        "brand_named": false,
+        "mode": "",
+        "imported_at": 1794235776.8196008
+      },
+      "logo": null,
+      "logo_alt": null,
+      "fonts": [],
+      "id": "k_00c889dd4fe3",
+      "version": 1,
+      "created_at": 1794235776.82378,
+      "updated_at": 1794235776.82378,
+      "starter": false
+    }
+  },
+  "guide_and_summaries_seconds": 17.8,
+  "guide": {
+    "by": "Written by your Hermes model",
+    "guide": [
+      {
+        "text": "The sources are October 27, 2026 board notes and the FY2026 annual report from Bramblecote Wildlife Recovery, a small wildlife rehabilitation center in Ketterly.",
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 2",
+            "source_id": "s_be943171aba1"
+          },
+          {
+            "ref": "P11",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Bramblecote Wildlife Recovery”",
+            "source_id": "s_8656e658437a"
+          },
+          {
+            "ref": "P12",
+            "n": 3,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“Who we are”",
+            "source_id": "s_8656e658437a"
+          }
+        ]
+      },
+      {
+        "text": "Admissions rose 41 percent over two years, from 1,142 to 1,611, and staffing did not change.",
+        "chips": [
+          {
+            "ref": "P14",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“The year in numbers”",
+            "source_id": "s_8656e658437a"
+          },
+          {
+            "ref": "P16",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“The result we report, and its limits”",
+            "source_id": "s_8656e658437a"
+          }
+        ]
+      },
+      {
+        "text": "The release rate rose from 48 percent to 54 percent, but it is about 49 percent when adjusted for the mix of animals.",
+        "chips": [
+          {
+            "ref": "P15",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“The result we report, and its limits”",
+            "source_id": "s_8656e658437a"
+          }
+        ]
+      },
+      {
+        "text": "The board will ask the Harrow Valley Community Foundation for $60,000 toward a $148,000 raptor flight enclosure.",
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 5",
+            "source_id": "s_be943171aba1"
+          },
+          {
+            "ref": "P21",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: the raptor flight enclosure”",
+            "source_id": "s_8656e658437a"
+          }
+        ]
+      },
+      {
+        "text": "The enclosure would end raptor transfers to Crane Ridge, which took 41 of 113 raptors and will cap transfers starting in 2027.",
+        "chips": [
+          {
+            "ref": "P20",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“What did not go well”",
+            "source_id": "s_8656e658437a"
+          },
+          {
+            "ref": "P22",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: the raptor flight enclosure”",
+            "source_id": "s_8656e658437a"
+          }
+        ]
+      }
+    ],
+    "asks": [
+      {
+        "id": "a1",
+        "who": "Environmental Stewardship Fund",
+        "what": "Short deck asking $60,000 for the raptor flight enclosure",
+        "by": "November 20",
+        "kind": "deck",
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 4",
+            "source_id": "s_be943171aba1"
+          },
+          {
+            "ref": "P7",
+            "n": 2,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 7",
+            "source_id": "s_be943171aba1"
+          },
+          {
+            "ref": "P8",
+            "n": 3,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 8",
+            "source_id": "s_be943171aba1"
+          }
+        ],
+        "brief": {
+          "who": "Harrow Valley Environmental Stewardship Fund",
+          "goal": "Decide whether to give $60,000 toward the raptor flight enclosure",
+          "length": "Eight slides at most"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "text": "Individual pledges stand at $38,000 committed of a $52,000 goal, a $14,000 gap. The project also adds a $28,000 part-time raptor technician. Who pays for that technician after year one?",
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 5",
+            "source_id": "s_be943171aba1"
+          },
+          {
+            "ref": "P21",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: the raptor flight enclosure”",
+            "source_id": "s_8656e658437a"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "The deck may show a 54 percent release rate, but the mix-adjusted rate is about 49 percent. How should a one-point gain be presented next to the 54 percent figure?",
+        "chips": [
+          {
+            "ref": "P8",
+            "n": 1,
+            "source_n": 1,
+            "source": "Notes",
+            "locator": "para. 8",
+            "source_id": "s_be943171aba1"
+          },
+          {
+            "ref": "P15",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“The result we report, and its limits”",
+            "source_id": "s_8656e658437a"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "Crane Ridge will cap transfers starting in 2027, after taking 41 of 113 raptors. The enclosure is planned to open in spring 2027. What happens to raptors if it opens late?",
+        "chips": [
+          {
+            "ref": "P20",
+            "n": 1,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“What did not go well”",
+            "source_id": "s_8656e658437a"
+          },
+          {
+            "ref": "P22",
+            "n": 2,
+            "source_n": 2,
+            "source": "Report",
+            "locator": "“FY2027 plan: the raptor flight enclosure”",
+            "source_id": "s_8656e658437a"
+          }
+        ],
+        "suggestion": true
+      }
+    ],
+    "source_ids": [
+      "s_be943171aba1",
+      "s_8656e658437a"
+    ],
+    "created_at": 1794235794.47629
+  },
+  "brief": {
+    "who": "Funders",
+    "goal": "Decide whether to give $60,000 toward the raptor flight enclosure",
+    "length": "7 to 9 slides"
+  },
+  "outline": {},
+  "deck_seconds": 26.1,
+  "output_id": "o_f3755c6eaf22",
+  "case": null,
+  "plain_draft": "Slide 1: A Flight Enclosure for Ketterly County's Hawks and Owls\nBramblecote Wildlife Recovery\nRequest to the Harrow Valley Community Foundation, Environmental Stewardship Fund\n$60,000 toward a $148,000 raptor flight enclosure and care project\nOpening spring 2027 on our Mill Lane site\nDecember 3, 2026\n\nSlide 2: Thank You, and What This Request Is\nThank you for $50,000 in general operating support in FY2026\nThat grant kept our care staff, hotline, and clinic running through a record year\nToday's request is separate: a one-time capital project, not operating support\nWho we are: a licensed wildlife rehabilitation center on four acres north of downtown Ketterly\n2.5 full-time care staff, a contract veterinarian two mornings a week, 97 volunteers\nFY2026 revenue $428,900; expenses $412,600; $16,300 surplus added to reserves\n87% of spending went to programs; reserve covers about 2.5 months of expenses\n\nSlide 3: FY2026 at a Glance\n1,611 animals admitted, up 41% from 1,142 in FY2024\n117 species treated\n870 animals released to the wild\n4,480 hotline calls answered\n612 healthy animals left with their parents thanks to hotline coaching\n97 active volunteers gave 11,240 hours\n38 school and library visits reached 2,150 students\n\nSlide 4: Our Release Rate, Stated Plainly\nRaw release rate: 48% in FY2024, 54% in FY2026\nAdjusted to the FY2024 mix of species and injuries: about 49% in FY2026\nThat is roughly one point of real improvement, not six\nMost of the rise came from more orphaned juveniles, which release at high rates\nHolding steady and gaining a point while admissions rose 41% with no added staff is still a real result\nWe do not yet track how animals survive after release; the new enclosure plan addresses this for raptors\n\nSlide 5: The Gap: Raptors\n113 raptors admitted in FY2026, mostly red-tailed hawks, barred owls, and American kestrels\nWe have no enclosure big enough for a hawk or owl to rebuild flight muscle\n41 raptors went to Crane Ridge Raptor Center, two hours away, for final conditioning\nEach transfer takes a volunteer most of a day and adds stress for the bird\nCrane Ridge will limit transfers from outside its region starting in 2027\n\"Somebody picked up, told me exactly where to drive, and was waiting at the gate with the lights on.\" (Delia Marsh, Ketterly resident, on bringing us a hawk)\n\nSlide 6: The Project and Its Budget\nA 100-foot curved flight enclosure at Bramblecote\nDesign, site work, and construction: $112,000\nPart-time raptor care technician, first year: $28,000\nPerches, scales, transport crates, and monitoring cameras: $8,000\nTotal project cost: $148,000\n\nSlide 7: How the $148,000 Comes Together\nHarrow Valley Community Foundation: $60,000, requested today\nIndividual capital pledges: $52,000, with $38,000 committed and $14,000 still to raise\nOstrander-Bell Family Fund: $36,000, request pending\nOther sources total $88,000, of which $38,000 is committed so far\nTotal: $148,000\n\nSlide 8: What the Enclosure Will Deliver\nNo more transfers of raptors out of the county once it opens in spring 2027\nHawks and owls released in the county where they were found\nA raptor release rate we can measure and report ourselves\nA post-release band-return log, so future reports can show what happens after release\nA site where our school program can show students what recovery takes\nOur request: $60,000 to help build it",
+  "plain_record": {
+    "flags": [],
+    "splits": [
+      [
+        3,
+        "moved to open"
+      ],
+      [
+        4,
+        "moved to open"
+      ]
+    ],
+    "slides": 8
+  },
+  "argument": null,
+  "neutral": {
+    "title": "A Flight Enclosure for Ketterly County's Hawks and Owls",
+    "subtitle": "Bramblecote Wildlife Recovery. Request to the Harrow Valley Community Foundation, Environmental Stewardship Fund. $60,000 toward a $148,000 raptor flight enclosure and care project. Opening spring 2027 on our Mill Lane site. December 3, 2026.",
+    "slides": [
+      {
+        "type": "content",
+        "heading": "Thank You, and What This Request Is",
+        "bullets": [
+          {
+            "text": "Thank you for $50,000 in general operating support in FY2026",
+            "ref": "P6"
+          },
+          {
+            "text": "That grant kept our care staff, hotline, and clinic running through a record year",
+            "ref": "P12"
+          },
+          {
+            "text": "Today's request is separate: a one-time capital project, not operating support",
+            "ref": "P6"
+          },
+          {
+            "text": "Who we are: a licensed wildlife rehabilitation center on four acres north of downtown Ketterly",
+            "ref": "P12"
+          },
+          {
+            "text": "2.5 full-time care staff, a contract veterinarian two mornings a week, 97 volunteers",
+            "ref": "P13"
+          },
+          {
+            "text": "FY2026 revenue $428,900; expenses $412,600; $16,300 surplus added to reserves",
+            "ref": "P19"
+          },
+          {
+            "text": "87% of spending went to programs; reserve covers about 2.5 months of expenses",
+            "ref": "P12"
+          }
+        ],
+        "refs": [
+          "P6",
+          "P12",
+          "P19"
+        ]
+      },
+      {
+        "type": "figures",
+        "heading": "FY2026 at a Glance",
+        "refs": [
+          "P14",
+          "P13"
+        ],
+        "lines": [
+          "1,611 animals admitted, up 41% from 1,142 in FY2024",
+          "117 species treated",
+          "870 animals released to the wild",
+          "4,480 hotline calls answered"
+        ],
+        "figures": [
+          {
+            "value": "1,611",
+            "label": "animals admitted, up 41% from 1,142 in FY2024",
+            "context": "",
+            "ref": "P14"
+          },
+          {
+            "value": "117",
+            "label": "species treated",
+            "context": "",
+            "ref": "P13"
+          },
+          {
+            "value": "870",
+            "label": "animals released to the wild",
+            "context": "",
+            "ref": "P13"
+          },
+          {
+            "value": "4,480",
+            "label": "hotline calls answered",
+            "context": "",
+            "ref": "P13"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "FY2026 at a Glance (continued)",
+        "bullets": [
+          {
+            "text": "612 healthy animals left with their parents thanks to hotline coaching",
+            "ref": "P14"
+          },
+          {
+            "text": "97 active volunteers gave 11,240 hours",
+            "ref": "P13"
+          },
+          {
+            "text": "38 school and library visits reached 2,150 students",
+            "ref": "P13"
+          }
+        ],
+        "refs": [
+          "P14",
+          "P13"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "Our Release Rate, Stated Plainly",
+        "bullets": [
+          {
+            "text": "Raw release rate: 48% in FY2024, 54% in FY2026",
+            "ref": "P15"
+          },
+          {
+            "text": "Adjusted to the FY2024 mix of species and injuries: about 49% in FY2026",
+            "ref": "P15"
+          },
+          {
+            "text": "That is roughly one point of real improvement, not six",
+            "ref": "P15"
+          },
+          {
+            "text": "Most of the rise came from more orphaned juveniles, which release at high rates",
+            "ref": "P15"
+          },
+          {
+            "text": "Holding steady and gaining a point while admissions rose 41% with no added staff is still a real result",
+            "ref": "P16"
+          },
+          {
+            "text": "We do not yet track how animals survive after release; the new enclosure plan addresses this for raptors",
+            "ref": "P22"
+          }
+        ],
+        "refs": [
+          "P15",
+          "P16",
+          "P22"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "The Gap: Raptors",
+        "bullets": [
+          {
+            "text": "113 raptors admitted in FY2026, mostly red-tailed hawks, barred owls, and American kestrels",
+            "ref": "P14"
+          },
+          {
+            "text": "We have no enclosure big enough for a hawk or owl to rebuild flight muscle",
+            "ref": "P20"
+          },
+          {
+            "text": "41 raptors went to Crane Ridge Raptor Center, two hours away, for final conditioning",
+            "ref": "P20"
+          },
+          {
+            "text": "Each transfer takes a volunteer most of a day and adds stress for the bird",
+            "ref": "P20"
+          },
+          {
+            "text": "Crane Ridge will limit transfers from outside its region starting in 2027",
+            "ref": "P20"
+          },
+          {
+            "text": "\"Somebody picked up, told me exactly where to drive, and was waiting at the gate with the lights on.\" (Delia Marsh, Ketterly resident, on bringing us a hawk)",
+            "ref": "P17"
+          }
+        ],
+        "refs": [
+          "P14",
+          "P20",
+          "P17"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "exhibit",
+        "heading": "The Project and Its Budget",
+        "unit": "",
+        "refs": [
+          "P21"
+        ],
+        "lines": [
+          "A 100-foot curved flight enclosure at Bramblecote",
+          "Design, site work, and construction: $112,000",
+          "Part-time raptor care technician, first year: $28,000",
+          "Perches, scales, transport crates, and monitoring cameras: $8,000",
+          "Total project cost: $148,000"
+        ],
+        "bars": [
+          {
+            "label": "Design, site work, and construction",
+            "value": "$112,000",
+            "ref": "P21"
+          },
+          {
+            "label": "Part-time raptor care technician, first year",
+            "value": "$28,000",
+            "ref": "P21"
+          },
+          {
+            "label": "Perches, scales, transport crates, and monitoring cameras",
+            "value": "$8,000",
+            "ref": "P21"
+          }
+        ],
+        "subhead": "A 100-foot curved flight enclosure at Bramblecote. Total project cost: $148,000."
+      },
+      {
+        "type": "exhibit",
+        "heading": "How the $148,000 Comes Together",
+        "unit": "",
+        "refs": [
+          "P21",
+          "P5"
+        ],
+        "lines": [
+          "Harrow Valley Community Foundation: $60,000, requested today",
+          "Individual capital pledges: $52,000, with $38,000 committed and $14,000 still to raise",
+          "Ostrander-Bell Family Fund: $36,000, request pending",
+          "Total: $148,000",
+          "Other sources total $88,000, of which $38,000 is committed so far"
+        ],
+        "bars": [
+          {
+            "label": "Harrow Valley Community Foundation requested today",
+            "value": "$60,000,",
+            "ref": "P21"
+          },
+          {
+            "label": "Individual capital pledges with $38,000 committed and $14,000 still to raise",
+            "value": "$52,000,",
+            "ref": "P5"
+          },
+          {
+            "label": "Ostrander-Bell Family Fund request pending",
+            "value": "$36,000,",
+            "ref": "P5"
+          }
+        ],
+        "subhead": "Total: $148,000",
+        "note": "Other sources total $88,000, of which $38,000 is committed so far"
+      },
+      {
+        "type": "content",
+        "heading": "What the Enclosure Will Deliver",
+        "bullets": [
+          {
+            "text": "No more transfers of raptors out of the county once it opens in spring 2027",
+            "ref": "P22"
+          },
+          {
+            "text": "Hawks and owls released in the county where they were found",
+            "ref": "P21"
+          },
+          {
+            "text": "A raptor release rate we can measure and report ourselves",
+            "ref": "P22"
+          },
+          {
+            "text": "A post-release band-return log, so future reports can show what happens after release",
+            "ref": "P22"
+          },
+          {
+            "text": "A site where our school program can show students what recovery takes",
+            "ref": "P22"
+          },
+          {
+            "text": "Our request: $60,000 to help build it",
+            "ref": "P21"
+          }
+        ],
+        "refs": [
+          "P22",
+          "P21",
+          "P20"
+        ]
+      }
+    ],
+    "plain": true
+  },
+  "live": {
+    "title": "A Flight Enclosure for Ketterly County's Hawks and Owls",
+    "subtitle": "Bramblecote Wildlife Recovery. Request to the Harrow Valley Community Foundation, Environmental Stewardship Fund. $60,000 toward a $148,000 raptor flight enclosure and care project. Opening spring 2027 on our Mill Lane site. December 3, 2026.",
+    "slides": [
+      {
+        "type": "content",
+        "heading": "Thank You, and What This Request Is",
+        "bullets": [
+          {
+            "text": "Thank you for $50,000 in general operating support in FY2026",
+            "ref": "P6"
+          },
+          {
+            "text": "That grant kept our care staff, hotline, and clinic running through a record year",
+            "ref": "P12"
+          },
+          {
+            "text": "Today's request is separate: a one-time capital project, not operating support",
+            "ref": "P6"
+          },
+          {
+            "text": "Who we are: a licensed wildlife rehabilitation center on four acres north of downtown Ketterly",
+            "ref": "P12"
+          },
+          {
+            "text": "2.5 full-time care staff, a contract veterinarian two mornings a week, 97 volunteers",
+            "ref": "P12"
+          },
+          {
+            "text": "FY2026 revenue $428,900; expenses $412,600; $16,300 surplus added to reserves",
+            "ref": "P19"
+          },
+          {
+            "text": "87% of spending went to programs; reserve covers about 2.5 months of expenses",
+            "ref": "P18"
+          }
+        ],
+        "refs": [
+          "P6",
+          "P12",
+          "P19"
+        ]
+      },
+      {
+        "type": "figures",
+        "heading": "FY2026 at a Glance",
+        "refs": [
+          "P14",
+          "P13"
+        ],
+        "lines": [
+          "1,611 animals admitted, up 41% from 1,142 in FY2024",
+          "117 species treated",
+          "870 animals released to the wild",
+          "4,480 hotline calls answered"
+        ],
+        "figures": [
+          {
+            "value": "1,611",
+            "label": "animals admitted, up 41% from 1,142 in FY2024",
+            "context": "",
+            "ref": "P14"
+          },
+          {
+            "value": "117",
+            "label": "species treated",
+            "context": "",
+            "ref": "P13"
+          },
+          {
+            "value": "870",
+            "label": "animals released to the wild",
+            "context": "",
+            "ref": "P13"
+          },
+          {
+            "value": "4,480",
+            "label": "hotline calls answered",
+            "context": "",
+            "ref": "P13"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "FY2026 at a Glance (continued)",
+        "bullets": [
+          {
+            "text": "612 healthy animals left with their parents thanks to hotline coaching",
+            "ref": "P14"
+          },
+          {
+            "text": "97 active volunteers gave 11,240 hours",
+            "ref": "P13"
+          },
+          {
+            "text": "38 school and library visits reached 2,150 students",
+            "ref": "P13"
+          }
+        ],
+        "refs": [
+          "P14",
+          "P13"
+        ]
+      },
+      {
+        "type": "content",
+        "heading": "Our Release Rate, Stated Plainly",
+        "bullets": [
+          {
+            "text": "Raw release rate: 48% in FY2024, 54% in FY2026",
+            "ref": "P15"
+          },
+          {
+            "text": "Adjusted to the FY2024 mix of species and injuries: about 49% in FY2026",
+            "ref": "P15"
+          },
+          {
+            "text": "That is roughly one point of real improvement, not six",
+            "ref": "P15"
+          },
+          {
+            "text": "Most of the rise came from more orphaned juveniles, which release at high rates",
+            "ref": "P15"
+          },
+          {
+            "text": "Holding steady and gaining a point while admissions rose 41% with no added staff is still a real result",
+            "ref": "P16"
+          },
+          {
+            "text": "We do not yet track how animals survive after release; the new enclosure plan addresses this for raptors",
+            "ref": "P22"
+          }
+        ],
+        "refs": [
+          "P15",
+          "P16",
+          "P22"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "content",
+        "heading": "The Gap: Raptors",
+        "bullets": [
+          {
+            "text": "113 raptors admitted in FY2026, mostly red-tailed hawks, barred owls, and American kestrels",
+            "ref": "P14"
+          },
+          {
+            "text": "We have no enclosure big enough for a hawk or owl to rebuild flight muscle",
+            "ref": "P20"
+          },
+          {
+            "text": "41 raptors went to Crane Ridge Raptor Center, two hours away, for final conditioning",
+            "ref": "P20"
+          },
+          {
+            "text": "Each transfer takes a volunteer most of a day and adds stress for the bird",
+            "ref": "P20"
+          },
+          {
+            "text": "Crane Ridge will limit transfers from outside its region starting in 2027",
+            "ref": "P20"
+          },
+          {
+            "text": "\"Somebody picked up, told me exactly where to drive, and was waiting at the gate with the lights on.\" (Delia Marsh, Ketterly resident, on bringing us a hawk)",
+            "ref": "P17"
+          }
+        ],
+        "refs": [
+          "P14",
+          "P20",
+          "P17"
+        ],
+        "comp": "open"
+      },
+      {
+        "type": "exhibit",
+        "heading": "The Project and Its Budget",
+        "unit": "",
+        "refs": [
+          "P21"
+        ],
+        "lines": [
+          "A 100-foot curved flight enclosure at Bramblecote",
+          "Design, site work, and construction: $112,000",
+          "Part-time raptor care technician, first year: $28,000",
+          "Perches, scales, transport crates, and monitoring cameras: $8,000",
+          "Total project cost: $148,000"
+        ],
+        "bars": [
+          {
+            "label": "Design, site work, and construction",
+            "value": "$112,000",
+            "ref": "P21"
+          },
+          {
+            "label": "Part-time raptor care technician, first year",
+            "value": "$28,000",
+            "ref": "P21"
+          },
+          {
+            "label": "Perches, scales, transport crates, and monitoring cameras",
+            "value": "$8,000",
+            "ref": "P21"
+          }
+        ],
+        "subhead": "A 100-foot curved flight enclosure at Bramblecote. Total project cost: $148,000."
+      },
+      {
+        "type": "exhibit",
+        "heading": "How the $148,000 Comes Together",
+        "unit": "",
+        "refs": [
+          "P21",
+          "P5"
+        ],
+        "lines": [
+          "Harrow Valley Community Foundation: $60,000, requested today",
+          "Individual capital pledges: $52,000, with $38,000 committed and $14,000 still to raise",
+          "Ostrander-Bell Family Fund: $36,000, request pending",
+          "Total: $148,000",
+          "Other sources total $88,000, of which $38,000 is committed so far"
+        ],
+        "bars": [
+          {
+            "label": "Harrow Valley Community Foundation requested today",
+            "value": "$60,000,",
+            "ref": "P21"
+          },
+          {
+            "label": "Individual capital pledges with $38,000 committed and $14,000 still to raise",
+            "value": "$52,000,",
+            "ref": "P5"
+          },
+          {
+            "label": "Ostrander-Bell Family Fund request pending",
+            "value": "$36,000,",
+            "ref": "P5"
+          }
+        ],
+        "subhead": "Total: $148,000",
+        "note": "Other sources total $88,000, of which $38,000 is committed so far"
+      },
+      {
+        "type": "content",
+        "heading": "What the Enclosure Will Deliver",
+        "bullets": [
+          {
+            "text": "No more transfers of raptors out of the county once it opens in spring 2027",
+            "ref": "P22"
+          },
+          {
+            "text": "Hawks and owls released in the county where they were found",
+            "ref": "P21"
+          },
+          {
+            "text": "A raptor release rate we can measure and report ourselves",
+            "ref": "P22"
+          },
+          {
+            "text": "A post-release band-return log, so future reports can show what happens after release",
+            "ref": "P22"
+          },
+          {
+            "text": "A site where our school program can show students what recovery takes",
+            "ref": "P22"
+          },
+          {
+            "text": "Our request: $60,000 to help build it",
+            "ref": "P21"
+          }
+        ],
+        "refs": [
+          "P22",
+          "P21",
+          "P20"
+        ]
+      }
+    ],
+    "plain": true
+  },
+  "passages": {
+    "P10": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Report",
+      "source_id": "s_8656e658437a"
+    },
+    "P11": {
+      "text": "## FY2026 Annual Program Report\nFiscal year July 1, 2025 to June 30, 2026\nKetterly, in the Harrow Valley\n---",
+      "locator": "“Bramblecote Wildlife Recovery”",
+      "source_title": "Report",
+      "source_id": "s_8656e658437a"
+    },
+    "P12": {
+      "text": "Bramblecote Wildlife Recovery is a small licensed rehabilitation center on four acres off Mill Lane, two miles north of downtown Ketterly. We take in injured, sick, and orphaned native wildlife from across Ketterly County, treat them, and return as many as we can to the wild. We also run a 24-hour wildlife hotline and a school program that teaches children what to do, and what not to do, when they find an animal in trouble.\nWe have 2.5 full-time care staff, a contract veterinarian who is on site two mornings a week, and a volunteer corps that did most of the feeding, cleaning, and transport this year.",
+      "locator": "“Who we are”",
+      "source_title": "Report",
+      "source_id": "s_8656e658437a"
+    },
+    "P13": {
+      "text": "Demand kept climbing for the third straight year. More residents know we exist, and the county's new road along the Harrow River corridor has added vehicle strikes.\n| Measure | FY2024 | FY2025 | FY2026 |\n|---|---|---|---|\n| Animals admitted | 1,142 | 1,386 | 1,611 |\n| Species treated | 96 | 104 | 117 |\n| Released to the wild | 548 (48%) | 707 (51%) | 870 (54%) |\n| Hotline calls answered | 3,020 | 3,710 | 4,480 |\n| Animals kept out of intake by hotline coaching | 410 | 498 | 612 |\n| Active volunteers | 64 | 81 | 97 |\n| Volunteer hours | 7,380 | 9,150 | 11,240 |\n| School and library visits | 22 | 31 | 38 |\n| Students reached | 1,240 | 1,790 | 2,150 |",
+      "locator": "“The year in numbers”",
+      "source_title": "Report",
+      "source_id": "s_8656e658437a"
+    },
+    "P14": {
+      "text": "Admissions rose 41 percent over two years, from 1,142 to 1,611. Songbirds made up 46 percent of FY2026 intake, mammals 38 percent, reptiles and amphibians 9 percent, and raptors 7 percent (113 birds, mostly red-tailed hawks, barred owls, and American kestrels).\nThe hotline number we are proudest of is the one that does not show up in our cages. In FY2026, staff and trained volunteers talked 612 callers through leaving a healthy animal where it was: a fledgling robin hopping on a lawn, a fawn bedded in tall grass with its mother nearby, a baby rabbit nest uncovered by a mower and then covered back up. Every one of those animals stayed with its parents, and we did not spend a dollar on its food or a cage-day on its care.",
+      "locator": "“The year in numbers”",
+      "source_title": "Report",
+      "source_id": "s_8656e658437a"
+    },
+    "P15": {
+      "text": "Our release rate rose from 48 percent in FY2024 to 54 percent in FY2026. That is the headline number most rehabilitation centers lead with, and it did go up.\nWe want to be plain about why. Part of the rise comes from what came through the door, not from better care. Orphaned juvenile songbirds and mammals, which tend to be healthy and release at high rates, grew faster than adult trauma cases such as vehicle strikes and window collisions, which release at much lower rates. When our contract veterinarian, Dr. Ilse Carrow, adjusted FY2026 results to match the FY2024 mix of species and injury types, the release rate was about 49 percent, roughly one point better than two years ago rather than six.",
+      "locator": "“The result we report, and its limits”",
+      "source_title": "Report",
+      "source_id": "s_8656e658437a"
+    },
+    "P16": {
+      "text": "We also cannot yet say how released animals fare afterward. We do not track survival after release. A one-point gain in a year when admissions rose 41 percent and staffing did not change is still a real result. It is just a smaller result than the raw number suggests, and we would rather a funder hear that from us.",
+      "locator": "“The result we report, and its limits”",
+      "source_title": "Report",
+      "source_id": "s_8656e658437a"
+    },
+    "P17": {
+      "text": "\"I called at eleven at night with a hawk in a laundry basket on my front seat. Somebody picked up, told me exactly where to drive, and was waiting at the gate with the lights on.\"\n-- Delia Marsh, Ketterly resident, March 2026",
+      "locator": "“A voice from the year”",
+      "source_title": "Report",
+      "source_id": "s_8656e658437a"
+    },
+    "P18": {
+      "text": "Total FY2026 expenses were $412,600.\n| Category | Amount |\n|---|---|\n| Veterinary care and medical supplies | $96,400 |\n| Animal food and housing | $58,700 |\n| Care staff salaries and benefits (2.5 FTE) | $142,900 |\n| Education and hotline outreach | $18,600 |\n| Facilities and utilities | $41,800 |\n| Administration | $32,600 |\n| Fundraising | $21,600 |\n| **Total** | **$412,600** |\nProgram costs (care, food, staff, outreach, and facilities) came to $358,400, or 87 percent of spending. Average direct cost per admitted animal was about $222.",
+      "locator": "“Expenses”",
+      "source_title": "Report",
+      "source_id": "s_8656e658437a"
+    },
+    "P19": {
+      "text": "Total FY2026 revenue was $428,900, leaving a surplus of $16,300, which went to our operating reserve. The reserve now covers about two and a half months of expenses.\n| Source | Amount | Share |\n|---|---|---|\n| Individual donors (1,214 gifts) | $181,500 | 42% |\n| Ketterly County Animal Services intake contract | $96,000 | 22% |\n| Foundation grants | $88,400 | 21% |\n| Spring Baby Bird Shower and other events | $41,200 | 10% |\n| Education program fees | $21,800 | 5% |\n| **Total** | **$428,900** | **100%** |\nFoundation grants included $50,000 in general operating support from the Harrow Valley Community Foundation and $38,400 from the Ostrander-Bell Family Fund for hotline staffing.",
+      "locator": "“Where the money came from”",
+      "source_title": "Report",
+      "source_id": "s_8656e658437a"
+    },
+    "P20": {
+      "text": "Raptors are our weakest link. We have no flight enclosure large enough for a hawk or owl to rebuild flight muscle before release. In FY2026 we transferred 41 of our 113 raptors to Crane Ridge Raptor Center, two hours away, for final conditioning. Each transfer costs a volunteer most of a day, stresses the bird, and takes it out of our hands at the stage where it is closest to going home. Crane Ridge has told us it will cap the transfers it accepts from outside its region starting in 2027.\nWe also lost two long-time evening volunteers in the spring, and for six weeks the overnight hotline rolled to a staff member's personal phone. We have since trained four new overnight volunteers.",
+      "locator": "“What did not go well”",
+      "source_title": "Report",
+      "source_id": "s_8656e658437a"
+    },
+    "P21": {
+      "text": "Our priority for FY2027 is a 100-foot curved flight enclosure, so that hawks and owls can complete their recovery at Bramblecote and be released in the county where they were found.\n| Item | Cost |\n|---|---|\n| Design, site work, and construction of the flight enclosure | $112,000 |\n| Part-time raptor care technician, first year | $28,000 |\n| Perches, scales, transport crates, and monitoring cameras | $8,000 |\n| **Total project cost** | **$148,000** |\nFunding plan:\n| Source | Amount | Status |\n|---|---|---|\n| Harrow Valley Community Foundation, Environmental Stewardship Fund | $60,000 | To be requested |\n| Individual capital pledges | $52,000 | $38,000 committed |\n| Ostrander-Bell Family Fund | $36,000 | Request pending |\n| **Total** | **$148,000** | |",
+      "locator": "“FY2027 plan: the raptor flight enclosure”",
+      "source_title": "Report",
+      "source_id": "s_8656e658437a"
+    },
+    "P22": {
+      "text": "What we expect: no more raptor transfers out of the county once the enclosure opens in spring 2027, a raptor release rate we can measure and report on our own, and a site our school program can use to show students what recovery actually takes. We also plan to start a simple post-release band-return log for raptors, so that next year's report can say something about what happens after release, which this report cannot.",
+      "locator": "“FY2027 plan: the raptor flight enclosure”",
+      "source_title": "Report",
+      "source_id": "s_8656e658437a"
+    },
+    "P1": {
+      "text": "Sample (fictional)",
+      "locator": "para. 1",
+      "source_title": "Notes",
+      "source_id": "s_be943171aba1"
+    },
+    "P2": {
+      "text": "BRAMBLECOTE WILDLIFE RECOVERY\nBoard meeting notes, October 27, 2026\nPresent: Teodor Aske (chair), Marisol Penhallow (executive director), Wendell Lund (treasurer), Priya Castellane (development), June Halvorsen (board)",
+      "locator": "para. 2",
+      "source_title": "Notes",
+      "source_id": "s_be943171aba1"
+    },
+    "P3": {
+      "text": "Item 3: Harrow Valley Community Foundation",
+      "locator": "para. 3",
+      "source_title": "Notes",
+      "source_id": "s_be943171aba1"
+    },
+    "P4": {
+      "text": "Marisol reported that the foundation's Environmental Stewardship Fund has invited us to present on December 3. They want a short deck sent ahead and will give us ten minutes.",
+      "locator": "para. 4",
+      "source_title": "Notes",
+      "source_id": "s_be943171aba1"
+    },
+    "P5": {
+      "text": "Decision: we ask for $60,000 toward the raptor flight enclosure. Total project cost is $148,000. The rest comes from $52,000 in individual capital pledges ($38,000 committed so far) and the $36,000 request pending with the Ostrander-Bell Family Fund.",
+      "locator": "para. 5",
+      "source_title": "Notes",
+      "source_id": "s_be943171aba1"
+    },
+    "P6": {
+      "text": "Wendell noted Harrow Valley already gave $50,000 in operating support in FY2026. The deck should thank them and make clear this is a separate project request.",
+      "locator": "para. 6",
+      "source_title": "Notes",
+      "source_id": "s_be943171aba1"
+    },
+    "P7": {
+      "text": "Priya builds the deck from the FY2026 annual report. Draft due to Marisol November 20.",
+      "locator": "para. 7",
+      "source_title": "Notes",
+      "source_id": "s_be943171aba1"
+    },
+    "P8": {
+      "text": "Deck instructions (agreed):\n1. Put the $60,000 ask and the enclosure on the first or second slide.\n2. Eight slides at most.\n3. If the deck uses the 54 percent release rate, it must also give the mix-adjusted rate of about 49 percent. June was firm: no implying the six-point jump is all better care.\n4. Show the full $148,000 budget and the other $88,000, including that only $38,000 of the pledges is committed.\n5. No photos of bleeding or badly injured animals, and no guilt language. Teodor: \"We are asking them to build something, not to feel bad.\"",
+      "locator": "para. 8",
+      "source_title": "Notes",
+      "source_id": "s_be943171aba1"
+    },
+    "P9": {
+      "text": "Next: board comments back by November 24.",
+      "locator": "para. 9",
+      "source_title": "Notes",
+      "source_id": "s_be943171aba1"
+    }
+  },
+  "grounding": [
+    {
+      "path": "subtitle",
+      "value": "60000",
+      "shown": "$60,000",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "148000",
+      "shown": "$148,000",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.4",
+      "value": "97",
+      "shown": "97",
+      "status": "moved",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "2027",
+      "shown": "2027",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "3",
+      "shown": "3",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "2026",
+      "shown": "2026",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.0",
+      "value": "50000",
+      "shown": "$50,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.4",
+      "value": "2.5",
+      "shown": "2.5",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.5",
+      "value": "428900",
+      "shown": "$428,900",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.5",
+      "value": "412600",
+      "shown": "$412,600",
+      "status": "computed",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.5",
+      "value": "16300",
+      "shown": "$16,300",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.6",
+      "value": "87%",
+      "shown": "87%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.bullets.6",
+      "value": "2.5",
+      "shown": "2.5",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.0",
+      "value": "1611",
+      "shown": "1,611",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.0",
+      "value": "41%",
+      "shown": "41%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.0",
+      "value": "1142",
+      "shown": "1,142",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.1",
+      "value": "117",
+      "shown": "117",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.2",
+      "value": "870",
+      "shown": "870",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.figures.3",
+      "value": "4480",
+      "shown": "4,480",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.0",
+      "value": "612",
+      "shown": "612",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.1",
+      "value": "97",
+      "shown": "97",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.1",
+      "value": "11240",
+      "shown": "11,240",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.2",
+      "value": "38",
+      "shown": "38",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.bullets.2",
+      "value": "2150",
+      "shown": "2,150",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.0",
+      "value": "48%",
+      "shown": "48%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.0",
+      "value": "54%",
+      "shown": "54%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.1",
+      "value": "49%",
+      "shown": "49%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.bullets.4",
+      "value": "41%",
+      "shown": "41%",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.0",
+      "value": "113",
+      "shown": "113",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.2",
+      "value": "41",
+      "shown": "41",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.4",
+      "value": "2027",
+      "shown": "2027",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.5",
+      "value": "Somebody picked up, told me exactly where to drive, and was waiting at the gate with the lights on.",
+      "shown": "Somebody picked up, told me exactly where to drive, and was waiting at the gate with the lights on.",
+      "status": "ok",
+      "kind": "quote"
+    },
+    {
+      "path": "slides.5.subhead",
+      "value": "100",
+      "shown": "100",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.subhead",
+      "value": "148000",
+      "shown": "$148,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.0",
+      "value": "112000",
+      "shown": "$112,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.1",
+      "value": "28000",
+      "shown": "$28,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.2",
+      "value": "8000",
+      "shown": "$8,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.heading",
+      "value": "148000",
+      "shown": "$148,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.subhead",
+      "value": "148000",
+      "shown": "$148,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.note",
+      "value": "88000",
+      "shown": "$88,000",
+      "status": "computed",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.note",
+      "value": "38000",
+      "shown": "$38,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.0",
+      "value": "60000",
+      "shown": "$60,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.1",
+      "value": "38000",
+      "shown": "$38,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.1",
+      "value": "14000",
+      "shown": "$14,000",
+      "status": "computed",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.1",
+      "value": "52000",
+      "shown": "$52,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.bars.2",
+      "value": "36000",
+      "shown": "$36,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.bullets.0",
+      "value": "2027",
+      "shown": "2027",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.7.bullets.5",
+      "value": "60000",
+      "shown": "$60,000",
+      "status": "ok",
+      "kind": "number"
+    }
+  ],
+  "exhibits": [
+    {
+      "type": "exhibit",
+      "heading": "The Project and Its Budget",
+      "unit": "",
+      "refs": [
+        "P21"
+      ],
+      "lines": [
+        "A 100-foot curved flight enclosure at Bramblecote",
+        "Design, site work, and construction: $112,000",
+        "Part-time raptor care technician, first year: $28,000",
+        "Perches, scales, transport crates, and monitoring cameras: $8,000",
+        "Total project cost: $148,000"
+      ],
+      "bars": [
+        {
+          "label": "Design, site work, and construction",
+          "value": "$112,000",
+          "ref": "P21"
+        },
+        {
+          "label": "Part-time raptor care technician, first year",
+          "value": "$28,000",
+          "ref": "P21"
+        },
+        {
+          "label": "Perches, scales, transport crates, and monitoring cameras",
+          "value": "$8,000",
+          "ref": "P21"
+        }
+      ],
+      "subhead": "A 100-foot curved flight enclosure at Bramblecote. Total project cost: $148,000."
+    },
+    {
+      "type": "exhibit",
+      "heading": "How the $148,000 Comes Together",
+      "unit": "",
+      "refs": [
+        "P21",
+        "P5"
+      ],
+      "lines": [
+        "Harrow Valley Community Foundation: $60,000, requested today",
+        "Individual capital pledges: $52,000, with $38,000 committed and $14,000 still to raise",
+        "Ostrander-Bell Family Fund: $36,000, request pending",
+        "Total: $148,000",
+        "Other sources total $88,000, of which $38,000 is committed so far"
+      ],
+      "bars": [
+        {
+          "label": "Harrow Valley Community Foundation requested today",
+          "value": "$60,000,",
+          "ref": "P21"
+        },
+        {
+          "label": "Individual capital pledges with $38,000 committed and $14,000 still to raise",
+          "value": "$52,000,",
+          "ref": "P5"
+        },
+        {
+          "label": "Ostrander-Bell Family Fund request pending",
+          "value": "$36,000,",
+          "ref": "P5"
+        }
+      ],
+      "subhead": "Total: $148,000",
+      "note": "Other sources total $88,000, of which $38,000 is committed so far"
+    }
+  ],
+  "check": [
+    "All 45 numbers and quotes found in your sources; 3 worked out from them; 4 citations corrected"
+  ],
+  "pills": [
+    {
+      "id": "sources",
+      "tone": "good",
+      "label": "All 45 numbers and quotes found in your sources; 3 worked out from them; 4 citations corrected"
+    },
+    {
+      "id": "contrast",
+      "tone": "warn",
+      "label": "Contrast passes; 1 brand color kept to rules and fills"
+    },
+    {
+      "id": "never",
+      "tone": "good",
+      "label": "No never-say words"
+    },
+    {
+      "id": "fonts",
+      "tone": "good",
+      "label": "Kit fonts used"
+    },
+    {
+      "id": "money",
+      "tone": "warn",
+      "label": "The deck leaves out $96,400, $58,700, $142,900, $18,600 and more from Report, “Expenses”; Report, “Where the money came from”"
+    }
+  ],
+  "slide_count": 9,
+  "seconds": 44.2
+}

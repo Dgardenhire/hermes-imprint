@@ -1,0 +1,350 @@
+{
+  "set": "heldout",
+  "tag": "r13d-heldout",
+  "steps": {
+    "brand": {
+      "status": "done",
+      "seconds": 0.0
+    },
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "make_deck": {
+      "status": "failed",
+      "seconds": 41.5,
+      "error": "The answer came back cut off. Try a shorter output, or fewer sources."
+    }
+  },
+  "started": 1794234054.8406441,
+  "sources": [
+    "fy26-annual-report.md",
+    "board-notes.txt"
+  ],
+  "kit": {
+    "id": "k_19dda39b501c",
+    "name": "Pasted colors",
+    "colors": [
+      {
+        "hex": "#2f5d3a",
+        "role": "head",
+        "name": "Pine Green"
+      },
+      {
+        "hex": "#c8902e",
+        "role": "accent",
+        "name": "Brass"
+      }
+    ],
+    "paper": "#faf8f3",
+    "ink": "#262624",
+    "kit_json": {
+      "name": "Pasted colors",
+      "origin": "import",
+      "origin_note": "Pasted color codes",
+      "org": "",
+      "subject": "",
+      "signature": "",
+      "paper": "#faf8f3",
+      "ink": "#262624",
+      "colors": [
+        {
+          "hex": "#2f5d3a",
+          "role": "head",
+          "name": "Pine Green"
+        },
+        {
+          "hex": "#c8902e",
+          "role": "accent",
+          "name": "Brass"
+        }
+      ],
+      "type": {
+        "heading": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 700
+        },
+        "body": {
+          "family": "Inter",
+          "stack": "Inter, Helvetica, Arial, sans-serif",
+          "weight": 400
+        },
+        "scale": 1.25
+      },
+      "layout": "banner",
+      "density": "medium",
+      "voice": {
+        "notes": "",
+        "delivery": "",
+        "never": [],
+        "pairs": [],
+        "draft": false
+      },
+      "rules": {
+        "sources": true,
+        "page_numbers": true,
+        "date": true,
+        "required": []
+      },
+      "imported_from": {
+        "kind": "paste",
+        "label": "Pasted colors",
+        "ref": "",
+        "sha256": "",
+        "license_note": "",
+        "brand_named": false,
+        "mode": "",
+        "imported_at": 1794234054.85627
+      },
+      "logo": null,
+      "logo_alt": null,
+      "fonts": [],
+      "id": "k_19dda39b501c",
+      "version": 1,
+      "created_at": 1794234054.859133,
+      "updated_at": 1794234054.859133,
+      "starter": false
+    }
+  },
+  "guide_and_summaries_seconds": 13.8,
+  "guide": {
+    "by": "Written by your Hermes model",
+    "guide": [
+      {
+        "text": "These sources are the Fernwood Tool Library's FY2026 annual report and the board's September 16, 2026 meeting notes.",
+        "chips": [
+          {
+            "ref": "P1",
+            "n": 1,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Fernwood Tool Library: FY2026 Annual Report (Sample)”",
+            "source_id": "s_359939266b15"
+          },
+          {
+            "ref": "P12",
+            "n": 2,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 1",
+            "source_id": "s_f1014e6948ec"
+          }
+        ]
+      },
+      {
+        "text": "Demand grew fast: 1,962 members, up from 1,410, and 9,840 loans, up from 7,215.",
+        "chips": [
+          {
+            "ref": "P3",
+            "n": 1,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“The year in numbers”",
+            "source_id": "s_359939266b15"
+          }
+        ]
+      },
+      {
+        "text": "Hours hold members back most: 47% named them, 61% in Millbrook, and 344 holds were waiting on June 30.",
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“What members told us”",
+            "source_id": "s_359939266b15"
+          },
+          {
+            "ref": "P5",
+            "n": 2,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“The waiting list”",
+            "source_id": "s_359939266b15"
+          },
+          {
+            "ref": "P6",
+            "n": 3,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Where members live”",
+            "source_id": "s_359939266b15"
+          }
+        ]
+      },
+      {
+        "text": "The year closed even at $212,400, but the reserve is $31,000, about seven weeks, against a three-month goal.",
+        "chips": [
+          {
+            "ref": "P7",
+            "n": 1,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Money”",
+            "source_id": "s_359939266b15"
+          },
+          {
+            "ref": "P8",
+            "n": 2,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Money”",
+            "source_id": "s_359939266b15"
+          },
+          {
+            "ref": "P14",
+            "n": 3,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 3",
+            "source_id": "s_f1014e6948ec"
+          }
+        ]
+      },
+      {
+        "text": "The board voted to ask the Alder Falls Community Fund for $46,500 a year for two years to open 34 hours a week.",
+        "chips": [
+          {
+            "ref": "P16",
+            "n": 1,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 5",
+            "source_id": "s_f1014e6948ec"
+          },
+          {
+            "ref": "P17",
+            "n": 2,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 6",
+            "source_id": "s_f1014e6948ec"
+          }
+        ]
+      }
+    ],
+    "asks": [
+      {
+        "id": "a1",
+        "who": "The board",
+        "what": "A short deck making the case for longer hours",
+        "by": "October 30",
+        "kind": "deck",
+        "chips": [
+          {
+            "ref": "P17",
+            "n": 1,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 6",
+            "source_id": "s_f1014e6948ec"
+          }
+        ],
+        "brief": {
+          "who": "The Community Fund's program officer",
+          "goal": "Fund a part-time coordinator so the library opens longer hours",
+          "length": "A short deck"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "text": "The reserve is $31,000, about seven weeks, short of the three-month goal. The budget rises from $212,400 to $258,900, up $46,500. How will the reserve keep pace?",
+        "chips": [
+          {
+            "ref": "P7",
+            "n": 1,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Money”",
+            "source_id": "s_359939266b15"
+          },
+          {
+            "ref": "P8",
+            "n": 2,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Money”",
+            "source_id": "s_359939266b15"
+          },
+          {
+            "ref": "P10",
+            "n": 3,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Looking ahead”",
+            "source_id": "s_359939266b15"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "The Fund ask covers $46,500 a year for two years, but the $50,000 city grant runs only one more year before reapplying. What happens if the city grant lapses?",
+        "chips": [
+          {
+            "ref": "P8",
+            "n": 1,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Money”",
+            "source_id": "s_359939266b15"
+          },
+          {
+            "ref": "P14",
+            "n": 2,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 3",
+            "source_id": "s_f1014e6948ec"
+          },
+          {
+            "ref": "P17",
+            "n": 3,
+            "source_n": 2,
+            "source": "Board notes",
+            "locator": "para. 6",
+            "source_id": "s_f1014e6948ec"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "Millbrook holds 22% of the city's renters but only 9% of members, and 61% there named hours. Will evenings and Saturdays alone close that gap?",
+        "chips": [
+          {
+            "ref": "P6",
+            "n": 1,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Where members live”",
+            "source_id": "s_359939266b15"
+          },
+          {
+            "ref": "P10",
+            "n": 2,
+            "source_n": 1,
+            "source": "Fy26 annual report",
+            "locator": "“Looking ahead”",
+            "source_id": "s_359939266b15"
+          }
+        ],
+        "suggestion": true
+      }
+    ],
+    "source_ids": [
+      "s_359939266b15",
+      "s_f1014e6948ec"
+    ],
+    "created_at": 1794234068.5220969
+  },
+  "brief": {
+    "who": "Funders",
+    "goal": "Fund a part-time coordinator so the library opens longer hours",
+    "length": "7 to 9 slides"
+  },
+  "outline": {},
+  "deck_seconds": 41.5,
+  "seconds": 55.4
+}

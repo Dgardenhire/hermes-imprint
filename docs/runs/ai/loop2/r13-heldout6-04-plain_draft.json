@@ -1,0 +1,52 @@
+{
+  "purpose": "imprint.plain_draft",
+  "tag": "r13-heldout6",
+  "seconds": 25.2,
+  "model": "claude-opus-5-5",
+  "ok": true,
+  "neutral": true,
+  "request": {
+    "system": "You are a helpful assistant in a desktop chat app with a Python code tool. When you write a Python script in one ```python block, the app runs it in the person's working folder (Python 3.9, python-pptx 1.0 installed, no network) and gives the person any files it saves.",
+    "instructions": "",
+    "input_chars": 8838,
+    "input_head": "Here are our documents.\n\n=== Notes ===\nSample (fictional)\n\nSTEADY ROOF HOME REPAIR\nBoard meeting notes, Thursday, November 5, 2026\nPresent: Desmond Achterberg (chair), Ruth Kwan-Ellery (treasurer), Marisol Teague (executive director), Abe Lindqvist (crew lead)\n\nItem 3: Hartwell-Pryor Fund for Older Adults\n\nMarisol reported that Gwen Sato, program officer at the Hartwell-Pryor Fund, invited us to apply for a lead gift and asked for a short deck before her site visit. The deck must be in Gwen's hands by Friday, December 4. Board review by email by Tuesday, December 1.\n\nThe ask is $115,000, half of the $230,000 second-crew cost in the FY2026 report. Ruth confirmed the other half: $60,000 from Ostrander County (pending the commissioners' vote) and $55,000 from the spring donor campaign.\n\nInstructions for the deck, agreed by the board:\n\n1. Ten slides or fewer. Gwen said she reads decks on her phone.\n2. Open with the waitlist, 57 households waiting an average of 5.5 months, not with our history.\n3. Desmond: the falls result (19 of 52 before, 7 of 52 after) goes on one slide with its caveats on that same slide. Do not say we \"prevent falls\" or claim a proven reduction.\n4. Abe: no homeowner photos except Loretta, the only one with a signed release. First name only. Use houses, tools and the crew otherwise.\n5. The ask slide must show $115,000 as half of $230,000 and name the other two sources, so it does not look like we need Hartwell-Pryor to carry the whole thing.\n\nAction: Marisol d"
+  },
+  "response": {
+    "draft": "Slide 1: 57 older homeowners are waiting for safe repairs\nSteady Roof Home Repair | Quillan Ridge, Ostrander County\n57 households on our waitlist at the end of June 2026\nAverage wait from intake to first repair: 5.5 months\nSome of them cannot safely stay at home that long\nA proposal to the Hartwell-Pryor Fund for Older Adults\n\nSlide 2: Why the wait grew\n141 new applications in FY2026, up from 96 the year before\nMost of the increase followed Area Agency on Aging referrals that began in October 2025\n14 no-heat and frozen-pipe emergencies from December to February went to the front of the line\nAverage wait rose from 3.8 months to 5.5 months\nOur one work truck, a 2011 model, was out of service for 17 working days\n\nSlide 3: Who we serve and what we fix\nHomeowners 62 and older who own and live in their homes\nIncome at or below 60% of the county median\nAverage age 74; 58% live alone\nNot remodels: the repairs that decide whether someone can stay home\nRotted steps, furnaces that won't light, missing grab bars, unlit stairs\n\nSlide 4: FY2026 results\n84 homes served, against a goal of 80\n412 repair jobs completed\n131 safety installations: grab bars, stair rails, lighting, non-slip treads\n96 heating, plumbing and electrical repairs\n88 exterior repairs, 61 weatherization jobs, 36 accessibility modifications\n$2,362 average spent per home on materials and trades\n1,930 volunteer hours\nOur 38-point safety walk-through found problems the homeowner hadn't mentioned in 61 of 84 homes\n\nSlide 5: Falls: what homeowners told us\n12-month follow-up calls for homes completed in FY2025\nWe reached 52 of 79 homeowners (66%)\nBefore repairs: 19 of 52 reported a fall in the prior year (37%)\nAfter repairs: 7 of 52 reported a fall in the following year (13%)\nCaveats:\nSelf-reported: people may forget or not mention a fall\nNo comparison group: some might have fallen less anyway\n27 people were not reached, and they may be different; 3 died, 2 moved into care, 1 moved in with family\nWhat we can say: among those we reached, far fewer reported a fall after repairs\nWhat we can't say: that our repairs prevented a specific number of falls\nNext: we will ask county EMS for de-identified fall-call data as an independent check\n\nSlide 6: Loretta, 81, homeowner since 1979\n\"I'd stopped going down to the basement at all. Now there's a rail on both sides and a light that comes on by itself. I do my own laundry again.\"\n\nSlide 7: The plan: a second crew in FY2027\nServe 120 homes, up from 84\nBring the average wait under 3 months by June 30, 2027\nSecond crew lead and one tradesperson: $118,000\nSecond work truck, trailer and tools: $27,000\nMaterials and trades for 36 more homes: $85,000\nTotal second-crew cost: $230,000\n\nSlide 8: The ask: $115,000, half of the second crew\nSecond-crew cost: $230,000\nHartwell-Pryor Fund lead gift: $115,000 (50%)\nOstrander County: $60,000 (pending the commissioners' budget vote)\nSpring donor campaign: $55,000 (individual donors gave $78,500 in FY2026)\nWithout the lead gift: we hire only the tradesperson, serve about 96 homes, and the waitlist keeps growing\n\nSlide 9: Our financial footing\nFY2026 expenses: $412,000; revenue: $418,500\n48% of spending goes to materials and subcontracted trades\n$6,500 surplus added to reserve; reserve now $38,000, about one month of expenses\nLargest funder: Ostrander County, $165,000, paid by reimbursement 45 to 60 days later\nOther support: Ferrell Family Foundation, individual donors and civic clubs, utility rebates, and Brackett Lumber and Supply\nFull FY2027 budget with second crew: $642,000\nContact: Marisol Teague, Executive Director"
+  },
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 3800,
+    "cache_read_input_tokens": 650,
+    "output_tokens": 2243,
+    "output_tokens_details": {
+      "thinking_tokens": 801
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3800,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 2243,
+        "cache_read_input_tokens": 650,
+        "cache_creation_input_tokens": 3800,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3800
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "error": null
+}

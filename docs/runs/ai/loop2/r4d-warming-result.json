@@ -1,0 +1,1383 @@
+{
+  "set": "warming",
+  "tag": "r4d-warming",
+  "steps": {
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "outline": {
+      "status": "done",
+      "seconds": 19.0,
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 68.8,
+      "error": null
+    }
+  },
+  "started": 1794211432.157855,
+  "sources": [
+    "warming-center-report.md",
+    "council-work-session.vtt",
+    "guest-and-volunteer-survey.txt"
+  ],
+  "kit": {
+    "id": "chart-room",
+    "name": "Chart Room",
+    "colors": [
+      {
+        "hex": "#c2362b",
+        "role": "accent",
+        "name": "Tab red"
+      },
+      {
+        "hex": "#1a1a1a",
+        "role": "head",
+        "name": "Press black"
+      },
+      {
+        "hex": "#2b5d8a",
+        "role": "accent2",
+        "name": "Data blue"
+      },
+      {
+        "hex": "#d9d4cc",
+        "role": "rule",
+        "name": "Gridline"
+      },
+      {
+        "hex": "#ebe6dd",
+        "role": "fill",
+        "name": "Panel"
+      }
+    ],
+    "paper": "#fbfaf7",
+    "ink": "#1a1a1a",
+    "kit_json": {
+      "name": "Chart Room",
+      "origin": "starter",
+      "origin_note": "",
+      "org": "",
+      "subject": "Data-led briefings for staff, reporters or the public: the numbers carry the story, and every chart says where its figures came from.",
+      "signature": "A short red tab over every headline, and charts on light gridlines with the one bar that matters in red.",
+      "paper": "#fbfaf7",
+      "ink": "#1a1a1a",
+      "colors": [
+        {
+          "hex": "#c2362b",
+          "role": "accent",
+          "name": "Tab red"
+        },
+        {
+          "hex": "#1a1a1a",
+          "role": "head",
+          "name": "Press black"
+        },
+        {
+          "hex": "#2b5d8a",
+          "role": "accent2",
+          "name": "Data blue"
+        },
+        {
+          "hex": "#d9d4cc",
+          "role": "rule",
+          "name": "Gridline"
+        },
+        {
+          "hex": "#ebe6dd",
+          "role": "fill",
+          "name": "Panel"
+        }
+      ],
+      "type": {
+        "heading": {
+          "family": "Public Sans",
+          "stack": "Public Sans, Helvetica, Arial, sans-serif",
+          "weight": 700
+        },
+        "body": {
+          "family": "Source Serif 4",
+          "stack": "Source Serif 4, Georgia, serif",
+          "weight": 400
+        },
+        "scale": 1.25,
+        "label": {
+          "family": "Public Sans",
+          "stack": "Public Sans, Helvetica, Arial, sans-serif",
+          "weight": 700
+        }
+      },
+      "layout": "bulletin",
+      "deck": "broadsheet",
+      "density": "medium",
+      "voice": {
+        "notes": "Lead with the finding, then the number that proves it. Short headlines with a verb. Say what is counted, where and when. Compare with something the reader knows. Never say a number went up without saying from what.",
+        "delivery": "Crisp and even, like a data reporter on the radio. Give every number room, and say what it is measured against.",
+        "never": [
+          "skyrocketed",
+          "plummeted",
+          "massive",
+          "staggering"
+        ],
+        "pairs": [
+          {
+            "say": "rose",
+            "not": "skyrocketed"
+          },
+          {
+            "say": "fell",
+            "not": "plummeted"
+          }
+        ],
+        "draft": false
+      },
+      "rules": {
+        "sources": true,
+        "page_numbers": true,
+        "date": true,
+        "required": []
+      },
+      "logo": null,
+      "logo_alt": null,
+      "fonts": [],
+      "id": "chart-room",
+      "version": 1,
+      "starter": true,
+      "created_at": 0,
+      "updated_at": 0,
+      "featured": true,
+      "credit": "",
+      "studio": true,
+      "tier": "studio",
+      "method": "The data desk: a tab marker, a short headline and a standfirst that says what is measured, data in two colors, the source set small."
+    }
+  },
+  "guide_and_summaries_seconds": 18.4,
+  "guide": {
+    "by": "Written by your Hermes model",
+    "guide": [
+      {
+        "text": "These sources are a season report, a council work session transcript, and a survey on Cedar Hollow's winter warming center. Cedar Hollow is a fictional city.",
+        "chips": [
+          {
+            "ref": "P1",
+            "n": 1,
+            "source_n": 1,
+            "source": "Warming center report",
+            "locator": "“Cedar Hollow Winter Warming Center: Season Report, 2025-26”",
+            "source_id": "s_3f7ab32c6e77"
+          },
+          {
+            "ref": "P7",
+            "n": 2,
+            "source_n": 2,
+            "source": "Council work session",
+            "locator": "[0:04]",
+            "source_id": "s_7db3a4a648db"
+          },
+          {
+            "ref": "P11",
+            "n": 3,
+            "source_n": 3,
+            "source": "Guest and volunteer survey",
+            "locator": "para. 1",
+            "source_id": "s_979b44c12262"
+          }
+        ]
+      },
+      {
+        "text": "The center was open 87 nights and recorded 2,914 overnight stays by 412 different guests.",
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "Warming center report",
+            "locator": "“What the center did”",
+            "source_id": "s_3f7ab32c6e77"
+          }
+        ]
+      },
+      {
+        "text": "The season cost $318,400, or $109 per overnight stay, and a county grant covered $80,000.",
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 1,
+            "source": "Warming center report",
+            "locator": "“What it cost”",
+            "source_id": "s_3f7ab32c6e77"
+          }
+        ]
+      },
+      {
+        "text": "Staff recommend opening on November 15, raising the opening trigger to 35 degrees, and adding an east side site for about $142,000.",
+        "chips": [
+          {
+            "ref": "P6",
+            "n": 1,
+            "source_n": 1,
+            "source": "Warming center report",
+            "locator": "“Recommendations for next season”",
+            "source_id": "s_3f7ab32c6e77"
+          },
+          {
+            "ref": "P8",
+            "n": 2,
+            "source_n": 2,
+            "source": "Council work session",
+            "locator": "[1:02]",
+            "source_id": "s_7db3a4a648db"
+          }
+        ]
+      },
+      {
+        "text": "Of the guests who answered the survey, 74 percent said getting to the center was the hardest part, and 91 percent said they felt safe.",
+        "chips": [
+          {
+            "ref": "P13",
+            "n": 1,
+            "source_n": 3,
+            "source": "Guest and volunteer survey",
+            "locator": "para. 3",
+            "source_id": "s_979b44c12262"
+          }
+        ]
+      }
+    ],
+    "asks": [],
+    "questions": [
+      {
+        "text": "The second site would add $142,000 to a $318,400 season, for $460,400 in total. The $80,000 county grant won't be in writing until April. Where will the money come from?",
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 1,
+            "source": "Warming center report",
+            "locator": "“What it cost”",
+            "source_id": "s_3f7ab32c6e77"
+          },
+          {
+            "ref": "P6",
+            "n": 2,
+            "source_n": 1,
+            "source": "Warming center report",
+            "locator": "“Recommendations for next season”",
+            "source_id": "s_3f7ab32c6e77"
+          },
+          {
+            "ref": "P9",
+            "n": 3,
+            "source_n": 2,
+            "source": "Council work session",
+            "locator": "[2:05]",
+            "source_id": "s_7db3a4a648db"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "On January 21, 61 guests stayed in a hall set up for 60. If the center opens on November 15 and at 35 degrees, can one hall handle it?",
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "Warming center report",
+            "locator": "“What the center did”",
+            "source_id": "s_3f7ab32c6e77"
+          },
+          {
+            "ref": "P6",
+            "n": 2,
+            "source_n": 1,
+            "source": "Warming center report",
+            "locator": "“Recommendations for next season”",
+            "source_id": "s_3f7ab32c6e77"
+          },
+          {
+            "ref": "P7",
+            "n": 3,
+            "source_n": 2,
+            "source": "Council work session",
+            "locator": "[0:04]",
+            "source_id": "s_7db3a4a648db"
+          }
+        ],
+        "suggestion": true
+      },
+      {
+        "text": "74 percent of guests said the trip to the center was the hardest part. Would an east side site fix that if no money is found for its $142,000 cost?",
+        "chips": [
+          {
+            "ref": "P13",
+            "n": 1,
+            "source_n": 3,
+            "source": "Guest and volunteer survey",
+            "locator": "para. 3",
+            "source_id": "s_979b44c12262"
+          },
+          {
+            "ref": "P6",
+            "n": 2,
+            "source_n": 1,
+            "source": "Warming center report",
+            "locator": "“Recommendations for next season”",
+            "source_id": "s_3f7ab32c6e77"
+          },
+          {
+            "ref": "P8",
+            "n": 3,
+            "source_n": 2,
+            "source": "Council work session",
+            "locator": "[1:02]",
+            "source_id": "s_7db3a4a648db"
+          }
+        ],
+        "suggestion": true
+      }
+    ],
+    "source_ids": [
+      "s_3f7ab32c6e77",
+      "s_7db3a4a648db",
+      "s_979b44c12262"
+    ],
+    "created_at": 1794211450.505551
+  },
+  "brief": {
+    "who": "Funders",
+    "goal": "Decide to fund this work",
+    "length": "7 to 9 slides"
+  },
+  "outline": {
+    "by": "Written by your Hermes model",
+    "outline_id": "ol_4dc6693aa0b9",
+    "kind": "deck",
+    "brief": {
+      "who": "Funders",
+      "goal": "Decide to fund this work",
+      "length": "7 to 9 slides"
+    },
+    "source_ids": [
+      "s_3f7ab32c6e77",
+      "s_7db3a4a648db",
+      "s_979b44c12262"
+    ],
+    "slides": [
+      {
+        "title": "The warming center sheltered 412 different guests over 87 nights",
+        "type": "figures",
+        "refs": [
+          "P2",
+          "P7"
+        ],
+        "chips": [
+          {
+            "ref": "P2",
+            "n": 1,
+            "source_n": 1,
+            "source": "Warming center report",
+            "locator": "“What the center did”",
+            "source_id": "s_3f7ab32c6e77"
+          },
+          {
+            "ref": "P7",
+            "n": 2,
+            "source_n": 2,
+            "source": "Council work session",
+            "locator": "[0:04]",
+            "source_id": "s_7db3a4a648db"
+          }
+        ],
+        "hint": null,
+        "words": 10,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": [
+            {
+              "value": "412",
+              "status": "exact",
+              "ref": "P2"
+            },
+            {
+              "value": "87",
+              "status": "exact",
+              "ref": "P2"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Staff connected more guests with housing than the season before",
+        "type": "exhibit",
+        "refs": [
+          "P3"
+        ],
+        "chips": [
+          {
+            "ref": "P3",
+            "n": 1,
+            "source_n": 1,
+            "source": "Warming center report",
+            "locator": "“Who it served”",
+            "source_id": "s_3f7ab32c6e77"
+          }
+        ],
+        "hint": null,
+        "words": 10,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": []
+        }
+      },
+      {
+        "title": "Guests say the center is the difference between surviving the night or not",
+        "type": "quote",
+        "refs": [
+          "P14",
+          "P13"
+        ],
+        "chips": [
+          {
+            "ref": "P14",
+            "n": 1,
+            "source_n": 3,
+            "source": "Guest and volunteer survey",
+            "locator": "para. 4",
+            "source_id": "s_979b44c12262"
+          },
+          {
+            "ref": "P13",
+            "n": 2,
+            "source_n": 3,
+            "source": "Guest and volunteer survey",
+            "locator": "para. 3",
+            "source_id": "s_979b44c12262"
+          }
+        ],
+        "hint": null,
+        "words": 13,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": []
+        }
+      },
+      {
+        "title": "Volunteers gave 3,260 hours over the season",
+        "type": "figures",
+        "refs": [
+          "P5",
+          "P15"
+        ],
+        "chips": [
+          {
+            "ref": "P5",
+            "n": 1,
+            "source_n": 1,
+            "source": "Warming center report",
+            "locator": "“Volunteers”",
+            "source_id": "s_3f7ab32c6e77"
+          },
+          {
+            "ref": "P15",
+            "n": 2,
+            "source_n": 3,
+            "source": "Guest and volunteer survey",
+            "locator": "para. 5",
+            "source_id": "s_979b44c12262"
+          }
+        ],
+        "hint": null,
+        "words": 7,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": [
+            {
+              "value": "3,260",
+              "status": "exact",
+              "ref": "P5"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Staff recommend a second site so guests need not cross the river",
+        "type": "content",
+        "refs": [
+          "P6",
+          "P8",
+          "P13"
+        ],
+        "chips": [
+          {
+            "ref": "P6",
+            "n": 1,
+            "source_n": 1,
+            "source": "Warming center report",
+            "locator": "“Recommendations for next season”",
+            "source_id": "s_3f7ab32c6e77"
+          },
+          {
+            "ref": "P8",
+            "n": 2,
+            "source_n": 2,
+            "source": "Council work session",
+            "locator": "[1:02]",
+            "source_id": "s_7db3a4a648db"
+          },
+          {
+            "ref": "P13",
+            "n": 3,
+            "source_n": 3,
+            "source": "Guest and volunteer survey",
+            "locator": "para. 3",
+            "source_id": "s_979b44c12262"
+          }
+        ],
+        "hint": null,
+        "words": 12,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": []
+        }
+      },
+      {
+        "title": "The city general fund paid most of the season's cost",
+        "type": "exhibit",
+        "refs": [
+          "P4"
+        ],
+        "chips": [
+          {
+            "ref": "P4",
+            "n": 1,
+            "source_n": 1,
+            "source": "Warming center report",
+            "locator": "“What it cost”",
+            "source_id": "s_3f7ab32c6e77"
+          }
+        ],
+        "hint": null,
+        "words": 10,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": []
+        }
+      },
+      {
+        "title": "Fund the east side site, which staff estimate at $142,000 a season",
+        "type": "closing",
+        "refs": [
+          "P6",
+          "P8"
+        ],
+        "chips": [
+          {
+            "ref": "P6",
+            "n": 1,
+            "source_n": 1,
+            "source": "Warming center report",
+            "locator": "“Recommendations for next season”",
+            "source_id": "s_3f7ab32c6e77"
+          },
+          {
+            "ref": "P8",
+            "n": 2,
+            "source_n": 2,
+            "source": "Council work session",
+            "locator": "[1:02]",
+            "source_id": "s_7db3a4a648db"
+          }
+        ],
+        "hint": null,
+        "words": 12,
+        "check": {
+          "status": "ok",
+          "label": "Every number matches your sources",
+          "items": [
+            {
+              "value": "$142,000",
+              "status": "exact",
+              "ref": "P6"
+            }
+          ]
+        }
+      }
+    ],
+    "warnings": [],
+    "created_at": 1794211469.58373
+  },
+  "deck_seconds": 87.8,
+  "output_id": "o_c12f413d2528",
+  "neutral": {
+    "title": "Cedar Hollow Warming Center and an East Side Site",
+    "subtitle": "For funders: the 2025-26 season's results and the plan for a second site",
+    "slides": [
+      {
+        "type": "figures",
+        "refs": [
+          "P2",
+          "P7"
+        ],
+        "heading": "The warming center sheltered 412 different guests over 87 nights",
+        "figures": [
+          {
+            "value": "2,914",
+            "label": "Overnight stays over the season",
+            "context": "Open every night the low was 32 degrees or colder",
+            "ref": "P2"
+          },
+          {
+            "value": "33",
+            "label": "Guests on an average night",
+            "context": "At the Maple Street Recreation Hall",
+            "ref": "P2"
+          },
+          {
+            "value": "61",
+            "label": "Guests on the busiest night",
+            "context": "January 21, 2026, during five nights below 10 degrees",
+            "ref": "P2"
+          },
+          {
+            "value": "9",
+            "label": "Extra nights open for freezing rain",
+            "context": "No one was turned away for lack of space",
+            "ref": "P7"
+          }
+        ]
+      },
+      {
+        "type": "exhibit",
+        "refs": [
+          "P3"
+        ],
+        "heading": "Staff connected more guests with housing than the season before",
+        "unit": "Guests connected with housing",
+        "bars": [
+          {
+            "label": "2024-25 season",
+            "value": "29",
+            "ref": "P3"
+          },
+          {
+            "label": "2025-26 season",
+            "value": "64",
+            "ref": "P3",
+            "accent": true
+          }
+        ],
+        "note": "Each bar counts guests staff connected with permanent or transitional housing before the season ended",
+        "subhead": "35 more guests connected with housing than the season before"
+      },
+      {
+        "type": "quote",
+        "refs": [
+          "P14",
+          "P13"
+        ],
+        "quote": "Having a place to go when it drops below freezing is the difference between making it through the night and not.",
+        "who": ""
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P5",
+          "P15"
+        ],
+        "heading": "Volunteers gave 3,260 hours over the season",
+        "figures": [
+          {
+            "value": "146",
+            "label": "Volunteers who answered the survey",
+            "context": "Surveyed by email after the season closed",
+            "ref": "P15"
+          },
+          {
+            "value": "88 percent",
+            "label": "Volunteers who plan to return next season",
+            "context": "They asked for more training before the first night",
+            "ref": "P15"
+          },
+          {
+            "value": "2",
+            "label": "Neighborhood associations that organized volunteers",
+            "context": "With the Cedar Hollow Faith Alliance, they ran most shifts",
+            "ref": "P5"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P6",
+          "P8",
+          "P13"
+        ],
+        "heading": "Staff recommend a second site so guests need not cross the river",
+        "bullets": [
+          {
+            "text": "74 percent of surveyed guests said the walk or ride was the hardest part",
+            "ref": "P13"
+          },
+          {
+            "text": "188 guests answered the survey during the season's last two weeks",
+            "ref": "P13"
+          },
+          {
+            "text": "People walk across the Fifth Street bridge at two in the morning to get there",
+            "ref": "P8"
+          }
+        ]
+      },
+      {
+        "type": "exhibit",
+        "refs": [
+          "P4"
+        ],
+        "heading": "The city general fund paid most of the season's cost",
+        "unit": "Dollars paid toward the season",
+        "bars": [
+          {
+            "label": "City general fund",
+            "value": "$205,000",
+            "ref": "P4",
+            "accent": true
+          },
+          {
+            "label": "County grant",
+            "value": "$80,000",
+            "ref": "P4"
+          },
+          {
+            "label": "Private donations",
+            "value": "$33,400",
+            "ref": "P4"
+          }
+        ],
+        "note": "Largest costs: overnight staff $171,900; cots, bedding and laundry $48,200; meals $41,700",
+        "subhead": "The season cost $318,400, or $109 per overnight stay"
+      },
+      {
+        "type": "closing",
+        "refs": [
+          "P6",
+          "P8"
+        ],
+        "heading": "Fund the east side site, which staff estimate at $142,000 a season",
+        "text": "A second site on the east side would let guests reach shelter without crossing the river at night.",
+        "cta": "Help pay for a full season at the Ridge Avenue church fellowship hall, which has been offered for the site",
+        "amount": "$142,000",
+        "amount_label": "Staff estimate for the second site, one season"
+      }
+    ],
+    "from_outline": true,
+    "max_slides": 9
+  },
+  "live": {
+    "title": "Cedar Hollow Warming Center Needs an East Side Site",
+    "subtitle": "For funders: 2025-26 season results and a second-site plan",
+    "slides": [
+      {
+        "type": "figures",
+        "refs": [
+          "P2",
+          "P7"
+        ],
+        "heading": "The warming center sheltered 412 different guests over 87 nights",
+        "figures": [
+          {
+            "value": "2,914",
+            "label": "Overnight stays across the season",
+            "context": "Open every night the low hit 32 degrees or colder",
+            "ref": "P2"
+          },
+          {
+            "value": "33",
+            "label": "Guests on a typical night",
+            "context": "At the Maple Street Recreation Hall",
+            "ref": "P2"
+          },
+          {
+            "value": "61",
+            "label": "Guests on the busiest night",
+            "context": "January 21, 2026, during five nights below 10 degrees",
+            "ref": "P2"
+          },
+          {
+            "value": "9",
+            "label": "Extra nights opened for freezing rain",
+            "context": "No one was turned away for lack of space",
+            "ref": "P2"
+          }
+        ]
+      },
+      {
+        "type": "exhibit",
+        "refs": [
+          "P3"
+        ],
+        "heading": "Staff connected more guests with housing than the season before",
+        "unit": "Guests connected with housing",
+        "bars": [
+          {
+            "label": "2024-25 season",
+            "value": "29",
+            "ref": "P3"
+          },
+          {
+            "label": "2025-26 season",
+            "value": "64",
+            "ref": "P3",
+            "accent": true
+          }
+        ],
+        "note": "Each bar counts guests placed in permanent or transitional housing before the season ended",
+        "subhead": "35 more guests connected with housing than the season before"
+      },
+      {
+        "type": "quote",
+        "refs": [
+          "P14",
+          "P13"
+        ],
+        "quote": "Having a place to go when it drops below freezing is the difference between making it through the night and not.",
+        "who": ""
+      },
+      {
+        "type": "figures",
+        "refs": [
+          "P5",
+          "P15"
+        ],
+        "heading": "Volunteers gave 3,260 hours over the season",
+        "figures": [
+          {
+            "value": "146",
+            "label": "Volunteers who answered the survey",
+            "context": "Surveyed by email after the season closed",
+            "ref": "P15"
+          },
+          {
+            "value": "88 percent",
+            "label": "Surveyed volunteers who plan to return",
+            "context": "They asked for more training before the first night",
+            "ref": "P15"
+          },
+          {
+            "value": "2",
+            "label": "Neighborhood associations that organized volunteers",
+            "context": "With the Cedar Hollow Faith Alliance, they ran most shifts",
+            "ref": "P5"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "refs": [
+          "P6",
+          "P8",
+          "P13"
+        ],
+        "heading": "Staff recommend a second site so guests need not cross the river",
+        "bullets": [
+          {
+            "text": "74 percent of surveyed guests named the walk or ride the hardest part",
+            "ref": "P13"
+          },
+          {
+            "text": "188 guests took the survey in the season's last two weeks",
+            "ref": "P13"
+          },
+          {
+            "text": "Guests walk the Fifth Street bridge at two in the morning to get there",
+            "ref": "P8"
+          }
+        ]
+      },
+      {
+        "type": "exhibit",
+        "refs": [
+          "P4"
+        ],
+        "heading": "The city general fund paid most of the season's cost",
+        "unit": "Dollars paid toward the season",
+        "bars": [
+          {
+            "label": "City general fund",
+            "value": "$205,000",
+            "ref": "P4",
+            "accent": true
+          },
+          {
+            "label": "County grant",
+            "value": "$80,000",
+            "ref": "P4"
+          },
+          {
+            "label": "Private donations",
+            "value": "$33,400",
+            "ref": "P4"
+          }
+        ],
+        "note": "Largest costs: overnight staff $171,900; cots, bedding and laundry $48,200; meals $41,700",
+        "subhead": "The season cost $318,400, or $109 per overnight stay"
+      },
+      {
+        "type": "closing",
+        "refs": [
+          "P6",
+          "P8"
+        ],
+        "heading": "Fund the east side site, which staff estimate at $142,000 a season",
+        "text": "An east side site lets guests reach shelter without crossing the river at night.",
+        "cta": "Help pay for a full season at the Ridge Avenue church fellowship hall, already offered for the site",
+        "amount": "$142,000",
+        "amount_label": "Staff estimate for the second site, one season"
+      }
+    ],
+    "from_outline": true,
+    "max_slides": 9
+  },
+  "passages": {
+    "P1": {
+      "text": "Prepared by the Department of Community Services for the City Council. Cedar Hollow is a fictional city; this report is sample material for trying Imprint.",
+      "locator": "“Cedar Hollow Winter Warming Center: Season Report, 2025-26”",
+      "source_title": "Warming center report",
+      "source_id": "s_3f7ab32c6e77"
+    },
+    "P2": {
+      "text": "The warming center at the Maple Street Recreation Hall opened on the night of December 1, 2025 and closed for the season on March 15, 2026. It was open 87 nights, every night the forecast low was 32 degrees or colder, and on 9 additional nights with freezing rain.\nOver the season the center recorded 2,914 overnight stays by 412 different guests. The busiest night was January 21, 2026, when 61 guests stayed during a stretch of five nights below 10 degrees. On an average night, 33 guests stayed.",
+      "locator": "“What the center did”",
+      "source_title": "Warming center report",
+      "source_id": "s_3f7ab32c6e77"
+    },
+    "P3": {
+      "text": "Of the 412 guests, 118 were over the age of 60 and 37 were veterans. Staff connected 64 guests with permanent or transitional housing before the season ended, up from 29 the season before.",
+      "locator": "“Who it served”",
+      "source_title": "Warming center report",
+      "source_id": "s_3f7ab32c6e77"
+    },
+    "P4": {
+      "text": "The season cost $318,400. The largest costs were overnight staff at $171,900, cots, bedding and laundry at $48,200, and meals at $41,700. The cost per overnight stay was $109.\nThe city paid $205,000 from the general fund. A county grant covered $80,000, and private donations covered the remaining $33,400.",
+      "locator": "“What it cost”",
+      "source_title": "Warming center report",
+      "source_id": "s_3f7ab32c6e77"
+    },
+    "P5": {
+      "text": "Volunteers gave 3,260 hours over the season, mostly in the evening meal and morning shifts. The Cedar Hollow Faith Alliance and two neighborhood associations organized most of the volunteer schedule.",
+      "locator": "“Volunteers”",
+      "source_title": "Warming center report",
+      "source_id": "s_3f7ab32c6e77"
+    },
+    "P6": {
+      "text": "Staff recommend opening on November 15 instead of December 1, adding a second site on the east side of the city so guests do not have to cross the river at night, and setting the opening trigger at 35 degrees instead of 32. Staff estimate the second site would add $142,000 to the season's cost.",
+      "locator": "“Recommendations for next season”",
+      "source_title": "Warming center report",
+      "source_id": "s_3f7ab32c6e77"
+    },
+    "P7": {
+      "text": "Mayor Okafor: Next item is the warming center season report. Director Lindqvist, go ahead. Director Lindqvist: Thank you. The short version is that the center did what it was built to do. Eighty-seven nights open, and no one was turned away for lack of space. Director Lindqvist: The night that worried us most was January twenty-first. We had sixty-one guests in a hall set up for sixty. We opened the gym as overflow and it held.",
+      "locator": "[0:04]",
+      "source_title": "Council work session",
+      "source_id": "s_7db3a4a648db"
+    },
+    "P8": {
+      "text": "Council Member Reyes: The east side question keeps coming up. People are walking across the Fifth Street bridge at two in the morning to get there. That is the part I can't get past. Director Lindqvist: That's why we're recommending a second site. We have a church on Ridge Avenue that has offered its fellowship hall. The estimate is about a hundred and forty-two thousand dollars for a full season.",
+      "locator": "[1:02]",
+      "source_title": "Council work session",
+      "source_id": "s_7db3a4a648db"
+    },
+    "P9": {
+      "text": "Council Member Pham: What I want to see before budget is where the money comes from. The county grant was eighty thousand this year. Is that renewing? Director Lindqvist: The county has told us informally they expect to renew at the same level. We won't have it in writing until April.",
+      "locator": "[2:05]",
+      "source_title": "Council work session",
+      "source_id": "s_7db3a4a648db"
+    },
+    "P10": {
+      "text": "Mayor Okafor: Let's put the second site and the earlier opening date on the budget work session agenda for April 8. Thank you, Director.",
+      "locator": "[3:10]",
+      "source_title": "Council work session",
+      "source_id": "s_7db3a4a648db"
+    },
+    "P11": {
+      "text": "Cedar Hollow Warming Center: Guest and Volunteer Survey, March 2026\n(Sample material for trying Imprint. Cedar Hollow is a fictional city.)",
+      "locator": "para. 1",
+      "source_title": "Guest and volunteer survey",
+      "source_id": "s_979b44c12262"
+    },
+    "P12": {
+      "text": "The Department of Community Services surveyed guests during the last two weeks of the season and volunteers by email after it closed.",
+      "locator": "para. 2",
+      "source_title": "Guest and volunteer survey",
+      "source_id": "s_979b44c12262"
+    },
+    "P13": {
+      "text": "Guests\n188 guests answered the survey. 91 percent said they felt safe at the center. 74 percent said the walk or ride to the center was the hardest part of getting there. The most requested change was earlier opening hours: the doors open at 7 p.m., and guests asked for 5 p.m. on the coldest nights.",
+      "locator": "para. 3",
+      "source_title": "Guest and volunteer survey",
+      "source_id": "s_979b44c12262"
+    },
+    "P14": {
+      "text": "One guest wrote: \"Having a place to go when it drops below freezing is the difference between making it through the night and not.\"",
+      "locator": "para. 4",
+      "source_title": "Guest and volunteer survey",
+      "source_id": "s_979b44c12262"
+    },
+    "P15": {
+      "text": "Volunteers\n146 volunteers answered. 88 percent said they plan to volunteer again next season. The most common request was more training before the first night, especially on what to do in a medical emergency.",
+      "locator": "para. 5",
+      "source_title": "Guest and volunteer survey",
+      "source_id": "s_979b44c12262"
+    }
+  },
+  "grounding": [
+    {
+      "path": "subtitle",
+      "value": "2025",
+      "shown": "2025",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "subtitle",
+      "value": "26",
+      "shown": "26",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.heading",
+      "value": "412",
+      "shown": "412",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.heading",
+      "value": "87",
+      "shown": "87",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.figures.0",
+      "value": "2914",
+      "shown": "2,914",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.figures.0",
+      "value": "32",
+      "shown": "32",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.figures.1",
+      "value": "33",
+      "shown": "33",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.figures.2",
+      "value": "61",
+      "shown": "61",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.figures.2",
+      "value": "21",
+      "shown": "21",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.figures.2",
+      "value": "2026",
+      "shown": "2026",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.figures.2",
+      "value": "10",
+      "shown": "10",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.0.figures.3",
+      "value": "9",
+      "shown": "9",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.subhead",
+      "value": "35",
+      "shown": "35",
+      "status": "computed",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bars.0",
+      "value": "2024",
+      "shown": "2024",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bars.0",
+      "value": "25",
+      "shown": "25",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bars.0",
+      "value": "29",
+      "shown": "29",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bars.1",
+      "value": "2025",
+      "shown": "2025",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bars.1",
+      "value": "26",
+      "shown": "26",
+      "status": "date",
+      "kind": "number"
+    },
+    {
+      "path": "slides.1.bars.1",
+      "value": "64",
+      "shown": "64",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.2.quote",
+      "value": "Having a place to go when it drops below freezing is the difference between making it through the night and not.",
+      "shown": "Having a place to go when it drops below freezing is the difference between making it through the night and not.",
+      "status": "ok",
+      "kind": "quote"
+    },
+    {
+      "path": "slides.3.heading",
+      "value": "3260",
+      "shown": "3,260",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.figures.0",
+      "value": "146",
+      "shown": "146",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.figures.1",
+      "value": "88%",
+      "shown": "88 percent",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.3.figures.2",
+      "value": "2",
+      "shown": "2",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.0",
+      "value": "74%",
+      "shown": "74 percent",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.4.bullets.1",
+      "value": "188",
+      "shown": "188",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.subhead",
+      "value": "318400",
+      "shown": "$318,400",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.subhead",
+      "value": "109",
+      "shown": "$109",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.note",
+      "value": "171900",
+      "shown": "$171,900",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.note",
+      "value": "48200",
+      "shown": "$48,200",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.note",
+      "value": "41700",
+      "shown": "$41,700",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.0",
+      "value": "205000",
+      "shown": "$205,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.1",
+      "value": "80000",
+      "shown": "$80,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.5.bars.2",
+      "value": "33400",
+      "shown": "$33,400",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.heading",
+      "value": "142000",
+      "shown": "$142,000",
+      "status": "ok",
+      "kind": "number"
+    },
+    {
+      "path": "slides.6.amount",
+      "value": "142000",
+      "shown": "$142,000",
+      "status": "ok",
+      "kind": "number"
+    }
+  ],
+  "exhibits": [
+    {
+      "type": "exhibit",
+      "refs": [
+        "P3"
+      ],
+      "heading": "Staff connected more guests with housing than the season before",
+      "unit": "Guests connected with housing",
+      "bars": [
+        {
+          "label": "2024-25 season",
+          "value": "29",
+          "ref": "P3"
+        },
+        {
+          "label": "2025-26 season",
+          "value": "64",
+          "ref": "P3",
+          "accent": true
+        }
+      ],
+      "note": "Each bar counts guests placed in permanent or transitional housing before the season ended",
+      "subhead": "35 more guests connected with housing than the season before"
+    },
+    {
+      "type": "exhibit",
+      "refs": [
+        "P4"
+      ],
+      "heading": "The city general fund paid most of the season's cost",
+      "unit": "Dollars paid toward the season",
+      "bars": [
+        {
+          "label": "City general fund",
+          "value": "$205,000",
+          "ref": "P4",
+          "accent": true
+        },
+        {
+          "label": "County grant",
+          "value": "$80,000",
+          "ref": "P4"
+        },
+        {
+          "label": "Private donations",
+          "value": "$33,400",
+          "ref": "P4"
+        }
+      ],
+      "note": "Largest costs: overnight staff $171,900; cots, bedding and laundry $48,200; meals $41,700",
+      "subhead": "The season cost $318,400, or $109 per overnight stay"
+    }
+  ],
+  "check": [
+    "All 30 numbers and quotes found in your sources; 1 worked out from them; 1 citation corrected"
+  ],
+  "pills": [
+    {
+      "id": "sources",
+      "tone": "good",
+      "label": "All 30 numbers and quotes found in your sources; 1 worked out from them; 1 citation corrected"
+    },
+    {
+      "id": "contrast",
+      "tone": "good",
+      "label": "Contrast passes, lowest 5.2:1"
+    },
+    {
+      "id": "never",
+      "tone": "good",
+      "label": "No never-say words"
+    },
+    {
+      "id": "fonts",
+      "tone": "good",
+      "label": "Kit fonts used"
+    },
+    {
+      "id": "voice",
+      "tone": "warn",
+      "label": "Kept the plain wording in 2 places: the voice pass changed a fact"
+    }
+  ],
+  "slide_count": 8,
+  "seconds": 106.5
+}

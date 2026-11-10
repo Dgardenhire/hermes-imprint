@@ -1,0 +1,12 @@
+:root {
+  --brand-ink: oklch(0.24 0.02 260);
+  --brand-paper: #fbfaf7;
+  --brand-primary: oklch(0.55 0.17 32);
+  --brand-secondary: color(display-p3 0.12 0.36 0.42);
+  --brand-rule: var(--brand-primary);
+  --brand-muted: #8a8580;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --step-0: 16px; --step-4: 40px;
+}
+@media (prefers-color-scheme: dark) { :root { --brand-paper: #121212; --brand-ink: #f1efe9; } }

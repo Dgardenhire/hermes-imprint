@@ -1,0 +1,46 @@
+{
+  "set": "harborlight",
+  "steps": {
+    "notebook_guide": {
+      "status": "done",
+      "error": null
+    },
+    "outline": {
+      "status": "done",
+      "seconds": 18.3,
+      "error": null
+    },
+    "rewrite_title": {
+      "status": "done",
+      "seconds": 9.2,
+      "error": null
+    },
+    "make_deck": {
+      "status": "done",
+      "seconds": 40.7,
+      "error": null
+    },
+    "stronger_slide3": {
+      "status": "done",
+      "seconds": 10.0,
+      "error": null
+    },
+    "fix_1200": {
+      "status": "done",
+      "seconds": 4.9,
+      "error": null
+    },
+    "graphic_options": {
+      "status": "done",
+      "seconds": 13.9,
+      "error": null
+    }
+  },
+  "guide_and_summaries_seconds": 11.5,
+  "deck_check": [
+    "1 number not found in sources"
+  ],
+  "deck_missing": [
+    "1,200"
+  ]
+}

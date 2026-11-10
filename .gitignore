@@ -7,3 +7,5 @@ node_modules/
 *.db-wal
 plugin-data/
 .hermes-package.json
+.l2-data/
+.canvas-data/

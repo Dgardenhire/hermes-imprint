@@ -1,0 +1,52 @@
+{
+  "purpose": "imprint.plain_draft",
+  "tag": "r13-heldout5",
+  "seconds": 27.9,
+  "model": "claude-opus-5-5",
+  "ok": true,
+  "neutral": true,
+  "request": {
+    "system": "You are a helpful assistant in a desktop chat app with a Python code tool. When you write a Python script in one ```python block, the app runs it in the person's working folder (Python 3.9, python-pptx 1.0 installed, no network) and gives the person any files it saves.",
+    "instructions": "",
+    "input_chars": 9067,
+    "input_head": "Here are our documents.\n\n=== Notes ===\nSample (fictional)\n\nKETTLE LANE YOUTH THEATRE\nBoard meeting notes, October 21, 2026\nPresent: Owen Calloway (chair), Dela Marchetti (executive director), Priya Haldane (treasurer), Teo Brask (development), Hannah Voss (board)\n\nItem 3: Reade Fund pitch\n\nTeo reported that Ruth Ellingsen, program officer at the Tamsin Reade Fund for Rural Arts, invited us to send a short deck before their December committee meeting. She asked specifically about the eastern county touring gap.\n\nOwen asked for a deck that requests $45,000 from the Reade Fund to close the gap on the $68,500 Eastern County touring company. Priya confirmed the $23,500 already in hand: $12,000 projected touring fees and $11,500 from the County Arts Council rural access fund.\n\nDeadline: draft to Owen and Dela by November 13. Final goes to Ruth Ellingsen by November 20, 2026.\n\nInstructions agreed for the deck:\n\n1. Lead with the eastern county schools, not with our history. The 11 requests we turned down and the four of five schools with no arts teacher beyond music should be up front.\n2. Use only FY2026 results from the annual report. The 3,400 additional students is an estimate and must be labeled as one.\n3. Keep the caveat on the confidence survey (41 to 74 percent). Hannah: \"If we drop the caveat, Ruth will find it in the report and we lose her trust.\" Do not present it as proof we caused the change.\n4. No student photos and no last names. Wren's quote may be used with first name"
+  },
+  "response": {
+    "draft": "Slide 1: Closing the Eastern County Touring Gap\nKettle Lane Youth Theatre | Ambry Falls\nA proposal to the Tamsin Reade Fund for Rural Arts\nRequest: $45,000 to launch a second touring company in eastern Ambry County\nCompany start: January 2027\n\nSlide 2: Eastern County Schools Are Asking. We Have Had to Say No.\nIn FY2026 we turned down 11 performance requests from eastern county schools\nFour of the five eastern county schools we visit have no arts teacher on staff beyond music (Ambry County 2025 survey)\nThe drive runs up to 70 minutes each way\nThe reason we said no: one van and one touring cast\n\nSlide 3: What Schools Already Get from Us\nThe Weathervane: a 40-minute, three-actor show about a girl who stops speaking after her family moves\nEach show is followed by a 20-minute workshop led by the actors\nFY2026: 31 performances in 14 schools\n6,820 students reached in grades 3 through 8\nFive of those 14 schools are in the eastern half of the county\n\nSlide 4: The Plan: A Second Touring Company for the East\nA touring company just for eastern county schools, starting with the spring 2027 semester\n20 additional school visits in eastern Ambry County\nAn estimated 3,400 more students reached (estimate)\nA follow-up workshop at every school\nA new companion show for grades 6 through 8, alongside The Weathervane\nAn outside evaluation partner built into the budget\n\nSlide 5: What Our FY2026 Results Show, and What They Don't\nAfter-school student survey: \"I feel confident speaking in front of my class at school\"\nSeptember: 41 percent agreed. May: 74 percent agreed.\nLimits: the answers are self-reported and there is no comparison group\nWe cannot say how much of the change came from us and how much from a year of growing up\nOnly 97 of 142 students completed both surveys; students who left may differ from those who stayed\nA firmer measure: 83 percent of eligible students re-enrolled (98 of 118)\nWaitlist for the 13-to-17 ensemble: 19 names in August\n\nSlide 6: In a Student's Words\n\"I used to eat lunch in the library so nobody would talk to me. Now I'm the one who shows the new kids where the stage door is.\"\nWren, age 13, at the end-of-year circle, May 2026\n\nSlide 7: The Ask: $45,000\nEastern County touring company budget: $68,500\nTwo touring teaching artists (school year): $44,000\nSecond van lease and fuel: $9,600\nProduction for the new companion show: $8,900\nOutside evaluation partner: $6,000\nAlready in hand: $23,500\nProjected touring fees from new schools (sliding scale, about $600 per visit): $12,000\nAmbry County Arts Council rural access fund (approved September 2026): $11,500\nRemaining gap: $45,000\nWe are asking the Tamsin Reade Fund to close that gap so the company can start in January 2027\n\nSlide 8: A Well-Run Organization Ready to Grow\nFY2026 expenses: $412,600. Revenue: $416,200. Operating surplus: $3,600 added to our cash reserve\nAbout 81 percent of spending went to programs\n61 percent of after-school students (87 of 142) received full or partial tuition aid; no student was turned away for cost\nSupport from 312 individual donors, the Halvorsen Family Foundation, and the Ambry County Arts Council\nFY2027 evaluation: an outside evaluator, teacher ratings at two partner schools, and tracking of students who do not finish the year\nKettle Lane Youth Theatre | The Granary, 2nd Floor | Ambry Falls"
+  },
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 3815,
+    "cache_read_input_tokens": 650,
+    "output_tokens": 2463,
+    "output_tokens_details": {
+      "thinking_tokens": 853
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3815,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 2463,
+        "cache_read_input_tokens": 650,
+        "cache_creation_input_tokens": 3815,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3815
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "error": null
+}

@@ -1,0 +1,10 @@
+Sample (fictional)
+
+Quillmere Rolling Library brand
+
+Colors:
+- Deep teal: #1F4E5F
+- Marigold: #E8A33D
+- Paper: #F5EFE3
+
+Font: Libre Franklin
