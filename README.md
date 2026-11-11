@@ -1,5 +1,11 @@
 # Imprint
 
+![Imprint card: three slides in three designs with brand color swatches](docs/catalog/card.jpg)
+
+[![Imprint: watch the 30-second demo](docs/demo-poster.jpg)](https://linchpin.studio/hermes/video/imprint.mp4)
+
+**[Watch the 30-second demo](https://linchpin.studio/hermes/video/imprint.mp4)** · [Manual](https://linchpin.studio/hermes/imprint/manual/) · [All four plugins](https://linchpin.studio/hermes/)
+
 Imprint turns your documents into a finished deck, one-pager, graphic or audio brief in your own brand, inside Hermes
 Desktop. Drop in PDFs, Word files or text. Ask questions of your sources and get answers that cite the paragraph.
 Pick from three deck designs, mix slides between them, and revise any slide in plain words. Before export, numbers and
