@@ -6,7 +6,9 @@ Job kinds (all through ``runtime.Model.structured``, Hermes's ``complete_structu
   then checked once more as the brief's reader would (``review_outline``), with what changed in ``review``.
 - ``rewrite_title``: three options for one outline title.
 - ``element_edit``: one slide made shorter, stronger (three options), into a chart, or one slide inserted after
-  slide N ("Add the quote after slide 4"). Any other typed line is refused in one sentence, with no model call.
+  slide N ("Add the quote after slide 4"). A typed line that names a field and gives its new words ("Change this
+  slide's title to: ...") is applied as typed, with no model call, and its numbers are checked like any option.
+  Any other typed line is refused in one sentence, with no model call.
 - ``fix_it``: a flagged sentence corrected against the closest passage, with a word-by-word diff.
 - ``graphic_options``: three graphic specs in different forms from a pinned answer.
 
@@ -23,6 +25,7 @@ import difflib
 import importlib.util
 import re
 import sys
+import threading
 from pathlib import Path
 from typing import Optional
 
@@ -46,9 +49,196 @@ KINDS = ("notebook_guide", "outline", "rewrite_title", "element_edit", "fix_it",
 OUTLINE_TYPES = ("stat", "figures", "content", "exhibit", "quote", "comparison", "timeline", "section", "closing")
 ACTIONS = ("shorter", "stronger", "chart", "insert", "typed")
 MAX_TITLE_WORDS = 15
-REFUSE_TYPED = ("I can make a slide shorter or stronger, turn it into a chart, or add one slide. "
-                "Try “Add the quote after slide 4” or “Add the point after slide 2”.")
+REFUSE_TYPED = ("I can change a slide's title or subtitle to your words, make a slide shorter or stronger, turn it into a "
+                "chart, or add one slide. Try “Change the title to: …” or “Add the quote after slide 4”.")
 INSERT = re.compile(r"^\s*add\s+(?:the|a)\s+(quote|point)\s+after\s+slide\s+(\d{1,2})\s*\.?\s*$", re.I)
+# "Change this slide's title to: ...", "Set the subtitle of slide 3 to ...", "Rename slide 2 to ...", "Title: ...".
+# The person's own words for one named field: read by this pattern only, never sent to a model.
+_FIELD_WORDS = {"title": "head", "heading": "head", "headline": "head", "header": "head", "name": "head",
+                "subtitle": "sub", "subheading": "sub", "subhead": "sub", "sub-heading": "sub", "sub-title": "sub", "dek": "sub"}
+_FW = "|".join(sorted(_FIELD_WORDS, key=len, reverse=True))
+_POSS = r"(?:'s|’s)?"
+SET_TEXT = re.compile(
+    r"^\s*(?:please\s+)?(?:change|set|make|rename|retitle|rewrite|edit|update|replace)\s+"
+    r"(?:(?:the|this)\s+)?(?:(?:deck|slide\s+(?P<n1>\d{1,2})|slide)" + _POSS + r"\s+)?"
+    r"(?P<field>" + _FW + r")"
+    r"(?:\s+(?:of|on|for)\s+(?:(?:the|this)\s+)?(?:deck|slide\s+(?P<n2>\d{1,2})|slide))?"
+    r"\s*(?:\bto(?:\s+(?:read|say|be))?\b|\bas\b|\bwith\b|:)\s*:?\s*(?P<text>\S.*?)\s*$", re.I | re.S)
+RENAME = re.compile(r"^\s*(?:please\s+)?(?:rename|retitle)\s+(?:(?:the|this)\s+)?(?:deck|slide\s+(?P<n1>\d{1,2})|slide|it)"
+                    r"\s*(?:\bto\b|\bas\b|:)\s*:?\s*(?P<text>\S.*?)\s*$", re.I | re.S)
+BARE = re.compile(r"^\s*(?:new\s+)?(?P<field>" + _FW + r")\s*:\s*(?P<text>\S.*?)\s*$", re.I | re.S)
+MAX_TYPED = 200
+# "Change the title to something punchier" asks for a rewrite; it does not give the new words. Those go to the buttons.
+_A_WISH = re.compile(r"(?:be\s+)?(?:something\s+|one\s+that(?:'s|’s| is)\s+)?(?:a\s+(?:bit|little)\s+)?(?:(?:much\s+)?(?:more|less)\s+)?"
+                     r"(?:shorter|longer|stronger|punchier|better|clearer|simpler|bolder|plainer|snappier|catchier|"
+                     r"direct|concise|catchy|formal|casual|specific|compelling|engaging|professional)\.?", re.I)
+_WRAP = (("“", "”"), ('"', '"'), ("‘", "’"), ("'", "'"))
+
+
+def parse_set_text(text: str) -> Optional[dict]:
+    """``{"field": "head" | "sub", "slide": N or None, "text": words}`` when the line names a field and gives its new
+    words; ``None`` for anything else. ``slide`` is the number as the person counts it (the title slide is 1)."""
+    line = text or ""
+    for pat in (SET_TEXT, RENAME, BARE):
+        m = pat.match(line)
+        if not m:
+            continue
+        d = m.groupdict()
+        new = re.sub(r"\s+", " ", d.get("text") or "").lstrip(": ").strip()
+        for a, b in _WRAP:  # the words were typed inside quotation marks: the marks are not part of the title
+            if len(new) > 2 and new.startswith(a) and new.endswith(b) and new.count(a) + (new.count(b) if a != b else 0) == 2:
+                new = new[1:-1].strip()
+                break
+        if not re.search(r"\w", new) or _A_WISH.fullmatch(new):
+            return None
+        n = d.get("n1") or d.get("n2")
+        return {"field": _FIELD_WORDS.get((d.get("field") or "title").lower(), "head"), "slide": int(n) if n else None, "text": new}
+    return None
+
+
+SET_PATH = re.compile(r"title|subtitle|slides\.\d{1,2}\.(?:heading|label|subtitle|context)|(?:cover|slides\.\d{1,2})\.els\.\d{1,2}")
+BY_YOU = "Your words, checked against your sources"
+NO_TITLE_LINE = "This slide has no title line to change. Press Edit text on the line you want to change."
+
+
+def _spec_mod():
+    try:
+        from . import spec as SP
+    except ImportError:  # loaded loose
+        import spec as SP  # type: ignore
+    return SP
+
+
+def _title_el(sl: dict) -> Optional[int]:
+    """Which element of a designed slide is its title: the first text element set in the title style (the slide's
+    own ``heading`` breaks a tie), else ``None``."""
+    SP = _spec_mod()
+    els = [SP.clean_el(e) for e in (sl.get("els") or [])]
+    titles = [j for j, e in enumerate(els) if e and e.get("type") == "text" and e.get("style") == "title" and e.get("text")]
+    if not titles:
+        return None
+    head = _s(sl.get("heading") or "", 400)
+    return next((j for j in titles if head and _s(els[j]["text"], 400) == head), titles[0])
+
+
+def _set_text_target(doc: dict, on_title: bool, slide: int, want: dict) -> tuple:
+    """``(path, message)``: the doc field a typed change lands on, or why it can't."""
+    slides = doc.get("slides") or []
+    n = want.get("slide")
+    if n is not None:
+        if not 1 <= n <= len(slides) + 1:
+            return None, f"This deck has {len(slides) + 1} slides. Pick a slide number from 1 to {len(slides) + 1}."
+        on_title, slide = n == 1, n - 2
+    head = want["field"] == "head"
+    if on_title:
+        cover = doc.get("cover") if isinstance(doc.get("cover"), dict) and doc["cover"].get("els") else None
+        if cover is None:
+            return ("title" if head else "subtitle"), None
+        j = _title_el(cover) if head else None  # a designed cover: its title is one of its elements
+        return (f"cover.els.{j}", None) if j is not None else (None, NO_TITLE_LINE)
+    if not 0 <= slide < len(slides):
+        return None, "That slide is gone. Pick a slide and try again."
+    sl = slides[slide]
+    t = sl.get("type")
+    if t == "spec":
+        j = _title_el(sl) if head else None
+        return (f"slides.{slide}.els.{j}", None) if j is not None else (None, NO_TITLE_LINE)
+    if head:
+        if t == "quote":
+            return None, ("A quote slide shows a source's exact words, so they can't be typed over. "
+                          "Try “Add the quote after slide 4” for a different quote.")
+        return f"slides.{slide}.{'label' if t == 'stat' else 'heading'}", None
+    f = "context" if t == "stat" else "subtitle" if t in ("section", "closing") or sl.get("subtitle") else None
+    if not f:
+        return None, "This slide has no subtitle. Try “Change the title to: …”."
+    return f"slides.{slide}.{f}", None
+
+
+def _get_path(doc: dict, path: str) -> str:
+    cur = doc
+    try:
+        for part in path.split("."):
+            cur = cur[int(part)] if part.isdigit() else cur[part]
+    except (KeyError, IndexError, TypeError, ValueError):
+        return ""
+    if isinstance(cur, dict):  # a designed slide's element: its words
+        cur = cur.get("text")
+    return cur if isinstance(cur, str) else ""
+
+
+def _put_text(doc: dict, path: str, new: str) -> bool:
+    """Set the words at ``path``. A designed slide's title element also names the slide (``heading``), and the
+    cover's names the deck (``title``), so the outline, the file name and the slide stay one title."""
+    parts = path.split(".")
+    try:
+        if ".els." in path:
+            if not _spec_mod().set_field(doc, path, lambda _old: new):
+                return False
+            holder = doc["cover"] if parts[0] == "cover" else doc["slides"][int(parts[1])]
+            holder["heading"] = new
+            if parts[0] == "cover":
+                doc["title"] = new
+        else:
+            K.set_path(doc, path, new)
+    except (KeyError, IndexError, TypeError, ValueError):
+        return False
+    return True
+
+
+def check_field(doc: dict, path: str, by_ref: dict) -> dict:
+    """``{status, label, items}`` for one field of a deck, by the same checker every proof uses."""
+    g = CK.grounding(doc, by_ref)
+    mine = [i for i in g["items"] if i.get("path") == path and i["kind"] in ("number", "quote")]
+    bad = [i for i in mine if i["status"] == "missing"]
+    if bad:
+        n = len(bad)
+        return {"status": "missing", "label": f"{n} number{'s' if n != 1 else ''} not found in your sources", "items": CK.public_items(bad)}
+    return {"status": "ok", "label": CK.match_label(len(mine)) if mine else "No numbers to check", "items": []}
+
+
+def set_text_option(doc: dict, neutral: dict, by_ref: dict, on_title: bool, slide: int, want: dict) -> dict:
+    """The typed change as one checked option, or a refusal: ``{status, message, path, before_text, base_text, option}``."""
+    path, why = _set_text_target(doc, on_title, slide, want)
+    if not path:
+        return {"status": "refused", "message": why}
+    new = want["text"]
+    if len(new) > MAX_TYPED:
+        return {"status": "refused", "message": f"That is {len(new)} characters, too long to set on a slide. Keep it under {MAX_TYPED}."}
+    before = _get_path(doc, path)
+    if new == before:
+        return {"status": "refused", "message": "The slide already says that."}
+    after = copy.deepcopy(doc)
+    if not _put_text(after, path, new):
+        return {"status": "refused", "message": "That slide is gone. Pick a slide and try again."}
+    chk = check_field(after, path, by_ref)
+    if chk["status"] != "ok":
+        vals = ", ".join(dict.fromkeys(str(i.get("shown") or i.get("value")) for i in chk["items"]))
+        return {"status": "refused", "message": (f"{vals} isn’t in your sources, so the slide stays as it is. Take the number out, or "
+                                                 "use Edit text and then “Keep mine, I checked”.")}
+    is_slide = path.startswith("slides.")
+    return {"status": "ok", "message": None, "path": path, "before_text": before, "base_text": _get_path(neutral, path),
+            "after": after, "option": {"slide": after["slides"][int(path.split(".")[1])] if is_slide else None, "text": new, "check": chk},
+            "frame": int(path.split(".")[1]) + 1 if is_slide else 0}
+
+
+def frame_trees(output_id: str, kit_id: str, docs: list, frame: int) -> list:
+    """Frame ``frame`` (0 is the title slide) of each doc as the scene node the canvas draws, ``None`` where it can't be drawn."""
+    parts = _kit_parts(output_id, kit_id)
+    if not parts:
+        return [None] * len(docs)
+    kit, pal, faces, logo = parts
+    S = _service()
+    _KITS, _L, RD, _RG = _drawing()
+    out = S._output(output_id)
+    _srcs, _b, by_ref = S.passages_for(out["source_ids"])
+    date = S.nice_date(out.get("created_at"))
+    trees = []
+    for d in docs:
+        try:
+            trees.append(RD.deck_tree(d, kit, pal, faces, by_ref, date, logo_urls=logo)[0]["k"][frame])
+        except Exception:  # noqa: BLE001
+            trees.append(None)
+    return trees
 
 
 def _service():
@@ -59,17 +249,23 @@ def _service():
     return S
 
 
+_ROUTES_LOCK = threading.Lock()
+
+
 def routes():
     """``dashboard/revise_api.py``, loaded by path (the dashboard folder is not part of the package)."""
     name = "imprint_revise_api"
-    if name not in sys.modules:
-        spec = importlib.util.spec_from_file_location(name, Path(__file__).resolve().parent / "dashboard" / "revise_api.py")
-        if spec is None or spec.loader is None:
-            raise RuntimeError("Could not load Imprint's revise routes")
-        mod = importlib.util.module_from_spec(spec)
-        sys.modules[name] = mod
-        spec.loader.exec_module(mod)
-    return sys.modules[name]
+    # Load under a lock and register only a finished module (see designs.routes): a half-loaded one has no ``mount``.
+    with _ROUTES_LOCK:
+        mod = sys.modules.get(name)
+        if mod is None or not hasattr(mod, "mount"):
+            spec = importlib.util.spec_from_file_location(name, Path(__file__).resolve().parent / "dashboard" / "revise_api.py")
+            if spec is None or spec.loader is None:
+                raise RuntimeError("Could not load Imprint's revise routes")
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            sys.modules[name] = mod
+        return mod
 
 
 _s = NG._s
@@ -570,6 +766,7 @@ async def job_element_edit(job_id: str, p: dict) -> dict:
     doc = live_doc(output_id, kit_id, neutral)  # "Now" is the slide as it reads on screen, in this brand
     slides = doc.get("slides") or []
     i = p.get("slide")
+    on_title = p.get("on") == "title"  # the title slide has no entry in ``slides``; the pane says when it is the one open
     if not isinstance(i, int) or not 0 <= i < len(slides):
         raise J.JobError("That slide is gone. Pick a slide and try again.", "gone")
     before = slides[i]
@@ -578,6 +775,24 @@ async def job_element_edit(job_id: str, p: dict) -> dict:
     what = None
     if action == "typed":
         m = INSERT.match(p.get("text") or "")
+        want = None if m else parse_set_text(p.get("text") or "")
+        if want:  # the person's own words for one field: set as typed, checked, shown, kept only on Keep
+            got = set_text_option(doc, neutral, by_ref, on_title, i, want)
+            if got["status"] != "ok":
+                return {**res, "action": "retitle", "status": "refused", "message": got["message"]}
+            J.step(job_id, "Checking every number against your sources")
+            path, f = got["path"], got["frame"]
+            opt = got["option"]
+            res.update(action="retitle", path=path, frame=f, before_text=got["before_text"], base_text=got["base_text"], by=BY_YOU)
+            if opt["slide"] is not None:
+                k = f - 1
+                res.update(slide=k, before=slides[k], base=(neutral.get("slides") or [])[k])
+            else:
+                res.update(before={"heading": got["before_text"]}, base=None)
+                opt["slide"] = {"type": "title", "heading": opt["text"]}
+            res["before_tree"], opt["tree"] = frame_trees(output_id, kit_id, [doc, got["after"]], f)
+            res["options"] = [opt]
+            return res
         if not m:
             return {**res, "status": "refused", "message": REFUSE_TYPED}
         what, n = m.group(1).lower(), int(m.group(2))
@@ -892,6 +1107,18 @@ def kept_doc(output_id: str, job: dict, choice: int) -> tuple:
         opts = res.get("options") or []
         if res.get("status") != "ok" or not isinstance(choice, int) or not 0 <= choice < len(opts):
             raise ValueError("Pick one of the options first.")
+        if res.get("action") == "retitle":
+            path, text = res.get("path") or "", opts[choice].get("text") or ""
+            if not SET_PATH.fullmatch(path) or not text:
+                raise ValueError("That suggestion is gone. Ask for it again.")
+            if _get_path(doc, path) != (res.get("base_text") or ""):
+                raise ValueError("That slide changed since. Ask for the change again.")
+            if not _put_text(doc, path, text):
+                raise ValueError("That slide changed since. Ask for the change again.")
+            if check_field(doc, path, by_ref)["status"] != "ok":
+                raise ValueError("That option no longer matches your sources.")
+            what = "subtitle" if path.rsplit(".", 1)[-1] in ("subtitle", "context") else "title"
+            return doc, f"Changed the {what}, slide {int(res.get('frame') or 0) + 1}"
         new = copy.deepcopy(opts[choice]["slide"])
         if check_slide(new, by_ref)["status"] != "ok":
             raise ValueError("That option no longer matches your sources.")

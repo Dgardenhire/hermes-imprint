@@ -16,13 +16,15 @@
 // Plugin chrome uses only the app's theme variables. A kit's colors and fonts appear only inside proofs,
 // swatches and specimens; they never restyle the plugin.
 
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { Component, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { jsx, jsxs } from 'react/jsx-runtime'
 import { Button, Codicon, Input, SegmentedControl, Textarea, atom, captureGatewayFileDownload, host, useValue } from '@hermes/plugin-sdk'
-import { describeError, registerPage } from 'hermes-ui-kit'
+import { registerPage } from 'hermes-ui-kit'
 import { Canvas, usesCanvas } from './canvas.js'
 import { DesignsRoom } from './designs.js'
 import * as canvasLane from './canvas.js' // GraphicOptions, when the canvas lane ships it
+import { createFirstPaint } from './firstpaint.js'
+import { OFFLINE_HELP, POLL_GAVE_UP, isUnreachable, plainError, pollClock } from './errors.js'
 
 const PLUGIN_ID = 'imprint'
 const ROUTE = '/imprint'
@@ -38,6 +40,8 @@ const $designJob = atom(null) // the running designs job {…job, oid}
 const $designsOn = atom(false) // the Designs room is open over the viewed output
 const DESIGN_KINDS = ['deck', 'onepager', 'visual']
 const $toast = atom(null)
+const $stale = atom(false) // true while any part of the first screen is the stored copy (firstpaint.js): no input until it is real
+let fp = null // the first-paint store, made in register()
 
 /* ------------------------------------------------------------------ helpers -- */
 
@@ -46,7 +50,9 @@ const h = (t, p, ...k) => {
   return kids.length > 1 ? jsxs(t, { ...(p || {}), children: kids }) : jsx(t, { ...(p || {}), children: kids[0] })
 }
 const cls = (...xs) => xs.filter(Boolean).join(' ')
-const errText = e => describeError(e).detail || 'Something went wrong. Try again.'
+// What a person reads for an error: the backend's own sentence, or one plain line when the backend isn't answering
+// (never the browser's "Failed to fetch"). Always ends with a full stop, so callers can add " Try again.".
+const errText = e => plainError(e)
 const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`
 function bytes(n) {
   if (n < 1024) return `${n} B`
@@ -88,14 +94,42 @@ function rest(path, options) {
 const post = (path, body) => rest(path, { method: 'POST', body: body || {} })
 const del = path => rest(path, { method: 'DELETE' })
 
-async function load() {
+function applyKit(st) {
+  const prefs = st.prefs || {}
+  if (prefs.kit && st.kits.some(k => k.id === prefs.kit)) $kit.set(prefs.kit)
+  else if (!st.kits.some(k => k.id === $kit.get()) && st.kits.length) $kit.set(st.kits[0].id)
+}
+// Before the first draw: the last good notebook from plugin storage, if there is one (firstpaint.js). Shown as it was;
+// load() replaces each part as the real answer lands, and the page takes no input until then.
+let hydrated = false
+function hydrate() {
+  if (hydrated) return
+  hydrated = true
+  if ($state.get() || !fp) return
+  const rec = fp.hydrate()
+  if (!rec) return
+  $state.set(rec.state)
+  applyKit(rec.state)
+  if ('chats' in rec && $chats.get() === null) $chats.set(rec.chats)
+  if ('guide' in rec && $guide.get() === undefined) $guide.set(rec.guide)
+}
+// The three first answers go out together: chats and the guide do not wait on state.
+let loading = null
+let loaded = false
+function load() {
+  if (!loading) loading = loadNow().finally(() => { loading = null })
+  return loading
+}
+async function loadNow() {
+  if ($chats.get() === null || (fp && fp.isStale('chats'))) ensureChats()
+  if ($guide.get() === undefined || (fp && fp.isStale('guide'))) ensureGuide()
   try {
     const st = await rest('state')
     $state.set(st)
     $loadError.set(null)
-    const prefs = st.prefs || {}
-    if (prefs.kit && st.kits.some(k => k.id === prefs.kit)) $kit.set(prefs.kit)
-    else if (!st.kits.some(k => k.id === $kit.get()) && st.kits.length) $kit.set(st.kits[0].id)
+    loaded = true
+    applyKit(st)
+    if (fp) fp.fresh('state')
     for (const j of st.jobs || []) { if (j.kind === 'make') trackMake(j); if (j.kind === 'designs' && j.status === 'running' && !$designJob.get()) trackDesigns(j, (j.params || {}).output_id) }
     watchSummaries(st)
   } catch (e) {
@@ -103,7 +137,7 @@ async function load() {
   }
 }
 async function refresh() {
-  try { $state.set(await rest('state')) } catch (e) { /* keep what is on screen */ }
+  try { $state.set(await rest('state')); if (fp) fp.schedule() } catch (e) { /* keep what is on screen */ }
 }
 
 /* Jobs: start returns at once; poll until done. A pushed event only makes the next poll sooner. */
@@ -111,19 +145,32 @@ const pollers = new Map()
 let poke = () => {}
 function pollJob(job, onDone, onFail, onStep) {
   let stopped = false
-  let delay = 700
+  let last = job
+  const clock = pollClock()
   const tick = async () => {
     if (stopped) return
+    let next
     try {
       const j = await rest(`jobs/${job.id}`)
+      last = j
       if (j.status === 'done') { stopped = true; pollers.delete(job.id); onDone && onDone(j); return }
       if (j.status === 'failed' || j.status === 'stopped') { stopped = true; pollers.delete(job.id); onFail && onFail(j); return }
       onStep && onStep(j)
-    } catch (e) { /* a missed poll is retried */ }
-    delay = Math.min(delay * 1.3, 2500)
-    pollers.set(job.id, setTimeout(tick, delay))
+      next = clock.ok()
+    } catch (e) {
+      // A missed check is retried, backing off; after about a minute and a half of misses the screen stops waiting
+      // and says why, instead of spinning forever. The job itself may still finish in the backend.
+      next = clock.miss()
+      if (next.giveUp) {
+        stopped = true
+        pollers.delete(job.id)
+        onFail && onFail({ ...(last || job), status: 'failed', lost: true, error: POLL_GAVE_UP })
+        return
+      }
+    }
+    pollers.set(job.id, setTimeout(tick, next.delay))
   }
-  pollers.set(job.id, setTimeout(tick, 400))
+  pollers.set(job.id, setTimeout(tick, clock.first))
   poke = () => { for (const [id, t] of pollers) { clearTimeout(t); pollers.set(id, setTimeout(tick, 50)) } }
   return () => { stopped = true; clearTimeout(pollers.get(job.id)); pollers.delete(job.id) }
 }
@@ -188,24 +235,48 @@ async function upload(path, file) {
 /* ------------------------------------------------------------------ page -- */
 
 function ImprintPage() {
+  hydrate()
   const st = useValue($state)
   const loadError = useValue($loadError)
   const tab = useValue($tab)
   const t = useValue($toast)
-  useEffect(() => { if (!st) load() }, [])
-  if (loadError && !st) {
+  const stale = useValue($stale)
+  const root = useRef(null)
+  useEffect(() => { if (!loaded) load() }, [])
+  // The stored copy is for looking only: no clicks, keys or focus reach it until the real answers have landed.
+  useLayoutEffect(() => { if (root.current) root.current.inert = !!stale }, [stale, !!st])
+  if (loadError && (!st || (fp && fp.isStale('state')))) {
     return h('div', { className: 'hk imp' }, h('div', { className: 'imp-center' },
       h('div', { className: 'imp-notice', 'data-tone': 'bad' },
         h('h2', { className: 'imp-h2' }, 'Imprint could not start'),
         h('p', null, errText(loadError)),
+        isUnreachable(loadError) ? h('p', null, OFFLINE_HELP) : null,
         h(Button, { onClick: () => { $loadError.set(null); load() } }, 'Try again'))))
   }
   if (!st) return h('div', { className: 'hk imp' }, h('div', { className: 'imp-center' }, h('p', { className: 'imp-wait' }, h('span', { className: 'imp-spin' }), 'Opening Imprint')))
-  return h('div', { className: 'hk imp' },
+  return h('div', { className: 'hk imp', ref: root, 'aria-busy': stale ? 'true' : undefined },
     h('style', null, st.proof_css),
-    h(TopBar, { st, tab }),
-    tab === 'kits' ? h(KitsTab, { st }) : tab === 'storage' ? h(StorageTab, { st }) : h(NotebookTab, { st }),
+    h(CopyGuard, { stale },
+      h(TopBar, { st, tab }),
+      tab === 'kits' ? h(KitsTab, { st }) : tab === 'storage' ? h(StorageTab, { st }) : h(NotebookTab, { st })),
     t ? h(Toast, { t }) : null)
+}
+
+// A stored copy that fails to draw (an older shape, say) is dropped and the page waits as on a first open. Any other
+// error is passed on as before.
+class CopyGuard extends Component {
+  constructor(props) { super(props); this.state = { error: null } }
+  static getDerivedStateFromError(error) { return { error } }
+  componentDidCatch() {
+    if (!this.props.stale || !fp) return
+    fp.discard()
+    $chats.set(null); $guide.set(undefined); $state.set(null)
+    this.setState({ error: null })
+  }
+  render() {
+    if (this.state.error && !this.props.stale) throw this.state.error
+    return this.state.error ? null : this.props.children
+  }
 }
 
 function TopBar({ st, tab }) {
@@ -215,7 +286,14 @@ function TopBar({ st, tab }) {
     h('div', { className: 'imp-grow' }),
     tab === 'notebook' && isSample(st) ? h('span', { className: 'imp-top-sample' },
       h('span', { className: 'imp-tag' }, (st.sample && st.sample.label) || 'Sample'), (st.sample && st.sample.name) || 'Sample notebook',
-      h(Button, { size: 'sm', variant: 'secondary', className: 'imp-quiet', onClick: closeSample }, 'Close the sample')) : null)
+      h(Button, { size: 'sm', variant: 'secondary', className: 'imp-quiet', onClick: closeSample }, 'Close the sample')) : null,
+    // The manual on linchpin.studio, in the user's own browser (Nov 11: no plugin linked its manual).
+    h(Button, { size: 'sm', variant: 'ghost', title: 'Open the manual in your browser', onClick: openManual }, 'Manual'))
+}
+
+const MANUAL_URL = 'https://linchpin.studio/hermes/imprint/manual/'
+function openManual() {
+  try { if (api && api.os && typeof api.os.openExternal === 'function') api.os.openExternal(MANUAL_URL) } catch (e) { /* nothing to open with */ }
 }
 
 function Working({ step }) {
@@ -821,10 +899,16 @@ function openFlow(kind, opts) {
   $flow.set({ kind: KIND_OF[kind] ? KIND_OF[kind].id : 'deck', ask: o.ask || null, seed: o.seed || null, step: 'brief' })
 }
 
-async function loadChats() { try { $chats.set((await rest('chats')).chats) } catch (e) { $chats.set([]) } }
+async function loadChats() { try { $chats.set((await rest('chats')).chats) } catch (e) { $chats.set([]) } if (fp) fp.fresh('chats') }
 async function loadGuide() {
   try { const r = await rest('notebook/guide'); $guide.set(r.guide || null) } catch (e) { $guide.set(null) }
+  if (fp) fp.fresh('guide')
 }
+// The first load and the notebook's mount both ask; one request answers both.
+let chatsReq = null
+let guideReq = null
+function ensureChats() { if (!chatsReq) chatsReq = loadChats().finally(() => { chatsReq = null }); return chatsReq }
+function ensureGuide() { if (!guideReq) guideReq = loadGuide().finally(() => { guideReq = null }); return guideReq }
 function writeGuide(ids) {
   $guideJob.set({ status: 'running', step: `Reading ${plural(ids.length, 'source')}`, steps: [{ text: `Reading ${plural(ids.length, 'source')}`, at: Date.now() / 1000 }], created_at: Date.now() / 1000 })
   post('notebook/guide', { source_ids: ids }).then(r => {
@@ -944,7 +1028,7 @@ function NotebookTab({ st }) {
   const flow = useValue($flow)
   const rail = useValue($rail)
   const gf = useValue($graphicFor)
-  useEffect(() => { if ($chats.get() === null) loadChats(); if ($guide.get() === undefined) loadGuide() }, [])
+  useEffect(() => { if ($chats.get() === null) ensureChats(); if ($guide.get() === undefined) ensureGuide() }, [])
   const viewing = useValue($viewing)
   const out = useValue($output)
   const GraphicOptionsC = canvasLane.GraphicOptions
@@ -1016,12 +1100,11 @@ function FirstOpen({ st }) {
   }
   return h('section', { className: 'imp-pane imp-ask imp-first', 'aria-label': 'Start' },
     h('div', { className: 'imp-first-inner' },
-      h('h1', { className: 'imp-first-lead' }, 'Ask questions of your documents, then make a deck, one-pager, graphic or audio brief in your brand. Every number is checked against your sources.'),
+      h('h1', { className: 'imp-first-lead' }, 'Ask questions of your documents, then make a deck, one-pager, graphic or audio brief in your brand.'),
       pic ? h('figure', { className: 'imp-first-pic' },
-        h('img', { src: pic.img, width: pic.w, height: pic.h, alt: `A slide from the sample deck in the ${pic.kit_name || 'sample'} brand`, draggable: false }),
-        h('figcaption', null, 'Every number links to the sentence it came from.')) : null,
+        h('img', { src: pic.img, width: pic.w, height: pic.h, alt: `A slide from the sample deck in the ${pic.kit_name || 'sample'} brand`, draggable: false })) : null,
       h('div', { className: 'imp-first-acts' },
-        h(Button, { onClick: go, loading: busy, disabled: busy || sample.available === false }, 'Open the sample'),
+        h(Button, { onClick: go, loading: busy, disabled: busy || sample.available === false }, busy ? 'Opening the sample' : 'Open the sample'),
         h(Button, { variant: 'secondary', onClick: addFiles }, 'Start with your own files')),
       err ? h('p', { className: 'imp-error', role: 'alert' }, err) : null,
       sample.name ? h('p', { className: 'imp-first-sample' }, h('span', { className: 'imp-tag' }, sample.label || 'Sample'), `${sample.name}, a made-up adult literacy group: a program report, board notes and a brand guide.`) : null))
@@ -1280,11 +1363,12 @@ function ReadingCard({ st, ns }) {
 function GuideBlock({ st, ask, credit = true }) {
   const guide = useValue($guide)
   const gjob = useValue($guideJob)
+  const copy = useValue($stale)
   const on = included(st)
   const ids = on.map(s => s.id)
-  useEffect(() => {
-    if (guide === null && !gjob && ids.length && !isSample(st)) writeGuide(ids)
-  }, [guide === null, ids.join(',')])
+  useEffect(() => { // never from the stored copy: the ticked sources may have changed since
+    if (guide === null && !gjob && ids.length && !isSample(st) && !copy) writeGuide(ids)
+  }, [guide === null, ids.join(','), copy])
   if (!ids.length) return h('div', { className: 'imp-gd-empty' }, (st.sources || []).length ? 'No source is ticked. Tick one on the left to read it here.' : 'Add a source on the left.')
   if (gjob && gjob.status !== 'done') {
     if (gjob.status === 'failed') return h('div', { className: 'imp-failed', role: 'alert' }, h('p', null, gjob.error || 'The guide didn’t finish.'), h('div', { className: 'imp-row' }, h(Button, { size: 'sm', variant: 'secondary', onClick: () => writeGuide(ids) }, 'Retry')))
@@ -1909,6 +1993,19 @@ function Viewer({ st, id }) {
     if (typeof window !== 'undefined') window.addEventListener('keydown', onKey)
     return () => { if (typeof window !== 'undefined') window.removeEventListener('keydown', onKey) }
   }, [])
+  // The audio bar sticks just under the header, whatever height the header has (a long title or the brand chip wrap it).
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    const head = document.querySelector('.imp-viewer-head')
+    const box = head && head.closest('.imp-viewer')
+    if (!head || !box) return
+    const set = () => box.style.setProperty('--imp-head-h', `${Math.ceil(head.getBoundingClientRect().height)}px`)
+    set()
+    if (typeof ResizeObserver === 'undefined') return
+    const ro = new ResizeObserver(set)
+    ro.observe(head)
+    return () => ro.disconnect()
+  })
   if (!out || out.id !== id) return h('div', { className: 'imp-viewer' }, h(Working, { step: 'Opening' }))
   const proof = out.proofs[0]
   const k = KIND_OF[out.kind] || KIND_OF.onepager
@@ -2026,7 +2123,7 @@ function KitProof({ k, sample }) {
         h('p', { className: 'imp-kp-head', style: { color: k.head, fontFamily: k.head_css, fontStyle: k.head_style, fontWeight: k.head_weight,
           textTransform: k.head_case === 'upper' ? 'uppercase' : 'none' } }, sample),
         h('span', { className: 'imp-kp-rule', style: { background: k.accent } }),
-        h('p', { className: 'imp-kp-body', style: { fontFamily: k.body_css } }, k.subject || 'Your sources, set in this kit.'))),
+        h('p', { className: 'imp-kp-body', style: { fontFamily: k.body_css } }, k.subject || 'Your sources, set in this brand.'))),
     h(ColorBar, { bar: k.bar }),
     h('span', { className: 'imp-kp-name' }, h('strong', null, k.name),
       h('span', null, k.heading_family === k.body_family ? k.heading_family : `${k.heading_family} and ${k.body_family}`)))
@@ -2084,7 +2181,7 @@ function SiteReader() {
   }
   return h('div', { className: 'imp-panel' },
     h('h3', { className: 'imp-h3' }, 'Build from a website'),
-    h('p', null, 'Colors and fonts come from the site’s own stylesheets. Nothing is saved until you press Save kit.'),
+    h('p', null, 'Colors and fonts come from the site’s own stylesheets. Nothing is saved until you press Save the brand.'),
     h('div', { className: 'imp-row' },
       h(Input, { value: url, placeholder: 'https://', onChange: e => setUrl(e.target.value), onKeyDown: e => { if (e.key === 'Enter') go() }, 'aria-label': 'Website' }),
       h(Button, { onClick: go, loading: !!job }, 'Read the site')),
@@ -2550,6 +2647,7 @@ const CSS = `
 .imp [data-slot=button]{border-radius:var(--imp-r)}
 .imp [data-slot=button][data-size=sm],.imp-top [aria-pressed]{font-size:12px}
 .imp-center{display:grid;place-items:center;height:100%;padding:24px}
+.imp[aria-busy="true"]{cursor:progress}
 .imp-h2{font-size:15px;font-weight:600;margin:0}
 .imp-h3{font-size:13px;font-weight:600;margin:0}
 .imp p{margin:0}
@@ -3096,8 +3194,9 @@ const CSS = `
 .imp-viewer-title{display:grid;flex:1;min-width:180px}
 .imp-viewer-title strong{font-size:14px}
 .imp-viewer-title span{font-size:12px}
-.imp-player{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:14px;align-items:center;padding:12px 16px;background:var(--imp-solid);border:1px solid var(--hk-stroke);border-radius:var(--imp-r);box-shadow:0 8px 24px -16px rgba(0,0,0,.35);position:sticky;top:64px;z-index:2}
-.imp-player.is-off{grid-template-columns:auto minmax(0,1fr) auto;box-shadow:none;position:static}
+.imp-player{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:14px;align-items:center;padding:12px 16px;background:var(--imp-solid);border:1px solid var(--hk-stroke);border-radius:var(--imp-r);box-shadow:0 8px 24px -16px rgba(0,0,0,.35);position:sticky;top:calc(var(--imp-head-h,64px) + 8px);z-index:2}
+.imp-player.is-off{grid-template-columns:auto minmax(0,1fr) auto;box-shadow:none;position:relative;top:auto;z-index:auto;margin:0 0 4px}
+.imp-player+.imp-proof{position:relative;z-index:0;margin-top:0}
 .imp-player audio{display:none}
 .imp-play{all:unset;cursor:pointer;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--hk-accent);color:#fff}
 .imp-play:disabled{background:var(--hk-sunken);color:var(--hk-ink);cursor:default}
@@ -3168,6 +3267,8 @@ export default {
   name: 'Imprint',
   register(ctx) {
     api = ctx
+    fp = createFirstPaint({ storage: ctx.storage, read: () => ({ state: $state.get(), chats: $chats.get(), guide: $guide.get() }), onStale: v => $stale.set(v) })
+    const offs = [$state, $chats, $guide].map(a => (typeof a.listen === 'function' ? a.listen(() => fp && fp.schedule()) : null))
     registerPage(ctx, {
       id: PLUGIN_ID, route: ROUTE, label: 'Imprint', codicon: 'symbol-color', css: CSS,
       render: () => jsx(ImprintPage, {}),
@@ -3178,7 +3279,7 @@ export default {
       status: { render: () => jsx(Status, {}), side: 'right', order: 50 },
     })
     try { ctx.onEvent && ctx.onEvent('plugin.imprint.job', () => poke()) } catch (e) { /* polling covers it */ }
-    ctx.onDispose(() => { api = null; for (const t of pollers.values()) clearTimeout(t); pollers.clear() })
+    ctx.onDispose(() => { if (fp) fp.dispose(); for (const off of offs) if (typeof off === 'function') off(); api = null; for (const t of pollers.values()) clearTimeout(t); pollers.clear() })
   },
 }
 

@@ -9,12 +9,14 @@
 import { useEffect, useRef, useState } from 'react'
 import { jsx, jsxs } from 'react/jsx-runtime'
 import { Button, Codicon, Textarea } from '@hermes/plugin-sdk'
+import { POLL_GAVE_UP, pollClock } from './errors.js'
 
 const h = (t, p, ...k) => {
   const kids = k.flat().filter(x => x !== null && x !== undefined && x !== false)
   return kids.length > 1 ? jsxs(t, { ...(p || {}), children: kids }) : jsx(t, { ...(p || {}), children: kids[0] })
 }
 const cls = (...xs) => xs.filter(Boolean).join(' ')
+const fmtElapsed = sec => (sec < 60 ? `${sec}s` : `${Math.floor(sec / 60)}m ${String(sec % 60).padStart(2, '0')}s`)
 const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`
 
 const STATUS_WORDS = {
@@ -34,19 +36,34 @@ export function DesignsRoom({ out, st, api, job, onDesign, onTemplate }) {
   const [scope, setScope] = useState('slide')
   const [exportOpen, setExportOpen] = useState(false)
   const timer = useRef(null)
+  const clock = useRef(null)
+  const [lost, setLost] = useState(false) // the backend stopped answering while the designs drew: checks stopped
   const id = out.id
   const kind = (view && view.kind) || out.kind
 
-  const load = async () => {
-    try { setView(await api.rest(`outputs/${id}/designs`)) } catch (e) { api.toast(`${api.errText(e)} Try again.`, 'bad') }
+  // While the designs draw, the view is checked every 2.2 s. A failed check is retried, backing off, and after about
+  // a minute and a half of failures the room stops checking and says so (one message, not a toast every few seconds).
+  const load = async ({ quiet } = {}) => {
+    try {
+      setView(await api.rest(`outputs/${id}/designs`))
+      clock.current = null
+      setLost(false)
+    } catch (e) {
+      if (!quiet) { api.toast(`${api.errText(e)} Try again.`, 'bad'); return }
+      if (!clock.current) clock.current = pollClock()
+      const next = clock.current.miss()
+      if (next.giveUp) { clock.current = null; setLost(true); return }
+      timer.current = setTimeout(() => load({ quiet: true }), next.delay)
+    }
   }
   useEffect(() => { load(); return () => clearTimeout(timer.current) }, [id])
   const working = !!job || !!apply || (view && view.building)
+  const noBrowser = !!(view && view.browser && !view.browser.ok)
   useEffect(() => {
     clearTimeout(timer.current)
-    if (working) timer.current = setTimeout(load, 2200)
+    if (working && !lost) timer.current = setTimeout(() => load({ quiet: true }), 2200)
     return () => clearTimeout(timer.current)
-  }, [working, view])
+  }, [working, view, lost])
   useEffect(() => { if (!job) load() }, [job ? job.id : null])
 
   const final = view && view.final
@@ -96,10 +113,10 @@ export function DesignsRoom({ out, st, api, job, onDesign, onTemplate }) {
     h('style', null, CSS),
     h('header', { className: 'ip-ds-head' },
       h(Button, { variant: 'secondary', onClick: api.close }, h(Codicon, { name: 'arrow-left', size: '14px' }), 'Back'),
-      h('div', { className: 'ip-ds-title' }, h('strong', null, out.title || 'Untitled'), h('span', null, `Three designs of your ${KIND_WORD[kind] || 'piece'}, same words, same numbers`)),
+      h('div', { className: 'ip-ds-title' }, h('strong', null, out.title || 'Untitled')),
       h('div', { className: 'ip-ds-grow' }),
       onTemplate ? h(Button, { variant: 'secondary', onClick: onTemplate }, 'Template version') : null,
-      h(Button, { variant: 'secondary', disabled: !!working, onClick: onDesign }, h(Codicon, { name: 'refresh', size: '14px' }), view && view.made ? 'Design again' : 'Design three options'),
+      h(Button, { variant: 'secondary', disabled: !!working || noBrowser, onClick: onDesign }, h(Codicon, { name: 'refresh', size: '14px' }), view && view.made ? 'Design again' : 'Design three options'),
       h('div', { className: cls('ip-ds-export', exportWhy && 'is-held') },
         h(Button, { loading: busy === 'export', 'aria-disabled': exportWhy ? 'true' : undefined, 'aria-haspopup': 'menu', 'aria-expanded': exportOpen,
           onClick: () => { if (!exportWhy) setExportOpen(!exportOpen) } }, 'Export'),
@@ -108,16 +125,18 @@ export function DesignsRoom({ out, st, api, job, onDesign, onTemplate }) {
           Object.entries((view && view.formats) || {}).map(([f, l]) => h('button', { key: f, type: 'button', role: 'menuitem', onClick: () => doExport(f) }, l))) : null)),
     job ? h('p', { className: 'ip-ds-step', role: 'status' }, h('span', { className: 'ip-ds-spin' }), job.step || 'Starting the designs') : null,
     !view ? h('p', { className: 'ip-ds-empty' }, 'Opening the designs') : null,
+    noBrowser ? h('p', { className: 'ip-ds-bad ip-ds-nobrowser', role: 'alert' }, view.browser.message) : null,
+    lost ? h('p', { className: 'ip-ds-bad', role: 'alert' }, POLL_GAVE_UP, ' ',
+      h('button', { type: 'button', className: 'imp-linkish', onClick: () => { setLost(false); load() } }, 'Check again')) : null,
     view && !view.made && !working ? h('div', { className: 'ip-ds-empty' },
       h('p', null, 'Imprint asks the model to lay this out three different ways, draws each one, looks at it, and fixes what is wrong. It takes a few minutes.'),
-      h(Button, { onClick: onDesign }, 'Design three options')) : null,
+      h(Button, { disabled: noBrowser, onClick: onDesign }, 'Design three options')) : null,
     h('section', { className: 'ip-ds-options', 'aria-label': 'The three designs' }, opts.map(o => h('article', { key: o.d, className: cls('ip-ds-opt', whole && whole.d === o.d && 'is-used') },
       h('div', { className: 'ip-ds-opt-head' },
         h('strong', null, o.name),
         o.status === 'ready' ? h('span', { className: 'ip-ds-meta' }, plural(o.slides, kind === 'deck' ? 'slide' : 'page'),
           o.flags ? ` · ${plural(o.flags, 'number')} to check` : '', o.problems.length ? ` · ${plural(o.problems.length, 'layout problem')}` : '') : null),
-      h('p', { className: 'ip-ds-blurb' }, o.blurb),
-      o.status === 'writing' ? h('p', { className: 'ip-ds-work' }, h('span', { className: 'ip-ds-spin' }), o.step ? `${o.step}` : 'Waiting') : null,
+      o.status === 'writing' ? h('p', { className: 'ip-ds-work' }, h('span', { className: 'ip-ds-spin' }), (o.step ? `${o.step}` : 'Waiting') + (o.elapsed ? ` · ${fmtElapsed(o.elapsed)}` : '')) : null,
       o.status === 'failed' ? h('p', { className: 'ip-ds-bad' }, o.error || 'This design did not come back.') : null,
       o.status === 'ready' ? h('div', { className: cls('ip-ds-thumbs', kind !== 'deck' && 'is-single') }, o.thumbs.map((t, i) =>
         t ? h('button', { key: i, type: 'button', className: cls('ip-ds-thumb', mine.has(`${o.d}:${i + 1}`) && 'is-in'), disabled: !!busy,
@@ -191,22 +210,22 @@ const CSS = `
 .ip-ds-opt{display:grid;gap:8px;align-content:start;padding:12px;background:var(--hk-surface);border:1px solid var(--hk-stroke);border-radius:var(--imp-r,2px);min-width:0}
 .ip-ds-opt.is-used{border-color:var(--hk-accent)}
 .ip-ds-opt-head{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}.ip-ds-opt-head strong{font-size:14px}
-.ip-ds-meta{font-size:12px;opacity:.78}.ip-ds-blurb{font-size:12.5px;line-height:1.45;opacity:.85}
+.ip-ds-meta{font-size:12px;opacity:.78}
 .ip-ds-work{display:flex;gap:8px;align-items:center;font-size:12.5px}.ip-ds-bad{font-size:12.5px;color:var(--hk-danger,#b3261e)}.ip-ds-good{color:var(--hk-success,#1e7a46);opacity:1}
 .ip-ds-thumbs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;max-height:46vh;overflow:auto;padding:2px}
 .ip-ds-thumbs.is-single{grid-template-columns:1fr;max-height:none}
-.ip-ds-thumb{all:unset;cursor:pointer;position:relative;display:block;border:1px solid var(--hk-stroke);background:#fff;line-height:0}
+.ip-ds-thumb{all:unset;cursor:pointer;position:relative;display:flex;flex-direction:column;border:1px solid var(--hk-stroke);background:#fff;line-height:0}
 .ip-ds-thumb img{width:100%;height:auto;display:block}
 .ip-ds-thumb:hover{border-color:var(--hk-stroke-strong,var(--hk-ink))}.ip-ds-thumb:focus-visible{outline:2px solid var(--hk-accent);outline-offset:2px}
 .ip-ds-thumb.is-in{outline:2px solid var(--hk-accent);outline-offset:-2px}
-.ip-ds-n{position:absolute;left:4px;top:4px;line-height:1;font-size:12px;font-weight:600;padding:2px 5px;background:rgba(0,0,0,.66);color:#fff}
-.ip-ds-tick{position:absolute;right:4px;top:4px;line-height:1;padding:3px;background:var(--hk-accent);color:#fff;display:grid;place-items:center}
+.ip-ds-n{position:static;display:block;align-self:stretch;min-height:22px;line-height:22px;font-size:12px;font-weight:600;padding:0 8px;background:var(--hk-surface);color:var(--hk-ink);border-top:1px solid var(--hk-stroke)}
+.ip-ds-tick{position:absolute;right:4px;bottom:3px;line-height:1;padding:3px;background:var(--hk-accent);color:#fff;display:grid;place-items:center}
 .ip-ds-mine{display:grid;gap:10px;padding:0 18px}
 .ip-ds-mine-head{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
 .ip-ds-strip{display:flex;gap:8px;overflow:auto;padding:4px 2px}
-.ip-ds-mini{all:unset;cursor:pointer;position:relative;flex:none;width:150px;border:1px solid var(--hk-stroke);background:#fff;line-height:0}
-.ip-ds-mini img{width:100%;display:block}.ip-ds-mini.is-on{outline:2px solid var(--hk-accent);outline-offset:1px}.ip-ds-mini:focus-visible{outline:2px solid var(--hk-accent);outline-offset:2px}
-.ip-ds-from{position:absolute;left:0;right:0;bottom:0;line-height:1.2;font-size:12px;padding:2px 5px;background:rgba(0,0,0,.6);color:#fff}
+.ip-ds-mini{all:unset;cursor:pointer;position:relative;flex:none;width:150px;border:1px solid var(--hk-stroke);background:#fff;line-height:0;display:flex;flex-wrap:wrap;align-items:center}
+.ip-ds-mini img{flex:0 0 100%;width:100%;display:block}.ip-ds-mini .ip-ds-n{flex:0 0 auto;align-self:auto;border-top:1px solid var(--hk-stroke)}.ip-ds-mini.is-on{outline:2px solid var(--hk-accent);outline-offset:1px}.ip-ds-mini:focus-visible{outline:2px solid var(--hk-accent);outline-offset:2px}
+.ip-ds-from{position:static;flex:1 1 0;min-width:0;min-height:22px;line-height:22px;font-size:12px;padding:0 6px;text-align:right;background:var(--hk-surface);color:var(--hk-ink);border-top:1px solid var(--hk-stroke);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 .ip-ds-work-area{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(260px,1fr);gap:16px;align-items:start}
 .ip-ds-big{margin:0;border:1px solid var(--hk-stroke);background:#fff;min-height:160px;display:grid;line-height:0;position:relative}
 .ip-ds-big img{width:100%;height:auto;display:block}.ip-ds-big .ip-ds-empty{line-height:1.4;padding:24px;margin:0}

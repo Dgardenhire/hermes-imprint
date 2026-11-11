@@ -162,8 +162,10 @@ def mount(router, pkg: str = "imprint_plugin_package") -> list:
             slide = b.get("slide")
             if not isinstance(slide, int) or isinstance(slide, bool) or not 0 <= slide < 40:
                 raise ValueError("Select a slide first.")
+            # ``on: "title"`` says the title slide is the one open (it has no entry in ``slides``), for a typed change to it
             params = {"output_id": oid, "kit_id": kit_id(b.get("kit_id")), "slide": slide, "action": action,
-                      "text": short(b.get("text"), 200) if action == "typed" else ""}
+                      "text": short(b.get("text"), 320) if action == "typed" else "",
+                      "on": "title" if action == "typed" and b.get("on") == "title" else ""}
             return {"job": jobs.start("element_edit", f"edit:{oid}:{slide}:{action}:{params['text']}:{store.now()}", params)}
         except Exception as e:
             fail(e)

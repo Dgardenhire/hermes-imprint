@@ -3,7 +3,7 @@
 
 
 // desktop/src/plugin.js
-import { useEffect as useEffect4, useLayoutEffect as useLayoutEffect2, useMemo as useMemo2, useRef as useRef4, useState as useState5 } from "react";
+import { Component, useEffect as useEffect4, useLayoutEffect as useLayoutEffect2, useMemo as useMemo2, useRef as useRef4, useState as useState5 } from "react";
 import { jsx as jsx5, jsxs as jsxs5 } from "react/jsx-runtime";
 import { Button as Button4, Codicon as Codicon5, Input, SegmentedControl, Textarea as Textarea2, atom, captureGatewayFileDownload as captureGatewayFileDownload2, host as host2, useValue } from "@hermes/plugin-sdk";
 
@@ -240,21 +240,6 @@ function installStyles(ctx, pluginId, pluginCss) {
   } catch (e) {
   }
   return release;
-}
-
-// ../hermes-ui-kit/src/helpers.js
-function describeError(error) {
-  const message = String(error && error.message || error || "");
-  const match = message.match(/(\d{3}):\s*([\s\S]*)$/);
-  if (!match) return { status: null, detail: message.trim() };
-  let detail = match[2].trim();
-  try {
-    const body = JSON.parse(detail);
-    if (body && body.detail !== void 0) detail = body.detail;
-  } catch (e) {
-  }
-  if (detail && typeof detail === "object") detail = detail.message || "Something went wrong.";
-  return { status: Number(match[1]), detail: String(detail || "") };
 }
 
 // ../hermes-ui-kit/src/primitives.js
@@ -885,7 +870,7 @@ function Canvas({ st, out, api: api2 }) {
   };
   const ask = (text) => {
     const slide = docSlide === null ? 0 : docSlide;
-    edit.start({ kind: "edit", action: "typed", label: "Your change", frame: cur }, ROUTES.elementEdit(out.id), { kit_id: proof.kit_id, slide, action: "typed", text });
+    edit.start({ kind: "edit", action: "typed", label: "Your change", frame: cur }, ROUTES.elementEdit(out.id), { kit_id: proof.kit_id, slide, action: "typed", text, on: ftype === "title" ? "title" : "" });
   };
   const keep = async (choice) => {
     try {
@@ -1530,7 +1515,7 @@ function Revise(p) {
         id: "ip-cv-compose",
         rows: 2,
         value: text,
-        placeholder: `Add the quote after slide ${Math.min(cur + 1, scenes.length)}`,
+        placeholder: "Change the title to: …",
         onChange: (e) => setText(e.target.value),
         onKeyDown: (e) => {
           if (e.key === "Enter" && !e.shiftKey) {
@@ -1589,8 +1574,11 @@ function JobView({ job, edit, chosen, setChosen, keep, discard, scene }) {
       h("div", { className: "ip-cv-row" }, r.status === "unchanged" ? h(Button2, { onClick: edit.retry }, "Retry") : null, h(Button2, { variant: "secondary", onClick: () => edit.setJob(null) }, "Close"))
     );
   }
-  const visual = job.action === "chart" || job.action === "insert" || job.action === "typed";
-  const before = r.before_tree || (visual ? scene : null);
+  const act = r.action && r.action !== "typed" ? r.action : job.action;
+  const adds = act === "insert" || act === "typed";
+  const retitle = act === "retitle";
+  const visual = act === "chart" || adds || retitle && opts.some((o) => o.tree);
+  const before = r.before_tree || (visual && !retitle ? scene : null);
   return h(
     "section",
     { className: "ip-cv-card-s", "aria-label": job.label },
@@ -1598,8 +1586,8 @@ function JobView({ job, edit, chosen, setChosen, keep, discard, scene }) {
     h(
       "div",
       { className: "ip-cv-now" },
-      h("p", { className: "ip-cv-lab-s" }, job.action === "insert" || job.action === "typed" ? `New slide after slide ${r.insert_after || ""}` : "Now"),
-      job.action === "insert" || job.action === "typed" ? null : visual && before ? h("div", { className: "ip-cv-mini" }, h(Art, { scene: before, width: MINI_W })) : h("p", { className: "ip-cv-now-t" }, headOf(r.before))
+      h("p", { className: "ip-cv-lab-s" }, adds ? `New slide after slide ${r.insert_after || ""}` : "Now"),
+      adds ? null : visual && before ? h("div", { className: "ip-cv-mini" }, h(Art, { scene: before, width: MINI_W })) : h("p", { className: "ip-cv-now-t" }, retitle ? r.before_text || headOf(r.before) : headOf(r.before))
     ),
     opts.map((o, i) => {
       const on = i === chosen;
@@ -1608,7 +1596,7 @@ function JobView({ job, edit, chosen, setChosen, keep, discard, scene }) {
         "div",
         { key: i, className: cls("ip-cv-opt", on && "is-on"), onClick: () => setChosen(i) },
         h("p", { className: "ip-cv-lab-s" }, opts.length > 1 ? `Option ${i + 1}` : "New"),
-        visual ? o.tree ? h("div", { className: "ip-cv-mini" }, h(Art, { scene: o.tree, width: MINI_W })) : h(Sketch, { sl: o.slide }) : h("p", { className: "ip-cv-opt-t" }, headOf(o.slide)),
+        visual ? o.tree ? h("div", { className: "ip-cv-mini" }, h(Art, { scene: o.tree, width: MINI_W })) : retitle ? h("p", { className: "ip-cv-opt-t" }, o.text) : h(Sketch, { sl: o.slide }) : h("p", { className: "ip-cv-opt-t" }, retitle ? o.text || headOf(o.slide) : headOf(o.slide)),
         o.check && o.check.label ? h("p", { className: cls("ip-cv-chk", ok ? "is-good" : "is-bad") }, h(Codicon3, { name: ok ? "pass" : "warning", size: "14px" }), o.check.label) : null,
         on ? h(Button2, { disabled: !ok, onClick: (e) => {
           e.stopPropagation();
@@ -2334,11 +2322,71 @@ var CSS = `
 import { useEffect as useEffect3, useRef as useRef3, useState as useState4 } from "react";
 import { jsx as jsx4, jsxs as jsxs4 } from "react/jsx-runtime";
 import { Button as Button3, Codicon as Codicon4, Textarea } from "@hermes/plugin-sdk";
+
+// desktop/src/errors.js
+var OFFLINE = "Imprint’s backend isn’t answering.";
+var OFFLINE_HELP = "Wait a moment and try again. If it keeps happening, restart Hermes.";
+var POLL_GAVE_UP = "Imprint’s backend stopped answering, so Imprint stopped checking on this. It may still finish: open Imprint again in a minute, or restart Hermes if it stays stuck.";
+var UNREACHABLE = /failed to fetch|load failed|networkerror|network error|network request failed|fetch failed|timed? ?out|timeout|aborted|aborterror|econnrefused|econnreset|bridge unavailable|starting up|still starting|not connected|socket hang up/i;
+function describe(error) {
+  const message = error && typeof error === "object" ? String(error.message || "") : String(error || "");
+  const m = message.match(/(\d{3}):\s*([\s\S]*)$/);
+  if (!m) return { status: null, detail: message.trim() };
+  let detail = m[2].trim();
+  try {
+    const body = JSON.parse(detail);
+    if (body && body.detail !== void 0) detail = body.detail;
+  } catch (e) {
+  }
+  if (detail && typeof detail === "object") detail = detail.message || "";
+  return { status: Number(m[1]), detail: String(detail || "").trim() };
+}
+function isUnreachable(error, read2 = describe) {
+  const { status, detail } = read2(error);
+  if (status === 502 || status === 503 || status === 504) return true;
+  if (status === 404 && /^not found\.?$/i.test(detail)) return true;
+  if (status) return false;
+  return !detail || UNREACHABLE.test(detail) || error && error.name === "AbortError";
+}
+function plainError(error, read2 = describe) {
+  if (isUnreachable(error, read2)) return OFFLINE;
+  const { detail } = read2(error);
+  const text = (detail || "Something went wrong.").replace(/\s+/g, " ").trim();
+  return /[.!?…:)”"']$/.test(text) ? text : `${text}.`;
+}
+var FIRST_MS = 400;
+var START_MS = 700;
+var MAX_MS = 2500;
+var MISS_MAX_MS = 8e3;
+var GIVE_UP_MS = 9e4;
+function pollClock({ now = () => Date.now(), start = START_MS, max = MAX_MS, missMax = MISS_MAX_MS, giveUp = GIVE_UP_MS } = {}) {
+  let delay = start;
+  let missDelay = start;
+  let missingSince = null;
+  return {
+    first: FIRST_MS,
+    ok() {
+      missingSince = null;
+      missDelay = start;
+      delay = Math.min(delay * 1.3, max);
+      return { delay, giveUp: false };
+    },
+    miss() {
+      const t = now();
+      if (missingSince === null) missingSince = t;
+      missDelay = Math.min(missDelay * 2, missMax);
+      return { delay: missDelay, giveUp: t - missingSince >= giveUp };
+    }
+  };
+}
+
+// desktop/src/designs.js
 var h2 = (t, p, ...k) => {
   const kids = k.flat().filter((x) => x !== null && x !== void 0 && x !== false);
   return kids.length > 1 ? jsxs4(t, { ...p || {}, children: kids }) : jsx4(t, { ...p || {}, children: kids[0] });
 };
 var cls2 = (...xs) => xs.filter(Boolean).join(" ");
+var fmtElapsed = (sec) => sec < 60 ? `${sec}s` : `${Math.floor(sec / 60)}m ${String(sec % 60).padStart(2, "0")}s`;
 var plural3 = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
 var STATUS_WORDS = {
   missing: "isn’t in your sources",
@@ -2356,13 +2404,28 @@ function DesignsRoom({ out, st, api: api2, job, onDesign, onTemplate }) {
   const [scope, setScope] = useState4("slide");
   const [exportOpen, setExportOpen] = useState4(false);
   const timer = useRef3(null);
+  const clock2 = useRef3(null);
+  const [lost, setLost] = useState4(false);
   const id = out.id;
   const kind = view2 && view2.kind || out.kind;
-  const load2 = async () => {
+  const load2 = async ({ quiet } = {}) => {
     try {
       setView(await api2.rest(`outputs/${id}/designs`));
+      clock2.current = null;
+      setLost(false);
     } catch (e) {
-      api2.toast(`${api2.errText(e)} Try again.`, "bad");
+      if (!quiet) {
+        api2.toast(`${api2.errText(e)} Try again.`, "bad");
+        return;
+      }
+      if (!clock2.current) clock2.current = pollClock();
+      const next = clock2.current.miss();
+      if (next.giveUp) {
+        clock2.current = null;
+        setLost(true);
+        return;
+      }
+      timer.current = setTimeout(() => load2({ quiet: true }), next.delay);
     }
   };
   useEffect3(() => {
@@ -2370,11 +2433,12 @@ function DesignsRoom({ out, st, api: api2, job, onDesign, onTemplate }) {
     return () => clearTimeout(timer.current);
   }, [id]);
   const working = !!job || !!apply || view2 && view2.building;
+  const noBrowser = !!(view2 && view2.browser && !view2.browser.ok);
   useEffect3(() => {
     clearTimeout(timer.current);
-    if (working) timer.current = setTimeout(load2, 2200);
+    if (working && !lost) timer.current = setTimeout(() => load2({ quiet: true }), 2200);
     return () => clearTimeout(timer.current);
-  }, [working, view2]);
+  }, [working, view2, lost]);
   useEffect3(() => {
     if (!job) load2();
   }, [job ? job.id : null]);
@@ -2456,10 +2520,10 @@ function DesignsRoom({ out, st, api: api2, job, onDesign, onTemplate }) {
       "header",
       { className: "ip-ds-head" },
       h2(Button3, { variant: "secondary", onClick: api2.close }, h2(Codicon4, { name: "arrow-left", size: "14px" }), "Back"),
-      h2("div", { className: "ip-ds-title" }, h2("strong", null, out.title || "Untitled"), h2("span", null, `Three designs of your ${KIND_WORD[kind] || "piece"}, same words, same numbers`)),
+      h2("div", { className: "ip-ds-title" }, h2("strong", null, out.title || "Untitled")),
       h2("div", { className: "ip-ds-grow" }),
       onTemplate ? h2(Button3, { variant: "secondary", onClick: onTemplate }, "Template version") : null,
-      h2(Button3, { variant: "secondary", disabled: !!working, onClick: onDesign }, h2(Codicon4, { name: "refresh", size: "14px" }), view2 && view2.made ? "Design again" : "Design three options"),
+      h2(Button3, { variant: "secondary", disabled: !!working || noBrowser, onClick: onDesign }, h2(Codicon4, { name: "refresh", size: "14px" }), view2 && view2.made ? "Design again" : "Design three options"),
       h2(
         "div",
         { className: cls2("ip-ds-export", exportWhy && "is-held") },
@@ -2482,11 +2546,22 @@ function DesignsRoom({ out, st, api: api2, job, onDesign, onTemplate }) {
     ),
     job ? h2("p", { className: "ip-ds-step", role: "status" }, h2("span", { className: "ip-ds-spin" }), job.step || "Starting the designs") : null,
     !view2 ? h2("p", { className: "ip-ds-empty" }, "Opening the designs") : null,
+    noBrowser ? h2("p", { className: "ip-ds-bad ip-ds-nobrowser", role: "alert" }, view2.browser.message) : null,
+    lost ? h2(
+      "p",
+      { className: "ip-ds-bad", role: "alert" },
+      POLL_GAVE_UP,
+      " ",
+      h2("button", { type: "button", className: "imp-linkish", onClick: () => {
+        setLost(false);
+        load2();
+      } }, "Check again")
+    ) : null,
     view2 && !view2.made && !working ? h2(
       "div",
       { className: "ip-ds-empty" },
       h2("p", null, "Imprint asks the model to lay this out three different ways, draws each one, looks at it, and fixes what is wrong. It takes a few minutes."),
-      h2(Button3, { onClick: onDesign }, "Design three options")
+      h2(Button3, { disabled: noBrowser, onClick: onDesign }, "Design three options")
     ) : null,
     h2("section", { className: "ip-ds-options", "aria-label": "The three designs" }, opts.map((o) => h2(
       "article",
@@ -2503,8 +2578,7 @@ function DesignsRoom({ out, st, api: api2, job, onDesign, onTemplate }) {
           o.problems.length ? ` · ${plural3(o.problems.length, "layout problem")}` : ""
         ) : null
       ),
-      h2("p", { className: "ip-ds-blurb" }, o.blurb),
-      o.status === "writing" ? h2("p", { className: "ip-ds-work" }, h2("span", { className: "ip-ds-spin" }), o.step ? `${o.step}` : "Waiting") : null,
+      o.status === "writing" ? h2("p", { className: "ip-ds-work" }, h2("span", { className: "ip-ds-spin" }), (o.step ? `${o.step}` : "Waiting") + (o.elapsed ? ` · ${fmtElapsed(o.elapsed)}` : "")) : null,
       o.status === "failed" ? h2("p", { className: "ip-ds-bad" }, o.error || "This design did not come back.") : null,
       o.status === "ready" ? h2("div", { className: cls2("ip-ds-thumbs", kind !== "deck" && "is-single") }, o.thumbs.map((t, i) => t ? h2(
         "button",
@@ -2666,22 +2740,22 @@ var CSS2 = `
 .ip-ds-opt{display:grid;gap:8px;align-content:start;padding:12px;background:var(--hk-surface);border:1px solid var(--hk-stroke);border-radius:var(--imp-r,2px);min-width:0}
 .ip-ds-opt.is-used{border-color:var(--hk-accent)}
 .ip-ds-opt-head{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}.ip-ds-opt-head strong{font-size:14px}
-.ip-ds-meta{font-size:12px;opacity:.78}.ip-ds-blurb{font-size:12.5px;line-height:1.45;opacity:.85}
+.ip-ds-meta{font-size:12px;opacity:.78}
 .ip-ds-work{display:flex;gap:8px;align-items:center;font-size:12.5px}.ip-ds-bad{font-size:12.5px;color:var(--hk-danger,#b3261e)}.ip-ds-good{color:var(--hk-success,#1e7a46);opacity:1}
 .ip-ds-thumbs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;max-height:46vh;overflow:auto;padding:2px}
 .ip-ds-thumbs.is-single{grid-template-columns:1fr;max-height:none}
-.ip-ds-thumb{all:unset;cursor:pointer;position:relative;display:block;border:1px solid var(--hk-stroke);background:#fff;line-height:0}
+.ip-ds-thumb{all:unset;cursor:pointer;position:relative;display:flex;flex-direction:column;border:1px solid var(--hk-stroke);background:#fff;line-height:0}
 .ip-ds-thumb img{width:100%;height:auto;display:block}
 .ip-ds-thumb:hover{border-color:var(--hk-stroke-strong,var(--hk-ink))}.ip-ds-thumb:focus-visible{outline:2px solid var(--hk-accent);outline-offset:2px}
 .ip-ds-thumb.is-in{outline:2px solid var(--hk-accent);outline-offset:-2px}
-.ip-ds-n{position:absolute;left:4px;top:4px;line-height:1;font-size:12px;font-weight:600;padding:2px 5px;background:rgba(0,0,0,.66);color:#fff}
-.ip-ds-tick{position:absolute;right:4px;top:4px;line-height:1;padding:3px;background:var(--hk-accent);color:#fff;display:grid;place-items:center}
+.ip-ds-n{position:static;display:block;align-self:stretch;min-height:22px;line-height:22px;font-size:12px;font-weight:600;padding:0 8px;background:var(--hk-surface);color:var(--hk-ink);border-top:1px solid var(--hk-stroke)}
+.ip-ds-tick{position:absolute;right:4px;bottom:3px;line-height:1;padding:3px;background:var(--hk-accent);color:#fff;display:grid;place-items:center}
 .ip-ds-mine{display:grid;gap:10px;padding:0 18px}
 .ip-ds-mine-head{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
 .ip-ds-strip{display:flex;gap:8px;overflow:auto;padding:4px 2px}
-.ip-ds-mini{all:unset;cursor:pointer;position:relative;flex:none;width:150px;border:1px solid var(--hk-stroke);background:#fff;line-height:0}
-.ip-ds-mini img{width:100%;display:block}.ip-ds-mini.is-on{outline:2px solid var(--hk-accent);outline-offset:1px}.ip-ds-mini:focus-visible{outline:2px solid var(--hk-accent);outline-offset:2px}
-.ip-ds-from{position:absolute;left:0;right:0;bottom:0;line-height:1.2;font-size:12px;padding:2px 5px;background:rgba(0,0,0,.6);color:#fff}
+.ip-ds-mini{all:unset;cursor:pointer;position:relative;flex:none;width:150px;border:1px solid var(--hk-stroke);background:#fff;line-height:0;display:flex;flex-wrap:wrap;align-items:center}
+.ip-ds-mini img{flex:0 0 100%;width:100%;display:block}.ip-ds-mini .ip-ds-n{flex:0 0 auto;align-self:auto;border-top:1px solid var(--hk-stroke)}.ip-ds-mini.is-on{outline:2px solid var(--hk-accent);outline-offset:1px}.ip-ds-mini:focus-visible{outline:2px solid var(--hk-accent);outline-offset:2px}
+.ip-ds-from{position:static;flex:1 1 0;min-width:0;min-height:22px;line-height:22px;font-size:12px;padding:0 6px;text-align:right;background:var(--hk-surface);color:var(--hk-ink);border-top:1px solid var(--hk-stroke);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 .ip-ds-work-area{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(260px,1fr);gap:16px;align-items:start}
 .ip-ds-big{margin:0;border:1px solid var(--hk-stroke);background:#fff;min-height:160px;display:grid;line-height:0;position:relative}
 .ip-ds-big img{width:100%;height:auto;display:block}.ip-ds-big .ip-ds-empty{line-height:1.4;padding:24px;margin:0}
@@ -2700,6 +2774,225 @@ var CSS2 = `
 @media (max-width: 1100px){.ip-ds-work-area{grid-template-columns:1fr}.ip-ds-options{grid-template-columns:1fr}}
 `;
 
+// desktop/src/firstpaint.js
+var CACHE_KEY = "firstPaint";
+var CACHE_VERSION = 1;
+var CACHE_MAX = 4e5;
+var STATE_KEYS = [
+  "sources",
+  "kits",
+  "outputs",
+  "sample",
+  "previews",
+  "prefs",
+  "usage",
+  "deps",
+  "storage",
+  "layouts",
+  "kinds",
+  "ready_kinds",
+  "fonts",
+  "today",
+  "proof_css",
+  "notes",
+  "deck_systems"
+];
+var REQUIRED = { sources: "array", kits: "array", outputs: "array", notes: "array", proof_css: "string", sample: "object", previews: "object", prefs: "object" };
+var SECRET_KEY = /^(api[_-]?keys?|apikey|secrets?|client[_-]?secret|password|passwd|pass|token|tokens|access[_-]?token|refresh[_-]?token|id[_-]?token|auth|authorization|cookies?|credentials?|bearer|session[_-]?token|private[_-]?key)$/i;
+var SECRET_VALUE = /^(?:bearer\s+\S{8,}|(?:sk|pk|rk|xox[abpr]|ghp|gho|github_pat|glpat|hf|AKIA)[-_][A-Za-z0-9_-]{12,}|eyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,})$/i;
+var isImage = (v) => typeof v === "string" && v.startsWith("data:image/");
+var kindOf = (v) => Array.isArray(v) ? "array" : v === null ? "null" : typeof v;
+function scrub(v, depth = 0) {
+  if (depth > 40) return void 0;
+  if (typeof v === "string") return SECRET_VALUE.test(v.trim()) ? void 0 : v;
+  if (Array.isArray(v)) return v.map((x) => scrub(x, depth + 1)).filter((x) => x !== void 0);
+  if (v && typeof v === "object") {
+    const out = {};
+    for (const [k, x] of Object.entries(v)) {
+      if (SECRET_KEY.test(k)) continue;
+      const y = scrub(x, depth + 1);
+      if (y !== void 0) out[k] = y;
+    }
+    return out;
+  }
+  return typeof v === "function" ? void 0 : v;
+}
+function coreOf(st) {
+  const core = {};
+  for (const k of STATE_KEYS) if (k in st) core[k] = st[k];
+  core.jobs = [];
+  core.outputs = (st.outputs || []).filter((o) => o && !o.building).map((o) => {
+    const { thumb, ...rest2 } = o;
+    return rest2;
+  });
+  const pv = {};
+  for (const [k, p] of Object.entries(st.previews || {})) {
+    if (p && typeof p === "object") {
+      const { img, ...rest2 } = p;
+      pv[k] = rest2;
+    }
+  }
+  core.previews = pv;
+  return core;
+}
+function picturesOf(st) {
+  const list = [];
+  const made = (st.outputs || []).filter((o) => o && !o.building);
+  if (!made.length) {
+    for (const [k, p] of Object.entries(st.previews || {})) if (p && isImage(p.img)) list.push({ at: ["previews", k, "img"], img: p.img });
+  }
+  for (const o of made) if (isImage(o.thumb)) list.push({ at: ["outputs", o.id, "thumb"], img: o.thumb });
+  return list;
+}
+function put(state, at, img) {
+  if (at[0] === "previews") {
+    if (state.previews[at[1]]) state.previews[at[1]].img = img;
+    return;
+  }
+  const o = state.outputs.find((x) => x.id === at[1]);
+  if (o) o.thumb = img;
+}
+function pack({ state, chats, guide }, { max = CACHE_MAX, now = Date.now() } = {}) {
+  if (!validState(state)) return null;
+  const rec = { v: CACHE_VERSION, at: now, state: scrub(coreOf(state)) };
+  let size = JSON.stringify(rec).length;
+  if (size > max) return null;
+  for (const [k, v] of [["guide", guide], ["chats", chats]]) {
+    if (v === void 0 || k === "chats" && !Array.isArray(v)) continue;
+    const clean = scrub(v);
+    const n = JSON.stringify(clean === void 0 ? null : clean).length + k.length + 4;
+    if (size + n <= max) {
+      rec[k] = clean === void 0 ? null : clean;
+      size += n;
+    }
+  }
+  for (const p of picturesOf(state)) {
+    if (SECRET_VALUE.test(p.img)) continue;
+    const n = p.img.length + 16;
+    if (size + n > max) continue;
+    put(rec.state, p.at, p.img);
+    size += n;
+  }
+  const s = JSON.stringify(rec);
+  return s.length <= max ? s : null;
+}
+function validState(st) {
+  if (!st || typeof st !== "object" || Array.isArray(st)) return false;
+  for (const [k, t] of Object.entries(REQUIRED)) if (kindOf(st[k]) !== t) return false;
+  return st.kits.length > 0;
+}
+function unpack(raw, { max = CACHE_MAX } = {}) {
+  let rec = raw;
+  try {
+    if (typeof raw === "string") {
+      if (raw.length > max) return null;
+      rec = JSON.parse(raw);
+    }
+  } catch (e) {
+    return null;
+  }
+  if (!rec || typeof rec !== "object" || rec.v !== CACHE_VERSION || !validState(rec.state)) return null;
+  for (const k of STATE_KEYS) if (!(k in rec.state)) return null;
+  const out = { at: rec.at, state: rec.state };
+  if (Array.isArray(rec.chats)) out.chats = rec.chats;
+  if ("guide" in rec && (rec.guide === null || typeof rec.guide === "object" && !Array.isArray(rec.guide))) out.guide = rec.guide;
+  return out;
+}
+function readRaw(storage) {
+  try {
+    if (!storage || typeof storage.get !== "function") return null;
+    const v = storage.get(CACHE_KEY, null);
+    return v && typeof v.then === "function" ? null : v;
+  } catch (e) {
+    return null;
+  }
+}
+function writeRaw(storage, v) {
+  try {
+    if (!storage) return;
+    if (v === null) {
+      if (typeof storage.remove === "function") storage.remove(CACHE_KEY);
+      else if (typeof storage.set === "function") storage.set(CACHE_KEY, null);
+    } else if (typeof storage.set === "function") storage.set(CACHE_KEY, v);
+  } catch (e) {
+  }
+}
+function createFirstPaint({ storage, read: read2, onStale, delay = 800, timers = globalThis } = {}) {
+  const stale = /* @__PURE__ */ new Set();
+  let timer = null;
+  let last;
+  let told = false;
+  const tell = () => {
+    const now = stale.size > 0;
+    if (now === told) return;
+    told = now;
+    try {
+      onStale && onStale(now);
+    } catch (e) {
+    }
+  };
+  const fp2 = {
+    hydrate() {
+      const rec = unpack(readRaw(storage));
+      if (!rec) return null;
+      stale.add("state");
+      if ("chats" in rec) stale.add("chats");
+      if ("guide" in rec) stale.add("guide");
+      tell();
+      return rec;
+    },
+    isStale: (piece) => piece ? stale.has(piece) : stale.size > 0,
+    fresh(piece) {
+      if (!stale.delete(piece)) {
+        fp2.schedule();
+        return;
+      }
+      tell();
+      fp2.schedule();
+    },
+    // A copy that failed to draw is dropped, and the page waits for the real answers as on a first open.
+    discard() {
+      stale.clear();
+      tell();
+      if (timer) {
+        timers.clearTimeout(timer);
+        timer = null;
+      }
+      last = null;
+      writeRaw(storage, null);
+      return true;
+    },
+    schedule() {
+      if (stale.has("state")) return;
+      if (timer) timers.clearTimeout(timer);
+      timer = timers.setTimeout(() => {
+        timer = null;
+        fp2.flush();
+      }, delay);
+    },
+    flush() {
+      if (timer) {
+        timers.clearTimeout(timer);
+        timer = null;
+      }
+      if (stale.has("state") || typeof read2 !== "function") return;
+      const now = read2() || {};
+      if (!now.state) return;
+      const live = { state: now.state, chats: stale.has("chats") ? void 0 : now.chats === null ? void 0 : now.chats, guide: stale.has("guide") ? void 0 : now.guide };
+      const s = pack(live);
+      if (s === last) return;
+      last = s;
+      writeRaw(storage, s);
+    },
+    dispose() {
+      fp2.flush();
+      if (timer) timers.clearTimeout(timer);
+      timer = null;
+    }
+  };
+  return fp2;
+}
+
 // desktop/src/plugin.js
 var PLUGIN_ID = "imprint";
 var ROUTE = "/imprint";
@@ -2714,12 +3007,14 @@ var $designJob = atom(null);
 var $designsOn = atom(false);
 var DESIGN_KINDS = ["deck", "onepager", "visual"];
 var $toast = atom(null);
+var $stale = atom(false);
+var fp = null;
 var h3 = (t, p, ...k) => {
   const kids = k.flat().filter((x) => x !== null && x !== void 0 && x !== false);
   return kids.length > 1 ? jsxs5(t, { ...p || {}, children: kids }) : jsx5(t, { ...p || {}, children: kids[0] });
 };
 var cls3 = (...xs) => xs.filter(Boolean).join(" ");
-var errText = (e) => describeError(e).detail || "Something went wrong. Try again.";
+var errText = (e) => plainError(e);
 var plural4 = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
 function bytes(n) {
   if (n < 1024) return `${n} B`;
@@ -2764,14 +3059,41 @@ function rest(path, options) {
 }
 var post = (path, body) => rest(path, { method: "POST", body: body || {} });
 var del = (path) => rest(path, { method: "DELETE" });
-async function load() {
+function applyKit(st) {
+  const prefs = st.prefs || {};
+  if (prefs.kit && st.kits.some((k) => k.id === prefs.kit)) $kit.set(prefs.kit);
+  else if (!st.kits.some((k) => k.id === $kit.get()) && st.kits.length) $kit.set(st.kits[0].id);
+}
+var hydrated = false;
+function hydrate() {
+  if (hydrated) return;
+  hydrated = true;
+  if ($state.get() || !fp) return;
+  const rec = fp.hydrate();
+  if (!rec) return;
+  $state.set(rec.state);
+  applyKit(rec.state);
+  if ("chats" in rec && $chats.get() === null) $chats.set(rec.chats);
+  if ("guide" in rec && $guide.get() === void 0) $guide.set(rec.guide);
+}
+var loading = null;
+var loaded = false;
+function load() {
+  if (!loading) loading = loadNow().finally(() => {
+    loading = null;
+  });
+  return loading;
+}
+async function loadNow() {
+  if ($chats.get() === null || fp && fp.isStale("chats")) ensureChats();
+  if ($guide.get() === void 0 || fp && fp.isStale("guide")) ensureGuide();
   try {
     const st = await rest("state");
     $state.set(st);
     $loadError.set(null);
-    const prefs = st.prefs || {};
-    if (prefs.kit && st.kits.some((k) => k.id === prefs.kit)) $kit.set(prefs.kit);
-    else if (!st.kits.some((k) => k.id === $kit.get()) && st.kits.length) $kit.set(st.kits[0].id);
+    loaded = true;
+    applyKit(st);
+    if (fp) fp.fresh("state");
     for (const j of st.jobs || []) {
       if (j.kind === "make") trackMake(j);
       if (j.kind === "designs" && j.status === "running" && !$designJob.get()) trackDesigns(j, (j.params || {}).output_id);
@@ -2784,6 +3106,7 @@ async function load() {
 async function refresh() {
   try {
     $state.set(await rest("state"));
+    if (fp) fp.schedule();
   } catch (e) {
   }
 }
@@ -2792,11 +3115,14 @@ var poke = () => {
 };
 function pollJob(job, onDone, onFail, onStep) {
   let stopped = false;
-  let delay = 700;
+  let last = job;
+  const clock2 = pollClock();
   const tick = async () => {
     if (stopped) return;
+    let next;
     try {
       const j = await rest(`jobs/${job.id}`);
+      last = j;
       if (j.status === "done") {
         stopped = true;
         pollers.delete(job.id);
@@ -2810,12 +3136,19 @@ function pollJob(job, onDone, onFail, onStep) {
         return;
       }
       onStep && onStep(j);
+      next = clock2.ok();
     } catch (e) {
+      next = clock2.miss();
+      if (next.giveUp) {
+        stopped = true;
+        pollers.delete(job.id);
+        onFail && onFail({ ...last || job, status: "failed", lost: true, error: POLL_GAVE_UP });
+        return;
+      }
     }
-    delay = Math.min(delay * 1.3, 2500);
-    pollers.set(job.id, setTimeout(tick, delay));
+    pollers.set(job.id, setTimeout(tick, next.delay));
   };
-  pollers.set(job.id, setTimeout(tick, 400));
+  pollers.set(job.id, setTimeout(tick, clock2.first));
   poke = () => {
     for (const [id, t] of pollers) {
       clearTimeout(t);
@@ -2881,14 +3214,20 @@ async function upload(path, file) {
   }
 }
 function ImprintPage() {
+  hydrate();
   const st = useValue($state);
   const loadError = useValue($loadError);
   const tab = useValue($tab);
   const t = useValue($toast);
+  const stale = useValue($stale);
+  const root = useRef4(null);
   useEffect4(() => {
-    if (!st) load();
+    if (!loaded) load();
   }, []);
-  if (loadError && !st) {
+  useLayoutEffect2(() => {
+    if (root.current) root.current.inert = !!stale;
+  }, [stale, !!st]);
+  if (loadError && (!st || fp && fp.isStale("state"))) {
     return h3("div", { className: "hk imp" }, h3(
       "div",
       { className: "imp-center" },
@@ -2897,6 +3236,7 @@ function ImprintPage() {
         { className: "imp-notice", "data-tone": "bad" },
         h3("h2", { className: "imp-h2" }, "Imprint could not start"),
         h3("p", null, errText(loadError)),
+        isUnreachable(loadError) ? h3("p", null, OFFLINE_HELP) : null,
         h3(Button4, { onClick: () => {
           $loadError.set(null);
           load();
@@ -2907,13 +3247,38 @@ function ImprintPage() {
   if (!st) return h3("div", { className: "hk imp" }, h3("div", { className: "imp-center" }, h3("p", { className: "imp-wait" }, h3("span", { className: "imp-spin" }), "Opening Imprint")));
   return h3(
     "div",
-    { className: "hk imp" },
+    { className: "hk imp", ref: root, "aria-busy": stale ? "true" : void 0 },
     h3("style", null, st.proof_css),
-    h3(TopBar, { st, tab }),
-    tab === "kits" ? h3(KitsTab, { st }) : tab === "storage" ? h3(StorageTab, { st }) : h3(NotebookTab, { st }),
+    h3(
+      CopyGuard,
+      { stale },
+      h3(TopBar, { st, tab }),
+      tab === "kits" ? h3(KitsTab, { st }) : tab === "storage" ? h3(StorageTab, { st }) : h3(NotebookTab, { st })
+    ),
     t ? h3(Toast, { t }) : null
   );
 }
+var CopyGuard = class extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: null };
+  }
+  static getDerivedStateFromError(error) {
+    return { error };
+  }
+  componentDidCatch() {
+    if (!this.props.stale || !fp) return;
+    fp.discard();
+    $chats.set(null);
+    $guide.set(void 0);
+    $state.set(null);
+    this.setState({ error: null });
+  }
+  render() {
+    if (this.state.error && !this.props.stale) throw this.state.error;
+    return this.state.error ? null : this.props.children;
+  }
+};
 function TopBar({ st, tab }) {
   return h3(
     "header",
@@ -2930,8 +3295,17 @@ function TopBar({ st, tab }) {
       h3("span", { className: "imp-tag" }, st.sample && st.sample.label || "Sample"),
       st.sample && st.sample.name || "Sample notebook",
       h3(Button4, { size: "sm", variant: "secondary", className: "imp-quiet", onClick: closeSample }, "Close the sample")
-    ) : null
+    ) : null,
+    // The manual on linchpin.studio, in the user's own browser (Nov 11: no plugin linked its manual).
+    h3(Button4, { size: "sm", variant: "ghost", title: "Open the manual in your browser", onClick: openManual }, "Manual")
   );
+}
+var MANUAL_URL = "https://linchpin.studio/hermes/imprint/manual/";
+function openManual() {
+  try {
+    if (api && api.os && typeof api.os.openExternal === "function") api.os.openExternal(MANUAL_URL);
+  } catch (e) {
+  }
 }
 function Working({ step }) {
   return h3("div", { className: "imp-working", role: "status" }, h3("span", { className: "imp-spin" }), step);
@@ -3748,6 +4122,7 @@ async function loadChats() {
   } catch (e) {
     $chats.set([]);
   }
+  if (fp) fp.fresh("chats");
 }
 async function loadGuide() {
   try {
@@ -3756,6 +4131,21 @@ async function loadGuide() {
   } catch (e) {
     $guide.set(null);
   }
+  if (fp) fp.fresh("guide");
+}
+var chatsReq = null;
+var guideReq = null;
+function ensureChats() {
+  if (!chatsReq) chatsReq = loadChats().finally(() => {
+    chatsReq = null;
+  });
+  return chatsReq;
+}
+function ensureGuide() {
+  if (!guideReq) guideReq = loadGuide().finally(() => {
+    guideReq = null;
+  });
+  return guideReq;
 }
 function writeGuide(ids) {
   $guideJob.set({ status: "running", step: `Reading ${plural4(ids.length, "source")}`, steps: [{ text: `Reading ${plural4(ids.length, "source")}`, at: Date.now() / 1e3 }], created_at: Date.now() / 1e3 });
@@ -3925,8 +4315,8 @@ function NotebookTab({ st }) {
   const rail = useValue($rail);
   const gf = useValue($graphicFor);
   useEffect4(() => {
-    if ($chats.get() === null) loadChats();
-    if ($guide.get() === void 0) loadGuide();
+    if ($chats.get() === null) ensureChats();
+    if ($guide.get() === void 0) ensureGuide();
   }, []);
   const viewing = useValue($viewing);
   const out = useValue($output);
@@ -4083,17 +4473,16 @@ function FirstOpen({ st }) {
     h3(
       "div",
       { className: "imp-first-inner" },
-      h3("h1", { className: "imp-first-lead" }, "Ask questions of your documents, then make a deck, one-pager, graphic or audio brief in your brand. Every number is checked against your sources."),
+      h3("h1", { className: "imp-first-lead" }, "Ask questions of your documents, then make a deck, one-pager, graphic or audio brief in your brand."),
       pic ? h3(
         "figure",
         { className: "imp-first-pic" },
-        h3("img", { src: pic.img, width: pic.w, height: pic.h, alt: `A slide from the sample deck in the ${pic.kit_name || "sample"} brand`, draggable: false }),
-        h3("figcaption", null, "Every number links to the sentence it came from.")
+        h3("img", { src: pic.img, width: pic.w, height: pic.h, alt: `A slide from the sample deck in the ${pic.kit_name || "sample"} brand`, draggable: false })
       ) : null,
       h3(
         "div",
         { className: "imp-first-acts" },
-        h3(Button4, { onClick: go, loading: busy, disabled: busy || sample.available === false }, "Open the sample"),
+        h3(Button4, { onClick: go, loading: busy, disabled: busy || sample.available === false }, busy ? "Opening the sample" : "Open the sample"),
         h3(Button4, { variant: "secondary", onClick: addFiles }, "Start with your own files")
       ),
       err ? h3("p", { className: "imp-error", role: "alert" }, err) : null,
@@ -4500,11 +4889,12 @@ function ReadingCard({ st, ns }) {
 function GuideBlock({ st, ask, credit = true }) {
   const guide = useValue($guide);
   const gjob = useValue($guideJob);
+  const copy = useValue($stale);
   const on = included(st);
   const ids = on.map((s) => s.id);
   useEffect4(() => {
-    if (guide === null && !gjob && ids.length && !isSample(st)) writeGuide(ids);
-  }, [guide === null, ids.join(",")]);
+    if (guide === null && !gjob && ids.length && !isSample(st) && !copy) writeGuide(ids);
+  }, [guide === null, ids.join(","), copy]);
   if (!ids.length) return h3("div", { className: "imp-gd-empty" }, (st.sources || []).length ? "No source is ticked. Tick one on the left to read it here." : "Add a source on the left.");
   if (gjob && gjob.status !== "done") {
     if (gjob.status === "failed") return h3("div", { className: "imp-failed", role: "alert" }, h3("p", null, gjob.error || "The guide didn’t finish."), h3("div", { className: "imp-row" }, h3(Button4, { size: "sm", variant: "secondary", onClick: () => writeGuide(ids) }, "Retry")));
@@ -5493,6 +5883,18 @@ function Viewer({ st, id }) {
       if (typeof window !== "undefined") window.removeEventListener("keydown", onKey);
     };
   }, []);
+  useEffect4(() => {
+    if (typeof document === "undefined") return;
+    const head = document.querySelector(".imp-viewer-head");
+    const box = head && head.closest(".imp-viewer");
+    if (!head || !box) return;
+    const set = () => box.style.setProperty("--imp-head-h", `${Math.ceil(head.getBoundingClientRect().height)}px`);
+    set();
+    if (typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver(set);
+    ro.observe(head);
+    return () => ro.disconnect();
+  });
   if (!out || out.id !== id) return h3("div", { className: "imp-viewer" }, h3(Working, { step: "Opening" }));
   const proof = out.proofs[0];
   const k = KIND_OF[out.kind] || KIND_OF.onepager;
@@ -5686,7 +6088,7 @@ function KitProof({ k, sample }) {
           textTransform: k.head_case === "upper" ? "uppercase" : "none"
         } }, sample),
         h3("span", { className: "imp-kp-rule", style: { background: k.accent } }),
-        h3("p", { className: "imp-kp-body", style: { fontFamily: k.body_css } }, k.subject || "Your sources, set in this kit.")
+        h3("p", { className: "imp-kp-body", style: { fontFamily: k.body_css } }, k.subject || "Your sources, set in this brand.")
       )
     ),
     h3(ColorBar, { bar: k.bar }),
@@ -5805,7 +6207,7 @@ function SiteReader() {
     "div",
     { className: "imp-panel" },
     h3("h3", { className: "imp-h3" }, "Build from a website"),
-    h3("p", null, "Colors and fonts come from the site’s own stylesheets. Nothing is saved until you press Save kit."),
+    h3("p", null, "Colors and fonts come from the site’s own stylesheets. Nothing is saved until you press Save the brand."),
     h3(
       "div",
       { className: "imp-row" },
@@ -6797,6 +7199,7 @@ var CSS3 = `
 .imp [data-slot=button]{border-radius:var(--imp-r)}
 .imp [data-slot=button][data-size=sm],.imp-top [aria-pressed]{font-size:12px}
 .imp-center{display:grid;place-items:center;height:100%;padding:24px}
+.imp[aria-busy="true"]{cursor:progress}
 .imp-h2{font-size:15px;font-weight:600;margin:0}
 .imp-h3{font-size:13px;font-weight:600;margin:0}
 .imp p{margin:0}
@@ -7343,8 +7746,9 @@ var CSS3 = `
 .imp-viewer-title{display:grid;flex:1;min-width:180px}
 .imp-viewer-title strong{font-size:14px}
 .imp-viewer-title span{font-size:12px}
-.imp-player{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:14px;align-items:center;padding:12px 16px;background:var(--imp-solid);border:1px solid var(--hk-stroke);border-radius:var(--imp-r);box-shadow:0 8px 24px -16px rgba(0,0,0,.35);position:sticky;top:64px;z-index:2}
-.imp-player.is-off{grid-template-columns:auto minmax(0,1fr) auto;box-shadow:none;position:static}
+.imp-player{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:14px;align-items:center;padding:12px 16px;background:var(--imp-solid);border:1px solid var(--hk-stroke);border-radius:var(--imp-r);box-shadow:0 8px 24px -16px rgba(0,0,0,.35);position:sticky;top:calc(var(--imp-head-h,64px) + 8px);z-index:2}
+.imp-player.is-off{grid-template-columns:auto minmax(0,1fr) auto;box-shadow:none;position:relative;top:auto;z-index:auto;margin:0 0 4px}
+.imp-player+.imp-proof{position:relative;z-index:0;margin-top:0}
 .imp-player audio{display:none}
 .imp-play{all:unset;cursor:pointer;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--hk-accent);color:#fff}
 .imp-play:disabled{background:var(--hk-sunken);color:var(--hk-ink);cursor:default}
@@ -7411,6 +7815,8 @@ var plugin_default = {
   name: "Imprint",
   register(ctx) {
     api = ctx;
+    fp = createFirstPaint({ storage: ctx.storage, read: () => ({ state: $state.get(), chats: $chats.get(), guide: $guide.get() }), onStale: (v) => $stale.set(v) });
+    const offs = [$state, $chats, $guide].map((a) => typeof a.listen === "function" ? a.listen(() => fp && fp.schedule()) : null);
     registerPage(ctx, {
       id: PLUGIN_ID,
       route: ROUTE,
@@ -7432,6 +7838,8 @@ var plugin_default = {
     } catch (e) {
     }
     ctx.onDispose(() => {
+      if (fp) fp.dispose();
+      for (const off of offs) if (typeof off === "function") off();
       api = null;
       for (const t of pollers.values()) clearTimeout(t);
       pollers.clear();

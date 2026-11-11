@@ -1,0 +1,16 @@
+html,body{background:#fff;color:#444;font-family:Georgia,serif}
+h1,h2,h3{color:#3776ab;font-family:Roboto,Arial,sans-serif}
+.top-bar{background:#2b5b84;color:#fff}
+.top-bar .logo{color:#ffd43b}
+.brand-mark{color:#ffd43b;background:#3776ab}
+.site-header{background:#3776ab;color:#fff;border-bottom:4px solid #ffd43b}
+.main-navigation a{color:#fff}
+.main-navigation a:hover{color:#ffd43b}
+.introduction{background:#f5f7fa}
+.introduction h1 em{color:#ffd43b}
+a{color:#3776ab}
+.site-footer{background:#2b5b84;color:#fff}
+.button{background:#ffd43b;color:#1e2a35}
+.button:hover{background:#e6bd2f}
+.error{color:#c0392b}
+.alert{background:#c0392b;color:#fff}

@@ -481,7 +481,7 @@ export function Canvas({ st, out, api }) {
   }
   const ask = text => {
     const slide = docSlide === null ? 0 : docSlide
-    edit.start({ kind: 'edit', action: 'typed', label: 'Your change', frame: cur }, ROUTES.elementEdit(out.id), { kit_id: proof.kit_id, slide, action: 'typed', text })
+    edit.start({ kind: 'edit', action: 'typed', label: 'Your change', frame: cur }, ROUTES.elementEdit(out.id), { kit_id: proof.kit_id, slide, action: 'typed', text, on: ftype === 'title' ? 'title' : '' })
   }
   const keep = async choice => {
     try {
@@ -807,7 +807,7 @@ function Revise(p) {
     showJob ? h(JobView, { job, edit, chosen, setChosen, keep, discard, scene }) : null,
     h('section', { className: 'ip-cv-compose' },
       h('label', { className: 'ip-cv-lab', htmlFor: 'ip-cv-compose' }, 'Ask for a change'),
-      h('textarea', { id: 'ip-cv-compose', rows: 2, value: text, placeholder: `Add the quote after slide ${Math.min(cur + 1, scenes.length)}`, onChange: e => setText(e.target.value),
+      h('textarea', { id: 'ip-cv-compose', rows: 2, value: text, placeholder: 'Change the title to: …', onChange: e => setText(e.target.value),
         onKeyDown: e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send() } } }),
       h(Button, { variant: 'secondary', disabled: !text.trim() || (job && job.status === 'running'), onClick: send }, 'Send')))
 }
@@ -843,18 +843,22 @@ function JobView({ job, edit, chosen, setChosen, keep, discard, scene }) {
     return h('section', { className: 'ip-cv-card-s' }, head, h('p', null, r.message || 'Nothing new passed the check against your sources, so the slide stays as it is.'),
       h('div', { className: 'ip-cv-row' }, r.status === 'unchanged' ? h(Button, { onClick: edit.retry }, 'Retry') : null, h(Button, { variant: 'secondary', onClick: () => edit.setJob(null) }, 'Close')))
   }
-  const visual = job.action === 'chart' || job.action === 'insert' || job.action === 'typed'
-  const before = r.before_tree || (visual ? scene : null)
+  // A typed line becomes what the backend read it as: a new slide ("insert") or the person's own words for a title ("retitle").
+  const act = r.action && r.action !== 'typed' ? r.action : job.action
+  const adds = act === 'insert' || act === 'typed'
+  const retitle = act === 'retitle'
+  const visual = act === 'chart' || adds || (retitle && opts.some(o => o.tree))
+  const before = r.before_tree || (visual && !retitle ? scene : null)
   return h('section', { className: 'ip-cv-card-s', 'aria-label': job.label }, head,
-    h('div', { className: 'ip-cv-now' }, h('p', { className: 'ip-cv-lab-s' }, job.action === 'insert' || job.action === 'typed' ? `New slide after slide ${r.insert_after || ''}` : 'Now'),
-      job.action === 'insert' || job.action === 'typed' ? null
-        : visual && before ? h('div', { className: 'ip-cv-mini' }, h(Art, { scene: before, width: MINI_W })) : h('p', { className: 'ip-cv-now-t' }, headOf(r.before))),
+    h('div', { className: 'ip-cv-now' }, h('p', { className: 'ip-cv-lab-s' }, adds ? `New slide after slide ${r.insert_after || ''}` : 'Now'),
+      adds ? null
+        : visual && before ? h('div', { className: 'ip-cv-mini' }, h(Art, { scene: before, width: MINI_W })) : h('p', { className: 'ip-cv-now-t' }, retitle ? r.before_text || headOf(r.before) : headOf(r.before))),
     opts.map((o, i) => {
       const on = i === chosen
       const ok = !o.check || o.check.status === 'ok'
       return h('div', { key: i, className: cls('ip-cv-opt', on && 'is-on'), onClick: () => setChosen(i) },
         h('p', { className: 'ip-cv-lab-s' }, opts.length > 1 ? `Option ${i + 1}` : 'New'),
-        visual ? (o.tree ? h('div', { className: 'ip-cv-mini' }, h(Art, { scene: o.tree, width: MINI_W })) : h(Sketch, { sl: o.slide })) : h('p', { className: 'ip-cv-opt-t' }, headOf(o.slide)),
+        visual ? (o.tree ? h('div', { className: 'ip-cv-mini' }, h(Art, { scene: o.tree, width: MINI_W })) : retitle ? h('p', { className: 'ip-cv-opt-t' }, o.text) : h(Sketch, { sl: o.slide })) : h('p', { className: 'ip-cv-opt-t' }, retitle ? o.text || headOf(o.slide) : headOf(o.slide)),
         o.check && o.check.label ? h('p', { className: cls('ip-cv-chk', ok ? 'is-good' : 'is-bad') }, h(Codicon, { name: ok ? 'pass' : 'warning', size: '14px' }), o.check.label) : null,
         on ? h(Button, { disabled: !ok, onClick: e => { e.stopPropagation(); keep(i) } }, 'Keep')
           : h(Button, { variant: 'secondary', onClick: e => { e.stopPropagation(); setChosen(i) } }, 'Use this'))

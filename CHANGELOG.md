@@ -2,6 +2,94 @@
 
 ## Unreleased
 
+### Statement fix (Nov 11, 2026)
+
+- **No more bare grey slides.** A Statement deck could come back with every slide after the title unstyled: the model drew
+  the slide number with CSS `content: attr(...)`, which Imprint refuses for safety, and refusing it threw away that
+  slide's whole stylesheet. Now only the refused rule goes; the rest of the slide keeps its styling. The brief tells the
+  model never to draw text with CSS, and the Statement brief is simpler (one large figure or statement on a plain
+  ground, no slide number).
+- **A broken design is never offered.** A design with an unstyled or empty slide, or more than two layout problems a
+  slide, is made once more. If it is still broken, a deck shows Imprint's own layout in that design's direction,
+  named "(template version)" on its card; other pieces say to try again. At most two tries per design.
+
+### Ambition pass (Nov 11, 2026, branch `ambition-nov11`)
+
+- **Type the new title.** In Revise, "Change this slide's title to: ..." now does it. Also "Change the subtitle to
+  ...", "Set the heading of slide 3 to ..." and "Rename slide 2 to ...". Your words are set exactly as typed, with no
+  model call. They are checked against your sources like any other change, shown beside the old title, and nothing
+  changes until you press Keep. A number no source holds is named and the slide stays as it was. Works on the title
+  slide and on slides the model laid out. A quote slide can't be typed over, since it shows a source's exact words.
+- **Source notes (PDF).** A new export for decks and one-pagers: every number and quote on the piece beside the
+  sentence in your sources it came from, with the source's name and section, grouped by slide, in your brand's faces
+  and colors. A figure worked out from two others shows the sum; a figure you kept on purpose says so. No model call.
+  Needs Chrome, Chromium, Edge or Brave, like the three designs. A brand with a dark ground prints dark type on white.
+
+### Live check (Nov 11, 2026)
+
+- **Manual** at the right end of the top bar opens the manual on linchpin.studio in your browser.
+- Works with Pillow 13, the version Hermes now ships; Hermes no longer warns that a dependency is missing.
+
+### Rubric fixes (Nov 11, 2026, branch `rubric-fixes`)
+
+- **Plain words when the backend is down.** A request that never reaches Imprint's backend now reads "Imprint's backend
+  isn't answering." instead of the browser's "Failed to fetch"; the start-up screen adds "Wait a moment and try again. If
+  it keeps happening, restart Hermes." Every error sentence ends with a full stop.
+- **Job checks stop when nobody answers.** A running job is checked quickly at first and then less often; when the
+  backend stops answering, checks back off further, and after 90 seconds of no answers the page stops waiting and says
+  so (the job may still finish). The Designs room does the same for its own view and offers Check again.
+- **The browser starts without fork.** The website reader's browser is started with `posix_spawn`, gets only its own
+  pipe, and the design browser and `sips` are started the same way through subprocess. On macOS, a forked child could
+  crash in the system network framework's fork handler once proxies had been looked up; that made three security tests
+  fail only in the full suite, and could have stopped the browser inside Hermes.
+- **Windows website look** says plainly that the browser step isn't available there yet; colors and fonts are still read.
+- **Copy.** The first screen's headline names what Imprint does, with no "every number is checked" line and no caption
+  under the sample slide; the Designs room drops its subtitle and the one-line taglines under each design. "Open the
+  sample" says "Opening the sample" while it works. Messages say brand, not kit. A private or local web address says it
+  isn't a public page; a cut-off answer suggests Retry or a shorter piece.
+- **Docs.** The catalog entry and PR describe the browser lookup as the code does it (Chrome, Chromium, Edge or Brave;
+  `IMPRINT_BROWSER`, install folders, `PATH`) and disclose `IMPRINT_DATA_DIR`; the PR's Hermes floor is 0.22.6; the README
+  and the manual have an Uninstall section.
+
+### Design fixes (Nov 10, 2026, evening)
+
+- **Designs work on Claude models.** When Claude's strict output mode, or Hermes itself, declines the JSON format request,
+  Imprint asks for the JSON in plain words and reads it from the reply; three designs running at once each recover on
+  their own. A plain-text `debug.log` in the data folder records error kinds and reply shapes only.
+- **A shape drawn over text is caught.** The layout check compared only text with text, so a dot grid spilling onto its
+  caption passed. A small painted shape over text is now an overlap (text wholly inside a shape still passes), and the
+  fix round sees it.
+- **The title slide is kept.** A deck's title slide is always its own first slide in every design.
+- **Routes load once under concurrent requests.** The revise and designs routes are loaded behind a lock, so requests
+  that arrive together on a cold start no longer race.
+- **Hermes floor.** `requires_hermes` is `>=0.22.6`.
+
+### Fast open (Nov 10, 2026, branch `fast-open`)
+
+- **The notebook opens at once after the first time.** The last good notebook (sources, brands, made pieces, notes, the chat
+  and the guide) is kept in Hermes's plugin storage and drawn straight away while Hermes starts the plugin helper; the real
+  answers replace it as they land, and the page takes no clicks or keys until they have. Pictures are kept only while the
+  copy stays under 400,000 characters; jobs and anything secret are never kept. The first open ever still shows "Opening
+  Imprint".
+- **The first three requests go out together.** The chat and the notebook guide no longer wait for the state answer.
+
+### Fixes (Nov 10, 2026, branch `imprint-fixes-wip`)
+
+- **Slide-number badges no longer cover the slide.** The numbers (and "used" ticks) on the design thumbnails and the deck strip sit
+  in a caption row under each picture, not over its top-left corner.
+- **Build from a website picks the brand, not the error red.** Colors are weighted by where they are used (page and header
+  backgrounds, headings, logo) instead of by how many rules mention them; `var(--x)` uses count; error, alert, small-button and
+  hover colors are demoted; the paper is found in backgrounds, so white text on dark no longer beats a cream page.
+- **The audio brief's "not recorded yet" bar** stays in the page flow above the script; the recorded bar sticks below the
+  header's real height.
+- **Interrupted design runs recover.** Options left "writing" by a restart or Stop come back as "Interrupted. Press Design three
+  options again." (on open and at startup) and the button works again.
+- **Shorter design runs.** Pages are drawn four at a time and only changed slides are drawn again; later fix rounds send only the
+  slides that still have problems; a fix that changes nothing, or extra rounds that stop clearing hard problems, end the loop;
+  each design shows its step and elapsed time.
+- **Any browser.** Chrome, Chromium, Edge or Brave on Mac, Windows and Linux, or `IMPRINT_BROWSER`; the Designs screen says so
+  when none is found.
+
 ### Designs and the site style brief (Nov 9, 2026, branch `loop4`)
 
 - **Three designs for every deck, one-pager and graphic.** Make now also asks the model to lay the piece out itself, three different ways

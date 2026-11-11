@@ -9,6 +9,7 @@
 //   kits   grid | bench | site | guide | import | all
 //   accent hex without #                       (red or green Hermes accent check)
 //   trace  a number as written                  (focus it in the viewer so its trace card opens)
+//   slow   milliseconds                         (hold every answer this long, like a cold Hermes backend)
 import { createRoot } from 'react-dom/client'
 import { jsx, jsxs } from 'react/jsx-runtime'
 
@@ -19,7 +20,9 @@ document.documentElement.classList.toggle('dark', dark)
 // accent  a hex without # (e.g. e5484d for red, 30a46c for green), to check the page with a red or green Hermes accent
 if (/^[0-9a-f]{6}$/i.test(params.get('accent') || '')) { for (const v of ['--ui-accent', '--dt-primary']) document.documentElement.style.setProperty(v, '#' + params.get('accent')) }
 
+const SLOW = Math.max(0, Number(params.get('slow')) || 0)
 async function rest(path, options = {}) {
+  if (SLOW) await new Promise(r => setTimeout(r, SLOW))
   const init = { method: options.method || 'GET', headers: {} }
   if (options.upload) {
     const v = new Uint8Array(options.upload.bytes); let bin = ''

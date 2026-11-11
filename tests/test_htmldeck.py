@@ -103,14 +103,40 @@ class Render(unittest.TestCase):
         finally:
             shutil.rmtree(out, ignore_errors=True)
 
+    def test_the_brand_ground_logo_is_its_own_token_and_falls_back_to_the_paper_one(self):
+        html = HD.sanitize('<div><img src="imprint:logo" alt=""><img src="imprint:logo-band" alt=""></div>')[0]
+        self.assertIn("imprint:logo-band", html)
+        pg = HD.page([{"html": html}], "", {"paper": "data:image/png;base64,AAAA", "band": "data:image/png;base64,BBBB"})
+        self.assertIn('src="data:image/png;base64,AAAA"', pg)
+        self.assertIn('src="data:image/png;base64,BBBB"', pg)
+        pg = HD.page([{"html": html}], "", "data:image/png;base64,AAAA")
+        self.assertEqual(pg.count('src="data:image/png;base64,AAAA"'), 2)
+        self.assertNotIn("imprint:logo", pg)
+
     def test_the_page_policy_allows_no_script_but_the_measuring_one(self):
         pg = HD.page([{"html": "<p>x</p>"}], "")
         self.assertIn("script-src 'none'", pg)
         self.assertIn("default-src 'none'", pg)
         pg = HD.page([{"html": "<p>x</p>"}], "", measure=True)
-        tag, digest = HD._script_tag(26)
+        tag, digest = HD._script_tag(26, fill=True)  # decks also measure how full each slide is
         self.assertIn(f"script-src 'sha256-{digest}'", pg)
 
+
+    def test_a_slide_with_an_empty_lower_half_or_an_empty_middle_band_is_flagged_and_a_full_one_is_not(self):
+        out = Path(tempfile.mkdtemp(prefix="imp-test-"))
+        H = "position:absolute;left:96px;font:700 72px var(--font-heading);margin:0"
+        foot = '<p style="position:absolute;left:96px;bottom:40px;font-size:26px;margin:0">Source: Harborlight</p>'
+        try:
+            top_only = f'<div style="height:100%;background:var(--paper)"><h1 style="{H};top:96px">Most adults wait nine weeks</h1><p style="position:absolute;left:96px;top:220px;font-size:32px;margin:0">At the Eastgate and Riverside sites</p>{foot}</div>'
+            gap = f'<div style="height:100%"><h1 style="{H};top:96px">Most adults wait nine weeks</h1><p style="position:absolute;left:96px;bottom:110px;font-size:32px;margin:0">At the Eastgate and Riverside sites</p>{foot}</div>'
+            full = (f'<div style="height:100%"><h1 style="{H};top:96px">Most adults wait nine weeks</h1>'
+                    '<div style="position:absolute;left:96px;right:96px;top:260px;bottom:140px;background:var(--brand)"></div>'
+                    f'<p style="position:absolute;left:96px;bottom:110px;font-size:32px;margin:0">At the Eastgate and Riverside sites</p>{foot}</div>')
+            r = HD.render([{"html": HD.sanitize(h)[0]} for h in (top_only, gap, full)], HD.kit_css(BRAND), out, pdf=False)
+            empty = {p["slide"] for p in r["problems"] if p["kind"] == "empty"}
+            self.assertEqual(empty, {1, 2}, r["problems"])
+        finally:
+            shutil.rmtree(out, ignore_errors=True)
 
 class Loop(unittest.TestCase):
     def test_an_unsafe_slide_on_the_final_round_is_blanked_and_the_outputs_are_drawn_again(self):
@@ -293,3 +319,22 @@ class ForgedReports(unittest.TestCase):
             self.assertNotIn("no-report", {p["kind"] for p in r["problems"]})
         finally:
             shutil.rmtree(out, ignore_errors=True)
+
+
+class Spawned(unittest.TestCase):
+    """The browser that draws the designs is started the way subprocess uses posix_spawn (a full path, close_fds=False),
+    never through fork: a forked child can crash in a macOS fork handler before it runs (see sitestyle._spawn)."""
+
+    def test_the_drawing_browser_is_started_without_fork(self):
+        from unittest import mock
+        seen = {}
+
+        def fake_run(cmd, **kw):
+            seen.update(kw, cmd=cmd)
+            return HD.subprocess.CompletedProcess(cmd, 0, "", "")
+        with mock.patch.object(HD, "browser_path", lambda: "/Applications/Some Browser.app/Contents/MacOS/Some Browser"), \
+                mock.patch.object(HD.subprocess, "run", fake_run):
+            HD._chrome(["--version"])
+        self.assertIs(seen["close_fds"], False)
+        self.assertTrue(seen["cmd"][0].startswith("/"))
+        self.assertNotIn("preexec_fn", seen)

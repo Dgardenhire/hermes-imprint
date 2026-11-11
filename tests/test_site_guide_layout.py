@@ -129,7 +129,7 @@ class Package(unittest.TestCase):
     def test_manifest(self):
         y = (ROOT / "plugin.yaml").read_text()
         self.assertIn("manifest_version: 2", y)
-        self.assertIn('requires_hermes: ">=0.22.0"', y)
+        self.assertIn('requires_hermes: ">=0.22.6"', y)
         self.assertIn("provides_tools: []", y)
         self.assertIn("provides_hooks: []", y)
         for dep in re.findall(r'- "([^"]+)"', y):

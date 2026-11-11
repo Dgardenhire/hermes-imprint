@@ -79,6 +79,14 @@ def running(kind: Optional[str] = None) -> list:
     return [view(r) for r in rows]
 
 
+def live(kind: str, key_part: str) -> bool:
+    """True when a job of ``kind`` whose parameters name ``key_part`` as its output is running in this process right now."""
+    for j in running(kind):
+        if (j.get("params") or {}).get("output_id") == key_part and j["id"] in _threads:
+            return True
+    return False
+
+
 def recent(n: int = 30) -> list:
     return [view(r) for r in store.q("SELECT * FROM jobs ORDER BY created_at DESC LIMIT ?", (n,))]
 

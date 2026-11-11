@@ -96,9 +96,80 @@ def _decls(block: str):
             yield k.strip().lower(), v.strip()
 
 
-def read_css(css: str, counts: dict, var_colors: dict, heading_fonts: dict, body_fonts: dict, any_fonts: dict) -> None:
-    for selector, block in _rules(css):
-        sel = selector.lower()
+# Where a color appears says how much it is the brand. A navy header is the brand; the red on an error message, a delete
+# button or a hover state is a signal. Weights by selector, so what covers the page (the body, the header, the hero, the
+# footer, the headings and the logo) outweighs what shows up in small places.
+_INCIDENTAL_SEL = re.compile(
+    r"danger|error|alert|warn|invalid|invalid|toast|badge|required|delete|remove|close|notice|flash|validation|"
+    r"(?<![\w-])btn|button|(?<![\w-])tag(?![\w-])|chip|pill|:hover|:focus|:active|:disabled|::placeholder|::selection|"
+    r"success|info(?![\w-]{0,40}graphic)|status|tooltip|popover|dropdown|modal|banner-?(?:close|cookie)|cookie", re.I)
+_SURFACE_SEL = re.compile(
+    r"(^|[\s,>+~])(html|body|:root|header|nav|footer|main|section|article|aside)(?![\w-])|hero|masthead|jumbotron|cover|"
+    r"site-?(?:header|footer|nav)|page-?(?:header|footer)|top-?bar|nav-?bar|navbar|band|banner|wrapper|container|masthead|"
+    r"(?:^|[\s.#])(?:header|footer)(?![\w-]{0,40}(?:link|text))", re.I)
+_HEADING_SEL = re.compile(r"(^|[\s,>+~])h[1-3](?![\w-])|heading|title|display|logo|brand|wordmark|masthead", re.I)
+_BG_PROPS = ("background", "background-color")
+_INCIDENTAL_VAR = re.compile(r"danger|error|alert|warn|invalid|success|red|critical|negative|destructive|info", re.I)
+_VAR_USE = re.compile(r"var\(\s*(--[\w-]+)")
+
+
+MAX_SELECTOR = 1000   # characters of a selector looked at; the rest is ignored
+MAX_PARTS = 20        # comma-separated parts of a selector looked at
+MAX_RULES = 20000     # rules read from one stylesheet
+_wcache: dict = {}
+
+
+def _weight(selector: str, prop: str) -> tuple:
+    """``(weight, incidental)`` for one declaration, from its selector. Bounded: a long or hostile selector is cut, and the
+    answer is remembered per selector and property kind, so each distinct selector is matched once."""
+    key = (selector[:MAX_SELECTOR], prop)
+    got = _wcache.get(key)
+    if got is None:
+        if len(_wcache) > 5000:
+            _wcache.clear()
+        got = _wcache[key] = _weight_uncached(key[0], prop)
+    return got
+
+
+def _weight_uncached(selector: str, prop: str) -> tuple:
+    best, inc_all = 0.0, True
+    for part in selector.split(",")[:MAX_PARTS]:
+        part = part.strip().lower()
+        if not part:
+            continue
+        if _INCIDENTAL_SEL.search(part):
+            w, inc = 0.25, True
+        else:
+            inc = False
+            if prop in _BG_PROPS and _SURFACE_SEL.search(part):
+                w = 4.0
+            elif prop in ("color", "fill", "stroke") and _HEADING_SEL.search(part):
+                w = 3.0
+            elif prop in _BG_PROPS:
+                w = 1.5
+            else:
+                w = 1.0
+        best = max(best, w)
+        inc_all = inc_all and inc
+    return (best or 1.0), inc_all
+
+
+def read_css(css: str, counts: dict, var_colors: dict, heading_fonts: dict, body_fonts: dict, any_fonts: dict,
+             var_uses: Optional[dict] = None, bg_counts: Optional[dict] = None, incidental: Optional[dict] = None) -> None:
+    """Read one stylesheet. ``counts`` gets each color's weight (by where it is used, see ``_weight``); ``var_uses`` the weight
+    of each ``var(--name)``, resolved to colors by ``draft_from``; ``bg_counts`` the same for backgrounds only (the paper is
+    found there); ``incidental`` the part of a color's weight that came only from small signal places."""
+    def add(h: str, w: float, inc: bool, prop: str) -> None:
+        counts[h] = counts.get(h, 0) + w
+        if bg_counts is not None and prop in _BG_PROPS:
+            bg_counts[h] = bg_counts.get(h, 0) + w
+        if inc and incidental is not None:
+            incidental[h] = incidental.get(h, 0) + w
+
+    for n_rules, (selector, block) in enumerate(_rules(css)):
+        if n_rules >= MAX_RULES:
+            break
+        sel = selector[:MAX_SELECTOR].lower()
         is_head = bool(re.search(r"(^|[\s,>+~])h[1-3]\b|heading|title|display", sel))
         is_body = bool(re.search(r"(^|[\s,])(html|body|p)\b|:root|\.prose|article", sel))
         for prop, value in _decls(block):
@@ -106,7 +177,8 @@ def read_css(css: str, counts: dict, var_colors: dict, heading_fonts: dict, body
                 hexes = _hex_from(value)
                 if hexes:
                     var_colors[prop] = hexes[0]
-                    counts[hexes[0]] = counts.get(hexes[0], 0) + 3
+                    inc = bool(_INCIDENTAL_VAR.search(prop))
+                    add(hexes[0], 0.5 if inc else 1.0, inc, "")
                     continue
                 if "font" in prop or "family" in prop:
                     fam = F.split_stack(value)
@@ -116,8 +188,17 @@ def read_css(css: str, counts: dict, var_colors: dict, heading_fonts: dict, body
                             (heading_fonts if any(w in prop for w in ("head", "display", "serif", "title")) else any_fonts).get(key, 0) + 2
                 continue
             if prop in COLOR_PROPS:
+                w, inc = _weight(sel, prop if prop in _BG_PROPS or prop in ("color", "fill", "stroke") else "border")
                 for h in _hex_from(value):
-                    counts[h] = counts.get(h, 0) + 1
+                    add(h, w, inc, prop if prop in _BG_PROPS else "")
+                if var_uses is not None:
+                    for m in _VAR_USE.finditer(value):
+                        e = var_uses.setdefault(m.group(1), {"w": 0.0, "bg": 0.0, "inc": 0.0})
+                        e["w"] += w
+                        if prop in _BG_PROPS:
+                            e["bg"] += w
+                        if inc:
+                            e["inc"] += w
             elif prop in ("font-family", "font"):
                 fam = F.split_stack(value if prop == "font-family" else value.split(" ", 2)[-1])
                 fam = [f for f in fam if not f.startswith("var(")]
@@ -202,6 +283,11 @@ def _dist(a: str, b: str) -> float:
     return sum((ra[i] - rb[i]) ** 2 for i in range(3)) ** 0.5
 
 
+def _hue(h: str) -> float:
+    r, g, b = [x / 255 for x in C.rgb(h)]
+    return colorsys.rgb_to_hls(r, g, b)[0] * 360
+
+
 def _sat(h: str) -> float:
     r, g, b = [x / 255 for x in C.rgb(h)]
     return colorsys.rgb_to_hls(r, g, b)[2]
@@ -222,28 +308,44 @@ def rank_colors(counts: dict, theme: Optional[str]) -> list:
 def draft_from(page: str, css_texts: list, url: str, today: str) -> dict:
     """A kit draft from a page's markup and stylesheets."""
     counts, var_colors, heading_fonts, body_fonts, any_fonts = {}, {}, {}, {}, {}
-    read_css(inline_css(page), counts, var_colors, heading_fonts, body_fonts, any_fonts)
+    var_uses, bg_counts, incidental = {}, {}, {}
+    read_css(inline_css(page), counts, var_colors, heading_fonts, body_fonts, any_fonts, var_uses, bg_counts, incidental)
     for css in css_texts:
-        read_css(css, counts, var_colors, heading_fonts, body_fonts, any_fonts)
+        read_css(css, counts, var_colors, heading_fonts, body_fonts, any_fonts, var_uses, bg_counts, incidental)
+    for name, e in var_uses.items():  # a color a site names once and uses everywhere counts for every use
+        h = var_colors.get(name)
+        if h:
+            counts[h] = counts.get(h, 0) + e["w"]
+            if e["bg"]:
+                bg_counts[h] = bg_counts.get(h, 0) + e["bg"]
+            if e["inc"]:
+                incidental[h] = incidental.get(h, 0) + e["inc"]
     theme = C.norm(meta(page, "theme-color") or "")
     ranked = rank_colors(counts, theme)
     if not ranked:
         raise ValueError("Imprint found no colors on that page. Add the kit's colors by hand.")
+    weight = dict(ranked)
 
-    lights = [h for h, _ in ranked if C.luminance(h) > 0.82]
+    lights = [h for h, _ in sorted(bg_counts.items(), key=lambda kv: -kv[1]) if C.luminance(h) > 0.82] or \
+             [h for h, _ in ranked if C.luminance(h) > 0.82]
     paper = lights[0] if lights else "#ffffff"
     inks = [h for h, _ in ranked if C.contrast(h, paper) >= 7 and _sat(h) < 0.35]
     ink = inks[0] if inks else ("#1b1b1b" if C.luminance(paper) > 0.4 else "#f5f5f5")
-    brand = [h for h, _ in ranked if h not in (paper, ink) and _sat(h) >= 0.18]
+    brand_all = [h for h, _ in ranked if h not in (paper, ink) and _sat(h) >= 0.18]
+
+    def only_signal(h):  # every use of it was an error message, an alert, a small button or a hover state
+        return incidental.get(h, 0) >= counts.get(h, 0) - 1e-9 and h != theme
+    brand = [h for h in brand_all if not only_signal(h)] or brand_all
     brand = brand[:6]
     cols = []
     darks = [h for h in brand if C.contrast(h, paper) >= C.AA_TEXT]
     mids = [h for h in brand if C.AA_LARGE <= C.contrast(h, paper) < C.AA_TEXT]
     lows = [h for h in brand if C.contrast(h, paper) < C.AA_LARGE]
     if darks:
-        darkest = min(darks, key=C.luminance)
+        head = darks[0]  # the brand color that covers the most: headers, headings, the logo
+        near = [h for h in darks if weight.get(h, 0) >= 0.25 * weight.get(head, 1) and abs(_hue(h) - _hue(head)) < 40]
+        darkest = min(near or [head], key=C.luminance)  # a deeper shade of the same brand color makes the band
         cols.append({"hex": darkest, "role": "band", "name": ""})
-        head = darks[0] if darks[0] != darkest or len(darks) == 1 else darks[1]
         cols.append({"hex": head, "role": "head", "name": ""})
         for h in darks:
             if h not in (darkest, head):

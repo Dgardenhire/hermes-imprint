@@ -1,30 +1,33 @@
-# DRAFT, not submitted. Re-pin sha and every image URL to the pushed commit before opening the PR.
 name: imprint
 title: Imprint
 repo: https://github.com/Dgardenhire/hermes-imprint
-sha: c32258b73d1fc67437e214edd8d0dd6cf0a34100
-description: "Turn your sources into a one-page brief, a slide deck or a spoken audio brief that looks and sounds like your organization. Imprint keeps each brand as a kit you can hold (colors with roles checked for contrast, fonts, logo, voice rules, a page layout and rules for every page), writes the content once from your PDFs, Word files, web pages, transcripts and notes, sets it in two kits side by side as press proofs, and checks every number and quote against a source passage before export. Fourteen starter kits (nine original, four adapted from Open Design packages under neutral names, and the public-domain US Web Design System) and unlimited kits of your own; Help me build a kit proposes three kits that differ and remembers recent looks; kits import from pasted colors, CSS, design tokens, Open Design packages, a Claude Design zip or folder, PowerPoint and Canva files, a website, or a logo read by your own model. Exports: PDF, proof PDF and HTML one-pagers; PowerPoint with the kit on the slide master plus a PDF; audio through your own Hermes voice plus the script. Imprint is an independent community plugin, not made or endorsed by Nous Research. Disclosure — source text (redacted by Hermes) goes to the user's own Hermes model under the auxiliary task 'Imprint writing'; audio scripts and the kit's delivery notes go to the user's own Hermes text-to-speech provider (the default, Edge, is Microsoft's online voice service); a logo or brand sheet goes to the user's model as an image only when the user asks; its own network calls are only to web addresses the user enters (page sources, a site to build a kit from, reference sites), through Hermes's SSRF-safe client, public addresses only, every redirect checked, 20 seconds to answer and 60 in all, streamed and capped (gzip or deflate only, unpacked within the cap), the page plus up to 10 same-site stylesheets; reads only files the user picks and, in a folder import, only the named token, font and logo files, releasing the folder after; writes only to $HERMES_HOME/plugin-data/imprint/ and to paths the user picks in the save dialog; slow work runs on background threads inside Hermes; no shell commands, child processes, stored credentials, self-updates or telemetry; registers no tools, hooks or middleware, only an auxiliary model task, a Desktop page and a dashboard API; bundles OFL font files; uses tools.url_safety (public API) for web reads."
+sha: SHA_PLACEHOLDER
+description: "Drop in your PDFs, Word files and text, and Imprint turns them into a finished deck, one-pager, graphic or audio brief in your own brand. Pick from three deck designs (Editorial, Data board, Statement), mix slides between them, and revise any slide by asking in plain words. Ask questions of your sources and get answers that cite the paragraph. Numbers and quotes are checked against your sources before export, and a Source notes PDF sets each one beside the sentence it came from. The check covers numbers and quotes, not claims or framing, so read the headlines yourself. Five built-in brands, or make your own. Independent community plugin, not made or endorsed by Nous Research. Disclosure: source text (secrets redacted by Hermes), questions, briefs and pictures of draft slides go to the user's own Hermes model (auxiliary task 'Imprint writing'); audio scripts to the user's Hermes text-to-speech provider (default Edge, Microsoft's online voice service). Web reads go only to addresses the user enters, via the user's web_extract tool or Hermes's SSRF-safe client (public addresses only, every redirect checked, size and time capped). Starts a headless Google Chrome, Chromium, Microsoft Edge or Brave as a child process with a throwaway profile (from IMPRINT_BROWSER, else the usual install folders on macOS and Windows, else PATH); it draws designs and their PDF and image exports with all network requests blocked and, on macOS and Linux, views a website the user builds a brand from (up to four pages, read only, robots.txt respected) through a checking proxy on 127.0.0.1 that refuses non-public addresses. On macOS runs sips for one-pager previews. Reads only files the user picks; writes only to $HERMES_HOME/plugin-data/imprint/ (or IMPRINT_DATA_DIR, if set), scratch folders it deletes, and paths picked in the save dialog. Background threads run only after a button press. No stored credentials, self-updates or telemetry. Registers no tools, hooks or middleware (only an auxiliary model task, a Desktop page and a dashboard API); calls the user's tools text_to_speech and web_extract by fixed name, and image_generate only through an API flag the shipped page never sends. Python dependencies: pypdf, python-docx, python-pptx, reportlab, Pillow. Bundles OFL fonts, no compiled code. Full detail in the README."
 maintainer: Dgardenhire
 tier: community
 category: desktop
-requires_hermes: ">=0.22.0"
-docs_url: https://github.com/Dgardenhire/hermes-imprint/blob/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/MANUAL.md
+requires_hermes: ">=0.22.6"
+docs_url: https://linchpin.studio/hermes/imprint/manual/
 version: "0.1.0"
-image: "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/catalog/card.png"
+image: "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/SHA_PLACEHOLDER/docs/catalog/card.jpg"
 screenshots:
-  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/shots/proofs-light.png"
-  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/shots/proofs-flagged-light.png"
-  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/shots/deck-dark.png"
-  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/shots/audio-light.png"
-  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/shots/kits-light.png"
-  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/c32258b73d1fc67437e214edd8d0dd6cf0a34100/docs/shots/kits-draft-light.png"
+  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/SHA_PLACEHOLDER/docs/shots/live/three-designs.jpg"
+  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/SHA_PLACEHOLDER/docs/shots/live/deck-numbers.jpg"
+  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/SHA_PLACEHOLDER/docs/shots/live/notebook.jpg"
+  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/SHA_PLACEHOLDER/docs/shots/live/one-pager.jpg"
+  - "https://raw.githubusercontent.com/Dgardenhire/hermes-imprint/SHA_PLACEHOLDER/docs/shots/live/mixed-deck.jpg"
 readme: true
 platforms: []
 known_issues:
-  - "Visual and Report outputs are not built yet; One-pager, Deck and Audio brief are."
+  - "The three designs, and PDF or image export of a designed piece, need Google Chrome, Chromium, Microsoft Edge or Brave, found in the usual install folders, on PATH, or at the path in IMPRINT_BROWSER. Without one the Designs screen says so and the Template version still works. The lookup has been run on a Mac; on Windows and Linux it is covered by tests only."
+  - "Build from a website looks at the site in that browser on macOS and Linux only. On Windows it still reads the site's colors and fonts, but writes no style brief."
+  - "A three-designs run takes several minutes on a small model."
+  - "Updating the plugin while Imprint is working reloads its page, and an outline in progress loses its place on screen."
+  - "In the light theme, placeholder text and buttons that aren't ready yet are pale."
   - "Audio needs text to speech turned on in Hermes; without it the script is made and can be exported."
   - "Reading a logo or brand sheet needs a model that can see images."
   - "The source check proves a number or quote is in your sources, not that the source is right."
+  - "The check covers numbers and quotes, not claims or framing: a sample deck headlined \"adds a site\" passed 19 of 19 when its sources said \"proposes\"."
 capabilities:
   provides_tools: []
   provides_hooks: []

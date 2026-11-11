@@ -408,7 +408,7 @@ async def read_site_raw(url: str) -> dict:
     url = I.normalize_url(url)
     fetched = await I.fetch(url)
     if I.looks_blocked(fetched.get("status", 0), fetched.get("body", "")):
-        raise I.Blocked("That site didn't let Imprint read it. Add a logo and colors by hand, or start from a starter kit.")
+        raise I.Blocked("That site didn't let Imprint read it. Add a logo and colors by hand, or start from a studio brand.")
     if fetched.get("status", 0) >= 400:
         raise I.Refused(f"That page answered with an error ({fetched['status']}). Check the address.")
     css = []
@@ -557,7 +557,7 @@ async def job_make(job_id: str, p: dict) -> dict:
     source_ids = [s for s in p.get("source_ids") or []][:MAX_SOURCES_PER_OUTPUT]
     kit_ids = [k for k in p.get("kit_ids") or [] if k][:2]
     if not kit_ids:
-        raise J.JobError("Choose a kit first.", "no_kit")
+        raise J.JobError("Choose a brand first.", "no_kit")
     kits = [KITS.get(k) for k in kit_ids]
     brief = (p.get("brief") or "").strip()[:1200] or K.DEFAULT_BRIEF.get(kind, K.DEFAULT_BRIEF["onepager"])
     corpus, srcs, by_ref = _corpus(source_ids)
@@ -1296,7 +1296,7 @@ def audio_file(output_id: str, kit_id: str) -> dict:
     import base64
     st = audio_state(output_id, kit_id)
     if st.get("status") != "ready":
-        raise ValueError("There is no recording for this kit yet.")
+        raise ValueError("There is no recording in this brand yet.")
     p = store.root() / "outputs" / output_id / st["file"]
     if not p.is_file():
         raise ValueError("The recording is gone. Press Record again.")
@@ -2145,8 +2145,8 @@ def _slug(s: str) -> str:
 
 
 FORMATS = {
-    "onepager": {"pdf": "PDF", "proof": "Proof PDF with crop marks", "html": "HTML page"},
-    "deck": {"pptx": "PowerPoint (.pptx)", "pdf": "PDF of the slides"},
+    "onepager": {"pdf": "PDF", "proof": "Proof PDF with crop marks", "html": "HTML page", "notes": "Source notes (PDF)"},
+    "deck": {"pptx": "PowerPoint (.pptx)", "pdf": "PDF of the slides", "notes": "Source notes (PDF)"},
     "audio": {"audio": "Audio file (MP3)", "script": "Script (text)", "pdf": "Script PDF"},
     "visual": {"png": "PNG image", "svg": "SVG (scales to any size)", "pdf": "PDF"},
 }
@@ -2176,6 +2176,14 @@ def export(output_id: str, kit_id: str, fmt: str) -> dict:
     midx = idx if marks else {}
     date = out_date(out)
     pal, faces = KITS.palette(kit), KITS.faces(kit)
+    if fmt == "notes":  # every number and quote beside the sentence it came from, set in the brand (sourcenotes.py)
+        try:
+            from . import sourcenotes as SN
+        except ImportError:  # loaded loose
+            import sourcenotes as SN  # type: ignore
+        path = folder / f"{base}-source-notes.pdf"
+        SN.export(output_id, kit_id, path)
+        return {"path": str(path), "name": path.name, "folder": str(folder), "bytes": path.stat().st_size}
     if kind == "deck":
         pics = _pictures(output_id, doc)
         try:
@@ -2200,7 +2208,7 @@ def export(output_id: str, kit_id: str, fmt: str) -> dict:
         st = audio_state(output_id, kit_id)
         p = folder / st.get("file", "") if st.get("status") == "ready" else None
         if p is None or not p.is_file():
-            raise ValueError("There is no recording for this kit yet. Press Record, or export the script.")
+            raise ValueError("There is no recording in this brand yet. Press Record, or export the script.")
         return {"path": str(p), "name": p.name, "folder": str(folder), "bytes": p.stat().st_size}
     elif kind == "audio" and fmt == "script":
         lines = [K.script_text(doc)]
@@ -2483,13 +2491,15 @@ def _page_png(doc: dict, kit: dict, by_ref: dict, width: int = THUMB_W) -> bytes
         import shutil as _sh
         import subprocess
         import tempfile
-        if _sh.which("sips"):
+        sips = _sh.which("sips")
+        if sips:
             pdf = RP.render(doc, kit, pal, faces, idx, rows, F.colophon(faces, 1), date=nice_date(), logo=KITS.logo_variants(kit, pal))
             with tempfile.TemporaryDirectory(prefix="imprint-thumb-") as d:
                 src, dst = Path(d) / "p.pdf", Path(d) / "p.png"
                 src.write_bytes(pdf)
-                subprocess.run(["sips", "-s", "format", "png", "-Z", str(width * 2), str(src), "--out", str(dst)],
-                               capture_output=True, timeout=20, check=True)
+                # a full path and close_fds=False let subprocess start it with posix_spawn, not fork (see sitestyle._spawn)
+                subprocess.run([sips, "-s", "format", "png", "-Z", str(width * 2), str(src), "--out", str(dst)],
+                               capture_output=True, timeout=20, check=True, close_fds=False)
                 return dst.read_bytes()
     except Exception as e:
         _log_preview(e)

@@ -397,6 +397,8 @@ BLOCK_MARKERS = ("cf-chl", "challenge-platform", "just a moment", "attention req
                  "verify you are human", "enable javascript and cookies", "ddos protection", "px-captcha")
 BLOCKED = "That site didn't let Imprint read it. Add the text by pasting it, or save the page as a PDF and add that."
 UNSAFE = "Imprint only reads public web addresses that start with http:// or https://."
+PRIVATE = ("That address isn't a public web page, so Imprint didn't read it. Check the address: Imprint never reads "
+           "pages on this computer or a private network.")
 
 
 class Blocked(Refused):
@@ -500,7 +502,7 @@ async def fetch(url: str, max_bytes: int = 5 * 1024 * 1024, accept: str = "text/
     for _hop in range(5):
         safe = await asyncio.to_thread(is_safe_url, current)
         if not safe:
-            raise Refused(UNSAFE)
+            raise Refused(PRIVATE if re.match(r"^https?://", current, re.I) else UNSAFE)
         async with make_client(timeout=20.0, follow_redirects=False,
                                headers={"User-Agent": "Imprint (Hermes plugin; reads one page a person asked for)",
                                         "Accept": accept, "Accept-Encoding": "gzip, deflate"}) as client:

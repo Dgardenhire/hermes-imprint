@@ -4,6 +4,7 @@ import asyncio
 import json
 import os
 import shutil
+import sys
 import tempfile
 import unittest
 from importlib import import_module
@@ -109,6 +110,13 @@ class Rules(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "robots"):
                 SS.capture("https://a.test/", tempfile.mkdtemp())
 
+    def test_on_windows_capture_says_so_plainly_before_starting_anything(self):
+        with mock.patch.object(SS.os, "name", "nt"), mock.patch.object(SS, "Chrome", side_effect=AssertionError("started")):
+            with self.assertRaises(ValueError) as cm:
+                SS.capture("https://example.org/", os.path.join(tempfile.gettempdir(), "imprint-win-never-made"))
+        self.assertEqual(str(cm.exception), SS.WINDOWS_NO_LOOK)
+        self.assertIn("colors and fonts were still read", SS.WINDOWS_NO_LOOK)
+
     def test_linked_pages_are_few_public_and_different(self):
         links = [{"href": "https://a.test/login", "where": "nav"}, {"href": "https://other.test/x", "where": "nav"}, {"href": "https://a.test/method", "where": "nav"},
                  {"href": "https://a.test/method/deep/er/x", "where": "nav"}, {"href": "https://a.test/proof", "where": "nav"}, {"href": "https://a.test/proof/2", "where": "body"},
@@ -182,14 +190,13 @@ class Browser(unittest.TestCase):
         self.assertEqual(hits, [], "the private server must never have been asked for anything")
 
     def test_chrome_is_started_through_the_proxy_with_no_other_way_out(self):
-        import subprocess
         seen = {}
-        real = subprocess.Popen
+        real = SS._spawn
 
         def spy(cmd, *a, **k):
             seen["cmd"] = cmd
             return real(cmd, *a, **k)
-        with mock.patch.object(SS.subprocess, "Popen", spy):
+        with mock.patch.object(SS, "_spawn", spy):
             br = SS.Chrome(SS.find_chrome())
         try:
             cmd = " ".join(seen["cmd"])
@@ -212,6 +219,53 @@ class Browser(unittest.TestCase):
             g2.bytes = SS.MAX_BYTES + 1
             self.assertFalse(g2.decide("https://a.test/big"))
 
+
+    def test_the_browser_is_spawned_not_forked_and_gets_only_its_own_descriptors(self):
+        # A forked child runs every fork handler the process has collected; on macOS the network framework's can crash
+        # the child before it starts (that was the browser dying at start in the full test run). posix_spawn runs none.
+        import subprocess
+        with mock.patch.object(subprocess, "Popen", side_effect=AssertionError("forked")), \
+                mock.patch.object(os, "fork", side_effect=AssertionError("forked")):
+            leak_r, leak_w = os.pipe()
+            os.set_inheritable(leak_r, True)  # something in the host left an inheritable descriptor open
+            r1, w1 = os.pipe()
+            r2, w2 = os.pipe()
+            out = tempfile.mktemp(prefix="imprint-fds-")
+            try:
+                child = SS._spawn([sys.executable, "-c",
+                                   "import os,sys\n"
+                                   "fds=[]\n"
+                                   "for fd in range(0,64):\n"
+                                   "    try: os.fstat(fd); fds.append(fd)\n"
+                                   "    except OSError: pass\n"
+                                   "os.write(4, (' '.join(map(str,fds))+'|'+os.read(3,5).decode()).encode())\n"], r1, w2)
+                os.close(r1); os.close(w2)
+                os.write(w1, b"hello")
+                got = os.read(r2, 4096).decode()
+                self.assertEqual(child.wait(10), 0)
+            finally:
+                for fd in (leak_r, leak_w, w1, r2):
+                    try:
+                        os.close(fd)
+                    except OSError:
+                        pass
+        fds, said = got.split("|")
+        self.assertEqual(said, "hello")
+        self.assertEqual(fds.split(), ["0", "1", "2", "3", "4"])
+
+    @unittest.skipUnless(SS.find_chrome(), "needs Chrome")
+    def test_chrome_starts_even_when_a_forked_child_would_crash(self):
+        # Stand in for the macOS fork-handler crash: any fork in this process now fails. The browser must still start.
+        import subprocess
+        with mock.patch.object(os, "fork", side_effect=OSError("fork handlers would crash here")), \
+                mock.patch.object(subprocess.Popen, "_execute_child", side_effect=OSError("forked")):
+            br = SS.Chrome(SS.find_chrome())
+            try:
+                t = br.call("Target.createTarget", {"url": "about:blank"})["targetId"]
+                self.assertTrue(t)
+            finally:
+                br.close()
+        self.assertIsNotNone(br.proc.poll())
 
     def test_chrome_over_a_pipe_measures_a_page_and_leaves_nothing_behind(self):
         br = SS.Chrome(SS.find_chrome())

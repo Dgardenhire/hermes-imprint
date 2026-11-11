@@ -27,7 +27,7 @@ class Deck(unittest.TestCase):
     def test_deck_is_written_once_voiced_per_kit_and_traced(self):
         out = _deck_out()
         self.assertEqual(out["kind"], "deck")
-        self.assertEqual(set(out["formats"]), {"pptx", "pdf"})
+        self.assertEqual(set(out["formats"]), {"pptx", "pdf", "notes"})
         for pr in out["proofs"]:
             self.assertEqual(pr["status"], "ready")
             self.assertEqual(pr["kind"], "deck")

@@ -1,5 +1,6 @@
 """Kit import: every route ends in a draft shown as a proof, then Save; nothing imported is trusted."""
 import base64
+import gc
 import io
 import json
 import struct
@@ -99,11 +100,20 @@ class Css(unittest.TestCase):
         self.assertTrue(any("Tailwind" in s["why"] for s in fd["skipped"]))
 
     def test_css_pathological_input_is_fast(self):
-        t = time.time()
-        with self.assertRaises(imports.Refused):
-            imports.read_css("{" * 1_000_000 + "}" * 1_000_000)
-        imports.read_css(":root{--bg:#fff;--fg:#111;--accent:#123}" + "a{" * 200_000 + "}" * 200_000)
-        self.assertLess(time.time() - t, 2.5)
+        # Time this thread's CPU with the collector paused: wall-clock time also counted other
+        # processes on the machine and full collections sized by whatever earlier tests left in
+        # memory, which pushed a ~0.8 s parse past the limit under load.
+        gc.collect()
+        gc.disable()
+        try:
+            t = time.thread_time()
+            with self.assertRaises(imports.Refused):
+                imports.read_css("{" * 1_000_000 + "}" * 1_000_000)
+            imports.read_css(":root{--bg:#fff;--fg:#111;--accent:#123}" + "a{" * 200_000 + "}" * 200_000)
+            took = time.thread_time() - t
+        finally:
+            gc.enable()
+        self.assertLess(took, 2.5)
 
     def test_css_js_config_refused(self):
         with self.assertRaises(imports.Refused) as cm:

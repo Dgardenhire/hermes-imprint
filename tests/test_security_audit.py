@@ -137,7 +137,8 @@ class F1_FetchInflatesWithinTheCap(unittest.TestCase):
                 ingest._client_factory = mock(lambda req, t=target: answer(302, b"", {"location": t}))
                 with self.assertRaises(ingest.Refused) as cm:
                     run(ingest.fetch("https://example.org/"))
-                self.assertEqual(str(cm.exception), ingest.UNSAFE)
+                # a private or local web address says so in plain words; any other scheme gets the "http:// or https://" line
+                self.assertEqual(str(cm.exception), ingest.PRIVATE if target.startswith("http") else ingest.UNSAFE)
 
     def test_only_web_addresses_are_accepted(self):
         for bad in ("file:///etc/passwd", "ftp://example.org/x", "javascript:alert(1)", "data:text/html,hi",

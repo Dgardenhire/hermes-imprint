@@ -63,9 +63,9 @@ MAX_PNG = 5 * 1024 * 1024
 MAX_IMAGE = 8 * 1024 * 1024
 ALIAS_DEPTH = 32
 
-RESPONSIBILITY = "Use kits only for brands you own or have permission to use. You're responsible for documents made with this kit."
+RESPONSIBILITY = "Use brands only for organizations you own or have permission to use. You're responsible for documents made with this brand."
 BRAND_LINE = ("This package imitates another company's look. Imprint imports its colors and sizes only. "
-              "Don't present documents in this kit as coming from that company.")
+              "Don't present documents in this brand as coming from that company.")
 
 # Open Design packages named for real companies and products (categories A and B of the import plan).
 BRAND_NAMED = set("""airbnb airtable apple arc binance bmw bmw-m bugatti cal canva cisco claude clay clickhouse cohere coinbase
@@ -1113,7 +1113,7 @@ def read_pptx(data: bytes, filename: str = "slides.pptx") -> dict:
 
 def read_dtcg(text: str, mode: str = "", label: str = "Design tokens") -> dict:
     if len(text.encode("utf-8", "ignore")) > MAX_DTCG:
-        raise Refused("This token file is too big for one kit. Export just your brand colors and type.")
+        raise Refused("This token file is too big for one brand. Export just your brand colors and type.")
     try:
         data = json.loads(text)
     except ValueError:
@@ -1150,7 +1150,7 @@ def read_dtcg(text: str, mode: str = "", label: str = "Design tokens") -> dict:
     if not flat:
         raise Refused("This isn't a design-token file. Imprint reads DTCG files, where each token has a $value.")
     if count[0] > MAX_TOKENS:
-        raise Refused("This token file is too big for one kit. Export just your brand colors and type.")
+        raise Refused("This token file is too big for one brand. Export just your brand colors and type.")
     loops = [0]
 
     def resolve(v, depth=0, seen=None):
@@ -1554,7 +1554,7 @@ def validate(kit: dict, fd_meta: dict) -> list:
     ref = (fd_meta.get("ref") or "").lower()
     plabel = (fd_meta.get("package_label") or "").lower()
     if not name:
-        out.append({"id": "name", "tone": "bad", "block": True, "label": "Name this kit."})
+        out.append({"id": "name", "tone": "bad", "block": True, "label": "Name this brand."})
     elif brand and ((ref and ref.replace("-", " ") in name.lower().replace("-", " ")) or (plabel and plabel in name.lower())):
         out.append({"id": "name", "tone": "bad", "block": True, "label": f"Pick a name that isn't {fd_meta.get('package_label') or ref}."})
     else:

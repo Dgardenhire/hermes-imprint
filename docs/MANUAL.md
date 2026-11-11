@@ -1,5 +1,8 @@
 # Imprint manual
 
+An early guide, kept for its detail. The tabs are now called **Notebook**, **Brands** and **Settings**, and kits are
+called brands. The current manual, with every screen, is at https://linchpin.studio/hermes/imprint/manual/.
+
 Imprint has three tabs: **Notebook**, where you work; **Kits**, where your brands live; and **Storage**, where
 you see and delete what Imprint keeps.
 
@@ -105,9 +108,13 @@ Press **Export** above a proof and pick a format. Your computer's save dialog op
 
 | Output | Formats |
 |---|---|
-| One-pager | PDF, Proof PDF with crop marks, HTML page |
-| Deck | PowerPoint (.pptx), PDF of the slides |
+| One-pager | PDF, Proof PDF with crop marks, HTML page, Source notes (PDF) |
+| Deck | PowerPoint (.pptx), PDF of the slides, Source notes (PDF) |
 | Audio brief | Audio file, Script (text), Script PDF |
+
+**Source notes** is a page to hand out with the deck: every number and quote beside the sentence in your sources it
+came from, with the source's name and section, grouped by slide. A figure worked out from two others shows the sum.
+A figure you kept on purpose says so. It needs Chrome, Chromium, Edge or Brave on your computer.
 
 The finished files are ready to send: the colophon ("Set in ...") and the kit's color bar print only on the
 **Proof PDF**. The HTML page fits a phone and its source marks link to the source list. If the kit's **Source
@@ -191,6 +198,17 @@ Use kits only for brands you own or have permission to use.
 Lists every source and output with its size, the tokens used today on your own model, an optional daily token
 limit, and the storage Imprint uses. Delete takes two clicks. **Forget everything** deletes every source, kit,
 output and setting after you type "forget everything".
+
+## Uninstall
+
+1. To remove your data too, first type "forget everything" on the Settings tab and press **Forget everything**. That
+   deletes `<HERMES_HOME>/plugin-data/imprint/`. Exports you saved elsewhere stay.
+2. Remove the plugin: Capabilities, Plugins, the trash button beside Imprint (or `hermes plugins remove imprint`), then
+   restart the gateway.
+3. Removing the plugin leaves its data folder. If you skipped step 1, delete `<HERMES_HOME>/plugin-data/imprint/`
+   yourself.
+
+The full, current manual is at https://linchpin.studio/hermes/imprint/manual/.
 
 ## When something goes wrong
 

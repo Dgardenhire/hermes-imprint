@@ -212,4 +212,4 @@ def pill(kit: dict, kind: str, variants: dict) -> Optional[dict]:
         return None
     return {"id": "logo", "tone": "good", "label": notes[0] if len(notes) == 1 else "Logo knocked out where it would vanish",
             "items": notes + ([] if all("reversed logo is used" in x for x in notes) else
-                              ["If you have a reversed (knockout) version of your logo, add it on the kit bench and Imprint will use it here."])}
+                              ["If you have a reversed (knockout) version of your logo, add it to the brand on the Brands tab and Imprint will use it here."])}

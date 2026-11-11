@@ -37,6 +37,11 @@ from pathlib import Path
 from typing import Optional
 from urllib.parse import urljoin, urlparse
 
+try:  # package import (Hermes) or flat import (tests)
+    from . import browser as B
+except ImportError:  # pragma: no cover
+    import browser as B  # type: ignore
+
 MAX_PAGES = 4          # the home page and up to three it links to
 CAPTURE_SECONDS = 150  # for the whole capture
 WIDTH, MAX_SHOT_H = 1440, 5200
@@ -47,14 +52,8 @@ SKIP_PATH = re.compile(r"(?:log-?in|sign-?in|sign-?up|register|account|cart|chec
 
 
 def find_chrome() -> Optional[str]:
-    for p in ("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", "/Applications/Chromium.app/Contents/MacOS/Chromium"):
-        if Path(p).exists():
-            return p
-    for n in ("google-chrome", "google-chrome-stable", "chromium", "chromium-browser", "chrome"):
-        got = shutil.which(n)
-        if got:
-            return got
-    return None
+    """A browser to read a site with: Chrome, Chromium, Edge or Brave (see ``browser.find``)."""
+    return B.find()
 
 
 # ---------------------------------------------------------------- the safe-address check --
@@ -372,9 +371,98 @@ NO_SOCKETS_JS = ("(()=>{try{Object.defineProperty(navigator,'serviceWorker',{get
                  "try{window.WebSocket=undefined;window.WebTransport=undefined;window.EventSource=undefined}catch(e){}})()")
 
 
+class _Child:
+    """A started browser, by process id: the few things ``Chrome`` needs from ``subprocess.Popen``."""
+
+    def __init__(self, pid: int):
+        self.pid = pid
+        self.returncode: Optional[int] = None
+
+    def poll(self) -> Optional[int]:
+        if self.returncode is None:
+            try:
+                pid, status = os.waitpid(self.pid, os.WNOHANG)
+            except ChildProcessError:
+                self.returncode = -1
+                return self.returncode
+            if pid:
+                self.returncode = os.waitstatus_to_exitcode(status) if hasattr(os, "waitstatus_to_exitcode") else status
+        return self.returncode
+
+    def wait(self, timeout: float = 5.0) -> int:
+        end = time.monotonic() + timeout
+        while self.poll() is None:
+            if time.monotonic() > end:
+                raise subprocess.TimeoutExpired(str(self.pid), timeout)
+            time.sleep(0.02)
+        return self.returncode
+
+    def _signal(self, sig: int) -> None:
+        if self.poll() is None:
+            try:
+                os.kill(self.pid, sig)
+            except ProcessLookupError:
+                pass
+
+    def terminate(self) -> None:
+        import signal
+        self._signal(signal.SIGTERM)
+
+    def kill(self) -> None:
+        import signal
+        self._signal(signal.SIGKILL)
+
+
+def _spawn(cmd: list, to_browser: int, from_browser: int) -> _Child:
+    """Start the browser with ``posix_spawn``: its stdin, stdout and stderr on /dev/null, the read end of the command pipe as
+    descriptor 3 and the write end of the reply pipe as descriptor 4 (what ``--remote-debugging-pipe`` expects), and nothing
+    else of Hermes's: descriptors are close-on-exec unless something marked them inheritable, and those are closed here.
+
+    Not ``fork``: on macOS, once a process has loaded the system's network framework (proxy lookups do, and Hermes's own web
+    client looks up proxies), a forked child can crash in that framework's fork handler before it runs anything. That was the
+    browser dying at start in the full test run, and it could happen inside Hermes. ``posix_spawn`` runs no fork handlers."""
+    # copies of the two pipe ends numbered 5 or more, so placing them at 3 and 4 never overwrites one with the other
+    a, b = _copy_up(to_browser), _copy_up(from_browser)
+    null = os.open(os.devnull, os.O_RDWR)
+    try:
+        actions = [(os.POSIX_SPAWN_DUP2, null, 0), (os.POSIX_SPAWN_DUP2, null, 1), (os.POSIX_SPAWN_DUP2, null, 2),
+                   (os.POSIX_SPAWN_DUP2, a, 3), (os.POSIX_SPAWN_DUP2, b, 4)]
+        for fd in _open_fds():
+            if fd > 4 and fd not in (a, b, null):
+                try:
+                    if os.get_inheritable(fd):
+                        actions.append((os.POSIX_SPAWN_CLOSE, fd))
+                except OSError:
+                    pass
+        pid = os.posix_spawn(cmd[0], cmd, dict(os.environ), file_actions=actions)
+    finally:
+        for fd in {a, b, null}:
+            try:
+                os.close(fd)
+            except OSError:
+                pass
+    return _Child(pid)
+
+
+def _copy_up(fd: int, low: int = 5) -> int:
+    """A close-on-exec copy of ``fd`` numbered ``low`` or more."""
+    import fcntl
+    return fcntl.fcntl(fd, fcntl.F_DUPFD_CLOEXEC, low)
+
+
+def _open_fds() -> list:
+    # /dev/fd lists this process's open descriptors on macOS and on Linux (where it links to the process's own fd
+    # table), so one path covers both; if it can't be read, try every low descriptor instead.
+    try:
+        return [int(x) for x in os.listdir("/dev/fd") if x.isdigit()]
+    except OSError:
+        return list(range(0, 256))
+
+
 class Chrome:
     """Chrome driven through ``--remote-debugging-pipe``: JSON messages ending in a NUL byte on two inherited file descriptors.
-    Nothing listens on a port. Its profile folder is a scratch folder that is deleted on close."""
+    Nothing listens on a port. Its profile folder is a scratch folder that is deleted on close. It needs POSIX descriptor
+    passing, so it runs on a Mac and Linux; on Windows ``capture`` says so and the site's colors and fonts are still read."""
 
     def __init__(self, chrome: str, proxy: Optional["Proxy"] = None):
         self.proxy = proxy or Proxy()
@@ -382,17 +470,14 @@ class Chrome:
         r1, w1 = os.pipe()
         r2, w2 = os.pipe()
 
-        def pre():
-            os.dup2(r1, 3)
-            os.dup2(w2, 4)
-        self.proc = subprocess.Popen(
+        self.proc = _spawn(
             [chrome, "--headless=new", "--disable-gpu", "--mute-audio", "--no-first-run", "--no-default-browser-check", "--disable-extensions",
              "--hide-scrollbars", "--force-device-scale-factor=1", "--remote-debugging-pipe", f"--user-data-dir={self.scratch}",
              # nothing leaves the browser except through the checking proxy: loopback too, no QUIC, no WebRTC, no WebTransport
              f"--proxy-server=http://127.0.0.1:{self.proxy.port}", "--proxy-bypass-list=<-loopback>", "--disable-quic",
              "--force-webrtc-ip-handling-policy=disable_non_proxied_udp", "--disable-features=WebTransport",
              "--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1", "about:blank"],
-            preexec_fn=pre, close_fds=False, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            r1, w2)
         os.close(r1)
         os.close(w2)
         self.w, self.r = w1, r2
@@ -596,12 +681,17 @@ def _grab(br: Chrome, url: str) -> dict:
             pass
 
 
+WINDOWS_NO_LOOK = "Imprint can't yet open a site in a browser on Windows. The colors and fonts were still read."
+
+
 def capture(url: str, out_dir, max_extra: int = 3) -> dict:
     """The home page and up to ``max_extra`` pages it links to: ``{"pages": [{"url", "styles", "png_path"}], "skipped": [...]}``.
     Raises ``ValueError`` with a plain reason when the home page itself cannot be read."""
+    if os.name == "nt":
+        raise ValueError(WINDOWS_NO_LOOK)
     chrome = find_chrome()
     if not chrome:
-        raise ValueError("Chrome isn't installed here, so Imprint can't look at the site. The colors and fonts were still read.")
+        raise ValueError("Imprint couldn't find a browser (Chrome, Chromium, Edge or Brave) here, so it can't look at the site. The colors and fonts were still read.")
     if not safe_url(url):
         raise ValueError("That address isn't a public web page.")
     if not robots_allows(url):

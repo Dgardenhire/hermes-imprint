@@ -46,6 +46,10 @@ try:
     jobs.recover()
 except Exception:  # a damaged database must not keep the page from loading; /state reports it
     _log.exception("imprint: could not check for interrupted jobs")
+try:  # a design run cut off by a restart leaves its options saying "writing": mark them interrupted
+    importlib.import_module("imprint_plugin_package.designs").reconcile_all()
+except Exception:
+    _log.exception("imprint: could not check for interrupted designs")
 try:
     imports.expire()
 except Exception:
@@ -80,7 +84,7 @@ def _ids(v, prefix: str, limit: int = 50) -> list:
 def _kit_id(v) -> str:
     if isinstance(v, str) and (v in kits.STARTER_IDS or re.fullmatch(r"k_[a-f0-9]{12}", v)):
         return v
-    raise ValueError("Choose a kit.")
+    raise ValueError("Choose a brand.")
 
 
 # ---------------------------------------------------------------- state --
@@ -391,7 +395,7 @@ async def post_kit_specimen(body: dict):
         elif isinstance(b.get("kit"), dict):
             raw["kit"] = b["kit"]
         else:
-            raise ValueError("Choose a kit.")
+            raise ValueError("Choose a brand.")
         return await asyncio.to_thread(service.specimen, raw)
     except Exception as e:
         _fail(e)
@@ -461,7 +465,7 @@ async def post_kit_import_file(request: Request):
             # requests (this pane and every other plugin's) wait on the loop while it does.
             return {"draft": await asyncio.to_thread(service.import_read, kind, filename=filename, data=data)}
         if len(data) > imports.MAX_DTCG and kind == "dtcg":
-            raise ValueError("This token file is too big for one kit. Export just your brand colors and type.")
+            raise ValueError("This token file is too big for one brand. Export just your brand colors and type.")
         text = data.decode("utf-8", "replace")
         return {"draft": service.import_read(kind, text=text, filename=filename)}
     except Exception as e:
@@ -616,7 +620,7 @@ async def post_output(body: dict):
             raise ValueError("Choose at least one source first.")
         kit_ids = [_kit_id(k) for k in (b.get("kit_ids") or [])[:2]]
         if not kit_ids:
-            raise ValueError("Choose a kit first.")
+            raise ValueError("Choose a brand first.")
         kind = b.get("kind") if b.get("kind") in ("onepager", "deck", "audio", "visual", "report") else "onepager"
         brief = str(b.get("brief") or "")[:1200]
         note_ids = _ids(b.get("note_ids"), "n", limit=20)

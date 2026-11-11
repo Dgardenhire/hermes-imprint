@@ -7,7 +7,7 @@ and `htmldeck.py`. Everything that calls a model or draws with Chrome starts a j
 | Route | Body | Returns |
 |---|---|---|
 | `POST /outputs/{id}/designs` | `{kit_id?}` | `{job}` (kind `designs`): writes three designs at once (Editorial, Data board, Statement), draws, looks, fixes (2 rounds, up to 2 more while a layout problem is left). One design failing never costs the others. |
-| `GET /outputs/{id}/designs` | | the view: `options[{d, name, blurb, status, step, slides, flags, problems, thumbs[]}]`, `final{label, slides[{n, from, thumb, elements[], notes}], problems}`, `flags[{slide, value, status, key, kept}]`, `open_flags`, `versions[]`, `formats`, `building` |
+| `GET /outputs/{id}/designs` | | the view: `options[{d, name, blurb, status, step, elapsed, error, slides, flags, problems, thumbs[]}]` (`elapsed` is seconds since a running option began; an option left `writing` with no job running is returned as `failed` with "Interrupted. Press Design three options again.")`, `browser{ok, message}` (`ok` false when no Chrome, Chromium, Edge or Brave is found; `message` says what to do), `final{label, slides[{n, from, thumb, elements[], notes}], problems}`, `flags[{slide, value, status, key, kept}]`, `open_flags`, `versions[]`, `formats`, `building` |
 | `GET /outputs/{id}/designs/slide/{which}/{n}` | | `{img}` a 1100 px picture; `which` is a direction or `final` |
 | `POST /outputs/{id}/designs/pick` | `{direction}` or `{picks:[{d, i}]}` | the view. A whole design, or the mix: slide `n` of the result is slide `i` of design `d`. Slides keep their own scoped CSS. |
 | `POST /outputs/{id}/designs/edit` | `{slide, el, text}` | `{job}` (kind `designs_apply`): one line of text replaced, cleaned, traced, drawn again; a new version |

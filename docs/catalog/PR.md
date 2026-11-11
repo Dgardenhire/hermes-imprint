@@ -1,87 +1,142 @@
 # DRAFT PR description (not submitted)
 
-Title: `plugin-catalog: add imprint (brand kits for briefs, decks and audio)`
+Title: `plugin-catalog: add imprint (a notebook for your sources that makes branded decks, one-pagers, graphics and audio briefs)`
 
-Re-pin before opening: the `sha` and every image URL in `imprint.yaml` must point at the pushed commit, and the
-screenshots should be swapped for real Hermes captures from the Tuesday live test (the current ones are harness
-renders: the real page and real backend answers inside a mock Hermes window).
+Before opening: replace `SHA_PLACEHOLDER` in `imprint.yaml` (the `sha` and the two image URL prefixes) with the full
+40-character commit that is pushed and reviewed.
 
 ---
 
 ## Imprint
 
-Imprint turns your sources (PDFs, Word files, web pages, transcripts, notes) into a one-page brief, a slide deck
-or a spoken audio brief that looks and sounds like your organization, and checks every number and quote against
-the sources before you export.
+Imprint is a Hermes Desktop page for working from your own documents. You add PDFs, Word files, transcripts, web
+pages and notes. You ask questions and each answer carries numbered marks that open the passage it came from. Then you
+make a deck, a one-pager, a graphic or an audio brief set in a brand (a saved set of colors, fonts, a logo and voice
+rules). Every number and quoted phrase is matched against the passages it cites, in code, after the model has
+written; a number that is not in the sources holds Export until it is fixed or kept on purpose.
 
-What a prompt or a skill can't do here:
+Decks, one-pagers and graphics are drawn three ways (Editorial, Data board, Statement). The model lays each out as a
+web page, a headless browser (Chrome, Chromium, Edge or Brave) draws it, and the model looks at a picture of the result and fixes it. The user can use one design or
+mix slides across the three. A template version in the brand's own fixed layouts needs no browser. Brands can be
+imported (PDF guide, color codes, CSS, design tokens, PowerPoint or Canva file, logo, Open Design package, Claude
+Design system), built from a website, or proposed three at a time by the user's model.
 
-- **A brand kit is a real object.** Colors with roles set by measured WCAG contrast, font files, a logo, voice
-  rules, a layout family and rules for every page. Imprint's own renderers own the look; the model only writes
-  into a fixed structure.
-- **The same kit drives every format.** The PowerPoint carries the kit on its slide master, the PDF embeds the
-  kit's fonts, the audio brief's delivery follows the kit's voice notes. One source set, one look, three formats.
-- **Two kits side by side.** The same facts as two press proofs, each with crop marks, the kit's color bar and a
-  colophon that admits any font substitution.
-- **Checked before export.** Each number and quote is matched to a source passage; a wrong citation is corrected,
-  and a number that isn't in the sources blocks export until it is fixed, removed or kept on purpose.
-- **Many kits.** Ten starter kits (nine original kits worked out for different readers, plus the public-domain US
-  Web Design System), unlimited kits of your own, and Help me build a kit, which proposes three kits that really
-  differ and keeps a record of recent looks so they don't repeat. Kits import from pasted colors, CSS, design
-  tokens, Open Design packages, a Claude Design zip or folder, PowerPoint and Canva files, a website, or a logo
-  read by your own model, each shown as a proof before it is saved.
+Manual: https://linchpin.studio/hermes/imprint/manual/
 
-Overlap: Podcast Studio (merged) makes two-host audio from any text. Imprint's audio is one narrator through the
-user's own Hermes voice and is one of three formats tied to a brand kit; it does not use edge-tts directly.
-folio (open) indexes and cites a library; Imprint makes branded outputs from a chosen source set.
+### Hermes surfaces used
 
-### Screenshots
+- `ctx.register_auxiliary_task`: one task, `imprint_write`, shown as "Imprint writing" in Settings, Models, Auxiliary.
+  Every model call goes through the plugin LLM helper to the user's own Hermes model.
+- A Desktop page (`desktop/plugin.js`, built from `desktop/src`), importing only `@hermes/plugin-sdk`, `react`,
+  `react/jsx-runtime` and the bundled `hermes-ui-kit`. Its **Manual** button opens the manual in the user's browser
+  through `api.os.openExternal`.
+- A dashboard API (`dashboard/plugin_api.py`) for the page.
+- The user's own tools, by fixed name through `ctx.dispatch_tool`: `text_to_speech` (the audio brief) and
+  `web_extract` (a web address the user typed). A third, `image_generate`, exists in the backend; the shipped page has
+  no control that asks for pictures, so it is reached only by an API request that sets a `pictures` flag on a deck.
+- `tools.url_safety` (public API) for web reads when `web_extract` is not set up.
+- No tools, hooks or middleware are registered. Nothing runs unless the user presses a button.
 
-| | |
-|---|---|
-| Two proofs, two kits | `docs/shots/proofs-light.png` |
-| A number not in the sources, blocked | `docs/shots/proofs-flagged-light.png` |
-| Deck filmstrip | `docs/shots/deck-dark.png` |
-| Audio brief | `docs/shots/audio-light.png` |
-| Kits | `docs/shots/kits-light.png` |
-| An import as a proof before save | `docs/shots/kits-draft-light.png` |
-
-Demo video (under 90 s; sped-up parts marked 2x): link to be added.
+Requires Hermes 0.22.6 or newer (`requires_hermes` in the entry and in `plugin.yaml`). Python dependencies, all with
+floors and upper bounds: `pypdf>=6.21.4,<7`, `python-docx>=1.1,<2`, `python-pptx>=1.0,<2`, `reportlab>=4.0,<6`,
+`Pillow>=10,<14`.
 
 ### Disclosures (rule 13)
 
-- **Model calls** go to the user's own Hermes model through the plugin LLM helper, under the auxiliary task
-  "Imprint writing" (Settings, Models, Auxiliary). Source text is redacted with Hermes's redactor first. A logo or
+- **Model calls.** Source text (secrets redacted with Hermes's redactor), questions, briefs and notes go to the user's
+  own Hermes model. That includes pictures of draft slides, which the model is shown so it can fix layout. A logo or
   brand sheet goes to the model as an image only when the user asks Imprint to read one.
-- **Speech** goes through the user's own Hermes `text_to_speech` tool with the kit's delivery notes. If the provider
-  is the default (Edge), script text goes to Microsoft's online voice service. That is the user's Hermes setting.
-- **Network calls of its own:** only web addresses the user enters (page sources, a site to build a kit from,
-  reference sites in Help me build a kit), through `tools.url_safety`'s SSRF-safe client: public addresses only,
-  every redirect checked, 20 seconds to answer and 60 in all, streamed and capped (gzip or deflate only, unpacked within the cap), the page plus up to 10 same-site stylesheets.
-  No other hosts. No telemetry.
-- **Reads** only files the user picks, and in a folder import only the named token, font and logo files; the
-  folder grant is released after. Zip, Word and PowerPoint files are checked for size, unpack ratio, climbing
-  paths, links and XML entities before reading.
-- **Writes** only `$HERMES_HOME/plugin-data/imprint/` and paths the user picks in the save dialog.
-- **Background work:** model calls, web reads and recordings run on threads inside Hermes; each ends with its job.
-  No child processes, no shell commands.
-- **Credentials:** none stored or read. No self-updates.
-- **Registers** no tools, hooks or middleware: one auxiliary model task, a Desktop page and a dashboard API. So
-  nothing runs unattended, under cron or from the messaging gateway.
-- **Bundled data:** 18 OFL font files with `fonts/OFL.txt` and `fonts/SOURCES.txt` (each file's SHA-256). No binaries.
-- **Python dependencies:** `pypdf>=6.0,<7`, `python-docx>=1.1,<2`, `python-pptx>=1.0,<2`, `reportlab>=4.0,<6`.
-- **Desktop page:** imports only `@hermes/plugin-sdk`, `react` and `react/jsx-runtime`; built with esbuild from
-  `desktop/src/plugin.js`.
+- **Speech.** Audio scripts and the brand's delivery notes go to the user's Hermes `text_to_speech` provider. With the
+  default (Edge) that is Microsoft's online voice service. It is the user's Hermes setting.
+- **Network calls of its own.** Only web addresses the user enters (page sources, a site to build a brand from,
+  reference sites in Help me build a brand). Page sources go first to the user's `web_extract`; otherwise, and for
+  brand sites, through Hermes's SSRF-safe client: public addresses only, every redirect checked, 20 seconds to answer
+  and 60 in all, streamed and size-capped, gzip or deflate only, the page plus up to 10 same-site stylesheets. No other
+  hosts. No telemetry or usage reporting.
+- **A headless browser, a child process.** Started only by a button press, with a scratch profile that is deleted
+  after, and started with `posix_spawn` (never `fork`). Which browser (`browser.py`): the `IMPRINT_BROWSER` environment
+  variable (a full path, or a program name) when it is set; otherwise the usual install folders for Google Chrome,
+  Chromium, Microsoft Edge and Brave on macOS (`/Applications`, `~/Applications`) and Windows (`Program Files`,
+  `Program Files (x86)`, `AppData\Local`); otherwise those programs by name on `PATH` (macOS, Windows and Linux). Chrome
+  is preferred when several are installed. The lookup has been run on a Mac; the Windows and Linux paths are covered by
+  tests that stand in for those systems. If none is found the Designs screen says so and the template version still
+  works. Two uses:
+  (1) Drawing the three designs and their PDF and image exports (`htmldeck.py`). Each page it draws carries
+  `default-src 'none'`, so it can request nothing.
+  (2) Looking at a website the user builds a brand from (`sitestyle.py`), on macOS and Linux (on Windows the site's
+  colors and fonts are still read, and Imprint says the browser look is not available there yet). It opens the home
+  page and up to three linked pages, read only, never types, clicks or signs in, after reading robots.txt. It is
+  driven over a pipe (no debugging port) and receives no other descriptor of Hermes's. All its traffic must pass
+  through a forward proxy Imprint runs on `127.0.0.1` on a random port, which resolves each host once, refuses unless
+  every address is public, and connects to that checked address; QUIC, WebRTC and WebTransport are disabled.
+- **Other shell command.** On macOS, `sips` converts the first page of a one-pager PDF to a small preview image;
+  without it a brand card is drawn instead.
+- **Background work.** Model calls, web reads, recordings and drawing run on threads inside Hermes. The checking proxy
+  is a thread that exists only while a website is read. Each ends with its job. A job interrupted by a Hermes restart
+  is marked stopped.
+- **Reads.** Only files the user picks; in a folder import, only the named token, font and logo files, with the folder
+  grant released after; and, for a generated image, only from `<HERMES_HOME>/cache/`. Zip, Word and PowerPoint files
+  are checked for size, unpack ratio, climbing paths, links and XML entities before reading. Uploads stop at 25 MB.
+- **Writes.** `<HERMES_HOME>/plugin-data/imprint/` (including a `debug.log` of error kinds, last 200 lines, never the
+  user's words), scratch folders it deletes, and paths the user picks in the save dialog. If the `IMPRINT_DATA_DIR`
+  environment variable is set, everything Imprint stores goes to that folder instead (the test harness uses it; Hermes
+  never sets it). "Forget everything" deletes the data folder.
+- **Credentials.** None stored or read. No self-updates. No telemetry.
+- **Bundled data.** 29 OFL font files (.ttf) with `fonts/OFL.txt` and `fonts/SOURCES.txt`. No compiled code. The tests
+  and the local test harness carry sample Word, PowerPoint, PDF and .zip files (a fictional brand kit).
+- **Time.** A three-designs run takes several minutes on a small model; each model call is cut off after 8 minutes.
 
-### Checks run
+### Fixed since the first draft (Nov 10-11)
 
-- `hermes plugins validate` equivalent in a scratch HOME: 16 checks pass, 0 warnings.
-- `scripts/validate_plugin_catalog.py docs/catalog/imprint.yaml`: valid.
-- Unit tests: 181, all passing (`cd tests && python3 -m unittest discover -s .`).
-- gitleaks on every commit: no leaks. bandit: no high-severity findings.
-- Live run in Hermes Desktop 0.23.0: see `docs/LIVE-TEST.md` (to be filled in).
+- **Designs on Claude models.** When Claude's strict output mode (or Hermes itself) declines the JSON format request,
+  Imprint asks for the JSON in plain words and reads it from the reply, so the design and fix calls work on Claude.
+- **Shapes over text are caught.** The layout check now flags a chart mark or shape drawn over text, and the fix round
+  is shown it.
+- **The title slide is kept** in all three designs.
+- **Route loading under concurrent requests.** The revise and designs routes load once, behind a lock (8-thread test).
+- **Fast open.** The last good notebook is drawn at once from plugin storage while the backend starts; it takes no
+  input until the real answers land.
+- **Slide-number badges** sit in a caption row under each thumbnail, not over the slide.
+- **Website colors.** Build from a website weighs colors by where they are used (backgrounds, headings, logo), not by
+  how many rules mention them, so an error red no longer becomes the brand color.
+- **Speed.** Slides are drawn four at a time, only changed slides are redrawn, later fix rounds send only slides that
+  still have problems, and each design shows its step and elapsed time.
+- **Plain errors.** With the backend down the page says "Imprint's backend isn't answering." (not "Failed to fetch"),
+  and a job check stops after 90 seconds of no answers and says so, instead of spinning forever.
+- **Browser start-up.** The browser is started with `posix_spawn`, never `fork`: on macOS a forked child can crash in a
+  system network framework's fork handler once proxies have been looked up. This was the cause of three security
+  tests failing only in the full suite.
+- **Manual link.** A **Manual** button in the top bar opens the manual on linchpin.studio in the user's browser.
 
-`requires_hermes ">=0.22.0"`, the same floor in `plugin.yaml`. Folder imports are feature-detected, so older
-Hermes versions get the file and zip routes instead.
+### Tests
+
+689 Python tests pass in one full run (`cd tests && python3 -m unittest discover -s .`, about 2.5 minutes), with one
+skip: a migration check that needs an older checkout beside the repo. The desktop page's own tests pass with
+`node --test tests/js/*.test.mjs` (18 tests, 17 pass and one is driven from the Python suite with a real state answer).
+The three Chrome-over-a-pipe security tests, which used to fail only in the full run, pass in it.
+
+Overlap: Podcast Studio (merged) makes two-host audio from any text. Imprint's audio is one narrator through the
+user's own Hermes voice and is one of four formats tied to a brand. `folio` (open) indexes and cites a library;
+Imprint makes branded outputs from a chosen set of sources.
+
+### Screenshots
+
+Captured in Hermes Desktop with the made-up Harborlight sample: the notebook on first open, a deck with the number
+check, a one-pager with its evidence, the three designs, and a mixed deck.
+
+### Validator warnings, one line each
+
+- **Security scan, `docs/SECURITY-AUDIT.md:386`.** A prose line in an audit document that named example system and
+  settings file paths as paths the plugin refuses to read; it was documentation, not code, and is reworded so it no
+  longer names them.
+- **App markup selector, `desktop/plugin.js` 2727, 7196-7197, 7427-7429 and 7528 (from `desktop/src/plugin.js` 2647-2648,
+  2878-2880, 2979 and `desktop/src/designs.js:200`).** Every one is a rule inside the plugin's own CSS text, not a query run on the page
+  with JavaScript. Each is anchored to a class the plugin renders itself (`.imp`, `.imp-top`, `.imp-askcard`,
+  `.ip-ds-export`), and selects the SDK `Button` component, which the plugin renders inside that element, by its
+  `[data-slot=button]` attribute to set its corner radius, font size, quiet style or a held-back look. None reaches
+  Hermes's own markup outside the plugin's page: there is no `document.querySelector` or `MutationObserver` on app
+  elements, no `window.hermesDesktop` call, and the only document-level query in the plugin (`.ip-cv-nums`) is for one
+  of its own classes. If the reviewers would rather the plugin style its buttons only through SDK props, that is a
+  change to make before merge.
 
 Imprint is an independent community plugin. It is not made or endorsed by Nous Research.

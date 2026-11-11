@@ -150,11 +150,13 @@ def brand_for(kit: dict) -> tuple:
     req = (kit.get("rules") or {}).get("required") or []
     if req:
         lines.append("Every piece ends with this line, small, exactly: " + " ".join(map(str, req)))
-    lines.append('The logo is <img src="imprint:logo" alt="">, at least 56px wide, never stretched.')
+    ls = _service().logo_srcs(kit, pal)[0] or {}
+    lines.append('The logo is <img src="imprint:logo" alt="">, at least 56px wide, never stretched.'
+                 + (' On a brand-colour ground use <img src="imprint:logo-band" alt=""> instead: the mark made for that ground, '
+                    'set straight on it with no box behind it.' if ls.get("band") else ""))
     sb = SST.brief_text(kit.get("style_brief"))
     if sb:
         lines.append(sb)
-    ls = _service().logo_srcs(kit, pal)[0] or {}
     logo = ls.get("paper") or next(iter(ls.values()), "")
     return brand, "\n".join(lines), logo
 
@@ -169,6 +171,9 @@ def _ctx(oid: str, kit_id: str) -> dict:
     passages = {k: {"text": v["text"]} for k, v in by_ref.items()}
     doc = S._doc_for(oid, kit)
     brand, brand_text, logo = brand_for(kit)
+    band = (S.logo_srcs(kit, KITS.palette(kit))[0] or {}).get("band")
+    if band:
+        logo = {"paper": logo, "band": band}  # htmldeck.page swaps imprint:logo-band for the brand-ground mark
     return {"out": out, "kit": kit, "passages": passages, "doc": doc, "brand": brand, "brand_text": brand_text, "logo": logo,
             "hd": HD_KIND[out["kind"]], "css": HD.kit_css(brand, HD_KIND[out["kind"]])}
 
@@ -183,7 +188,7 @@ def _save_option(oid: str, d: str, r: dict) -> dict:
     slides = _scoped(r["slides"], d)
     tr = HD.trace(slides, r["passages"]) if r.get("passages") else r["trace"]
     opt = {"status": "ready", "slides": slides, "flags": tr["flags"], "counts": tr["counts"], "problems": r["render"]["problems"],
-           "removed": r.get("removed", []), "rounds": r.get("rounds", 0), "made_at": store.now()}
+           "removed": r.get("removed", []), "rounds": r.get("rounds", 0), "template": bool(r.get("template")), "made_at": store.now()}
     with _lock(oid):
         st = load(oid)
         st["options"][d] = opt
@@ -195,23 +200,94 @@ def _set_status(oid: str, d: str, status: str, step: str = "", error: str = "") 
     with _lock(oid):
         st = load(oid)
         o = st["options"].setdefault(d, {})
+        if status == "writing" and not o.get("t0"):
+            o["t0"] = time.time()  # when this run began, so the screen can say how long it has been going
         o.update({"status": status, "step": step, "error": error})
+        if status != "writing":
+            o.pop("t0", None)
         save(oid, st)
+
+
+# ---------------------------------------------------------------- stale "writing" states --
+
+INTERRUPTED = "Interrupted. Press Design three options again."
+
+
+def reconcile(oid: str) -> int:
+    """Options still marked ``writing`` while no designs job for this output is running in this process were cut off (Hermes or
+    the plugin helper restarted or was killed, or the person pressed Stop). Mark each failed with a plain message so the screen
+    stops saying 'writing' and the button works again. Returns how many were changed."""
+    if J.live("designs", oid):
+        return 0
+    n = 0
+    with _lock(oid):
+        st = store.read_json(folder(oid) / "state.json", None)
+        if not st:
+            return 0
+        for o in (st.get("options") or {}).values():
+            if isinstance(o, dict) and o.get("status") == "writing":
+                o.update({"status": "failed", "step": "", "error": INTERRUPTED})
+                n += 1
+        if n:
+            save(oid, st)
+    return n
+
+
+def reconcile_all() -> int:
+    """Run ``reconcile`` for every output that has designs on disk (at startup, after ``jobs.recover``)."""
+    base = store.root() / "outputs"
+    total = 0
+    if base.is_dir():
+        for d in base.iterdir():
+            if (d / "designs" / "state.json").exists():
+                try:
+                    total += reconcile(d.name)
+                except Exception:  # one unreadable folder never stops the rest
+                    pass
+    return total
 
 
 # ---------------------------------------------------------------- make the three --
 
+BROKEN = "This design did not come out right twice. Press Design three options again."
+
+
+async def make_checked(llm, cx: dict, content: str, d: str, hd: str, step, hint: str = "") -> dict:
+    """``htmldeck.make`` for one direction behind the guard: a design ``htmldeck.broken`` finds broken (a slide with no
+    styling, an empty slide, layout problems far past what a good design has) is made once more; if it is still broken, a
+    deck falls back to Imprint's own layout in that direction (``template``: the screen names it the template version), and
+    any other piece is reported failed. A broken design is never offered. At most two ``make`` runs per direction."""
+    r = None
+    for attempt in (0, 1):
+        if attempt:
+            shutil.rmtree(cx["dir"] / d, ignore_errors=True)  # no picture from the broken run is left to be shown
+        r = await HD.make(llm, cx["brand"], cx["brand_text"], cx["passages"], content, cx["dir"] / d, d, cx["logo"], ROUNDS, hd, step=step, style_hint=hint)
+        why = HD.broken(r["slides"], r["render"]["problems"])
+        if not why:
+            return r
+        step("came out broken (" + "; ".join(why) + "), trying again" if attempt == 0 else "using the template version")
+    if hd == "deck":
+        shutil.rmtree(cx["dir"] / d, ignore_errors=True)
+        t = HD.from_template(cx["doc"], d, cx["css"], cx["dir"] / d, cx["logo"], cx["passages"])
+        if not HD.broken(t["slides"], t["render"]["problems"]):
+            return t
+    raise ValueError(BROKEN)
+
+
 @J.handler("designs")
 async def job_designs(job_id: str, p: dict) -> dict:
     oid, kit_id = p["output_id"], p["kit_id"]
+    if not HD.browser_available():  # say so before any model call is spent on pages that cannot be drawn
+        raise J.JobError(HD.B.NOT_FOUND, "no_browser")
     cx = _ctx(oid, kit_id)
+    cx["dir"] = folder(oid)
     kind, hd = cx["out"]["kind"], cx["hd"]
     content = HD.content_text(cx["doc"], hd)
     llm = _service().model(oid)
     hint = style_hint(cx["kit"])
     with _lock(oid):
         old = load(oid)
-        st = {"kit_id": kit_id, "kind": kind, "options": {d: {"status": "writing", "step": "waiting"} for d in DIRS}, "final": old.get("final"),
+        st = {"kit_id": kit_id, "kind": kind, "options": {d: {"status": "writing", "step": "waiting", "t0": time.time()} for d in DIRS}, "final": old.get("final"),
               "versions": old.get("versions", []), "kept": old.get("kept", [])}
         save(oid, st)
     shutil.rmtree(folder(oid) / "tmp", ignore_errors=True)
@@ -226,7 +302,7 @@ async def job_designs(job_id: str, p: dict) -> dict:
             _set_status(oid, d, "writing", t)
             report()
         try:
-            r = await HD.make(llm, cx["brand"], cx["brand_text"], cx["passages"], content, folder(oid) / d, d, cx["logo"], ROUNDS, hd, step=step, style_hint=hint)
+            r = await make_checked(llm, cx, content, d, hd, step, hint)
             r["passages"] = cx["passages"]
             _save_option(oid, d, r)
             steps[d] = "done"
@@ -406,11 +482,12 @@ def _flag_key(f: dict) -> str:
 def view(oid: str) -> dict:
     S = _service()
     out = S._output(oid)
-    st = load(oid)
     kind = out["kind"]
     hd = HD_KIND.get(kind)
     if not hd:
         return {"available": False}
+    reconcile(oid)
+    st = load(oid)
     names = HD.DIRECTIONS[hd]
     kept = set(st.get("kept") or [])
     options = []
@@ -418,8 +495,10 @@ def view(oid: str) -> dict:
         o = st["options"].get(d) or {}
         n = len(o.get("slides") or [])
         pngs = _png_list(folder(oid) / d) if o.get("status") == "ready" else []
-        options.append({"d": d, "name": names[d]["name"], "blurb": re.split(r"(?<=[.])\s", names[d]["brief"])[0], "status": o.get("status") or "none",
+        tpl = bool(o.get("template")) and o.get("status") == "ready"
+        options.append({"d": d, "name": names[d]["name"] + (" (template version)" if tpl else ""), "template": tpl, "blurb": re.split(r"(?<=[.])\s", names[d]["brief"])[0], "status": o.get("status") or "none",
                         "step": o.get("step") or "", "error": o.get("error") or "", "slides": n,
+                        "elapsed": int(time.time() - o["t0"]) if o.get("status") == "writing" and o.get("t0") else 0,
                         "flags": len(o.get("flags") or []), "problems": [p for p in o.get("problems") or [] if p.get("kind") in HD.HARD],
                         "thumbs": [_thumb(Path(p)) for p in pngs]})
     final = None
@@ -444,6 +523,7 @@ def view(oid: str) -> dict:
     open_flags = [f for f in flags if not f["kept"]]
     return {"available": True, "output_id": oid, "kind": kind, "kit_id": st.get("kit_id"), "options": options, "final": final, "flags": flags,
             "open_flags": len(open_flags), "versions": [{"id": v["id"], "label": v["label"], "at": v["at"]} for v in st.get("versions") or []],
+            "browser": {"ok": HD.browser_available(), "message": "" if HD.browser_available() else HD.B.NOT_FOUND},
             "formats": FORMATS[kind], "made": any(o["status"] == "ready" for o in options),
             "building": any(o["status"] == "writing" for o in options)}
 
@@ -508,16 +588,23 @@ def seed(oid: str, kit_id: str, recorded: dict, pick: Optional[str] = None) -> d
     return view(oid)
 
 
+_ROUTES_LOCK = threading.Lock()
+
+
 def routes():
     """``dashboard/designs_api.py``, loaded by path (the dashboard folder is not part of the package)."""
     import importlib.util
     import sys
     name = "imprint_designs_api"
-    if name not in sys.modules:
-        spec = importlib.util.spec_from_file_location(name, Path(__file__).resolve().parent / "dashboard" / "designs_api.py")
-        if spec is None or spec.loader is None:
-            raise RuntimeError("Could not load Imprint's designs routes")
-        mod = importlib.util.module_from_spec(spec)
-        sys.modules[name] = mod
-        spec.loader.exec_module(mod)
-    return sys.modules[name]
+    # Two requests can arrive together on a cold start. Load under a lock and register only a finished module, so no
+    # request ever gets a half-loaded one (which has no ``mount`` yet and would fail every call until a restart).
+    with _ROUTES_LOCK:
+        mod = sys.modules.get(name)
+        if mod is None or not hasattr(mod, "mount"):
+            spec = importlib.util.spec_from_file_location(name, Path(__file__).resolve().parent / "dashboard" / "designs_api.py")
+            if spec is None or spec.loader is None:
+                raise RuntimeError("Could not load Imprint's designs routes")
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            sys.modules[name] = mod
+        return mod

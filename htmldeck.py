@@ -34,9 +34,11 @@ from pathlib import Path
 from typing import Callable, Optional
 
 try:  # package import (Hermes) or flat import (tests)
+    from . import browser as B
     from . import checks as C
     from . import content as K
 except ImportError:  # pragma: no cover
+    import browser as B
     import checks as C
     import content as K
 
@@ -47,7 +49,24 @@ FORMATS = {
     "graphic": {"w": 1080, "h": 1350, "min": 24, "multi": False, "label": "4:5 information graphic", "body_px": 30},
 }
 W, H = FORMATS["deck"]["w"], FORMATS["deck"]["h"]
-CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+# Kept for callers and tests that ask "is there a browser": the one found at import, else the usual Mac path.
+CHROME = B.find() or "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+
+class NoBrowser(ValueError):
+    """No Chrome, Chromium, Edge or Brave could be found. The message says what to do."""
+
+
+def browser_path() -> str:
+    """The browser to draw with, looked up now (so installing one, or setting IMPRINT_BROWSER, works without a restart)."""
+    got = B.find()
+    if not got:
+        raise NoBrowser(B.NOT_FOUND)
+    return got
+
+
+def browser_available() -> bool:
+    return B.find() is not None
 
 # ---------------------------------------------------------------- 1. sanitize --
 
@@ -74,6 +93,7 @@ _BAD_CSS = re.compile(r"@import|expression\s*\(|javascript:|vbscript:|behavior\s
                       r"element\s*\(|cross-fade\s*\(|attr\s*\(|src\s*:", re.I)
 _DATA_IMG = re.compile(r"^data:image/(?:png|jpeg|jpg|gif|webp);base64,[A-Za-z0-9+/=\s]+$", re.I)
 _LOGO = "imprint:logo"
+_LOGO_BAND = "imprint:logo-band"  # the logo as it goes on a brand-colour ground (the reversed or knocked-out mark)
 
 
 _CONTENT = re.compile(r"(?<![\w-])content\s*:\s*([^;}]*)", re.I)
@@ -99,7 +119,7 @@ def _forbidden(css: str) -> Optional[str]:
             return "content other than none or a plain string with no digit"
     for m in _URL.finditer(css):
         u = m.group(2).strip()
-        if not (u.startswith("#") or u == _LOGO):
+        if not (u.startswith("#") or u in (_LOGO, _LOGO_BAND)):
             return f"a picture or address ({u[:40]})"
     return None
 
@@ -110,10 +130,47 @@ def _clean_css(css: str, removed: list, where: str) -> str:
     ``url()`` survives only for an inline picture, a fragment (``#gradient``) or the logo."""
     css = re.sub(r"/\*.*?\*/", "", css or "", flags=re.S)
     why = _forbidden(css)
-    if why:
-        removed.append(f"{where}: CSS dropped ({why})")
-        return ""
-    return css
+    if not why:
+        return css
+    if "\\" not in css and "<" not in css:
+        # One bad rule (a page number drawn with content:attr(), say) used to cost the slide its whole stylesheet, leaving
+        # bare unstyled text. Keep the rules that pass on their own, each exactly as written, and drop the rest; the joined
+        # text is checked again as a whole, so nothing the cut leaves behind can add up to a forbidden construct.
+        kept, bad = [], []
+        for rule in _top_rules(css):
+            (bad if _forbidden(rule) else kept).append(rule)
+        joined = "".join(kept)
+        if kept and not _forbidden(joined):
+            removed.append(f"{where}: {len(bad)} CSS rule{'s' if len(bad) != 1 else ''} dropped ({why})")
+            return joined
+    removed.append(f"{where}: CSS dropped ({why})")
+    return ""
+
+
+def _top_rules(css: str) -> list:
+    """``css`` cut into its top-level rules (a selector and its block, or an @-block with what it nests), each exactly as
+    written. Unbalanced braces give one piece, the whole text, so a broken sheet is judged whole."""
+    out, depth, start = [], 0, 0
+    quote = ""
+    for i, ch in enumerate(css):
+        if quote:
+            if ch == quote:
+                quote = ""
+            continue
+        if ch in "\"'":
+            quote = ch
+        elif ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth < 0:
+                return [css]
+            if depth == 0:
+                out.append(css[start:i + 1])
+                start = i + 1
+    if depth or quote or css[start:].strip():
+        return [css]
+    return out
 
 
 class _Clean(HTMLParser):
@@ -142,7 +199,7 @@ class _Clean(HTMLParser):
                 self.removed.append(f"<{tag}>: {k}={v[:40]!r}")
                 continue
             if k == "src":
-                if tag == "img" and v == _LOGO:
+                if tag == "img" and v in (_LOGO, _LOGO_BAND):
                     keep.append((k, v.strip()))
                 else:
                     self.removed.append(f"<{tag}>: picture from {v[:40]!r}")
@@ -430,6 +487,61 @@ _MEASURE = r"""
     var ox=Math.min(p.right,q.right)-Math.max(p.left,q.left), oy=Math.min(p.bottom,q.bottom)-Math.max(p.top,q.top);
     if(ox>8&&oy>8) out.push({slide:i,kind:'overlap',what:'"'+boxes[a].t+'" (y '+Math.round(p.top)+'-'+Math.round(p.bottom)+') is drawn over "'+boxes[c].t+'" (y '+Math.round(q.top)+'-'+Math.round(q.bottom)+')'});
   }
+  // a small shape with no text (a chart dot, a marker) drawn over text: a dot grid that spills onto its caption.
+  // Text placed wholly inside a shape (a label in a badge) is on purpose and passes.
+  var slideArea=sr.width*sr.height, shapes=0;
+  s.querySelectorAll('div,span,i,b,circle,rect,ellipse,path,polygon').forEach(function(e){
+    if(shapes>=6) return;
+    if(e.textContent.trim()) return;
+    var r=e.getBoundingClientRect(); if(r.width<4||r.height<4) return;
+    if(r.width*r.height>slideArea*0.004) return;
+    var t=e.tagName.toLowerCase(), cs=getComputedStyle(e);
+    var painted=(t!=='div'&&t!=='span'&&t!=='i'&&t!=='b')||(cs.backgroundColor&&cs.backgroundColor!=='rgba(0, 0, 0, 0)'&&cs.backgroundColor!=='transparent')||cs.backgroundImage!=='none';
+    if(!painted||cs.visibility==='hidden'||parseFloat(cs.opacity)===0) return;
+    for(var k=0;k<boxes.length;k++){
+      var q=boxes[k].b; if(boxes[k].e.contains(e)) continue;
+      if(q.left>=r.left-1&&q.right<=r.right+1&&q.top>=r.top-1&&q.bottom<=r.bottom+1) continue;
+      var ox=Math.min(r.right,q.right)-Math.max(r.left,q.left), oy=Math.min(r.bottom,q.bottom)-Math.max(r.top,q.top);
+      if(ox>6&&oy>6&&ox*oy>r.width*r.height*0.25){
+        out.push({slide:i,kind:'overlap',what:'a shape (y '+Math.round(r.top)+'-'+Math.round(r.bottom)+') is drawn over "'+boxes[k].t+'" (y '+Math.round(q.top)+'-'+Math.round(q.bottom)+')'});
+        shapes++; break;
+      }
+    }
+  });
+  // a slide left mostly empty. Everything drawn (text, chart marks, painted panels; the ground, the logo and small foot
+  // lines in the bottom quarter aside) is taken as vertical bands. Flagged: the lower part under the last band is empty
+  // (more than 30%% of the height), or, on a slide with no statement-size figure, a band of more than 30%% of the height
+  // inside the composition is empty, or everything together covers under 30%% of the height. Only measured for decks.
+  if(__FILL__){
+    var H0=sr.height, iv=[], big=0, labels=[];
+    s.querySelectorAll('*').forEach(function(e){
+      var t=e.tagName.toLowerCase(); if(t==='style'||t==='br'||t==='svg'||t==='g'||t==='defs'||t==='tspan') return;
+      var r=e.getBoundingClientRect(); if(r.width<2||r.height<2) return;
+      var own=''; for(var n2=e.firstChild;n2;n2=n2.nextSibling) if(n2.nodeType===3) own+=n2.textContent; own=own.trim();
+      var cs=getComputedStyle(e);
+      var shape=(t==='rect'||t==='circle'||t==='ellipse'||t==='path'||t==='line'||t==='polygon'||t==='polyline'||t==='img');
+      var painted=!own&&!shape&&cs.backgroundColor&&cs.backgroundColor!=='rgba(0, 0, 0, 0)'&&cs.backgroundColor!=='transparent';
+      if(!own&&!shape&&!painted) return;
+      if(cs.visibility==='hidden'||parseFloat(cs.opacity)===0) return;
+      if((shape||painted)&&r.width>sr.width*0.9&&r.height>sr.height*0.9) return;
+      var fs=own?parseFloat(cs.fontSize):0;
+      if(own&&fs<=floor+4&&r.top>sr.top+H0*0.75) return;
+      if(t==='img'&&r.width<200&&r.height<200) return;
+      if(fs>big) big=fs;
+      var a=Math.max(0,r.top-sr.top), b=Math.min(H0,r.bottom-sr.top); if(b<=a) return;
+      iv.push([a,b,(own||'').slice(0,24)]);
+    });
+    if(iv.length){
+      iv.sort(function(p,q){return p[0]-q[0];});
+      var m=[[iv[0][0],iv[0][1],iv[0][2],iv[0][2]]];
+      for(var k2=1;k2<iv.length;k2++){var L=m[m.length-1]; if(iv[k2][0]<=L[1]){if(iv[k2][1]>L[1]){L[1]=iv[k2][1]; if(iv[k2][2]) L[3]=iv[k2][2];}} else m.push([iv[k2][0],iv[k2][1],iv[k2][2],iv[k2][2]]);}
+      var bot=m[m.length-1][1], cover=0, gap=0, ga='', gb='';
+      for(var k3=0;k3<m.length;k3++){cover+=m[k3][1]-m[k3][0]; if(k3&&m[k3][0]-m[k3-1][1]>gap){gap=m[k3][0]-m[k3-1][1]; ga=m[k3-1][3]; gb=m[k3][2];}}
+      if(H0-bot>H0*0.30) out.push({slide:i,kind:'empty',what:'everything on the slide ends '+Math.round(100*bot/H0)+'%% of the way down; the lower '+Math.round(100*(H0-bot)/H0)+'%% is empty. Anchor the exhibit or a row of figures to the bottom margin, or set the content larger'});
+      else if(big<150&&gap>H0*0.30) out.push({slide:i,kind:'empty',what:'an empty band '+Math.round(100*gap/H0)+'%% of the slide height sits between '+(ga?'"'+ga+'"':'one group')+' and '+(gb?'"'+gb+'"':'the next')+'. Close it up: set the content larger or give the exhibit the space'});
+      else if(big<150&&cover<H0*0.30) out.push({slide:i,kind:'empty',what:'the content covers only '+Math.round(100*cover/H0)+'%% of the slide height. Set it larger or spread it to the margins'});
+    }
+  }
  });
  // what the browser's own HTML5 parser made of the cleaned markup: anything the allowlist does not name is unsafe
  var okTags=__TAGS__, okAttrs=__ATTRS__;
@@ -448,23 +560,28 @@ _MEASURE = r"""
 """
 
 
-def _script_tag(floor: int = 26, nonce: str = "") -> tuple:
-    js = (_MEASURE % floor).replace("__NONCE__", nonce).replace("__TAGS__", json.dumps(sorted(_HTML_TAGS | _SVG_TAGS))).replace("__ATTRS__", json.dumps(sorted(_ATTRS)))
+def _script_tag(floor: int = 26, nonce: str = "", fill: bool = False) -> tuple:
+    js = (_MEASURE % floor).replace("__NONCE__", nonce).replace("__FILL__", "true" if fill else "false").replace("__TAGS__", json.dumps(sorted(_HTML_TAGS | _SVG_TAGS))).replace("__ATTRS__", json.dumps(sorted(_ATTRS)))
     digest = base64.b64encode(hashlib.sha256(js.encode()).digest()).decode()
     return f"<script>{js}</script>", digest
 
 
 def page(slides: list, css: str, logo_data_uri: str = "", only: Optional[int] = None, measure: bool = False, kind: str = "deck", nonce: str = "") -> str:
-    """A complete page: the brand CSS, the (already sanitized) slides, a policy that lets nothing out."""
+    """A complete page: the brand CSS, the (already sanitized) slides, a policy that lets nothing out. ``logo_data_uri`` is
+    one data URI, or ``{"paper": uri, "band": uri}`` when the kit has a logo for brand-colour grounds."""
+    logos = logo_data_uri if isinstance(logo_data_uri, dict) else {"paper": logo_data_uri}
+    paper = logos.get("paper") or next((v for v in logos.values() if v), "")
+    band = logos.get("band") or paper
     body = []
     for i, sl in enumerate(slides, 1):
         if only and i != only:
             continue
         h = re.sub(r"<\s*/?\s*(?:meta|base|link|script|iframe|object|embed)\b[^>]*>", "", sl.get("html") or "", flags=re.I)
-        h = h.replace(f'src="{_LOGO}"', f'src="{logo_data_uri}"' if logo_data_uri else 'src=""')
-        h = h.replace(f"url({_LOGO})", f"url({logo_data_uri})" if logo_data_uri else "none")
+        for tok, uri in ((_LOGO_BAND, band), (_LOGO, paper)):
+            h = h.replace(f'src="{tok}"', f'src="{uri}"' if uri else 'src=""')
+            h = h.replace(f"url({tok})", f"url({uri})" if uri else "none")
         body.append(f'<section class="slide" id="s{i}">{h}</section>')
-    script, digest = _script_tag(FORMATS[kind]["min"], nonce) if measure else ("", "")
+    script, digest = _script_tag(FORMATS[kind]["min"], nonce, fill=kind == "deck") if measure else ("", "")
     csp = ("default-src 'none'; img-src data:; font-src data:; style-src 'unsafe-inline'; "
            + (f"script-src 'sha256-{digest}'" if measure else "script-src 'none'"))
     return (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="{csp}">'
@@ -472,11 +589,16 @@ def page(slides: list, css: str, logo_data_uri: str = "", only: Optional[int] = 
 
 
 def _chrome(args: list, timeout: int = 120) -> subprocess.CompletedProcess:
+    exe = browser_path()  # before any scratch folder is made, so a missing browser leaves nothing behind
     scratch = tempfile.mkdtemp(prefix="imprint-chrome-")
     try:
-        return subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--mute-audio", "--no-first-run",
+        return subprocess.run([exe, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--mute-audio", "--no-first-run",
                                "--disable-extensions", "--no-default-browser-check", "--force-device-scale-factor=1",
-                               f"--user-data-dir={scratch}", *args], capture_output=True, text=True, timeout=timeout)
+                               f"--user-data-dir={scratch}", *args], capture_output=True, text=True, timeout=timeout,
+                              # with a full path and close_fds=False, subprocess starts the browser with posix_spawn, not fork:
+                              # a forked child can crash in a macOS network-framework fork handler (see sitestyle._spawn).
+                              # Descriptors stay close-on-exec, so the browser still gets only its own pipes.
+                              close_fds=False)
     finally:
         shutil.rmtree(scratch, ignore_errors=True)
 
@@ -496,26 +618,42 @@ def _read_report(r, nonce: str, i: int) -> list:
         return [{"slide": i, "kind": "unsafe", "what": "the page's report was unreadable"}]
 
 
-def render(slides: list, css: str, out_dir, logo_data_uri: str = "", pdf: bool = True, kind: str = "deck") -> dict:
+RENDER_WORKERS = 4  # slides drawn at the same time; each is its own short-lived browser with its own scratch folder
+
+
+def render(slides: list, css: str, out_dir, logo_data_uri: str = "", pdf: bool = True, kind: str = "deck", only=None) -> dict:
     """Draw every slide. Writes ``s01.png`` ..., ``deck.pdf`` into ``out_dir``. Returns ``{"png": [...], "pdf": path,
-    "problems": [{slide, kind, what}]}`` where problems are what the measuring script found in the drawn page."""
+    "problems": [{slide, kind, what}]}`` where problems are what the measuring script found in the drawn page.
+    ``only`` (slide numbers) draws just those slides, for a fix round that changed a few; the PDF is made only for a full draw."""
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     W, H = FORMATS[kind]["w"], FORMATS[kind]["h"]
     work = Path(tempfile.mkdtemp(prefix="imprint-deckhtml-"))
     pngs, problems = [], []
+    wanted = sorted(set(range(1, len(slides) + 1)) if only is None else {i for i in only if 1 <= i <= len(slides)})
+    exe = browser_path()
+
+    def draw(i: int):
+        f = work / f"s{i}.html"
+        nonce = secrets.token_hex(12)  # the slide cannot know it, so it cannot print a report of its own
+        f.write_text(page(slides, css, logo_data_uri, only=i, measure=True, kind=kind, nonce=nonce), encoding="utf-8")
+        png = out / f"s{i:02d}.png"
+        r = _chrome([f"--window-size={W},{H}", "--virtual-time-budget=4000", "--enable-logging=stderr", "--v=0", f"--screenshot={png}", f.as_uri()])
+        return i, png, _read_report(r, nonce, i)
+
     try:
-        for i in range(1, len(slides) + 1):
-            f = work / f"s{i}.html"
-            nonce = secrets.token_hex(12)  # the slide cannot know it, so it cannot print a report of its own
-            f.write_text(page(slides, css, logo_data_uri, only=i, measure=True, kind=kind, nonce=nonce), encoding="utf-8")
-            png = out / f"s{i:02d}.png"
-            r = _chrome([f"--window-size={W},{H}", "--virtual-time-budget=4000", "--enable-logging=stderr", "--v=0", f"--screenshot={png}", f.as_uri()])
-            problems += _read_report(r, nonce, i)
+        if len(wanted) > 1:
+            from concurrent.futures import ThreadPoolExecutor
+            with ThreadPoolExecutor(max_workers=min(RENDER_WORKERS, len(wanted))) as ex:
+                drawn = list(ex.map(draw, wanted))  # in slide order, whatever order they finish in
+        else:
+            drawn = [draw(i) for i in wanted]
+        for i, png, rep in drawn:
+            problems += rep
             if png.exists():
                 pngs.append(str(png))
         pdf_path = None
-        if pdf:
+        if pdf and only is None:
             f = work / "deck.html"
             f.write_text(page(slides, css, logo_data_uri, kind=kind), encoding="utf-8")
             pdf_path = out / "deck.pdf"
@@ -600,12 +738,32 @@ def rules(kind: str) -> str:
     if kind == "deck":
         tail = ("Reading text is at least 30px and labels at least 26px. Margins at least 96px. Three or four points at most on a "
                 "slide. No two slides share a layout and no side panel repeats. Source in small text (26px) at the foot of a slide "
-                "that shows a figure.\n\n")
+                "that shows a figure. A title slide in CONTENT is always its own first slide (the DECK title, its subtitle, the "
+                "logo); never fold it into another slide. The logo always stands out from the ground behind it; on a "
+                "brand-colour ground never put it in a white box. Every word on a slide is text in the markup: never draw text, a "
+                "slide number or a figure with CSS content, attr() or a counter (they are removed).\n\n"
+                "Type scale: a slide uses at most four sizes, each at least 1.5 times the one below it, taken from this ladder: "
+                "label 26, reading 30 to 34, deck line 44 to 52, headline 64 to 96, figure 160 to 400. Two sizes that are nearly the "
+                "same (30 beside 36) read as a mistake. The headline is always the largest words on a slide; only a figure may be "
+                "larger.\n\n"
+                "Use the whole slide. The composition reaches all four margins: something is anchored to the bottom margin (the "
+                "exhibit's baseline, a row of figures, a rule with the source line under it), never a headline and a few lines at "
+                "the top over an empty lower half. White space is placed between groups, not left over under them. If a slide's "
+                "content is thin, set it larger, not smaller. A slide whose content stops above the middle will be sent back.\n\n"
+                "Text never touches a rule or a panel edge: keep at least 32px between a line of type and a rule above or below it.\n\n"
+                "Charts make the point, not just the numbers: bars at least 64px thick, value labels in heading type at deck-line "
+                "size or larger and heavier than category labels, the one mark the argument turns on in the accent, and the gap or "
+                "change the headline claims drawn and labelled on the chart (a bracket or a rule with '212 more'). Two different "
+                "measures (enrolled, waiting) never share one row of bars without a clear break and its own label. Two values "
+                "within a fifth of each other are not a bar pair: show the difference as the figure and the two values as its "
+                "caption.\n\n")
     elif kind == "onepager":
         tail = ("Reading text 14 to 16px, labels at least 12px. Margins 48px. It is read on paper in ten seconds and then in two "
                 "minutes: the top third says the whole case; the rest backs it. Everything fits on the one page; cut words before "
                 "you shrink type. The last line of the page, small, is the organisation's required closing line if the BRAND "
-                "gives one.\n\n")
+                "gives one. Two values within a fifth of each other (a budget against last year's spending) are not a bar pair: "
+                "set the difference as the figure and the two values as its caption, or draw a bridge from one to the other with "
+                "the difference as the labelled step.\n\n")
     else:
         tail = ("Reading text at least 30px and labels at least 24px. Margins 72px. It is seen as a thumbnail on a phone first: one "
                 "headline, one exhibit, one source line, the logo. Nothing else.\n\n")
@@ -616,26 +774,48 @@ def rules(kind: str) -> str:
 DIRECTIONS = {
     "deck": {
         "editorial": {"name": "Editorial", "brief": (
-            "Annual-report editorial. Paper ground on most slides, the brand colour for headlines, one dark slide at the open and "
-            "one at the close. Headlines left-aligned, large, in heading type, a column of 1100px at most; generous white space; "
-            "thin hairline rules instead of boxes; an asymmetrical composition per slide (a 5/12 headline column beside a 7/12 "
-            "exhibit, or a headline over a wide exhibit). Figures are set huge and plain with a one-line caption under them. "
-            "Charts are quiet: thin bars, direct labels on the bars, no gridlines, no legends. The accent colour is used once per "
-            "slide, on the single number that matters. No cards, no tinted panels.")},
+            "A magazine feature, set like a printed annual report. THE HEADLINES ARE IN THE BODY FACE (var(--font-body), the "
+            "serif), regular weight, 72 to 96px, tight leading (1.05), brand colour or ink; the heading face is kept for "
+            "figures, small caps labels (26px, letter-spacing .12em, uppercase) and chart labels. This is what sets this "
+            "option apart: it reads as typeset, not as slideware. Paper ground on every slide except the title and the close, "
+            "which are full-bleed brand colour with paper type. A 12-column grid with a 96px margin: a narrow left rail (2 "
+            "columns) carries a small caps kicker and the slide number over a short accent rule; the headline runs across "
+            "columns 3 to 10; the exhibit sits below it on a baseline anchored to the bottom margin. Hairline rules (1 to 2px, "
+            "var(--rule)) organise the page; no boxes, no cards, no tinted panels, no bands. Figures are set huge and plain "
+            "(200px and up) with a one-line serif caption. Charts are quiet but large: thick plain bars, direct labels, no "
+            "gridlines, no legend. The quote is body italic at 76px or more across ten columns with a hanging opening mark. "
+            "The accent colour appears on exactly one element per slide, the single number that matters; every other figure is brand colour or ink. Figures are set in the body face too "
+            "(lining numerals, regular or semibold) at 200 to 320px, so the whole deck reads as one typeset serif page; the heading face only "
+            "ever appears at label size. Headlines 80 to 96px. The title slide is the most typographic slide in the deck: the "
+            "deck title at 128 to 160px in the body face, set low across ten columns, the subtitle at 44px under a hairline, "
+            "the kicker and the logo small in the left rail. A slide with three or more figures is a ruled table (figure "
+            "column, label column, hairline between rows), never a grid of tiles.")},
         "databoard": {"name": "Data board", "brief": (
-            "A board-room data deck. Every slide is built around its exhibit, and the exhibit fills at least half the canvas: a "
-            "bar or column chart to scale with axis and value labels, a ruled table with a totals row, a before and after pair, a "
-            "ladder of figures. The headline sits in a slim band across the top, the exhibit below it, one 'so what' sentence in "
-            "the right margin. Brand colour fills for chart marks and the top band; paper for the ground; the accent for the one "
-            "bar or row the argument turns on. Strong grids and consistent baselines. Vary the exhibit from slide to slide "
-            "(columns, horizontal bars, table, ledger, a dot matrix of 100).")},
+            "A board-room dashboard. Every slide is a grid of panels and the exhibit is the largest panel, at least half the "
+            "canvas: a column chart with an axis line and value labels, a ruled table with a totals row, a before and after "
+            "pair, a ladder of figures, a dot matrix of 100 for a percentage. The ground is var(--brand-tint); panels are paper "
+            "rectangles with square corners and 40px padding, set on a 24px gutter, so the slide reads as a board of tiles. "
+            "There is NO band across the top: the headline is plain heading-face type, 64 to 72px, brand colour, top left, "
+            "directly on the tinted ground, with a small caps label above it naming the measure. One narrower panel in "
+            "brand-colour fill with paper type holds the 'so what': the one figure or sentence the board should leave with. "
+            "All type is the heading face except source lines. Chart marks in brand colour, the comparison mark in "
+            "var(--brand-mid), the one bar or row the argument turns on in the accent. Vary the exhibit and the panel "
+            "arrangement from slide to slide (wide chart over three figure tiles; tall chart beside a table; four equal "
+            "tiles); never the same grid twice in a row. The title slide is a board too: the deck title at 96px on the tinted "
+            "ground, then one wide hero tile holding the single figure the whole case rests on (set at 200px or more with its "
+            "label) beside a brand-fill tile with the subtitle; never an empty tile and never the logo as a tile of its own. "
+            "Where CONTENT gives a slide two points that are one comparison, merge them into one exhibit.")},
         "statement": {"name": "Statement", "brief": (
-            "Keynote statement deck. One idea per slide and almost no furniture. Alternate full-bleed brand-colour slides (paper "
-            "text) with paper slides (brand-colour text). Headlines or a single figure at 140 to 320px in heading type, flush left "
-            "or centered on a very wide measure, one short line beneath. The quote is a full-slide statement in body italic at "
-            "90px. Charts, when needed, are reduced to a single drawn comparison of two or three marks labelled at the same giant "
-            "scale. Page number and logo are the only small elements. Fewer words than the other directions; some slides hold "
-            "only a number and a phrase.")},
+            "A keynote statement deck: one idea per slide on a plain ground, nothing else. Alternate full-bleed brand-colour "
+            "slides (background var(--band), type var(--band-text), logo imprint:logo-band) with paper slides (background "
+            "var(--paper), type var(--brand), logo imprint:logo); never two of the same ground in a row. Each slide holds at most "
+            "four things: one large figure or statement (160 to 320px, var(--font-heading), weight 800, line-height 0.95), one "
+            "line of 44 to 52px directly under it saying what it means, the source at 26px on the bottom margin, and the logo. "
+            "Set the large element flush left on the 96px margin in the lower half of the slide, like a poster. Where CONTENT "
+            "gives a slide several figures, set the one the headline is about large and put the others in the 44px line. A "
+            "quote is the large element in var(--font-body) italic at 88px, five lines at most. A chart is at most three thick "
+            "bars labelled at 44px. No panels, tiles, boxes, bands, grids or paragraphs, and no slide number. The title slide "
+            "sets the deck title at 160 to 200px, three lines at most, low on a brand-colour slide, with the subtitle at 44px.")},
     },
     "onepager": {
         "editorial": {"name": "Editorial", "brief": (
@@ -705,19 +885,32 @@ def write_prompt(brand_text: str, sources_text: str, content: str, direction: st
     return SYSTEM, instr, body
 
 
-def fix_prompt(brand_text: str, sources_text: str, slides: list, report: dict, direction: str, paths: list, kind: str = "deck") -> tuple:
+def fix_prompt(brand_text: str, sources_text: str, slides: list, report: dict, direction: str, paths: list, kind: str = "deck",
+               only=None) -> tuple:
+    """``only`` (slide numbers) shows the model just those slides and their pictures: a later round has nothing to say about a
+    slide that is already clean, and sending it again costs time. ``paths`` are the pictures of the shown slides, in order."""
     d = DIRECTIONS[kind][direction]
+    shown = list(range(1, len(slides) + 1)) if only is None else sorted(only)
     lines = [f"slide {p['slide']}: {p['kind']}: {p['what']}" for p in report.get("problems", [])]
     lines += [f"slide {f['slide']}: number {f['value']} is {f['status']} (in: {f['text'][:60]})" for f in report.get("flags", [])]
     body = (f"BRAND\n{brand_text}\n\nSOURCES\n{sources_text}\n\nPROBLEMS FOUND BY MEASURING THE RENDER AND TRACING NUMBERS\n"
             + ("\n".join(lines) or "none") + "\n\nPICTURES OF THE RENDER (open each with the Read tool and look at it)\n"
             + "\n".join(paths) + "\n\nCURRENT MARKUP\n"
-            + "\n".join(f"--- slide {i}\n{s['html']}" for i, s in enumerate(slides, 1)))
-    instr = (f"DESIGN DIRECTION: {d['name']}. {d['brief']}\n\nLook at the pictures. Fix every problem listed, and anything else you "
-             f"can see: text cut off or crowding an edge, weak hierarchy, an empty or crowded area, a layout repeated from "
-             f"another slide, a repeated side panel, a chart not drawn to scale, a figure with no source. Change only what needs "
-             f"it, keep the numbers and their data-source, and stay in the design direction. {rules(kind)}\n\nReturn JSON only: "
-             '{"slides":[{"index":1,"html":"<div>...</div>"}]} with only the entries you changed.')
+            + "\n".join(f"--- slide {i}\n{slides[i - 1]['html']}" for i in shown))
+    if only is None:
+        instr = (f"DESIGN DIRECTION: {d['name']}. {d['brief']}\n\nLook at the pictures. Fix every problem listed, and anything else you "
+                 f"can see: text cut off or crowding an edge, weak hierarchy, an empty or crowded area, a layout repeated from "
+                 f"another slide, a repeated side panel, a chart not drawn to scale, a figure with no source. Change only what needs "
+                 f"it, keep the numbers and their data-source, and stay in the design direction. {rules(kind)}\n\nReturn JSON only: "
+                 '{"slides":[{"index":1,"html":"<div>...</div>"}]} with only the entries you changed.')
+    else:
+        nums = ", ".join(str(i) for i in shown)
+        instr = (f"DESIGN DIRECTION: {d['name']}. {d['brief']}\n\nThis is a second look. Only slide{'s' if len(shown) > 1 else ''} {nums} "
+                 f"still {'have' if len(shown) > 1 else 'has'} a problem; the other slides are fine and are not shown. Look at the "
+                 f"{'pictures' if len(shown) > 1 else 'picture'} and fix every problem listed for {'them' if len(shown) > 1 else 'it'}, "
+                 f"keeping the look of the design. Change only what needs it, keep the numbers and their data-source, and stay in the "
+                 f"design direction. {rules(kind)}\n\nReturn JSON only: "
+                 '{"slides":[{"index":1,"html":"<div>...</div>"}]} with only the entries you changed, each with its own slide number as index.')
     return SYSTEM, instr, body
 
 
@@ -741,19 +934,22 @@ def _take(items, slides, removed, replace=False):
             slides.append({"html": clean, "notes": notes})
 
 
-def render_safe(slides: list, css: str, out_dir, logo_data_uri: str = "", kind: str = "deck", pdf: bool = False) -> dict:
+def render_safe(slides: list, css: str, out_dir, logo_data_uri: str = "", kind: str = "deck", pdf: bool = False, only=None) -> dict:
     """Draw ``slides``; any slide the browser's own parse finds unsafe is blanked and the deck is drawn again, until the
-    pictures and the PDF are of exactly the slides that remain (and that are traced). Never returns stale output."""
-    for _ in range(len(slides) + 1):
-        result = render(slides, css, out_dir, logo_data_uri, pdf=pdf, kind=kind)
+    pictures and the PDF are of exactly the slides that remain (and that are traced). Never returns stale output.
+    With ``only`` (slide numbers) just those slides are drawn and reported: ``png`` and ``problems`` then cover those slides."""
+    mine = set(range(1, len(slides) + 1)) if only is None else {i for i in only if 1 <= i <= len(slides)}
+    result = render(slides, css, out_dir, logo_data_uri, pdf=pdf, kind=kind, only=only)
+    for _ in range(len(slides)):
         bad = {p["slide"] for p in result["problems"] if p["kind"] == "unsafe" and slides[p["slide"] - 1]["html"].strip()}
         if not bad:
             break
         for i in bad:
             slides[i - 1]["html"] = ""
+        result = render(slides, css, out_dir, logo_data_uri, pdf=pdf, kind=kind, only=only)
     result["problems"] = [p for p in result["problems"] if p["kind"] != "unsafe"] + [
         {"slide": i, "kind": "rejected", "what": "the markup was not accepted (see what was removed); write it again with plain HTML"}
-        for i, sl in enumerate(slides, 1) if not sl["html"].strip()]
+        for i, sl in enumerate(slides, 1) if i in mine and not sl["html"].strip()]
     return result
 
 
@@ -778,22 +974,46 @@ async def make(llm, brand: dict, brand_text: str, passages: dict, content: str, 
     slides, removed = [], []
     _take(first.get("slides"), slides, removed)
     loop = asyncio.get_event_loop()
+    out_path = Path(out_dir)
     result = tr = None
     rnd = 0
+    changed = None          # slide numbers the last fix changed; None means draw every slide
+    prev_hard = None        # hard problems left after the round before
     while True:
         say("drawing" if rnd == 0 else f"looking, round {rnd}")
-        result = await loop.run_in_executor(None, lambda: render_safe(slides, css, out_dir, logo_data_uri, kind))
+        drawn = await loop.run_in_executor(None, lambda: render_safe(slides, css, out_dir, logo_data_uri, kind, only=changed))
+        if changed is None:
+            result = drawn
+        else:  # unchanged slides keep the picture and the measurements they already have
+            kept = [p for p in result["problems"] if p["slide"] not in changed]
+            result = {"png": sorted(str(p) for p in out_path.glob("s[0-9][0-9].png"))[:len(slides)], "pdf": None, "problems": kept + drawn["problems"]}
         tr = trace(slides, passages)
         report = {"problems": result["problems"], "flags": tr["flags"]}
-        hard = any(p["kind"] in HARD for p in result["problems"])
-        if rnd >= rounds + (2 if hard else 0) or (rnd >= rounds and not hard) or (rnd > 0 and not result["problems"] and not tr["flags"]):
-            break
+        hard_n = sum(1 for p in result["problems"] if p["kind"] in HARD)
+        if rnd > 0 and not result["problems"] and not tr["flags"]:
+            break  # nothing left to fix
+        if rnd >= rounds:
+            # Extra rounds are only for hard layout problems, and only while the last fix was making headway on them.
+            if not hard_n or rnd >= rounds + 2 or (prev_hard is not None and hard_n >= prev_hard):
+                break
+        prev_hard = hard_n
         rnd += 1
         say(f"fixing, round {rnd}")
-        sysm, instr, body = fix_prompt(brand_text, sources_text, slides, report, direction, result["png"], kind)
+        if rnd == 1:
+            shown = None  # the first look is at the whole piece: the model judges hierarchy, repetition and balance across slides
+        else:
+            shown = sorted({p["slide"] for p in result["problems"]} | {f["slide"] for f in tr["flags"]})
+            shown = [i for i in shown if 1 <= i <= len(slides)] or None
+        paths = result["png"] if shown is None else [str(out_path / f"s{i:02d}.png") for i in shown]
+        sysm, instr, body = fix_prompt(brand_text, sources_text, slides, report, direction, paths, kind, only=shown)
+        n_out = len(slides) if shown is None else len(shown)
         fixed = await llm.structured(system=sysm, instructions=instr, body=body, schema=None, purpose="htmldeck.fix",
-                                     max_tokens=32000, timeout=480, images=[_image_block(p) for p in result["png"]])
+                                     max_tokens=min(32000, 6000 + 3500 * n_out), timeout=480, images=[_image_block(p) for p in paths if Path(p).exists()])
+        before = [s["html"] for s in slides]
         _take(fixed.get("slides"), slides, removed, replace=True)
+        changed = [i + 1 for i, (a, b) in enumerate(zip(before, slides)) if a != b["html"]]
+        if not changed:
+            break  # the model changed nothing, so another look at the same pictures would say the same
     return {"slides": slides, "render": result, "trace": tr, "removed": list(dict.fromkeys(removed)), "rounds": rnd}
 
 
@@ -923,3 +1143,134 @@ def set_text(markup: str, index: int, text: str) -> tuple:
         return markup, False
     clean, _rm = sanitize("".join(p.out))
     return clean, bool(clean)
+
+
+# ---------------------------------------------------------------- the guard: a broken design is never offered --
+
+_STYLE_BLOCK = re.compile(r"<style>(.*?)</style>", re.S | re.I)
+_INLINE_STYLE = re.compile(r'\sstyle="[^"]*\S[^"]*"', re.I)
+
+
+def unstyled(markup: str) -> bool:
+    """True when a slide has markup but no CSS reaches it: its <style> blocks hold no rule and no element carries a style.
+    That is what a slide looks like after its stylesheet was dropped: bare default text in the top-left corner."""
+    if not (markup or "").strip():
+        return False
+    css = "".join(_STYLE_BLOCK.findall(markup))
+    outside_svg = re.sub(r"<svg\b.*?</svg>", "", markup, flags=re.S | re.I)  # a styled chart does not lay out the slide's text
+    return "{" not in css and not _INLINE_STYLE.search(outside_svg)
+
+
+def broken(slides: list, problems: list) -> list:
+    """Why this design must not be offered as drawn, or ``[]``. Conservative, from what the loop already measures: a slide
+    left empty (its markup was rejected), a slide with no styling at all, or hard layout problems at more than two a slide
+    (a design that came back right averages well under one)."""
+    n = len(slides)
+    if not n:
+        return ["no slides came back"]
+    why = []
+    empty = [i for i, s in enumerate(slides, 1) if not (s.get("html") or "").strip()]
+    bare = [i for i, s in enumerate(slides, 1) if unstyled(s.get("html") or "")]
+    hard = sum(1 for p in problems or [] if p.get("kind") in HARD)
+    if empty:
+        why.append("slide " + ", ".join(map(str, empty)) + " came back empty")
+    if bare:
+        why.append("slide " + ", ".join(map(str, bare)) + " has no styling")
+    if hard > 2 * n:
+        why.append(f"{hard} layout problems on {n} slides")
+    return why
+
+
+_TPL = {  # the built-in layout, in each direction's ground and type, as far as one fixed layout allows
+    "editorial": {"ground": lambda i: "paper", "head": "var(--font-body)", "hw": 400, "big": "var(--font-body)", "bw": 400},
+    "databoard": {"ground": lambda i: "tint", "head": "var(--font-heading)", "hw": 700, "big": "var(--font-heading)", "bw": 800},
+    "statement": {"ground": lambda i: "band" if i % 2 else "paper", "head": "var(--font-heading)", "hw": 800, "big": "var(--font-heading)", "bw": 800},
+}
+_GROUND = {"paper": ("var(--paper)", "var(--brand)", "var(--ink)", _LOGO), "tint": ("var(--brand-tint)", "var(--brand)", "var(--ink)", _LOGO),
+           "band": ("var(--band)", "var(--band-text)", "var(--band-text)", _LOGO_BAND)}
+
+
+def _tpl_parts(s: dict) -> tuple:
+    """``(headline, big figure, its line, other lines, refs)`` from one checked content slide, every number as written."""
+    e = _html.escape
+    refs = " ".join(s.get("refs") or [])
+    head = s.get("heading") or s.get("title") or ""
+    big = line = ""
+    rest = []
+    if s.get("quote"):
+        return "", "", e("“" + s["quote"].strip().strip("“”\"") + "”"), [e(s.get("who") or "")] if s.get("who") else [], refs
+    if s.get("value"):
+        big, line = s["value"], s.get("label") or s.get("context") or ""
+    figs = s.get("figures") or []
+    if figs and not big:
+        big, line = figs[0].get("value") or "", figs[0].get("label") or ""
+        rest = [f"{f.get('value', '')} {f.get('label', '')}".strip() for f in figs[1:]]
+    bars = s.get("bars") or []
+    if bars and not big:
+        lead = next((b for b in bars if b.get("accent")), bars[-1])
+        big, line = lead.get("value") or "", lead.get("label") or ""
+        rest = [f"{b.get('label', '')}: {b.get('value', '')}" for b in bars if b is not lead]
+        if s.get("subhead"):
+            rest.insert(0, s["subhead"])
+    for r in s.get("rows") or []:
+        if isinstance(r, dict):
+            rest.append(f"{r.get('label', '')}: {r.get('left', '')} → {r.get('right', '')}".strip(": "))
+    for b in s.get("bullets") or []:
+        rest.append((b.get("text") or "") + (f" ({b['figure']})" if b.get("figure") else ""))
+    for k in ("text", "cta"):
+        if s.get(k):
+            rest.append(s[k])
+    if not head and not big:
+        head = s.get("subhead") or ""
+    return e(head), e(big), e(line), [e(x) for x in rest if x][:5], refs
+
+
+def template_slides(doc: dict, direction: str = "statement") -> list:
+    """The deck as Imprint's own fixed layout, in ``direction``'s ground and type: a title slide, then one slide per content
+    point with its headline, its figure and its lines. No model call. Used only when the drawn design came back broken twice."""
+    t = _TPL.get(direction) or _TPL["statement"]
+    e = _html.escape
+    out = []
+    pts = [{"_title": True}] + list(doc.get("slides") or [])
+    for i, s in enumerate(pts, 1):
+        p = f"s{i}-"
+        g = "band" if s.get("_title") else t["ground"](i)
+        bg, hc, tc, logo = _GROUND[g]
+        if s.get("_title"):
+            head, big, line, rest, refs = e(doc.get("title") or ""), "", e(doc.get("subtitle") or ""), [], ""
+        else:
+            head, big, line, rest, refs = _tpl_parts(s)
+        hs = 128 if s.get("_title") else (72 if big else 88)
+        if len(head) > 110:
+            hs = min(hs, 64)
+        bs = 200 if not rest else 160
+        ls = 44 if len(line) < 120 else 34
+        css = (f".{p}slide{{position:relative;width:1920px;height:1080px;box-sizing:border-box;padding:96px;display:flex;flex-direction:column;"
+               f"justify-content:flex-end;gap:32px;background:{bg};color:{tc};overflow:hidden}}"
+               f".{p}logo{{position:absolute;right:96px;top:96px;width:180px}}"
+               f".{p}head{{margin:0;max-width:1600px;font-family:{t['head']};font-weight:{t['hw']};font-size:{hs}px;line-height:1.05;color:{hc}}}"
+               f".{p}big{{margin:0;font-family:{t['big']};font-weight:{t['bw']};font-size:{bs}px;line-height:.95;color:{hc}}}"
+               f".{p}line{{margin:0;max-width:1500px;font-family:var(--font-body);font-size:{ls}px;line-height:1.25}}"
+               f".{p}list{{margin:0;padding:0;list-style:none;font-family:var(--font-body);font-size:32px;line-height:1.3}}")
+        src = f' data-source="{e(refs)}"' if refs else ""
+        quote = bool(s.get("quote"))
+        parts = [f'<div class="{p}slide"><style>{css}</style><img class="{p}logo" src="{logo}" alt="">']
+        if head:
+            parts.append(f'<h2 class="{p}head"{src}>{head}</h2>')
+        if big:
+            parts.append(f'<p class="{p}big"{src}>{big}</p>')
+        if line:
+            parts.append(f'<p class="{p}{"head" if quote else "line"}"{src}>{line}</p>')
+        if rest:
+            parts.append(f'<ul class="{p}list"{src}>' + "".join(f"<li>{x}</li>" for x in rest) + "</ul>")
+        parts.append("</div>")
+        out.append({"html": sanitize("".join(parts))[0], "notes": ""})
+    return out
+
+
+def from_template(doc: dict, direction: str, css: str, out_dir, logo_data_uri="", passages=None) -> dict:
+    """``make``'s result shape for the template version of ``direction`` (deck only), drawn and traced, marked ``template``."""
+    slides = template_slides(doc, direction)
+    result = render_safe(slides, css, out_dir, logo_data_uri, "deck")
+    tr = trace(slides, passages or {})
+    return {"slides": slides, "render": result, "trace": tr, "removed": [], "rounds": 0, "template": True}

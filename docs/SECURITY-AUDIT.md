@@ -383,7 +383,7 @@ No redesign needed.
 - **The picture comes back only from Hermes's image cache.** A local path is read only if it resolves inside
   `<HERMES_HOME>/cache/`, is a PNG, JPEG or WebP, and is under 20 MB; an https URL goes through the SSRF-safe
   reader. Every picture is decoded and re-encoded by Pillow as a plain JPEG (no metadata), so an SVG or anything
-  else never reaches a page or a file. A path elsewhere (the data folder, `/etc/passwd`, `../../.env`) is never read
+  else never reaches a page or a file. A path outside the cache folder (the data folder, a system file, or a path that climbs out of the cache) is never read
   (tests).
 - **Chat citations.** A citation survives only if it names a passage from a ticked source that was inside the
   corpus the model saw; others are dropped with their brackets (tests: a foreign source's passage, an invented label,

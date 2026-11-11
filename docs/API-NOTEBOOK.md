@@ -249,7 +249,14 @@ The person picks one; the pane saves the list with `POST /outlines/{id}`.
   with a sentence.
 - Every option is re-checked by `checks.grounding` before it is returned. An option that fails the check is
   dropped; if all fail, `status: "unchanged"` with a sentence.
-- A typed line that is not exactly "Add the quote after slide N" or "Add the point after slide N" returns
+- A typed line that names a field and gives its new words ("Change this slide's title to: ...", "Change the subtitle
+  to ...", "Set the heading of slide 3 to ...", "Rename slide 2 to ...", "Title: ...") comes back as
+  `action: "retitle"` with one option, and no model call is made. The result adds `path` (the doc field: `title`,
+  `subtitle`, `slides.N.heading|label|subtitle|context`, or a designed slide's title element `cover.els.J` /
+  `slides.N.els.J`), `frame` (0 is the title slide), `before_text`, `base_text`, and `options[0].text`. The body may
+  carry `on: "title"` when the title slide is the one open. The new words are checked by `checks.grounding`; a number
+  no source holds returns `status: "refused"` with a sentence naming it. Keep goes through `store.add_version`.
+- Any other typed line that is not exactly "Add the quote after slide N" or "Add the point after slide N" returns
   `status: "refused"` and one plain sentence. No model call is made for it.
 - The model never picks a tool, exports, deletes, or writes anything outside `plugin-data/imprint`. It only
   returns slide JSON that this code checks.

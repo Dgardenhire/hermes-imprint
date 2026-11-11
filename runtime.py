@@ -118,7 +118,7 @@ class ModelError(RuntimeError):
 NO_MODEL = "Imprint couldn't reach your Hermes model. Check Settings, then press Retry."
 BUSY = "Your model is busy right now. Wait a minute, then press Retry."
 NOT_ALLOWED = "Hermes did not let Imprint use the model. Check Imprint's settings under Plugins, then press Retry."
-CUT_OFF = "The answer came back cut off. Try a shorter output, or fewer sources."
+CUT_OFF = "Your model stopped before the answer was finished. Press Retry; if it happens again, ask for a shorter piece."
 TIMED_OUT = "Your model took too long to answer. Press Retry, or try fewer sources."
 CAP_REACHED = "Today's token limit for Imprint is used up. Raise it in Imprint's settings, or try again tomorrow."
 

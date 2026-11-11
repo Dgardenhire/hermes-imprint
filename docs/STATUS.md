@@ -1,5 +1,7 @@
 # Imprint status
 
+A dated build log. Current facts (Hermes floor `>=0.22.6`, tests, fixes) are in `CHANGELOG.md` and `README.md`.
+
 Updated Nov 8, 2026, stage 7 (the notebook). Branch `notebook` in the worktree `hermes-imprint-wt-notebook`, not
 pushed, not merged. Next stage starts here.
 
@@ -386,7 +388,7 @@ Stage 2 added:
   kit.
 - **Folder imports in the pane** use `ctx.files.requestFolder`, read only the named files, then `release` the
   folder. Feature-detected: on an older Hermes the pane says so and offers "Pick its tokens.css instead", so the
-  floor stays `>=0.22.0`.
+  floor stayed `>=0.22.0` at this stage. (Now `>=0.22.6`: see `plugin.yaml` and the CHANGELOG.)
 - **Security fix from the Nov 7 review (must fix before release): done.** `ingest.fetch` now streams: a
   Content-Length over the cap is refused before reading; decoded bytes are counted as they arrive and the read
   stops at the cap (pages refuse and say so; stylesheets keep what fits). URL sources use the 25 MB file cap;
