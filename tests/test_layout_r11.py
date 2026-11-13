@@ -7,7 +7,7 @@ from importlib import import_module
 
 from _load import ROOT, kits
 
-PKG = "imprint_plugin_package"
+PKG = "letterpress_plugin_package"
 RD = import_module(f"{PKG}.render_deck")
 SY = import_module(f"{PKG}.systems")
 SC = import_module(f"{PKG}.scene")

@@ -27,6 +27,9 @@ import sys
 import tempfile
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from childenv import child_env  # noqa: E402  only the allowlisted names reach the programs started here
+
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 
@@ -242,7 +245,7 @@ def render(deck: Path, out: Path) -> list:
     copy = work / "deck.pptx"
     strip_notes(deck, copy)
     (work / "ql").mkdir()
-    r = subprocess.run(["qlmanage", "-p", "-o", str(work / "ql"), str(copy)], capture_output=True, text=True, timeout=180)
+    r = subprocess.run(["qlmanage", "-p", "-o", str(work / "ql"), str(copy)], capture_output=True, text=True, timeout=180, env=child_env())
     prev = work / "ql" / "deck.pptx.qlpreview"
     html = (prev / "Preview.html").read_text(encoding="utf-8") if (prev / "Preview.html").exists() else ""
     if not html:
@@ -253,9 +256,9 @@ def render(deck: Path, out: Path) -> list:
     # square), so each PDF is drawn with ``sips`` instead, which keeps the page transparent.
     for pdf in sorted(prev.glob("*.pdf")):
         png = prev / (pdf.name + ".png")
-        subprocess.run(["sips", "-s", "format", "png", "-Z", "1600", str(pdf), "--out", str(png)], capture_output=True, timeout=120)
+        subprocess.run(["sips", "-s", "format", "png", "-Z", "1600", str(pdf), "--out", str(png)], capture_output=True, timeout=120, env=child_env())
         if not png.exists():
-            subprocess.run(["qlmanage", "-t", "-s", "1600", "-o", str(prev), str(pdf)], capture_output=True, timeout=120)
+            subprocess.run(["qlmanage", "-t", "-s", "1600", "-o", str(prev), str(pdf)], capture_output=True, timeout=120, env=child_env())
         if png.exists():
             html = html.replace(f'"{pdf.name}"', f'"{png.name}"')
     m = re.search(r"div\.slide, div\.loading-slide \{ width: (\d+); height: (\d+);\}", html)
@@ -284,7 +287,7 @@ def render(deck: Path, out: Path) -> list:
         subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--mute-audio", f"--user-data-dir={prof}",
                         "--autoplay-policy=user-gesture-required", "--force-device-scale-factor=2",
                         f"--window-size={w},{h}", "--virtual-time-budget=3000", f"--screenshot={png}", f.as_uri()],
-                       capture_output=True, timeout=120)
+                       capture_output=True, timeout=120, env=child_env())
         shutil.rmtree(prof, ignore_errors=True)
         files.append(png)
     shutil.rmtree(work, ignore_errors=True)

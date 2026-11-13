@@ -68,7 +68,7 @@ ACCEPTED = {".pdf", ".docx"} | TEXT_EXT | TRANSCRIPT_EXT
 
 
 class Refused(ValueError):
-    """A source Imprint will not take, with the reason a person can act on."""
+    """A source Letterpress will not take, with the reason a person can act on."""
 
 
 def sha256(data: bytes) -> str:
@@ -90,11 +90,11 @@ def ext_of(name: str) -> str:
 def check_upload(filename: str, size: int) -> str:
     ext = ext_of(filename)
     if ext in AUDIO_VIDEO:
-        raise Refused("Imprint can't listen to audio or video. Add its transcript (.vtt, .srt or .txt) instead.")
+        raise Refused("Letterpress can't listen to audio or video. Add its transcript (.vtt, .srt or .txt) instead.")
     if ext == ".doc":
         raise Refused("That is an older Word file. Save it as .docx, then add it again.")
     if ext not in ACCEPTED:
-        raise Refused(f"Imprint can't read {ext or 'that kind of'} files. Add a PDF, Word (.docx), text, Markdown, or transcript file.")
+        raise Refused(f"Letterpress can't read {ext or 'that kind of'} files. Add a PDF, Word (.docx), text, Markdown, or transcript file.")
     if size > MAX_BYTES:
         raise Refused("That file is over the 25 MB limit. Split it, or add the pages you need.")
     if size == 0:
@@ -172,11 +172,11 @@ def read_pdf(data: bytes) -> tuple:
     try:
         from pypdf import PdfReader
     except ImportError:
-        raise Refused("Reading PDFs needs the pypdf library, which isn't installed. Reinstall Imprint to add it.")
+        raise Refused("Reading PDFs needs the pypdf library, which isn't installed. Reinstall Letterpress to add it.")
     try:
         reader = PdfReader(io.BytesIO(data))
     except Exception:
-        raise Refused("That PDF looks damaged, so Imprint can't read it. Open and re-save it, then try again.")
+        raise Refused("That PDF looks damaged, so Letterpress can't read it. Open and re-save it, then try again.")
     if getattr(reader, "is_encrypted", False):
         try:
             if reader.decrypt("") == 0:
@@ -217,26 +217,26 @@ def zip_unpacks_safely(data: bytes, what: str) -> None:
     try:
         infos = zipfile.ZipFile(io.BytesIO(data)).infolist()
     except (zipfile.BadZipFile, OSError, ValueError):
-        raise Refused(f"That {what} looks damaged, so Imprint can't read it. Open and re-save it, then try again.")
+        raise Refused(f"That {what} looks damaged, so Letterpress can't read it. Open and re-save it, then try again.")
     total = 0
     for i in infos:
         total += i.file_size
         if i.file_size > 16 * 1024 * 1024 and i.file_size / max(1, i.compress_size) > 200:
-            raise Refused(f"That {what} unpacks to far more than its size, so Imprint won't open it. Re-save it, then try again.")
+            raise Refused(f"That {what} unpacks to far more than its size, so Letterpress won't open it. Re-save it, then try again.")
     if total > MAX_UNZIPPED or len(infos) > 5000:
-        raise Refused(f"That {what} unpacks to more than Imprint reads at once. Split it, or add the pages you need.")
+        raise Refused(f"That {what} unpacks to more than Letterpress reads at once. Split it, or add the pages you need.")
 
 
 def read_docx(data: bytes) -> tuple:
     try:
         import docx  # python-docx
     except ImportError:
-        raise Refused("Reading Word files needs the python-docx library, which isn't installed. Reinstall Imprint to add it.")
+        raise Refused("Reading Word files needs the python-docx library, which isn't installed. Reinstall Letterpress to add it.")
     zip_unpacks_safely(data, "Word file")
     try:
         doc = docx.Document(io.BytesIO(data))
     except Exception:
-        raise Refused("That Word file looks damaged, so Imprint can't read it. Open and re-save it as .docx.")
+        raise Refused("That Word file looks damaged, so Letterpress can't read it. Open and re-save it as .docx.")
     blocks, heading, n = [], None, 0
     for p in doc.paragraphs:
         text = tidy(p.text or "")
@@ -254,7 +254,7 @@ def read_docx(data: bytes) -> tuple:
             if cells:
                 blocks.append((f"“{heading}” table" if heading else "table", " | ".join(cells)))
     if not blocks:
-        raise Refused("That Word file has no text Imprint can read.")
+        raise Refused("That Word file has no text Letterpress can read.")
     return blocks, n, "paragraphs"
 
 
@@ -314,7 +314,7 @@ def read_transcript(text: str) -> tuple:
         if body:
             cues.append((_secs(start), body))
     if not cues:
-        raise Refused("Imprint found no timed lines in that transcript. Check that it is a .vtt or .srt file.")
+        raise Refused("Letterpress found no timed lines in that transcript. Check that it is a .vtt or .srt file.")
     blocks, window_start, cur = [], cues[0][0], []
     for secs, body in cues:
         if cur and secs - window_start >= 45:
@@ -395,9 +395,9 @@ def html_to_blocks(page: str) -> tuple:
 
 BLOCK_MARKERS = ("cf-chl", "challenge-platform", "just a moment", "attention required", "captcha",
                  "verify you are human", "enable javascript and cookies", "ddos protection", "px-captcha")
-BLOCKED = "That site didn't let Imprint read it. Add the text by pasting it, or save the page as a PDF and add that."
-UNSAFE = "Imprint only reads public web addresses that start with http:// or https://."
-PRIVATE = ("That address isn't a public web page, so Imprint didn't read it. Check the address: Imprint never reads "
+BLOCKED = "That site didn't let Letterpress read it. Add the text by pasting it, or save the page as a PDF and add that."
+UNSAFE = "Letterpress only reads public web addresses that start with http:// or https://."
+PRIVATE = ("That address isn't a public web page, so Letterpress didn't read it. Check the address: Letterpress never reads "
            "pages on this computer or a private network.")
 
 
@@ -427,8 +427,8 @@ def normalize_url(url: str) -> str:
     return url
 
 
-TOO_BIG_PAGE = "That page is over the {mb} MB limit, so Imprint stopped reading it. Save what you need as a file, or paste the text."
-CANT_UNPACK = "That site sent a page Imprint couldn't unpack. Paste the text instead."
+TOO_BIG_PAGE = "That page is over the {mb} MB limit, so Letterpress stopped reading it. Save what you need as a file, or paste the text."
+CANT_UNPACK = "That site sent a page Letterpress couldn't unpack. Paste the text instead."
 TOO_SLOW = "That site took too long to answer. Try again, or paste the text instead."
 FETCH_DEADLINE = 60.0  # seconds for the whole read, on top of the 20-second wait for each answer
 RAW_FACTOR = 2  # compressed bytes a page may send per byte of the cap (padding that inflates to nothing stops here)
@@ -443,7 +443,7 @@ def _client_factory():
 class _Inflate:
     """The response's own decoding, bounded. httpx would inflate each network chunk whole (a 64 KB gzip chunk can
     become 64 MB at once, and brotli or zstd far more); this asks zlib for no more than the room left under the
-    cap, so memory never passes the cap. Only identity, gzip and deflate are accepted, and Imprint asks for nothing
+    cap, so memory never passes the cap. Only identity, gzip and deflate are accepted, and Letterpress asks for nothing
     else; any other encoding is refused rather than read as garbage."""
 
     def __init__(self, encoding: str):
@@ -504,7 +504,7 @@ async def fetch(url: str, max_bytes: int = 5 * 1024 * 1024, accept: str = "text/
         if not safe:
             raise Refused(PRIVATE if re.match(r"^https?://", current, re.I) else UNSAFE)
         async with make_client(timeout=20.0, follow_redirects=False,
-                               headers={"User-Agent": "Imprint (Hermes plugin; reads one page a person asked for)",
+                               headers={"User-Agent": "Letterpress (Hermes plugin; reads one page a person asked for)",
                                         "Accept": accept, "Accept-Encoding": "gzip, deflate"}) as client:
             try:
                 async with client.stream("GET", current) as resp:
@@ -549,8 +549,8 @@ async def fetch(url: str, max_bytes: int = 5 * 1024 * 1024, accept: str = "text/
                 if "timeout" in name:
                     raise Refused("That site took too long to answer. Try again, or paste the text instead.")
                 if "decod" in name:
-                    raise Refused("That site sent a page Imprint couldn't unpack. Paste the text instead.")
-                raise Refused("Imprint couldn't reach that site. Check the address and your connection.")
+                    raise Refused("That site sent a page Letterpress couldn't unpack. Paste the text instead.")
+                raise Refused("Letterpress couldn't reach that site. Check the address and your connection.")
             charset = "utf-8"
             m = re.search(r"charset=([\w-]+)", ctype)
             if m:
@@ -575,7 +575,7 @@ def read_page(fetched: dict) -> tuple:
         return blocks, units, label, ""
     blocks, title = html_to_blocks(body)
     if not blocks:
-        raise Refused("Imprint found no readable text on that page. It may need JavaScript. Paste the text instead.")
+        raise Refused("Letterpress found no readable text on that page. It may need JavaScript. Paste the text instead.")
     return blocks, len(blocks), "sections", title
 
 

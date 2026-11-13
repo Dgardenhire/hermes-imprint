@@ -72,7 +72,7 @@ class Guide(unittest.TestCase):
             self.assertIn("#7a1f2b", [c["hex"] for c in d["kit"]["colors"]])
             self.assertEqual(d["kit"]["name"], "Eastside Tenants Union")
 
-    def test_unknown_fonts_become_ones_imprint_can_set(self):
+    def test_unknown_fonts_become_ones_letterpress_can_set(self):
         out = guide.finish(self.proposals(heading={"family": "Comic Neue"}), {}, kits.repeats(), {})
         allowed = {f.lower() for f in guide.FONT_CHOICES}
         for d in out:
@@ -137,7 +137,7 @@ class Package(unittest.TestCase):
 
     def test_register_adds_the_writing_task_and_shares_ctx(self):
         import importlib.util
-        spec = importlib.util.spec_from_file_location("imprint_entry_test", ROOT / "__init__.py")
+        spec = importlib.util.spec_from_file_location("letterpress_entry_test", ROOT / "__init__.py")
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
 
@@ -149,10 +149,10 @@ class Package(unittest.TestCase):
                 self.tasks.append(key)
         ctx = Ctx()
         mod.register(ctx)
-        self.assertEqual(ctx.tasks, ["imprint_write"])
+        self.assertEqual(ctx.tasks, ["letterpress_write"])
         from importlib import import_module
-        self.assertIs(import_module("imprint_plugin_package.runtime").context(), ctx)
-        import_module("imprint_plugin_package.runtime").set_context(None)
+        self.assertIs(import_module("letterpress_plugin_package.runtime").context(), ctx)
+        import_module("letterpress_plugin_package.runtime").set_context(None)
 
     def test_bundled_fonts_are_licensed(self):
         lic = (ROOT / "fonts" / "OFL.txt").read_text()

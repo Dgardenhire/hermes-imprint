@@ -1,4 +1,4 @@
-"""Spec slides (loop 4): the model designs each slide; Imprint brands it, traces it and checks it.
+"""Spec slides (loop 4): the model designs each slide; Letterpress brands it, traces it and checks it.
 
 A spec slide is a list of positioned elements on the 960 x 540 slide, written by the model in brand roles, never in
 hex values or font names:
@@ -736,8 +736,8 @@ ELEMENTS_HELP = """Each slide is positioned elements on a 960 x 540 canvas (poin
 Colors and fills are brand ROLES only: ink, heading, primary, accent, muted, tint (a light panel), card (a near-white panel), paper, rule. Never a hex value, never a font name.
 Slide fields: {"ground":"paper"|"primary","footer":true|false,"title":"the slide's title as shown","els":[...]}
 ground "primary" sets the slide on the brand's dark field (use it for the cover and the closing ask, or not at all); text on it reads light automatically.
-Default type sizes: title 34, heading 22, figure 48, body 17, strong 17, small 13, label 12. Imprint measures every block in the brand's real fonts and shrinks type only down to a floor, so give each block room: a body line of 90 characters at 17pt needs about 600 wide by 23 high per line.
-Footer: on footer slides Imprint draws the source line and page number below y 490; keep every element above y 484 and inside x 40 to 920. Cover: footer false (Imprint adds the logo at the top right; leave x 780 to 920, y 10 to 60 empty)."""
+Default type sizes: title 34, heading 22, figure 48, body 17, strong 17, small 13, label 12. Letterpress measures every block in the brand's real fonts and shrinks type only down to a floor, so give each block room: a body line of 90 characters at 17pt needs about 600 wide by 23 high per line.
+Footer: on footer slides Letterpress draws the source line and page number below y 490; keep every element above y 484 and inside x 40 to 920. Cover: footer false (Letterpress adds the logo at the top right; leave x 780 to 920, y 10 to 60 empty)."""
 
 SPEC_SCHEMA = {
     "type": "object", "required": ["slides"],

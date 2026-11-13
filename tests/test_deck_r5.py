@@ -46,7 +46,7 @@ class Review(unittest.TestCase):
         self.assertEqual(texts[:2], ["Added the 287 adults on the waitlist", "The closing now asks for the $190,000 increase"])
         self.assertNotIn("Cut the 31% growth slide", texts)  # 31% is in no passage, so the note is not shown
         self.assertTrue(o["review"][0]["chips"])
-        self.assertEqual(self.llm.calls[-1]["purpose"], "imprint.outline_review")
+        self.assertEqual(self.llm.calls[-1]["purpose"], "letterpress.outline_review")
         self.assertEqual(RV.get_outline(o["outline_id"])["review"], o["review"])
 
     def test_a_review_that_adds_an_unsourced_number_is_not_kept(self):

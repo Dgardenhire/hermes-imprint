@@ -99,8 +99,8 @@ class Argument(unittest.TestCase):
         j = jobs.get(j["id"])
         self.assertEqual(j["status"], "done", j["error"])
         purposes = [c["purpose"] for c in self.llm.calls]
-        self.assertEqual(purposes[:2], ["imprint.argument", "imprint.write"])
-        w = next(c for c in self.llm.calls if c["purpose"] == "imprint.write")
+        self.assertEqual(purposes[:2], ["letterpress.argument", "letterpress.write"])
+        w = next(c for c in self.llm.calls if c["purpose"] == "letterpress.write")
         self.assertIn("THE CASE, drafted and checked", w["instructions"])
         self.assertIn("COUNTER-CASE", w["instructions"])
         self.assertNotIn("COVERAGE.", w["instructions"])  # the general coverage rule adds slides the case did not ask for
@@ -121,13 +121,13 @@ class Argument(unittest.TestCase):
                                                                 "brief": "A 7 to 9 slide funder deck"}, wait=True)["id"])
         self.assertEqual(j["status"], "done", j["error"])
         purposes = [c["purpose"] for c in self.llm.calls]
-        self.assertEqual(purposes[:3], ["imprint.argument", "imprint.argument_repair", "imprint.write"])
+        self.assertEqual(purposes[:3], ["letterpress.argument", "letterpress.argument_repair", "letterpress.write"])
         self.llm.calls.clear()
         self.llm.argument = None
         j = jobs.get(jobs.start("make", f"t:r11c:{store.now()}", {"kind": "deck", "source_ids": self.ids, "kit_ids": [KIT],
                                                                 "brief": "A 7 to 9 slide funder deck"}, wait=True)["id"])
         self.assertEqual(j["status"], "done", j["error"])
-        w = next(c for c in self.llm.calls if c["purpose"] == "imprint.write")
+        w = next(c for c in self.llm.calls if c["purpose"] == "letterpress.write")
         self.assertIn('First write "case"', w["instructions"])
         self.assertNotIn("argument", j["result"])
 

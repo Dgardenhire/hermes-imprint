@@ -1,5 +1,5 @@
-// Imprint, desktop half. SOURCE: desktop/plugin.js is built from this file and the shared hermes-ui-kit by
-// `node ../hermes-ui-kit/scripts/build.mjs .` (esbuild, hermes-ui-kit checked out beside this repo). Edit here, then build.
+// Letterpress, desktop half. SOURCE: desktop/plugin.js is built from this file and the shared interface code in
+// vendor/hermes-ui-kit by `node vendor/hermes-ui-kit/scripts/build.mjs .` (esbuild, pinned in that folder). Edit here, then build.
 //
 // The built file is one ES module that imports only '@hermes/plugin-sdk', 'react' and 'react/jsx-runtime'.
 // No JSX, no innerHTML: proofs arrive as plain nodes ({t, c, x, k}) from the backend and are walked into
@@ -26,8 +26,8 @@ import * as canvasLane from './canvas.js' // GraphicOptions, when the canvas lan
 import { createFirstPaint } from './firstpaint.js'
 import { OFFLINE_HELP, POLL_GAVE_UP, isUnreachable, plainError, pollClock } from './errors.js'
 
-const PLUGIN_ID = 'imprint'
-const ROUTE = '/imprint'
+const PLUGIN_ID = 'letterpress'
+const ROUTE = '/letterpress'
 const REST_TIMEOUT = 25000
 
 let api = null
@@ -88,7 +88,7 @@ function Toast({ t }) {
 }
 
 function rest(path, options) {
-  if (!api) return Promise.reject(new Error('Imprint is not connected.'))
+  if (!api) return Promise.reject(new Error('Letterpress is not connected.'))
   return api.rest(path, { timeoutMs: REST_TIMEOUT, ...(options || {}) })
 }
 const post = (path, body) => rest(path, { method: 'POST', body: body || {} })
@@ -234,7 +234,7 @@ async function upload(path, file) {
 
 /* ------------------------------------------------------------------ page -- */
 
-function ImprintPage() {
+function LetterpressPage() {
   hydrate()
   const st = useValue($state)
   const loadError = useValue($loadError)
@@ -248,12 +248,12 @@ function ImprintPage() {
   if (loadError && (!st || (fp && fp.isStale('state')))) {
     return h('div', { className: 'hk imp' }, h('div', { className: 'imp-center' },
       h('div', { className: 'imp-notice', 'data-tone': 'bad' },
-        h('h2', { className: 'imp-h2' }, 'Imprint could not start'),
+        h('h2', { className: 'imp-h2' }, 'Letterpress could not start'),
         h('p', null, errText(loadError)),
         isUnreachable(loadError) ? h('p', null, OFFLINE_HELP) : null,
         h(Button, { onClick: () => { $loadError.set(null); load() } }, 'Try again'))))
   }
-  if (!st) return h('div', { className: 'hk imp' }, h('div', { className: 'imp-center' }, h('p', { className: 'imp-wait' }, h('span', { className: 'imp-spin' }), 'Opening Imprint')))
+  if (!st) return h('div', { className: 'hk imp' }, h('div', { className: 'imp-center' }, h('p', { className: 'imp-wait' }, h('span', { className: 'imp-spin' }), 'Opening Letterpress')))
   return h('div', { className: 'hk imp', ref: root, 'aria-busy': stale ? 'true' : undefined },
     h('style', null, st.proof_css),
     h(CopyGuard, { stale },
@@ -291,7 +291,7 @@ function TopBar({ st, tab }) {
     h(Button, { size: 'sm', variant: 'ghost', title: 'Open the manual in your browser', onClick: openManual }, 'Manual'))
 }
 
-const MANUAL_URL = 'https://linchpin.studio/hermes/imprint/manual/'
+const MANUAL_URL = 'https://linchpin.studio/hermes/letterpress/manual/'
 function openManual() {
   try { if (api && api.os && typeof api.os.openExternal === 'function') api.os.openExternal(MANUAL_URL) } catch (e) { /* nothing to open with */ }
 }
@@ -1085,7 +1085,7 @@ function CanvasRoom({ st, out }) {
     dock && !rail ? h('div', { className: 'imp-dock is-ask' }, h(ChatPane, { st })) : null)
 }
 
-/* ---- First open: what Imprint does, in one sentence, and the sample one click away ---- */
+/* ---- First open: what Letterpress does, in one sentence, and the sample one click away ---- */
 
 function FirstOpen({ st }) {
   const [busy, setBusy] = useState(false)
@@ -1839,7 +1839,7 @@ function MakeRow({ st, kit }) {
     h(Icon, { name: k.icon, size: 16 }), h('span', null, k.id === 'audio' ? 'Audio' : k.label))))
 }
 
-/* The four things Imprint makes, each a real picture in the active brand (state.previews). */
+/* The four things Letterpress makes, each a real picture in the active brand (state.previews). */
 function PreviewTiles({ st, kit, fresh }) {
   const pv = st.previews || {}
   const on = included(st)
@@ -2426,7 +2426,7 @@ async function readFolder(kind) {
   const files = api && api.files
   if (!files || !files.requestFolder) return { error: kind === 'claude-design' ? 'Folder access needs a newer Hermes. Pick the .zip instead.' : 'Folder access needs a newer Hermes. Pick the package’s tokens.css file instead.', fallback: true }
   const picked = await files.requestFolder()
-  if (!picked.ok) return { error: picked.message || 'Imprint could not open that folder.' }
+  if (!picked.ok) return { error: picked.message || 'Letterpress could not open that folder.' }
   if (!picked.folder) return { cancelled: true }
   const id = picked.folder.id
   const out = {}
@@ -2511,7 +2511,7 @@ function ImportPanel({ st }) {
         h(Button, { variant: 'secondary', onClick: () => pickText('.css', 'css') }, 'Pick its tokens.css instead')) : null,
       route === 'pdf' ? h('div', { className: 'imp-mini-form' },
         h(Button, { onClick: () => pickUpload('.pdf'), loading: !!busy }, 'Pick your brand guide PDF'),
-        h('p', { className: 'imp-src-meta' }, 'Imprint reads the color codes and the words beside them (“Primary”, “Calls to action only”) and the fonts it names. A scanned guide has no text to read: copy its color page into Paste color codes instead.')) : null,
+        h('p', { className: 'imp-src-meta' }, 'Letterpress reads the color codes and the words beside them (“Primary”, “Calls to action only”) and the fonts it names. A scanned guide has no text to read: copy its color page into Paste color codes instead.')) : null,
       route === 'pptx' ? h(Button, { onClick: () => pickUpload('.pptx'), loading: !!busy }, 'Pick a .pptx file') : null,
       route === 'keynote' ? h('div', { className: 'imp-mini-form' },
         h('p', null, 'Keynote runs only on a Mac. Open a slide in your theme, choose File, Export To, PowerPoint, then pick the file it saves. On Windows or Linux, use PowerPoint or Canva, or a token file.'),
@@ -2617,7 +2617,7 @@ function StorageTab({ st }) {
   const removeOutput = async id => { try { await del(`outputs/${id}`); if ($output.get() && $output.get().id === id) $output.set(null); refresh() } catch (e) { toast(errText(e), 'bad') } }
   const missing = Object.values(st.deps || {}).filter(d => !d.ok)
   return h('div', { className: 'imp-store' },
-    missing.length ? h('div', { className: 'imp-notice', 'data-tone': 'warn' }, h('p', null, `Not installed: ${missing.map(d => d.label).join(', ')}. Reinstall Imprint to add the libraries it lists.`)) : null,
+    missing.length ? h('div', { className: 'imp-notice', 'data-tone': 'warn' }, h('p', null, `Not installed: ${missing.map(d => d.label).join(', ')}. Reinstall Letterpress to add the libraries it lists.`)) : null,
     h('section', null, h('h2', { className: 'imp-h2' }, 'Sources'),
       st.sources.length ? h('table', { className: 'imp-tbl' }, h('tbody', null, st.sources.map(s => h('tr', { key: s.id },
         h('td', null, s.title), h('td', null, s.kind), h('td', null, plural(s.units, s.unit_label.replace(/s$/, ''))), h('td', null, bytes(s.bytes || s.chars)),
@@ -2631,7 +2631,7 @@ function StorageTab({ st }) {
       h('div', { className: 'imp-row' }, h(Input, { className: 'imp-short', value: cap, placeholder: 'Daily token limit (off)', onChange: e => setCap(e.target.value.replace(/[^0-9]/g, '')), 'aria-label': 'Daily token limit' }),
         h(Button, { size: 'sm', variant: 'secondary', onClick: async () => { try { await post('settings', { daily_token_cap: cap || null }); toast(cap ? 'Daily limit set' : 'Daily limit off'); refresh() } catch (e) { toast(errText(e), 'bad') } } }, 'Save'))),
     h('section', null, h('h2', { className: 'imp-h2' }, 'Storage'),
-      h('p', null, `${bytes(st.storage.bytes)} in Imprint's folder: ${plural(st.storage.sources, 'source')}, ${plural(st.storage.kits, 'brand')}, ${plural(st.storage.outputs, 'output')}.`),
+      h('p', null, `${bytes(st.storage.bytes)} in Letterpress's folder: ${plural(st.storage.sources, 'source')}, ${plural(st.storage.kits, 'brand')}, ${plural(st.storage.outputs, 'output')}.`),
       h('div', { className: 'imp-row' }, h(Input, { className: 'imp-short', value: confirm, placeholder: 'Type: forget everything', onChange: e => setConfirm(e.target.value), 'aria-label': 'Confirm' }),
         h(Button, { size: 'sm', variant: 'secondary', disabled: confirm !== 'forget everything', onClick: async () => { try { $state.set(await post('forget', { confirm })); $output.set(null); setConfirm(''); toast('Everything is forgotten') } catch (e) { toast(errText(e), 'bad') } } }, 'Forget everything'))))
 }
@@ -2654,7 +2654,7 @@ const CSS = `
 .imp-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .imp-grow{flex:1}
 .imp-label,.imp-field>span{font-size:12px;font-weight:600}
-.imp-field{display:grid;gap:4px;min-width:0}
+.imp-field{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;min-width:0}
 .imp-check{display:inline-flex;gap:6px;align-items:center;font-size:12px}
 .imp-error{color:var(--hk-bad);font-size:12px}
 .imp-top{display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:1px solid var(--hk-stroke);flex-wrap:wrap}
@@ -2746,10 +2746,10 @@ const CSS = `
 .imp-notice{display:grid;gap:8px;padding:12px;border:1px solid var(--hk-tone-fill);border-radius:var(--imp-r);background:var(--hk-surface);max-width:560px}
 .imp-toast{position:fixed;right:18px;bottom:18px;max-width:380px;padding:10px 12px;background:var(--imp-solid);border:1px solid var(--hk-stroke);border-radius:var(--imp-r);box-shadow:0 8px 24px rgba(0,0,0,.25);font-size:13px;z-index:20}
 .imp-toast[data-tone=bad]{border-color:var(--hk-bad-fill)}
-.imp-kits,.imp-store{overflow:auto;min-height:0;padding:16px 20px 40px;display:grid;gap:18px;align-content:start}
+.imp-kits,.imp-store{overflow:auto;min-height:0;padding:16px 20px 40px;display:grid;grid-template-columns:minmax(0,1fr);gap:18px;align-content:start}
 .imp-kits-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.imp-kitgrid-wrap{display:grid;gap:26px}
-.imp-lib{display:grid;gap:12px;justify-items:start}
+.imp-kitgrid-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:26px}
+.imp-lib{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;justify-items:start}
 .imp-lib>*{justify-self:stretch}
 .imp-lib>.imp-linkish{justify-self:start}
 .imp-lib-empty{font-size:13px;max-width:62ch}
@@ -3259,26 +3259,26 @@ const CSS = `
 function Status() {
   const job = useValue($job)
   if (!job || job.status !== 'running') return null
-  return h('span', { className: 'imp-status' }, `Imprint: ${job.step || 'working'}`)
+  return h('span', { className: 'imp-status' }, `Letterpress: ${job.step || 'working'}`)
 }
 
 export default {
   id: PLUGIN_ID,
-  name: 'Imprint',
+  name: 'Letterpress',
   register(ctx) {
     api = ctx
     fp = createFirstPaint({ storage: ctx.storage, read: () => ({ state: $state.get(), chats: $chats.get(), guide: $guide.get() }), onStale: v => $stale.set(v) })
     const offs = [$state, $chats, $guide].map(a => (typeof a.listen === 'function' ? a.listen(() => fp && fp.schedule()) : null))
     registerPage(ctx, {
-      id: PLUGIN_ID, route: ROUTE, label: 'Imprint', codicon: 'symbol-color', css: CSS,
-      render: () => jsx(ImprintPage, {}),
+      id: PLUGIN_ID, route: ROUTE, label: 'Letterpress', codicon: 'symbol-color', css: CSS,
+      render: () => jsx(LetterpressPage, {}),
       palette: [
-        { id: 'imprint.open', label: 'Imprint: open the notebook', keywords: ['brand', 'notebook', 'sources', 'deck', 'graphic', 'one-pager', 'kit'] },
-        { id: 'imprint.kits', contributionId: 'kits', label: 'Imprint: open the brands', keywords: ['brand kit', 'colors', 'fonts'], run: () => { $tab.set('kits'); host.navigate(ROUTE) } },
+        { id: 'letterpress.open', label: 'Letterpress: open the notebook', keywords: ['brand', 'notebook', 'sources', 'deck', 'graphic', 'one-pager', 'kit'] },
+        { id: 'letterpress.kits', contributionId: 'kits', label: 'Letterpress: open the brands', keywords: ['brand kit', 'colors', 'fonts'], run: () => { $tab.set('kits'); host.navigate(ROUTE) } },
       ],
       status: { render: () => jsx(Status, {}), side: 'right', order: 50 },
     })
-    try { ctx.onEvent && ctx.onEvent('plugin.imprint.job', () => poke()) } catch (e) { /* polling covers it */ }
+    try { ctx.onEvent && ctx.onEvent('plugin.letterpress.job', () => poke()) } catch (e) { /* polling covers it */ }
     ctx.onDispose(() => { if (fp) fp.dispose(); for (const off of offs) if (typeof off === 'function') off(); api = null; for (const t of pollers.values()) clearTimeout(t); pollers.clear() })
   },
 }

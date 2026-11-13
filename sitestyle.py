@@ -39,8 +39,10 @@ from urllib.parse import urljoin, urlparse
 
 try:  # package import (Hermes) or flat import (tests)
     from . import browser as B
+    from . import childenv as CE
 except ImportError:  # pragma: no cover
     import browser as B  # type: ignore
+    import childenv as CE  # type: ignore
 
 MAX_PAGES = 4          # the home page and up to three it links to
 CAPTURE_SECONDS = 150  # for the whole capture
@@ -112,7 +114,7 @@ def safe_url(url: str) -> bool:
 
 
 def _default_robots_fetch(url: str) -> tuple:
-    """``(status, body)`` through Hermes's own SSRF-safe web client (``ingest.fetch``), the only way Imprint reads a web address.
+    """``(status, body)`` through Hermes's own SSRF-safe web client (``ingest.fetch``), the only way Letterpress reads a web address.
     It runs in the capture's worker thread, so it has a loop of its own."""
     import asyncio
     try:
@@ -126,7 +128,7 @@ def _default_robots_fetch(url: str) -> tuple:
 ROBOTS_FETCH = _default_robots_fetch  # a hook so tests (and a harness outside Hermes) can supply the read
 
 
-def robots_allows(url: str, agent: str = "Imprint") -> bool:
+def robots_allows(url: str, agent: str = "Letterpress") -> bool:
     """Whether the site's robots.txt lets us read ``url``. No robots file (a 4xx other than 401 and 403) allows; a refused one (401,
     403), a server error, a timeout or an unreadable answer is treated as 'no': the person asked for a read, not a retry loop."""
     u = urlparse(url)
@@ -434,7 +436,7 @@ def _spawn(cmd: list, to_browser: int, from_browser: int) -> _Child:
                         actions.append((os.POSIX_SPAWN_CLOSE, fd))
                 except OSError:
                     pass
-        pid = os.posix_spawn(cmd[0], cmd, dict(os.environ), file_actions=actions)
+        pid = os.posix_spawn(cmd[0], cmd, CE.child_env(), file_actions=actions)  # never Hermes's own environment
     finally:
         for fd in {a, b, null}:
             try:
@@ -466,7 +468,7 @@ class Chrome:
 
     def __init__(self, chrome: str, proxy: Optional["Proxy"] = None):
         self.proxy = proxy or Proxy()
-        self.scratch = tempfile.mkdtemp(prefix="imprint-site-")
+        self.scratch = tempfile.mkdtemp(prefix="letterpress-site-")
         r1, w1 = os.pipe()
         r2, w2 = os.pipe()
 
@@ -665,7 +667,7 @@ def _grab(br: Chrome, url: str) -> dict:
         br.pump(1.6)
         final = br.call("Runtime.evaluate", {"expression": "location.href", "returnByValue": True}, session=s)["result"].get("value", "")
         if not safe_url(final) or urlparse(final).netloc != urlparse(url).netloc and not robots_allows(final):
-            raise RuntimeError("The page ended up somewhere Imprint will not read.")
+            raise RuntimeError("The page ended up somewhere Letterpress will not read.")
         br.call("Runtime.evaluate", {"expression": "(async()=>{const h=document.documentElement.scrollHeight;for(let y=0;y<Math.min(h,6000);y+=700){window.scrollTo(0,y);await new Promise(r=>setTimeout(r,120))}window.scrollTo(0,0)})()", "awaitPromise": True}, session=s, timeout=20)
         br.pump(0.6)
         val = br.call("Runtime.evaluate", {"expression": STYLE_JS, "returnByValue": True}, session=s)["result"].get("value", "{}")
@@ -681,7 +683,7 @@ def _grab(br: Chrome, url: str) -> dict:
             pass
 
 
-WINDOWS_NO_LOOK = "Imprint can't yet open a site in a browser on Windows. The colors and fonts were still read."
+WINDOWS_NO_LOOK = "Letterpress can't yet open a site in a browser on Windows. The colors and fonts were still read."
 
 
 def capture(url: str, out_dir, max_extra: int = 3) -> dict:
@@ -691,11 +693,11 @@ def capture(url: str, out_dir, max_extra: int = 3) -> dict:
         raise ValueError(WINDOWS_NO_LOOK)
     chrome = find_chrome()
     if not chrome:
-        raise ValueError("Imprint couldn't find a browser (Chrome, Chromium, Edge or Brave) here, so it can't look at the site. The colors and fonts were still read.")
+        raise ValueError("Letterpress couldn't find a browser (Chrome, Chromium, Edge or Brave) here, so it can't look at the site. The colors and fonts were still read.")
     if not safe_url(url):
         raise ValueError("That address isn't a public web page.")
     if not robots_allows(url):
-        raise ValueError("That site's robots.txt asks programs not to read it, so Imprint left it alone.")
+        raise ValueError("That site's robots.txt asks programs not to read it, so Letterpress left it alone.")
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     pages, skipped = [], []
@@ -712,7 +714,7 @@ def capture(url: str, out_dir, max_extra: int = 3) -> dict:
                 g = _grab(br, u)
             except Exception as e:
                 if not pages:
-                    raise ValueError("Imprint couldn't open that page in a browser: " + str(e)[:120])
+                    raise ValueError("Letterpress couldn't open that page in a browser: " + str(e)[:120])
                 skipped.append(u)
                 continue
             p = out / f"page{len(pages) + 1}.png"
@@ -791,7 +793,7 @@ def clean_brief(raw: dict, url: str, cap: Optional[dict] = None) -> dict:
 
 
 async def write_brief(llm, cap: dict, url: str, step=None) -> dict:
-    """``llm.structured(system=, instructions=, body=, schema=, purpose=, images=)`` is Imprint's runtime."""
+    """``llm.structured(system=, instructions=, body=, schema=, purpose=, images=)`` is Letterpress's runtime."""
     if step:
         step("Writing the style brief from what the site looks like")
     images = [{"type": "image", "data": Path(p["png_path"]).read_bytes(), "mime_type": "image/png", "file_name": f"page{i}.png"}

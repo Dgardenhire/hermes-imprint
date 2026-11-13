@@ -1,4 +1,4 @@
-# Imprint status
+# Letterpress status
 
 A dated build log. Current facts (Hermes floor `>=0.22.6`, tests, fixes) are in `CHANGELOG.md` and `README.md`.
 
@@ -40,7 +40,7 @@ three-tiered notebook")
 
 Screens (looked at, light and dark): `docs/shots/notebook-*`, `viewer-*`, `kits-studio-*`, `kit-bench-*`,
 `storage-light`, from live mode (`sh harness/shoot.sh`). Old Proofs-tab shots removed. Gallery, before/after and the
-three direction thumbnails: `~/Desktop/claude-test/.planning/hackathon-2026-11/imprint/notebook-v2/`.
+three direction thumbnails: `~/Desktop/claude-test/.planning/hackathon-2026-11/letterpress/notebook-v2/`.
 
 ## Left, ranked (stage 7)
 
@@ -61,7 +61,7 @@ three direction thumbnails: `~/Desktop/claude-test/.planning/hackathon-2026-11/i
 
 Updated Nov 8, stage 6 (the persona fixes). 291 tests then.
 
-### Stage 6: what changed (from `.planning/hackathon-2026-11/personas/imprint.md`)
+### Stage 6: what changed (from `.planning/hackathon-2026-11/personas/letterpress.md`)
 
 1. **Exports are safe to send.** The HTML export is the finished page, not the proof: no per-number trace marks
    (no more "$16 ²" or "555²-0142²"), field-level footnotes that link to the numbered source list, a no-break
@@ -155,7 +155,7 @@ Screens added to `docs/shots/` (looked at, each): `live-onepager-{light,dark}`, 
    licensed face is not named, because some carry the company's name. `NOTICE` holds the Open Design Apache-2.0
    attribution and license text (copied from a local Apache-2.0 file) and the MIT text for the three upstreams
    the Open Design catalog credits. Unverified: each upstream's exact copyright line (NOTICE points to the repos).
-3. **Kits tab tamed (UPGRADE-REVIEW Imprint item 1).** Your kits lead at full width. Starters are a shelf of five
+3. **Kits tab tamed (UPGRADE-REVIEW Letterpress item 1).** Your kits lead at full width. Starters are a shelf of five
    proofs (crop marks, the kit's own fonts on your headline, its subject line, the color bar); "All 14 starter
    kits" opens the rest as a compact list with swatch strips. Filter chips and cover cards are gone. Proof pages
    have a strong 1px frame so dark kits hold on the dark table (item 4). Not done from the review: dropping the
@@ -177,7 +177,7 @@ Screens added to `docs/shots/` (looked at, each): `live-onepager-{light,dark}`, 
    Nov 8 with Damon's approval, unmodified static files from google/fonts pinned to a commit; the US Web Design
    System kit now reads "Set in Merriweather and Public Sans".
 6. **Design floors, measured on the rendered page.** The harness takes `audit=1` and writes the smallest text size
-   and an emoji count to `<html data-audit>` (`--dump-dom`). Ten views in light and dark: smallest Imprint text
+   and an emoji count to `<html data-audit>` (`--dump-dom`). Ten views in light and dark: smallest Letterpress text
    12px, no emoji. It caught one: a stat label in a narrow margin rail at 11.6px; stat labels and rails now floor
    at 12px. (The harness's stand-ins for the host's own SDK buttons render at 11.5px; the host sizes those.) The
    margin-rail layout now puts the main column first when a proof is too narrow for the rail.
@@ -193,7 +193,7 @@ all; adapted starters light and dark; Keynote import.
    Linux run of an import (the code paths are tested; no machine run yet). The end card must not claim Windows or
    Linux until one run passes.
 2. Done Nov 8: Merriweather and Public Sans bundled (approved download); the USWDS kit no longer substitutes.
-3. Re-pin `docs/catalog/imprint.yaml` to the pushed commit; make `trace-light.png` the catalog image
+3. Re-pin `docs/catalog/letterpress.yaml` to the pushed commit; make `trace-light.png` the catalog image
    (UPGRADE-REVIEW item 7). Push needs Damon's go-ahead.
 4. `docs/SECURITY-AUDIT.md` per `../SECURITY-BAR.md` (pip-audit, semgrep, npm audit; an outside sign-off).
 5. Body text with many numbers reads footnoted (every number carries its mark, as asked). If Damon finds it busy,
@@ -219,15 +219,15 @@ all; adapted starters light and dark; Keynote import.
 6. **Sources tab**: the token-limit and forget-everything fields ran 1,230px wide; now 280px.
 
 **Recurring elements, each with its reason** (all kept): crop marks, color bar and colophon slug (the signature;
-Imprint makes print-ready pages); check pills with a glyph plus words (results, readable without color, so red and
+Letterpress makes print-ready pages); check pills with a glyph plus words (results, readable without color, so red and
 green accents don't collide with pass and fail); superscript source numbers (they match the source list on every
 page); numbered steps 1 to 4 in Help me build a kit (a real sequence); 01 to 06 on audio segments (spoken order);
-the navy band on the USWDS kit and the green band on Plain Notice (each kit's own device, not Imprint's); mono
-only for hex codes (data). Nothing found by reflex. Recorded in `~/.design-ledger.jsonl` ("Imprint (Hermes
+the navy band on the USWDS kit and the green band on Plain Notice (each kit's own device, not Letterpress's); mono
+only for hex codes (data). Nothing found by reflex. Recorded in `~/.design-ledger.jsonl` ("Letterpress (Hermes
 plugin, built)", verdict pending Damon).
 
 **Copy audit** (every pane string and every backend message, 300+ lines read): cut "Hermes reports no cost, so
-none is shown"; cut "Imprint borrows a method from each, never the whole look" to "Pick up to three"; tightened
+none is shown"; cut "Letterpress borrows a method from each, never the whole look" to "Pick up to three"; tightened
 the website reader line; replaced robotic "No such kit/draft/job/source" and "Unknown font" with plain sentences
 and a next step; the grounding pass now says "All 30 numbers and quotes found in your sources" instead of "Every
 fact traced" (it proves presence, not truth; this was stage 3's item 3). No emoji, no periods on headings, no
@@ -240,7 +240,7 @@ the same reader. Pane: "Pick the .zip" first, "Pick the folder" second. 3 new te
 
 **Package**: README rewritten (what it does, install, what leaves the computer, what it touches, disclosures),
 `docs/MANUAL.md`, `CHANGELOG.md`, LICENSE (MIT, unchanged), `docs/catalog/card.png` (1200x600, from
-`card.html`), `docs/catalog/imprint.yaml` (draft, validator-clean), `docs/catalog/PR.md` (draft),
+`card.html`), `docs/catalog/letterpress.yaml` (draft, validator-clean), `docs/catalog/PR.md` (draft),
 `docs/LIVE-TEST.md`, `docs/DEMO-NOTES.md`. Screens re-shot: 29 in `docs/shots/`, adding narrow, wide and
 accent views.
 
@@ -250,7 +250,7 @@ accent views.
    listed), kit fonts in Electron, export save dialog, `text_to_speech` from a background thread, second-profile
    jobs, image input, folder grants, a real Claude Design zip and Canva PPTX. Then swap the PR screenshots for
    real Hermes captures (the current ones are harness renders in a mock window).
-2. **Re-pin** `docs/catalog/imprint.yaml` (sha and image URLs) to the pushed commit; push needs Damon's go-ahead.
+2. **Re-pin** `docs/catalog/letterpress.yaml` (sha and image URLs) to the pushed commit; push needs Damon's go-ahead.
 3. **`docs/SECURITY-AUDIT.md`** per `../SECURITY-BAR.md`: pip-audit, semgrep, npm audit not yet run; an auditor
    who did not build it signs off.
 4. **The trace card** from the upgrade review (hover a number, see "Exact match in source 3" and the line) is not
@@ -260,7 +260,7 @@ accent views.
    a source blocks export of older outputs that cite it (say so on the second click); one DB connection per data
    folder for two open profiles.
 7. SHOULD items not started: Visual, Report (.docx), two voices with ElevenLabs, YouTube captions, Open Design
-   export, scanned PDFs, `imprint_make` agent tool, History. Import gaps: website logo candidates, "Draft voice
+   export, scanned PDFs, `letterpress_make` agent tool, History. Import gaps: website logo candidates, "Draft voice
    notes from README", update a kit from a file side by side.
 8. USWDS fonts are bundled as of Nov 8. The Ledger kit names Times New Roman, which is not bundled (it resolves
    to the PDF's built-in Times, which is the same face, so no substitution is reported).
@@ -271,7 +271,7 @@ accent views.
 1. **Arbitrary file read through a kit (critical).** `POST /kits` kept any `logo.file` and `fonts[].file` the
    page sent, so `{"logo": {"file": "../../../../.env"}}` made `GET /kits/<id>` return `~/.hermes/.env` as a data
    URL, put it in exports, and `duplicate` copied a named path. Now `kits.safe_logo` / `safe_fonts` accept only
-   the names Imprint writes (`logo.<png|svg|jpg>`, `<family>-<weight>-<style>.ttf`), a new kit always starts with
+   the names Letterpress writes (`logo.<png|svg|jpg>`, `<family>-<weight>-<style>.ttf`), a new kit always starts with
    none, and every read checks the path stays in the kit folder (`kits.inside`). `tests/test_kits.py`
    `KitFilesStayInside` (fails on the old code).
 2. **Jobs ran in the wrong profile.** Hermes keeps the active profile's home in a context variable; job threads
@@ -298,7 +298,7 @@ accent views.
 10. **Text under 12px in proofs** (citation marks at 8.8px, slide refs, segment numbers, foot, memo labels, big
     dek in narrow panes): floored at 12px.
 11. **One-click permanent deletes** of kits, sources and outputs: now two clicks ("Click again to delete",
-    disarms after 4 s). "Show in folder" after export was removed: it opened Imprint's internal copy, not the
+    disarms after 4 s). "Show in folder" after export was removed: it opened Letterpress's internal copy, not the
     file the person saved (the save bridge does not return the saved path).
 12. **README disclosures were incomplete**: now say that text and scripts go to cloud providers when those are
     what Hermes uses, that reference sites in Help me build a kit are fetched, which Claude Design files are read,
@@ -412,7 +412,7 @@ Stage 2 added:
    Canva PPTX (spike C1), one Figma variables export (spike F1).
 2. SHOULD, in SPEC order, none started: **Visual** (one-panel infographic, SVG and PNG), **Report** (.docx with
    kit styles, logo in header, source list), two voices with ElevenLabs, YouTube captions, Open Design **export**,
-   PDF page vision and scanned PDFs, `imprint_make` agent tool, History.
+   PDF page vision and scanned PDFs, `letterpress_make` agent tool, History.
 3. Import gaps against IMPORT-SPEC: website logo candidates (apple-touch-icon, og:image, inline SVG) are not
    fetched or offered; Claude Design "Draft voice notes from README" button is not built; Open Design
    `design-tokens.json` "default" tags and `DESIGN.md` front matter are not read; "update an existing kit from a
@@ -428,11 +428,11 @@ Stage 2 added:
 - `register(ctx)` may not run in the dashboard's process. Then routes use `PluginLlm` directly and the public tool
   registry; `text_to_speech` must be registered there or the audio says "your Hermes voice isn't set up here" even
   when it is. Verify Tuesday; if so, consider calling the TTS function module directly.
-- `text_to_speech` may refuse `output_path` under plugin-data on some setups; Imprint retries without it and copies
+- `text_to_speech` may refuse `output_path` under plugin-data on some setups; Letterpress retries without it and copies
   the file in. Only audio extensions are accepted from the tool's result.
 - The deck preview reflows; PowerPoint uses fixed text boxes. A very long bullet can overflow its box in .pptx.
   The deck PDF draws from the same specs.
-- Image reading depends on the main or `imprint_write` model accepting images; a text-only model fails with the
+- Image reading depends on the main or `letterpress_write` model accepting images; a text-only model fails with the
   plain message above.
 - Mozilla Protocol stays dropped (MPL-2.0 code, but it is a system for Mozilla and Firefox sites and Mozilla's
   trademark policy forbids designs confusingly similar to its marks). Demo kits: US Web Design System (no logo,

@@ -2,13 +2,13 @@
 
     /usr/bin/python3 harness/bench/p6_plain.py harborlight|salvia|warming OUT_DIR
 
-One ``claude -p`` call (no tools, the bench lib's neutral line on, the same default model as Imprint's side) gets
+One ``claude -p`` call (no tools, the bench lib's neutral line on, the same default model as Letterpress's side) gets
 the sources as plain text and one request: "Make a 7 to 9 slide funder deck as a .pptx using python-pptx. Use our
 brand colors ...". The system prompt describes the code tool a Hermes chat has: the reply's Python block is run in
 a working folder with python-pptx installed. The harness saves the reply and the script, runs the script in
 OUT_DIR/<set>/, and when it fails gives the model one retry with the error, as a person would. Every call keeps a
 run log (``run-NN.json``) with the model name and seconds. Nothing here handicaps the plain side: it gets the same
-sources, the same brand colors Imprint uses, and as many output tokens as it wants.
+sources, the same brand colors Letterpress uses, and as many output tokens as it wants.
 """
 
 from __future__ import annotations
@@ -25,15 +25,17 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE.parents[1]))
+from childenv import child_env  # noqa: E402  the model-written script gets only the allowlisted names
 import bench as B  # noqa: E402
 
 BRANDS = {
-    # Harborlight: as its brand guide PDF names them (Imprint's import read the same five).
+    # Harborlight: as its brand guide PDF names them (Letterpress's import read the same five).
     "harborlight": "Harbor Teal #0E5E6F, Sunrise Gold #F2A900, Lighthouse Red #C0392B, background #FAF7F2, text #2B2B2B",
-    # Salvia Kitchen and the warming center get the studio system Imprint used for them, so both sides share a palette.
+    # Salvia Kitchen and the warming center get the studio system Letterpress used for them, so both sides share a palette.
     "salvia": "Ultramarine #1F44C7, Poster Black #111111, Stock gray #F1F1EF, background #FFFFFF, text #111111",
     "warming": "Tab Red #C2362B, Press Black #1A1A1A, Data Blue #2B5D8A, Panel #EBE6DD, Gridline #D9D4CC, background #FBFAF7, text #1A1A1A",
-    # The held-out set's own brand.txt, as written; Imprint imports the same file as pasted colors.
+    # The held-out set's own brand.txt, as written; Letterpress imports the same file as pasted colors.
     "heldout": "Pine Green #2F5D3A, Brass #C8902E, Charcoal #262624, background #FAF8F3, font Work Sans",
     "heldout2": "Deep Plum #4A2545, Copper #B5663A, Slate #2F3640, background #F4F5F7, font Source Sans 3",
     "heldout3": "Heather #5B3A6E, Marigold #D9962B, Charcoal #2B2B2B, background #FAF7F2, font Source Sans 3",
@@ -82,7 +84,7 @@ def execute(script: str, out: Path, n: int) -> dict:
     (out / f"make_deck-{n:02d}.py").write_text(script)
     before = {p.name for p in out.glob("*.pptx")}
     t = time.time()
-    p = subprocess.run(["/usr/bin/python3", f"make_deck-{n:02d}.py"], cwd=out, capture_output=True, text=True, timeout=300)
+    p = subprocess.run(["/usr/bin/python3", f"make_deck-{n:02d}.py"], cwd=out, capture_output=True, text=True, timeout=300, env=child_env())
     made = sorted({p.name for p in out.glob("*.pptx")} - before)
     return {"returncode": p.returncode, "seconds": round(time.time() - t, 1), "stdout": p.stdout[-3000:], "stderr": p.stderr[-3000:], "pptx": made}
 

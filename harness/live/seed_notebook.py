@@ -1,6 +1,6 @@
 """Fill a running live-mode server with a real notebook, through the real routes, for screenshots and a walkthrough.
 
-    /usr/bin/python3 harness/live/server.py 8790 --data /tmp/imprint-nb &
+    /usr/bin/python3 harness/live/server.py 8790 --data /tmp/letterpress-nb &
     /usr/bin/python3 harness/live/seed_notebook.py 8790
 
 Adds the three warming-center samples (samples/), waits for their summaries, asks two questions that need more than one

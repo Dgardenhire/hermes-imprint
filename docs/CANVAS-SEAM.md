@@ -1,7 +1,7 @@
 # Canvas seam
 
 The canvas (`desktop/src/canvas.js`) is bundled into `desktop/plugin.js` by the same build as everything else
-(`node ~/products/hermes-ui-kit/scripts/build.mjs .`). It imports only `react`, `react/jsx-runtime`,
+(`node vendor/hermes-ui-kit/scripts/build.mjs .`). It imports only `react`, `react/jsx-runtime`,
 `@hermes/plugin-sdk` and `hermes-ui-kit`; everything else comes through the `api` prop.
 
 ## The lines in the pane's file (`desktop/src/plugin.js`, owned by the pane lane)

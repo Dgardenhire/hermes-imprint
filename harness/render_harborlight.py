@@ -23,13 +23,15 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-os.environ["IMPRINT_DATA_DIR"] = tempfile.mkdtemp(prefix="imprint-harborlight-")
+os.environ["LETTERPRESS_DATA_DIR"] = tempfile.mkdtemp(prefix="letterpress-harborlight-")
 sys.path.insert(0, str(ROOT / "tests"))
+sys.path.insert(0, str(ROOT))
+from childenv import child_env  # noqa: E402  only the allowlisted names reach the programs started here
 from importlib import import_module  # noqa: E402
 
 from _load import kits, layout, render_html, service  # noqa: E402
 
-PKG = "imprint_plugin_package"
+PKG = "letterpress_plugin_package"
 RD = import_module(f"{PKG}.render_deck")
 RG = import_module(f"{PKG}.render_graphic")
 SC = import_module(f"{PKG}.scene")
@@ -94,7 +96,7 @@ def chrome_png(html_path: Path, png: Path, w=816, h=1056) -> Path | None:
         return None
     subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--mute-audio",
                     "--autoplay-policy=user-gesture-required", f"--window-size={w},{h}", "--virtual-time-budget=4000",
-                    f"--screenshot={png}", html_path.as_uri()], capture_output=True, timeout=90)
+                    f"--screenshot={png}", html_path.as_uri()], capture_output=True, timeout=90, env=child_env())
     return png if png.exists() else None
 
 

@@ -21,20 +21,20 @@ class Sanitize(unittest.TestCase):
 
     def test_scripts_handlers_links_frames_and_addresses_are_gone(self):
         raw = ('<div onclick="x()" style="background:url(http://e/x.png)"><script>alert(1)</script><iframe src="http://e"></iframe>'
-               '<a href="http://e">go</a><img src="http://e/p.png"><img src="imprint:logo"><form action="http://e"><input></form>'
+               '<a href="http://e">go</a><img src="http://e/p.png"><img src="letterpress:logo"><form action="http://e"><input></form>'
                '<style>@import url(http://e/a.css);.s1-a{background:url(https://e/b.png)}</style><object data="x"></object>'
                '<svg><foreignObject><div>hi</div></foreignObject><use href="http://e#a"/></svg></div>')
         out, removed = self.clean(raw)
         for bad in ("<script", "alert", "<iframe", "href", "http", "onclick", "<form", "<input", "<object", "foreignobject", "@import"):
             self.assertNotIn(bad, out.lower(), bad)
-        self.assertIn('src="imprint:logo"', out)
+        self.assertIn('src="letterpress:logo"', out)
         self.assertTrue(removed)
 
     def test_no_picture_but_the_logo_survives_and_brand_variables_do(self):
         px = "data:image/png;base64,iVBORw0KGgo="
-        out, rm = self.clean(f'<div style="color:var(--brand)"><img src="{px}"><img src="imprint:logo"><svg viewBox="0 0 9 9"><rect data-value="5" width="3" height="3"/></svg></div>')
+        out, rm = self.clean(f'<div style="color:var(--brand)"><img src="{px}"><img src="letterpress:logo"><svg viewBox="0 0 9 9"><rect data-value="5" width="3" height="3"/></svg></div>')
         self.assertNotIn(px, out)  # a picture could carry a number nobody traces
-        self.assertIn('src="imprint:logo"', out)
+        self.assertIn('src="letterpress:logo"', out)
         self.assertIn("var(--brand)", out)
         self.assertIn('<rect data-value="5" width="3" height="3"/>', out)
         self.assertTrue(rm)
@@ -104,14 +104,14 @@ class Render(unittest.TestCase):
             shutil.rmtree(out, ignore_errors=True)
 
     def test_the_brand_ground_logo_is_its_own_token_and_falls_back_to_the_paper_one(self):
-        html = HD.sanitize('<div><img src="imprint:logo" alt=""><img src="imprint:logo-band" alt=""></div>')[0]
-        self.assertIn("imprint:logo-band", html)
+        html = HD.sanitize('<div><img src="letterpress:logo" alt=""><img src="letterpress:logo-band" alt=""></div>')[0]
+        self.assertIn("letterpress:logo-band", html)
         pg = HD.page([{"html": html}], "", {"paper": "data:image/png;base64,AAAA", "band": "data:image/png;base64,BBBB"})
         self.assertIn('src="data:image/png;base64,AAAA"', pg)
         self.assertIn('src="data:image/png;base64,BBBB"', pg)
         pg = HD.page([{"html": html}], "", "data:image/png;base64,AAAA")
         self.assertEqual(pg.count('src="data:image/png;base64,AAAA"'), 2)
-        self.assertNotIn("imprint:logo", pg)
+        self.assertNotIn("letterpress:logo", pg)
 
     def test_the_page_policy_allows_no_script_but_the_measuring_one(self):
         pg = HD.page([{"html": "<p>x</p>"}], "")
@@ -300,11 +300,11 @@ class ForgedReports(unittest.TestCase):
         n = "abc123"
         import json as _j
         body = _j.dumps([{"slide": 1, "kind": "cut", "what": "x"}])
-        good = '[1:2:INFO:CONSOLE(9)] "IMPRINTREPORT-%s:%s:ENDREPORT-%s", source: file:///x (9)' % (n, body, n)
+        good = '[1:2:INFO:CONSOLE(9)] "LETTERPRESSREPORT-%s:%s:ENDREPORT-%s", source: file:///x (9)' % (n, body, n)
         self.assertEqual([p["kind"] for p in HD._read_report(self.R(good), n, 4)], ["cut"])
         self.assertEqual(HD._read_report(self.R(good), n, 4)[0]["slide"], 4)
-        for err in ("", good.replace(n, "other"), good + "\n" + good, "IMPRINTREPORT-%s:[]:ENDREPORT-%s" % (n, n),  # not from a console line
-                    '[1:2:INFO:CONSOLE(9)] "IMPRINTREPORT-%s:{}:ENDREPORT-%s"' % (n, n), '[1:2:INFO:CONSOLE(9)] "IMPRINTREPORT-%s:[bad:ENDREPORT-%s"' % (n, n)):
+        for err in ("", good.replace(n, "other"), good + "\n" + good, "LETTERPRESSREPORT-%s:[]:ENDREPORT-%s" % (n, n),  # not from a console line
+                    '[1:2:INFO:CONSOLE(9)] "LETTERPRESSREPORT-%s:{}:ENDREPORT-%s"' % (n, n), '[1:2:INFO:CONSOLE(9)] "LETTERPRESSREPORT-%s:[bad:ENDREPORT-%s"' % (n, n)):
             got = HD._read_report(self.R(err), n, 1)
             self.assertEqual([p["kind"] for p in got], ["unsafe"], err)
 
@@ -312,7 +312,7 @@ class ForgedReports(unittest.TestCase):
     def test_a_slide_that_prints_a_clean_report_still_shows_its_overflow(self):
         out = Path(tempfile.mkdtemp(prefix="imp-test-"))
         try:
-            fake = "IMPRINTREPORT-000000000000000000000000:[]:ENDREPORT-000000000000000000000000 IMPRINTREPORT:[]:ENDREPORT"
+            fake = "LETTERPRESSREPORT-000000000000000000000000:[]:ENDREPORT-000000000000000000000000 LETTERPRESSREPORT:[]:ENDREPORT"
             html = f'<div><p>{fake}</p><div style="width:2600px;height:200px;background:#000"></div></div>'
             r = HD.render([{"html": HD.sanitize(html)[0]}], HD.kit_css(BRAND), out, pdf=False)
             self.assertIn("outside", {p["kind"] for p in r["problems"]})

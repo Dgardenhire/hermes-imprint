@@ -5,11 +5,11 @@ WT = Path.home() / "Desktop/LINCHPIN-Claude/hermes-imprint-wt-l2-deck8"
 sys.path.insert(0, str(WT / "harness/bench"))
 import bench as B
 data = WT / ".l2-data/bench/r8d"; data.mkdir(parents=True, exist_ok=True)
-api, CK = B.load_imprint(data)
+api, CK = B.load_letterpress(data)
 S = api.service
 from importlib import import_module
-J = import_module("imprint_plugin_package.jobs")
-K = import_module("imprint_plugin_package.content")
+J = import_module("letterpress_plugin_package.jobs")
+K = import_module("letterpress_plugin_package.content")
 d = json.load(open(sys.argv[1]))
 neu, pas = d["neutral"], d["passages"]
 S.LLM = B.ClaudeCli(WT / "docs/runs/ai/loop2", "r8d")

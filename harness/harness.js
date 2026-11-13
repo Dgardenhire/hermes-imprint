@@ -26,7 +26,7 @@ const scene = params.get('scene') || 'clean'
 const kind = params.get('kind') || 'onepager'
 function outputFor() {
   const o = clone(kind === 'deck' ? FX.deck : kind === 'audio' ? FX.audio : scene === 'flagged' ? FX.flagged : FX.output)
-  if (scene === 'novoice' && kind === 'audio') for (const p of o.proofs) p.audio = { status: 'failed', code: 'no_voice', error: "Imprint couldn't record this: your Hermes voice isn't set up here. Turn on text to speech in Hermes Settings, then press Record again. The script is ready to read or export now." }
+  if (scene === 'novoice' && kind === 'audio') for (const p of o.proofs) p.audio = { status: 'failed', code: 'no_voice', error: "Letterpress couldn't record this: your Hermes voice isn't set up here. Turn on text to speech in Hermes Settings, then press Record again. The script is ready to read or export now." }
   const pair = (params.get('pair') || '').split(',').filter(Boolean)
   if (pair.length) {
     const all = [...o.proofs, ...Object.values(FX.extra)]
@@ -66,7 +66,7 @@ async function rest(path, options = {}) {
     return outputFor()
   }
   if (path === 'jobs/j_000000000001') { await pause(100000); return { status: 'running' } }
-  if (path === 'jobs/j_000000000002') return { id: 'j_000000000002', kind: 'make', status: 'failed', error: "Imprint couldn't reach your Hermes model. Check Settings, then press Retry.", error_code: 'no_model' }
+  if (path === 'jobs/j_000000000002') return { id: 'j_000000000002', kind: 'make', status: 'failed', error: "Letterpress couldn't reach your Hermes model. Check Settings, then press Retry.", error_code: 'no_model' }
   if (path.startsWith('fonts/')) { const key = path.slice(6); const m = key.match(/-(\d{3})-(normal|italic)$/); return { key, weight: Number(m[1]), style: m[2], data: await fontData(key) } }
   if (path.startsWith('passages/')) return FX.passages[path.slice(9)]
   if (path === 'chats') return { chats: FX.chats }

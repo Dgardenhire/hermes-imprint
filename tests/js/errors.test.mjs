@@ -7,11 +7,11 @@ test('a request that never reached the backend reads as one plain sentence, not 
   for (const e of [new TypeError('Failed to fetch'), new TypeError('Load failed'), new Error('NetworkError when attempting to fetch resource.'),
     new Error('Request timed out'), Object.assign(new Error('The operation was aborted.'), { name: 'AbortError' }),
     new Error('502: Bad Gateway'), new Error('503: {"detail": "Service Unavailable"}'), new Error('504: '), new Error('404: Not Found'),
-    new Error('Plugin bridge unavailable'), new Error('Imprint is not connected.'), new Error('')]) {
+    new Error('Plugin bridge unavailable'), new Error('Letterpress is not connected.'), new Error('')]) {
     assert.equal(plainError(e), OFFLINE, String(e && e.message))
     assert.ok(isUnreachable(e))
   }
-  assert.equal(`${plainError(new TypeError('Failed to fetch'))} Try again.`, 'Imprint’s backend isn’t answering. Try again.')
+  assert.equal(`${plainError(new TypeError('Failed to fetch'))} Try again.`, 'Letterpress’s backend isn’t answering. Try again.')
 })
 
 test('the backend’s own sentences pass through, always ending with a full stop', () => {

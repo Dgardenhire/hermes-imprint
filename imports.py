@@ -64,7 +64,7 @@ MAX_IMAGE = 8 * 1024 * 1024
 ALIAS_DEPTH = 32
 
 RESPONSIBILITY = "Use brands only for organizations you own or have permission to use. You're responsible for documents made with this brand."
-BRAND_LINE = ("This package imitates another company's look. Imprint imports its colors and sizes only. "
+BRAND_LINE = ("This package imitates another company's look. Letterpress imports its colors and sizes only. "
               "Don't present documents in this brand as coming from that company.")
 
 # Open Design packages named for real companies and products (categories A and B of the import plan).
@@ -82,7 +82,7 @@ STATUS_WORDS = ("success", "warn", "danger", "error", "info", "hover", "active",
 
 
 class Refused(ValueError):
-    """An import Imprint will not take, with what to do instead."""
+    """An import Letterpress will not take, with what to do instead."""
 
 
 def base_name(path: str) -> str:
@@ -92,9 +92,9 @@ def base_name(path: str) -> str:
 
 
 def clean_rel(path: str) -> Optional[str]:
-    """A path inside a package or zip as Imprint compares it: forward slashes, no ``./``, never absolute
+    """A path inside a package or zip as Letterpress compares it: forward slashes, no ``./``, never absolute
     (``/x``, ``\\x``, ``C:``) and never climbing (``..``). Windows, Mac and Linux paths read the same way.
-    Returns None for a path Imprint won't open."""
+    Returns None for a path Letterpress won't open."""
     p = str(path or "").replace("\\", "/")
     if p.startswith("/") or re.match(r"^[a-zA-Z]:", p):
         return None
@@ -181,7 +181,7 @@ def parse_color(value: str) -> tuple:
     if not v:
         return None, "empty"
     if low.startswith(("color-mix(", "calc(", "light-dark(", "linear-gradient", "radial-gradient", "conic-gradient")):
-        return None, "a formula Imprint can't work out"
+        return None, "a formula Letterpress can't work out"
     m = re.fullmatch(r"#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})", v)
     if m:
         h = m.group(1)
@@ -218,7 +218,7 @@ def parse_color(value: str) -> tuple:
     named = {"white": "#ffffff", "black": "#000000"}
     if low in named:
         return named[low], ""
-    return None, "not a color Imprint reads"
+    return None, "not a color Letterpress reads"
 
 
 # ---------------------------------------------------------------- role hints --
@@ -308,7 +308,7 @@ def read_css(text: str, mode: str = "", label: str = "CSS", kind: str = "css") -
     if len(text.encode("utf-8", "ignore")) > MAX_TEXT:
         raise Refused("This CSS file is over 2 MB. Drop the file that holds your color variables.")
     if re.search(r"module\.exports|export\s+default|tailwind\.config", text[:4000]):
-        raise Refused("Imprint doesn't run JavaScript config files. Run your build and drop the CSS it writes.")
+        raise Refused("Letterpress doesn't run JavaScript config files. Run your build and drop the CSS it writes.")
     f = found(kind, label)
     f["sha256"] = _sha(text.encode("utf-8"))
     light, dark, counts = {}, {}, {}
@@ -377,7 +377,7 @@ def read_css(text: str, mode: str = "", label: str = "CSS", kind: str = "css") -
         for h, n in sorted(counts.items(), key=lambda kv: -kv[1])[:16]:
             add_color(f, h, "", "used in the CSS", h, "", weight=n)
     if not f["colors"]:
-        raise Refused("No colors found in this CSS. Imprint reads custom properties like --accent: #1a4480.")
+        raise Refused("No colors found in this CSS. Letterpress reads custom properties like --accent: #1a4480.")
     _scale_from(f)
     return f
 
@@ -501,7 +501,7 @@ def read_paste(text: str, kind: str = "paste", label: str = "Pasted colors") -> 
         raise Refused("No color codes found. Paste codes like #1A4480.")
     if len(seen) > 24:
         f["colors"] = f["colors"][:24]
-        f["warnings"].append("Imprint kept the first 24 colors. Remove the ones you don't need.")
+        f["warnings"].append("Letterpress kept the first 24 colors. Remove the ones you don't need.")
     return f
 
 
@@ -606,12 +606,12 @@ def read_pdf_guide(data: bytes, filename: str = "brand-guide.pdf") -> dict:
         f = read_paste(text, kind="pdf", label=label)
     except Refused:
         if not fills:
-            raise Refused("Imprint found no color codes in this PDF (it may be a scan). Open your brand guide, copy the page "
+            raise Refused("Letterpress found no color codes in this PDF (it may be a scan). Open your brand guide, copy the page "
                           "with the color codes, and paste it under Paste color codes.")
         f = found("pdf", label)
         for h, n in sorted(fills.items(), key=lambda kv: -kv[1])[:10]:
             add_color(f, h, "", "drawn on the guide's pages", h, "", weight=n)
-        f["warnings"].append("This guide shows its colors as swatches with no codes, so Imprint read the colors its pages "
+        f["warnings"].append("This guide shows its colors as swatches with no codes, so Letterpress read the colors its pages "
                              "paint most. Check each role against your guide.")
     f["ref"] = label
     f["name"] = guide_name(first) or label
@@ -739,7 +739,7 @@ def read_claude_design(files: dict, theme: str = "") -> dict:
             if not data:
                 continue
             if n_fonts >= MAX_FONTS:
-                skip(f, base_name(path), "Imprint takes up to 8 font files per import")
+                skip(f, base_name(path), "Letterpress takes up to 8 font files per import")
                 continue
             n_fonts += 1
             _add_font_file(f, base_name(path), data)
@@ -765,7 +765,7 @@ def read_claude_design_zip(data: bytes, theme: str = "") -> dict:
         infos = z.infolist()
     except (zipfile.BadZipFile, OSError, ValueError):
         raise Refused("This zip file is damaged or isn't a zip file.")
-    too_big = Refused("This zip unpacks to more than Imprint allows. Export just the design system, or pick its folder.")
+    too_big = Refused("This zip unpacks to more than Letterpress allows. Export just the design system, or pick its folder.")
     if len(infos) > 5000:
         raise too_big
     total = 0
@@ -775,9 +775,9 @@ def read_claude_design_zip(data: bytes, theme: str = "") -> dict:
         # on Windows. Normalizing first makes the same zip open (or be refused) the same way everywhere.
         rel = clean_rel(i.filename)
         if rel is None:
-            raise Refused("This zip has paths Imprint won't open.")
+            raise Refused("This zip has paths Letterpress won't open.")
         if ((i.external_attr >> 16) & 0o170000) == 0o120000:
-            raise Refused("This zip holds links Imprint won't follow.")
+            raise Refused("This zip holds links Letterpress won't follow.")
         total += i.file_size
         if i.compress_size and i.file_size / max(1, i.compress_size) > 100 and i.file_size > 1024 * 1024:
             raise too_big
@@ -894,13 +894,13 @@ def zip_ok(data: bytes) -> zipfile.ZipFile:
         infos = z.infolist()
     except (zipfile.BadZipFile, OSError, ValueError):
         raise Refused("This PowerPoint file is damaged or isn't a PowerPoint file.")
-    too_big = Refused("This file unpacks to more than Imprint allows. Download a shorter design, one to three slides.")
+    too_big = Refused("This file unpacks to more than Letterpress allows. Download a shorter design, one to three slides.")
     if len(infos) > 2000:
         raise too_big
     total = 0
     for i in infos:
         if clean_rel(i.filename) is None:
-            raise Refused("This PowerPoint file has paths Imprint won't open.")
+            raise Refused("This PowerPoint file has paths Letterpress won't open.")
         total += i.file_size
         if i.compress_size and i.file_size / max(1, i.compress_size) > 100 and i.file_size > 1024 * 1024:
             raise too_big
@@ -915,10 +915,10 @@ def _xml(z: zipfile.ZipFile, name: str):
     # Office XML is UTF-8. A NUL byte means UTF-16 or 32, where the DOCTYPE check below could not see a
     # declaration, so it is refused along with any DOCTYPE or ENTITY in any letter case.
     if b"\x00" in raw or re.search(rb"<!\s*(DOCTYPE|ENTITY)", raw, re.I):
-        raise Refused("This PowerPoint file has markup Imprint won't open.")
+        raise Refused("This PowerPoint file has markup Letterpress won't open.")
     if not re.match(rb"^(\xef\xbb\xbf)?\s*(<\?xml[^>]*encoding=[\"']utf-?8[\"'][^>]*\?>|<\?xml(?![^>]*encoding=)[^>]*\?>|<(?!\?))", raw[:400], re.I):
         # Any other declared encoding (EBCDIC and kin) could spell a DOCTYPE the byte check above can't read.
-        raise Refused("This PowerPoint file has markup Imprint won't open.")
+        raise Refused("This PowerPoint file has markup Letterpress won't open.")
     try:
         return ET.fromstring(raw)
     except ET.ParseError:
@@ -1105,7 +1105,7 @@ def read_pptx(data: bytes, filename: str = "slides.pptx") -> dict:
             if info.file_size <= MAX_PNG:
                 _add_logo(f, img, z.read(f"ppt/media/{img}"))
     if not f["colors"]:
-        raise Refused("Imprint found no colors in this file. Paste your color codes instead.")
+        raise Refused("Letterpress found no colors in this file. Paste your color codes instead.")
     return f
 
 
@@ -1117,9 +1117,9 @@ def read_dtcg(text: str, mode: str = "", label: str = "Design tokens") -> dict:
     try:
         data = json.loads(text)
     except ValueError:
-        raise Refused("This isn't a design-token file. Imprint reads DTCG files, where each token has a $value.")
+        raise Refused("This isn't a design-token file. Letterpress reads DTCG files, where each token has a $value.")
     if not isinstance(data, dict):
-        raise Refused("This isn't a design-token file. Imprint reads DTCG files, where each token has a $value.")
+        raise Refused("This isn't a design-token file. Letterpress reads DTCG files, where each token has a $value.")
     f = found("dtcg", label, label)
     f["sha256"] = _sha(text.encode("utf-8"))
     top = [k for k in data if not k.startswith("$")]
@@ -1148,7 +1148,7 @@ def read_dtcg(text: str, mode: str = "", label: str = "Design tokens") -> dict:
 
     walk(data, [], None)
     if not flat:
-        raise Refused("This isn't a design-token file. Imprint reads DTCG files, where each token has a $value.")
+        raise Refused("This isn't a design-token file. Letterpress reads DTCG files, where each token has a $value.")
     if count[0] > MAX_TOKENS:
         raise Refused("This token file is too big for one brand. Export just your brand colors and type.")
     loops = [0]
@@ -1216,9 +1216,9 @@ def read_dtcg(text: str, mode: str = "", label: str = "Design tokens") -> dict:
         if head > base:
             f["scale"] = round(max(1.1, min(1.6, (head / base) ** (1 / 4))), 2)
     if loops[0]:
-        f["warnings"].append(f"Some tokens point to each other in a loop. Imprint skipped {loops[0]} of them.")
+        f["warnings"].append(f"Some tokens point to each other in a loop. Letterpress skipped {loops[0]} of them.")
     if not f["colors"]:
-        raise Refused("Imprint found no colors in this token file. Paste your color codes instead.")
+        raise Refused("Letterpress found no colors in this token file. Paste your color codes instead.")
     return f
 
 
@@ -1436,7 +1436,7 @@ def build(fd: dict) -> dict:
                          key=lambda h: -C.contrast(h, paper))
         ink = passing[0] if passing else ("#1b1b1b" if C.luminance(paper) > 0.4 else "#f4f4f4")
         if was:
-            fd["warnings"].append(f"The text color {was} is only {C.ratio_text(was, paper)} on the paper. Body text needs 4.5:1, so Imprint used {ink}.")
+            fd["warnings"].append(f"The text color {was} is only {C.ratio_text(was, paper)} on the paper. Body text needs 4.5:1, so Letterpress used {ink}.")
         elif not passing:
             added.append(("ink", ink))
     used = {paper, ink}
@@ -1475,11 +1475,11 @@ def build(fd: dict) -> dict:
         if C.contrast(sec, paper) < C.AA_TEXT:
             skip(fd, sec, f"secondary text is {C.ratio_text(sec, paper)} on the paper; body text uses the ink instead")
         else:
-            skip(fd, sec, "secondary text color; Imprint sets all body text in the ink")
+            skip(fd, sec, "secondary text color; Letterpress sets all body text in the ink")
         used.add(sec)
     on_acc = by_hint.get("on_accent")
     if on_acc and on_acc not in used:
-        skip(fd, on_acc, "text on the accent; Imprint picks whichever of paper or ink reads best there")
+        skip(fd, on_acc, "text on the accent; Letterpress picks whichever of paper or ink reads best there")
         used.add(on_acc)
     panel = by_hint.get("panel")
     if panel and panel not in used and C.contrast(ink, panel) >= C.AA_TEXT and C.contrast(panel, paper) > 1.04:
@@ -1508,7 +1508,7 @@ def build(fd: dict) -> dict:
             role = "rule"
         add(c["hex"], role)
     if not roles:
-        roles.append({"hex": C.mix(ink, paper, 0.7), "role": "rule", "name": "added by Imprint"})
+        roles.append({"hex": C.mix(ink, paper, 0.7), "role": "rule", "name": "added by Letterpress"})
         added.append(("rule", roles[-1]["hex"]))
     heading = fd.get("heading") or fd.get("body") or "Inter, Helvetica, Arial, sans-serif"
     body = fd.get("body") or heading
@@ -1526,7 +1526,7 @@ def build(fd: dict) -> dict:
                           "brand_named": bool(fd.get("brand_named")), "mode": fd.get("mode", ""), "imported_at": store.now()},
     }
     for role, h in added:
-        fd["warnings"].append(f"No {role} color came in, so Imprint added {h}. Change it if you like.")
+        fd["warnings"].append(f"No {role} color came in, so Letterpress added {h}. Change it if you like.")
     return kit
 
 
@@ -1796,7 +1796,7 @@ def read(kind: str, text: str = "", files: Optional[dict] = None, mode: str = ""
         return read_pptx(data, filename or "slides.pptx")
     if kind == "pdf":
         return read_pdf_guide(data, filename or "brand-guide.pdf")
-    raise Refused("Imprint can't import that kind of file. Try a brand guide PDF, CSS, a token file, a PowerPoint file or pasted color codes.")
+    raise Refused("Letterpress can't import that kind of file. Try a brand guide PDF, CSS, a token file, a PowerPoint file or pasted color codes.")
 
 
 def kind_from_name(filename: str) -> str:
@@ -1819,9 +1819,9 @@ def kind_from_name(filename: str) -> str:
         raise Refused("Pages and Numbers files can't be read directly, and they don't export a theme. Paste your color codes, "
                       "or on a Mac open the design in Keynote and export it to PowerPoint.")
     if low.endswith(".js") or low.endswith(".ts"):
-        raise Refused("Imprint doesn't run JavaScript config files. Run your build and drop the CSS it writes.")
-    raise Refused("Imprint can't read that kind of file. Open your brand guide, copy the page with your color codes, and paste "
-                  "it under Paste color codes. Files Imprint reads: a brand guide PDF, PowerPoint or Canva (.pptx), CSS, "
+        raise Refused("Letterpress doesn't run JavaScript config files. Run your build and drop the CSS it writes.")
+    raise Refused("Letterpress can't read that kind of file. Open your brand guide, copy the page with your color codes, and paste "
+                  "it under Paste color codes. Files Letterpress reads: a brand guide PDF, PowerPoint or Canva (.pptx), CSS, "
                   "design-token .json, a Claude Design .zip, and a PNG or JPG of your logo.")
 
 

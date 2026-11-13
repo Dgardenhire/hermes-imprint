@@ -1,5 +1,5 @@
 #!/bin/sh
-# Imprint canvas lane, Loop 2: shots S09 to S17 and S20 of the hero brief, with DOM checks, on the REAL routes.
+# Letterpress canvas lane, Loop 2: shots S09 to S17 and S20 of the hero brief, with DOM checks, on the REAL routes.
 #
 #   SEED=<data folder> sh harness/shoot_canvas.sh [OUT_DIR]     shots + checks (default OUT_DIR: .l2-data/shots)
 #   SEED=<data folder> sh harness/shoot_canvas.sh serve [PORT]  just the real-model harness, for looking around
@@ -13,7 +13,7 @@
 # registers no request routes (a check asserts it).
 #
 # Needs /usr/bin/python3 with Playwright and its Chromium (always launched with --mute-audio and
-# --autoplay-policy=user-gesture-required), the built desktop/plugin.js (node ~/products/hermes-ui-kit/scripts/
+# --autoplay-policy=user-gesture-required), the built desktop/plugin.js (node vendor/hermes-ui-kit/scripts/
 # build.mjs .), the `claude` CLI, and network for React from esm.sh. Exit code 1 when any check fails.
 # Never touches ~/.hermes and never runs a hermes command.
 set -e
@@ -40,7 +40,7 @@ head = server_py.read_text().split('\nif __name__ == "__main__":\n    port', 1)[
 sys.argv = [str(server_py), str(PORT), "--data", DATA]
 ns = {"__name__": "__main__", "__file__": str(server_py)}
 exec(compile(head, str(server_py), "exec"), ns)
-print(f"Imprint live harness, real model, http://127.0.0.1:{PORT}/harness/index.html?live=1  data {DATA}  logs {LOGS}", flush=True)
+print(f"Letterpress live harness, real model, http://127.0.0.1:{PORT}/harness/index.html?live=1  data {DATA}  logs {LOGS}", flush=True)
 ns["serve"](PORT).serve_forever()
 PYEOF
 }
@@ -594,7 +594,7 @@ with sync_playwright() as pw:
     cells = "".join(f'<figure><img src="{n}"><figcaption>{n[:-4]}</figcaption></figure>' for n in shots)
     sheet.write_text("<!doctype html><meta charset=utf-8><style>body{margin:0;padding:24px;background:#1b1d22;color:#e8eaee;font:13px -apple-system,sans-serif}"
                      "main{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}figure{margin:0}img{width:100%;display:block;border:1px solid #333}"
-                     "figcaption{padding:6px 0}</style><h1 style='font-size:16px'>Imprint canvas, Loop 2: real routes, real-model data</h1><main>" + cells + "</main>")
+                     "figcaption{padding:6px 0}</style><h1 style='font-size:16px'>Letterpress canvas, Loop 2: real routes, real-model data</h1><main>" + cells + "</main>")
     b = pw.chromium.launch(args=ARGS); pg = b.new_page(viewport={"width": 1800, "height": 1200})
     pg.goto(sheet.as_uri()); pg.wait_for_timeout(800); pg.screenshot(path=str(OUT / "contact-sheet.png"), full_page=True); b.close()
 

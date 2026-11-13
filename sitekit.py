@@ -1,6 +1,6 @@
 """Reading a kit from a website's own CSS. Deterministic: no model guesses a brand color.
 
-From the page and up to ten of its stylesheets (2 MB each) Imprint reads:
+From the page and up to ten of its stylesheets (2 MB each) Letterpress reads:
 
 - CSS custom properties that hold colors (``--brand-primary: #1a4480``), weighted up
 - every ``color``, ``background``, ``border-color``, ``fill`` and ``stroke`` value, counted
@@ -323,7 +323,7 @@ def draft_from(page: str, css_texts: list, url: str, today: str) -> dict:
     theme = C.norm(meta(page, "theme-color") or "")
     ranked = rank_colors(counts, theme)
     if not ranked:
-        raise ValueError("Imprint found no colors on that page. Add the kit's colors by hand.")
+        raise ValueError("Letterpress found no colors on that page. Add the kit's colors by hand.")
     weight = dict(ranked)
 
     lights = [h for h, _ in sorted(bg_counts.items(), key=lambda kv: -kv[1]) if C.luminance(h) > 0.82] or \

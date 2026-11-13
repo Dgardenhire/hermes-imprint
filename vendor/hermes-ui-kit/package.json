@@ -1,0 +1,16 @@
+{
+  "name": "hermes-ui-kit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shared interface code for Hermes desktop plugins, bundled into desktop/plugin.js by esbuild.",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "node scripts/build.mjs ../..",
+    "check": "node scripts/build.mjs ../.. --check"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

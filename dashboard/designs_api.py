@@ -1,7 +1,7 @@
 """The designs routes: three model-designed options for a deck, one-pager or graphic, the pick and the mix, element edits,
 revise, versions and exports. Shapes: docs/API-DESIGNS.md.
 
-Added to Imprint's own router the way revise_api.py does it. Every route that calls a model or draws with Chrome starts a job
+Added to Letterpress's own router the way revise_api.py does it. Every route that calls a model or draws with Chrome starts a job
 and returns ``{job}`` at once; inputs are checked here and everything the model sees is read on the server."""
 
 from __future__ import annotations
@@ -12,10 +12,10 @@ from importlib import import_module
 
 from fastapi import HTTPException
 
-_log = logging.getLogger("hermes.plugins.imprint")
+_log = logging.getLogger("hermes.plugins.letterpress")
 
 
-def mount(router, pkg: str = "imprint_plugin_package") -> list:
+def mount(router, pkg: str = "letterpress_plugin_package") -> list:
     service = import_module(f"{pkg}.service")
     jobs = import_module(f"{pkg}.jobs")
     kits = import_module(f"{pkg}.kits")
@@ -37,8 +37,8 @@ def mount(router, pkg: str = "imprint_plugin_package") -> list:
             raise HTTPException(status_code=400, detail=str(e) or "That request isn't valid.")
         if isinstance(e, runtime.ModelError):
             raise HTTPException(status_code=502, detail=str(e))
-        _log.exception("imprint: unexpected error in a designs route")
-        raise HTTPException(status_code=500, detail="Something went wrong on Imprint's side. Try again.")
+        _log.exception("letterpress: unexpected error in a designs route")
+        raise HTTPException(status_code=500, detail="Something went wrong on Letterpress's side. Try again.")
 
     def body_of(b) -> dict:
         if not isinstance(b, dict):

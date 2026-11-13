@@ -438,7 +438,7 @@ def _pptx():
         from pptx.opc.constants import RELATIONSHIP_TYPE as RT
         from pptx.util import Emu, Pt
     except ImportError:
-        raise DeckUnavailable("PowerPoint export needs the python-pptx library, which isn't installed. Reinstall Imprint to add it.")
+        raise DeckUnavailable("PowerPoint export needs the python-pptx library, which isn't installed. Reinstall Letterpress to add it.")
     return locals()
 
 
@@ -458,7 +458,7 @@ def theme_xml(blob: bytes, kit: dict, pal: dict) -> bytes:
             "accent6": accents[5] if len(accents) > 5 else pal["ink"], "hlink": pal["accent_text"], "folHlink": pal["head"]}
     scheme = root.find(".//a:clrScheme", ns)
     if scheme is not None:
-        scheme.set("name", (kit.get("name") or "Imprint")[:60])
+        scheme.set("name", (kit.get("name") or "Letterpress")[:60])
         for tag, hexcolor in want.items():
             el = scheme.find(f"a:{tag}", ns)
             if el is None:
@@ -468,7 +468,7 @@ def theme_xml(blob: bytes, kit: dict, pal: dict) -> bytes:
             etree.SubElement(el, f"{{{A_NS}}}srgbClr", val=hexcolor.lstrip("#").upper())
     fonts = root.find(".//a:fontScheme", ns)
     if fonts is not None:
-        fonts.set("name", (kit.get("name") or "Imprint")[:60])
+        fonts.set("name", (kit.get("name") or "Letterpress")[:60])
         for tag, role in (("majorFont", "heading"), ("minorFont", "body")):
             latin = fonts.find(f"a:{tag}/a:latin", ns)
             if latin is not None:
@@ -725,7 +725,7 @@ def render_pptx(doc: dict, kit: dict, pal: dict, idx: dict, rows: list, passages
             s.notes_slide.notes_text_frame.text = note
     prs.core_properties.title = doc.get("title", "Deck")[:200]
     prs.core_properties.author = kit.get("org") or ""
-    prs.core_properties.comments = "Made with Imprint for Hermes"
+    prs.core_properties.comments = "Made with Letterpress for Hermes"
     buf = io.BytesIO()
     prs.save(buf)
     return buf.getvalue()
@@ -742,7 +742,7 @@ def render_pdf(doc: dict, kit: dict, pal: dict, faces: dict, idx: dict, rows: li
     c = rl["rlcanvas"].Canvas(buf, pagesize=(SLIDE_W, SLIDE_H), pageCompression=1, initialFontName=ty.name("body"))
     c.setTitle(doc.get("title", "Deck"))
     c.setAuthor(kit.get("org") or "")
-    c.setCreator("Imprint for Hermes")
+    c.setCreator("Letterpress for Hermes")
     for sc in scs:
         SC.draw_pdf(c, sc, ty, pictures=pictures, logos=logos)
         if colophon and sc["num"] == 1:  # only when asked for; the finished deck carries no production note

@@ -20,7 +20,7 @@ RAW2 = ('<div class="s2-slide"><style>.s2-slide{position:relative;width:1920px;h
         '.s2-fig{position:absolute;left:96px;bottom:300px;margin:0;font-size:320px;font-weight:800;line-height:.95}'
         '.s2-pn::after{content:attr(data-page)}.s2-pn{position:absolute;right:96px;bottom:96px;font-size:26px}</style>'
         '<p class="s2-fig" data-value="212" data-source="P1">212</p><span class="s2-pn" data-page="2"></span>'
-        '<img class="s2-logo" src="imprint:logo" alt=""></div>')
+        '<img class="s2-logo" src="letterpress:logo" alt=""></div>')
 
 
 class TheStoredFailure(unittest.TestCase):

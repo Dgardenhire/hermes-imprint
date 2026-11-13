@@ -1,8 +1,8 @@
-# Imprint for Hermes. name is the registry key; label is the display name.
+# Letterpress for Hermes. name is the registry key; label is the display name.
 manifest_version: 2
-name: imprint
-label: Imprint
-version: 0.1.0
+name: letterpress
+label: Letterpress
+version: 0.1.1
 description: "A notebook for your own sources inside Hermes Desktop. Add files, web pages and notes, ask questions and get answers that cite the exact passage, then make a slide deck, a one-pager, a graphic or an audio brief in one of five studio brands or your own. Runs on your own Hermes model."
 author: Damon Gardenhire
 license: MIT

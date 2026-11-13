@@ -1,4 +1,4 @@
-// Imprint's error words and the job-check clock. No React, no SDK: tests drive it (tests/js/errors.test.mjs).
+// Letterpress's error words and the job-check clock. No React, no SDK: tests drive it (tests/js/errors.test.mjs).
 //
 // A request that never reaches the backend (Hermes's plugin helper stopped, restarting or not up yet) comes back from
 // the browser as "Failed to fetch", "Load failed", a timeout or a bare 502/503/504. None of that means anything to a
@@ -7,10 +7,10 @@
 // pollClock() paces the checks on a running job: quick at first, then backing off; a missed check backs off harder,
 // and after GIVE_UP_MS of nothing but misses it says to stop, so a dead backend ends in a message, not a spinner.
 
-export const OFFLINE = 'Imprint’s backend isn’t answering.'
+export const OFFLINE = 'Letterpress’s backend isn’t answering.'
 export const OFFLINE_HELP = 'Wait a moment and try again. If it keeps happening, restart Hermes.'
-export const POLL_GAVE_UP = 'Imprint’s backend stopped answering, so Imprint stopped checking on this. ' +
-  'It may still finish: open Imprint again in a minute, or restart Hermes if it stays stuck.'
+export const POLL_GAVE_UP = 'Letterpress’s backend stopped answering, so Letterpress stopped checking on this. ' +
+  'It may still finish: open Letterpress again in a minute, or restart Hermes if it stays stuck.'
 
 const UNREACHABLE = /failed to fetch|load failed|networkerror|network error|network request failed|fetch failed|timed? ?out|timeout|aborted|aborterror|econnrefused|econnreset|bridge unavailable|starting up|still starting|not connected|socket hang up/i
 
@@ -25,7 +25,7 @@ export function describe(error) {
   return { status: Number(m[1]), detail: String(detail || '').trim() }
 }
 
-/** True when the request never got an answer from Imprint's own backend. */
+/** True when the request never got an answer from Letterpress's own backend. */
 export function isUnreachable(error, read = describe) {
   const { status, detail } = read(error)
   if (status === 502 || status === 503 || status === 504) return true

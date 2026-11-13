@@ -1,4 +1,4 @@
-"""Claude's strict output mode refuses the format request itself (HTTP 400). Imprint then asks in plain words and reads
+"""Claude's strict output mode refuses the format request itself (HTTP 400). Letterpress then asks in plain words and reads
 the JSON from the reply, the way a plain prompt does, so it works on any model."""
 import asyncio
 import unittest

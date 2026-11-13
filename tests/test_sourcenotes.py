@@ -125,7 +125,7 @@ class Export(unittest.TestCase):
         self.ids, self.by_ref, self.find = harborlight()
         self.llm = fake_model()
         self.oid = made(self.find, self.llm)
-        self.work = Path(tempfile.mkdtemp(prefix="imprint-notes-test-"))
+        self.work = Path(tempfile.mkdtemp(prefix="letterpress-notes-test-"))
 
     def tearDown(self):
         shutil.rmtree(self.work, ignore_errors=True)
@@ -176,7 +176,7 @@ class Export(unittest.TestCase):
         self.assertTrue(data.startswith(b"%PDF"))
         self.assertGreater(len(data), 8000)
         self.assertEqual(len(self.llm.calls), calls)
-        self.assertEqual(list(Path(tempfile.gettempdir()).glob("imprint-notes-*/source-notes.pdf")), [], "the scratch folder is gone")
+        self.assertEqual(list(Path(tempfile.gettempdir()).glob("letterpress-notes-*/source-notes.pdf")), [], "the scratch folder is gone")
 
     @unittest.skipUnless(CHROME, "needs Chrome")
     def test_the_drawn_pages_fit_even_with_long_sentences_in_a_wide_face(self):

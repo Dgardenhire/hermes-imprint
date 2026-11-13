@@ -1,6 +1,6 @@
 """Color math: WCAG 2.x contrast and the roles a color can safely play on a kit's paper.
 
-A kit's exact brand colors are fixed. Imprint never invents a new brand color; it measures each one
+A kit's exact brand colors are fixed. Letterpress never invents a new brand color; it measures each one
 against the paper and decides what job it can do:
 
 - ``text``   4.5:1 or more on the paper: body text, headings, numbers

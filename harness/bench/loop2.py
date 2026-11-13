@@ -1,10 +1,10 @@
-"""Loop 2 AI lane bench: the hero exhibit through a real model, and Imprint's side of the P6 prompt bench.
+"""Loop 2 AI lane bench: the hero exhibit through a real model, and Letterpress's side of the P6 prompt bench.
 
     /usr/bin/python3 harness/bench/loop2.py build harborlight --tag hero1 [--question "..."]
     /usr/bin/python3 harness/bench/loop2.py build salvia --tag p6-salvia --kit stage
     /usr/bin/python3 harness/bench/loop2.py render OUT_DIR RESULT.json [RESULT.json ...]
 
-``build`` runs the real Imprint code, one source set per process, in a data folder under ``.l2-data/bench/`` (never
+``build`` runs the real Letterpress code, one source set per process, in a data folder under ``.l2-data/bench/`` (never
 ``~/.hermes``), with every model call through ``claude -p`` (``bench.ClaudeCli``, the bench lib's neutral line on).
 Steps: the sources and their summaries, the notebook guide, the brand (Harborlight: imported from its brand guide
 PDF plus logo, no model; other sets: a studio kit), the outline from the guide's deck ask (or the P6 brief), the
@@ -46,12 +46,12 @@ ROUTE = True  # build the deck through the real outline_id route (round 2); Fals
 def build(set_name: str, tag: str, kit_id: str, question: str, p6: bool) -> dict:
     data = DATA / tag
     data.mkdir(parents=True, exist_ok=True)
-    api, CK = B.load_imprint(data)
+    api, CK = B.load_letterpress(data)
     service, jobs, store = api.service, api.jobs, api.store
     from importlib import import_module
-    K = import_module("imprint_plugin_package.content")
-    RV = import_module("imprint_plugin_package.revise")
-    kits = import_module("imprint_plugin_package.kits")
+    K = import_module("letterpress_plugin_package.content")
+    RV = import_module("letterpress_plugin_package.revise")
+    kits = import_module("letterpress_plugin_package.kits")
     store.forget_everything()
     RUNS.mkdir(parents=True, exist_ok=True)
     llm = B.ClaudeCli(RUNS, tag)
@@ -169,10 +169,10 @@ def remap(src: Path, tag: str) -> Path:
     """Round 14: stage 2 again (code only, no model call) on a build's kept plain draft, in that build's data folder
     and brand, written as a new result under ``tag``. The draft and its run log are the original build's."""
     r = json.loads(Path(src).read_text())
-    api, CK = B.load_imprint(DATA / r["tag"])
+    api, CK = B.load_letterpress(DATA / r["tag"])
     from importlib import import_module
-    K = import_module("imprint_plugin_package.content")
-    kits = import_module("imprint_plugin_package.kits")
+    K = import_module("letterpress_plugin_package.content")
+    kits = import_module("letterpress_plugin_package.kits")
     kit = kits.get(r["kit"]["id"])
     by_ref = {k: {**v, "ref": k} for k, v in r["passages"].items()}
     slides = K.parse_plain(r["plain_draft"])
@@ -193,22 +193,22 @@ def remap(src: Path, tag: str) -> Path:
 
 
 def render(out_dir: Path, results: list) -> None:
-    """Every slide of each result's brand doc, one PNG per slide, one process per result (each loads Imprint on
+    """Every slide of each result's brand doc, one PNG per slide, one process per result (each loads Letterpress on
     that build's own data folder, where its brand and logo live)."""
     for path in results:
         subprocess.run([sys.executable, __file__, "render1", str(out_dir), str(path)], check=False)
 
 
 def render1(out_dir: Path, path: Path) -> None:
-    """Imprint's own renderer: ``render_deck.scenes`` then ``scene.png`` (the scene the canvas, the PDF and the
+    """Letterpress's own renderer: ``render_deck.scenes`` then ``scene.png`` (the scene the canvas, the PDF and the
     PowerPoint share), with the logo as the exports draw it (``kits.logo_variants``). Deterministic from the doc."""
     r = json.loads(Path(path).read_text())
-    api, CK = B.load_imprint(DATA / r.get("data_tag", r["tag"]))
+    api, CK = B.load_letterpress(DATA / r.get("data_tag", r["tag"]))
     from importlib import import_module
-    kits = import_module("imprint_plugin_package.kits")
-    layout = import_module("imprint_plugin_package.layout")
-    RD = import_module("imprint_plugin_package.render_deck")
-    SC = import_module("imprint_plugin_package.scene")
+    kits = import_module("letterpress_plugin_package.kits")
+    layout = import_module("letterpress_plugin_package.layout")
+    RD = import_module("letterpress_plugin_package.render_deck")
+    SC = import_module("letterpress_plugin_package.scene")
     kit = api.service.kit_for_output(r["output_id"], kits.get(r["kit"]["id"])) if r.get("output_id") else kits.get(r["kit"]["id"])
     by_ref = {k: {**v, "ref": k} for k, v in r["passages"].items()}
     doc = CK.grounding(r["live"], by_ref)["doc"]

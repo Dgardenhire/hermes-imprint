@@ -1,15 +1,15 @@
-"""The bridge to Hermes. Everything Imprint takes from the host goes through this file.
+"""The bridge to Hermes. Everything Letterpress takes from the host goes through this file.
 
 - ``set_context`` / ``context``: the ``PluginContext`` that ``register(ctx)`` received, when this process
   ran it. The routes use it for ``ctx.llm`` and ``ctx.dispatch_tool``.
-- ``data_dir``: ``plugins.plugin_storage.plugin_data_dir("imprint")``, or ``IMPRINT_DATA_DIR`` in tests
+- ``data_dir``: ``plugins.plugin_storage.plugin_data_dir("letterpress")``, or ``LETTERPRESS_DATA_DIR`` in tests
   and the harness, so they can never touch a real profile.
 - ``Model``: the writing calls, over the user's own Hermes model, with plain-English failures, a token
   meter fed from each ``result.usage``, and an optional daily cap.
 - ``dispatch``: one of the user's own Hermes tools, through ``ctx.dispatch_tool`` or the public tool registry.
-  Imprint calls exactly one, ``text_to_speech``, with a fixed name and its own arguments (service.speak); images
+  Letterpress calls exactly one, ``text_to_speech``, with a fixed name and its own arguments (service.speak); images
   reach the model as blocks in the writing call, never through a tool, and nothing a model writes picks a tool.
-- ``broadcast``: ``plugin.imprint.<event>`` to every open window, for job progress.
+- ``broadcast``: ``plugin.letterpress.<event>`` to every open window, for job progress.
 - ``redact``: Hermes's secret redactor, run on source text before a model sees it.
 """
 
@@ -25,9 +25,17 @@ import threading
 from pathlib import Path
 from typing import Any, Callable, Optional
 
-PLUGIN_ID = "imprint"
-AUX_TASK = "imprint_write"
-_log = logging.getLogger("hermes.plugins.imprint")
+try:
+    from . import carryover
+except ImportError:  # loaded loose
+    import carryover  # type: ignore
+
+PLUGIN_ID = "letterpress"
+EARLIER_ID = "imprint"  # the plugin's name before Nov 12, 2026; its data folder is copied in once (carryover.py)
+DATA_DIR_VAR = "LETTERPRESS_DATA_DIR"
+EARLIER_DATA_DIR_VAR = "IMPRINT_DATA_DIR"  # still read, so a folder set under the earlier name keeps working
+AUX_TASK = "letterpress_write"
+_log = logging.getLogger("hermes.plugins.letterpress")
 
 _ctx = None
 _ctx_lock = threading.Lock()
@@ -47,15 +55,25 @@ SAMPLE_DIR = "sample"
 SAMPLE_FLAG = "sample-open"
 
 
+def data_dir_override() -> str:
+    """The data folder named in the environment (tests, the harness, or a person who set one), else empty."""
+    return os.environ.get(DATA_DIR_VAR) or os.environ.get(EARLIER_DATA_DIR_VAR) or ""
+
+
 def base_dir() -> Path:
     """The person's own data folder."""
-    override = os.environ.get("IMPRINT_DATA_DIR")
+    override = data_dir_override()
     if override:
         path = Path(override)
         path.mkdir(parents=True, exist_ok=True)
         return path
     from plugins.plugin_storage import plugin_data_dir  # inside Hermes
-    return plugin_data_dir(PLUGIN_ID)
+    path = plugin_data_dir(PLUGIN_ID)
+    try:
+        carryover.carry_over_once(path, path.parent / EARLIER_ID)  # data kept under the earlier name, copied in once
+    except Exception:  # noqa: BLE001 - never block the plugin over this
+        _log.warning("letterpress: earlier data not carried over", exc_info=True)
+    return path
 
 
 def sample_open() -> bool:
@@ -66,7 +84,7 @@ def sample_open() -> bool:
 
 
 def data_dir() -> Path:
-    """Where Imprint reads and writes right now: the person's own folder, or ``<it>/sample/`` while the sample
+    """Where Letterpress reads and writes right now: the person's own folder, or ``<it>/sample/`` while the sample
     notebook is open (the person's own files are never touched while it is)."""
     base = base_dir()
     if (base / SAMPLE_FLAG).exists():
@@ -94,7 +112,7 @@ def redact(text: str) -> str:
 
 
 def broadcast(event: str, payload: Optional[dict] = None) -> None:
-    """Push ``plugin.imprint.<event>``; polling still works when this does nothing."""
+    """Push ``plugin.letterpress.<event>``; polling still works when this does nothing."""
     try:
         from hermes_cli.plugin_events import broadcast_plugin_event
     except Exception:
@@ -102,7 +120,7 @@ def broadcast(event: str, payload: Optional[dict] = None) -> None:
     try:
         broadcast_plugin_event(PLUGIN_ID, event, payload or {})
     except Exception:
-        _log.debug("imprint: event %s not delivered", event, exc_info=True)
+        _log.debug("letterpress: event %s not delivered", event, exc_info=True)
 
 
 # ---------------------------------------------------------------- model --
@@ -115,12 +133,12 @@ class ModelError(RuntimeError):
         self.code = code
 
 
-NO_MODEL = "Imprint couldn't reach your Hermes model. Check Settings, then press Retry."
+NO_MODEL = "Letterpress couldn't reach your Hermes model. Check Settings, then press Retry."
 BUSY = "Your model is busy right now. Wait a minute, then press Retry."
-NOT_ALLOWED = "Hermes did not let Imprint use the model. Check Imprint's settings under Plugins, then press Retry."
+NOT_ALLOWED = "Hermes did not let Letterpress use the model. Check Letterpress's settings under Plugins, then press Retry."
 CUT_OFF = "Your model stopped before the answer was finished. Press Retry; if it happens again, ask for a shorter piece."
 TIMED_OUT = "Your model took too long to answer. Press Retry, or try fewer sources."
-CAP_REACHED = "Today's token limit for Imprint is used up. Raise it in Imprint's settings, or try again tomorrow."
+CAP_REACHED = "Today's token limit for Letterpress is used up. Raise it in Letterpress's settings, or try again tomorrow."
 
 
 def model_error(e: BaseException) -> ModelError:
@@ -128,7 +146,7 @@ def model_error(e: BaseException) -> ModelError:
         return e
     name = type(e).__name__
     msg = str(e).lower()
-    _log.warning("imprint: model call failed: %s: %s", name, str(e)[:300])
+    _log.warning("letterpress: model call failed: %s: %s", name, str(e)[:300])
     if name == "PluginLlmTrustError":
         return ModelError(NOT_ALLOWED, "not_allowed")
     if isinstance(e, (asyncio.TimeoutError, TimeoutError)) or "timed out" in msg or "timeout" in msg:
@@ -205,11 +223,11 @@ def parse_json(text: str):
 
 
 class Model:
-    """Imprint's model calls over Hermes's plugin LLM facade.
+    """Letterpress's model calls over Hermes's plugin LLM facade.
 
     ``llm`` is ``ctx.llm`` when ``register`` ran in this process, else a ``PluginLlm`` for this plugin
     (the Debate Workbench pattern), or a stand-in with the same async methods in tests. Calls route
-    through Imprint's own auxiliary task; if Hermes refuses the task key (an older Hermes, or the task
+    through Letterpress's own auxiliary task; if Hermes refuses the task key (an older Hermes, or the task
     was not registered in this process), the call runs once more on the main model."""
 
     def __init__(self, llm=None, meter: Optional[Callable[[str, dict], None]] = None,
@@ -245,7 +263,7 @@ class Model:
                 return await fn(task=AUX_TASK, **kwargs)
             except Exception as e:
                 if type(e).__name__ == "PluginLlmTrustError" and "task" in str(e).lower():
-                    _log.info("imprint: %s task not accepted here; using the main model", AUX_TASK)
+                    _log.info("letterpress: %s task not accepted here; using the main model", AUX_TASK)
                     self.use_task = False
                 else:
                     raise
@@ -270,14 +288,14 @@ class Model:
         for attempt in range(2):
             instr = instructions if attempt == 0 else (
                 instructions + "\n\nYour last reply was cut off or was not valid JSON. Reply again with shorter text in every field, as one complete JSON object.")
-            if self.plain:  # no format request at all: the prompt asks for the JSON and Imprint reads it
+            if self.plain:  # no format request at all: the prompt asks for the JSON and Letterpress reads it
                 instr += self._plain_hint(schema)
             try:
                 result = await asyncio.wait_for(self._call(self.llm.acomplete_structured, dict(
                     instructions=instr, input=blocks, system_prompt=system,
                     json_schema=None if self.plain else schema, json_mode=False if self.plain else schema is None,
                     max_tokens=max_tokens, timeout=timeout,
-                    purpose=f"imprint.{purpose}")), timeout=timeout + 15)
+                    purpose=f"letterpress.{purpose}")), timeout=timeout + 15)
             except ValueError as e:  # Hermes refused the format request, or validated the reply against the schema and it did not match
                 if not started_plain and format_refused(e):
                     trace(f"{purpose}: the provider refuses this format request; asking in plain text from here on")
@@ -286,14 +304,14 @@ class Model:
                                                  purpose=purpose, max_tokens=max_tokens, timeout=timeout, images=images)
                 last_err = ModelError(CUT_OFF, "cut_off")
                 trace(f"{purpose} attempt {attempt} plain={self.plain}: ValueError {str(e)[:200]}")
-                _log.warning("imprint: %s reply did not match the schema (%s)", purpose, str(e)[:200])
+                _log.warning("letterpress: %s reply did not match the schema (%s)", purpose, str(e)[:200])
                 continue
             except Exception as e:
                 trace(f"{purpose} attempt {attempt} plain={self.plain}: {type(e).__name__} {str(e)[:250]}")
                 if not started_plain and format_refused(e):
                     # Some providers (Claude's strict output mode) refuse the format request itself. Ask in plain
                     # words from here on, the way a plain prompt does, and read the JSON out of the reply.
-                    _log.info("imprint: the provider refused a format request; asking for JSON in plain text")
+                    _log.info("letterpress: the provider refused a format request; asking for JSON in plain text")
                     self.plain = True
                     last_err = None
                     return await self.structured(system=system, instructions=instructions, body=body, schema=schema,
@@ -303,7 +321,7 @@ class Model:
                 try:
                     self.meter(purpose, _usage_of(result))
                 except Exception:
-                    _log.debug("imprint: usage not recorded", exc_info=True)
+                    _log.debug("letterpress: usage not recorded", exc_info=True)
             parsed = getattr(result, "parsed", None)
             trace(f"{purpose} attempt {attempt} plain={self.plain}: got parsed={type(parsed).__name__} text={len(getattr(result, 'text', '') or '')} chars")
             if isinstance(parsed, dict):
@@ -313,7 +331,7 @@ class Model:
             except ModelError as e:
                 txt = getattr(result, "text", "") or ""
                 # Shape only, never the words: the reply is built from the person's own documents.
-                _log.warning("imprint: %s reply was not readable JSON (%d characters; opens with %s; ends with %s; braces %d open, %d closed)",
+                _log.warning("letterpress: %s reply was not readable JSON (%d characters; opens with %s; ends with %s; braces %d open, %d closed)",
                              purpose, len(txt), "a code fence" if txt.lstrip().startswith("```") else ("{" if txt.lstrip().startswith("{") else "other text"),
                              "}" if txt.rstrip().endswith("}") else ("a code fence" if txt.rstrip().endswith("```") else "other text"),
                              txt.count("{"), txt.count("}"))
@@ -358,7 +376,7 @@ def dispatch(tool: str, args: dict, timeout: float = 180.0) -> Any:
 def dispatch_bounded(tool: str, args: dict, timeout: float) -> Any:
     """``dispatch`` with a hard time limit. The tool runs on its own daemon thread; if it has not answered
     after ``timeout`` seconds, this raises ToolUnavailable("timed out") and the caller moves on (the
-    stray call can finish or not, it holds nothing of Imprint's)."""
+    stray call can finish or not, it holds nothing of Letterpress's)."""
     box: dict = {}
 
     def work():
@@ -368,11 +386,11 @@ def dispatch_bounded(tool: str, args: dict, timeout: float) -> Any:
             box["err"] = e
 
     import contextvars
-    th = threading.Thread(target=contextvars.copy_context().run, args=(work,), name=f"imprint-tool-{tool}", daemon=True)
+    th = threading.Thread(target=contextvars.copy_context().run, args=(work,), name=f"letterpress-tool-{tool}", daemon=True)
     th.start()
     th.join(timeout)
     if th.is_alive():
-        _log.warning("imprint: %s did not answer within %ss", tool, int(timeout))
+        _log.warning("letterpress: %s did not answer within %ss", tool, int(timeout))
         raise ToolUnavailable("timed out")
     if "err" in box:
         raise box["err"]

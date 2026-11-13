@@ -44,7 +44,7 @@ def _rl():
                                         TableStyle)
         from reportlab.pdfgen import canvas as rlcanvas
     except ImportError:
-        raise PdfUnavailable("PDF export needs the reportlab library, which isn't installed. Reinstall Imprint to add it.")
+        raise PdfUnavailable("PDF export needs the reportlab library, which isn't installed. Reinstall Letterpress to add it.")
     return locals()
 
 
@@ -481,7 +481,7 @@ def render(doc: dict, kit: dict, pal: dict, faces: dict, idx: dict, rows: list, 
     c = rl["rlcanvas"].Canvas(buf, pagesize=(W, H), pageCompression=1, initialFontName=names.get("body", "Helvetica"))
     c.setTitle(doc.get("title", "Brief"))
     c.setAuthor(kit.get("org") or "")
-    c.setCreator("Imprint for Hermes")
+    c.setCreator("Letterpress for Hermes")
     hx = rl["rlc"].HexColor
     # paper
     c.setFillColor(hx(pal["paper"]))
@@ -659,7 +659,7 @@ def _scene_page(doc, kit, pal, faces, idx, rows, date, logo, proof, rl) -> bytes
     c = rl["rlcanvas"].Canvas(buf, pagesize=(W, H), pageCompression=1, initialFontName=ty.name("body"))
     c.setTitle(doc.get("title", "Brief"))
     c.setAuthor(kit.get("org") or "")
-    c.setCreator("Imprint for Hermes")
+    c.setCreator("Letterpress for Hermes")
     if off:
         c.saveState()
         c.translate(off, off)

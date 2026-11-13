@@ -1,7 +1,7 @@
-Imprint
+Letterpress
 Copyright (c) 2026 Damon Gardenhire. Licensed under the MIT License (see LICENSE).
 
-This product includes material from the projects below. None of them endorses Imprint.
+This product includes material from the projects below. None of them endorses Letterpress.
 
 
 1. Open Design: starter kit values and the Open Design package reader
@@ -9,7 +9,7 @@ This product includes material from the projects below. None of them endorses Im
 
 Four starter kits adapt color, size and type values from packages in the Open Design
 design-system catalog: Payments Violet, Midnight Indigo, Poster Block and Parchment Ink.
-Imprint stores only those values, in its own words and its own kit format (starter_kits.py).
+Letterpress stores only those values, in its own words and its own kit format (starter_kits.py).
 It ships no Open Design file, prose, component, logo or mark.
 
     Open Design, https://github.com/nexu-io/open-design
@@ -24,7 +24,7 @@ MIT License (text below):
     bergside/awesome-design-skills, https://github.com/bergside/awesome-design-skills
 
 Some Open Design packages imitate the public look of real companies. The catalog itself calls
-them "aesthetic inspirations, not official assets." Imprint's adapted kits carry neutral,
+them "aesthetic inspirations, not official assets." Letterpress's adapted kits carry neutral,
 descriptive names, never a company's name, logo or mark, and documents made with them do not
 claim to come from anyone. Where a package named a licensed typeface, the kit uses a bundled
 OFL font instead, and every proof's colophon says so. No license here grants any trademark

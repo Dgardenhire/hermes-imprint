@@ -4,7 +4,7 @@ WT = Path.home() / "Desktop/LINCHPIN-Claude/hermes-imprint-wt-l2-deck8"
 sys.path.insert(0, str(WT / "harness/bench"))
 import bench as B
 r = json.load(open(WT / "docs/runs/ai/loop2/r8e-result.json"))
-api, CK = B.load_imprint(WT / ".l2-data/bench/r8e")
+api, CK = B.load_letterpress(WT / ".l2-data/bench/r8e")
 S = api.service
 pr = S.proof(r["output_id"], r["kit"]["id"])
 print("stamp:", pr["stamp"], "| blocked:", pr["blocked"], "| frames:", len(pr["slides"]))

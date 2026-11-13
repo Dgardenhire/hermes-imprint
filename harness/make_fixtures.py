@@ -1,4 +1,4 @@
-"""Write harness/fixtures.json: real answers from Imprint's backend, made with a scripted stand-in model
+"""Write harness/fixtures.json: real answers from Letterpress's backend, made with a scripted stand-in model
 (harness/demo_content.py) so the pane can be rendered and screenshotted without Hermes.
 
     /usr/bin/python3 harness/make_fixtures.py
@@ -11,7 +11,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-os.environ["IMPRINT_DATA_DIR"] = tempfile.mkdtemp(prefix="imprint-fixtures-")
+os.environ["LETTERPRESS_DATA_DIR"] = tempfile.mkdtemp(prefix="letterpress-fixtures-")
 sys.path.insert(0, str(ROOT / "tests"))
 sys.path.insert(0, str(ROOT / "harness"))
 from _load import service, jobs, kits, store, Result, run, api, content, runtime, imports  # noqa: E402

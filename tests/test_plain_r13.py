@@ -94,7 +94,7 @@ class Plain(unittest.TestCase):
         oid = j["result"]["output_id"]
         self.assertEqual(store.get_setting(f"plain_draft_of:{oid}"), DRAFT)
         self.assertEqual(len(llm.calls), 1)
-        self.assertEqual(llm.calls[0]["purpose"], "imprint.plain_draft")
+        self.assertEqual(llm.calls[0]["purpose"], "letterpress.plain_draft")
         self.assertTrue(llm.calls[0]["input"][0]["text"].startswith("Here are our documents."))
         out = service._output(oid)
         lines = [b["text"] for s in out["neutral"]["slides"] for b in s.get("bullets") or []]

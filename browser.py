@@ -1,12 +1,12 @@
-"""Finding a browser Imprint can drive headless: Chrome, Chromium, Edge or Brave, on Mac, Windows or Linux.
+"""Finding a browser Letterpress can drive headless: Chrome, Chromium, Edge or Brave, on Mac, Windows or Linux.
 
-One answer for everything Imprint draws (the three designs, PDF and image export, reading a website's look). Order:
+One answer for everything Letterpress draws (the three designs, PDF and image export, reading a website's look). Order:
 
-    1. the ``IMPRINT_BROWSER`` environment variable (a full path to a browser program), if the file exists;
+    1. the ``LETTERPRESS_BROWSER`` environment variable (a full path to a browser program), if the file exists;
     2. the usual install paths for the running system;
     3. program names on ``PATH``.
 
-Chrome is preferred over Chromium, Edge and Brave when more than one is installed, because Imprint's pages were drawn and
+Chrome is preferred over Chromium, Edge and Brave when more than one is installed, because Letterpress's pages were drawn and
 checked against it."""
 
 from __future__ import annotations
@@ -17,7 +17,8 @@ import sys
 from pathlib import Path
 from typing import Callable, Optional
 
-ENV_VAR = "IMPRINT_BROWSER"
+ENV_VAR = "LETTERPRESS_BROWSER"
+EARLIER_ENV_VAR = "IMPRINT_BROWSER"  # the name before Nov 12, 2026, still read
 
 _MAC = (
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
@@ -35,8 +36,8 @@ _WIN_REL = (
 )
 _WIN_NAMES = ("chrome.exe", "chrome", "msedge.exe", "msedge", "brave.exe", "brave")
 
-NOT_FOUND = ("Imprint could not find a browser to draw with. Install Google Chrome (or Chromium, Microsoft Edge or Brave), "
-             "or set the IMPRINT_BROWSER environment variable to the full path of the browser program, then try again. "
+NOT_FOUND = ("Letterpress could not find a browser to draw with. Install Google Chrome (or Chromium, Microsoft Edge or Brave), "
+             "or set the LETTERPRESS_BROWSER environment variable to the full path of the browser program, then try again. "
              "Until then the Template version still works.")
 
 
@@ -74,7 +75,7 @@ def find(platform: Optional[str] = None, environ: Optional[dict] = None, exists:
     env = os.environ if environ is None else environ
     exists = exists or (lambda p: Path(p).is_file())
     which = which or shutil.which
-    override = (env.get(ENV_VAR) or "").strip().strip('"')
+    override = (env.get(ENV_VAR) or env.get(EARLIER_ENV_VAR) or "").strip().strip('"')
     if override:
         if exists(override):
             return override

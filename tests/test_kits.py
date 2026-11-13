@@ -223,7 +223,7 @@ if __name__ == "__main__":
 
 
 class KitFilesStayInside(unittest.TestCase):
-    """A kit's logo and fonts can only name files Imprint wrote into that kit's own folder."""
+    """A kit's logo and fonts can only name files Letterpress wrote into that kit's own folder."""
 
     def setUp(self):
         reset()

@@ -1,15 +1,15 @@
 # DRAFT PR description (not submitted)
 
-Title: `plugin-catalog: add imprint (a notebook for your sources that makes branded decks, one-pagers, graphics and audio briefs)`
+Title: `plugin-catalog: add letterpress (a notebook for your sources that makes branded decks, one-pagers, graphics and audio briefs)`
 
-Before opening: replace `SHA_PLACEHOLDER` in `imprint.yaml` (the `sha` and the two image URL prefixes) with the full
+Before opening: replace `SHA_PLACEHOLDER` in `letterpress.yaml` (the `sha` and the two image URL prefixes) with the full
 40-character commit that is pushed and reviewed.
 
 ---
 
-## Imprint
+## Letterpress
 
-Imprint is a Hermes Desktop page for working from your own documents. You add PDFs, Word files, transcripts, web
+Letterpress is a Hermes Desktop page for working from your own documents. You add PDFs, Word files, transcripts, web
 pages and notes. You ask questions and each answer carries numbered marks that open the passage it came from. Then you
 make a deck, a one-pager, a graphic or an audio brief set in a brand (a saved set of colors, fonts, a logo and voice
 rules). Every number and quoted phrase is matched against the passages it cites, in code, after the model has
@@ -21,11 +21,11 @@ mix slides across the three. A template version in the brand's own fixed layouts
 imported (PDF guide, color codes, CSS, design tokens, PowerPoint or Canva file, logo, Open Design package, Claude
 Design system), built from a website, or proposed three at a time by the user's model.
 
-Manual: https://linchpin.studio/hermes/imprint/manual/
+Manual: https://linchpin.studio/hermes/letterpress/manual/
 
 ### Hermes surfaces used
 
-- `ctx.register_auxiliary_task`: one task, `imprint_write`, shown as "Imprint writing" in Settings, Models, Auxiliary.
+- `ctx.register_auxiliary_task`: one task, `letterpress_write`, shown as "Letterpress writing" in Settings, Models, Auxiliary.
   Every model call goes through the plugin LLM helper to the user's own Hermes model.
 - A Desktop page (`desktop/plugin.js`, built from `desktop/src`), importing only `@hermes/plugin-sdk`, `react`,
   `react/jsx-runtime` and the bundled `hermes-ui-kit`. Its **Manual** button opens the manual in the user's browser
@@ -45,7 +45,7 @@ floors and upper bounds: `pypdf>=6.21.4,<7`, `python-docx>=1.1,<2`, `python-pptx
 
 - **Model calls.** Source text (secrets redacted with Hermes's redactor), questions, briefs and notes go to the user's
   own Hermes model. That includes pictures of draft slides, which the model is shown so it can fix layout. A logo or
-  brand sheet goes to the model as an image only when the user asks Imprint to read one.
+  brand sheet goes to the model as an image only when the user asks Letterpress to read one.
 - **Speech.** Audio scripts and the brand's delivery notes go to the user's Hermes `text_to_speech` provider. With the
   default (Edge) that is Microsoft's online voice service. It is the user's Hermes setting.
 - **Network calls of its own.** Only web addresses the user enters (page sources, a site to build a brand from,
@@ -54,7 +54,7 @@ floors and upper bounds: `pypdf>=6.21.4,<7`, `python-docx>=1.1,<2`, `python-pptx
   and 60 in all, streamed and size-capped, gzip or deflate only, the page plus up to 10 same-site stylesheets. No other
   hosts. No telemetry or usage reporting.
 - **A headless browser, a child process.** Started only by a button press, with a scratch profile that is deleted
-  after, and started with `posix_spawn` (never `fork`). Which browser (`browser.py`): the `IMPRINT_BROWSER` environment
+  after, and started with `posix_spawn` (never `fork`). Which browser (`browser.py`): the `LETTERPRESS_BROWSER` environment
   variable (a full path, or a program name) when it is set; otherwise the usual install folders for Google Chrome,
   Chromium, Microsoft Edge and Brave on macOS (`/Applications`, `~/Applications`) and Windows (`Program Files`,
   `Program Files (x86)`, `AppData\Local`); otherwise those programs by name on `PATH` (macOS, Windows and Linux). Chrome
@@ -64,22 +64,27 @@ floors and upper bounds: `pypdf>=6.21.4,<7`, `python-docx>=1.1,<2`, `python-pptx
   (1) Drawing the three designs and their PDF and image exports (`htmldeck.py`). Each page it draws carries
   `default-src 'none'`, so it can request nothing.
   (2) Looking at a website the user builds a brand from (`sitestyle.py`), on macOS and Linux (on Windows the site's
-  colors and fonts are still read, and Imprint says the browser look is not available there yet). It opens the home
+  colors and fonts are still read, and Letterpress says the browser look is not available there yet). It opens the home
   page and up to three linked pages, read only, never types, clicks or signs in, after reading robots.txt. It is
   driven over a pipe (no debugging port) and receives no other descriptor of Hermes's. All its traffic must pass
-  through a forward proxy Imprint runs on `127.0.0.1` on a random port, which resolves each host once, refuses unless
+  through a forward proxy Letterpress runs on `127.0.0.1` on a random port, which resolves each host once, refuses unless
   every address is public, and connects to that checked address; QUIC, WebRTC and WebTransport are disabled.
 - **Other shell command.** On macOS, `sips` converts the first page of a one-pager PDF to a small preview image;
   without it a brand card is drawn instead.
+- **What those programs receive.** The browser and `sips` start with only `PATH`, `HOME`, `TMPDIR`/`TEMP`/`TMP`, `LANG` and
+  `LC_*` (plus `DISPLAY`, `WAYLAND_DISPLAY` and `XDG_RUNTIME_DIR` on Linux, and `SYSTEMROOT`, `WINDIR`, `USERPROFILE`,
+  `LOCALAPPDATA` and `APPDATA` on Windows), never Hermes's own environment or keys (`childenv.py`).
 - **Background work.** Model calls, web reads, recordings and drawing run on threads inside Hermes. The checking proxy
   is a thread that exists only while a website is read. Each ends with its job. A job interrupted by a Hermes restart
   is marked stopped.
-- **Reads.** Only files the user picks; in a folder import, only the named token, font and logo files, with the folder
+- **Reads.** Only files the user picks; once, on first start, `<HERMES_HOME>/plugin-data/imprint/` (the plugin's name
+  before Nov 12, 2026), copied into its own folder only when it holds this plugin's own database and the new folder has
+  none; the earlier folder is never changed (`carryover.py`); in a folder import, only the named token, font and logo files, with the folder
   grant released after; and, for a generated image, only from `<HERMES_HOME>/cache/`. Zip, Word and PowerPoint files
   are checked for size, unpack ratio, climbing paths, links and XML entities before reading. Uploads stop at 25 MB.
-- **Writes.** `<HERMES_HOME>/plugin-data/imprint/` (including a `debug.log` of error kinds, last 200 lines, never the
-  user's words), scratch folders it deletes, and paths the user picks in the save dialog. If the `IMPRINT_DATA_DIR`
-  environment variable is set, everything Imprint stores goes to that folder instead (the test harness uses it; Hermes
+- **Writes.** `<HERMES_HOME>/plugin-data/letterpress/` (including a `debug.log` of error kinds, last 200 lines, never the
+  user's words), scratch folders it deletes, and paths the user picks in the save dialog. If the `LETTERPRESS_DATA_DIR`
+  environment variable is set, everything Letterpress stores goes to that folder instead (the test harness uses it; Hermes
   never sets it). "Forget everything" deletes the data folder.
 - **Credentials.** None stored or read. No self-updates. No telemetry.
 - **Bundled data.** 29 OFL font files (.ttf) with `fonts/OFL.txt` and `fonts/SOURCES.txt`. No compiled code. The tests
@@ -89,7 +94,7 @@ floors and upper bounds: `pypdf>=6.21.4,<7`, `python-docx>=1.1,<2`, `python-pptx
 ### Fixed since the first draft (Nov 10-11)
 
 - **Designs on Claude models.** When Claude's strict output mode (or Hermes itself) declines the JSON format request,
-  Imprint asks for the JSON in plain words and reads it from the reply, so the design and fix calls work on Claude.
+  Letterpress asks for the JSON in plain words and reads it from the reply, so the design and fix calls work on Claude.
 - **Shapes over text are caught.** The layout check now flags a chart mark or shape drawn over text, and the fix round
   is shown it.
 - **The title slide is kept** in all three designs.
@@ -101,7 +106,7 @@ floors and upper bounds: `pypdf>=6.21.4,<7`, `python-docx>=1.1,<2`, `python-pptx
   how many rules mention them, so an error red no longer becomes the brand color.
 - **Speed.** Slides are drawn four at a time, only changed slides are redrawn, later fix rounds send only slides that
   still have problems, and each design shows its step and elapsed time.
-- **Plain errors.** With the backend down the page says "Imprint's backend isn't answering." (not "Failed to fetch"),
+- **Plain errors.** With the backend down the page says "Letterpress's backend isn't answering." (not "Failed to fetch"),
   and a job check stops after 90 seconds of no answers and says so, instead of spinning forever.
 - **Browser start-up.** The browser is started with `posix_spawn`, never `fork`: on macOS a forked child can crash in a
   system network framework's fork handler once proxies have been looked up. This was the cause of three security
@@ -115,9 +120,9 @@ skip: a migration check that needs an older checkout beside the repo. The deskto
 `node --test tests/js/*.test.mjs` (18 tests, 17 pass and one is driven from the Python suite with a real state answer).
 The three Chrome-over-a-pipe security tests, which used to fail only in the full run, pass in it.
 
-Overlap: Podcast Studio (merged) makes two-host audio from any text. Imprint's audio is one narrator through the
+Overlap: Podcast Studio (merged) makes two-host audio from any text. Letterpress's audio is one narrator through the
 user's own Hermes voice and is one of four formats tied to a brand. `folio` (open) indexes and cites a library;
-Imprint makes branded outputs from a chosen set of sources.
+Letterpress makes branded outputs from a chosen set of sources.
 
 ### Screenshots
 
@@ -139,4 +144,4 @@ check, a one-pager with its evidence, the three designs, and a mixed deck.
   of its own classes. If the reviewers would rather the plugin style its buttons only through SDK props, that is a
   change to make before merge.
 
-Imprint is an independent community plugin. It is not made or endorsed by Nous Research.
+Letterpress is an independent community plugin. It is not made or endorsed by Nous Research.

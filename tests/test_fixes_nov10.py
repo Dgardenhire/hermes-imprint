@@ -52,7 +52,7 @@ class BrowserLookup(unittest.TestCase):
 
     def test_nothing_found_is_none_and_the_message_says_what_to_do(self):
         self.assertIsNone(self.find("linux"))
-        self.assertIn("IMPRINT_BROWSER", B.NOT_FOUND)
+        self.assertIn("LETTERPRESS_BROWSER", B.NOT_FOUND)
         self.assertIn("Template version", B.NOT_FOUND)
 
     def test_sitestyle_uses_the_same_lookup(self):
@@ -249,7 +249,7 @@ class Screen(unittest.TestCase):
             B.find = orig
         j = jobs.get(j["id"])
         self.assertEqual(j["status"], "failed")
-        self.assertIn("IMPRINT_BROWSER", j["error"])
+        self.assertIn("LETTERPRESS_BROWSER", j["error"])
 
     def test_a_running_design_reports_how_long_it_has_been_going(self):
         import time
@@ -425,7 +425,7 @@ class ShapesOverText(unittest.TestCase):
 
 
 class RoutesLoadOnce(unittest.TestCase):
-    """Live, Nov 10 after a restart: "module 'imprint_revise_api' has no attribute 'mount'" on /state and /chats, sent
+    """Live, Nov 10 after a restart: "module 'letterpress_revise_api' has no attribute 'mount'" on /state and /chats, sent
     together. The route loader registered the module before it finished loading, so the second request got a half-loaded
     one, and every call failed until Hermes restarted."""
 
@@ -453,7 +453,7 @@ class RoutesLoadOnce(unittest.TestCase):
         self.assertEqual(len({id(m) for m in got}), 1)
 
     def test_revise_routes(self):
-        self.check("revise", "imprint_revise_api")
+        self.check("revise", "letterpress_revise_api")
 
     def test_designs_routes(self):
-        self.check("designs", "imprint_designs_api")
+        self.check("designs", "letterpress_designs_api")

@@ -1,16 +1,36 @@
 # Changelog
 
+## 0.1.1, November 12, 2026
+
+Letterpress was called Imprint before Nov 12, 2026.
+
+- **New name.** The plugin is now Letterpress. Install it with `hermes plugins install letterpress`; it appears as
+  **Letterpress** in the sidebar, and its writing task is **Letterpress writing** under Settings, Models, Auxiliary.
+- **Your work carries over.** The first time Letterpress opens its data folder, it copies in everything from the
+  folder kept under the earlier name: sources, brands, made pieces, notes, chats and settings. The earlier folder stays
+  exactly as it was; delete it yourself once you no longer need it. If the Letterpress folder already holds data,
+  nothing is copied and nothing in it is replaced. Only this plugin's own data is copied.
+- **The Brands page fits its window.** Studio brands and earlier starters no longer run past the right edge; the
+  columns step down as the window narrows.
+- **Outside programs no longer receive your Hermes keys.** The browser that draws designs and reads websites, and the
+  macOS `sips` program that draws one-pager previews, start with only what a program needs to run: `PATH`, `HOME`, the
+  temporary folder, the language settings, and on Linux and Windows the few system settings a browser reads at start.
+- **Turn it on again.** Hermes keeps "on for this profile" and the model picked for a writing task by plugin name, so
+  switch Letterpress on under Capabilities, Plugins, and pick its writing model again if you had picked one.
+- `LETTERPRESS_BROWSER` and `LETTERPRESS_DATA_DIR` replace the earlier environment variable names, which are still read.
+- **The page file can be rebuilt from this repository.** The shared interface code behind `desktop/plugin.js` is now in `vendor/hermes-ui-kit` with a pinned esbuild, and `node scripts/verify-bundle.mjs` rebuilds the file and checks it matches byte for byte.
+
 ## Unreleased
 
 ### Statement fix (Nov 11, 2026)
 
 - **No more bare grey slides.** A Statement deck could come back with every slide after the title unstyled: the model drew
-  the slide number with CSS `content: attr(...)`, which Imprint refuses for safety, and refusing it threw away that
+  the slide number with CSS `content: attr(...)`, which Letterpress refuses for safety, and refusing it threw away that
   slide's whole stylesheet. Now only the refused rule goes; the rest of the slide keeps its styling. The brief tells the
   model never to draw text with CSS, and the Statement brief is simpler (one large figure or statement on a plain
   ground, no slide number).
 - **A broken design is never offered.** A design with an unstyled or empty slide, or more than two layout problems a
-  slide, is made once more. If it is still broken, a deck shows Imprint's own layout in that design's direction,
+  slide, is made once more. If it is still broken, a deck shows Letterpress's own layout in that design's direction,
   named "(template version)" on its card; other pieces say to try again. At most two tries per design.
 
 ### Ambition pass (Nov 11, 2026, branch `ambition-nov11`)
@@ -32,7 +52,7 @@
 
 ### Rubric fixes (Nov 11, 2026, branch `rubric-fixes`)
 
-- **Plain words when the backend is down.** A request that never reaches Imprint's backend now reads "Imprint's backend
+- **Plain words when the backend is down.** A request that never reaches Letterpress's backend now reads "Letterpress's backend
   isn't answering." instead of the browser's "Failed to fetch"; the start-up screen adds "Wait a moment and try again. If
   it keeps happening, restart Hermes." Every error sentence ends with a full stop.
 - **Job checks stop when nobody answers.** A running job is checked quickly at first and then less often; when the
@@ -43,18 +63,18 @@
   crash in the system network framework's fork handler once proxies had been looked up; that made three security tests
   fail only in the full suite, and could have stopped the browser inside Hermes.
 - **Windows website look** says plainly that the browser step isn't available there yet; colors and fonts are still read.
-- **Copy.** The first screen's headline names what Imprint does, with no "every number is checked" line and no caption
+- **Copy.** The first screen's headline names what Letterpress does, with no "every number is checked" line and no caption
   under the sample slide; the Designs room drops its subtitle and the one-line taglines under each design. "Open the
   sample" says "Opening the sample" while it works. Messages say brand, not kit. A private or local web address says it
   isn't a public page; a cut-off answer suggests Retry or a shorter piece.
 - **Docs.** The catalog entry and PR describe the browser lookup as the code does it (Chrome, Chromium, Edge or Brave;
-  `IMPRINT_BROWSER`, install folders, `PATH`) and disclose `IMPRINT_DATA_DIR`; the PR's Hermes floor is 0.22.6; the README
+  `LETTERPRESS_BROWSER`, install folders, `PATH`) and disclose `LETTERPRESS_DATA_DIR`; the PR's Hermes floor is 0.22.6; the README
   and the manual have an Uninstall section.
 
 ### Design fixes (Nov 10, 2026, evening)
 
 - **Designs work on Claude models.** When Claude's strict output mode, or Hermes itself, declines the JSON format request,
-  Imprint asks for the JSON in plain words and reads it from the reply; three designs running at once each recover on
+  Letterpress asks for the JSON in plain words and reads it from the reply; three designs running at once each recover on
   their own. A plain-text `debug.log` in the data folder records error kinds and reply shapes only.
 - **A shape drawn over text is caught.** The layout check compared only text with text, so a dot grid spilling onto its
   caption passed. A small painted shape over text is now an overlap (text wholly inside a shape still passes), and the
@@ -70,10 +90,10 @@
   and the guide) is kept in Hermes's plugin storage and drawn straight away while Hermes starts the plugin helper; the real
   answers replace it as they land, and the page takes no clicks or keys until they have. Pictures are kept only while the
   copy stays under 400,000 characters; jobs and anything secret are never kept. The first open ever still shows "Opening
-  Imprint".
+  Letterpress".
 - **The first three requests go out together.** The chat and the notebook guide no longer wait for the state answer.
 
-### Fixes (Nov 10, 2026, branch `imprint-fixes-wip`)
+### Fixes (Nov 10, 2026)
 
 - **Slide-number badges no longer cover the slide.** The numbers (and "used" ticks) on the design thumbnails and the deck strip sit
   in a caption row under each picture, not over its top-left corner.
@@ -87,7 +107,7 @@
 - **Shorter design runs.** Pages are drawn four at a time and only changed slides are drawn again; later fix rounds send only the
   slides that still have problems; a fix that changes nothing, or extra rounds that stop clearing hard problems, end the loop;
   each design shows its step and elapsed time.
-- **Any browser.** Chrome, Chromium, Edge or Brave on Mac, Windows and Linux, or `IMPRINT_BROWSER`; the Designs screen says so
+- **Any browser.** Chrome, Chromium, Edge or Brave on Mac, Windows and Linux, or `LETTERPRESS_BROWSER`; the Designs screen says so
   when none is found.
 
 ### Designs and the site style brief (Nov 9, 2026, branch `loop4`)
@@ -135,7 +155,7 @@
 - **Exports safe to send.** The HTML export is the finished page: no trace marks on numbers, footnotes that link
   to the source list, one column on a phone. The colophon and color bar print on the proof only. A kit that lists
   no sources (a menu, a flyer) puts no source marks on any export. Phone numbers are one figure.
-- **Logos that show.** Imprint measures the logo against the band and the paper it sits on and, where it would
+- **Logos that show.** Letterpress measures the logo against the band and the paper it sits on and, where it would
   vanish, uses your reversed logo (new upload on the kit bench) or knocks the mark out. One-pagers, HTML, PDF,
   deck PDF and PowerPoint. A Logo check says what it did.
 - **Fewer false alarms in the check.** Quotes match regardless of the punctuation around them; spelled-out numbers

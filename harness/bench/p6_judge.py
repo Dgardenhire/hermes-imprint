@@ -1,6 +1,6 @@
 """P6 blind judging: three fresh critics per source set, each shown only two unlabeled contact sheets and the sources.
 
-    /usr/bin/python3 harness/bench/p6_judge.py ROUND_DIR --imprint SET=DIR ... --plain SET=DIR ... [--critics 3]
+    /usr/bin/python3 harness/bench/p6_judge.py ROUND_DIR --letterpress SET=DIR ... --plain SET=DIR ... [--critics 3]
 
 For each set: a contact sheet of each deck (``sheet.py``, no names), saved as A.png and B.png with the side
 shuffled per set; the key goes to ROUND_DIR/KEY.json. The critic sees copies in a fresh temp folder outside the
@@ -93,7 +93,7 @@ def main():
             pl[k] = v
             i += 1
     imp = {}
-    i = a.index("--imprint") + 1
+    i = a.index("--letterpress") + 1
     while i < len(a) and not a[i].startswith("--"):
         k, v = a[i].split("=", 1)
         imp[k] = v
@@ -107,9 +107,9 @@ def main():
         d = root / name
         d.mkdir(parents=True, exist_ok=True)
         if name not in key:
-            key[name] = {"A": rng.choice(["imprint", "plain"])}
-            key[name]["B"] = "plain" if key[name]["A"] == "imprint" else "imprint"
-        side_dir = {"imprint": Path(imp[name]), "plain": Path(pl[name])}
+            key[name] = {"A": rng.choice(["letterpress", "plain"])}
+            key[name]["B"] = "plain" if key[name]["A"] == "letterpress" else "letterpress"
+        side_dir = {"letterpress": Path(imp[name]), "plain": Path(pl[name])}
         for letter in ("A", "B"):
             SH.sheet(side_dir[key[name][letter]], d / f"{letter}.png", cols=3, width=640)
         src = "\n\n".join(f"=== {f.name} ===\n{PP.text_of(f)}" for f in B.SETS[name])

@@ -151,8 +151,8 @@ def brand_for(kit: dict) -> tuple:
     if req:
         lines.append("Every piece ends with this line, small, exactly: " + " ".join(map(str, req)))
     ls = _service().logo_srcs(kit, pal)[0] or {}
-    lines.append('The logo is <img src="imprint:logo" alt="">, at least 56px wide, never stretched.'
-                 + (' On a brand-colour ground use <img src="imprint:logo-band" alt=""> instead: the mark made for that ground, '
+    lines.append('The logo is <img src="letterpress:logo" alt="">, at least 56px wide, never stretched.'
+                 + (' On a brand-colour ground use <img src="letterpress:logo-band" alt=""> instead: the mark made for that ground, '
                     'set straight on it with no box behind it.' if ls.get("band") else ""))
     sb = SST.brief_text(kit.get("style_brief"))
     if sb:
@@ -173,7 +173,7 @@ def _ctx(oid: str, kit_id: str) -> dict:
     brand, brand_text, logo = brand_for(kit)
     band = (S.logo_srcs(kit, KITS.palette(kit))[0] or {}).get("band")
     if band:
-        logo = {"paper": logo, "band": band}  # htmldeck.page swaps imprint:logo-band for the brand-ground mark
+        logo = {"paper": logo, "band": band}  # htmldeck.page swaps letterpress:logo-band for the brand-ground mark
     return {"out": out, "kit": kit, "passages": passages, "doc": doc, "brand": brand, "brand_text": brand_text, "logo": logo,
             "hd": HD_KIND[out["kind"]], "css": HD.kit_css(brand, HD_KIND[out["kind"]])}
 
@@ -255,7 +255,7 @@ BROKEN = "This design did not come out right twice. Press Design three options a
 async def make_checked(llm, cx: dict, content: str, d: str, hd: str, step, hint: str = "") -> dict:
     """``htmldeck.make`` for one direction behind the guard: a design ``htmldeck.broken`` finds broken (a slide with no
     styling, an empty slide, layout problems far past what a good design has) is made once more; if it is still broken, a
-    deck falls back to Imprint's own layout in that direction (``template``: the screen names it the template version), and
+    deck falls back to Letterpress's own layout in that direction (``template``: the screen names it the template version), and
     any other piece is reported failed. A broken design is never offered. At most two ``make`` runs per direction."""
     r = None
     for attempt in (0, 1):
@@ -595,7 +595,7 @@ def routes():
     """``dashboard/designs_api.py``, loaded by path (the dashboard folder is not part of the package)."""
     import importlib.util
     import sys
-    name = "imprint_designs_api"
+    name = "letterpress_designs_api"
     # Two requests can arrive together on a cold start. Load under a lock and register only a finished module, so no
     # request ever gets a half-loaded one (which has no ``mount`` yet and would fail every call until a restart).
     with _ROUTES_LOCK:
@@ -603,7 +603,7 @@ def routes():
         if mod is None or not hasattr(mod, "mount"):
             spec = importlib.util.spec_from_file_location(name, Path(__file__).resolve().parent / "dashboard" / "designs_api.py")
             if spec is None or spec.loader is None:
-                raise RuntimeError("Could not load Imprint's designs routes")
+                raise RuntimeError("Could not load Letterpress's designs routes")
             mod = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(mod)
             sys.modules[name] = mod

@@ -1,4 +1,4 @@
-"""Record the Harborlight sample notebook with a REAL model, through Imprint's own job handlers.
+"""Record the Harborlight sample notebook with a REAL model, through Letterpress's own job handlers.
 
     /usr/bin/python3 tools/record_sample.py            # writes samples/harborlight/notebook.json
     /usr/bin/python3 tools/record_sample.py --model claude-opus-5-5
@@ -49,8 +49,8 @@ def add_pictures() -> int:
     renderer it was drawn with; an out-of-date one is simply drawn again when the sample opens)."""
     sys.path.insert(0, str(REPO / "harness" / "bench"))
     import bench
-    data = Path(tempfile.mkdtemp(prefix="imprint-sample-pics-"))
-    api, _ck = bench.load_imprint(data)
+    data = Path(tempfile.mkdtemp(prefix="letterpress-sample-pics-"))
+    api, _ck = bench.load_letterpress(data)
     book_path = SAMPLE / "notebook.json"
     book = json.loads(book_path.read_text())
     book.pop("pictures", None)
@@ -71,17 +71,17 @@ def main() -> int:
     a = ap.parse_args()
     if a.pictures:
         return add_pictures()
-    data = Path(tempfile.mkdtemp(prefix="imprint-sample-rec-"))
+    data = Path(tempfile.mkdtemp(prefix="letterpress-sample-rec-"))
     RUNS.mkdir(parents=True, exist_ok=True)
     sys.path.insert(0, str(REPO / "harness" / "bench"))
     import bench  # the AI lane's claude -p adapter
 
-    api, _ck = bench.load_imprint(data)
+    api, _ck = bench.load_letterpress(data)
     S = api.service
     store, jobs, kits = S.store, S.J, S.KITS
     from importlib import import_module
-    RV = import_module("imprint_plugin_package.revise")
-    NG = import_module("imprint_plugin_package.notebook_guide")
+    RV = import_module("letterpress_plugin_package.revise")
+    NG = import_module("letterpress_plugin_package.notebook_guide")
     R = S.R
     R.dispatch = lambda tool, args, timeout=180.0: (_ for _ in ()).throw(R.ToolUnavailable("not available outside Hermes"))
 

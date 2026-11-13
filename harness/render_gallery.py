@@ -6,7 +6,7 @@ sources, as one contact sheet per kit plus an index sheet.
 Runs outside Hermes on a temporary data folder with the hand-written demo content (harness/demo_content.py), every
 claim tied to a passage of samples/. Slides and graphics are drawn by scene.png, the same scene the PDF and the
 PowerPoint use. The one-pager is the finished HTML export, screenshotted with headless Chrome when Chrome is present.
-``--picture`` sets a stand-in for the picture slide (Imprint asks the person's own image tool for the real one).
+``--picture`` sets a stand-in for the picture slide (Letterpress asks the person's own image tool for the real one).
 Writes nothing outside OUT_DIR and the temporary folder.
 """
 
@@ -20,16 +20,18 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-os.environ["IMPRINT_DATA_DIR"] = tempfile.mkdtemp(prefix="imprint-gallery-")
+os.environ["LETTERPRESS_DATA_DIR"] = tempfile.mkdtemp(prefix="letterpress-gallery-")
 sys.path.insert(0, str(ROOT / "tests"))
 sys.path.insert(0, str(ROOT / "harness"))
+sys.path.insert(0, str(ROOT))
+from childenv import child_env  # noqa: E402  only the allowlisted names reach the programs started here
 from importlib import import_module  # noqa: E402
 
 from _load import add_samples, kits, layout, render_html, reset, service  # noqa: E402
 
 import demo_content as D  # noqa: E402
 
-PKG = "imprint_plugin_package"
+PKG = "letterpress_plugin_package"
 RD = import_module(f"{PKG}.render_deck")
 RG = import_module(f"{PKG}.render_graphic")
 SC = import_module(f"{PKG}.scene")
@@ -56,7 +58,7 @@ def onepager_png(doc, kit, by_ref, out: Path) -> Path | None:
         return None
     subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--mute-audio",
                     "--autoplay-policy=user-gesture-required", "--window-size=816,1056",
-                    "--virtual-time-budget=4000", f"--screenshot={png}", html_path.as_uri()], capture_output=True, timeout=90)
+                    "--virtual-time-budget=4000", f"--screenshot={png}", html_path.as_uri()], capture_output=True, timeout=90, env=child_env())
     return png if png.exists() else None
 
 

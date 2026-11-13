@@ -5,11 +5,11 @@ WT = Path.home() / "Desktop/LINCHPIN-Claude/hermes-imprint-wt-l2-deck8"
 sys.path.insert(0, str(WT / "harness/bench"))
 import bench as B
 data = WT / ".l2-data/bench/r8f"; data.mkdir(parents=True, exist_ok=True)
-api, CK = B.load_imprint(data)
+api, CK = B.load_letterpress(data)
 S = api.service
 from importlib import import_module
-K = import_module("imprint_plugin_package.content"); RV = import_module("imprint_plugin_package.revise")
-R = import_module("imprint_plugin_package.runtime") if False else None
+K = import_module("letterpress_plugin_package.content"); RV = import_module("letterpress_plugin_package.revise")
+R = import_module("letterpress_plugin_package.runtime") if False else None
 d = json.load(open(sys.argv[1])); pas = d["passages"]
 doc = json.loads(json.dumps(d["neutral"]))
 doc["slides"][1]["heading"] = "1,200 learners in one year"

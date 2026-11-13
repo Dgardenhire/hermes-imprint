@@ -1,21 +1,21 @@
 """Help me build a kit: a design method, run with the person, not a style picked for them.
 
-The steps, in Imprint's words:
+The steps, in Letterpress's words:
 
 1. **Fixed and free.** What can't change (a name, a logo, exact colors, a font the brand owns) is fixed,
    and every proposal keeps it. Everything else is open.
 2. **The subject.** Who reads this, what they need to do with it, what the organization actually does,
    and one thing only this organization has. Real words from the person or their sources, not adjectives.
 3. **References.** Up to three things the person admires: a starter kit, a website (read for its real
-   colors and fonts), or a logo or brand sheet (read by the person's own vision model). Imprint borrows
+   colors and fonts), or a logo or brand sheet (read by the person's own vision model). Letterpress borrows
    a method or a quality from each, never the whole look.
 4. **Three kits that really differ.** Different layout family, different type pairing, different ground
    and color share. Checked in code: if two proposals share a layout or a type pairing, one is moved.
-5. **A record of recent looks.** Imprint keeps the looks this person used lately (layout, ground, type
+5. **A record of recent looks.** Letterpress keeps the looks this person used lately (layout, ground, type
    pairing, accent) and steers new proposals away from the ones that keep coming back. Nothing is banned;
    a repeat needs a reason.
 
-Proposals use fonts Imprint can actually set and embed: the bundled families, the PDF's built-in faces,
+Proposals use fonts Letterpress can actually set and embed: the bundled families, the PDF's built-in faces,
 and any font the person marked as fixed.
 """
 

@@ -27,6 +27,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent.parent
+sys.path.insert(0, str(REPO))
+from childenv import child_env  # noqa: E402  only the allowlisted names reach the programs started here
 P = HERE / "personas"
 
 
@@ -34,7 +36,7 @@ def main() -> None:
     out = Path(sys.argv[1]).resolve()
     port = int(sys.argv[sys.argv.index("--port") + 1]) if "--port" in sys.argv else 8791
     out.mkdir(parents=True, exist_ok=True)
-    data = Path(tempfile.mkdtemp(prefix="imprint-drive-"))
+    data = Path(tempfile.mkdtemp(prefix="letterpress-drive-"))
     srv = subprocess.Popen([sys.executable, str(HERE / "server.py"), str(port), "--data", str(data)],
                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     base = f"http://127.0.0.1:{port}"
@@ -155,7 +157,7 @@ def shots(base: str, out: Path, s: dict) -> None:
              ("pane-ana-menu", f"tab=proofs&kind=onepager&pair={ids['salvia']},market-board"),
              ("pane-kits", "tab=kits")]
     with sync_playwright() as p:
-        b = p.chromium.launch()
+        b = p.chromium.launch(env=child_env())
         for theme in ("light", "dark"):
             pg = b.new_page(viewport={"width": 1500, "height": 1000})
             for name, q in views:
@@ -183,12 +185,12 @@ def rasterize(out: Path) -> None:
     if shutil.which("qlmanage"):  # macOS Quick Look draws the PowerPoint's first slide as PowerPoint would lay it out
         for f in sorted(out.glob("*.pptx")):
             subprocess.run(["qlmanage", "-t", "-s", "1400", "-o", str(out), str(f)], check=False,
-                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=60)
+                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=60, env=child_env())
     if not shutil.which("pdftoppm"):
         print("pdftoppm is not installed: PDF pages not rendered to PNG.")
         return
     for f in sorted(out.glob("*.pdf")):
-        subprocess.run(["pdftoppm", "-png", "-r", "70", str(f), str(out / f.stem)], check=False)
+        subprocess.run(["pdftoppm", "-png", "-r", "70", str(f), str(out / f.stem)], check=False, env=child_env())
 
 
 if __name__ == "__main__":

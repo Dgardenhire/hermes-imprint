@@ -12,9 +12,9 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = Path(sys.argv[1] if len(sys.argv) > 1 else tempfile.mkdtemp(prefix="imprint-render-"))
+OUT = Path(sys.argv[1] if len(sys.argv) > 1 else tempfile.mkdtemp(prefix="letterpress-render-"))
 OUT.mkdir(parents=True, exist_ok=True)
-os.environ["IMPRINT_DATA_DIR"] = tempfile.mkdtemp(prefix="imprint-render-data-")
+os.environ["LETTERPRESS_DATA_DIR"] = tempfile.mkdtemp(prefix="letterpress-render-data-")
 sys.path.insert(0, str(ROOT / "tests"))
 sys.path.insert(0, str(ROOT / "harness"))
 from _load import service, jobs, kits, store, Result  # noqa: E402

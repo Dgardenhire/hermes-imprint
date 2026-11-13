@@ -1,6 +1,6 @@
 # Cedar Hollow Winter Warming Center: Season Report, 2025-26
 
-Prepared by the Department of Community Services for the City Council. Cedar Hollow is a fictional city; this report is sample material for trying Imprint.
+Prepared by the Department of Community Services for the City Council. Cedar Hollow is a fictional city; this report is sample material for trying Letterpress.
 
 ## What the center did
 

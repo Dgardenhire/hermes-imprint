@@ -1,5 +1,5 @@
 #!/bin/sh
-# Imprint pane lane (Loop 2): shots S01 to S08, S18 and S19 of the hero brief, with a DOM check for every "Accept" line.
+# Letterpress pane lane (Loop 2): shots S01 to S08, S18 and S19 of the hero brief, with a DOM check for every "Accept" line.
 #
 #   REAL=1 sh harness/shoot_pane.sh OUT_DIR [SEED_DIR]
 #
@@ -378,7 +378,7 @@ with sync_playwright() as p:
     if aud:
         import sqlite3
         row = None
-        for db in sorted(DATA.rglob("imprint.db")):  # the sample notebook keeps its own database under sample/
+        for db in sorted(DATA.rglob("letterpress.db")):  # the sample notebook keeps its own database under sample/
             con = sqlite3.connect(str(db)); row = con.execute("SELECT neutral FROM outputs WHERE id=?", (aud["id"],)).fetchone(); con.close()
             if row: break
         neutral = json.loads(row[0])

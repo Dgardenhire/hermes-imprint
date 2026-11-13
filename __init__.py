@@ -1,6 +1,6 @@
-"""Imprint for Hermes (``imprint``).
+"""Letterpress for Hermes (``letterpress``).
 
-Your sources, set in your look. Imprint keeps each brand as a kit (colors with roles checked for
+Your sources, set in your look. Letterpress keeps each brand as a kit (colors with roles checked for
 contrast, fonts, logo, voice rules, a layout family and rules for every page), writes the content once
 from a chosen source set, rewrites only the wording per kit, renders the result through two kits side
 by side, and checks every number and quote against the source passages before anything exports.
@@ -21,7 +21,7 @@ Modules (loaded as one package by ``dashboard/plugin_api.py``):
 - ``render_pdf`` / ``render_html``  the exports
 - ``jobs``     background jobs that survive a pane reload
 
-``register(ctx)`` registers one auxiliary task, ``imprint_write``, so the user can point Imprint's
+``register(ctx)`` registers one auxiliary task, ``letterpress_write``, so the user can point Letterpress's
 writing at any model under Settings, Models, Auxiliary. It registers no tools and no hooks, matching
 ``plugin.yaml``.
 """
@@ -33,13 +33,13 @@ import logging
 import sys
 from pathlib import Path
 
-PLUGIN_ID = "imprint"
-AUX_TASK = "imprint_write"
+PLUGIN_ID = "letterpress"
+AUX_TASK = "letterpress_write"
 TOOLS: tuple = ()
 HOOKS: tuple = ()
-SHARED_PACKAGE = "imprint_plugin_package"
+SHARED_PACKAGE = "letterpress_plugin_package"
 
-_log = logging.getLogger("hermes.plugins.imprint")
+_log = logging.getLogger("hermes.plugins.letterpress")
 
 
 def shared_package():
@@ -54,7 +54,7 @@ def shared_package():
         spec = importlib.util.spec_from_file_location(SHARED_PACKAGE, root / "__init__.py",
                                                       submodule_search_locations=[str(root)])
         if spec is None or spec.loader is None:
-            raise RuntimeError("Could not load the Imprint package")
+            raise RuntimeError("Could not load the Letterpress package")
         pkg = importlib.util.module_from_spec(spec)
         sys.modules[SHARED_PACKAGE] = pkg
         spec.loader.exec_module(pkg)
@@ -62,19 +62,19 @@ def shared_package():
 
 
 def register(ctx) -> None:
-    """Register Imprint's writing task and hand the context to the routes. Nothing runs in the agent."""
+    """Register Letterpress's writing task and hand the context to the routes. Nothing runs in the agent."""
     try:
         ctx.register_auxiliary_task(
             AUX_TASK,
-            display_name="Imprint writing",
-            description="Writes Imprint's briefs, decks and audio scripts from your sources, and rewrites them in each kit's voice.",
+            display_name="Letterpress writing",
+            description="Writes Letterpress's briefs, decks and audio scripts from your sources, and rewrites them in each kit's voice.",
         )
     except Exception as exc:  # an older Hermes or a duplicate registration: the main model still works
-        _log.warning("imprint: could not register the %s task (%s); using the main model", AUX_TASK, exc)
+        _log.warning("letterpress: could not register the %s task (%s); using the main model", AUX_TASK, exc)
     try:
         from importlib import import_module
         runtime = import_module(f"{shared_package().__name__}.runtime")
         runtime.set_context(ctx)
     except Exception:
-        _log.exception("imprint: could not share the plugin context with the page routes")
-    _log.info("imprint: the Imprint page is available in the desktop app")
+        _log.exception("letterpress: could not share the plugin context with the page routes")
+    _log.info("letterpress: the Letterpress page is available in the desktop app")

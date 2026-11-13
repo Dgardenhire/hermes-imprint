@@ -1,5 +1,5 @@
 // The first-paint copy (desktop/src/firstpaint.js): run with `node --test tests/js/`.
-// A real state answer can be passed in IMPRINT_STATE_JSON (tests/test_first_paint.py does, from the sample notebook).
+// A real state answer can be passed in LETTERPRESS_STATE_JSON (tests/test_first_paint.py does, from the sample notebook).
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
@@ -200,7 +200,7 @@ test('writes are batched and an unchanged notebook is not written again', () => 
   assert.equal(s.writes, 1)
 })
 
-const real = process.env.IMPRINT_STATE_JSON
+const real = process.env.LETTERPRESS_STATE_JSON
 test('a real state answer from the sample notebook packs under the cap and draws back the same notebook', { skip: !real }, () => {
   const st = JSON.parse(readFileSync(real, 'utf8'))
   const s = pack({ state: st })

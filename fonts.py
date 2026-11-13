@@ -1,6 +1,6 @@
 """Fonts: the bundled OFL set, fonts a user adds to a kit, and honest resolution.
 
-A kit asks for a family (``Merriweather``) with a fallback stack (``Georgia, serif``). Imprint looks in
+A kit asks for a family (``Merriweather``) with a fallback stack (``Georgia, serif``). Letterpress looks in
 this order: the kit's own uploaded files, then the bundled set, then each name in the stack, then the
 PDF's built-in faces (Times, Helvetica, Courier) by the stack's generic class. The same answer is used
 for the preview, the PDF and the HTML, so what you see is what exports, and every substitution is
@@ -103,7 +103,7 @@ def read_ttf_names(data: bytes) -> dict:
     try:
         from reportlab.pdfbase.ttfonts import TTFontFile
     except ImportError:
-        raise ValueError("Adding fonts needs the reportlab library, which isn't installed. Reinstall Imprint to add it.")
+        raise ValueError("Adding fonts needs the reportlab library, which isn't installed. Reinstall Letterpress to add it.")
     import io
     try:
         f = TTFontFile(io.BytesIO(data))
@@ -113,7 +113,7 @@ def read_ttf_names(data: bytes) -> dict:
             raise ValueError("That font uses PostScript outlines, which can't be embedded in a PDF here. Add the .ttf version of the font.")
         if "restrict" in msg or "embed" in msg:
             raise ValueError("That font's license doesn't allow embedding it in documents.")
-        raise ValueError("Imprint couldn't read that font file. Add a TrueType (.ttf) font.")
+        raise ValueError("Letterpress couldn't read that font file. Add a TrueType (.ttf) font.")
 
     def text(v):
         return (v.decode("utf-8", "replace") if isinstance(v, bytes) else str(v or "")).strip()
@@ -218,7 +218,7 @@ CONDENSED = ("condensed", "oswald", "bebas", "anton", "league gothic", "compress
 
 
 def nearest_bundled(stack: list, cls: str, weight: int, style: str) -> Optional[tuple]:
-    """The bundled open font nearest a family Imprint doesn't have, by kind of type, so a missing Playfair
+    """The bundled open font nearest a family Letterpress doesn't have, by kind of type, so a missing Playfair
     Display sets in Libre Caslon Display rather than Times, and a missing Montserrat in Inter rather than
     Helvetica. ``(family, weight, style, file)`` or ``None`` (mono and anything unknown keep the built-in)."""
     names = " ".join(n.lower() for n in stack)

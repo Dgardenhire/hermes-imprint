@@ -23,12 +23,12 @@ import loop2 as L2  # noqa: E402
 def main():
     res_path, deck_dir, out = Path(sys.argv[1]), Path(sys.argv[2]), Path(sys.argv[3])
     r = json.loads(res_path.read_text())
-    api, CK = B.load_imprint(L2.DATA / r["tag"])
+    api, CK = B.load_letterpress(L2.DATA / r["tag"])
     from importlib import import_module
-    kits = import_module("imprint_plugin_package.kits")
-    layout = import_module("imprint_plugin_package.layout")
-    RD = import_module("imprint_plugin_package.render_deck")
-    SC = import_module("imprint_plugin_package.scene")
+    kits = import_module("letterpress_plugin_package.kits")
+    layout = import_module("letterpress_plugin_package.layout")
+    RD = import_module("letterpress_plugin_package.render_deck")
+    SC = import_module("letterpress_plugin_package.scene")
     service, jobs = api.service, api.jobs
     service.LLM = B.ClaudeCli(L2.RUNS, r["tag"] + "-onepager")
     sids = sorted({p["source_id"] for p in r["passages"].values()})

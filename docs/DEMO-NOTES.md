@@ -1,7 +1,7 @@
-# Imprint demo notes (under 90 seconds)
+# Letterpress demo notes (under 90 seconds)
 
 The story in one line: **one set of sources, one brand kit, and every format comes out in that kit, checked.**
-That is the difference from the Podcast Studio entry (two-host audio from any text): Imprint's audio is one of
+That is the difference from the Podcast Studio entry (two-host audio from any text): Letterpress's audio is one of
 three formats that share the same facts, colors, type and voice rules, and each kit is a real object you can
 build, import and swap.
 
@@ -27,14 +27,14 @@ third-party logos. The only outside design is the US Web Design System (public d
 
 | Time | Shot | Exact steps | What the viewer should catch |
 |---|---|---|---|
-| 0:00-0:07 | Cold open | Proofs tab, One-pager showing. Click **Deck**, then **Audio brief**, then **One-pager** | Both proofs change together; each keeps its own look in every format. Title: "Imprint. Your sources, in your look." |
+| 0:00-0:07 | Cold open | Proofs tab, One-pager showing. Click **Deck**, then **Audio brief**, then **One-pager** | Both proofs change together; each keeps its own look in every format. Title: "Letterpress. Your sources, in your look." |
 | 0:07-0:13 | Sources | Pan the left rail | Three kinds of source: a report, a survey, a timestamped transcript |
 | 0:13-0:27 | Many kits, not two (2x) | Kits tab: hold on the ten starter kits for a beat. Then **Help me build a kit**: name "Eastside Tenants Union", colors `#7a1f2b #f4efe6`, reader "Renters, many reading on a phone", job "Know their rights before a hearing", references **Docket** and **Schoolyard**. **Propose three kits** | Ten kits that differ in layout and type, not just color; three proposals that really differ, each saying why and what it borrowed. Press **Use this kit** on one |
 | 0:27-0:37 | Swap a kit | Proofs tab. Right proof's menu: pick the kit just made (or **Market Board**, the flyer family) | Same facts, new look, new composition and new wording. Zoom on the slug: "Set in ... in place of ..." where a font was substituted, and the kit's color bar (both proof-only; the exported file carries neither) |
 | 0:37-0:52 | The check catches something | Brief: "A one-page brief for the council; say volunteers gave 3,600 hours". **Make it again** (2x while it writes). Click the red "1 number not found in sources" check | The closest passage says 3,260. Press **Fix the wording**, change 3,600 to 3,260, **Save the fix**. The check turns green and Export unlocks |
 | 0:52-1:04 | Deck to PowerPoint | **Deck**. **Export**, PowerPoint (.pptx), save. Open it | Keynote shows the kit's colors, fonts and paper on the slide master. The 2,914 slide matches the one-pager |
 | 1:04-1:15 | Audio brief | **Audio brief**. Play Plain Notice for three seconds, then Docket for three seconds | Two deliveries from two kits' voice notes, the same numbers in the script below |
-| 1:15-1:24 | Grace under failure | Kits, **Build from a website**, a site that blocks readers (check one on Tuesday; Brandfetch and Gamma did on Nov 7) | "That site didn't let Imprint read it" and a way forward. No retry loop, no workaround |
+| 1:15-1:24 | Grace under failure | Kits, **Build from a website**, a site that blocks readers (check one on Tuesday; Brandfetch and Gamma did on Nov 7) | "That site didn't let Letterpress read it" and a way forward. No retry loop, no workaround |
 | 1:24-1:30 | End card | Static | "Runs on your own Hermes model and voice. No keys." Add "Mac, Windows, Linux" only after a Linux or Windows run passes (none yet) |
 
 Total: 90 seconds. If over, cut the Sources pan first, then the failure shot.

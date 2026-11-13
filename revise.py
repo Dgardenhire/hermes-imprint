@@ -254,14 +254,14 @@ _ROUTES_LOCK = threading.Lock()
 
 def routes():
     """``dashboard/revise_api.py``, loaded by path (the dashboard folder is not part of the package)."""
-    name = "imprint_revise_api"
+    name = "letterpress_revise_api"
     # Load under a lock and register only a finished module (see designs.routes): a half-loaded one has no ``mount``.
     with _ROUTES_LOCK:
         mod = sys.modules.get(name)
         if mod is None or not hasattr(mod, "mount"):
             spec = importlib.util.spec_from_file_location(name, Path(__file__).resolve().parent / "dashboard" / "revise_api.py")
             if spec is None or spec.loader is None:
-                raise RuntimeError("Could not load Imprint's revise routes")
+                raise RuntimeError("Could not load Letterpress's revise routes")
             mod = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(mod)
             sys.modules[name] = mod

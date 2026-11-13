@@ -2,9 +2,9 @@
 Discard and Undo. Shapes: docs/API-NOTEBOOK.md, section 4.
 
 Hermes's router and the live harness's stand-in router both take routes through ``router.get/post/delete``
-decorators (the stand-in has no ``include_router``), so this file adds its routes to Imprint's own router:
+decorators (the stand-in has no ``include_router``), so this file adds its routes to Letterpress's own router:
 
-    importlib.import_module("imprint_plugin_package.revise").routes().mount(router, "imprint_plugin_package")
+    importlib.import_module("letterpress_plugin_package.revise").routes().mount(router, "letterpress_plugin_package")
 
 Every route that calls a model starts a job and returns ``{job}`` at once. Inputs are checked here; everything
 the model sees comes from the person's own data, read on the server.
@@ -18,10 +18,10 @@ from importlib import import_module
 
 from fastapi import HTTPException
 
-_log = logging.getLogger("hermes.plugins.imprint")
+_log = logging.getLogger("hermes.plugins.letterpress")
 
 
-def mount(router, pkg: str = "imprint_plugin_package") -> list:
+def mount(router, pkg: str = "letterpress_plugin_package") -> list:
     """Add the routes to ``router``. Returns the ``(method, path)`` pairs added."""
     service = import_module(f"{pkg}.service")
     jobs = import_module(f"{pkg}.jobs")
@@ -46,8 +46,8 @@ def mount(router, pkg: str = "imprint_plugin_package") -> list:
             raise HTTPException(status_code=400, detail=str(e) or "That request isn't valid.")
         if isinstance(e, runtime.ModelError):
             raise HTTPException(status_code=502, detail=str(e))
-        _log.exception("imprint: unexpected error in a revise route")
-        raise HTTPException(status_code=500, detail="Something went wrong on Imprint's side. Try again.")
+        _log.exception("letterpress: unexpected error in a revise route")
+        raise HTTPException(status_code=500, detail="Something went wrong on Letterpress's side. Try again.")
 
     def body_of(b) -> dict:
         if not isinstance(b, dict):

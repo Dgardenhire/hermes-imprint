@@ -1,5 +1,5 @@
 """The invisible-logo problem (Nov 8 persona run): a teal lighthouse on a teal band, a sage leaf on a sage band.
-Imprint measures the mark against the ground it sits on and knocks it out, or uses the kit's reversed logo."""
+Letterpress measures the mark against the ground it sits on and knocks it out, or uses the kit's reversed logo."""
 import io
 import unittest
 import zipfile

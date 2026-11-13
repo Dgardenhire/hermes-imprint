@@ -1,4 +1,4 @@
-"""Fonts never come from the network: Imprint ships only the OFL files in fonts/ (each hash pinned in SOURCES.txt), a kit's own uploads
+"""Fonts never come from the network: Letterpress ships only the OFL files in fonts/ (each hash pinned in SOURCES.txt), a kit's own uploads
 are the only other source, and anything else is an honest, named substitution."""
 import hashlib
 import re

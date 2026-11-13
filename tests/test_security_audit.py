@@ -80,7 +80,7 @@ class F1_FetchInflatesWithinTheCap(unittest.TestCase):
         self.assertIn("limit", str(cm.exception))
         self.assertLess(peak, 24 * 1024 * 1024, f"peak memory {peak // (1024 * 1024)} MB for a 2 MB cap")
 
-    def test_an_encoding_imprint_did_not_ask_for_is_refused(self):
+    def test_an_encoding_letterpress_did_not_ask_for_is_refused(self):
         for enc in ("br", "zstd", "compress", "gzip, br"):
             with self.subTest(enc=enc):
                 ingest._client_factory = mock(lambda req, e=enc: answer(
@@ -276,7 +276,7 @@ class F4_EveryWriteStaysInTheDataFolder(unittest.TestCase):
         reset()
 
     def test_climbing_absolute_and_linked_paths_are_refused(self):
-        outside = Path(tempfile.mkdtemp(prefix="imprint-outside-"))
+        outside = Path(tempfile.mkdtemp(prefix="letterpress-outside-"))
         link = store.root() / "kits" / "escape"
         link.parent.mkdir(parents=True, exist_ok=True)
         os.symlink(outside, link)
@@ -402,7 +402,7 @@ class F8_DependencyFloors(unittest.TestCase):
 
 class RedTeam_ModelAndSourceTextStayText(unittest.TestCase):
     """Regression guards for the red-team runs: hostile text reaches every exporter as text, and the only tool
-    Imprint ever calls is text_to_speech, writing inside its own folder."""
+    Letterpress ever calls is text_to_speech, writing inside its own folder."""
 
     def setUp(self):
         reset()

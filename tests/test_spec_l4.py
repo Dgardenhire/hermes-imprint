@@ -1,4 +1,4 @@
-"""Loop 4: the model designs each slide as a positioned spec in brand roles; Imprint draws it in the brand's faces and
+"""Loop 4: the model designs each slide as a positioned spec in brand roles; Letterpress draws it in the brand's faces and
 colors, traces every number in every element, turns a number no source holds into a flagged blank, and measures each
 slide (overflow, off the slide, overlap, the foot), sending a broken slide back to the model once, alone."""
 import copy
@@ -130,7 +130,7 @@ class Spec(unittest.TestCase):
         finally:
             service.PLAIN = False
         self.assertEqual(j["status"], "done", j.get("error"))
-        self.assertEqual([c["purpose"] for c in llm.calls], ["imprint.plain_draft", "imprint.spec_design", "imprint.spec_fix"])
+        self.assertEqual([c["purpose"] for c in llm.calls], ["letterpress.plain_draft", "letterpress.spec_design", "letterpress.spec_fix"])
         oid = j["result"]["output_id"]
         out = service._output(oid)
         self.assertEqual([s["type"] for s in out["neutral"]["slides"]], ["spec", "spec"])

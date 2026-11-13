@@ -12,6 +12,7 @@ from typing import Optional
 
 try:
     from . import checks as CK
+    from . import childenv as CE
     from . import colors as C
     from . import content as K
     from . import fonts as F
@@ -33,6 +34,7 @@ try:
     from . import store
 except ImportError:  # loaded loose
     import checks as CK  # type: ignore
+    import childenv as CE  # type: ignore
     import colors as C  # type: ignore
     import content as K  # type: ignore
     import fonts as F  # type: ignore
@@ -111,7 +113,7 @@ def _save_source(kind: str, title: str, origin: str, ext: str, data: Optional[by
     packed = I.pack(blocks)
     packed, truncated = I.cap_blocks(packed)
     if not packed:
-        raise I.Refused("Imprint found no readable text in that.")
+        raise I.Refused("Letterpress found no readable text in that.")
     sid = store.new_id("s")
     chars = sum(len(t) for _l, t in packed)
     note = "Only the first 400,000 characters were kept." if truncated else ""
@@ -190,7 +192,7 @@ def _safe_public_url(url: str) -> bool:
 
 def _extract(url: str) -> Optional[dict]:
     """The page through the person's own Hermes web tool (``web_extract``), as ``{url, title, text}``, or ``None``
-    when the tool isn't set up here (then Imprint reads the page itself, through the same safe client)."""
+    when the tool isn't set up here (then Letterpress reads the page itself, through the same safe client)."""
     try:
         res = R.dispatch_bounded("web_extract", {"urls": [url], "char_limit": EXTRACT_CHARS}, 90.0)
     except R.ToolUnavailable:
@@ -379,13 +381,13 @@ def _face_view(faces: dict) -> dict:
 def font_file(key: str) -> dict:
     """Base64 bytes for one resolved face key, for the pane's FontFace."""
     if not re.fullmatch(r"[ub]-[a-z0-9-]+-\d{3}-(normal|italic)", key or ""):
-        raise ValueError("Imprint doesn't have that font.")
+        raise ValueError("Letterpress doesn't have that font.")
     if key.startswith("b-"):
         for fam, w, s, fn, _c in F.BUNDLED:
             k = f"b-{re.sub(r'[^a-z0-9]+', '-', fam.lower())}-{w}-{s}"
             if k == key:
                 return {"key": key, "family": fam, "weight": w, "style": s, "data": F.font_bytes_b64(str(F.BUNDLED_DIR / fn))}
-        raise ValueError("Imprint doesn't have that font.")
+        raise ValueError("Letterpress doesn't have that font.")
     for d in KITS.kits_dir().iterdir():
         kit = store.read_json(d / "kit.json") or {}
         for f in kit.get("fonts") or []:
@@ -397,7 +399,7 @@ def font_file(key: str) -> dict:
             if k == key and p.is_file():
                 return {"key": key, "family": f["family"], "weight": f.get("weight"), "style": f.get("style"),
                         "data": F.font_bytes_b64(str(p))}
-    raise ValueError("Imprint doesn't have that font.")
+    raise ValueError("Letterpress doesn't have that font.")
 
 
 async def read_site(url: str) -> dict:
@@ -408,7 +410,7 @@ async def read_site_raw(url: str) -> dict:
     url = I.normalize_url(url)
     fetched = await I.fetch(url)
     if I.looks_blocked(fetched.get("status", 0), fetched.get("body", "")):
-        raise I.Blocked("That site didn't let Imprint read it. Add a logo and colors by hand, or start from a studio brand.")
+        raise I.Blocked("That site didn't let Letterpress read it. Add a logo and colors by hand, or start from a studio brand.")
     if fetched.get("status", 0) >= 400:
         raise I.Refused(f"That page answered with an error ({fetched['status']}). Check the address.")
     css = []
@@ -799,7 +801,7 @@ def plain_stage2(doc: dict, by_ref: dict, kit: dict, brief: str = "") -> tuple:
     return doc, flags, splits
 
 
-SPEC = True  # loop 4: the model designs each slide (spec.py); Imprint brands, traces and checks it
+SPEC = True  # loop 4: the model designs each slide (spec.py); Letterpress brands, traces and checks it
 
 
 def _spec_mod():
@@ -1202,10 +1204,10 @@ def picture_data(output_id: str, name: str) -> Optional[bytes]:
 
 # ---------------------------------------------------------------- audio --
 
-NO_VOICE = ("Imprint couldn't record this: your Hermes voice isn't set up here. Turn on text to speech in Hermes "
+NO_VOICE = ("Letterpress couldn't record this: your Hermes voice isn't set up here. Turn on text to speech in Hermes "
             "Settings, then press Record again. The script is ready to read or export now.")
 VOICE_FAILED = "Your Hermes voice didn't finish the recording. Press Record again, or export the script."
-VOICE_SLOW = "Your Hermes voice took too long to answer, so Imprint stopped waiting. Press Record again, or export the script."
+VOICE_SLOW = "Your Hermes voice took too long to answer, so Letterpress stopped waiting. Press Record again, or export the script."
 TTS_TIMEOUT = 300.0
 AUDIO_EXT = {".mp3": "audio/mpeg", ".ogg": "audio/ogg", ".opus": "audio/ogg", ".wav": "audio/wav", ".m4a": "audio/mp4",
              ".aac": "audio/aac", ".flac": "audio/flac"}
@@ -1288,7 +1290,7 @@ async def speak(output_id: str, kit: dict) -> dict:
 
 def _log_audio(e: BaseException) -> None:
     import logging
-    logging.getLogger("hermes.plugins.imprint").warning("imprint: recording failed: %s", str(e)[:300])
+    logging.getLogger("hermes.plugins.letterpress").warning("letterpress: recording failed: %s", str(e)[:300])
 
 
 def audio_file(output_id: str, kit_id: str) -> dict:
@@ -1393,7 +1395,7 @@ async def _site_style_brief(job_id: str, url: str) -> tuple:
     """``(brief, note)``: the site opened in headless Chrome, a few pages photographed and measured, the model's brief of what it
     looks like. Any failure leaves the colors and fonts as they were and says why in one plain sentence (``note``)."""
     import tempfile
-    work = Path(tempfile.mkdtemp(prefix="imprint-sitestyle-"))
+    work = Path(tempfile.mkdtemp(prefix="letterpress-sitestyle-"))
     try:
         J.step(job_id, "Opening the site in a browser to see how it looks")
         cap = await asyncio.get_event_loop().run_in_executor(None, lambda: SST.capture(url, work))
@@ -2141,7 +2143,7 @@ def edit(output_id: str, path: str, text: str) -> dict:
 # ---------------------------------------------------------------- export --
 
 def _slug(s: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "-", (s or "").lower()).strip("-")[:40] or "imprint"
+    return re.sub(r"[^a-z0-9]+", "-", (s or "").lower()).strip("-")[:40] or "letterpress"
 
 
 FORMATS = {
@@ -2295,7 +2297,7 @@ def state() -> dict:
 
 # ---------------------------------------------------------------- the sample notebook --
 # ``samples/harborlight/`` ships the three Harborlight files (fictional, marked "Sample") and ``notebook.json``: a
-# recording of real-model results (tools/record_sample.py). Opening the sample switches Imprint to ``<data>/sample/``,
+# recording of real-model results (tools/record_sample.py). Opening the sample switches Letterpress to ``<data>/sample/``,
 # built from that recording the first time (no model call) and reused after; the shipped folder is only read.
 # Closing goes back to the person's own folder, which nothing here touches. Docs are stored, not renders, so the
 # current renderer draws them.
@@ -2376,7 +2378,7 @@ def _build_sample(book: dict) -> None:
 def open_sample() -> dict:
     book = sample_book()
     if book is None:
-        raise ValueError("The sample isn't installed. Reinstall Imprint to get it back.")
+        raise ValueError("The sample isn't installed. Reinstall Letterpress to get it back.")
     base = R.base_dir()
     if not R.sample_open():
         store.write_bytes(base / R.SAMPLE_FLAG, b"1")
@@ -2470,7 +2472,7 @@ def _cached(name: str, draw) -> Optional[str]:
 
 def _log_preview(e: BaseException) -> None:
     import logging
-    logging.getLogger("hermes.plugins.imprint").warning("imprint: preview not drawn: %s: %s", type(e).__name__, e)
+    logging.getLogger("hermes.plugins.letterpress").warning("letterpress: preview not drawn: %s: %s", type(e).__name__, e)
 
 
 def _deck_png(doc: dict, kit: dict, by_ref: dict, pick: str = "title", width: int = THUMB_W) -> bytes:
@@ -2494,12 +2496,13 @@ def _page_png(doc: dict, kit: dict, by_ref: dict, width: int = THUMB_W) -> bytes
         sips = _sh.which("sips")
         if sips:
             pdf = RP.render(doc, kit, pal, faces, idx, rows, F.colophon(faces, 1), date=nice_date(), logo=KITS.logo_variants(kit, pal))
-            with tempfile.TemporaryDirectory(prefix="imprint-thumb-") as d:
+            with tempfile.TemporaryDirectory(prefix="letterpress-thumb-") as d:
                 src, dst = Path(d) / "p.pdf", Path(d) / "p.png"
                 src.write_bytes(pdf)
                 # a full path and close_fds=False let subprocess start it with posix_spawn, not fork (see sitestyle._spawn)
                 subprocess.run([sips, "-s", "format", "png", "-Z", str(width * 2), str(src), "--out", str(dst)],
-                               capture_output=True, timeout=20, check=True, close_fds=False)
+                               capture_output=True, timeout=20, check=True, close_fds=False,
+                               env=CE.child_env())  # only the allowlisted names, never Hermes's keys
                 return dst.read_bytes()
     except Exception as e:
         _log_preview(e)

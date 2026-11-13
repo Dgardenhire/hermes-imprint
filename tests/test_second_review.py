@@ -187,18 +187,18 @@ class F11_PowerPointSizesAreHeldToTheFormat(unittest.TestCase):
 
 class F12_LiveHarnessStaysOutOfHermes(unittest.TestCase):
     """F12: harness/live ships in the plugin folder (Hermes installs the whole repo). Importing server.py replaced
-    fastapi in sys.modules and pointed Imprint at a temp folder; it now refuses to be imported. Its Host and
+    fastapi in sys.modules and pointed Letterpress at a temp folder; it now refuses to be imported. Its Host and
     Origin checks are in test_live_harness.LiveMode."""
 
     def test_server_refuses_to_be_imported(self):
         code = ("import importlib.util, os, sys\n"
                 "had = 'fastapi' in sys.modules\n"
-                f"spec = importlib.util.spec_from_file_location('imprint.harness.live.server', {str(REPO / 'harness' / 'live' / 'server.py')!r})\n"
+                f"spec = importlib.util.spec_from_file_location('letterpress.harness.live.server', {str(REPO / 'harness' / 'live' / 'server.py')!r})\n"
                 "m = importlib.util.module_from_spec(spec)\n"
                 "try:\n    spec.loader.exec_module(m)\nexcept ImportError as e:\n    print('refused', e)\n"
                 "print('fastapi untouched' if ('fastapi' in sys.modules) == had else 'fastapi replaced')\n"
-                "print('data dir set' if os.environ.get('IMPRINT_DATA_DIR') else 'data dir untouched')\n")
-        env = {k: v for k, v in os.environ.items() if k != "IMPRINT_DATA_DIR"}
+                "print('data dir set' if os.environ.get('LETTERPRESS_DATA_DIR') else 'data dir untouched')\n")
+        env = {k: v for k, v in os.environ.items() if k != "LETTERPRESS_DATA_DIR"}
         r = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, timeout=30, env=env)
         self.assertIn("refused", r.stdout, r.stdout + r.stderr)
         self.assertIn("fastapi untouched", r.stdout)

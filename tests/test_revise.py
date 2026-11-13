@@ -119,7 +119,7 @@ class Outline(unittest.TestCase):
         self.assertEqual(j["status"], "done", j["error"])
         self.assertEqual([x["title"] for x in j["result"]["options"]],
                          ["287 adults are waiting for a seat", "Our waitlist reached 287 adults by year end"])
-        self.assertEqual(self.llm.calls[-1]["purpose"], "imprint.rewrite_title")
+        self.assertEqual(self.llm.calls[-1]["purpose"], "letterpress.rewrite_title")
 
 
 class Diff(unittest.TestCase):
@@ -168,7 +168,7 @@ class Edits(unittest.TestCase):
         self.assertEqual(len({o["slide"]["label"] for o in r["options"]}), 3)
         self.assertTrue(all(o["check"]["status"] == "ok" for o in r["options"]))
         self.assertEqual(r["slide"], 1)
-        self.assertEqual(self.llm.calls[-1]["purpose"], "imprint.element_edit")
+        self.assertEqual(self.llm.calls[-1]["purpose"], "letterpress.element_edit")
 
     def test_an_option_with_an_invented_number_is_dropped(self):
         wait = self.find("287 adults")

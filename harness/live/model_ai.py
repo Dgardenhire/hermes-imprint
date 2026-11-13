@@ -17,7 +17,7 @@ NUMBER = re.compile(r"\$?\d[\d,]*(?:\.\d+)?%?")
 
 def _purpose(kw):
     p = kw.get("purpose", "")
-    return p.split(".", 1)[1] if p.startswith("imprint.") else p
+    return p.split(".", 1)[1] if p.startswith("letterpress.") else p
 
 
 def _body(kw):

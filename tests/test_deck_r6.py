@@ -29,9 +29,9 @@ class OnePass(unittest.TestCase):
         j = make(self.ids)
         self.assertEqual(j["status"], "done", j["error"])
         purposes = [c["purpose"] for c in self.llm.calls]
-        self.assertEqual(purposes.count("imprint.write"), 1)
-        self.assertNotIn("imprint.voice", purposes)
-        w = next(c for c in self.llm.calls if c["purpose"] == "imprint.write")
+        self.assertEqual(purposes.count("letterpress.write"), 1)
+        self.assertNotIn("letterpress.voice", purposes)
+        w = next(c for c in self.llm.calls if c["purpose"] == "letterpress.write")
         self.assertIn("case", w["json_schema"]["properties"])
         self.assertEqual(w["json_schema"]["properties"]["slides"]["maxItems"], 8)  # 9 with the title slide
         self.assertNotIn("image", w["json_schema"]["properties"]["slides"]["items"]["properties"]["type"]["enum"])  # no pictures asked
@@ -47,7 +47,7 @@ class OnePass(unittest.TestCase):
         self.llm.deck = lambda ps: deck(self.find)  # "1,200 learners in one year": 1,200 is in no passage
         j = make(self.ids)
         self.assertEqual(j["status"], "done", j["error"])
-        rep = [c for c in self.llm.calls if c["purpose"] == "imprint.repair"]
+        rep = [c for c in self.llm.calls if c["purpose"] == "letterpress.repair"]
         self.assertEqual(len(rep), 1)
         self.assertIn("shows 1200", rep[0]["instructions"])
 

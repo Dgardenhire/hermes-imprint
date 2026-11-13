@@ -1,8 +1,8 @@
-"""Imprint's index on disk: one SQLite database plus the files it points at.
+"""Letterpress's index on disk: one SQLite database plus the files it points at.
 
-Folder: ``<HERMES_HOME>/plugin-data/imprint/`` (``runtime.data_dir``).
+Folder: ``<HERMES_HOME>/plugin-data/letterpress/`` (``runtime.data_dir``).
 
-- ``imprint.db``            sources, passages, outputs, renders, jobs, chats, usage, looks, settings
+- ``letterpress.db``            sources, passages, outputs, renders, jobs, chats, usage, looks, settings
 - ``sources/<sha256>.<ext>`` original files, kept so text can be read again
 - ``kits/<kit-id>/``        ``kit.json``, ``logo.*``, ``fonts/*.ttf`` (see kits.py)
 - ``outputs/<output-id>/``  content JSON and every exported file
@@ -26,11 +26,12 @@ from pathlib import Path
 from typing import Any, Iterable, Optional
 
 try:
-    from . import runtime
+    from . import carryover, runtime
 except ImportError:  # loaded loose
+    import carryover  # type: ignore
     import runtime  # type: ignore
 
-DB_NAME = "imprint.db"
+DB_NAME = "letterpress.db"
 _lock = threading.RLock()
 _conn: Optional[sqlite3.Connection] = None
 _conn_dir: Optional[str] = None
@@ -78,7 +79,7 @@ CREATE TABLE IF NOT EXISTS notes (
 );
 """
 
-# Columns added after the first release. A database made by an older Imprint gets them on open; nothing in an
+# Columns added after the first release. A database made by an older Letterpress gets them on open; nothing in an
 # existing row changes (a source is in the notebook until the person unticks it).
 COLUMNS = (
     ("sources", "summary", "TEXT"), ("sources", "questions", "TEXT"), ("sources", "summary_state", "TEXT"),
@@ -110,7 +111,7 @@ def conn() -> sqlite3.Connection:
             except Exception:
                 pass
         c = None
-        if not os.environ.get("IMPRINT_DATA_DIR") and not runtime.sample_open():
+        if not runtime.data_dir_override() and not runtime.sample_open():
             try:
                 from plugins.plugin_storage import plugin_db
                 c = plugin_db(runtime.PLUGIN_ID, DB_NAME)
@@ -211,7 +212,7 @@ def tokens_today() -> int:
 # ---------------------------------------------------------------- files --
 
 class OutsideDataFolder(ValueError):
-    """A write aimed anywhere but Imprint's own data folder."""
+    """A write aimed anywhere but Letterpress's own data folder."""
 
 
 def inside_root(path: Path) -> Path:
@@ -220,12 +221,12 @@ def inside_root(path: Path) -> Path:
     p = Path(path)
     full = (p if p.is_absolute() else base / p).resolve()
     if full == base or not full.is_relative_to(base):
-        raise OutsideDataFolder("Imprint writes only inside its own data folder.")
+        raise OutsideDataFolder("Letterpress writes only inside its own data folder.")
     return full
 
 
 def write_bytes(path: Path, data: bytes) -> None:
-    """Atomic write inside the data folder. Every file Imprint writes comes through here (``write_json`` too),
+    """Atomic write inside the data folder. Every file Letterpress writes comes through here (``write_json`` too),
     and a path that resolves outside the folder is refused before anything is created."""
     path = inside_root(path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -282,6 +283,8 @@ def forget_everything() -> None:
         _conn, _conn_dir = None, None
         base = root()
         for child in list(base.iterdir()):
+            if child.name == carryover.MARKER:
+                continue  # so data kept under the plugin's earlier name is not copied back in
             try:
                 if child.is_dir():
                     shutil.rmtree(child)
@@ -295,7 +298,7 @@ def forget_everything() -> None:
 # Every output keeps its versions in ``output_versions``: ``doc`` is the output's neutral doc for that version and
 # ``renders`` the voiced doc of every brand it is set in, so Undo puts back exactly what was on screen. Version 1
 # ("Made") is written when the make job finishes, or on first read for an output made before versions existed, so a
-# database from an older Imprint opens with nothing lost. Keeping a new version after an Undo drops the versions
+# database from an older Letterpress opens with nothing lost. Keeping a new version after an Undo drops the versions
 # ahead of it (no Redo).
 
 VERSIONS_SCHEMA = """

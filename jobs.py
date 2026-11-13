@@ -1,7 +1,7 @@
 """Background jobs: every model call, web read and long file read runs here, never inside a request.
 
 A job has an id, a kind, a dedupe key and a status (running, done, failed). The pane starts one with a
-POST, gets the id back at once, and polls ``GET /jobs/<id>`` (a pushed ``plugin.imprint.job`` event
+POST, gets the id back at once, and polls ``GET /jobs/<id>`` (a pushed ``plugin.letterpress.job`` event
 speeds that up when Hermes delivers it). Jobs are rows in SQLite, so they survive a pane reload. When
 Hermes restarts, any job still marked running is marked failed with "Stopped when Hermes restarted", and
 the pane offers Retry, which starts the same kind with the same parameters.
@@ -27,13 +27,13 @@ except ImportError:  # loaded loose
     import runtime as R  # type: ignore
     import store  # type: ignore
 
-_log = logging.getLogger("hermes.plugins.imprint")
+_log = logging.getLogger("hermes.plugins.letterpress")
 HANDLERS: dict = {}
 _threads: dict = {}
 _start_lock = threading.Lock()
 
 RESTARTED = "Stopped when Hermes restarted. Press Retry."
-UNEXPECTED = "Something went wrong on Imprint's side. Press Retry. If it happens again, try fewer sources."
+UNEXPECTED = "Something went wrong on Letterpress's side. Press Retry. If it happens again, try fewer sources."
 
 
 STOPPED = "Stopped. Your outline is kept."
@@ -160,7 +160,7 @@ def start(kind: str, key: str, params: dict, wait: bool = False) -> dict:
         # The job runs in the request's context: Hermes keeps the active profile's home in a context
         # variable, and a bare thread would fall back to the default profile's data folder and model.
         scope = contextvars.copy_context()
-        th = threading.Thread(target=scope.run, args=(_run, job_id, kind, params), name=f"imprint-{kind}-{job_id}", daemon=True)
+        th = threading.Thread(target=scope.run, args=(_run, job_id, kind, params), name=f"letterpress-{kind}-{job_id}", daemon=True)
         _threads[job_id] = th
         th.start()
     if wait:
@@ -199,7 +199,7 @@ def _run(job_id: str, kind: str, params: dict) -> None:
     except ValueError as e:  # our own plain refusals (ingest.Refused, kits.KitError) are ValueErrors
         _fail(job_id, str(e) or UNEXPECTED, "refused")
     except Exception:
-        _log.error("imprint: job %s (%s) failed:\n%s", job_id, kind, traceback.format_exc())
+        _log.error("letterpress: job %s (%s) failed:\n%s", job_id, kind, traceback.format_exc())
         _fail(job_id, UNEXPECTED, "unexpected")
     finally:
         _threads.pop(job_id, None)

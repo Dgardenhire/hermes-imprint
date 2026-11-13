@@ -1,4 +1,4 @@
-"""Imprint's routes. Mounted by Hermes at /api/plugins/imprint/.
+"""Letterpress's routes. Mounted by Hermes at /api/plugins/letterpress/.
 
 The page (desktop/plugin.js) reaches these through ``ctx.rest``. Anything slow (a model call, a web
 read, reading a large file) starts a job and returns its id at once; the page polls ``GET /jobs/<id>``.
@@ -26,11 +26,11 @@ _ROOT = Path(__file__).resolve().parents[1]
 
 def _package():
     """Load the plugin's modules as one package under the name ``register`` also uses."""
-    name = "imprint_plugin_package"
+    name = "letterpress_plugin_package"
     if name not in sys.modules:
         spec = importlib.util.spec_from_file_location(name, _ROOT / "__init__.py", submodule_search_locations=[str(_ROOT)])
         if spec is None or spec.loader is None:
-            raise RuntimeError("Could not load the Imprint package")
+            raise RuntimeError("Could not load the Letterpress package")
         pkg = importlib.util.module_from_spec(spec)
         sys.modules[name] = pkg
         spec.loader.exec_module(pkg)
@@ -39,23 +39,23 @@ def _package():
 
 
 service, kits, jobs, store, ingest, runtime, imports = _package()
-_log = logging.getLogger("hermes.plugins.imprint")
+_log = logging.getLogger("hermes.plugins.letterpress")
 router = APIRouter()
 
 try:
     jobs.recover()
 except Exception:  # a damaged database must not keep the page from loading; /state reports it
-    _log.exception("imprint: could not check for interrupted jobs")
+    _log.exception("letterpress: could not check for interrupted jobs")
 try:  # a design run cut off by a restart leaves its options saying "writing": mark them interrupted
-    importlib.import_module("imprint_plugin_package.designs").reconcile_all()
+    importlib.import_module("letterpress_plugin_package.designs").reconcile_all()
 except Exception:
-    _log.exception("imprint: could not check for interrupted designs")
+    _log.exception("letterpress: could not check for interrupted designs")
 try:
     imports.expire()
 except Exception:
-    _log.exception("imprint: could not clear old kit drafts")
-importlib.import_module("imprint_plugin_package.revise").routes().mount(router, "imprint_plugin_package")
-importlib.import_module("imprint_plugin_package.designs").routes().mount(router, "imprint_plugin_package")
+    _log.exception("letterpress: could not clear old kit drafts")
+importlib.import_module("letterpress_plugin_package.revise").routes().mount(router, "letterpress_plugin_package")
+importlib.import_module("letterpress_plugin_package.designs").routes().mount(router, "letterpress_plugin_package")
 
 
 def _fail(e):
@@ -65,8 +65,8 @@ def _fail(e):
         raise HTTPException(status_code=400, detail=str(e) or "That request isn't valid.")
     if isinstance(e, runtime.ModelError):
         raise HTTPException(status_code=502, detail=str(e))
-    _log.exception("imprint: unexpected error")
-    raise HTTPException(status_code=500, detail="Something went wrong on Imprint's side. Try again.")
+    _log.exception("letterpress: unexpected error")
+    raise HTTPException(status_code=500, detail="Something went wrong on Letterpress's side. Try again.")
 
 
 def _body(body) -> dict:

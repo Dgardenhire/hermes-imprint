@@ -38,8 +38,8 @@ class Flow(unittest.TestCase):
         self.assertIn("Prepared for discussion. Not legal advice.", layout.text_of(b["tree"]))
         self.assertEqual(next(p for p in b["checks"] if p["id"] == "required")["action"]["do"], "unrequire")
         purposes = [c["purpose"] for c in self.llm.calls]
-        self.assertEqual(purposes, ["imprint.write", "imprint.voice", "imprint.voice"])
-        self.assertTrue(all(c.get("task") == "imprint_write" for c in self.llm.calls))
+        self.assertEqual(purposes, ["letterpress.write", "letterpress.voice", "letterpress.voice"])
+        self.assertTrue(all(c.get("task") == "letterpress_write" for c in self.llm.calls))
 
     def test_sources_reach_the_model_redacted_and_delimited(self):
         self.made()
@@ -157,7 +157,7 @@ class Flow(unittest.TestCase):
         n = len(self.llm.calls)
         j = jobs.start("voice", "swap", {"output_id": oid, "kit_id": "studio-italic", "slot": 1}, wait=True)
         self.assertEqual(jobs.get(j["id"])["status"], "done")
-        self.assertEqual([c["purpose"] for c in self.llm.calls[n:]], ["imprint.voice"])
+        self.assertEqual([c["purpose"] for c in self.llm.calls[n:]], ["letterpress.voice"])
         self.assertEqual(service.output_view(oid)["kit_ids"], ["plain-notice", "studio-italic"])
 
     def test_kit_edit_marks_the_voice_stale_but_restyles_at_once(self):
@@ -304,7 +304,7 @@ class JobsKeepTheProfile(unittest.TestCase):
 
 class HostileSourceRedTeam(unittest.TestCase):
     """A source that tries to steer the model can only change words on a page. It can't delete, send, write
-    outside Imprint's folder, or get an unsupported claim past the export gate."""
+    outside Letterpress's folder, or get an unsupported claim past the export gate."""
 
     def setUp(self):
         reset()

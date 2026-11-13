@@ -6,7 +6,7 @@ from importlib import import_module
 
 from _load import add_samples, fake_model, kits, layout, make, reset, service
 
-PKG = "imprint_plugin_package"
+PKG = "letterpress_plugin_package"
 RD = import_module(f"{PKG}.render_deck")
 RG = import_module(f"{PKG}.render_graphic")
 SC = import_module(f"{PKG}.scene")

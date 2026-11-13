@@ -2,7 +2,7 @@
 
     /usr/bin/python3 harness/render_html_options.py OUT_DIR --model sonnet|haiku [--kinds deck,onepager,graphic] [--rounds 2]
 
-The model is reached through ``claude -p`` (this harness only; inside Hermes the engine uses Imprint's own runtime).
+The model is reached through ``claude -p`` (this harness only; inside Hermes the engine uses Letterpress's own runtime).
 The checked content is the Harborlight sample's own deck, one-pager and graphic docs, so all three options per output share
 the same content and number trace. Writes ``OUT/<kind>-<direction>/s01.png ... deck.pdf``, ``result.json`` and a contact
 sheet per output. Chrome runs with its own scratch profile folder, deleted afterward."""
@@ -10,12 +10,12 @@ import asyncio, base64, json, os, re, subprocess, sys, tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-os.environ["IMPRINT_DATA_DIR"] = tempfile.mkdtemp(prefix="imprint-html-")
+os.environ["LETTERPRESS_DATA_DIR"] = tempfile.mkdtemp(prefix="letterpress-html-")
 sys.path.insert(0, str(ROOT / "tests"))
 from importlib import import_module  # noqa: E402
 from _load import service, store  # noqa: E402
 
-HD = import_module("imprint_plugin_package.htmldeck")
+HD = import_module("letterpress_plugin_package.htmldeck")
 OUT = Path(sys.argv[1]).resolve()
 MODEL = sys.argv[sys.argv.index("--model") + 1] if "--model" in sys.argv else "sonnet"
 KINDS = (sys.argv[sys.argv.index("--kinds") + 1] if "--kinds" in sys.argv else "deck,onepager,graphic").split(",")
@@ -53,11 +53,11 @@ def main():
         "Roles: --brand primary (headlines, bands, the logo, chart marks); --brand-tint and --brand-mid for tints of it; --paper "
         "background; --ink body text; --muted secondary text; --accent (gold) sparingly, for rules, callouts, one number; --cta "
         "(red) for calls to action only, never for data. Every printed piece ends with: Harborlight Literacy Project is a 501(c)(3) "
-        "nonprofit. EIN 47-1928361. (cite P11)\nThe logo is a teal circle with a gold bar, <img src=\"imprint:logo\" alt=\"\">, "
+        "nonprofit. EIN 47-1928361. (cite P11)\nThe logo is a teal circle with a gold bar, <img src=\"letterpress:logo\" alt=\"\">, "
         "kept at least 56px wide and never stretched.")
     logo = "data:image/png;base64," + base64.b64encode((ROOT / "samples/harborlight/harborlight-logo.png").read_bytes()).decode()
     docs = {"deck": json.load(open(DOCS / "main-doc.json")), "onepager": json.load(open(DOCS / "main-onepager.json"))}
-    vis = import_module("imprint_plugin_package.harness_visual") if False else None
+    vis = import_module("letterpress_plugin_package.harness_visual") if False else None
     src = (ROOT / "harness/render_harborlight.py").read_text()
     ns = {}
     exec(src[src.index("VISUAL = "):src.index("ONEPAGER = ")], ns)

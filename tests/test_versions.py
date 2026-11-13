@@ -1,5 +1,5 @@
 """Versions: Keep applies a finished suggestion on the server and saves a version, Undo goes one step back, Undo at
-version 1 says "Nothing to undo.", and a database made by the main-era Imprint (no versions table) opens with every
+version 1 says "Nothing to undo.", and a database made by the main-era Letterpress (no versions table) opens with every
 output intact and a version 1."""
 import sqlite3
 import subprocess

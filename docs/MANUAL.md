@@ -1,10 +1,10 @@
-# Imprint manual
+# Letterpress manual
 
 An early guide, kept for its detail. The tabs are now called **Notebook**, **Brands** and **Settings**, and kits are
-called brands. The current manual, with every screen, is at https://linchpin.studio/hermes/imprint/manual/.
+called brands. The current manual, with every screen, is at https://linchpin.studio/hermes/letterpress/manual/.
 
-Imprint has three tabs: **Notebook**, where you work; **Kits**, where your brands live; and **Storage**, where
-you see and delete what Imprint keeps.
+Letterpress has three tabs: **Notebook**, where you work; **Kits**, where your brands live; and **Storage**, where
+you see and delete what Letterpress keeps.
 
 The Notebook has three panes, left to right: your **Sources**, a **Chat** about them, and the **Studio**, where you
 make things from them.
@@ -14,12 +14,12 @@ make things from them.
 - **File** adds a PDF, a Word file (.docx), a text or Markdown file, or a transcript (.vtt, .srt or .txt). Up to
   25 MB each. You can also drop files onto the pane. A scanned PDF with no text layer, a password-protected PDF or
   an old .doc file is refused with what to do instead.
-- **Link** adds a public web page. Imprint reads it through your own Hermes web tool (`web_extract`); if that isn't
+- **Link** adds a public web page. Letterpress reads it through your own Hermes web tool (`web_extract`); if that isn't
   set up, it reads the page itself with Hermes's safe web client. Addresses on your own computer or network are
   refused before anything is sent.
 - **Paste** adds text you copy from anywhere, with a title.
 
-Imprint can't listen to audio or video. Add the transcript instead; Zoom, Teams, Otter and YouTube all export one.
+Letterpress can't listen to audio or video. Add the transcript instead; Zoom, Teams, Otter and YouTube all export one.
 
 Each source shows its title, its kind, its size and, a few seconds after it is read, a two-sentence summary written
 by your model. Click the summary to read all of it. **Untick** a source to leave it out: the chat answers only from
@@ -84,7 +84,7 @@ Under each proof is a row of checks. Click one to see the detail.
 - **Numbers and quotes.** Every number and quoted phrase is matched to a passage in your sources. A quote matches
   whatever punctuation ends it, a number written out in the source ("sixty-eight percent") matches the digits, and
   a number from your own request ("a 90-second brief") counts as yours. If the model cited the wrong passage but
-  the number is in another one, Imprint corrects the citation (listed in one line you can open). If a number or
+  the number is in another one, Letterpress corrects the citation (listed in one line you can open). If a number or
   quote isn't in your sources at all, it is listed first as "not found in sources" and export is blocked. Each one
   shows the closest sentence from any of your sources; choose **Fix the wording**, **Remove it**, or **Keep it,
   I checked**. Keeping it is recorded.
@@ -94,7 +94,7 @@ Under each proof is a row of checks. Click one to see the detail.
 - **Required lines** (a disclaimer, a funder credit) must be present. Your own kit's lines print on everything
   unless you open this check and press **Leave it off this output**. A starter kit's lines (Docket's "Not legal
   advice.") print only when you press **Add it to this output**.
-- **Logo.** If your logo would vanish on the band or the paper, Imprint uses your reversed logo there, or sets the
+- **Logo.** If your logo would vanish on the band or the paper, Letterpress uses your reversed logo there, or sets the
   parts that would vanish in the band's text color, and says so here.
 - **Fonts.** If a kit's font can't be used, the check and the colophon say what was set in its place.
 - **Length** (audio only) reads the script at 150 words a minute, against the length you asked for ("a
@@ -161,12 +161,12 @@ The studio kits, each built on one studio method:
   built-in sample, redrawn as you edit.
 - **Type and page.** Heading and body fonts, the layout (Banner, Headline, Margin rail, Letter, Bulletin, Flyer or
   menu, Report), density, **Slides and graphics** (which deck system the kit uses: Exhibit, Chart room, Stage, Folio
-  or Grid; left alone, Imprint picks the one that suits the layout and ground), and the organization name printed on
+  or Grid; left alone, Letterpress picks the one that suits the layout and ground), and the organization name printed on
   the page. Add your own font as a .ttf file. A font
-  that isn't on this computer is set in the nearest open font Imprint carries, and the colophon says which.
+  that isn't on this computer is set in the nearest open font Letterpress carries, and the colophon says which.
 - **Voice.** How it writes, how the narrator sounds, words it never says, and "say this, not that" pairs.
 - **Every page.** Source list, page numbers, date, and required lines, one per line.
-- **Logo.** An SVG, PNG or JPG. Add a **reversed logo** too if you have one (the white or knockout version); Imprint
+- **Logo.** An SVG, PNG or JPG. Add a **reversed logo** too if you have one (the white or knockout version); Letterpress
   uses it wherever your main logo would vanish, such as on a band in your own color.
 
 A starter kit can't be changed directly. Press **Save as my copy** to make it yours.
@@ -175,12 +175,12 @@ A starter kit can't be changed directly. Press **Save as my copy** to make it yo
 
 - **Help me build a kit.** Fill in what can't change, who reads it and what they need to do, and up to three
   references (starter kits, a website you admire, or your logo or brand sheet). Press **Propose three kits**. Each
-  proposal says why it fits, what it borrowed and what is new. Press **Use this kit** on the one you want. Imprint
+  proposal says why it fits, what it borrowed and what is new. Press **Use this kit** on the one you want. Letterpress
   remembers your recent looks so the next proposals don't repeat them.
-- **Build from a website.** Type an address. Imprint reads the colors and fonts from the site's own stylesheets
-  and shows the result as a proof. Some sites block readers; Imprint says so and offers the manual route. It never
+- **Build from a website.** Type an address. Letterpress reads the colors and fonts from the site's own stylesheets
+  and shows the result as a proof. Some sites block readers; Letterpress says so and offers the manual route. It never
   tries to get around a block.
-- **Import a kit.** Pick your **brand guide PDF** (Imprint reads its color codes, the words beside them and the
+- **Import a kit.** Pick your **brand guide PDF** (Letterpress reads its color codes, the words beside them and the
   fonts it names), paste color codes (copy the whole color page: names like "Harbor Teal" and notes like "Calls to
   action only" set the roles), drop a CSS file or a design-token file (Figma, Tokens Studio, Penpot), pick an Open
   Design package folder, drop a Claude Design `.zip` or pick its folder, drop a PowerPoint (in Canva: Share,
@@ -196,28 +196,28 @@ Use kits only for brands you own or have permission to use.
 ## 8. Storage tab
 
 Lists every source and output with its size, the tokens used today on your own model, an optional daily token
-limit, and the storage Imprint uses. Delete takes two clicks. **Forget everything** deletes every source, kit,
+limit, and the storage Letterpress uses. Delete takes two clicks. **Forget everything** deletes every source, kit,
 output and setting after you type "forget everything".
 
 ## Uninstall
 
 1. To remove your data too, first type "forget everything" on the Settings tab and press **Forget everything**. That
-   deletes `<HERMES_HOME>/plugin-data/imprint/`. Exports you saved elsewhere stay.
-2. Remove the plugin: Capabilities, Plugins, the trash button beside Imprint (or `hermes plugins remove imprint`), then
+   deletes `<HERMES_HOME>/plugin-data/letterpress/`. Exports you saved elsewhere stay.
+2. Remove the plugin: Capabilities, Plugins, the trash button beside Letterpress (or `hermes plugins remove letterpress`), then
    restart the gateway.
-3. Removing the plugin leaves its data folder. If you skipped step 1, delete `<HERMES_HOME>/plugin-data/imprint/`
+3. Removing the plugin leaves its data folder. If you skipped step 1, delete `<HERMES_HOME>/plugin-data/letterpress/`
    yourself.
 
-The full, current manual is at https://linchpin.studio/hermes/imprint/manual/.
+The full, current manual is at https://linchpin.studio/hermes/letterpress/manual/.
 
 ## When something goes wrong
 
 | What you see | What to do |
 |---|---|
-| Imprint couldn't reach your Hermes model | Check the model in Settings, then press Retry. Your sources and kits are untouched. |
+| Letterpress couldn't reach your Hermes model | Check the model in Settings, then press Retry. Your sources and kits are untouched. |
 | The answer came back cut off | Press Retry, or ask for a shorter output. |
 | Audio needs a Hermes voice | Turn on text to speech in Settings, then press Record again. |
-| That site didn't let Imprint read it | Make the kit by hand or import a file instead. |
+| That site didn't let Letterpress read it | Make the kit by hand or import a file instead. |
 | Pick a model that can see images | Set a vision-capable model, or paste your color codes. |
 | Stopped when Hermes restarted | Press Retry. |
-| Not installed: (a library) | Reinstall Imprint and accept the libraries it lists. |
+| Not installed: (a library) | Reinstall Letterpress and accept the libraries it lists. |

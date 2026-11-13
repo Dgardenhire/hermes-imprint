@@ -257,7 +257,7 @@ class PersonaModel:
         schema = kw.get("json_schema")
         LOG.append(("call", purpose))
         ps = refs_of(body)
-        from imprint_plugin_package import content as C
+        from letterpress_plugin_package import content as C
         if purpose.endswith("summarize"):
             low = body[:300].lower()
             key = "council" if "work session" in low else "survey" if "survey" in low else "warming" if "warming" in low else None

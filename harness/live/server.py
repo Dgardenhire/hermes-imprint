@@ -1,4 +1,4 @@
-"""Live mode for the harness: the real Imprint backend behind a small local server, so real buttons work.
+"""Live mode for the harness: the real Letterpress backend behind a small local server, so real buttons work.
 
 The pane (desktop/plugin.js) and every route in dashboard/plugin_api.py run as they do in Hermes. The one
 stand-in is the model: a scripted writer (persona_model.py) that writes each output from the passages it
@@ -36,7 +36,7 @@ from urllib.parse import unquote
 
 if __name__ != "__main__":
     # The plugin folder is importable inside Hermes (the loader makes it a package), and this module replaces
-    # fastapi in sys.modules and points Imprint at a temp data folder as it loads. It runs only as a script.
+    # fastapi in sys.modules and points Letterpress at a temp data folder as it loads. It runs only as a script.
     raise ImportError("harness/live/server.py is a local test server: run it with python, never import it.")
 
 HERE = Path(__file__).resolve().parent
@@ -47,7 +47,7 @@ def _data_dir(argv: list) -> Path:
     if "--data" in argv:
         d = Path(argv[argv.index("--data") + 1]).expanduser().resolve()
     else:
-        d = Path(tempfile.mkdtemp(prefix="imprint-live-"))
+        d = Path(tempfile.mkdtemp(prefix="letterpress-live-"))
     if ".hermes" in d.parts:
         raise SystemExit("Live mode never writes inside ~/.hermes. Pick another folder.")
     d.mkdir(parents=True, exist_ok=True)
@@ -55,7 +55,7 @@ def _data_dir(argv: list) -> Path:
 
 
 DATA = _data_dir(sys.argv)
-os.environ["IMPRINT_DATA_DIR"] = str(DATA)
+os.environ["LETTERPRESS_DATA_DIR"] = str(DATA)
 logging.basicConfig(level=logging.WARNING)
 
 # A stand-in for the few FastAPI names plugin_api.py imports; the routes themselves are untouched.
@@ -95,7 +95,7 @@ class Request:
 fa.APIRouter, fa.HTTPException, fa.Request = APIRouter, HTTPException, Request
 sys.modules["fastapi"] = fa
 
-spec = importlib.util.spec_from_file_location("imprint_plugin_api_live", REPO / "dashboard" / "plugin_api.py")
+spec = importlib.util.spec_from_file_location("letterpress_plugin_api_live", REPO / "dashboard" / "plugin_api.py")
 api = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(api)
 sys.path.insert(0, str(HERE))
@@ -209,5 +209,5 @@ def serve(port: int) -> ThreadingHTTPServer:
 
 if __name__ == "__main__":
     port = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 8790
-    print(f"Imprint live harness on http://127.0.0.1:{port}/harness/index.html?live=1  data: {DATA}", flush=True)
+    print(f"Letterpress live harness on http://127.0.0.1:{port}/harness/index.html?live=1  data: {DATA}", flush=True)
     serve(port).serve_forever()

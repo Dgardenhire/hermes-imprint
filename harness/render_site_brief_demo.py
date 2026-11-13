@@ -9,13 +9,13 @@ import asyncio, json, os, re, sys, tempfile, urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-os.environ["IMPRINT_DATA_DIR"] = tempfile.mkdtemp(prefix="imprint-sitedemo-")
+os.environ["LETTERPRESS_DATA_DIR"] = tempfile.mkdtemp(prefix="letterpress-sitedemo-")
 sys.path.insert(0, str(ROOT / "tests")); sys.path.insert(0, str(ROOT / "harness"))
 from importlib import import_module  # noqa: E402
 from _load import service, store, kits  # noqa: E402
 from claude_cli import ClaudeCLI  # noqa: E402
 
-PKG = "imprint_plugin_package"
+PKG = "letterpress_plugin_package"
 SS, HD, D, SK = (import_module(f"{PKG}.{m}") for m in ("sitestyle", "htmldeck", "designs", "sitekit"))
 OUT = Path(sys.argv[1]).resolve(); OUT.mkdir(parents=True, exist_ok=True)
 URL = sys.argv[2]
@@ -24,7 +24,7 @@ DIRS = (sys.argv[sys.argv.index("--dirs") + 1] if "--dirs" in sys.argv else "edi
 
 
 def get(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "Imprint (reads a few pages a person asked for)"})
+    req = urllib.request.Request(url, headers={"User-Agent": "Letterpress (reads a few pages a person asked for)"})
     return urllib.request.urlopen(req, timeout=25).read().decode("utf-8", "replace")
 
 

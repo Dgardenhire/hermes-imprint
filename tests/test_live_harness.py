@@ -25,9 +25,9 @@ def free_port():
 class LiveMode(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.data = tempfile.mkdtemp(prefix="imprint-live-test-")
+        cls.data = tempfile.mkdtemp(prefix="letterpress-live-test-")
         cls.port = free_port()
-        env = {k: v for k, v in os.environ.items() if k != "IMPRINT_DATA_DIR"}
+        env = {k: v for k, v in os.environ.items() if k != "LETTERPRESS_DATA_DIR"}
         cls.proc = subprocess.Popen([sys.executable, str(REPO / "harness" / "live" / "server.py"), str(cls.port), "--data", cls.data],
                                     stdout=subprocess.PIPE, stderr=subprocess.STDOUT, env=env)
         cls.base = f"http://127.0.0.1:{cls.port}"
@@ -83,7 +83,7 @@ class LiveMode(unittest.TestCase):
             c.request("GET", path)
             body = c.getresponse().read().decode("utf-8", "replace")
             c.close()
-            self.assertIn("Imprint harness", body, path)  # anything outside the repo, or hidden, gets the harness page
+            self.assertIn("Letterpress harness", body, path)  # anything outside the repo, or hidden, gets the harness page
             self.assertNotIn("[core]", body)
             self.assertNotIn("localhost", body.split("<style>")[0].replace("http://localhost:8794", ""))
 

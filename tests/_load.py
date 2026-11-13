@@ -1,4 +1,4 @@
-"""Load Imprint for tests: a temporary data folder, the package loaded the way the dashboard loads it, a
+"""Load Letterpress for tests: a temporary data folder, the package loaded the way the dashboard loads it, a
 stand-in for fastapi when it is not installed (system Python), and a fake model that writes from the
 labeled corpus it is given, so every claim it makes really is in a passage."""
 import asyncio
@@ -13,8 +13,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SAMPLES = ROOT / "samples"
-os.environ["IMPRINT_DATA_DIR"] = tempfile.mkdtemp(prefix="imprint-test-")
-logging.getLogger("hermes.plugins.imprint").setLevel(logging.CRITICAL)
+os.environ["LETTERPRESS_DATA_DIR"] = tempfile.mkdtemp(prefix="letterpress-test-")
+logging.getLogger("hermes.plugins.letterpress").setLevel(logging.CRITICAL)
 
 try:
     import fastapi  # noqa: F401
@@ -58,7 +58,7 @@ api = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(api)
 service, kits, jobs, store, ingest, runtime = api.service, api.kits, api.jobs, api.store, api.ingest, api.runtime
 service.PLAIN = False  # round 13: the older tests drive the argued path; test_plain_r13 turns the plain draft on
-PKG = "imprint_plugin_package"
+PKG = "letterpress_plugin_package"
 from importlib import import_module  # noqa: E402
 
 content = import_module(f"{PKG}.content")
@@ -108,7 +108,7 @@ class FakeLlm:
         self.calls.append(kw)
         if self.trust_error_on_task and kw.get("task"):
             err = type("PluginLlmTrustError", (Exception,), {})
-            raise err("Plugin 'imprint' cannot route through auxiliary task 'imprint_write'")
+            raise err("Plugin 'letterpress' cannot route through auxiliary task 'letterpress_write'")
         if kw.get("purpose", "").endswith(("argument", "argument_repair")):  # round 11: the case before the deck;
             arg = getattr(self, "argument", None)          # a test sets ``argument`` (a dict, or a list for draft
             if isinstance(arg, list):                      # then repair); none means no case, and the queue is kept
@@ -242,7 +242,7 @@ def run(coro):
 def reset():
     import shutil
     store.forget_everything()
-    d = Path(os.environ["IMPRINT_DATA_DIR"])
+    d = Path(os.environ["LETTERPRESS_DATA_DIR"])
     shutil.rmtree(d, ignore_errors=True)
     d.mkdir(parents=True, exist_ok=True)
 

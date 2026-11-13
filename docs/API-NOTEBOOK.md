@@ -1,9 +1,9 @@
-# Imprint notebook API: the contract
+# Letterpress notebook API: the contract
 
 Owner: the AI lane (`loop1-ai`). Written Sun Nov 8, 2026, about 10 PM CT, before any AI-lane code.
 Readers: the canvas lane, lane A (the notebook agent), the product owner.
 
-Every route below is mounted under `/api/plugins/imprint/` and reached from the pane through `ctx.rest`.
+Every route below is mounted under `/api/plugins/letterpress/` and reached from the pane through `ctx.rest`.
 The pane's request limit is 25 seconds (`desktop/src/plugin.js:26`). So **every route that calls a model
 returns `{job: <job>}` at once**, and the result arrives through `GET /jobs/{id}` as `job.result` when
 `job.status` is `done`. Nothing waits on a model inside a request.
@@ -258,7 +258,7 @@ The person picks one; the pane saves the list with `POST /outlines/{id}`.
   no source holds returns `status: "refused"` with a sentence naming it. Keep goes through `store.add_version`.
 - Any other typed line that is not exactly "Add the quote after slide N" or "Add the point after slide N" returns
   `status: "refused"` and one plain sentence. No model call is made for it.
-- The model never picks a tool, exports, deletes, or writes anything outside `plugin-data/imprint`. It only
+- The model never picks a tool, exports, deletes, or writes anything outside `plugin-data/letterpress`. It only
   returns slide JSON that this code checks.
 
 ### 4.5 `fix_it` result
@@ -301,13 +301,13 @@ is re-checked once more before it is saved. These routes call lane A's version f
 
 | Call (purpose) | Sends to the person's own Hermes model | When |
 |---|---|---|
-| `imprint.notebook_guide` | the ticked sources' passages (redacted the same way as Ask) | Opening a notebook, or Refresh guide |
-| `imprint.outline` | the brief and the ticked sources' passages | Write the outline |
-| `imprint.rewrite_title` | one title, the brief, and that slide's cited passages | Rewrite this title |
-| `imprint.element_edit` | one slide's JSON and its cited passages | Shorter, Stronger headline, Turn into a chart, Add the quote |
-| `imprint.fix_it` | the flagged sentence and the closest passage across the output's sources | Fix it for me |
-| `imprint.graphic_options` | the pinned answer or text, and the passages it cites | Make a graphic from a note |
-| `imprint.argument`, `imprint.argument_repair` | the brief and the ticked sources' passages (the repair adds the drafted case and its faults) | Make a deck with no outline (round 11), before the deck write |
+| `letterpress.notebook_guide` | the ticked sources' passages (redacted the same way as Ask) | Opening a notebook, or Refresh guide |
+| `letterpress.outline` | the brief and the ticked sources' passages | Write the outline |
+| `letterpress.rewrite_title` | one title, the brief, and that slide's cited passages | Rewrite this title |
+| `letterpress.element_edit` | one slide's JSON and its cited passages | Shorter, Stronger headline, Turn into a chart, Add the quote |
+| `letterpress.fix_it` | the flagged sentence and the closest passage across the output's sources | Fix it for me |
+| `letterpress.graphic_options` | the pinned answer or text, and the passages it cites | Make a graphic from a note |
+| `letterpress.argument`, `letterpress.argument_repair` | the brief and the ticked sources' passages (the repair adds the drafted case and its faults) | Make a deck with no outline (round 11), before the deck write |
 
 All go through `runtime.Model.structured` (Hermes's `complete_structured`), with this lane's schemas.
 Nothing calls the web, a tool or another service.
@@ -336,7 +336,7 @@ Nothing calls the web, a tool or another service.
 1. **The mount line** in `dashboard/plugin_api.py`, after `router = APIRouter()` and the two `try` blocks:
 
    ```python
-   importlib.import_module("imprint_plugin_package.revise").routes().mount(router, "imprint_plugin_package")
+   importlib.import_module("letterpress_plugin_package.revise").routes().mount(router, "letterpress_plugin_package")
    ```
 
 2. **Version functions** in `store.py`, the only way this lane touches `output_versions`:
@@ -540,7 +540,7 @@ it without them; strip them when drawing "FY26 Program Report, Who we served".
   Chat rows (`<chat>`) gain `lead`, `detail`, `more` from `K.split_answer(text)` (assistant rows; empty strings on
   the person's own rows).
 - 2026-11-09 02:30 CT (backend lane): **Sample and pictures (contract A, B).** `POST /sample/open` and `POST /sample/close`
-  (`{}` in, `<state>` out). Open switches Imprint to `<data>/sample/` (built from `samples/harborlight/notebook.json` the
+  (`{}` in, `<state>` out). Open switches Letterpress to `<data>/sample/` (built from `samples/harborlight/notebook.json` the
   first time, no model call, reused after; the shipped folder is only read); close goes back to the person's folder,
   untouched. `state.sample = {available, open, name: "Harborlight Literacy", label: "Sample"}`; while it is open every
   source row and output row carries `sample: true`. `state.previews = {deck, onepager, visual, audio}`, each
@@ -593,7 +593,7 @@ it without them; strip them when drawing "FY26 Program Report, Who we served".
   passages is a fault (`checks.off_title`), rewritten from those passages; the repair is kept only with fewer faults.
   (3) The deck schema's closing `amount` is the increase when the ask is an increase over a current budget.
 - 2026-11-09 03:30 CT (round-6 deck lane, `loop2r6-deck`): (1) **A deck is written in one pass.** The `make` job for
-  a deck makes one `imprint.write` call with every source in view (`content.onepass_instructions`,
+  a deck makes one `letterpress.write` call with every source in view (`content.onepass_instructions`,
   `content.onepass_schema`): the model first writes `case` (three to five sentences: the reader, what they must
   believe, the strongest evidence, their open question, the ask), then every slide, in the first brand's voice. When
   an approved outline is given (`outline_id`) it is the pass's spine (same slides, order, types and titles, held in
@@ -601,18 +601,18 @@ it without them; strip them when drawing "FY26 Program Report, Who we served".
   slides") caps the slides in the schema, the title slide counted, and sets `max_slides`. Image slides are offered only
   when pictures were asked for. The case is saved as the setting `case_of:<output_id>` (not shown on a slide).
   (2) **No voice call for a deck's first brand.** The pass wrote in that brand's voice, so the render is stored by
-  code (`service._store_render`); a second brand still gets its `imprint.voice` call, and a brand swap still
+  code (`service._store_render`); a second brand still gets its `letterpress.voice` call, and a brand swap still
   re-voices. The job's steps are unchanged. (3) **The one repair call gains two faults**: numbers, quotes and
   citations no source holds (`checks.unsourced`, from the trace), and numbers the pass's own case names as evidence
   that no slide shows (`checks.case_left_out`). As before, the repair is kept only when it has fewer faults and the
   same slides. The `outline` job (with its round-5 review) is unchanged, for people who want an outline first.
 - 2026-11-09 07:10 CT (round 11, argue lane): **A deck made with no outline is argued before it is laid out.** The
-  make job's first deck step is "Drafting the case": one `imprint.argument` call with every source in view drafts the
+  make job's first deck step is "Drafting the case": one `letterpress.argument` call with every source in view drafts the
   case as a development director would; code checks it (`checks.argument_problems`: every number in a cited passage
   or worked out with its operation said, every quote found, every ref a real passage, the ask has an amount or says
   the sources give none, no placeholder, and every instruction the notes give for the deck, found by
   `checks.notes_instructions`, is listed with its own words and met by a step); on a fault, one
-  `imprint.argument_repair` call ("Fixing N things in the case"), kept only with fewer faults. The deck write then
+  `letterpress.argument_repair` call ("Fixing N things in the case"), kept only with fewer faults. The deck write then
   takes the case as a fixed spine (`content.argument_outline` + `service.follow_outline`): one slide per step, in
   order, each heading word for word, the counter-case on its own slide, the ask on the closing; the general coverage
   and money rules are off for it, and the repair call does not add budget figures the case left out. With no usable

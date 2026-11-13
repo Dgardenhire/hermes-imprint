@@ -1,4 +1,4 @@
-# Imprint designs API
+# Letterpress designs API
 
 Three model-designed options for a deck, a one-pager or a graphic, side by side in the Studio; pick one, or mix slides across
 them; edit a line; revise in words; restore a version; export. Routes live in `dashboard/designs_api.py`, the work in `designs.py`
@@ -33,5 +33,5 @@ is a claim too. Statuses: `exact`, `computed`, `moved` (cited to the wrong passa
 Tags and attributes are an allowlist; no script, event handler, link, form, frame, address or picture (only the logo). A `<style>`
 block with any escape, `<`, fetching or running construct, counter, or `content` other than none or a digit-free string is dropped
 whole. `<style>` inside `svg` is dropped. A second pass must change nothing. The page has a policy that allows no network and no
-script but Imprint's measuring script (by hash); its report carries a per-render nonce and is accepted only once, from a console
+script but Letterpress's measuring script (by hash); its report carries a per-render nonce and is accepted only once, from a console
 line. The browser's own parse is checked against the allowlist, and a slide it finds unsafe is blanked and the deck drawn again.

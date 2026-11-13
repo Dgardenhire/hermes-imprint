@@ -47,7 +47,7 @@ def record_fake(dest: Path) -> dict:
 class Sample(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.src = Path(tempfile.mkdtemp(prefix="imprint-sample-src-"))
+        cls.src = Path(tempfile.mkdtemp(prefix="letterpress-sample-src-"))
         cls.book = record_fake(cls.src)
         cls.real_src = service.SAMPLE_SRC
         service.SAMPLE_SRC = cls.src

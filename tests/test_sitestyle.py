@@ -94,7 +94,7 @@ class Rules(unittest.TestCase):
             with self._robots("User-agent: *\nDisallow: /private"):
                 self.assertTrue(SS.robots_allows("https://a.test/"))
                 self.assertFalse(SS.robots_allows("https://a.test/private/x"))
-            with self._robots("User-agent: Imprint\nDisallow: /"):
+            with self._robots("User-agent: Letterpress\nDisallow: /"):
                 self.assertFalse(SS.robots_allows("https://a.test/"))
             with self._robots(code=404):
                 self.assertTrue(SS.robots_allows("https://a.test/"))
@@ -106,14 +106,14 @@ class Rules(unittest.TestCase):
     def test_capture_refuses_a_private_address_and_a_disallowed_site(self):
         with self.assertRaises(ValueError):
             SS.capture("http://127.0.0.1:8000/", tempfile.mkdtemp())
-        with mock.patch.object(SS, "safe_url", lambda u: True), mock.patch.object(SS, "robots_allows", lambda u, a="Imprint": False):
+        with mock.patch.object(SS, "safe_url", lambda u: True), mock.patch.object(SS, "robots_allows", lambda u, a="Letterpress": False):
             with self.assertRaisesRegex(ValueError, "robots"):
                 SS.capture("https://a.test/", tempfile.mkdtemp())
 
     def test_on_windows_capture_says_so_plainly_before_starting_anything(self):
         with mock.patch.object(SS.os, "name", "nt"), mock.patch.object(SS, "Chrome", side_effect=AssertionError("started")):
             with self.assertRaises(ValueError) as cm:
-                SS.capture("https://example.org/", os.path.join(tempfile.gettempdir(), "imprint-win-never-made"))
+                SS.capture("https://example.org/", os.path.join(tempfile.gettempdir(), "letterpress-win-never-made"))
         self.assertEqual(str(cm.exception), SS.WINDOWS_NO_LOOK)
         self.assertIn("colors and fonts were still read", SS.WINDOWS_NO_LOOK)
 
@@ -230,7 +230,7 @@ class Browser(unittest.TestCase):
             os.set_inheritable(leak_r, True)  # something in the host left an inheritable descriptor open
             r1, w1 = os.pipe()
             r2, w2 = os.pipe()
-            out = tempfile.mktemp(prefix="imprint-fds-")
+            out = tempfile.mktemp(prefix="letterpress-fds-")
             try:
                 child = SS._spawn([sys.executable, "-c",
                                    "import os,sys\n"
@@ -492,7 +492,7 @@ class Wired(unittest.TestCase):
         reset()
         service.open_sample()
         kit = kits.save_new({"name": "Plain", "colors": [{"hex": "#0a3d62", "role": "head"}]})
-        with mock.patch.object(SS, "capture", mock.Mock(side_effect=ValueError("That site's robots.txt asks programs not to read it, so Imprint left it alone."))):
+        with mock.patch.object(SS, "capture", mock.Mock(side_effect=ValueError("That site's robots.txt asks programs not to read it, so Letterpress left it alone."))):
             j = jobs.start("kit_style_brief", "sb2", {"kit_id": kit["id"], "url": "https://a.test/"}, wait=True)
             j = jobs.get(j["id"])
         self.assertEqual(j["status"], "failed")

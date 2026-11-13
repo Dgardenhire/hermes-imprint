@@ -1,9 +1,9 @@
-// Imprint designs: for a deck, a one-pager or a graphic, three designs of the same checked content side by side in the Studio.
+// Letterpress designs: for a deck, a one-pager or a graphic, three designs of the same checked content side by side in the Studio.
 // The person uses one whole, or picks slide by slide across the three (the deck's slide 3 from one design, slide 4 from
 // another), then edits a line, revises in words, restores an earlier version and exports.
 //
 // Everything on screen comes from GET outputs/{id}/designs (docs/API-DESIGNS.md). The pictures are drawn by the backend in
-// Chrome from markup the model wrote and Imprint cleaned: this file shows pictures and plain text, never model markup.
+// Chrome from markup the model wrote and Letterpress cleaned: this file shows pictures and plain text, never model markup.
 // It never decides whether a number passes; it shows what the trace said. Imports: react, @hermes/plugin-sdk, hermes-ui-kit.
 
 import { useEffect, useRef, useState } from 'react'
@@ -129,7 +129,7 @@ export function DesignsRoom({ out, st, api, job, onDesign, onTemplate }) {
     lost ? h('p', { className: 'ip-ds-bad', role: 'alert' }, POLL_GAVE_UP, ' ',
       h('button', { type: 'button', className: 'imp-linkish', onClick: () => { setLost(false); load() } }, 'Check again')) : null,
     view && !view.made && !working ? h('div', { className: 'ip-ds-empty' },
-      h('p', null, 'Imprint asks the model to lay this out three different ways, draws each one, looks at it, and fixes what is wrong. It takes a few minutes.'),
+      h('p', null, 'Letterpress asks the model to lay this out three different ways, draws each one, looks at it, and fixes what is wrong. It takes a few minutes.'),
       h(Button, { disabled: noBrowser, onClick: onDesign }, 'Design three options')) : null,
     h('section', { className: 'ip-ds-options', 'aria-label': 'The three designs' }, opts.map(o => h('article', { key: o.d, className: cls('ip-ds-opt', whole && whole.d === o.d && 'is-used') },
       h('div', { className: 'ip-ds-opt-head' },

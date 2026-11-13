@@ -324,7 +324,7 @@ class StreamedFetch(unittest.TestCase):
         self.assertLess(resp.read, 10)
 
     def test_decoded_bomb_stops_at_the_cap(self):
-        # A small gzip body that inflates hugely: Imprint inflates it itself, never more than the room left, so
+        # A small gzip body that inflates hugely: Letterpress inflates it itself, never more than the room left, so
         # the read stops in the first chunk past the cap.
         z = zlib.compressobj(9, zlib.DEFLATED, 16 + zlib.MAX_WBITS)
         bomb = b"".join(z.compress(b"\0" * (1024 * 1024)) for _ in range(200)) + z.flush()

@@ -41,7 +41,7 @@ class TestCacheWithRealState(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             p = Path(d) / "state.json"
             p.write_text(json.dumps(st))
-            env = dict(os.environ, IMPRINT_STATE_JSON=str(p))
+            env = dict(os.environ, LETTERPRESS_STATE_JSON=str(p))
             r = subprocess.run([node, "--test", str(ROOT / "tests" / "js" / "firstpaint.test.mjs")],
                                capture_output=True, text=True, env=env, timeout=120)
         self.assertEqual(r.returncode, 0, r.stdout[-4000:] + r.stderr[-2000:])

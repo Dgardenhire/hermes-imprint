@@ -1,11 +1,11 @@
-"""The AI lane's prompt bench: Imprint's own prompts and schemas through a real model outside Hermes.
+"""The AI lane's prompt bench: Letterpress's own prompts and schemas through a real model outside Hermes.
 
     /usr/bin/python3 harness/bench/bench.py loop1                    # all three source sets
     /usr/bin/python3 harness/bench/bench.py loop1 --sets harborlight  # one set
     /usr/bin/python3 harness/bench/bench.py loop1 --model claude-sonnet-4-5
 
 The model is reached through ``claude -p`` with ``--json-schema`` (Spike A), with every tool, MCP server, skill and
-settings file switched off, so the call is a plain structured completion. The real Imprint code runs around it:
+settings file switched off, so the call is a plain structured completion. The real Letterpress code runs around it:
 the same job handlers, corpus builder, cleaning and checks as in Hermes, in a temp data folder. Each model call is
 logged as one JSON file in ``docs/runs/ai/<loop>/`` with the model name and the seconds it took.
 
@@ -33,7 +33,7 @@ SETS = {
     "harborlight": [REPO / "harness/live/personas/denise" / n for n in ("FY26-Program-Report.docx", "board-retreat-notes.txt")],
     "salvia": [REPO / "harness/live/personas/ana" / n for n in ("about-us.txt", "fall-menu.txt")],
     "warming": [REPO / "samples" / n for n in ("warming-center-report.md", "council-work-session.vtt", "guest-and-volunteer-survey.txt")],
-    # Round 5's held-out set, frozen in 043d1b6 before any Imprint change; no prompt is tuned on it.
+    # Round 5's held-out set, frozen in 043d1b6 before any Letterpress change; no prompt is tuned on it.
     "heldout": [REPO / "harness/bench/sets/heldout" / n for n in ("fy26-annual-report.md", "board-notes.txt")],
     # Round 6's second held-out set, frozen in d105cde before any round-6 change; no prompt is tuned on it.
     "heldout2": [REPO / "harness/bench/sets/heldout2" / n for n in ("school-year-report.md", "staff-meeting-notes.txt")],
@@ -45,8 +45,8 @@ for _d in sorted((REPO / "harness/bench/sets").glob("heldout*")):
         SETS[_d.name] = sorted(f for f in _d.iterdir() if f.is_file() and f.name != "brand.txt" and not f.name.startswith("."))
 
 
-def load_imprint(data: Path):
-    os.environ["IMPRINT_DATA_DIR"] = str(data)
+def load_letterpress(data: Path):
+    os.environ["LETTERPRESS_DATA_DIR"] = str(data)
     if "fastapi" not in sys.modules:
         fa = types.ModuleType("fastapi")
 
@@ -76,11 +76,11 @@ def load_imprint(data: Path):
 
         fa.APIRouter, fa.HTTPException, fa.Request = APIRouter, HTTPException, type("Request", (), {})
         sys.modules["fastapi"] = fa
-    spec = importlib.util.spec_from_file_location("imprint_plugin_api_bench", REPO / "dashboard" / "plugin_api.py")
+    spec = importlib.util.spec_from_file_location("letterpress_plugin_api_bench", REPO / "dashboard" / "plugin_api.py")
     api = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(api)
     from importlib import import_module
-    pkg = "imprint_plugin_package"
+    pkg = "letterpress_plugin_package"
     import_module(f"{pkg}.revise")  # registers the AI lane's job kinds even before lane A's mount line lands
     return api, import_module(f"{pkg}.checks")
 
@@ -108,7 +108,7 @@ class ClaudeCli:
     def __init__(self, out: Path, tag: str, model: str = ""):
         self.out, self.tag, self.model = out, tag, model
         self.n = 0
-        self.scratch = Path(tempfile.mkdtemp(prefix="imprint-bench-cli-"))
+        self.scratch = Path(tempfile.mkdtemp(prefix="letterpress-bench-cli-"))
         (self.scratch / "mcp.json").write_text('{"mcpServers":{}}')
 
     async def acomplete_structured(self, **kw):
@@ -155,8 +155,8 @@ class ClaudeCli:
 
 
 def run_set(name: str, files: list, out: Path, model: str) -> dict:
-    data = Path(tempfile.mkdtemp(prefix=f"imprint-bench-{name}-"))
-    api, CK = load_imprint(data)
+    data = Path(tempfile.mkdtemp(prefix=f"letterpress-bench-{name}-"))
+    api, CK = load_letterpress(data)
     service, jobs, store = api.service, api.jobs, api.store
     store.forget_everything()
     llm = ClaudeCli(out, name, model)
@@ -224,7 +224,7 @@ def main():
     out = REPO / "docs" / "runs" / "ai" / a.loop
     out.mkdir(parents=True, exist_ok=True)
     names = a.sets.split(",")
-    if len(names) == 1:  # one set per process: Imprint's data folder is chosen once, when it loads
+    if len(names) == 1:  # one set per process: Letterpress's data folder is chosen once, when it loads
         print(f"{names[0]}:", flush=True)
         s = run_set(names[0], SETS[names[0]], out, a.model)
         (out / f"{names[0]}-summary.json").write_text(json.dumps(s, indent=2))

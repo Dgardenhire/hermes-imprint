@@ -59,7 +59,7 @@ class Job(unittest.TestCase):
         self.assertTrue(all(x["suggestion"] for x in r["questions"]))
         self.assertEqual(NG.last()["asks"][1]["what"], "A short deck for funders about the sixth site")
         call = llm.calls[-1]
-        self.assertEqual(call["purpose"], "imprint.notebook_guide")
+        self.assertEqual(call["purpose"], "letterpress.notebook_guide")
         self.assertIs(call["json_schema"], NG.SCHEMA)
 
     def test_a_reply_with_nothing_usable_fails_with_retry(self):

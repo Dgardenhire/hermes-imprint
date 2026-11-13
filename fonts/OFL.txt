@@ -1,4 +1,4 @@
-Fonts bundled with Imprint
+Fonts bundled with Letterpress
 
 Each family below is used unmodified (only the file names changed) and is
 licensed under the SIL Open Font License, Version 1.1, reproduced in full

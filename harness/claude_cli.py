@@ -1,4 +1,4 @@
-"""A stand-in for Imprint's model runtime that talks to ``claude -p`` (harness only; inside Hermes the runtime is Hermes's model).
+"""A stand-in for Letterpress's model runtime that talks to ``claude -p`` (harness only; inside Hermes the runtime is Hermes's model).
 
 ``structured(system, instructions, body, schema, purpose, images=...)`` returns the parsed JSON the model wrote. Images are written
 next to the work folder and named in the prompt; the model opens them with the Read tool."""

@@ -1,6 +1,6 @@
-// Imprint's first paint: the last good notebook, shown at once on the next open while the real one loads.
+// Letterpress's first paint: the last good notebook, shown at once on the next open while the real one loads.
 //
-// Opening Imprint waits on its backend: Hermes starts the plugin helper and shakes hands with it before the first
+// Opening Letterpress waits on its backend: Hermes starts the plugin helper and shakes hands with it before the first
 // request is answered, which takes two or three seconds. The page's first screen is built from three answers:
 // GET state, GET chats and GET notebook/guide. This file keeps a small copy of the last good answers in the Desktop
 // SDK's own plugin storage (ctx.storage, the same place other plugins keep their per-window choices), so the next open
@@ -10,7 +10,7 @@
 // What is kept: only the keys the first screen reads (STATE_KEYS), no running jobs, no outputs still being built, and
 // nothing whose name says it is a secret (SECRET_KEY) or whose value looks like a key or a bearer token. Pictures go
 // in only while the copy stays under CACHE_MAX characters, the ones on screen first. The very first open has no copy
-// and shows the usual "Opening Imprint".
+// and shows the usual "Opening Letterpress".
 //
 // No React, no SDK: tests drive it with a fake storage (tests/js/firstpaint.test.mjs).
 

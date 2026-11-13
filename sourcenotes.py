@@ -329,7 +329,7 @@ def export(output_id: str, kit_id: str, path) -> str:
     _s, _b, by_ref = S.passages_for(out["source_ids"])
     _idx, index_rows = L.source_index(S._doc_for(output_id, kit), by_ref)
     brand, _text, logo = DS.brand_for(kit)
-    work = Path(tempfile.mkdtemp(prefix="imprint-notes-"))
+    work = Path(tempfile.mkdtemp(prefix="letterpress-notes-"))
     try:
         printed = on_paper(brand)
         if printed is not brand:

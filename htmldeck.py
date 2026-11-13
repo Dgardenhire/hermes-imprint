@@ -1,20 +1,20 @@
-"""The HTML deck path: the model writes each slide as HTML and CSS at 1920x1080 and chooses its own exhibits; Imprint
+"""The HTML deck path: the model writes each slide as HTML and CSS at 1920x1080 and chooses its own exhibits; Letterpress
 adds what only it does.
 
     1. ``sanitize``   the model's markup is untrusted: scripts, event handlers, links, forms, frames, external
                       addresses and anything that can fetch are removed before a browser sees it;
     2. ``trace``      every number in the markup must sit inside an element that carries ``data-source="P3 P7"`` (the
                       passage ids it is cited to), and must be found in, or worked out from two numbers in, those
-                      passages (the same ``checks.check_line`` every other Imprint output uses). Chart marks carry
+                      passages (the same ``checks.check_line`` every other Letterpress output uses). Chart marks carry
                       ``data-value`` and are traced the same way. Unsupported numbers come back as flags;
     3. ``render``     headless Chrome draws every slide (a screenshot per slide, one PDF), measures what the model
                       cannot see (text cut off, boxes outside the slide, type under the floor) and returns it;
-    4. ``make``       the loop: the model writes, Imprint renders, the model is shown the pictures and the problem
+    4. ``make``       the loop: the model writes, Letterpress renders, the model is shown the pictures and the problem
                       list and fixes what it sees, up to ``rounds`` times;
     5. ``pptx``       the slides as full-bleed pictures with the slide's notes and sources in the notes pane.
 
 Chrome runs with its own scratch ``--user-data-dir`` and ``--mute-audio``; the folder is deleted afterward. The page
-carries a Content-Security-Policy that allows no network, no script but Imprint's own measuring script (by hash), and
+carries a Content-Security-Policy that allows no network, no script but Letterpress's own measuring script (by hash), and
 only inline styles, ``data:`` fonts and ``data:`` pictures."""
 
 from __future__ import annotations
@@ -36,13 +36,15 @@ from typing import Callable, Optional
 try:  # package import (Hermes) or flat import (tests)
     from . import browser as B
     from . import checks as C
+    from . import childenv as CE
     from . import content as K
 except ImportError:  # pragma: no cover
     import browser as B
     import checks as C
+    import childenv as CE
     import content as K
 
-# Every output Imprint draws with this engine is a canvas of fixed pixels the model lays out itself.
+# Every output Letterpress draws with this engine is a canvas of fixed pixels the model lays out itself.
 FORMATS = {
     "deck": {"w": 1920, "h": 1080, "min": 26, "multi": True, "label": "slide", "body_px": 30},
     "onepager": {"w": 816, "h": 1056, "min": 12, "multi": False, "label": "page (US Letter at 96 px to the inch)", "body_px": 14},
@@ -58,7 +60,7 @@ class NoBrowser(ValueError):
 
 
 def browser_path() -> str:
-    """The browser to draw with, looked up now (so installing one, or setting IMPRINT_BROWSER, works without a restart)."""
+    """The browser to draw with, looked up now (so installing one, or setting LETTERPRESS_BROWSER, works without a restart)."""
     got = B.find()
     if not got:
         raise NoBrowser(B.NOT_FOUND)
@@ -92,8 +94,9 @@ _URL = re.compile(r"url\s*\(\s*(['\"]?)(.*?)\1\s*\)", re.I | re.S)
 _BAD_CSS = re.compile(r"@import|expression\s*\(|javascript:|vbscript:|behavior\s*:|-moz-binding|@namespace|@font-face|image-set\s*\(|"
                       r"element\s*\(|cross-fade\s*\(|attr\s*\(|src\s*:", re.I)
 _DATA_IMG = re.compile(r"^data:image/(?:png|jpeg|jpg|gif|webp);base64,[A-Za-z0-9+/=\s]+$", re.I)
-_LOGO = "imprint:logo"
-_LOGO_BAND = "imprint:logo-band"  # the logo as it goes on a brand-colour ground (the reversed or knocked-out mark)
+_LOGO = "letterpress:logo"
+_LOGO_BAND = "letterpress:logo-band"  # the logo as it goes on a brand-colour ground (the reversed or knocked-out mark)
+_EARLIER_LOGO = "imprint:logo"  # the token in designs made before the rename (also the start of its -band form)
 
 
 _CONTENT = re.compile(r"(?<![\w-])content\s*:\s*([^;}]*)", re.I)
@@ -296,7 +299,7 @@ def sanitize(markup: str) -> tuple:
     attributes, no script, no event handler, no link, no form, no frame, no address a browser could fetch."""
     removed: list = []
     p = _Clean(removed)
-    p.feed(markup or "")
+    p.feed((markup or "").replace(_EARLIER_LOGO, _LOGO))
     p.close()
     out = "".join(p.out)
     # A second pass must change nothing: markup whose meaning shifts when it is read again is not kept.
@@ -554,8 +557,8 @@ _MEASURE = r"""
      if(okAttrs.indexOf(a)<0){bad=a;break;}}
    if(bad) out.push({slide:1,kind:'unsafe',what:bad});
  });
- var pre=document.createElement('pre'); pre.id='imprint-report'; pre.textContent=JSON.stringify(out); document.body.appendChild(pre);
- console.log('IMPRINTREPORT-__NONCE__:'+JSON.stringify(out)+':ENDREPORT-__NONCE__');
+ var pre=document.createElement('pre'); pre.id='letterpress-report'; pre.textContent=JSON.stringify(out); document.body.appendChild(pre);
+ console.log('LETTERPRESSREPORT-__NONCE__:'+JSON.stringify(out)+':ENDREPORT-__NONCE__');
 })();
 """
 
@@ -576,7 +579,7 @@ def page(slides: list, css: str, logo_data_uri: str = "", only: Optional[int] = 
     for i, sl in enumerate(slides, 1):
         if only and i != only:
             continue
-        h = re.sub(r"<\s*/?\s*(?:meta|base|link|script|iframe|object|embed)\b[^>]*>", "", sl.get("html") or "", flags=re.I)
+        h = re.sub(r"<\s*/?\s*(?:meta|base|link|script|iframe|object|embed)\b[^>]*>", "", sl.get("html") or "", flags=re.I).replace(_EARLIER_LOGO, _LOGO)
         for tok, uri in ((_LOGO_BAND, band), (_LOGO, paper)):
             h = h.replace(f'src="{tok}"', f'src="{uri}"' if uri else 'src=""')
             h = h.replace(f"url({tok})", f"url({uri})" if uri else "none")
@@ -590,11 +593,12 @@ def page(slides: list, css: str, logo_data_uri: str = "", only: Optional[int] = 
 
 def _chrome(args: list, timeout: int = 120) -> subprocess.CompletedProcess:
     exe = browser_path()  # before any scratch folder is made, so a missing browser leaves nothing behind
-    scratch = tempfile.mkdtemp(prefix="imprint-chrome-")
+    scratch = tempfile.mkdtemp(prefix="letterpress-chrome-")
     try:
         return subprocess.run([exe, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--mute-audio", "--no-first-run",
                                "--disable-extensions", "--no-default-browser-check", "--force-device-scale-factor=1",
                                f"--user-data-dir={scratch}", *args], capture_output=True, text=True, timeout=timeout,
+                              env=CE.child_env(),  # only the allowlisted names, never Hermes's keys
                               # with a full path and close_fds=False, subprocess starts the browser with posix_spawn, not fork:
                               # a forked child can crash in a macOS network-framework fork handler (see sitestyle._spawn).
                               # Descriptors stay close-on-exec, so the browser still gets only its own pipes.
@@ -607,7 +611,7 @@ def _read_report(r, nonce: str, i: int) -> list:
     """The measuring script's report for slide ``i``: taken only from a console line of the page (not from anything else Chrome
     printed), only with this render's nonce, and only when there is exactly one. Zero or more than one fails closed: the slide
     is reported unsafe and thrown out, since a missing or doubled report is what a slide trying to hide a problem would cause."""
-    pat = re.compile(r"IMPRINTREPORT-" + re.escape(nonce) + r":(.*?):ENDREPORT-" + re.escape(nonce))
+    pat = re.compile(r"LETTERPRESSREPORT-" + re.escape(nonce) + r":(.*?):ENDREPORT-" + re.escape(nonce))
     hits = [m.group(1) for line in (r.stderr or "").splitlines() if "CONSOLE" in line for m in pat.finditer(line)]
     if len(hits) != 1:
         return [{"slide": i, "kind": "unsafe", "what": "the page's own report was missing or appeared more than once"}]
@@ -628,7 +632,7 @@ def render(slides: list, css: str, out_dir, logo_data_uri: str = "", pdf: bool =
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     W, H = FORMATS[kind]["w"], FORMATS[kind]["h"]
-    work = Path(tempfile.mkdtemp(prefix="imprint-deckhtml-"))
+    work = Path(tempfile.mkdtemp(prefix="letterpress-deckhtml-"))
     pngs, problems = [], []
     wanted = sorted(set(range(1, len(slides) + 1)) if only is None else {i for i in only if 1 <= i <= len(slides)})
     exe = browser_path()
@@ -672,7 +676,7 @@ def render(slides: list, css: str, out_dir, logo_data_uri: str = "", pdf: bool =
 
 def export_pdf(slides: list, css: str, path, logo_data_uri: str = "", kind: str = "deck") -> str:
     """One PDF of the slides as they stand: vector text, the brand's own fonts embedded, one page per slide."""
-    work = Path(tempfile.mkdtemp(prefix="imprint-pdf-"))
+    work = Path(tempfile.mkdtemp(prefix="letterpress-pdf-"))
     try:
         f = work / "deck.html"
         f.write_text(page(slides, css, logo_data_uri, kind=kind), encoding="utf-8")
@@ -726,7 +730,7 @@ data-value="936" and a data-source of its own. If a number is worked out from tw
 passages on that element and say in words what it is ("212 more than the year before"). Never write a number, date, name or
 claim the sources do not support. Years and dates need no source.
 
-Nothing may fetch anything: no links, no external images, no external fonts. The logo is <img src="imprint:logo" alt="">."""
+Nothing may fetch anything: no links, no external images, no external fonts. The logo is <img src="letterpress:logo" alt="">."""
 
 
 def rules(kind: str) -> str:
@@ -807,8 +811,8 @@ DIRECTIONS = {
             "Where CONTENT gives a slide two points that are one comparison, merge them into one exhibit.")},
         "statement": {"name": "Statement", "brief": (
             "A keynote statement deck: one idea per slide on a plain ground, nothing else. Alternate full-bleed brand-colour "
-            "slides (background var(--band), type var(--band-text), logo imprint:logo-band) with paper slides (background "
-            "var(--paper), type var(--brand), logo imprint:logo); never two of the same ground in a row. Each slide holds at most "
+            "slides (background var(--band), type var(--band-text), logo letterpress:logo-band) with paper slides (background "
+            "var(--paper), type var(--brand), logo letterpress:logo); never two of the same ground in a row. Each slide holds at most "
             "four things: one large figure or statement (160 to 320px, var(--font-heading), weight 800, line-height 0.95), one "
             "line of 44 to 52px directly under it saying what it means, the source at 26px on the bottom margin, and the logo. "
             "Set the large element flush left on the 96px margin in the lower half of the slide, like a poster. Where CONTENT "
@@ -915,7 +919,7 @@ def fix_prompt(brand_text: str, sources_text: str, slides: list, report: dict, d
 
 
 def _image_block(png: str) -> dict:
-    """The picture as Imprint's runtime passes an image to the model (the same block the pictures lane uses)."""
+    """The picture as Letterpress's runtime passes an image to the model (the same block the pictures lane uses)."""
     return {"type": "image", "data": Path(png).read_bytes(), "mime_type": "image/png", "file_name": Path(png).name}
 
 
@@ -959,7 +963,7 @@ HARD = ("overlap", "cut", "cut-sideways", "outside", "small", "rejected")
 async def make(llm, brand: dict, brand_text: str, passages: dict, content: str, out_dir, direction: str = "editorial",
                logo_data_uri: str = "", rounds: int = 2, kind: str = "deck", step=None, style_hint: str = "") -> dict:
     """The loop for one design option. ``llm.structured(system=, instructions=, body=, schema=, purpose=, images=)`` is
-    Imprint's runtime. Round 0 writes; each later round renders, measures, traces, shows the model its pictures and takes
+    Letterpress's runtime. Round 0 writes; each later round renders, measures, traces, shows the model its pictures and takes
     its fixes. The markup is sanitized every time it comes back. Hard layout problems (text over text, cut off, outside the
     canvas, type under the floor) earn up to two more rounds past ``rounds``; whatever is left is returned, never hidden.
     ``step(text)`` is told where it is, for a progress line."""
@@ -1226,7 +1230,7 @@ def _tpl_parts(s: dict) -> tuple:
 
 
 def template_slides(doc: dict, direction: str = "statement") -> list:
-    """The deck as Imprint's own fixed layout, in ``direction``'s ground and type: a title slide, then one slide per content
+    """The deck as Letterpress's own fixed layout, in ``direction``'s ground and type: a title slide, then one slide per content
     point with its headline, its figure and its lines. No model call. Used only when the drawn design came back broken twice."""
     t = _TPL.get(direction) or _TPL["statement"]
     e = _html.escape

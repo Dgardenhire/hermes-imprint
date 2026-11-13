@@ -1,11 +1,11 @@
-"""Kits: the brand as an object Imprint can hold, check and enforce.
+"""Kits: the brand as an object Letterpress can hold, check and enforce.
 
 A kit (``kit.json``) holds:
 
 - ``name``, ``origin`` (starter, hand, site, guided) and ``origin_note``
 - ``paper`` and ``ink``: the page and its body text. Fixed by the brand, never derived.
 - ``colors``: 1 to 8 ``{hex, role, name}``. Roles: head, accent, accent2, band, fill, highlight, rule.
-  Imprint measures each against the paper (``colors.usage``) and never lets a color do a job its
+  Letterpress measures each against the paper (``colors.usage``) and never lets a color do a job its
   contrast can't carry: a 2.2:1 cyan stays a rule, and the text on a band uses whichever of paper or
   ink reads best on it.
 - ``type``: ``heading`` and ``body`` as ``{family, stack, weight, style, case}``, and a ``scale`` ratio
@@ -120,7 +120,7 @@ def _face(v, default_family: str, default_stack: str) -> dict:
 def normalize(raw: dict) -> dict:
     """A clean kit from what the page or the model sent. Raises KitError with a plain reason."""
     if not isinstance(raw, dict):
-        raise KitError("That kit is not in a form Imprint can read.")
+        raise KitError("That kit is not in a form Letterpress can read.")
     kit = {}
     kit["name"] = _text(raw.get("name"), 60, "Name", required=True)
     kit["origin"] = raw.get("origin") if raw.get("origin") in ("starter", "hand", "site", "guided", "copy", "import") else "hand"
@@ -221,7 +221,7 @@ FONT_FILE = re.compile(r"[a-z0-9][a-z0-9-]{0,160}\.ttf")
 
 
 def safe_logo(v, stem: str = "logo") -> Optional[dict]:
-    """A logo entry only in the one shape Imprint writes (``logo.<kind>``, or ``logo-reversed.<kind>`` for the
+    """A logo entry only in the one shape Letterpress writes (``logo.<kind>``, or ``logo-reversed.<kind>`` for the
     kit's knockout version, in the kit's own folder). Anything else from the page or a model (a path, another
     file name) is dropped, so no route can read outside the kit."""
     if stem not in ("logo", "logo-reversed"):
@@ -232,7 +232,7 @@ def safe_logo(v, stem: str = "logo") -> Optional[dict]:
 
 
 def safe_fonts(v) -> list:
-    """Font entries only with a file name Imprint itself writes (``fonts/<family-weight-style>.ttf``)."""
+    """Font entries only with a file name Letterpress itself writes (``fonts/<family-weight-style>.ttf``)."""
     out = []
     for f in (v if isinstance(v, list) else [])[:12]:
         if not isinstance(f, dict) or not isinstance(f.get("file"), str) or not FONT_FILE.fullmatch(f["file"]):
@@ -513,11 +513,11 @@ def set_logo(kit_id: str, filename: str, data: bytes, alt: bool = False) -> dict
     if ext == ".svg":
         why = IM.svg_problem(data)
         if why:
-            raise KitError(f"Imprint won't use that SVG: {why}. Export a plain SVG or a PNG.")
+            raise KitError(f"Letterpress won't use that SVG: {why}. Export a plain SVG or a PNG.")
     else:
         why = IM.png_problem(data) if ext == ".png" else IM.jpg_problem(data)
         if why:
-            raise KitError(f"Imprint won't use that logo: {why}. Export a PNG at most 4096 pixels wide, or an SVG.")
+            raise KitError(f"Letterpress won't use that logo: {why}. Export a PNG at most 4096 pixels wide, or an SVG.")
     kind = "jpg" if ext in (".jpg", ".jpeg") else ext[1:]
     for old in d.glob(f"{stem}.*"):
         old.unlink()

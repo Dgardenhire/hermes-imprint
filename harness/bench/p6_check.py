@@ -1,14 +1,14 @@
-"""P6: Imprint's own number checker over a deck's text, for either side.
+"""P6: Letterpress's own number checker over a deck's text, for either side.
 
     /usr/bin/python3 harness/bench/p6_check.py RESULT.json [PLAIN.pptx] > report.json
 
-RESULT.json is Imprint's build for the same source set (it holds the passages both sides were given). With a .pptx,
+RESULT.json is Letterpress's build for the same source set (it holds the passages both sides were given). With a .pptx,
 every text box (its paragraphs joined, as one element), table row and chart value in it is read, and each number is looked for the way
 ``checks.check_line`` looks: in the sources as written (exact), or worked out from two numbers in the sources
 (computed, one operation: a difference, sum, ratio or percent change). The plain deck cites no passages, so it is
 checked against all of them, which is the lenient reading: a number counts as found if ANY passage holds it, or two
-numbers anywhere work it out. Dates, years and slide counters are skipped, as on Imprint's side. Without a .pptx,
-the Imprint deck's own grounding is reported. Spelled-out source numbers ("Seventy-one") count as found.
+numbers anywhere work it out. Dates, years and slide counters are skipped, as on Letterpress's side. Without a .pptx,
+the Letterpress deck's own grounding is reported. Spelled-out source numbers ("Seventy-one") count as found.
 """
 
 from __future__ import annotations
@@ -30,7 +30,7 @@ def pptx_lines(path: Path) -> list:
     for n, slide in enumerate(p.slides, start=1):
         for sh in slide.shapes:
             if sh.has_text_frame:
-                # One text box is one element, as on Imprint's side: a big number and its label are often two
+                # One text box is one element, as on Letterpress's side: a big number and its label are often two
                 # paragraphs of one box, and the label's words are what name a worked-out number ("per event").
                 t = " ".join("".join(r.text for r in para.runs).strip() for para in sh.text_frame.paragraphs).strip()
                 if t and not re.fullmatch(r"\d{1,2}\s*/\s*\d{1,2}|\d{1,2}", t):  # page counters ("3 / 8") and card numbers
@@ -50,7 +50,7 @@ def pptx_lines(path: Path) -> list:
 def main():
     res = json.loads(Path(sys.argv[1]).read_text())
     import tempfile
-    api, CK = B.load_imprint(Path(tempfile.mkdtemp(prefix="p6-check-")))
+    api, CK = B.load_letterpress(Path(tempfile.mkdtemp(prefix="p6-check-")))
     by_ref = {k: {**v, "ref": k} for k, v in res["passages"].items()}
     ids = list(by_ref)
     if len(sys.argv) > 2:
@@ -70,7 +70,7 @@ def main():
     else:
         g = res["grounding"]
         nums = [i for i in g if i.get("kind") in ("number", "quote") and i["status"] not in ("date",)]
-        print(json.dumps({"side": "imprint", "checked": len(nums), "missing": [i for i in nums if i["status"] == "missing"],
+        print(json.dumps({"side": "letterpress", "checked": len(nums), "missing": [i for i in nums if i["status"] == "missing"],
                           "computed": [i for i in nums if i["status"] == "computed"]}, indent=1, ensure_ascii=False))
 
 

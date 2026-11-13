@@ -9,17 +9,19 @@ import json, os, subprocess, sys, tempfile, time, urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from childenv import child_env  # noqa: E402  only the allowlisted names reach the programs started here
 OUT = Path(sys.argv[1]).resolve(); OUT.mkdir(parents=True, exist_ok=True)
 PORT = int(sys.argv[2]) if len(sys.argv) > 2 else 8821
-DATA = Path(tempfile.mkdtemp(prefix="imprint-studio-shots-"))
+DATA = Path(tempfile.mkdtemp(prefix="letterpress-studio-shots-"))
 
 seed = f'''
 import os, sys, json
 sys.path.insert(0, {str(ROOT / "tests")!r})
 from importlib import import_module
 from _load import service, store
-os.environ["IMPRINT_DATA_DIR"] = {str(DATA)!r}
-D = import_module("imprint_plugin_package.designs")
+os.environ["LETTERPRESS_DATA_DIR"] = {str(DATA)!r}
+D = import_module("letterpress_plugin_package.designs")
 st = service.open_sample()
 kit = (store.get_setting("prefs", {{}}) or {{}}).get("kit")
 rec = json.load(open({str(ROOT / "harness" / "designs-harborlight.json")!r}))
@@ -28,7 +30,7 @@ for kind in ("deck", "onepager"):
     D.seed(ids[kind], kit, rec[kind])
 brief_path = os.environ.get("BRIEF_JSON")
 if brief_path and os.path.exists(brief_path):
-    k = import_module("imprint_plugin_package.kits").save_new({{"name": "Site look", "colors": [{{"hex": "#c2a05b", "role": "accent"}}, {{"hex": "#001e42", "role": "head"}}],
+    k = import_module("letterpress_plugin_package.kits").save_new({{"name": "Site look", "colors": [{{"hex": "#c2a05b", "role": "accent"}}, {{"hex": "#001e42", "role": "head"}}],
         "paper": "#f3efe7", "ink": "#001028", "style_brief": json.load(open(brief_path))}})
     ids["kit"] = k["id"]
 print(json.dumps(ids))
@@ -66,7 +68,7 @@ try:
         return pg
 
     with sync_playwright() as p:
-        b = p.chromium.launch(args=["--mute-audio", "--autoplay-policy=user-gesture-required"])
+        b = p.chromium.launch(args=["--mute-audio", "--autoplay-policy=user-gesture-required"], env=child_env())
         for w, h, theme in SIZES:
             pg = open_designs(b, w, h, theme)
             pg.screenshot(path=str(OUT / f"studio-three-options-{w}-{theme}.png"))

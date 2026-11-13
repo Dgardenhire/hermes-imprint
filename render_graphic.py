@@ -69,7 +69,7 @@ def render_pdf(doc, kit, pal, faces, idx, passages, logo=None) -> bytes:
     c = rlcanvas.Canvas(buf, pagesize=(sc["w"], sc["h"]), pageCompression=1, initialFontName=ty.name("body"))
     c.setTitle(doc.get("headline", "Graphic"))
     c.setAuthor(kit.get("org") or "")
-    c.setCreator("Imprint for Hermes")
+    c.setCreator("Letterpress for Hermes")
     SC.draw_pdf(c, sc, ty, logos=RD.logo_bytes(logo))
     c.showPage()
     c.save()

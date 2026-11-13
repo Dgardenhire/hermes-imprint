@@ -1,5 +1,5 @@
 #!/bin/sh
-# Screenshot Imprint with headless Chrome into docs/shots/, against live mode: the real routes and a scripted
+# Screenshot Letterpress with headless Chrome into docs/shots/, against live mode: the real routes and a scripted
 # stand-in model (harness/live/), filled by harness/live/seed_notebook.py with the warming-center samples.
 #   sh harness/shoot.sh            (needs network for React from esm.sh and codicons from jsdelivr)
 # The fixture harness (harness/index.html without live=1) still serves the Kits screens from fixtures.json.

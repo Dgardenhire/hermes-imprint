@@ -2,7 +2,7 @@
 
 A teal lighthouse on a teal band vanishes; a white wordmark on white paper does too. ``treatment`` reads the
 logo's own colors (the opaque pixels of a PNG, the fills and strokes of an SVG) and measures what share of
-the mark stands out from the ground (1.8:1 or more). When too little does, Imprint switches to the
+the mark stands out from the ground (1.8:1 or more). When too little does, Letterpress switches to the
 knockout treatment: the mark's shape set in one color that reads on the ground (the band's own text color,
 or the ink on paper), the way a designer prepares a reversed logo. A JPG has no transparency to knock out,
 so it sits on a small paper tile instead. The proof says which treatment it used, in the Logo check.
@@ -177,7 +177,7 @@ def for_kit(path: Optional[Path], kit: dict, pal: dict, alt: Optional[Path] = No
     """``{"paper": variant, "band": variant}`` for one kit (either may be ``None`` with no logo).
 
     Where the main logo would vanish, the kit's own reversed logo (``alt``) is used when it reads on that
-    ground; failing that, Imprint knocks the main logo out in one color."""
+    ground; failing that, Letterpress knocks the main logo out in one color."""
     out = {}
     for place, (g, t) in grounds(kit, pal).items():
         v = variant(path, g, t)
@@ -212,4 +212,4 @@ def pill(kit: dict, kind: str, variants: dict) -> Optional[dict]:
         return None
     return {"id": "logo", "tone": "good", "label": notes[0] if len(notes) == 1 else "Logo knocked out where it would vanish",
             "items": notes + ([] if all("reversed logo is used" in x for x in notes) else
-                              ["If you have a reversed (knockout) version of your logo, add it to the brand on the Brands tab and Imprint will use it here."])}
+                              ["If you have a reversed (knockout) version of your logo, add it to the brand on the Brands tab and Letterpress will use it here."])}

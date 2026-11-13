@@ -1,7 +1,7 @@
-# Imprint security audit
+# Letterpress security audit
 
 Independent audit, Nov 8, 2026, against the hackathon security bar (SECURITY-BAR.md, items 1 to 10) and the
-must-fix in the Imprint spec. The auditor did not build Imprint. Code audited: `main` at `408cc05` (Fonts offline,
+must-fix in the Letterpress spec. The auditor did not build Letterpress. Code audited: `main` at `408cc05` (Fonts offline,
 stage 5). Fixes landed as `audit:` commits on `main`, `37f1d40` through `81e0b2c`, not pushed.
 
 Ground rules kept: no `hermes` command was run, nothing was installed into `~/.hermes`, and `~/.hermes/.env`,
@@ -29,7 +29,7 @@ all passing.
 | bandit 1.8 | `uvx bandit -r . -x ./tests,./harness` (7,696 lines) | 0 high, 4 medium, 11 low. Medium: B314 x2 (`ElementTree.fromstring`, imports.py:723 and :1021) and B608 x2 (service.py:167, :170). Low: B405 x2 (same XML imports), B110 x9 (`try/except/pass` around best-effort cleanup and optional font/logo drawing). All justified below. |
 | semgrep | `uvx semgrep scan --metrics=off --config p/python --config p/security-audit --config p/secrets --config p/javascript --config p/owasp-top-ten` (52 files, tests included) | 2 results, both `use-defused-xml` at imports.py:713 and :1020. Justified below; F7 tightened the first. |
 | Hermes SSRF probe | `is_safe_url` on 25 addresses (isolated home) | 24 blocked: 127.0.0.1, localhost, 0.0.0.0, [::1], 2130706433, 0x7f000001, 127.1, 017700000001, 169.254.169.254, [::ffff:127.0.0.1], 10/8, 192.168/16, 172.16/12, 100.64/10 (CGNAT), [fe80::1], userinfo and backslash tricks (`example.com@127.0.0.1`, `127.0.0.1#@example.com`, `127.0.0.1\@example.com`), file:, ftp:, gopher:, metadata.google.internal, localtest.me and 127.0.0.1.nip.io (DNS to loopback). Only https://example.com passed. |
-| Live fetch | Imprint's `fetch` through the real Hermes client | example.com read; httpbin gzip and deflate read whole; httpbin brotli refused ("couldn't unpack"); a 100 KB body stopped at a 64 KB cap; http://127.0.0.1:8770 refused. |
+| Live fetch | Letterpress's `fetch` through the real Hermes client | example.com read; httpbin gzip and deflate read whole; httpbin brotli refused ("couldn't unpack"); a 100 KB body stopped at a 64 KB cap; http://127.0.0.1:8770 refused. |
 | Real Starlette check | `_upload` with Starlette 1.3.1 from the Hermes venv | A small multipart file comes through; a 60 MB multipart body with no Content-Length is refused after 405 of 960 chunks. |
 
 ### Justifications for what the scanners report
@@ -51,12 +51,12 @@ all passing.
 > ingest.py downloads the whole response and only then trims it... Stream it, refuse early on a Content-Length
 > over the cap, count DECODED bytes while reading, stop at the cap, and say so plainly. Tests: an oversized
 > response, a gzip bomb, and a missing Content-Length all stop at the cap. Apply the same rule to every fetch and
-> upload in Imprint.
+> upload in Letterpress.
 
 **Closed.** Before this audit the builder had moved to `client.stream` and counted `aiter_bytes()`, with tests
 that fed already-decoded chunks to a stand-in client. Two gaps were left, both closed here:
 
-- **Fetch (F1).** httpx inflates each network chunk whole before Imprint's count sees it, so a 64 KB gzip chunk
+- **Fetch (F1).** httpx inflates each network chunk whole before Letterpress's count sees it, so a 64 KB gzip chunk
   could become 64 MB at once, and a brotli or zstd stream (decoded when those packages are installed) far more.
   Measured with the real httpx client: a 200 MB gzip bomb now peaks under 24 MB for a 2 MB cap.
 - **Uploads (F2).** The multipart branch of `_upload` called Starlette's `request.form()`, which spools file parts
@@ -85,7 +85,7 @@ folder-import JSON).
 reads a kit from a site, whose server answers with a small gzip body that inflates to gigabytes, or with brotli,
 or with compressed padding that inflates to nothing so the read never ends, or trickles bytes under the
 20-second per-read timeout. *Fix:* `fetch` reads `aiter_raw()` and inflates with zlib asking for no more than the
-room left under the cap; only identity, gzip and deflate are accepted, and Imprint asks for only those
+room left under the cap; only identity, gzip and deflate are accepted, and Letterpress asks for only those
 (`Accept-Encoding: gzip, deflate`); compressed bytes are capped at twice the cap; the whole read has a 60-second
 deadline. *Tests:* `F1_FetchInflatesWithinTheCap` (8): real-httpx gzip bomb peak memory, unasked-for encodings
 refused, empty deflate blocks stop, trickle stops at the deadline, only gzip and deflate are asked for, small
@@ -94,7 +94,7 @@ localhost, gopher:), only web schemes accepted. Six of them fail on the original
 
 **F2. Multipart uploads were spooled whole before the 25 MB check.** *Scenario:* any multipart POST to
 `/sources/file`, `/kits/import/file`, `/kits/<id>/logo` or `/kits/<id>/fonts` with a body of any size is written
-to the system temp folder (outside plugin-data) by Starlette before Imprint looks at it. *Fix:* the body is read
+to the system temp folder (outside plugin-data) by Starlette before Letterpress looks at it. *Fix:* the body is read
 with `_read_capped` (refused on a declared length over the cap before any read, and as soon as the streamed bytes
 pass it), then only those bytes go to `request.form(max_files=1, max_fields=8)`. *Tests:*
 `F2_MultipartUploadsAreCappedFirst` (3); all three fail on the original code.
@@ -110,7 +110,7 @@ and five hostile pages each finish in under 10 s, and the readers still find the
 same-site links and title.
 
 **F4. The one write path did not check where it wrote.** *Scenario:* defense in depth. Every caller built safe
-names (route ids are checked against fixed patterns, file names are Imprint's own), but `store.write_bytes`
+names (route ids are checked against fixed patterns, file names are Letterpress's own), but `store.write_bytes`
 would write anywhere it was pointed, and the audio copy in `_gather_audio` bypassed it. *Fix:* `write_bytes`
 (and `write_json` through it) resolves the target and refuses a climbing path, an absolute path elsewhere, or a
 link that points out; the audio copy goes through it. *Tests:* `F4_EveryWriteStaysInTheDataFolder` (2).
@@ -122,7 +122,7 @@ reports the file. pypdf's own per-stream limit (75 MB) and F8's floor cover a si
 `F5_PdfReadingStopsAtTheKeepLimit`.
 
 **F6. Logo checks missed SVG `<style>` elements, `url()` paints and JPEG size.** *Scenario:* an SVG logo carries
-`<style>@import url(https://...)</style>` or `fill="url(https://...)"`; inert today because Imprint shows SVGs
+`<style>@import url(https://...)</style>` or `fill="url(https://...)"`; inert today because Letterpress shows SVGs
 only as `<img>` data URLs and never rasterizes them, but a future loader would follow them. A 2 MB JPEG declares
 a 60,000-pixel frame that reportlab and python-pptx would unpack in full. Kit PNG uploads were checked for the
 signature only. *Fix:* both SVG forms are refused (local `url(#id)` still passes); JPEGs are read for their frame
@@ -141,12 +141,12 @@ which is Hermes's own documents pin, so it never conflicts. *Test:* `F8_Dependen
 
 **R1. Pillow (open, Low).** reportlab and python-pptx open logo images with Pillow, whose version Hermes
 controls. This Mac's Hermes venv has Pillow 12.3.0 (39 advisories, fixed in 13.0.0); Hermes's current
-`pyproject.toml` overrides Pillow to 13.0.0 for itself and plugin workspaces. What reaches Pillow from Imprint is
+`pyproject.toml` overrides Pillow to 13.0.0 for itself and plugin workspaces. What reaches Pillow from Letterpress is
 narrow: PNG or JPEG only, signature-checked, at most 5 MB and 4096 px a side. *Recommendation:* update Hermes
-before the live test. Don't declare `pillow>=13` in Imprint yet: on an older Hermes it could collide with
+before the live test. Don't declare `pillow>=13` in Letterpress yet: on an older Hermes it could collide with
 browser-harness's exact `pillow==12.3.0` pin and block the install.
 
-**R2. `requires_hermes ">=0.22.0"` (open, Low).** Both routes Imprint uses (`create_ssrf_safe_async_client` with
+**R2. `requires_hermes ">=0.22.0"` (open, Low).** Both routes Letterpress uses (`create_ssrf_safe_async_client` with
 its connect-time guard, and `register_auxiliary_task`) exist at the v0.22.0 tag. But `is_safe_url` gained its
 authority-ambiguity refusal (`01fbd26`) and IDNA metadata comparison (`c5d9f20`) between 0.22.0 and 0.23.0. On
 0.22 the connect-time guard still validates the address actually dialed, so this is depth, not a hole.
@@ -157,7 +157,7 @@ call.
 
 - **SSRF.** Private, loopback, link-local, CGNAT, metadata, IPv4-mapped IPv6, decimal, hex and octal forms,
   userinfo and backslash confusion, DNS names that resolve to loopback: all refused by Hermes (probe above).
-  Imprint re-checks every redirect hop itself (`follow_redirects=False`, five hops), and `normalize_url` refuses
+  Letterpress re-checks every redirect hop itself (`follow_redirects=False`, five hops), and `normalize_url` refuses
   any scheme but http and https before a request is built. **DNS rebinding:** Hermes's client re-resolves and
   validates at TCP connect and dials the validated IP (source read at `tools/url_safety.py:444-604`, present at
   v0.22.0). With a proxy set in the environment, Hermes hands DNS to the proxy by design.
@@ -175,7 +175,7 @@ call.
   only.
 - **Prompt injection.** Sources reach the model as delimited, redacted data; replies are schema-checked JSON;
   extra fields (`delete_kits`, `export_path`, a logo path) are dropped. The model has no tools: the one tool
-  Imprint calls is `text_to_speech`, by fixed name, with text, an output path inside plugin-data and the kit's
+  Letterpress calls is `text_to_speech`, by fixed name, with text, an output path inside plugin-data and the kit's
   delivery notes (`RedTeam` test with a source ordering image generation, sends and a write to `~/.ssh`). Kits
   change only when a person presses Save on a draft; required lines are never imported from any route. Export of
   anything not found in the sources needs a person's Keep or Remove click. Exfiltration through TTS is bounded to
@@ -186,7 +186,7 @@ call.
   PowerPoint are never reused.
 - **What leaves the computer.** Matches the README: source text to the person's model, audio scripts to their
   Hermes voice, an image to their model only on request, and only the web addresses they enter. No telemetry.
-  README and catalog text were updated for the new limits, for the recording Imprint copies back from the Hermes
+  README and catalog text were updated for the new limits, for the recording Letterpress copies back from the Hermes
   voice (its one read outside plugin-data that a person didn't pick), and for capped uploads.
 - **Catalog rules.** Desktop bundle imports only the SDK and React. No compiled binaries: 13 TTF, 40 PNG, the rest
   text. `provides_tools`, `provides_hooks` and `provides_middleware` are empty, matching `register(ctx)` (one
@@ -194,7 +194,7 @@ call.
 
 ## Smaller notes (no fix needed for release)
 
-- FastAPI parses `body: dict` routes (paste, ask, kit edits) whole before Imprint's field caps; the pane is the
+- FastAPI parses `body: dict` routes (paste, ask, kit edits) whole before Letterpress's field caps; the pane is the
   only client and Hermes guards the dashboard.
 - A Claude Design zip entry that fails its CRC raises `BadZipFile`, shown as the generic error, not the
   damaged-zip message.
@@ -293,7 +293,7 @@ clamped to the format's ranges and a shape's share of the slide to 1. *Tests:* `
 
 **F12. The live harness could be imported, and answered any site.** *Scenario:* Hermes installs the whole repo,
 and its loader makes the plugin folder a package, so `harness/live/server.py` is importable; importing it replaced
-`fastapi` in `sys.modules` and set `IMPRINT_DATA_DIR`. While it runs, any page open in the same browser could post
+`fastapi` in `sys.modules` and set `LETTERPRESS_DATA_DIR`. While it runs, any page open in the same browser could post
 a `text/plain` body to it (tested: a cross-site POST planted a source), and a DNS-rebound name could read its
 answers. *Fix:* the module raises `ImportError` unless run as a script; a foreign `Host` or an `Origin` other than
 its own page gets a 403. *Tests:* `F12_LiveHarnessStaysOutOfHermes` (2) and
@@ -307,7 +307,7 @@ today; such a value is now dropped. *Test:* `F13_HtmlExportTokensCannotLoad`.
 **R3. `harness/` ships in every install (open, Low).** Hermes has no exclude list: it clones the repo (or a
 subdirectory). The harness, its persona files (a PDF, a PowerPoint, a Word file, a zip) and `drive.py` land in the
 plugin folder. After F12 nothing there can run inside Hermes, and no shipped module or the desktop bundle refers to
-it (tested). *Recommendation:* before catalog submission, move the plugin into a subfolder (`imprint/`) and point
+it (tested). *Recommendation:* before catalog submission, move the plugin into a subfolder (`letterpress/`) and point
 the catalog at it, so the subdirectory install leaves `harness/`, `tests/` and `docs/shots/` behind.
 
 ### Tried and held
@@ -349,7 +349,7 @@ Not an independent audit: an outside reviewer should still sign off. Same ground
 ### Links: SSRF, rebinding and redirects
 
 A link source now goes first to the person's own Hermes `web_extract` tool (`ctx.dispatch_tool`), then, only when
-that tool is not set up, to Imprint's own reader (`ingest.fetch`). Flagged by an automated review as a possible
+that tool is not set up, to Letterpress's own reader (`ingest.fetch`). Flagged by an automated review as a possible
 time-of-check/time-of-use and redirect differential. Checked against the Hermes source, and it holds:
 
 - **Before anything is sent**, `service._safe_public_url` refuses any scheme but http and https, any user name or
@@ -358,7 +358,7 @@ time-of-check/time-of-use and redirect differential. Checked against the Hermes 
 - **Inside the tool**, Hermes re-runs `async_is_safe_url` on every URL before any extract backend is called
   (`tools/web_tools.py`, `web_extract_tool`, the "SSRF protection" loop), so the tool is guarded on its own.
   Damon's configured extract backend is the remote Nous gateway, so the fetch itself happens off this machine.
-- **Imprint's own reader** (the fallback) builds its client only from `tools.url_safety.create_ssrf_safe_async_client`,
+- **Letterpress's own reader** (the fallback) builds its client only from `tools.url_safety.create_ssrf_safe_async_client`,
   which resolves, validates and dials the checked IP at TCP connect (closing DNS rebinding) and keeps Host and SNI.
   It runs with `follow_redirects=False` and checks `is_safe_url` again on every hop itself, five hops at most
   (`ingest.fetch`). No module builds a plain httpx client, `urllib` or `requests` call
@@ -372,7 +372,7 @@ No redesign needed.
 
 ### The rest of the notebook build
 
-- **Tools Imprint calls now: three, each by fixed name.** `text_to_speech` (unchanged), `web_extract` (only with an
+- **Tools Letterpress calls now: three, each by fixed name.** `text_to_speech` (unchanged), `web_extract` (only with an
   address the person typed, after the checks above) and `image_generate` (only when the person ticks "Ask my Hermes
   image tool for a picture slide", at most two per deck). The red-team test that a hostile source can't reach any
   other tool still holds; `test_no_picture_asked_for_means_no_image_tool_call` adds that no tick means no image call.

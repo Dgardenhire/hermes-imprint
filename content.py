@@ -9,7 +9,7 @@
 3. ``apply_pairs`` enforces the kit's "say this, not that" pairs in code, because a prompt can only ask.
 
 Sources reach the model only as delimited data. The model has no tools, and its reply is parsed as JSON
-against a schema, so nothing inside a source can make Imprint do anything.
+against a schema, so nothing inside a source can make Letterpress do anything.
 """
 
 from __future__ import annotations
@@ -846,9 +846,9 @@ def schema_for(kind: str) -> dict:
 
 
 # ---------------------------------------------------------------- one pass (round 6) --
-# Rounds 1 to 5: the plain prompt, one call that sees every source and writes the whole deck, kept beating Imprint's
+# Rounds 1 to 5: the plain prompt, one call that sees every source and writes the whole deck, kept beating Letterpress's
 # split path (outline, review, write slide by slide, voice) on the argument. The deck's default make is now one pass:
-# one call with every source in view plans the case and writes every slide in the brand's voice; Imprint's code then
+# one call with every source in view plans the case and writes every slide in the brand's voice; Letterpress's code then
 # maps it into the slide shapes and the brand, checks every number and quote, and makes one repair call for what fails.
 # An approved outline, when there is one, is the pass's spine.
 
@@ -1718,10 +1718,10 @@ def plain_text(doc: dict) -> str:
 
 
 # ---------------------------------------------------------------- the plain draft (round 13) --
-# Round 13: a plain one-pass prompt beat Imprint's argument 48 times of 48, so the deck's case is now drafted the way
+# Round 13: a plain one-pass prompt beat Letterpress's argument 48 times of 48, so the deck's case is now drafted the way
 # that prompt drafts it: one unconstrained call, the same framing and the same words a person types, the sources as
 # plain text. The only change is the answer's form: the slides as plain text instead of python-pptx code. Code then
-# maps the draft onto Imprint's doc without changing a word, traces every number and quote, and turns what the
+# maps the draft onto Letterpress's doc without changing a word, traces every number and quote, and turns what the
 # sources do not hold into a flagged blank on the slide. No later pass may reword it.
 
 PLAIN_SYSTEM = ("You are a helpful assistant in a desktop chat app with a Python code tool. When you write a Python script "
@@ -1783,7 +1783,7 @@ def _best_ref(text: str, passages: dict) -> str:
 
 
 def plain_doc(slides: list, passages: dict) -> dict:
-    """Imprint's deck doc from the parsed draft, in code, every word kept: the first slide is the title slide, every
+    """Letterpress's deck doc from the parsed draft, in code, every word kept: the first slide is the title slide, every
     other slide a content slide whose points are the draft's lines in order, each traced to its closest passage."""
     if not slides:
         raise ValueError("empty draft")
@@ -2176,7 +2176,7 @@ def drop_headline_line(sl: dict) -> dict:
 
 
 def headline_for(src: dict, shaped: dict):
-    """Loop 3 (critics 11 and 12: the plain deck's titles state the finding, Imprint's name the topic). For a slide
+    """Loop 3 (critics 11 and 12: the plain deck's titles state the finding, Letterpress's name the topic). For a slide
     whose draft title is a topic label, the headline is one of the slide's own draft lines, word for word, with the
     passage it traces to: the gap or the ask on a money slide, else a line that states a growth, else the first line
     when it states something with a number, else the first line with a number and a verb, else the first line with a

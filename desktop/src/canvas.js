@@ -1,4 +1,4 @@
-// Imprint canvas: one output open as an editor. The slide large in the middle with the filmstrip under it, the
+// Letterpress canvas: one output open as an editor. The slide large in the middle with the filmstrip under it, the
 // source sentences behind the slide on the left ("Evidence for this slide"), and Revise on the right.
 //
 // What it shows, it reads from the output (docs/API-NOTEBOOK.md section 3, and the Loop 2 additions):
@@ -127,7 +127,8 @@ function firstSentence(text) {
 // The strip marks a claim lights: its own sentence, or each operand's for a worked-out number.
 const markKeys = (cid, c) => (c && c.math && c.math.operands ? c.math.operands.map((o, k) => `${cid}:${k}`) : [cid])
 const markSel = (cid, c) => markKeys(cid, c).map(k => `[data-marks~="${k}"]`).join(', ')
-const CUE_KEY = 'imprint.canvas.cue.v1'
+const CUE_KEY = 'letterpress.canvas.cue.v1'
+const EARLIER_CUE_KEY = 'imprint.canvas.cue.v1' // set by the plugin under its name before Nov 12, 2026
 const unquote = s => String(s || '').replace(/^[“"‘']+|[”"’']+$/g, '')
 
 const claimRefs = c => (c && c.math && c.math.operands ? c.math.operands.map(o => o.ref) : [c && c.ref]).filter(Boolean)
@@ -353,7 +354,7 @@ export function Canvas({ st, out, api }) {
   const [chosen, setChosen] = useState(0) // the option the person is looking at
   const [peek, setPeek] = useState(false) // the folded strip, opened over the stage
   const [brandJob, setBrandJob] = useState(null)
-  const [cue, setCue] = useState(() => { try { return window.localStorage.getItem(CUE_KEY) !== '1' } catch (e) { return true } })
+  const [cue, setCue] = useState(() => { try { const s = window.localStorage; return s.getItem(CUE_KEY) !== '1' && s.getItem(EARLIER_CUE_KEY) !== '1' } catch (e) { return true } })
   const seen = () => { if (!cue) return; setCue(false); try { window.localStorage.setItem(CUE_KEY, '1') } catch (e) { /* the cue just shows again next time */ } }
   const edit = useJob(api)
   const fix = useJob(api)

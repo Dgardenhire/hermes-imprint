@@ -2,7 +2,7 @@
 
     /usr/bin/python3 harness/bench/p6_judge_codex.py ROUND_DIR --sets heldout,heldout2 [--runs 3]
 
-ROUND_DIR holds ``imprint-a/<set>/{A,B}.png`` and ``imprint-b/<set>/{A,B}.png`` (the same contact sheets the Claude
+ROUND_DIR holds ``letterpress-a/<set>/{A,B}.png`` and ``letterpress-b/<set>/{A,B}.png`` (the same contact sheets the Claude
 critics saw, made by ``p6_judge.py``). Each run judges both orders, so position cancels. The question and the scoring
 are ``p6_judge.ASK`` word for word, except that the two decks are named as the first and second attached image
 instead of file paths. Each judge runs in a fresh temp folder outside the repo (read-only sandbox, ephemeral session,
@@ -71,7 +71,7 @@ def main():
         prompt = PJ.ASK.format(request="Make a 7 to 9 slide funder deck", a="the first attached image",
                                b="the second attached image", sources=src)
         prompt = prompt.replace("Open both images with the Read tool and look", "Look")
-        for order in ("imprint-a", "imprint-b"):
+        for order in ("letterpress-a", "letterpress-b"):
             d = root / order / name
             for r in range(1, runs + 1):
                 jobs.append((order, name, r, prompt, d / "A.png", d / "B.png", root / "codex" / order / name / f"run-{r}.json"))

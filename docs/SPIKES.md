@@ -4,7 +4,7 @@ Hermes source checked: `~/.hermes/hermes-agent` at `25f24b1f67` (base 0.23.0). I
 `52b100e8fa` touches no plugin surface (`git diff --name-only`: contributor emails, `scripts/scan_plugin_payloads.py`
 and its test). No `hermes` command was run and nothing was installed into `~/.hermes`.
 
-| | Question | Result | What Imprint does |
+| | Question | Result | What Letterpress does |
 |---|---|---|---|
 | S1 | Images through `complete_structured` on Damon's model | **Not testable here** (needs his signed-in model). Found in source instead: `vision_analyze` through `dispatch_tool` is the wrong door for a plugin. When the main model can see images, its handler takes the "native fast path" and returns a `_multimodal` envelope that attaches the image to the chat (`tools/vision_tools.py:1013-1020, 695-740`); it returns no text a plugin can read. Only the legacy path returns a description. | Reading a logo or brand sheet will go through `ctx.llm.complete_structured` with an image block (structured JSON back), with `vision_analyze` as a fallback only when its result carries text. Not built yet (stage 2). Test live Tuesday. |
 | S2 | `text_to_speech` from a REST handler | Read, not run (a real call would send text to Microsoft's Edge voice from a scratch home). `registry.dispatch` checks no toolset and no `check_fn` (`tools/registry.py:972-1000`); the handler takes `text, output_path, instructions, voice_id` (`tools/tts_tool.py:738-747`). The tool must already be registered in the dashboard process; if not, dispatch returns "Unknown tool". | `runtime.dispatch` uses `ctx.dispatch_tool` when `register` ran in this process, else the public registry, and turns any error into a plain "Audio needs a Hermes voice" path. Audio is stage 2. Test live Tuesday. |
